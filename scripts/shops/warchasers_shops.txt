@@ -1,0 +1,147 @@
+ "dota_shops"
+    {
+
+ //Home Shop Start
+ //--------------------------
+
+    "consumables"
+    {
+        //"item"  "item_aura"
+        //"item" "item_ankh_deluxe"
+
+        //Tomes
+		//"item"	  "item_tome_of_health"
+        //"item"      "item_tome_of_strength"
+        //"item"      "item_tome_of_agility"
+        //"item"      "item_tome_of_intellect"
+
+        //HP-Mana Boost & Potions
+        //"item" "item_health_stone"
+        //"item" "item_mana_stone"
+        //"item" "item_mana_pendant"
+        //"item" "item_vitality_pendant"
+        //"item" "item_potion_of_healing"
+    }
+
+    "attributes"
+    {
+        //Common Drops
+        //"item" "item_cloak_of_shadows"
+        //"item" "item_mantle_3"
+        //"item" "item_slippers_3"
+        //"item" "item_botas"
+        //"item" "item_rop_2"
+        //"item" "item_sobi"
+    }
+
+    "weapons_armor"
+    {
+    
+    }
+
+    "misc"
+    {
+        //Keys
+        //"item" "item_moon_key"
+        //"item" "item_sun_key"   
+    }   
+
+    // Level 1 - Green Recipes
+    "basics"
+    {
+        
+        
+    }
+
+    // Level 2 - Blue Recipes
+    "support"
+    {
+       
+    }
+
+    "magics"
+    {
+        //summonings
+        //"item" "item_book_of_the_dead" //skeleton warriors+archers
+        //"item" "item_demonic_figurine" //doom guard
+        //"item" "item_wand_of_illusion" //hero ilu
+        //"item" "item_red_drake"        //dragon
+        //"item" "item_spiked_collar" //hellhound
+        //"item" "item_stone_token"  //rock golem
+        //"item" "item_talisman_of_the_wild"  //fulborg
+    }
+
+    // Level 3 - Purple Recipes
+    "defense"
+    {
+        
+    }
+
+    "weapons"
+    {
+    //secret
+       //"item" "item_allerias_flute"
+       //"item" "item_khadgars_gem"
+       //"item" "item_stormwind_horn"
+       //"item" "item_evasion"   
+    }
+
+    // Level 4 - Orange / Orb / Artifacts
+    "artifacts"
+    {
+       //orbs
+        //"item" "item_orb_of_frost"
+        //"item" "item_orb_of_fire"
+    }
+
+
+    "sideshop1"
+    {
+         //Shop 1
+        "item" "item_ankh"
+        "item" "item_potion_of_great_healing"
+        "item" "item_healing_wards"
+        "item" "item_cloak_of_flames"
+        "item" "item_scepter_of_mastery"
+        "item" "item_mask_of_death"
+        "item" "item_gauntlets_3"
+        "item"  "item_claws_3"
+    }
+
+    //Sideshop Page 2
+
+    "sideshop2"
+    {
+      
+    }
+
+      "secretshop"
+    {
+        //Shop 2
+        "item" "item_inferno_stone"
+        "item" "item_spell_immunity"
+        "item" "item_battle_drums"
+        "item" "item_restoration_scroll"
+        "item" "item_claws_9"
+        "item" "item_robe_6"
+        "item" "item_ror_2"  
+       
+    }
+ 
+
+  
+}
+
+
+   
+   
+
+  
+  
+
+    
+
+    
+
+  
+  

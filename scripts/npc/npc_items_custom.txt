@@ -1,0 +1,1200 @@
+"DOTAAbilities"
+{
+	//====================================================================
+	// Base Classed Items
+	//====================================================================
+
+	//Layout
+	//"item_name"
+	//{
+	//	"ID"							"10xx"
+	//	"ItemCost"						"0"
+	//	"AbilityTextureName"			"item_name" (make icon)
+	//	"AbilityBehavior"				""
+	//	"SecretShop"					"0"
+
+	//	"BaseClass" "item_dota_name"
+	//	"AbilitySpecial"
+	//	{
+			//check https://github.com/DarkSupremo/Multiplier/blob/1070fcf7c3a26d04972de269ace76e56d464efb9/tools/generator/npc_items_custom.txt
+	//	}
+	//}
+
+
+	"item_ankh"  //rewrite datadriven
+	{
+		"ID"							"1000"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_ankh"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SideShop"						"1"
+		"SecretShop"					"1"
+
+		"BaseClass" "item_aegis"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"reincarnate_time" "3.0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"disappear_time" "2147483647" //FLOAT_MAX
+			}
+		}
+	}
+
+	"item_ankh_deluxe"  //rewrite datadriven
+	{
+		"ID"							"1001"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_ankh_deluxe"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SideShop"						"0"
+		"SecretShop"					"1"
+
+		"BaseClass" "item_aegis"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"reincarnate_time" "1.0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"disappear_time" "2147483647" //FLOAT_MAX
+			}
+		}
+	}
+
+	"item_mana_pendant"
+	{
+		"ID"		"1010" 
+		"BaseClass" "item_energy_booster"
+		"AbilityTextureName" 	"item_mana_pendant"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"					"consumables"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_mana" "250"
+			}
+		}
+	}
+
+    "item_vitality_pendant"
+    {
+    	"ID"		"1011"
+		"BaseClass" "item_vitality_booster"
+		"AbilityTextureName" "item_vitality_pendant"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"					"consumables"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_health" "150"
+			}
+		}
+	}
+
+	"item_mask_of_death"
+	{
+		"ID"							"1012"
+		"ItemCost"						"0"
+		"BaseClass" 	"item_lifesteal"
+		"AbilityTextureName"			"item_mask_of_death"
+		"SideShop" "1"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"lifesteal_percent" "50"
+			}
+		}
+	}
+    
+    "item_gauntlets_3"
+	{
+		"ID"							"1013"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_gauntlets_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" "item_gauntlets"
+		"SideShop" "1"
+		"SecretShop" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_strength" "3"
+			}
+		}
+
+	}
+
+	"item_claws_3"
+	{
+		"ID"							"1014"
+		"BaseClass" "item_blades_of_attack"
+		"AbilityTextureName" "item_claws_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"					"consumables"
+		"SideShop" "1"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "3"
+			}
+		}
+	}
+
+	"item_claws_9"
+	{
+		"ID"							"1015"
+		"BaseClass" "item_blades_of_attack"
+		"AbilityTextureName"			"item_claws_9"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "9"
+			}
+		}
+	}
+
+	"item_robe_6"
+	{
+		"ID"							"1016"
+		"BaseClass" "item_robe"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_robe_6"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_intellect" "6"
+			}
+		}
+	}
+
+    "item_ror_2"
+    {
+    	"ID"							"1017"
+    	"BaseClass" "item_ring_of_regen"
+
+    	"AbilityTextureName"			"ror_2"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_health_regen" "2"
+			}
+		}
+	}
+
+	"item_mantle_3"
+	{
+		"ID"							"1018"
+		"BaseClass" "item_mantle"
+		"AbilityTextureName" "item_mantle_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"					"attributes"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_intellect" "3"
+			}
+		}
+    }
+
+    "item_slippers_3"
+    {
+    	"ID"							"1019"
+		"BaseClass" "item_slippers"
+		"AbilityTextureName" "item_slippers_3"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemQuality"					"attributes"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_agility" "3"
+			}
+		}
+	}
+
+    "item_botas"
+    {
+    	"ID"							"1020"
+    	"BaseClass" "item_boots"
+    	"AbilityTextureName" "item_botas"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_movement_speed" "50"
+			}
+		}
+	}
+
+    "item_rop_2"
+    {
+    	"ID"							"1021"
+    	"BaseClass" "item_ring_of_protection"
+    	"AbilityTextureName" "item_rop_2"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_armor" "2"
+			}
+		}
+    }
+
+    "item_sobi"
+    {
+    	"ID"							"1022"
+    	"BaseClass" "item_sobi_mask"
+    	"AbilityTextureName" "item_sobi"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_mana_regen" "50"
+			}
+		}
+    }
+
+    "item_khadgars_gem"
+    {
+		"ID"							"1023"
+    	"BaseClass" "item_vitality_booster"
+    	"AbilityTextureName" "item_khadgars_gem"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_health" "300"
+			}
+		}
+	}
+
+    "item_evasion"
+    {
+    	"ID"							"1024"
+    	"BaseClass" "item_vitality_booster"
+    	"AbilityTextureName" "item_evasion"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+    		"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_evasion" "15"
+			}
+		}
+	}
+
+    //Need Rewrite Data Driven
+    "item_orb_of_frost" //rewrite datadriven for ranged on air units
+    {
+    	"ID" "1025"
+    	"BaseClass" "item_skadi"
+    	"AbilityTextureName" "item_orb_of_frost"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_all_stats" "6"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_health" "0"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_mana" "0"
+			}
+			"04"
+			{
+				"var_type" "FIELD_INTEGER"
+				"cold_movement_speed" "-70"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"cold_attack_speed" "-70"
+			}
+			"06"
+			{
+				"var_type" "FIELD_FLOAT"
+				"cold_duration_melee" "10.0"
+			}
+			"07"
+			{
+				"var_type" "FIELD_FLOAT"
+				"cold_duration_ranged" "6.0"
+			}
+		}
+    }
+    "item_orb_of_fire" //rewrite datadriven for ranged on air units, cleave, spell damage
+    {
+    	"ID" "1026"
+    	"BaseClass" "item_desolator"
+    	"AbilityTextureName" "item_orb_of_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "5"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"corruption_armor" "0"
+			}
+			"03"
+			{
+				"var_type" "FIELD_FLOAT"
+				"corruption_duration" "1"
+			}
+		}
+    }
+
+    "item_battle_drums" //rewrite datadriven for no charge/no stats
+    {
+    	"ID" "1027"
+    	
+    	"AbilityTextureName" "item_battle_drums"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"BaseClass" "item_ancient_janggo"
+    	"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_stats" "0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "0"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_aura_attack_speed_pct" "10"
+			}
+			"04"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_aura_movement_speed_pct" "10"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_attack_speed_pct" "0"
+			}
+			"06"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_movement_speed_pct" "0"
+			}
+			"07"
+			{
+				"var_type" "FIELD_FLOAT"
+				"duration" "0"
+			}
+			"08"
+			{
+				"var_type" "FIELD_INTEGER"
+				"radius" "1800"
+			}
+		}
+    }
+
+    "item_cloak_of_shadows" //rewrite datadriven
+	{
+		"ID"		"1028"
+		"BaseClass" "item_shadow_amulet"
+		"AbilityTextureName"			"item_cloak_of_shadows"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"fade_time" "1"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_attack_speed" "0"
+			}
+		}
+	}
+
+    "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
+    {
+    	"ID"		"1029"
+		"AbilityTextureName"			"item_cloak_of_flames"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop" "1"
+		"SecretShop" "1"
+
+    	"BaseClass" "item_radiance"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"aura_radius" "200"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"aura_damage" "10"
+			}
+		}
+    }
+
+	//====================================================================
+	// Data Driven Items
+	//====================================================================
+
+	"item_inferno_stone"
+	{
+		"ID"                            "1050"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_inferno_stone"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "60"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_dota_warlock_golem_3"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+	
+
+	"item_tome_of_health"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_health"
+		"ItemKillable"					"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"				"Increase50HP"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
+			}
+			"SpendCharge"
+			{}
+		}
+
+	}
+
+	"item_tome_of_strength"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1052"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_strength"
+		"Model"							"models/red_book.vmdl"
+		"ItemKillable"					"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"				"StrengthTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
+			}
+			"SpendCharge"
+			{}
+		}
+
+	}
+
+	"item_tome_of_agility"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_agility"
+		"Model"							"models/green_book.vmdl"
+		"ItemKillable"					"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"				"AgilityTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
+			}
+			"SpendCharge"
+			{}
+		}
+
+	}
+
+	"item_tome_of_intellect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1054"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_intellect"
+		"Model"							"models/blue_book.vmdl"
+		"ItemKillable"					"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"				"IntellectTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
+			}
+			"SpendCharge"
+			{}
+		}
+
+	}
+
+	
+	"item_potion_of_healing"
+	{
+		"ID"							"1055"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl" //Green
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"potion_of_healing"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"20"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"itemfunctions.lua"
+				"Function"			"Heal"
+				"Target"			"UNIT"
+				"heal_amount"		"%heal_amount"
+
+			}
+			"FireSound"
+			{
+				"Target" 		"UNIT"
+				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"				"600"
+			}
+		}
+	}
+
+
+	"item_potion_of_great_healing"
+	{
+		"ID"							"1056"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_potion_of_great_healing"
+		"ItemKillable"					"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"8.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"100"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"1"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_scripted_items.lua"
+				"Function"			"Heal"
+				"Target"			"UNIT"
+				"heal_amount"		"%heal_amount"
+
+			}
+			"FireSound"
+			{
+				"Target" 		"UNIT"
+				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"				"5000"
+			}
+		}
+	}
+
+	"item_health_stone"
+	{
+		"ID"							"1057"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_health_stone"
+
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"40.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemKillable"					"0"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"Modifiers"
+		{
+			"modifier_health_stone"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	    "%bonus_health_regen"
+				}	
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"itemfunctions.lua"
+				"Function"			"Heal"
+				"Target"			"UNIT"
+				"heal_amount"		"%heal_amount"
+
+			}
+			"FireSound"
+			{
+				"Target" 		"UNIT"
+				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"				"500"
+			}
+		}
+	}
+
+	"item_mana_stone"
+	{
+		"ID"							"1058"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_blue.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_mana_stone"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"40.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemKillable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"Modifiers"
+		{
+			"modifier_health_stone"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" 	    "%bonus_mana_regen"
+				}	
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"itemfunctions.lua"
+				"Function"			"ReplenishMana"
+				"Target"			"UNIT"
+				"mana_amount"		"%mana_amount"
+
+			}
+			"FireSound"
+			{
+				"Target" 		"UNIT"
+				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+			}
+			"SpendCharge"
+			{}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"man_aamount"				"300"
+			}
+		}
+	}
+
+	"item_spell_immunity"
+	{
+		"ID"							"1059"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_spell_immunity"
+
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"1"
+		"ItemKillable"					"0"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"Modifiers"
+		{
+			"modifier_spell_immunity"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"States"
+				{
+				"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				//"Properties" MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
+				"EffectName" 				"particles/items_fx99/black_king_bar_avatar.vpcf"
+				"EffectAttachType"			"attach_hitloc"
+			}
+
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2134568"
+			}
+		}
+	}
+
+	"item_healing_wards"
+	{
+		"ID"                            "1060"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_healing_wards"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "3"
+
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_dota_juggernaut_healing_ward"
+				"UnitCount"             "1"
+				"Duration"				"20"
+			}
+			"SpendCharge"
+			{}
+		}
+
+
+	}
+
+    
+   
+    //   "item_scepter_of_mastery" //secretshop 1
+
+    //"item_restoration_scroll"  //sideshop 1
+
+    //"item_book_of_the_dead" //skeleton warriors+archers
+     //      "item_demonic_figurine" //doom guard
+      //     "item_wand_of_illusion" //ilu hero
+       //    "item_red_drake"        //dragon
+        //   "item_spiked_collar" //hellhound
+         //  "item_stone_token"  //rock golem
+          // "item_talisman_of_the_wild"  //fulborg
+
+           // "item_allerias_flute"
+         
+    "item_stormwind_horn"
+	{
+		"ID"							"1066"
+		"BaseClass" 					"item_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName" 			"item_stormwind_horn"
+		
+		"AbilityCastPoint"    			"0.0"
+		"AbilityCastRange"    			"500"
+		//"AbilityCooldown"    			"0"
+		//"AbilityManaCost"    			"0"
+
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"1"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+
+		"SecretShop" "1"
+		
+		"AbilitySpecial"
+		{
+		   	"01"
+		   	{
+			    "var_type" "FIELD_INTEGER"
+			    "Range" "500"
+		   	}
+	  	}
+	 
+	  	"Modifiers"
+	  	{
+	   		"aura_Modifier"
+	   		{
+	    		"Passive" "1"
+	    		"IsHidden" "1"
+	    		"Aura" "aura_armor"
+	    		"Aura_Radius" "%Range"
+	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+
+	    		//Test Effect
+                "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                "EffectAttachType" "follow_overhead"
+                "EffectLifeDurationScale" "1"
+                "EffectColorA" "255 255 0"
+	   		}
+	 
+	   		"aura_armor"
+	   		{
+	    	
+		    	"IsDebuff" "1"
+		    	"IsPurgable" "0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
+		    	}
+		    }
+	   	}
+	}
+
+}

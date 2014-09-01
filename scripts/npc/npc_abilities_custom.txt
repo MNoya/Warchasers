@@ -1,0 +1,637 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"spawn_murloc"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4.0"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_small_murloc"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	            //"Unit Limit"
+	        }   
+		
+		}
+	}
+
+	"spawn_gnoll"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4.0"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_archer_gnoll"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_ghoul"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_ghoul"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_ghoul_fast"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "2"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_ghoul"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+
+	"spawn_medium_satyr"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_medium_satyr"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_golem"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_mud_golem"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_medium_murloc"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "4"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_medium_murloc"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_water_elemental"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_water_elemental"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+
+	        }   
+		
+		}
+	}
+
+	"spawn_ranged_troll"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_dark_troll_archer"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	//Unfinished Spawners
+
+	"spawn_small_sludge"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_small_sludge"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_treant"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_treant"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_burning_archer"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_burning_skeleton_archer"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_kobold_tunneler"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_kobold_tunneler"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	
+	
+	"spawn_medium_sludge"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_medium_sludge"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	
+	"spawn_frost_archer"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_frost_skeleton_archer"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+	
+	"spawn_ice_priest"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_ice_troll_priest"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_wizard"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_wizard"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_fellhound"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_fellhound"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_big_sludge"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_big_sludge"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_medium_satyr"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_medium_satyr"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+	"spawn_imp"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityChannelTime" "6"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_imp"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	        }   
+		
+		}
+	}
+
+  //=================================================================================================================
+  // Hide this unit
+  //=================================================================================================================
+  "unselectable"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    
+    "BaseClass"             "ability_datadriven"
+    
+    "Modifiers"
+    {
+      "modifier_unselectable"
+      {
+        "Passive" "1"
+        "States"
+        {
+          "MODIFIER_STATE_UNSELECTABLE"         "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NOT_ON_MINIMAP"       "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_PROVIDES_VISION"      "MODIFIER_STATE_VALUE_DISABLED"
+          "MODIFIER_STATE_ROOTED"               "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_SOFT_DISARMED"        "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_INVULNERABLE"         "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_LOW_ATTACK_PRIORITY"  "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_FLYING"               "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_BLOCK_DISABLED"       "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+  }
+
+  "invulnerable"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    
+    "BaseClass"             "ability_datadriven"
+    
+    "Modifiers"
+    {
+      "modifier_invulnerable"
+      {
+        "Passive" "1"
+        "States"
+        {
+         
+          "MODIFIER_STATE_INVULNERABLE"         "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+  }
+
+}
+
