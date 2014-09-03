@@ -7,7 +7,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4.0"
@@ -25,7 +25,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
-	            //"Unit Limit"
+	            //"UnitLimit"
 	        }   
 		
 		}
@@ -35,7 +35,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4.0"
@@ -62,7 +62,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4"
@@ -89,7 +89,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "2"
@@ -117,7 +117,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4"
@@ -144,7 +144,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4"
@@ -171,7 +171,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "4"
@@ -198,7 +198,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "6"
@@ -255,7 +255,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "6"
@@ -282,10 +282,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -309,10 +309,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -336,10 +336,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -365,10 +365,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -393,10 +393,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -420,10 +420,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "4"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -447,10 +447,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "7"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
@@ -474,7 +474,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "6"
@@ -501,7 +501,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "6"
@@ -528,7 +528,7 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
 		"AbilityChannelTime" "6"
@@ -555,10 +555,10 @@
 	{
 		"BaseClass" "ability_datadriven"
 
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityCastRange" "350"
 		"AbilityManaCost" "0"
-		"AbilityChannelTime" "6"
+		"AbilityChannelTime" "1"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		
