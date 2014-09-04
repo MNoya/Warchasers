@@ -4,24 +4,14 @@
 	"Tokens"
 	{		
 		"addon_game_name"			"WARCHASERS"
-		
-		//PopUps
-		//ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-		"popup_title"          					"Title"
-		"popup_body"            				"Body"
-		
-		//=============================================================
-		//Hero Names
-		//=============================================================
-
-		"npc_warchasers_hero_juggernaut"				"Blade Berserker"
-		"npc_warchasers_hero_chaos_knight"			"Beast Knight"
-		"npc_warchasers_hero_shredder"				"Optimus Primo"
-		"npc_warchasers_hero_sven"					"Megotron X"
-		"npc_warchasers_hero_razor"					"Skeletorus"
-		"npc_warchasers_hero_shadow_demon"			"Mum'Rah"
-		"npc_warchasers_hero_templar_assassin"		"Assassin"
-		"npc_warchasers_hero_drow_ranger"				"Snake Ayes"
+		"npc_dota_hero_juggernaut"			"Blade Berserker"
+		"npc_dota_hero_chaos_knight"			"Beast Knight"
+		"npc_dota_hero_shredder"			"Optimus Primo"
+		"npc_dota_hero_sven"				"Megotron X"
+		"npc_dota_hero_razor"				"Skeletorus"
+		"npc_dota_hero_shadow_demon"			"Mum'Rah"
+		"npc_dota_hero_templar_assassin"		"Assassin"
+		"npc_dota_hero_drow_ranger"			"Snake Ayes"
 		
 		//==============================================================	
 		// Unit Names
@@ -74,7 +64,7 @@
 		"npc_cherub"							"Cherub"
 		"npc_doom_guard"						"Doom Guard"
 		"npc_imp"								"Hell Imp"					
-		"npc_tb_miniboss"						"MiniBoss2 - Ra' Adoom"
+		"npc_tb_miniboss"						"MiniBoss2 - RaAdoom"
 
 		"npc_small_sludge"						"Sludge Minion"
 		"npc_kobold_tunneler"					"Kobold Tunneler"
@@ -106,28 +96,28 @@
 		"npc_big_satyr"							"Satyr Hellcaller"
 		"npc_soul_smasher"						"Soul Smasher"
 		"npc_infernal"							"Infernal"
-		"npc_boss"								"BOSS - Xaxion Drak'eem"
+		"npc_boss"								"BOSS - Xaxion Drakeem"
 
 
 		// Creature Ability Names
-		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					"Healing Aura"
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					"Healing Aura"
 
 		// Hero Abilities
 		
-		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					""			
-		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Description"		""
-		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Note0"			  	"Level 1 -.\nLevel 2 - .\nLevel 3 - ."
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					""			
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Description"		""
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Note0"			  	"Level 1 -.\nLevel 2 - .\nLevel 3 - ."
 		
 		//==============================================================
 		//	Items
 		//==============================================================
 		
-		"DOTA_Tooltip_ability_(name in npc_items_custom)"                 	  	""
-		"DOTA_Tooltip_ability_(name in npc_items_custom)_Description"         	""
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)"                 	  	""
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Description"         	""
 		
-		"DOTA_Tooltip_ability_(name in npc_items_custom)_Lore"                	"."
-		"DOTA_Tooltip_ability_(name in npc_items_custom)_Note0"               	"."
-		"DOTA_Tooltip_ability_(name in npc_items_custom)_(AbilitySpecial field_name)"        ":"
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Lore"                	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Note0"               	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_(AbilitySpecial field_name)"        ":"
 		
 		//Tomes
 		"DOTA_Tooltip_ability_item_tome_of_health"                 	  			"Tome of Health"
