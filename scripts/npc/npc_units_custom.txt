@@ -22,7 +22,7 @@
 		"Ability1"					"spawn_murloc"			// Ability 1.
 		"Ability2"					"spawn_ghoul"			// Ability 2.
 		"Ability3"					"spawn_ranged_troll"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"slarkerin_spawner"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -193,6 +193,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
+		"ModelScale"				"0.7"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -644,6 +645,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
+		"ModelScale"				"0.7"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -824,7 +826,7 @@
 		//
 		"BaseClass"					"npc_dota_rattletrap_cog"	//fix this
 		"Model"						"models/props_debris/merchant_debris_chest001.vmdl"	// Model.
-		"ModelScale"				"4"
+		"ModelScale"				"2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -909,7 +911,8 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_building"	
-		"Model"						"models/props_fade/fade_tent_top.vmdl"	// Model.
+		"Model"						"models/props_structures/tent_dk_small.vmdl"	// Model.
+		"ModelScale"				"1.2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -1001,7 +1004,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_winter/nest_03.vmdl"	// Model.
-		"ModelScale"				"4"
+		"ModelScale"				"2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -1094,7 +1097,7 @@
 	"npc_juggernaut_tower"
 	{
 			// General
-			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
+			"BaseClass"					"npc_dota_base"	// Class of entity of link to.
 			"Model"						"models/props_structures/boat_dragonknight.vmdl"// Model.
 			"SoundSet"					"Tower.Water"					// Name of sound set.
 			"Level"						"1"
@@ -1127,7 +1130,7 @@
 			"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
 			"AttackRange"				"1200"		// Range within a target can be attacked.
 			"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
-			"ProjectileSpeed"			"1200"		// Speed of projectile.
+			"ProjectileSpeed"			"1000"		// Speed of projectile.
 	
 			// Bounty
 			//----------------------------------------------------------------
@@ -1175,7 +1178,7 @@
 	"npc_elven_tower"
 	{
 			// General
-			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
+			"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 			"Model"						"models/props_structures/tower_dragon_white.vmdl"// Model.
 			"SoundSet"					"Tower.Water"					// Name of sound set.
 			"Level"						"1"
@@ -2378,7 +2381,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
-		"ModelScale"				"1.5"
+		"ModelScale"				"1.4"
 		"Level"						"6"
 		
 		// Abilities
@@ -4515,6 +4518,9 @@
 		"Model"						"models/heroes/broodmother/spiderling.vmdl"	// Model.	
 		"ModelScale"				"0.4"
 		"Level"						"1"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"HealthBarOffset"			"80"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4569,8 +4575,7 @@
 		"MovementSpeed"				"522"									// Speed.
 		"MovementTurnRate"			"0.2"									// Turning rate.
 		
-		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"80"
+		
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
@@ -5788,7 +5793,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"3"
-		"ModelScale" 				""
+		"ModelScale" 				"1.5"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -5859,7 +5864,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"	// Model.
+		"Model"						"models/items/lone_druid/true_form/wizened_bear/wizened_bear.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -6017,7 +6022,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
-		"ModelScale"				"1.7"
+		"ModelScale"				"1.4"
 		"Level"						"8"
 		
 		// Abilities
