@@ -15,10 +15,10 @@ function itemFunctions:start() -- Runs whenever the itemFunctions.lua is ran
     print('[ItemFunctions] itemFunctions started!')
 end
  
-function DropItemOnDeath(keys) -- keys is the information sent by the ability
+function DropItemOnDeath(event) -- event is the information sent by the ability
     print( '[ItemFunctions] DropItemOnDeath Called' )
-    local killedUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
-    local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+    local killedUnit = EntIndexToHScript( event.caster_entindex ) -- EntIndexToHScript takes the event.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
+    local itemName = tostring(event.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. event.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
     if killedUnit:IsHero() or killedUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
         for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
                 if killedUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
@@ -33,8 +33,8 @@ function DropItemOnDeath(keys) -- keys is the information sent by the ability
     end
 end
 
-function Increase50HP( keys )
-    local casterUnit = keys.caster
+function Increase50HP( event )
+    local casterUnit = event.caster
     local casterLevel = casterUnit:GetLevel()
     casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
     casterUnit:SetHealth( casterUnit:GetHealth() + 50 )
@@ -42,8 +42,8 @@ function Increase50HP( keys )
     --hero:ModifyHealth(hero:GetHealth()+50, hero, true, 50)
 end
 
-function HealthTomeUsed( keys )
-    local casterUnit = keys.caster
+function HealthTomeUsed( event )
+    local casterUnit = event.caster
     local casterLevel = casterUnit:GetLevel()
     casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
     casterUnit:SetHealth(casterUnit:GetHealth() + 50)
@@ -62,29 +62,40 @@ end
 
 ListenToGameEvent( "dota_rune_activated_server", HealthTomeUsed, self )--]]
 
-function StrengthTomeUsed( keys )
-    local casterUnit = keys.caster
+function StrengthTomeUsed( event )
+    local casterUnit = event.caster
     --casterUnit:SetBaseStrength( casterUnit:GetBaseStrenght() + 1 )
     casterUnit:ModifyStrength(1)
     
 end
 
-function AgilityTomeUsed( keys )
-    local casterUnit = keys.caster
+function AgilityTomeUsed( event )
+    local casterUnit = event.caster
     --casterUnit:SetBaseAgility( casterUnit:GetBaseAgility() + 1 )
     casterUnit:ModifyAgility(1)
 end
 
-function IntellectTomeUsed( keys )
-    local casterUnit = keys.caster
+function IntellectTomeUsed( event )
+    local casterUnit = event.caster
     --casterUnit:SetBaseIntellect( casterUnit:GetBaseIntellect() + 1 )
     casterUnit:ModifyIntellect(1)
 end
 
-function Heal(keys)
-    keys.caster:GetPlayerOwner():GetAssignedHero():Heal(keys.heal_amount, keys.caster)
+function Heal(event)
+    event.caster:GetPlayerOwner():GetAssignedHero():Heal(event.heal_amount, event.caster)
 end
 
-function ReplenishMana(keys)
-    keys.caster:GetPlayerOwner():GetAssignedHero():GiveMana(keys.mana_amount)
+function ReplenishMana(event)
+    event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
+end
+
+function CheckForKey(trigger)
+  local hero = trigger.activator
+  local itemName = "item_cloak_of_flames"
+    if hero ~= nil then
+      local Item = hero:GetItemInSlot( itemSlot )
+      if Item ~= nil and Item:GetName() == itemName then
+         print("Item detected")
+      end               
+    end
 end
