@@ -1,13 +1,40 @@
+
+
+
+function slarkerin_spawner_func( event )
+        local heroes_in_range = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetCenter(), nil, 300, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)    
+        if heroes_in_range[1] ~= nil then
+                local ability = event.caster:FindAbilityByName("spawn_murloc")
+                ability:CastAbility()
+        end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function SpawnMurlocs1(trigger)
         local building = Entities:FindByName(nil, "murloc_hut1") --2
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_murloc")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                ability:CastAbility();
-                        end
-                        return 4;
-                end, 1);
+                --ability:SetContextThink("SpawnLoop", function() if ability:IsFullyCastable() then ability:CastAbility() end return 4 end, 1)
         end
 end
 --ty Quintinity
@@ -16,12 +43,7 @@ function SpawnMurlocs2(trigger)
         local building = Entities:FindByName(nil, "murloc_hut2")
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_murloc")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                ability:CastAbility();
-                        end
-                        return 4;
-                end, 1);
+                --ability:SetContextThink("SpawnLoop", function() if ability:IsFullyCastable() then ability:CastAbility() end return 4 end, 1)
         end
 end
 
