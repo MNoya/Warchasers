@@ -1,7 +1,22 @@
-require( 'util' )
+--dota_launch_custom_game warchasers warchasers
 
-if CAddonTemplateGameMode == nil then
-	CAddonTemplateGameMode = class({})
+--require( 'util' )
+require( "camera")
+
+
+
+
+if Convars:GetBool("developer") == true then
+	require( "developer" )
+end
+
+
+
+
+
+
+if Warchasers == nil then
+	Warchasers = class({})
 end
 
 function Precache( context )
@@ -42,14 +57,14 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.AddonTemplate = CAddonTemplateGameMode()
+	GameRules.AddonTemplate = Warchasers()
 	GameRules.AddonTemplate:InitGameMode()
 end
 
-function CAddonTemplateGameMode:InitGameMode()
+function Warchasers:InitGameMode()
 	print( "Starting to load gamemode..." )
 
-	self:_ReadGameConfiguration()
+	self:ReadDropConfiguration()
 	GameMode = GameRules:GetGameModeEntity()
 
 	GameMode:SetCameraDistanceOverride( 1000 )
@@ -90,24 +105,23 @@ function CAddonTemplateGameMode:InitGameMode()
     print("Make buildings vulnerable")
     local allBuildings = Entities:FindAllByClassname('npc_dota_building')
     for i = 1, #allBuildings, 1 do
-        local buildid = allBuildings[i]
+        local building = allBuildings[i]
         if building:HasModifier('modifier_invulnerable') then
             building:RemoveModifierByName('modifier_invulnerable')
         end
     end
     
-    --Hook
-    ListenToGameEvent( "entity_killed", Dynamic_Wrap( CAddonTemplateGameMode, 'OnEntityKilled' ), self )
-
+    --Listeners
+    ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-	GameRules:GetGameModeEntity():SetThink( "CameraLock", self, "CameraThink", 1 )
+
  	
 	print( "Done loading gamemode" )
 end
 
 
 -- Evaluate the state of the game
-function CAddonTemplateGameMode:OnThink()
+function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 
 		--print( "Template addon script is running." )	
@@ -120,57 +134,47 @@ function CAddonTemplateGameMode:OnThink()
 	return 2
 end	
 
---Camera Lock
 
-function CAddonTemplateGameMode:CameraLock()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-
-		SendToConsole("dota_camera_center")
-	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		return nil
-	end
-	return 0.1
-end	
 
 
 --RANDOM ITEM DROPS
 
 -- Read and assign configurable keyvalues if applicable
-function CAddonTemplateGameMode:_ReadGameConfiguration()
+function Warchasers:ReadDropConfiguration()
 	local kv = LoadKeyValues( "scripts/maps/" .. GetMapName() .. ".txt" )
 	kv = kv or {} -- Handle the case where there is not keyvalues file
 
-	self:_ReadLootItemDropsConfiguration( kv["ItemDrops"] )
+	self:ReadLootItemDropsConfiguration( kv["ItemDrops"] )
 
 end
 
 -- If random drops are defined read in that data
-function CAddonTemplateGameMode:_ReadLootItemDropsConfiguration( kvLootDrops )
+function Warchasers:ReadLootItemDropsConfiguration( kvLootDrops )
 
-	self._vLootItemDropsList = {}
+	self.vLootItemDropsList = {}
 	if type( kvLootDrops ) ~= "table" then
 		return
 	end
-	for _,lootItem in pairs( kvLootDrops ) do
-		table.insert( self._vLootItemDropsList, {
+	for key,lootItem in pairs( kvLootDrops ) do
+		table.insert( self.vLootItemDropsList, {
 			szItemName = lootItem.Item or "",
 			nChance = tonumber( lootItem.Chance or 0 )
 		})
 	end
 
 	print("Drop Table:")
-	DeepPrintTable( self._vLootItemDropsList, nil, true )
+	DeepPrintTable( self.vLootItemDropsList, nil, true )
 	print("------------")
 end
 
-function CAddonTemplateGameMode:OnEntityKilled( event )
+function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	print("1 mob dead")
     self:CheckForLootItemDrop( killedUnit )
 end  
 
-function CAddonTemplateGameMode:CheckForLootItemDrop( killedUnit )
-	for _,itemDropInfo in pairs( self._vLootItemDropsList ) do
+function Warchasers:CheckForLootItemDrop( killedUnit )
+	for key,itemDropInfo in pairs( self.vLootItemDropsList ) do
 		print("Calculating Drops")
 		print(RollPercentage( itemDropInfo.nChance ) )
 
@@ -186,3 +190,37 @@ function CAddonTemplateGameMode:CheckForLootItemDrop( killedUnit )
 		end
 	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
