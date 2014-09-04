@@ -1,9 +1,9 @@
-// Warchasers Heroes File
+// Dota Heroes File
 // NOTE: This isn't for creating new heroes, this is for taking a currently existing hero as a template and overriding
 // the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
-	"npc_warchasers_hero_optimus_primo"
+	"npc_dota_hero_optimus_primo"
 	{
 		"override_hero"				"npc_dota_hero_shredder"
 
@@ -21,7 +21,7 @@
 		"MovementSpeed"				"522"		// Speed.
 	}
 	
-	"npc_warchasers_blade_berserker"
+	"npc_dota_hero_blade_berserker"
 	{
 		"override_hero"				"npc_dota_hero_juggernaut"
 
@@ -38,7 +38,7 @@
 	}
 
 
-	"npc_warchasers_hero_snake_eyes"
+	"npc_dota_hero_snake_eyes"
 	{
 		"override_hero"				"npc_dota_hero_drow_ranger"
 
@@ -71,7 +71,7 @@
 	}
 
 
-	"npc_warchasers_hero_mummrah"
+	"npc_dota_hero_mummrah"
 	{
 		"override_hero"				"npc_dota_hero_shadow_demon"
 
@@ -88,7 +88,7 @@
 		"StatusManaRegen"			"10"
 	}
 
-	"npc_warchasers_hero_assassin"
+	"npc_dota_hero_assassin"
 	{
 		"override_hero"				"npc_dota_hero_templar_assassin"
 
@@ -105,7 +105,7 @@
 		"StatusManaRegen"			"6"
 	}
 	
-	"npc_warchasers_hero_megotron"
+	"npc_dota_hero_megotron"
 	{
 		"override_hero"				"npc_dota_hero_sven"
 
@@ -122,7 +122,7 @@
 	}
 
 
-	"npc_warchasers_hero_skeletorus"
+	"npc_dota_hero_skeletorus"
 	{
 		"override_hero"				"npc_dota_hero_razor"
 
