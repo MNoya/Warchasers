@@ -622,7 +622,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
-		"Model"							"models/red_book.vmdl"
+		//"Model"							"models/red_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -660,7 +660,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
-		"Model"							"models/green_book.vmdl"
+		//"Model"							"models/green_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -698,7 +698,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
-		"Model"							"models/blue_book.vmdl"
+		//"Model"							"models/blue_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
