@@ -75,16 +75,26 @@ function CAddonTemplateGameMode:InitGameMode()
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-3136,2996,124)
-	local newItem = CreateItem("item_cloak_of_flames", nil, nil)
+	local newItem = CreateItem("khadgars_gem", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-2940,3200,124)
-	local newItem = CreateItem("item_cloak_of_flames", nil, nil)
+	local newItem = CreateItem("item_stormwind_horn", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-3136,3200,124)
-	local newItem = CreateItem("item_cloak_of_flames", nil, nil)
+	local newItem = CreateItem("item_evasion", nil, nil)
     CreateItemOnPositionSync(position, newItem)
+
+    -- Remove building invulnerability
+    print("Make buildings vulnerable")
+    local allBuildings = Entities:FindAllByClassname('npc_dota_building')
+    for i = 1, #allBuildings, 1 do
+        local buildid = allBuildings[i]
+        if building:HasModifier('modifier_invulnerable') then
+            building:RemoveModifierByName('modifier_invulnerable')
+        end
+    end
     
     --Hook
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( CAddonTemplateGameMode, 'OnEntityKilled' ), self )
@@ -103,10 +113,11 @@ function CAddonTemplateGameMode:OnThink()
 		--print( "Template addon script is running." )	
 		--Permanent Night
 		GameRules:SetTimeOfDay( 0.8 )
+
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
-	return 1
+	return 2
 end	
 
 --Camera Lock

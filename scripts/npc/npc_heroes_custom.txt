@@ -1,9 +1,9 @@
-// Dota Heroes File
+// Warchasers Heroes File
 // NOTE: This isn't for creating new heroes, this is for taking a currently existing hero as a template and overriding
 // the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
-	"npc_dota_hero_optimus_primo"
+	"npc_warchasers_hero_optimus_primo"
 	{
 		"override_hero"				"npc_dota_hero_shredder"
 
@@ -14,14 +14,14 @@
 		"Ability4"					"alchemist_chemical_rage"
 
 		"StatusHealth"				"1500"
-		"StatusHealthRegen"			"1"
+		"StatusHealthRegen"			"322"
 		"StatusMana"				"1500"
 		"StatusManaRegen"			"35"
 		
 		"MovementSpeed"				"522"		// Speed.
 	}
 	
-	"npc_dota_blade_berserker"
+	"npc_warchasers_blade_berserker"
 	{
 		"override_hero"				"npc_dota_hero_juggernaut"
 
@@ -38,7 +38,7 @@
 	}
 
 
-	"npc_dota_hero_snake_eyes"
+	"npc_warchasers_hero_snake_eyes"
 	{
 		"override_hero"				"npc_dota_hero_drow_ranger"
 
@@ -54,7 +54,7 @@
 		"StatusManaRegen"			"10"
 	}
 
-	"npc_dota_hero_beast_knight"
+	"npc_warchasers_hero_beast_knight"
 	{
 		"override_hero"				"npc_dota_hero_chaos_knight"
 
@@ -71,7 +71,7 @@
 	}
 
 
-	"npc_dota_hero_mummrah"
+	"npc_warchasers_hero_mummrah"
 	{
 		"override_hero"				"npc_dota_hero_shadow_demon"
 
@@ -80,6 +80,7 @@
 		"Ability2"					"bane_nightmare"
 		"Ability3"					"skeleton_king_vampiric_aura"
 		"Ability4"					"dark_troll_warlord_raise_dead" //Needs custom
+		"Ability5"					""
 
 		"StatusHealth"				"1500"
 		"StatusHealthRegen"			"7"
@@ -87,7 +88,7 @@
 		"StatusManaRegen"			"10"
 	}
 
-	"npc_dota_hero_assassin"
+	"npc_warchasers_hero_assassin"
 	{
 		"override_hero"				"npc_dota_hero_templar_assassin"
 
@@ -95,7 +96,8 @@
 		"Ability1"				"lone_druid_spirit_bear_entangle"  //Needs custom
 		"Ability2"				"roshan_bash"	
 		"Ability3"				"sven_storm_bolt"	
-		"Ability4"				"mirana_starfall" //Needs custom	
+		"Ability4"				"mirana_starfall" //Needs custom
+		"Ability5"				""	
 
 		"StatusHealth"				"1500"
 		"StatusHealthRegen"			"1"
@@ -103,7 +105,7 @@
 		"StatusManaRegen"			"6"
 	}
 	
-	"npc_dota_hero_megotron"
+	"npc_warchasers_hero_megotron"
 	{
 		"override_hero"				"npc_dota_hero_sven"
 
@@ -120,7 +122,7 @@
 	}
 
 
-	"npc_dota_hero_skeletorus"
+	"npc_warchasers_hero_skeletorus"
 	{
 		"override_hero"				"npc_dota_hero_razor"
 

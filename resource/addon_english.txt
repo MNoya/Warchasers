@@ -10,19 +10,105 @@
 		"popup_title"          					"Title"
 		"popup_body"            				"Body"
 		
+		//=============================================================
 		//Hero Names
-		"npc_dota_hero_juggernaut"				"Blade Berserker"
-		"npc_dota_hero_chaos_knight"			"Beast Knight"
-		"npc_dota_hero_shredder"				"Optimus Primo"
-		"npc_dota_hero_sven"					"Megotron X"
-		"npc_dota_hero_razor"					"Skeletorus"
-		"npc_dota_hero_shadow_demon"			"Mum'Rah"
-		"npc_dota_hero_templar_assassin"		"Assassin"
-		"npc_dota_hero_drow_ranger"				"Snake Ayes"
-				
-		// Unit Names
-		//"(name in npc_units_custom.txt)"			""
+		//=============================================================
+
+		"npc_warchasers_hero_juggernaut"				"Blade Berserker"
+		"npc_warchasers_hero_chaos_knight"			"Beast Knight"
+		"npc_warchasers_hero_shredder"				"Optimus Primo"
+		"npc_warchasers_hero_sven"					"Megotron X"
+		"npc_warchasers_hero_razor"					"Skeletorus"
+		"npc_warchasers_hero_shadow_demon"			"Mum'Rah"
+		"npc_warchasers_hero_templar_assassin"		"Assassin"
+		"npc_warchasers_hero_drow_ranger"				"Snake Ayes"
 		
+		//==============================================================	
+		// Unit Names
+		//==============================================================
+
+		"npc_murloc_hut"						"Gnoll Hut"
+		"npc_farm"								"High Elven Farm"
+		"npc_satyr_hut"							"Forest Troll Hut"						
+		"npc_ziggurat"							"Nerubian Ziggurat"
+		"npc_pedestal"							"Book of Summoning Pedestal"
+		"npc_barricade"							"Barricade"
+		"npc_murloc_elemental_hut"				"Murloc Hut"
+		"npc_ice_troll_hut"						"Ice Troll Hut"
+		"npc_dragon_roost"						"Blue Dragon Roost"
+		"npc_magic_box"							"Magic Vault"
+		"npc_centaur_tent"						"Centaur Tent"
+		"npc_harpy_nest"						"Harpy Nest"
+		"npc_juggernaut_tower"					"Destroyer"
+		"npc_elven_tower"						"High Elven Guard Tower"
+
+		"npc_small_murloc"						"Murloc Tiderunner"
+		"npc_medium_murloc"						"Murloc Huntsman"
+		"npc_big_murloc"						"Murloc Nightcrawler"
+		"npc_archer_gnoll"						"Gnoll Poacher"
+		"npc_big_gnoll" 						"Gnoll Overseer"
+		"npc_ogre"								"Ogre Warrior"
+		"npc_wizard"							"Rogue Wizard"
+		"npc_small_spider"						"Forest Spider"
+		"npc_medium_spider"						"Black Spider"
+		"npc_troll_priest"						"Forest High Troll Priest"
+		"npc_water_elemental"					"Enraged Elemental"
+		"npc_gnoll"								"Gnoll"
+		"npc_ghoul"								"Ghoul"
+		"npc_doom_miniboss"						"Miniboss - KATHUULON"
+
+		"npc_shadow_priest"						"Dark Troll Shadow Priest"
+		"npc_medium_satyr"						"Satyr"
+		"npc_priest"							"Priest"
+		"npc_mud_golem"  						"Mud Golem"
+		"npc_red_wizard"						"Renegade Wizard"
+		"npc_dark_troll_archer"					"Dark Troll"
+		"npc_forest_troll"						"Forest Troll"
+		"npc_nerubian_melee"					"Nerubian Warrior"
+		"npc_nerubian_webspinner"				"Nerubian Webspinner"
+
+		"npc_pig"								"Spirit Pig"
+		"npc_ghost"								"Banshee"
+		"npc_small_dragon"						"Blue Dragon Whelp"
+		"npc_soul_keeper"						"Soul Keeper"
+		"npc_cherub"							"Cherub"
+		"npc_doom_guard"						"Doom Guard"
+		"npc_imp"								"Hell Imp"					
+		"npc_tb_miniboss"						"MiniBoss2 - Ra' Adoom"
+
+		"npc_small_sludge"						"Sludge Minion"
+		"npc_kobold_tunneler"					"Kobold Tunneler"
+		"npc_red_lizard"						"Salamander"
+		"npc_blue_lizard"						"Salamander Vizier"
+		"npc_big_wildkin"						"Enraged Wildkin"
+		"npc_treant"							"Corrupted Treant"
+		"npc_hell_spider"						"HellSpider"
+		"npc_skeleton_warrior"					"Giant Skeleton Warrior"
+		"npc_burning_skeleton_archer"			"Burning Archer"
+		"npc_frost_skeleton_archer"				"Skeletal Marskamn"
+
+		"npc_wendigo"							"Elder Wendigo"
+		"npc_blue_drake"						"Blue Drake"
+
+		"npc_brood"								"Brood Mother"
+		"npc_ice_troll_priest"					"Ice Troll High Priest"
+		"npc_rock_golem"   						"Rock Golem"
+		"npc_wildkin"							"Wildkin"
+		"npc_medium_sludge"						"Sludge Flinger"
+		"npc_green_lizard"						"Thunder Lizard"
+
+		"npc_necromancer"						"Necromancer"
+		"npc_big_sludge"						"Sludge Monstrosity"
+		"npc_fellhound"							"Felhound"
+		"npc_titan"								"Titan Skeleton"
+		"npc_medium_satyr_range"				"Satyr Shadowdancer"
+		"npc_furbolg"							"Furbolg Elder Shaman"
+		"npc_big_satyr"							"Satyr Hellcaller"
+		"npc_soul_smasher"						"Soul Smasher"
+		"npc_infernal"							"Infernal"
+		"npc_boss"								"BOSS - Xaxion Drak'eem"
+
+
 		// Creature Ability Names
 		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					"Healing Aura"
 
@@ -32,9 +118,9 @@
 		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Description"		""
 		"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Note0"			  	"Level 1 -.\nLevel 2 - .\nLevel 3 - ."
 		
-		//=================================================
-		//	ITEMS
-		//=================================================
+		//==============================================================
+		//	Items
+		//==============================================================
 		
 		"DOTA_Tooltip_ability_(name in npc_items_custom)"                 	  	""
 		"DOTA_Tooltip_ability_(name in npc_items_custom)_Description"         	""
@@ -88,10 +174,10 @@
 				
 		//Keys
         "DOTA_Tooltip_ability_item_moon_key"									"Moon Key"
-		"DOTA_Tooltip_ability_item_moon_key_Description"
+		"DOTA_Tooltip_ability_item_moon_key_Description"						"This key glows faintly."
         "DOTA_Tooltip_ability_item_sun_key"										"Sun Key"
-		"DOTA_Tooltip_ability_item_sun_key_Description"
-		
+		"DOTA_Tooltip_ability_item_sun_key_Description"							"This key glows brightly."
+				
 		//Summonings
         "DOTA_Tooltip_ability_item_book_of_the_dead" 							"Book of the Dead"
 		"DOTA_Tooltip_ability_item_book_of_the_dead_Description"				"Summons four Skeleton Warriors and four Skeleton Archers to fight for you. Lasts 120 seconds."
