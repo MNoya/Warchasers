@@ -13,6 +13,7 @@ function Teleporter2(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
 end
 
 function TeleporterHeaven(trigger)
@@ -37,8 +38,8 @@ function TeleporterBack(trigger)
 end
 
 function TeleporterSecret(trigger)
-          local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
-          FindClearSpaceForUnit(trigger.activator, point, false)
-         trigger.activator:Stop()
+        local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
+        FindClearSpaceForUnit(trigger.activator, point, false)
+        trigger.activator:Stop()
         SendToConsole("dota_camera_center")
 end
