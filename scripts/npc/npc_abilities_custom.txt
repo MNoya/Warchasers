@@ -3,6 +3,30 @@
 {
 	"Version"		"1"
 
+
+	"slarkerin_spawner"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_PASSIVE"
+		"AbilityManaCost" "0"
+		"Modifiers"
+			{
+			"passive_spawner"
+				{
+				"Passive"	"1"
+				"ThinkInterval"	"4"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"slarkerin_spawner_func"
+						}
+					}
+				}
+			}
+		}
+
 	//=================================================================================================================
 	// Spawners
 	//=================================================================================================================
@@ -585,32 +609,36 @@
 	//=================================================================================================================
 
 	//Assassin
-	"entangling_roots"
-	"starfall"
+	//"entangling_roots"
+	//"starfall"
 	
 	//SnakeEyes
-	"rain_of_fire"
+	//"rain_of_fire"
 
 	//OptimusPrimo
-	"devotion_aura"
-	"avatar"
+	//"devotion_aura"
+	//"avatar"
 
 	//BeastKnight
-	"summon_water_elemental"
+	//"summon_water_elemental"
 
 	//M X
-	"divine_shield"
-	"thorns_aura"
-	"tranquility"
+	//"divine_shield"
+	//"thorns_aura"
+	//"tranquility"
 
 	//MumRah
-	"animate_dead"
+	//"animate_dead"
 
 	//Skeletorus
 
 	//BladeBerserker
-	"immolation"
-	"bladestorm"
+	//"immolation"
+	//"bladestorm"
+
+	//=================================================================================================================
+	// WC3 Creep Skills
+	//=================================================================================================================
 
 	//=================================================================================================================
   	// Hidden modifiers
