@@ -4,6 +4,52 @@
 	"Version"		"1"
 
 
+
+
+	"warchasers_starfall_dummy"
+		{
+
+		}
+
+	"warchasers_starfall"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityManaCost"	"200"
+		"AbilityCooldown"	"180"
+		"AbilityChannelTime"	"45"
+		"OnSpellStart"
+			
+		"OnChannelInterrupted"
+
+		"OnChannelFinish"
+
+		}
+
+
+	"dummy_passive"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_PASSIVE"
+		"Modifiers"
+			{
+			"dummy_modifier"
+				{
+				"Passive"	"1"
+				"States"
+					{
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
+		}
+
+
+
 	"structure_thinker"
 		{
 		"BaseClass" "ability_datadriven"
