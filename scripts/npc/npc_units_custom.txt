@@ -22,7 +22,7 @@
 		"Ability1"					"spawn_murloc"			// Ability 1.
 		"Ability2"					"spawn_ghoul"			// Ability 2.
 		"Ability3"					"spawn_ranged_troll"			// Ability 3.
-		"Ability4"					"slarkerin_spawner"			// Ability 4.
+		"Ability4"					"structure_thinker"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
