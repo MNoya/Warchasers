@@ -10,7 +10,7 @@ function structure_spawner_func( event )
                         print(trigger)
                         if trigger ~= nil then
                                 if trigger:IsTouching(value) == true then
-                                        local ability = event.caster:GetAbilityByIndex(1)
+                                        local ability = event.caster:GetAbilityByIndex(0)
                                         ability:CastAbility()
                                 end
                         end
