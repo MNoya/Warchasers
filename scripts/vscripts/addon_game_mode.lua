@@ -70,7 +70,7 @@ function Warchasers:InitGameMode()
 	GameMode:SetCameraDistanceOverride( 1000 )
 	GameMode:SetAnnouncerDisabled(true)
 	GameMode:SetBuybackEnabled(false)
-	GameMode:SetRecommendedItemsDisabled(true) --broken?
+	GameMode:SetRecommendedItemsDisabled(true) --broken
 
 	GameRules:SetPreGameTime(0)
 	GameRules:SetHeroSelectionTime(0)
@@ -113,6 +113,8 @@ function Warchasers:InitGameMode()
     
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
+    ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
+
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 
  	
@@ -123,8 +125,7 @@ end
 -- Evaluate the state of the game
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-
-		--print( "Template addon script is running." )	
+	
 		--Permanent Night
 		GameRules:SetTimeOfDay( 0.8 )
 
@@ -134,7 +135,22 @@ function Warchasers:OnThink()
 	return 2
 end	
 
+function Warchasers:OnNPCSpawned(keys)
+	print("NPC Spawned")
+	local npc = EntIndexToHScript(keys.entindex)
+	
+	if npc:IsRealHero() and npc.bFirstSpawned == nil then
+		npc.bFirstSpawned = true
+		Warchasers:OnHeroInGame(npc)
+	end
+end
 
+--Add Ankh
+function Warchasers:OnHeroInGame(hero)
+	print("Hero Spawned")
+	local item = CreateItem("item_ankh", hero, hero)
+	hero:AddItem(item)
+end
 
 
 --RANDOM ITEM DROPS
