@@ -1,0 +1,151 @@
+//skills to do list
+
+	//=================================================================================================================
+	// Ladder WC3 Hero Skills
+	//=================================================================================================================
+
+	//Range and AoE should be ~ 10 times the WC3 value IIRC
+	//Allowed targets Air is obsolete unless we port the mechanic from WC3 (and there's just like 6 flying units in the map, not worth it)
+
+	//Assassin
+	//"entangling_roots"
+		"Causes roots to burst from the ground, immobilizing and damaging a target enemy."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets			Effect				Hero Level Req
+		1		9 (3) sec.		8 sec.		75			80			Unit			Ground, Enemy, Neutral	Deals 15 damage/sec	1
+		2		24 (4) sec.		8 sec.		75			80			Unit			Ground, Enemy, Neutral	Deals 15 damage/sec	3
+		3		36 (5) sec.		8 sec.		75			80			Unit			Ground, Enemy, Neutral	Deals 25 damage/sec	5
+		Entangled Units are unable to attack, though they can still cast spells.
+
+	//"starfall"
+		"Calls down waves of falling stars that damage nearby enemy units. Each wave deals 50 damage. The time between waves is 1.5 seconds."
+		Level	Duration	Cooldown	Mana Cost	Range	Area of Effect	Allowed Targets			Effect						Hero Level Req
+		N/A		45 sec.		180 sec.	200			N/A			100			Air, Ground, Enemy		50 damage/wave for 45 sec.	6
+		Channeling
+
+	//SnakeEyes
+	//"rain_of_fire"
+		"Calls down waves of fire that damage units in an area. Each wave deals <ANrf,DataB1> initial damage and <ANrf,DataE1> damage per second for <ANrf,Dur1> seconds. |nLasts for <ANrf,DataA1> waves."
+		Must Check Ingame
+
+	//OptimusPrimo
+	//"devotion_aura"
+		"Gives additional armor to nearby friendly units."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
+		1		Unlimited		N/A			None		N/A			90				Air, Ground, Friend, Self	+1.5 to Armor	1
+		2		Unlimited		N/A			None		N/A			90				Air, Ground, Friend, Self	+3 to Armor		3
+		3		Unlimited		N/A			None		N/A			90				Air, Ground, Friend, Self	+4.5 to Armor	5
+
+
+	//"avatar"
+		"Activate Avatar to temporarily give the Mountain King 5 bonus armor, 500 bonus hit points, 20 bonus damage and spell immunity."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets		Effect								
+		N/A			60 sec.		180 sec.	150			N/A		Personal			Self			+5 Armor, +500 hit points, +20 damage, spell immunity
+
+	//BeastKnight
+	//"summon_water_elemental"
+		"Summons a Water Elemental to attack the Archmage's enemies."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets			Effect						Hero Level Req
+		1		60 sec.			20 sec.		125			N/A	N/A	N/A										525 hit points, light damage	1
+		2		60 sec.			20 sec.		125			N/A	N/A	N/A										675 hit points, moderate damage	3
+		3		60 sec.			20 sec.		125				N/A	N/A	N/A									900 hit points, heavy damage	5
+		Attack:	20/35/45 avg Pierce
+
+	//M X
+	//"divine_shield"
+		"An impenetrable shield surrounds the Paladin, protecting him from all damage and spells for a set amount of time."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
+		1		15				35 sec.			25		N/A		Personal			Self				Invulnerability			1
+		2		30				50 sec.			25		N/A		Personal			Self				Invulnerability			3
+		3		45				65 sec.			25		N/A		Personal			Self				Invulnerability			5
+		Divine Shield is an invincibility spell. You can cast this and the enemy cannot harm your Paladin until the spell wears off. 
+		Creeps will ignore the user.
+
+	//"thorns_aura"
+		"An aura that gives friendly units around the Keeper of the Grove a damage shield, which wounds enemy melee attackers."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect					Hero Level Req
+		1		Unlimited		N/A	None	N/A					90			Air, Ground, Friend, Self	Reflects 10% of melee damage	1
+		2		Unlimited		N/A	None	N/A					90			Air, Ground, Friend, Self	Reflects 20% of melee damage	3
+		3		Unlimited		N/A	None	N/A					90			Air, Ground, Friend, Self	Reflects 30% of melee damage	5
+
+
+	//"tranquility" (done, just adding tooltip)
+		"Causes a rain of healing energy to pour down in a large area, healing friendly allied units for 20 hit points per second."
+
+	//MumRah
+	//"animate_dead"
+		"Raises 6 dead units in an area to fight for the Death Knight. Animated units are invulnerable."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
+		N/A		40 sec.			180 sec.	175			40		90					Ground, Dead			Raises Dead Units	6
+
+	//Skeletorus
+	//"chain_lightning"
+		"Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect						Hero Level Req
+		1		N/A				9 sec.		120			70		50				Air, Ground, Enemy, Neutral		85 damage, jumps 4 times	1
+		2		N/A				9 sec.		120			70		50				Air, Ground, Enemy, Neutral		125 damage, jumps 6 times	3
+		3		N/A				9 sec.		120			70		50				Air, Ground, Enemy, Neutral		180 damage, jumps 8 times	5
+		Can we do a Harpy Chain Lightning spell with 3 levels ?
+		Else just Zeus chain and ignore 'each jump deals less damage'.
+
+	//BladeBerserker
+	//"immolation"
+		"Engulfs the Demon Hunter in flames, causing damage to nearby enemy land units. Drains mana until deactivated."
+
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
+		1		N/A		N/A					35 + 7/sec	N/A			16			Ground, Enemy, Neutral, Organic	10 damage/sec	1
+		2		N/A		N/A					35 + 7/sec	N/A			16			Ground, Enemy, Neutral, Organic	15 damage/sec	3
+		3		N/A		N/A					35 + 7/sec	N/A			16			Ground, Enemy, Neutral, Organic	20 damage/sec	5
+		Toggle
+
+	//"bladestorm"
+		"Causes a bladestorm of destructive force around the Blademaster, rendering him immune to magic and dealing 110 damage per second to nearby enemy units."
+		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect					Hero Level Req
+		N/A		7 sec.			180 sec.	200			N/A			N/A				Ground, Enemy, Neutral		110 damage per second	6
+		Juggenaut Spin with a single level
+
+
+
+	Rest of the skills should be able to be done from overriding spells already existing in dota.
+	I need to do more research ingame or in the WC3 editor to know which spells can damage buildings
+
+	//=================================================================================================================
+	// WC3 Creep Skills (most can be overriden)
+	//=================================================================================================================
+
+	
+	//"frost_armor"
+	//"purge"
+	//"inner_fire"
+	//"heal"
+	//"dispel_magic"
+	//"blizzard"
+	//"lightning_shield
+	//"raise_dead"
+	//"slow"
+	//"war_stomp"
+	//"mana_burn"
+	//"bloodlust"
+	//"cold_arrows"
+	//"searing_arrows"
+	//"ensnare"
+	//"hurl_boulder"
+	//"slam"
+	//"rejuvenation"
+	//"animate_dead"
+	//"cyclone"
+	//"disease_cloud"
+	//"curse"
+	//"unholy_frenzy"
+	//"thunder_clap"
+	//"reincarnation"
+	//"earthquake"
+
+	//Passives
+	//"command_aura"
+	//"spell_immunity"
+	//"frost_breath"
+	//"bash"
+	//"envenomed_weapons"
+	//"slow_poison"
+	//"unholy_aura"
+	//"permanent_immolation"
