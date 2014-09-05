@@ -4,7 +4,7 @@
 	"Version"		"1"
 
 
-	"slarkerin_spawner"
+	"structure_thinker"
 		{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_PASSIVE"
@@ -20,7 +20,7 @@
 					"RunScript"
 						{
 						"ScriptFile"	"spawn.lua"
-						"Function"	"slarkerin_spawner_func"
+						"Function"	"structure_spawner_func"
 						}
 					}
 				}
