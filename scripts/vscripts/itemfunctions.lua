@@ -89,13 +89,21 @@ function ReplenishMana(event)
     event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
 end
 
+--needs testing ingame
 function CheckForKey(trigger)
   local hero = trigger.activator
   local itemName = "item_cloak_of_flames"
     if hero ~= nil then
       local Item = hero:GetItemInSlot( itemSlot )
-      if Item ~= nil and Item:GetName() == itemName then
-         print("Item detected")
-      end               
+	  for itemSlot = 0, 5, 1 do
+		  if Item ~= nil and Item:GetName() == itemName then
+			 print("Item detected")
+			 --kill door
+             local door = Entities:FindByName(nil, "gate_3")
+             door:ForceKill(true)
+             --disable obstructions
+			 local obstructions = Entities:FindByName(nil, "obstructions_3")
+			 obstructions:SetEnabled(false)
+		  end               
     end
 end
