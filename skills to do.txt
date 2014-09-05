@@ -16,7 +16,7 @@
 		3		36 (5) sec.		8 sec.		75			80			Unit			Ground, Enemy, Neutral	Deals 25 damage/sec	5
 		Entangled Units are unable to attack, though they can still cast spells.
 
-	//"starfall"
+	//"starfall"       DONE
 		"Calls down waves of falling stars that damage nearby enemy units. Each wave deals 50 damage. The time between waves is 1.5 seconds."
 		Level	Duration	Cooldown	Mana Cost	Range	Area of Effect	Allowed Targets			Effect						Hero Level Req
 		N/A		45 sec.		180 sec.	200			N/A			100			Air, Ground, Enemy		50 damage/wave for 45 sec.	6
