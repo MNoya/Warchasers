@@ -1,0 +1,36 @@
+TO DO
+- General -
+Hero Stats, Skills, Tooltips
+Creep Skills, AI
+Item Skills
+Lose condition (everyone dead, no Ankhs)
+
+- Triggers -
+CheckForKey on Doors (almost done, needs testing)
+Heaven&Hell Teleporter only one and once, for every player.
+OnKill Cherubin -> Teleport Hell
+Enable Item dropping on Death (code done, needs to be added to every player)
+OnNPCSpawned Hero give Ankh at the start (almost done, needs testing)
+Many custom drop rules
+
+- Mapping -
+Finish adding every spawner
+Finish unit placing port
+Sheep secret area
+Add Pyramids, Pillars, Lanterns, Light Sources.
+Adjust Fog/Vision/Camera Heights
+Firetraps
+
+- Tooltips/Information -
+Hell/Heaven Timers
+Death message
+Hints and general messages/Popups
+Minimap
+Sounds for triggers
+
+
+- Needs fixing -
+Ankh override SetHeroRespawnEnabled
+Health Tomes reset bug (Use ModifyHealth)
+Strange Blind Spots around teleporters
+Custom models for tomes
