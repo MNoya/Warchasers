@@ -1,11 +1,20 @@
 
 
 
-function slarkerin_spawner_func( event )
-        local heroes_in_range = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetCenter(), nil, 300, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)    
+function structure_spawner_func( event )
+        local heroes_in_range = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetCenter(), nil, 800, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)    
         if heroes_in_range[1] ~= nil then
-                local ability = event.caster:FindAbilityByName("spawn_murloc")
-                ability:CastAbility()
+                for key, value in pairs( heroes_in_range ) do
+                        local trigger = Entities:FindByNameNearest( "spawn_trigger", event.caster:GetOrigin(), 1000)
+                        --DeepPrintTable( Entities:FindByClassnameNearest( "trigger_hero", event.caster:GetOrigin(), 1000), nil, true)
+                        print(trigger)
+                        if trigger ~= nil then
+                                if trigger:IsTouching(value) == true then
+                                        local ability = event.caster:GetAbilityByIndex(1)
+                                        ability:CastAbility()
+                                end
+                        end
+                end
         end
 end
 
