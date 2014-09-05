@@ -6,24 +6,52 @@
 
 
 
-	"warchasers_starfall_dummy"
+	"warchasers_starfall_dummy_helper"
 		{
-
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+			{
+			"warchasers_starfall_dummy_helper_modifier"
+				{
+				"Passive"	"1"
+				"ThinkInterval"	"1.5"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"star_fall_thinker"
+						}
+					}
+				}
+			}
 		}
 
 	"warchasers_starfall"
 		{
 		"BaseClass" "ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_CHANNELLED	|	DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityManaCost"	"200"
 		"AbilityCooldown"	"180"
 		"AbilityChannelTime"	"45"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"OnSpellStart"
-			
-		"OnChannelInterrupted"
-
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"star_fall_ini"
+				}
+			}
 		"OnChannelFinish"
-
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"star_fall_ender"
+				}
+			}
 		}
 
 
@@ -41,8 +69,8 @@
 					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME "	"MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
 			}
