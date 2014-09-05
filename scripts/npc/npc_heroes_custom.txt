@@ -96,7 +96,7 @@
 		"Ability1"				"lone_druid_spirit_bear_entangle"  //Needs custom
 		"Ability2"				"roshan_bash"	
 		"Ability3"				"sven_storm_bolt"	
-		"Ability4"				"mirana_starfall" //Needs custom
+		"Ability4"				"warchasers_starfall" //Needs custom
 		"Ability5"				""	
 
 		"StatusHealth"				"1500"

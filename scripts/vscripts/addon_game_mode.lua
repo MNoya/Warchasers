@@ -2,7 +2,7 @@
 
 --require( 'util' )
 require( "camera")
-
+require( "abilities" )
 
 
 

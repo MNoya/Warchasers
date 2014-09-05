@@ -2,7 +2,16 @@
 
 // Dota Abilities Override File
 "DOTAAbilities"
-{
+{	
+
+	"mirana_starfall"
+		{
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityDamage"					"50"
+		"AbilityManaCost"	"0"
+		}
+
 	"Version"		"1"
 	//Courier
 	"item_courier"
