@@ -26,7 +26,7 @@
 		"ID"							"1000"
 		"ItemCost"						"0"
 		"AbilityTextureName"			"item_ankh"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
 		"SecretShop"					"1"
 
@@ -51,7 +51,7 @@
 		"ID"							"1001"
 		"ItemCost"						"0"
 		"AbilityTextureName"			"item_ankh_deluxe"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"0"
 		"SecretShop"					"1"
 
@@ -93,7 +93,7 @@
     	"ID"		"1011"
 		"BaseClass" "item_vitality_booster"
 		"AbilityTextureName" "item_vitality_pendant"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"consumables"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -116,6 +116,7 @@
 		"AbilityTextureName"			"item_mask_of_death"
 		"SideShop" "1"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -132,7 +133,7 @@
 		"ID"							"1013"
 		"ItemCost"						"0"
 		"AbilityTextureName"			"item_gauntlets_3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" "item_gauntlets"
 		"SideShop" "1"
 		"SecretShop" "1"
@@ -152,7 +153,7 @@
 		"ID"							"1014"
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName" "item_claws_3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"consumables"
 		"SideShop" "1"
 		"SecretShop" "1"
@@ -190,7 +191,7 @@
 	{
 		"ID"							"1016"
 		"BaseClass" "item_robe"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_robe_6"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -229,7 +230,7 @@
 		"ID"							"1018"
 		"BaseClass" "item_mantle"
 		"AbilityTextureName" "item_mantle_3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"attributes"
 		"AbilitySpecial"
 		{
@@ -248,6 +249,7 @@
 		"AbilityTextureName" "item_slippers_3"
 		"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"attributes"
@@ -268,6 +270,7 @@
     	"AbilityTextureName" "item_botas"
     	"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
@@ -287,6 +290,7 @@
     	"AbilityTextureName" "item_rop_2"
     	"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -305,6 +309,7 @@
     	"AbilityTextureName" "item_sobi"
     	"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -341,6 +346,7 @@
     	"AbilityTextureName" "item_evasion"
     	"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -358,7 +364,7 @@
     	"ID" "1025"
     	"BaseClass" "item_skadi"
     	"AbilityTextureName" "item_orb_of_frost"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "0"
 		"SecretShop" "1"
 
@@ -406,7 +412,7 @@
     	"ID" "1026"
     	"BaseClass" "item_desolator"
     	"AbilityTextureName" "item_orb_of_fire"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "0"
 		"SecretShop" "1"
 
@@ -439,6 +445,7 @@
     	"BaseClass" "item_ancient_janggo"
     	"SideShop" "0"
 		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -512,12 +519,12 @@
     {
     	"ID"		"1029"
 		"AbilityTextureName"			"item_cloak_of_flames"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "1"
 		"SecretShop" "1"
 
     	"BaseClass" "item_radiance"
-		"AbilitySpecial"
+			"AbilitySpecial"
 		{
 			"01"
 			{
@@ -537,9 +544,122 @@
 		}
     }
 
+    "item_runed_bracers" //Cloak 33%
+    {
+		"ID"		"1030"
+		"AbilityTextureName"			"item_runed_bracers"
+		"SideShop" "0"
+		"SecretShop" "1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	 	"BaseClass" "item_cloak"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_magical_armor" "33"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"tooltip_resist" "33"
+			}
+		}
+	}
+
+	"item_shield_amulet" //Linken 40sec
+	{
+		"ID"		"1031"
+		"AbilityTextureName"			"item_shield_amulet"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	 	"BaseClass" "item_sphere"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_all_stats" "0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_health_regen" "0"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_mana_regen" "0"
+			}
+			"04"
+			{
+				"var_type" "FIELD_FLOAT"
+				"block_cooldown" "40.0"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"bonus_damage" "0"
+			}
+		}
+	}
+
+
+  
+	 
 	//====================================================================
 	// Data Driven Items
 	//====================================================================
+
+	"item_key1" 
+	{
+		"ID"							"1041"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_key1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop"						"1"
+		"SecretShop"					"1"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "1"
+
+		"BaseClass" "item_datadriven"
+	
+	}
+
+	 "item_key2" 
+	{
+		"ID"							"1042"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_key1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop"						"1"
+		"SecretShop"					"1"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "1"
+
+		"BaseClass" "item_datadriven"
+	}
+	
+	 "item_key3" 
+	{
+		"ID"							"1043"
+		"ItemCost"						"0"
+		"AbilityTextureName"			"item_key3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop"						"1"
+		"SecretShop"					"1"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "1"
+
+		"BaseClass" "item_datadriven"
+	}
 
 	"item_inferno_stone"
 	{
@@ -1096,8 +1216,8 @@
 		"ItemDroppable"                 "1"
 		"ItemInitialCharges"            "3"
 
-		"SideShop"	"0"
-		"SecretShop" "1"
+		"SideShop"						"1"
+		"SecretShop"					"1"
 
 		"OnSpellStart"
 		{
@@ -1111,30 +1231,270 @@
 			}
 			"SpendCharge"
 			{}
+			//doesn't heal
 		}
 
 
-	}
-
-    
+	}    
    
-    //   "item_scepter_of_mastery" //secretshop 1
+    //"item_scepter_of_mastery" //secretshop 1
 
     //"item_restoration_scroll"  //sideshop 1
 
     //"item_book_of_the_dead" //skeleton warriors+archers
-     //      "item_demonic_figurine" //doom guard
-      //     "item_wand_of_illusion" //ilu hero
-       //    "item_red_drake"        //dragon
-        //   "item_spiked_collar" //hellhound
-         //  "item_stone_token"  //rock golem
-          // "item_talisman_of_the_wild"  //fulborg
 
-           // "item_allerias_flute"
-         
+	"item_demonic_figurine" //doom guard
+	{
+		"ID"                            "1064"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_demonic_figurine"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "20"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_doom_guard"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+
+	//"item_wand_of_illusion" //ilu hero
+
+	"item_red_drake"        //dragon
+	{
+		"ID"                            "1066"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_spiked_collar"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "20"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_red_drake"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+
+
+
+	"item_spiked_collar" //fellhound
+	{
+		"ID"                            "1067"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_spiked_collar"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "20"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_fellhound"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+
+
+
+	"item_stone_token"  //rock golem
+	{
+		"ID"                            "1068"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_stone_token"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "20"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_rock_golem"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+
+	"item_talisman_of_the_wild"  //fulborg
+	{
+		"ID"                            "1069"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"            "item_talisman_of_the_wild"
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"0"
+		"AbilityCastRange"              "400"
+		"AbilityCooldown"               "20"
+		"AbilityManaCost"               "0"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemInitialCharges"            "1"
+		"SideShop"	"0"
+		"SecretShop" "1"
+
+		"OnSpellStart"
+		{
+			
+			"SpawnUnit"
+			{
+				"Target"            "POINT"
+				"UnitName"              "npc_furbolg"
+				"UnitCount"             "1"
+				"Duration"				"180"
+			}
+			"SpendCharge"
+			{}
+		}
+	}
+
+    "item_allerias_flute"
+	{
+		"ID"							"1070"
+		"BaseClass" 					"item_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName" 			"item_allerias_flute"
+		
+		"AbilityCastPoint"    			"0.0"
+		"AbilityCastRange"    			"500"
+		//"AbilityCooldown"    			"0"
+		//"AbilityManaCost"    			"0"
+
+		"ItemCost"                      "0" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"1"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+
+		"SecretShop" "1"
+		
+		"AbilitySpecial"
+		{
+		   	"01"
+		   	{
+			    "var_type" "FIELD_INTEGER"
+			    "Range" "500"
+		   	}
+	  	}
+	 
+	  	"Modifiers"
+	  	{
+	   		"aura_Modifier"
+	   		{
+	    		"Passive" "1"
+	    		"IsHidden" "1"
+	    		"Aura" "aura_ranged"
+	    		"Aura_Radius" "%Range"
+	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+	    		"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+
+	    		//Test Effect
+                "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
+                "EffectAttachType" "follow_overhead" //"follow_origin" "attach_hitloc" ?
+                "EffectLifeDurationScale" "1"
+                "EffectColorA" "255 255 0" //?
+	   		}
+	 
+	   		"aura_ranged"
+	   		{
+	    	
+		    	"IsBuff" "1"
+		    	"IsPurgable" "0"
+		    	
+		    	"Properties"
+		    	{
+		     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "10" //or try MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE?
+		    	}
+		    }
+	   	}
+	}
+
+    //"item_bone_chimes"
+      
     "item_stormwind_horn"
 	{
-		"ID"							"1066"
+		"ID"							"1080"
 		"BaseClass" 					"item_datadriven"
 		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1177,7 +1537,7 @@
 	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
 
 	    		//Test Effect
-                "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+                "EffectName" "particles/items_fx/aura_assault.vpcf" //add precache
                 "EffectAttachType" "follow_overhead"
                 "EffectLifeDurationScale" "1"
                 "EffectColorA" "255 255 0"
@@ -1186,7 +1546,7 @@
 	   		"aura_armor"
 	   		{
 	    	
-		    	"IsDebuff" "1"
+		    	"IsBuff" "1"
 		    	"IsPurgable" "0"
 		    	
 		    	"Properties"

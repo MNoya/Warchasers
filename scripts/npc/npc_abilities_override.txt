@@ -846,18 +846,6 @@
 		"ItemDroppable"					"1"
 	}
 
-   "item_moon_key"
-    {
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-	}
-
-    "item_sun_key"
-    {
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-	}
-
 	"item_book_of_the_dead" //skeleton warriors+archers
 	{
 		"ItemPurchasable"				"0"
@@ -1017,5 +1005,98 @@
 		"ItemPurchasable"				"1"
 		"ItemDroppable"					"1"
 	}
+
+	"item_key1"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+	"item_key2"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+	"item_key3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+	"item_shield_amulet"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_runed_bracers"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_demonic_figurine"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_red_drake"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	} 
+	
+	"item_spiked_collar"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	} 
+	
+	"item_stone_token"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_talisman_of_the_wild"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+    "item_bone_chimes"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+    "item_wand_of_illusion"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+    "item_book_of_the_dead" 
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+
+
 
 }

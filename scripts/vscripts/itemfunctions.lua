@@ -92,17 +92,17 @@ end
 --needs testing ingame
 function CheckForKey(trigger)
   local hero = trigger.activator
-  local itemName = "item_cloak_of_flames"
+  local itemName = "item_key1"
     if hero ~= nil then
       local Item = hero:GetItemInSlot( itemSlot )
 	  for itemSlot = 0, 5, 1 do
 		  if Item ~= nil and Item:GetName() == itemName then
-			 print("Item detected")
+			 print("Key detected")
 			 --kill door
-             local door = Entities:FindByName(nil, "gate_3")
+             local door = Entities:FindByName(nil, "gate_2")
              door:ForceKill(true)
              --disable obstructions
-			 local obstructions = Entities:FindByName(nil, "obstructions_3")
+			 local obstructions = Entities:FindByName(nil, "obstructions_2")
 			 obstructions:SetEnabled(false)
 		  end               
     end
