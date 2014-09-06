@@ -8,7 +8,7 @@
 	//Allowed targets Air is obsolete unless we port the mechanic from WC3 (and there's just like 6 flying units in the map, not worth it)
 
 	//Assassin
-	//"entangling_roots"
+	//"entangling_roots"           DONE
 		"Causes roots to burst from the ground, immobilizing and damaging a target enemy."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets			Effect				Hero Level Req
 		1		9 (3) sec.		8 sec.		75			80			Unit			Ground, Enemy, Neutral	Deals 15 damage/sec	1
@@ -28,7 +28,7 @@
 		Must Check Ingame
 
 	//OptimusPrimo
-	//"devotion_aura"
+	//"devotion_aura"            DONE
 		"Gives additional armor to nearby friendly units."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
 		1		Unlimited		N/A			None		N/A			90				Air, Ground, Friend, Self	+1.5 to Armor	1
@@ -36,13 +36,13 @@
 		3		Unlimited		N/A			None		N/A			90				Air, Ground, Friend, Self	+4.5 to Armor	5
 
 
-	//"avatar"
+	//"avatar"	DONE
 		"Activate Avatar to temporarily give the Mountain King 5 bonus armor, 500 bonus hit points, 20 bonus damage and spell immunity."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets		Effect								
 		N/A			60 sec.		180 sec.	150			N/A		Personal			Self			+5 Armor, +500 hit points, +20 damage, spell immunity
 
 	//BeastKnight
-	//"summon_water_elemental"
+	//"summon_water_elemental"	DONE
 		"Summons a Water Elemental to attack the Archmage's enemies."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets			Effect						Hero Level Req
 		1		60 sec.			20 sec.		125			N/A	N/A	N/A										525 hit points, light damage	1
@@ -60,7 +60,7 @@
 		Divine Shield is an invincibility spell. You can cast this and the enemy cannot harm your Paladin until the spell wears off. 
 		Creeps will ignore the user.
 
-	//"thorns_aura"
+	//"thorns_aura"				DONE
 		"An aura that gives friendly units around the Keeper of the Grove a damage shield, which wounds enemy melee attackers."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect					Hero Level Req
 		1		Unlimited		N/A	None	N/A					90			Air, Ground, Friend, Self	Reflects 10% of melee damage	1

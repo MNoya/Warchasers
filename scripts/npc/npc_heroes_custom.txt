@@ -10,8 +10,8 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"magnataur_shockwave"
 		"Ability2"					"brewmaster_thunder_clap"
-		"Ability3"					"sven_warcry"  //Needs custom skill
-		"Ability4"					"alchemist_chemical_rage"
+		"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs custom skill -- DONE
+		"Ability4"					"warchasers_optimusprimo_avatar"
 
 		"StatusHealth"				"1500"
 		"StatusHealthRegen"			"322"
@@ -61,7 +61,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"omniknight_purification"
 		"Ability2"					"lycan_summon_wolves" //Needs custom
-		"Ability3"					"invoker_forge_spirit"
+		"Ability3"					"warchasers_beast_knight_summon_water_elemental"
 		"Ability4"					"warlock_rain_of_chaos"
 
 		"StatusHealth"				"1500"
@@ -93,10 +93,10 @@
 		"override_hero"				"npc_dota_hero_templar_assassin"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"lone_druid_spirit_bear_entangle"  //Needs custom
+		"Ability1"				"warchasers_assassin_entangle"  //Needs custom -- DONE
 		"Ability2"				"roshan_bash"	
 		"Ability3"				"sven_storm_bolt"	
-		"Ability4"				"warchasers_starfall" //Needs custom
+		"Ability4"				"warchasers_starfall" //Needs custom -- done custom
 		"Ability5"				""	
 
 		"StatusHealth"				"1500"
@@ -111,9 +111,9 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"				"clinkz_wind_walk"	
-		"Ability2"				"omniknight_repel"	
-		"Ability3"				"centaur_return"	
-		"Ability4"				"witch_doctor_voodoo_restoration" //Needs custom	
+		"Ability2"				"warchasers_megatron_divine_shield"	
+		"Ability3"				"warchasers_megatron_thorns_aura"	
+		"Ability4"				"warchasers_megatron_tranquility" //Needs custom	-- DONE
 
 		"StatusHealth"				"1500"
 		"StatusHealthRegen"			"1"
