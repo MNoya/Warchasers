@@ -237,6 +237,7 @@ function SpawnDarkTrolls2(trigger)
         end
 end
 
+--
 
 function SpawnSmallSludges(trigger)
         local building = Entities:FindByName(nil, "sludge_farm")
@@ -265,7 +266,7 @@ function SpawnTreants1(trigger)
 end
 
 function SpawnTreants2(trigger)
-        local building = Entities:FindByName(nil, "treant_farm1")
+        local building = Entities:FindByName(nil, "treant_farm2")
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_treant")
                 ability:SetContextThink("SpawnLoop", function() 
@@ -280,25 +281,12 @@ end
 function SpawnKobolds(trigger)
         local building = Entities:FindByName(nil, "kobold_farm1")
         if building ~= nil then
-                local ability = building:FindAbilityByName("kobold_tunneler")
+                local ability = building:FindAbilityByName("spawn_kobold_tunneler")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 ability:CastAbility() 
                                 end 
                         return 3 
-                end, 1)
-        end
-end
-
-function SpawnMediumSludges(trigger)
-        local building = Entities:FindByName(nil, "sludge_ziggurat")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("kobold_tunneler")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
-                                end 
-                        return 6 
                 end, 1)
         end
 end
@@ -330,7 +318,7 @@ function SpawnArchers2(trigger)
 end
         
 function SpawnIceTrolls(trigger)
-        local building = Entities:FindByName(nil, "ice_troll_hut")
+        local building = Entities:FindByName(nil, "ice_hut")
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_ice_priest")
                 ability:SetContextThink("SpawnLoop", function() 
@@ -341,10 +329,24 @@ function SpawnIceTrolls(trigger)
                 end, 1)
         end
 end
+
+function SpawnMediumSludges(trigger)
+        local building = Entities:FindByName(nil, "sludge_ziggurat")
+        if building ~= nil then
+                local ability = building:FindAbilityByName("spawn_medium_sludge")
+                ability:SetContextThink("SpawnLoop", function() 
+                        if ability:IsFullyCastable() then 
+                                ability:CastAbility() 
+                                end 
+                        return 4 
+                end, 1)
+        end
+end
+
 function SpawnWizards(trigger)
         local building = Entities:FindByName(nil, "wizard_hut")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ice_priest")
+                local ability = building:FindAbilityByName("spawn_wizard")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 ability:CastAbility() 
@@ -357,7 +359,7 @@ end
 function SpawnHellhounds1(trigger)
         local building = Entities:FindByName(nil, "hell_hut1")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_hellhound")
+                local ability = building:FindAbilityByName("spawn_fellhound")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 ability:CastAbility() 
@@ -370,7 +372,7 @@ end
 function SpawnHellhounds2(trigger)
         local building = Entities:FindByName(nil, "hell_hut2")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_big_sludge")
+                local ability = building:FindAbilityByName("spawn_fellhound")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 ability:CastAbility() 
@@ -396,7 +398,7 @@ end
 function SpawnBigSludges2(trigger)
         local building = Entities:FindByName(nil, "sludge_tent2")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_hellhound")
+                local ability = building:FindAbilityByName("spawn_big_sludge")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 ability:CastAbility() 

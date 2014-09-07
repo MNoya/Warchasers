@@ -5,7 +5,6 @@ require( "camera")
 require( "abilities" )
 
 
-
 if Convars:GetBool("developer") == true then
 	require( "developer" )
 end
@@ -150,6 +149,12 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 	local item = CreateItem("item_ankh", hero, hero)
 	hero:AddItem(item)
+
+
+	local item = CreateItem("item_key1", hero, hero)
+	hero:AddItem(item)
+
+	
 end
 
 
