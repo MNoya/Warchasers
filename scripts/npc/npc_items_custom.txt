@@ -1179,7 +1179,7 @@
 				"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 				//"Properties" MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
-				"EffectName" 				"particles/items_fx99/black_king_bar_avatar.vpcf"
+				"EffectName" 				"particles/items_fx/black_king_bar_avatar.vpcf"
 				"EffectAttachType"			"attach_hitloc"
 			}
 

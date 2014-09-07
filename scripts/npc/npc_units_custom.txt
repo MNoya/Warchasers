@@ -362,7 +362,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"25"		// ~60 Reduction
+		"ArmorPhysical"				"5"		// 
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -1339,7 +1339,7 @@
 	"npc_juggernaut_tower"
 	{
 			// General
-			"BaseClass"					"npc_dota_base"	// Class of entity of link to.
+			"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 			"Model"						"models/props_structures/boat_dragonknight.vmdl"// Model.
 			"SoundSet"					"Tower.Water"					// Name of sound set.
 			"Level"						"1"
@@ -1369,8 +1369,8 @@
 			"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 			"AttackRate"				"1"			// Speed of attack.
 			"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-			"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
-			"AttackRange"				"1200"		// Range within a target can be attacked.
+			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+			"AttackRange"				"1000"		// Range within a target can be attacked.
 			"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1000"		// Speed of projectile.
 	
@@ -1409,8 +1409,8 @@
 			
 			// Vision
 			//----------------------------------------------------------------
-			"VisionDaytimeRange"		"1200"		// Range of vision during day light.
-			"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+			"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+			"VisionNighttimeRange"		"1000"		// Range of vision at night time.
 	}
 
 
