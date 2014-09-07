@@ -6,7 +6,7 @@ Item Skills
 Lose condition (everyone dead, no Ankhs)
 
 - Triggers -
-CheckForKey on Doors (almost done, needs testing)
+CheckForKey on Doors (Done, need to add the drop to the world and extend 2 more)
 Heaven&Hell Teleporter only one and once, for every player.
 OnKill Cherubin -> Teleport Hell
 Enable Item dropping on Death (code done, needs to be added to every player)
@@ -14,7 +14,7 @@ OnNPCSpawned Hero give Ankh at the start (almost done, needs testing)
 Many custom drop rules
 
 - Mapping -
-Finish adding every spawner
+Finish adding every spawner (Done, made map backup)
 Finish unit placing port
 Sheep secret area
 Add Pyramids, Pillars, Lanterns, Light Sources.
