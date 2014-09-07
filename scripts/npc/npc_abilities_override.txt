@@ -3,8 +3,55 @@
 // Dota Abilities Override File
 "DOTAAbilities"
 {	
-	
+	"juggernaut_blade_fury"
+		{
+		"MaxLevel"						"1"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"200"
+		"AbilityDamage"					"110"
+		}
 
+
+	"harpy_storm_chain_lightning" //seletrous chain lightning
+		{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"initial_damage"		"85 125 180"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"jump_range"			"500"
+				}
+			"03"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25"
+				}
+			"04"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"damage_percent_loss"	"7.0"
+				}
+			"05"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"max_targets"			"4 6 8"
+				}
+			}
+		}
 
 	"mirana_starfall"
 		{

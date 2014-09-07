@@ -1,6 +1,48 @@
 print("Abilities are loading")
 
 
+
+
+
+function warchasers_blade_berserker_immolation_function( event )
+	if event.caster:GetMana() >= 7 then
+		event.caster:SpendMana( 7, event.ability)
+		for key, unit in pairs(event.target_entities) do
+			ApplyDamage({
+						victim = unit,
+						attacker = event.caster,
+						damage = 5 + 5 * event.ability:GetLevel(),
+						damage_type = DAMAGE_TYPE_MAGICAL
+						})
+		end
+	else
+		event.ability:ToggleAbility()
+	end
+end
+
+function warchasers_muhrah_animate_dead_killer( event )
+	event.caster:Kill(event.abilty, event.caster)
+end
+
+
+function warchasers_muhrah_animate_dead_ini( event )
+	local owner = event.caster
+	local player_id = event.caster:GetPlayerID()
+	local team_id = event.caster:GetTeamNumber()
+	local number_of_resurrections = 0
+	for number, unit in pairs(event.target_entities) do
+		if unit:IsAlive() == false and number_of_resurrections < 7 then
+			unit:SetOwner(owner)
+			unit:SetControllableByPlayer(player_id, true)
+			unit:SetTeam(team_id)
+			unit:RespawnUnit()
+			unit:AddAbility("warchasers_muhrah_animate_dead_helper")
+			unit:FindAbilityByName("warchasers_muhrah_animate_dead_helper"):SetLevel(1)
+			number_of_resurrections = number_of_resurrections + 1
+		end
+	end
+end
+
 function unit_hurt_container( event )
 	local attacker = EntIndexToHScript(event.entindex_attacker)
 	local target = EntIndexToHScript(event.entindex_killed)

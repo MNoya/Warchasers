@@ -72,13 +72,13 @@
 		"Causes a rain of healing energy to pour down in a large area, healing friendly allied units for 20 hit points per second."
 
 	//MumRah
-	//"animate_dead"
+	//"animate_dead"	DONE
 		"Raises 6 dead units in an area to fight for the Death Knight. Animated units are invulnerable."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
 		N/A		40 sec.			180 sec.	175			40		90					Ground, Dead			Raises Dead Units	6
 
 	//Skeletorus
-	//"chain_lightning"
+	//"chain_lightning"	DONE
 		"Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect						Hero Level Req
 		1		N/A				9 sec.		120			70		50				Air, Ground, Enemy, Neutral		85 damage, jumps 4 times	1
@@ -88,7 +88,7 @@
 		Else just Zeus chain and ignore 'each jump deals less damage'.
 
 	//BladeBerserker
-	//"immolation"
+	//"immolation"		DONE
 		"Engulfs the Demon Hunter in flames, causing damage to nearby enemy land units. Drains mana until deactivated."
 
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect			Hero Level Req
@@ -97,7 +97,7 @@
 		3		N/A		N/A					35 + 7/sec	N/A			16			Ground, Enemy, Neutral, Organic	20 damage/sec	5
 		Toggle
 
-	//"bladestorm"
+	//"bladestorm"	DONE (not possible to change duration)
 		"Causes a bladestorm of destructive force around the Blademaster, rendering him immune to magic and dealing 110 damage per second to nearby enemy units."
 		Level	Duration (Hero)	Cooldown	Mana Cost	Range	Area of Effect		Allowed Targets				Effect					Hero Level Req
 		N/A		7 sec.			180 sec.	200			N/A			N/A				Ground, Enemy, Neutral		110 damage per second	6

@@ -27,9 +27,9 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"abaddon_death_coil"
-		"Ability2"					"ember_spirit_flame_guard" //Needs custom skill
+		"Ability2"					"warchasers_blade_berserker_immolation" //Needs custom skill	DONE
 		"Ability3"					"centaur_khan_endurance_aura"
-		"Ability4"					"juggernaut_blade_dance" //Needs custom skill
+		"Ability4"					"juggernaut_blade_fury" //Needs custom skill	DONE
 
 		"StatusHealth"				"2200"
 		"StatusHealthRegen"			"25"
@@ -79,7 +79,7 @@
 		"Ability1"					"lich_frost_nova"
 		"Ability2"					"bane_nightmare"
 		"Ability3"					"skeleton_king_vampiric_aura"
-		"Ability4"					"dark_troll_warlord_raise_dead" //Needs custom
+		"Ability4"					"warchasers_muhrah_animate_dead" //Needs custom	DONE
 		"Ability5"					""
 
 		"StatusHealth"				"1500"

@@ -1,6 +1,14 @@
 --development functions
 print("developer loading")
 
+
+
+function table_printer( event )
+	DeepPrintTable(event, nil, false)
+end
+
+
+
 function log_npc( event )
 	local index = event.entindex
 	local unit = EntIndexToHScript(index)

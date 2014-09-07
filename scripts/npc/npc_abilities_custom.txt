@@ -4,6 +4,108 @@
 	"Version"		"1"
 
 
+	"warchasers_blade_berserker_immolation"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"    "ember_spirit_flame_guard"
+		"AbilityManacost" "35"
+		"OnToggleOn"
+			{
+			"ApplyModifier"
+				{
+				"Target"	"CASTER"
+				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
+				}
+			}
+		"OnToggleOff"
+			{
+			"RemoveModifier"
+				{
+				"Target"	"CASTER"
+				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
+				}
+			}
+		"Modifiers"
+			{
+			"warchasers_blade_berserker_immolation_buff"
+				{
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_blade_berserker_immolation_function"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"160"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
+		}
+
+	"warchasers_muhrah_animate_dead_helper"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
+		"Modifiers"
+			{
+			"warchasers_muhrah_animate_dead_helper_timer"
+				{
+				"Passive"	"1"
+				"IsPurgable"	"0"
+				"Duration"	"40"
+				"States"
+					{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_muhrah_animate_dead_killer"
+						}
+					}
+				}
+			}
+		}
+
+	"warchasers_muhrah_animate_dead"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
+		"AbilityCooldown" "180"
+		"AbilityManacost" "175"
+		"OnSpellStart"
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"warchasers_muhrah_animate_dead_ini"
+				"Target"
+					{
+					"Center"	"CASTER"
+					"Radius"	"400"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+					"Types"	"DOTA_UNIT_TARGET_BASIC"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+				}
+			}
+		}
+
 	"warchasers_megatron_thorns_aura"
 		{
 		"BaseClass" "ability_datadriven"
