@@ -1,6 +1,6 @@
 TO DO
 - General -
-Hero Stats, Skills, Tooltips
+Hero Stats, Skills (done, need to check the rest), Tooltips
 Creep Skills, AI
 Item Skills
 Lose condition (everyone dead, no Ankhs)
@@ -10,8 +10,8 @@ CheckForKey on Doors (Done, need to add the drop to the world and extend 2 more)
 Heaven&Hell Teleporter only one and once, for every player.
 OnKill Cherubin -> Teleport Hell
 Enable Item dropping on Death (code done, needs to be added to every player)
-OnNPCSpawned Hero give Ankh at the start (almost done, needs testing)
-Many custom drop rules
+OnNPCSpawned Hero give Ankh at the start (done)
+Many custom drop rules (done, needs extensive testing)
 
 - Mapping -
 Finish adding every spawner (Done, made map backup)
