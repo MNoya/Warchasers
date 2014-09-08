@@ -263,10 +263,101 @@
 		
 		"Ability1"					"spawn_murloc"			// Ability 1.
 		"Ability2"					"spawn_ghoul"			// Ability 2.
-		"Ability3"					"spawn_ranged_troll"			// Ability 3.
-		"Ability4"					"structure_thinker"			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability3"					"spawn_ranged_troll"	// Ability 3.
+		"Ability4"					"drop_tome"				// Ability 4.
+		"Ability5"					"drop_extra_tome"		// Ability 5.
+		"Ability6"					""						// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			//
+		"MagicalResistance"			"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"			// Speed of attack.
+		"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_BUILDING"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"150"
+		"HealthBarOffset"			"300"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"125"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	}
+
+	//=================================================================================
+	// Building: Gnoll Hut 2 (125HP 0 Fortified Armor) -2nd miniboss fight
+	//=================================================================================
+	"npc_darktrollarcher_hut"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_building"	
+		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
+		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"ModelScale"				"0.7"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"spawn_ranged_troll"			// Ability 1.
+		"Ability2"					""						// Ability 2.
+		"Ability3"					""					// Ability 3.
+		"Ability4"					""				// Ability 4.
+		"Ability5"					"drop_tome"		// Ability 5.
+		"Ability6"					"drop_level4"						// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -354,11 +445,11 @@
 		"Ability1"					"spawn_gnoll"			// Ability 1.
 		"Ability2"					"spawn_small_sludge"	// Ability 2.
 		"Ability3"					"spawn_treant"			// Ability 3.
-		"Ability4"					"spawn_burning_archer"	// Ability 4.
-		"Ability5"					"spawn_kobold_tunneler"	// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability4"					"spawn_kobold_tunneler"	// Ability 4.
+		"Ability5"					""						// Ability 5.
+		"Ability6"					"drop_tome"			// Ability 6 - Extra.
+		"Ability7"					"drop_level2"			// Ability 7 - Extra.
+		"Ability8"					"drop_extra_tome"			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -426,6 +517,8 @@
 		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
+	//Might split in 2 farms, one that gives lvl3+lvl2 items after the teleporter
+
 	//=================================================================================
 	// Building: Forest Troll Hut
 	//=================================================================================
@@ -445,9 +538,9 @@
 		"Ability1"					"spawn_medium_satyr"			// Ability 1.
 		"Ability2"					"spawn_golem"			// Ability 2.
 		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability4"					"drop_tome"			// Ability 4.
+		"Ability5"					"drop_extra_tome"			// Ability 5.
+		"Ability6"					"drop_level2"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -533,13 +626,13 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"spawn_ghoul"			// Ability 1.
-		"Ability2"					"spawn_ghoul_fast"		// Ability 2.
-		"Ability3"					"spawn_medium_sludge"			// Ability 3.
+		"Ability2"					""		// Ability 2.
+		"Ability3"					"spawn_medium_sludge"			// Ability 3. Not Really used, need to investigate the crash
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability5"					"drop_level2"			// Ability 5.
+		"Ability6"					"drop_extra_level2"			// Ability 6 - Extra.
+		"Ability7"					"drop_level4"			// Ability 7 - Extra.
+		"Ability8"					"drop_tome"			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -608,7 +701,7 @@
 	}
 	
 	//=================================================================================
-	// Building: Book of Summoning Pedestal 1/50HP  
+	// Building: Book of Summoning Pedestal -Summons Mobs on death 
 	//=================================================================================
 	"npc_pedestal"
 	{
@@ -626,6 +719,96 @@
 		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"		// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"			// Speed of attack.
+		"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"0"			// Gold earned min.
+		"BountyGoldMax"				"0"			// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"60"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	}
+
+	//=================================================================================
+	// Building: Book of Summoning Pedestal  -Drops 2ndKey
+	//=================================================================================
+	"npc_pedestal2"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_rattletrap_cog"	//fix this
+		"Model"						"models/pedestal_lantern.vmdl"	// Model.
+		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"HealthBarOffset"			"200"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"drop_key2"			// Ability 1.
+		"Ability2"					"drop_level4"			// Ability 2.
+		"Ability3"					"drop_extra_level4"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -807,9 +990,9 @@
 		"Ability2"					"spawn_water_elemental"		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
+		"Ability5"					"drop_tome"			// Ability 5.
+		"Ability6"					"drop_level2"			// Ability 6 - Extra.
+		"Ability7"					"drop_level3"			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
@@ -898,10 +1081,10 @@
 		"Ability2"					"spawn_ice_priest"		// Ability 2.
 		"Ability3"					"spawn_wizard"			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability5"					"drop_level5"			// Ability 5.
+		"Ability6"					"drop_level4"			// Ability 6 - Extra.
+		"Ability7"					"drop_level3"			// Ability 7 - Extra.
+		"Ability8"					"drop_level2"			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -984,7 +1167,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"drop_red_drake"			// Ability 1.
 		"Ability2"					""		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -1165,8 +1348,8 @@
 		"Ability2"					"spawn_big_sludge"		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability5"					"drop_level4"			// Ability 5.
+		"Ability6"					"drop_level5"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -1257,8 +1440,8 @@
 		"Ability2"					""		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability5"					"drop_level4"			// Ability 5.
+		"Ability6"					"drop_extra_level4"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -1428,7 +1611,7 @@
 			// Abilities
 			//----------------------------------------------------------------
 			
-			"Ability1"					""			// Ability 1.
+			"Ability1"					"drop_level2"			// Ability 1.
 			"Ability2"					""			// Ability 2.
 			"Ability3"					""			// Ability 3.
 			"Ability4"					""			// Ability 4.
@@ -1907,8 +2090,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"                                      ""                      // Ability 1 Endurance Aura
-		"Ability2"                                      ""                      // Ability 2
-		"Ability3"                                      ""                      // Ability 3
+		"Ability2"                                      "drop_tome"                      // Ability 2
+		"Ability3"                                      "drop_extra_tome"                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
 
 		// Armor
@@ -1988,8 +2171,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"                                      ""                      // Ability 1
-		"Ability2"                                      ""                      // Ability 2
+		"Ability1"                                      "drop_tome"                      // Ability 1
+		"Ability2"                                      "drop_level2"                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
 
@@ -2068,7 +2251,7 @@
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability5"					"drop_tome"			// Ability 5. MIGHT BE ABUSABLE LATER
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -2321,6 +2504,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"2"								// Physical protection.
 
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_tome"			// Ability 5. MIGHT BE ABUSABLE LATER
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -2393,8 +2588,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"creature_aura_health_regen"			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"drop_tome"			// Ability 3
+		"Ability4"					"drop_extra_tome"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -2628,7 +2823,14 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"drop_key1"			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -2807,7 +3009,7 @@
 		"Ability1"					""			// Ability 1. INNER FIRE
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"drop_potion_of_healing"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -2984,7 +3186,7 @@
 		"Ability1"					""			// Ability 1. Blizzard?
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"drop_level3"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3278,8 +3480,8 @@
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability5"					"drop_tome"			// Ability 5.
+		"Ability6"					"drop_extra_tome"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -3450,10 +3652,10 @@
 		
 		"Ability1"					""			// Ability 1. INNER FIRE
 		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
+		"Ability3"					"drop_tome"			// Ability 3.
+		"Ability4"					"drop_extra_tome"			// Ability 4.
+		"Ability5"					"drop_level2"			// Ability 5.
+		"Ability6"					"drop_extra_level2"			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
@@ -4120,6 +4322,13 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4360,7 +4569,12 @@
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_tome"			// Ability 5.
+		"Ability6"					"drop_extra_tome"			// Ability 6 - Extra.
+		"Ability7"					"drop_level3"			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4436,7 +4650,11 @@
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_level6"			// Ability 5.
+		"Ability6"					"drop_extra_level6"			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4607,10 +4825,11 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"drop_level5"			// Ability 1
+		"Ability2"					"drop_tome"			// Ability 2
+		"Ability3"					"drop_extra_tome"			// Ability 3
+		"Ability4"					"drop_level4"			// Ability 4
+
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4767,6 +4986,13 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_tome_lowchance"			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4844,7 +5070,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"drop_level_3"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5014,7 +5240,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"drop_level3"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -5096,9 +5322,9 @@
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
+		"Ability5"					"drop_level3"			// Ability 5.
+		"Ability6"					"drop_level2"			// Ability 6 - Extra.
+		"Ability7"					"drop_tome"			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
@@ -5282,6 +5508,10 @@
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
+		"Ability5"					"drop_level4"			// Ability 5.
+		"Ability6"					"drop_extra_level4"			// Ability 6 - Extra.
+		"Ability7"					"drop_level2"			// Ability 7 - Extra.
+		"Ability8"					"drop_extra_level2"			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -5455,6 +5685,10 @@
 		"Ability2"                                      ""                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
+		"Ability5"					"drop_tome"			// Ability 5.
+		"Ability6"					"drop_level4"			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -5528,7 +5762,7 @@
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"drop_level3"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -5606,7 +5840,7 @@
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"drop_tome"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -5686,7 +5920,7 @@
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"drop_level7"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -5856,6 +6090,107 @@
 			}
 		}
 	}
+
+	//=================================================================================
+	// Creature: Necromancer Leader (Raise Dead) -Drops Demonic Figurine
+	//=================================================================================
+	"npc_big_necromancer"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/warlock/warlock.vmdl"	// Model.
+		"ModelScale"				"1.1"
+		"Level"						"2"
+		//"ConsideredHero"			"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1. 
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_demonic_figurine"			// Ability 5.
+		"Ability6"					"drop_level5"			// Ability 6 - Extra.
+		"Ability7"					"drop_extra_level5"			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		//"MagicalResistance"			"35"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"7"								// Damage range min.
+		"AttackDamageMax"			"10"								// Damage range max.
+		"AttackRate"				"1.6"								// Speed of attack.
+		"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"								// Range within a target can be acquired.
+		"AttackRange"				"600"								// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"				// Particle system model for projectile.
+		"ProjectileSpeed"			"800"								// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"25"		// Experience earn.
+		"BountyGoldMin"				"10"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"270"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+		
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_warlock.vsndevts"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"305"			// Base health.
+		"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+		"StatusMana"				"200"			// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+				
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "5594" } 
+				"Wearable2"	{ "ItemDef"	"5725" } 
+				"Wearable3" { "ItemDef"	"5730" }
+				"Wearable4" { "ItemDef"	"5726" } //demonomicon
+				"Wearable5" { "ItemDef"	"5727" }
+				"Wearable6" { "ItemDef"	"5729" }
+				
+			}
+		}
+	}
+
 
 	
 	//=================================================================================
@@ -6032,9 +6367,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"drop_level6"			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"drop_potion_of_healing"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6133,7 +6468,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -6209,7 +6544,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -6287,8 +6622,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"drop_level3"			// Ability 3
+		"Ability4"					"drop_level2"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6362,6 +6697,13 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1.
+		"Ability2"					""						// Ability 2.
+		"Ability3"					""					// Ability 3.
+		"Ability4"					""				// Ability 4.
+		"Ability5"					"drop_level3"		// Ability 5.
+		"Ability6"					"drop_level6"						// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6454,10 +6796,15 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_level8"			// Ability 5.
+		"Ability6"					"drop_potion_of_healing"			// Ability 6 - Extra.
+		"Ability7"					"drop_level3"			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
 
 		// Armor
 		//----------------------------------------------------------------
