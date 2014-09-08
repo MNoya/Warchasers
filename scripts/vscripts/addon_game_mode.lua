@@ -50,9 +50,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 	PrecacheResource(particle_folder,"particles/items_fx", context)
-	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
-	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
-	
+
 	
 end
 
@@ -65,7 +63,7 @@ end
 function Warchasers:InitGameMode()
 	print( "Starting to load gamemode..." )
 
-	--self:ReadDropConfiguration()
+	self:ReadDropConfiguration()
 	GameMode = GameRules:GetGameModeEntity()
 
 	GameMode:SetCameraDistanceOverride( 1000 )
@@ -91,7 +89,7 @@ function Warchasers:InitGameMode()
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-3136,2996,124)
-	local newItem = CreateItem("item_khadgars_gem", nil, nil)
+	local newItem = CreateItem("khadgars_gem", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-2940,3200,124)
@@ -151,19 +149,19 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 	local item = CreateItem("item_ankh", hero, hero)
 	hero:AddItem(item)
+
+
+	local item = CreateItem("item_key1", hero, hero)
+	hero:AddItem(item)
+
 	
 end
 
-function Warchasers:OnEntityKilled( event )
-	local killedUnit = EntIndexToHScript( event.entindex_killed )
-	print("1 mob dead")
-    --self:CheckForLootItemDrop( killedUnit )
-end  
 
---RANDOM ITEM DROPS --now done directly through datadriven KV
+--RANDOM ITEM DROPS
 
 -- Read and assign configurable keyvalues if applicable
---[[function Warchasers:ReadDropConfiguration()
+function Warchasers:ReadDropConfiguration()
 	local kv = LoadKeyValues( "scripts/maps/" .. GetMapName() .. ".txt" )
 	kv = kv or {} -- Handle the case where there is not keyvalues file
 
@@ -190,6 +188,11 @@ function Warchasers:ReadLootItemDropsConfiguration( kvLootDrops )
 	print("------------")
 end
 
+function Warchasers:OnEntityKilled( event )
+	local killedUnit = EntIndexToHScript( event.entindex_killed )
+	print("1 mob dead")
+    self:CheckForLootItemDrop( killedUnit )
+end  
 
 function Warchasers:CheckForLootItemDrop( killedUnit )
 	for key,itemDropInfo in pairs( self.vLootItemDropsList ) do
@@ -207,4 +210,38 @@ function Warchasers:CheckForLootItemDrop( killedUnit )
 			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
 		end
 	end
-end]]
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
