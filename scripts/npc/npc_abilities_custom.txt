@@ -58,7 +58,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_key2"
 						"ItemCount"					"1"
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -88,7 +88,9 @@
 						{
 						"Target"					"CASTER"
 						"ItemName"					"item_red_drake"
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -118,7 +120,8 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_potion_of_healing"
 						"ItemCount"					"1"
-						"SpawnRadius"		        "150"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -149,7 +152,8 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_demonic_figurine"
 						"ItemCount"					"1"
-						"SpawnRadius"		        "150"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -177,7 +181,7 @@
 		{
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "0" //Tome of Health is not working
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -188,7 +192,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -197,7 +201,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -208,7 +212,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -217,7 +221,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -228,7 +232,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -237,7 +241,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -248,7 +252,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -272,7 +276,7 @@
 		{
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "0"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -283,7 +287,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -292,7 +296,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -303,7 +307,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -312,7 +316,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -323,7 +327,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -332,7 +336,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "35"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -343,7 +347,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -378,7 +382,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -398,7 +402,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -418,7 +422,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -438,7 +442,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "200"
+						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
 					}
@@ -470,7 +474,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_botas"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -488,7 +492,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_gauntlets_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -506,7 +510,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_slippers_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -524,7 +528,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_mantle_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -542,7 +546,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_claws_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -560,7 +564,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_cloak_of_shadows"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -578,7 +582,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_rop_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -596,7 +600,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_gloves_15"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -629,7 +633,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_botas"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -647,7 +651,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_gauntlets_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -665,7 +669,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_slippers_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -683,7 +687,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_mantle_3"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -701,7 +705,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_claws_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -719,7 +723,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_cloak_of_shadows"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -737,7 +741,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_rop_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -755,7 +759,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_gloves_15"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -787,8 +791,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_potion_of_great_healing"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -805,8 +810,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_potion_of_great_mana"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -824,7 +830,8 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_potion_of_healing"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -857,8 +864,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_health_stone"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -876,7 +884,8 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_mana_stone"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -894,7 +903,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_vitality_pendant"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -912,7 +921,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_mana_pendant"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -930,7 +939,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_ror_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -948,7 +957,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_runed_bracers" 
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -966,7 +975,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_sobi"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -984,7 +993,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_claws_9"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1002,7 +1011,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_circlet_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1034,8 +1043,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_health_stone"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1052,8 +1062,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_mana_stone"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1071,7 +1082,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_vitality_pendant"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1089,7 +1100,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_mana_pendant"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1107,7 +1118,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_ror_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1125,7 +1136,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_runed_bracers" 
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1143,7 +1154,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_sobi"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1161,7 +1172,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_claws_9"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1179,7 +1190,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_circlet_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1212,7 +1223,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_shield_amulet"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1245,7 +1256,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_shield_amulet"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1278,7 +1289,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_ankh"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1295,8 +1306,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_healing_wards"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "3"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1313,8 +1325,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_red_drake"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "3"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1332,7 +1345,8 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_spiked_collar"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1349,8 +1363,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_stone_token"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1384,7 +1399,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_ankh"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1401,8 +1416,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_healing_wards"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "3"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1419,8 +1435,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_red_drake"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1438,7 +1455,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_spiked_collar"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1455,8 +1472,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_stone_token"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1489,8 +1507,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_talisman_of_the_wild"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1508,7 +1527,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_orb_of_frost"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 							"LaunchDuration"	        "0.5"
@@ -1526,7 +1545,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_orb_of_fire"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1544,7 +1563,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_claws_12"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1562,7 +1581,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_khadgars_gem"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1580,7 +1599,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_mana_gem" 
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1598,7 +1617,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_cloak_of_flames"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1616,7 +1635,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_battle_drums"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1634,7 +1653,7 @@
 						"Target"			"CASTER"
 						"ItemName"					"item_stormwind_horn"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1666,8 +1685,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_demonic_figurine"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1684,8 +1704,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_inferno_stone"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1703,7 +1724,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_belt_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1721,7 +1742,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_boots_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1739,7 +1760,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_robe_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1757,7 +1778,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_rop_4" 
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1789,8 +1810,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_demonic_figurine"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1807,8 +1829,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_inferno_stone"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1826,7 +1849,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_belt_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1844,7 +1867,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_boots_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1862,7 +1885,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_robe_6"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1880,7 +1903,7 @@
 						"Target"					"CASTER"
 						"ItemName"					"item_rop_4" 
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1912,8 +1935,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_demonic_figurine"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -1925,7 +1949,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 9 Item = (add +5All Stats, 50%lifesteal, lightning orb)
+	// Drop Level 10 Item = (add +5All Stats, 50%lifesteal, lightning orb)
 	//=================================================================================================================
 	"drop_level10" //not used
 	{
@@ -1946,8 +1970,9 @@
 					{
 						"Target"					"CASTER"
 						"ItemName"					"item_demonic_figurine"
-						"ItemCount"					"1" 
-						"SpawnRadius"		        "150"
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "100"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 150"
 						"LaunchDuration"	        "0.5"
@@ -2553,7 +2578,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
-	            //"UnitLimit"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2581,6 +2606,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2608,38 +2634,11 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
 	}
-
-	"spawn_ghoul_fast"
-	{
-		"BaseClass" "ability_datadriven"
-
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityCastRange" "350"
-		"AbilityManaCost" "0"
-		"AbilityChannelTime" "2"
-		"AbilityCastPoint" "0"
-		"AOERadius"     "225"
-		
-		"OnSpellStart"
-		{
-		    
-	        "SpawnUnit"
-	        {
-	            "UnitName" "npc_ghoul"
-	            "UnitCount" "1"
-	            "SpawnRadius" "100"
-	            "Target" "CASTER"
-	            "GrantsGold" "1"
-	            "GrantsXP" "1"
-	        }   
-		
-		}
-	}
-
 
 	"spawn_medium_satyr"
 	{
@@ -2663,6 +2662,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2690,6 +2690,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2717,6 +2718,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2744,6 +2746,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 
 	        }   
 		
@@ -2772,6 +2775,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "40"
 	        }   
 		
 		}
@@ -2799,6 +2803,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2826,6 +2831,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2853,6 +2859,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2880,6 +2887,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2909,6 +2917,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2937,6 +2946,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2964,6 +2974,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -2991,6 +3002,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -3018,6 +3030,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -3045,6 +3058,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
@@ -3072,6 +3086,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
+	            "UnitLimit" "20"
 	        }   
 		
 		}
