@@ -35,11 +35,11 @@ end]] --needs testing and adding to every item, making sure items don't drop whi
 
 function Increase50HP( event )
     local casterUnit = event.caster
-    local casterLevel = casterUnit:GetLevel()
+    --local casterLevel = casterUnit:GetLevel()
+    --casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
+    --casterUnit:SetHealth( casterUnit:GetHealth() + 50 )
     casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
-    casterUnit:SetHealth( casterUnit:GetHealth() + 50 )
-    
-    --hero:ModifyHealth(hero:GetHealth()+50, hero, true, 50)
+    event.caster:ModifyHealth(casterUnit:GetMaxHealth()+50, event.caster, false, 0)
 end
 
 function HealthTomeUsed( event )
@@ -104,20 +104,85 @@ function CheckForKey(trigger)
                 end
 
                 local obstructions = Entities:FindByName(nil,"obstructions_2_1")
-                print("Obstructions disabled")
                 obstructions:SetEnabled(false,false)
 
                 local obstructions = Entities:FindByName(nil,"obstructions_2_2")
-                print("Obstructions disabled")
                 obstructions:SetEnabled(false,false)
     
                 local obstructions = Entities:FindByName(nil,"obstructions_2_3")
-                print("Obstructions disabled")
                 obstructions:SetEnabled(false,false)
 
                 local obstructions = Entities:FindByName(nil,"obstructions_2_4")
-                print("Obstructions disabled")
                 obstructions:SetEnabled(false,false)
+				print("Obstructions disabled")
+
+                hero:RemoveItem(Item)
+            end
+        end              
+    end
+end
+
+function CheckForKey2(trigger)
+    print("Checking for Key")
+    local hero = trigger.activator
+    local itemName = "item_key2"
+    if hero ~= nil then   
+        for itemSlot = 0, 5, 1 do
+            local Item = hero:GetItemInSlot( itemSlot )
+            if Item ~= nil and Item:GetName() == itemName then
+                print("Key detected")
+                local door = Entities:FindByName(nil, "gate_3")
+                if door ~= nil then
+                    print("Door detected")
+                    door:Kill()
+                end
+
+                local obstructions = Entities:FindByName(nil,"obstructions_3_1")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_3_2")
+                obstructions:SetEnabled(false,false)
+    
+                local obstructions = Entities:FindByName(nil,"obstructions_3_3")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_3_4")
+                obstructions:SetEnabled(false,false)
+                print("Obstructions disabled")
+
+                hero:RemoveItem(Item)
+            end
+        end              
+    end
+end
+
+function CheckForKey3(trigger)
+    print("Checking for Key")
+    local hero = trigger.activator
+    local itemName = "item_key3"
+    if hero ~= nil then   
+        for itemSlot = 0, 5, 1 do
+            local Item = hero:GetItemInSlot( itemSlot )
+            if Item ~= nil and Item:GetName() == itemName then
+                print("Key detected")
+                local door = Entities:FindByName(nil, "gate_6")
+                if door ~= nil then
+                    print("Door detected")
+                    door:Kill()
+                end
+
+                local obstructions = Entities:FindByName(nil,"obstructions_6_1")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_6_2")
+                obstructions:SetEnabled(false,false)
+    
+                local obstructions = Entities:FindByName(nil,"obstructions_6_3")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_6_4")
+                obstructions:SetEnabled(false,false)
+                print("Obstructions disabled")
 
                 hero:RemoveItem(Item)
             end

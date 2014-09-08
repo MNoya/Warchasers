@@ -784,7 +784,7 @@
 	{
 		"ID"							"1042"
 		"ItemCost"						"0"
-		"AbilityTextureName"			"item_key1"
+		"AbilityTextureName"			"item_key2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
 		"SecretShop"					"1"
@@ -877,8 +877,8 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"Increase50HP"
-				"Target"				"TARGET"
 				"Caster"				"CASTER"
+				//"Target"				"TARGET"
 			}
 			
 		}
@@ -916,8 +916,8 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"StrengthTomeUsed"
-				"Target"				"TARGET"
 				"Caster"				"CASTER"
+				//"Target"				"TARGET"
 			}
 			
 		}
@@ -955,8 +955,8 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"AgilityTomeUsed"
-				"Target"				"TARGET"
 				"Caster"				"CASTER"
+				//"Target"				"TARGET"
 			}
 			
 		}
@@ -994,8 +994,8 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"IntellectTomeUsed"
-				"Target"				"TARGET"
 				"Caster"				"CASTER"
+				//"Target"				"TARGET"
 			}
 			
 		}
@@ -1760,7 +1760,7 @@
 
 	    		//Test Effect
                 "EffectName" "particles/items_fx/aura_assault.vpcf" //add precache
-                "EffectAttachType" "follow_overhead"
+                "EffectAttachType" "follow_origin"
                 "EffectLifeDurationScale" "1"
                 "EffectColorA" "255 255 0"
 	   		}

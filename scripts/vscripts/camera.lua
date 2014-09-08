@@ -1,7 +1,7 @@
 --Camera Lock
 print("camera_ini")
 
-function camera_umlocker( hero )
+--[[function camera_umlocker( hero )
 	local player_id = hero:GetPlayerOwnerID()
 	PlayerResource:SetCameraTarget( player_id, nil)
 	return 2
@@ -22,6 +22,15 @@ function camera_lock_on_hero( event )
 			unit_spawned:SetContextThink( "camera_umlocker", camera_umlocker, 2)
 		end
 	end
-end	
+end	]]
 
 ListenToGameEvent( "npc_spawned", camera_lock_on_hero, nil )
+
+function increase_camera_height(trigger)
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
+end
+
+function decrease_camera_height(trigger)
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+end
+

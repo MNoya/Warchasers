@@ -21,6 +21,12 @@ function TeleporterHeaven(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        local messageinfo = {
+        message = "Some seconds in Heaven",
+        duration = 35
+        }
+        FireGameEvent("show_center_message",messageinfo) 
+        GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0) 
 end
 
 function TeleporterHell(trigger)
@@ -28,6 +34,11 @@ function TeleporterHell(trigger)
           FindClearSpaceForUnit(trigger.activator, point, false)
          trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        local messageinfo = {
+        message = "Some seconds in Hell",
+        duration = 45
+        }
+        FireGameEvent("show_center_message",messageinfo) 
 end
 
 function TeleporterBack(trigger)
@@ -42,4 +53,5 @@ function TeleporterSecret(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end

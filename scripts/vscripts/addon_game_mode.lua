@@ -1,7 +1,7 @@
 --dota_launch_custom_game warchasers warchasers
 
 --require( 'util' )
-require( "camera")
+--require( "camera") --drives me crazy, can't pick/drop items
 require( "abilities" )
 
 
@@ -52,6 +52,7 @@ function Precache( context )
 	PrecacheResource(particle_folder,"particles/items_fx", context)
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
+	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
 	
 	
 end
@@ -102,6 +103,24 @@ function Warchasers:InitGameMode()
 	local newItem = CreateItem("item_evasion", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
+    position = Vector(52,2145,128)
+	local newItem = CreateItem("item_key3", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+	
+	--[[global drops 
+		heaven
+			restoration scroll
+			animate scroll
+			orb of fire
+			evasion
+
+		hell
+			5potion of healing
+			spiked collar
+
+		secret area
+			gloves of haste (add many towers and sheeps)]]
+
     -- Remove building invulnerability
     print("Make buildings vulnerable")
     local allBuildings = Entities:FindAllByClassname('npc_dota_building')
@@ -120,6 +139,7 @@ function Warchasers:InitGameMode()
 
  	
 	print( "Done loading gamemode" )
+
 end
 
 
@@ -142,7 +162,10 @@ function Warchasers:OnNPCSpawned(keys)
 	
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
+		SendToConsole("dota_camera_lock 1")
+		SendToConsole("dota_camera_center")
 		Warchasers:OnHeroInGame(npc)
+		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 	end
 end
 
