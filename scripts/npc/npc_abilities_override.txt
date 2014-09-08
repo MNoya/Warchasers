@@ -1144,6 +1144,55 @@
 		"ItemDroppable"					"1"
 
 	}
+	
+	"item_belt_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_claws_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_claws_12"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_boots_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_rop_4"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_mana_gem"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_gloves_15"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
 
 
 

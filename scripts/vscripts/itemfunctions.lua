@@ -118,6 +118,8 @@ function CheckForKey(trigger)
                 local obstructions = Entities:FindByName(nil,"obstructions_2_4")
                 print("Obstructions disabled")
                 obstructions:SetEnabled(false,false)
+
+                hero:RemoveItem(Item)
             end
         end              
     end
