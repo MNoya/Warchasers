@@ -1,17 +1,15 @@
 --dota_launch_custom_game warchasers warchasers
 
 --require( 'util' )
---require( 'camera' ) --drives me crazy, can't pick/drop items
-require( 'abilities' )
-require( 'timers')
-require( 'teleport')
+require( "camera")
+require( "abilities" )
 
 
 if Convars:GetBool("developer") == true then
 	require( "developer" )
 end
 
-SENDHELL = false
+
 
 
 
@@ -52,10 +50,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 	PrecacheResource(particle_folder,"particles/items_fx", context)
-	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
-	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
-	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
-	
+
 	
 end
 
@@ -68,7 +63,7 @@ end
 function Warchasers:InitGameMode()
 	print( "Starting to load gamemode..." )
 
-	--self:ReadDropConfiguration()
+	self:ReadDropConfiguration()
 	GameMode = GameRules:GetGameModeEntity()
 
 	GameMode:SetCameraDistanceOverride( 1000 )
@@ -85,12 +80,16 @@ function Warchasers:InitGameMode()
 	print( "GameRules set" )
 
 	print("Dropping items on the world")
+	--[["item_allerias_flute"
+       "item_khadgars_gem"
+       "item_stormwind_horn"
+       "item_evasion"]]
     position = Vector(-2940,2996,124)
-	local newItem = CreateItem("item_allerias_flute", nil, nil)
+	local newItem = CreateItem("item_cloak_of_flames", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-3136,2996,124)
-	local newItem = CreateItem("item_khadgars_gem", nil, nil)
+	local newItem = CreateItem("khadgars_gem", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-2940,3200,124)
@@ -100,24 +99,6 @@ function Warchasers:InitGameMode()
     position = Vector(-3136,3200,124)
 	local newItem = CreateItem("item_evasion", nil, nil)
     CreateItemOnPositionSync(position, newItem)
-
-    position = Vector(52,2145,128)
-	local newItem = CreateItem("item_key3", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-	
-	--[[global drops 
-		heaven
-			restoration scroll
-			animate scroll
-			orb of fire
-			evasion
-
-		hell
-			5potion of healing
-			spiked collar
-
-		secret area
-			gloves of haste (add many towers and sheeps)]]
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -129,18 +110,6 @@ function Warchasers:InitGameMode()
         end
     end
     
-    print("Applying Unit Modifiers")
-    local source = Entities:FindByName(nil, "cherub1")
-    local target = Entities:FindByName(nil, "cherub1")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-	local source = Entities:FindByName(nil, "cherub2")
-    local target = Entities:FindByName(nil, "cherub2")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-    local source = Entities:FindByName(nil, "cherub3")
-    local target = Entities:FindByName(nil, "cherub3")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-
-
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
@@ -149,7 +118,6 @@ function Warchasers:InitGameMode()
 
  	
 	print( "Done loading gamemode" )
-
 end
 
 
@@ -172,12 +140,8 @@ function Warchasers:OnNPCSpawned(keys)
 	
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
-		SendToConsole("dota_camera_lock 1")
-		SendToConsole("dota_camera_center")
 		Warchasers:OnHeroInGame(npc)
-		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 	end
-
 end
 
 --Add Ankh
@@ -185,49 +149,19 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 	local item = CreateItem("item_ankh", hero, hero)
 	hero:AddItem(item)
+
+
+	local item = CreateItem("item_key1", hero, hero)
+	hero:AddItem(item)
+
 	
 end
 
-function Warchasers:OnEntityKilled( event )
-	local killedUnit = EntIndexToHScript( event.entindex_killed )
-	local killerEntity = EntIndexToHScript( event.entindex_attacker )
-	print("1 mob dead")
 
-    --if it's a cherubin, send to hell
-    if killedUnit:GetName()=="cherub1" or killedUnit:GetName()=="cherub2" or killedUnit:GetName()=="cherub3" then
-    	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
-        GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
-    	
-    	--send to hell
-    	SENDHELL = true
-    	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-        FindClearSpaceForUnit(killerEntity, point, false)
-        killerEntity:Stop()
-        SendToConsole("dota_camera_center")
-        local messageinfo = {
-        message = "Some seconds in Hell",
-        duration = 5
-        }
-        FireGameEvent("show_center_message",messageinfo)
-
-        --seconds later, teleport back
-        Timers:CreateTimer({
-	    	endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-	    	callback = function()
-	      		local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-        		FindClearSpaceForUnit(killerEntity, point, false)
-        		killerEntity:Stop()
-       			SendToConsole("dota_camera_center")
-       			print("Teleport Back")
-	    	end
-	    })
-    end
-end   
-
---RANDOM ITEM DROPS --now done directly through datadriven KV
+--RANDOM ITEM DROPS
 
 -- Read and assign configurable keyvalues if applicable
---[[function Warchasers:ReadDropConfiguration()
+function Warchasers:ReadDropConfiguration()
 	local kv = LoadKeyValues( "scripts/maps/" .. GetMapName() .. ".txt" )
 	kv = kv or {} -- Handle the case where there is not keyvalues file
 
@@ -254,6 +188,11 @@ function Warchasers:ReadLootItemDropsConfiguration( kvLootDrops )
 	print("------------")
 end
 
+function Warchasers:OnEntityKilled( event )
+	local killedUnit = EntIndexToHScript( event.entindex_killed )
+	print("1 mob dead")
+    self:CheckForLootItemDrop( killedUnit )
+end  
 
 function Warchasers:CheckForLootItemDrop( killedUnit )
 	for key,itemDropInfo in pairs( self.vLootItemDropsList ) do
@@ -271,4 +210,38 @@ function Warchasers:CheckForLootItemDrop( killedUnit )
 			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
 		end
 	end
-end]]
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

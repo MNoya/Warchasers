@@ -22,11 +22,25 @@ function TeleporterHeaven(trigger)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
         local messageinfo = {
-        message = "Some seconds in Heaven",
-        duration = 35
+            message = "Some seconds in Heaven",
+            duration = 30
         }
         FireGameEvent("show_center_message",messageinfo) 
-        GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0) 
+
+        GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0)
+
+        Timers:CreateTimer({
+            endTime = 30, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+            callback = function()
+                if SENDHELL == false then 
+                    local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
+                    FindClearSpaceForUnit(trigger.activator, point, false)
+                    trigger.activator:Stop()
+                    SendToConsole("dota_camera_center")
+                    print("Teleport Back")
+                end
+            end
+        })
 end
 
 function TeleporterHell(trigger)
@@ -36,17 +50,31 @@ function TeleporterHell(trigger)
         SendToConsole("dota_camera_center")
         local messageinfo = {
         message = "Some seconds in Hell",
-        duration = 45
+        duration = 5
         }
-        FireGameEvent("show_center_message",messageinfo) 
+        FireGameEvent("show_center_message",messageinfo)
+
+        GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
+        GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
+
+        Timers:CreateTimer({
+            endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+            callback = function()
+                    local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
+                    FindClearSpaceForUnit(trigger.activator, point, false)
+                    trigger.activator:Stop()
+                    SendToConsole("dota_camera_center")
+                    print("Teleport Back")
+            end
+        })
 end
 
-function TeleporterBack(trigger)
+--[[function TeleporterBack(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
-end
+end]]
 
 function TeleporterSecret(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()

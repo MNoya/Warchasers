@@ -25,11 +25,11 @@ function announce_level2(trigger)
 end
 
 function miniboss2_engage(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'>Ra'ADoom:</font> COME, HEROES!<br>COME AND CLAIM THE REWARD FOR YOUR SO CALLED HONOR!", 0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> COME, HEROES!<br>COME AND CLAIM THE REWARD FOR YOUR SO CALLED HONOR!", 0,0)
 end
 
 function miniboss2_dead(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'>Ra'ADoom:</font> UNTIL NEXT TIME...HEROES...", 0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> UNTIL NEXT TIME...HEROES...", 0,0)
 end
 
 function spiderhall_warning(trigger)
@@ -46,15 +46,17 @@ end
 
 
 function soulkeeper_warning0(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!<br>Still, you are entitled to your price. Step on a platform and let your hearts determine your prize...", 0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!", 0,0 )
+	GameRules:SendCustomMessage("Still, you are entitled to your price. Step on a platform and let your hearts determine your prize...", 0,0)
 end
 
 function soulkeeper_warning1(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'Soul Keeper:</font> Have you forgotten your previous deeds among the living?!<br>Your hearts have been weighed, and only Hell waits for you now!", 0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
+	GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
 end 
 
 function soulkeeper_warning2(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far! However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
+	GameRules:SendCustomMessage(" <font color='#DBA901'>Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far! However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
 end
 
 function circle_zapsappers(trigger)
@@ -68,15 +70,15 @@ end
 --SUCESS (blue) [on both]
 
 function soulkeeper_warning3(trigger)
-	GameRules:SendCustomMessage("<font color='#DBA901'Soul Keeper:</font> CURSE YOU! Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
 end
 
 function boss_engage(trigger)
-	GameRules:SendCustomMessage("<font color='#DBA901'Soul Keeper:</font>  So you dare to challenge the Shadow Lord? I will feast on your lost souls and show you no mercy!! <br>Come and accept your fate!",0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font>  So you dare to challenge the Shadow Lord? <br>I will feast on your lost souls and show you no mercy!!<br>Come and accept your fate!",0,0)
 end
 
 function boss_dead(trigger)
-	GameRules:SendCustomMessage("BEHOLD WARRIORS!! You have succeeded in defeating the Shadow Lord!!<br>After an eternity, your quest to redeem your lost souls is over. Indeed you truely are Heroes!<br>Your souls might now move on and finally give you peace.",0,0)
+	GameRules:SendCustomMessage("BEHOLD WARRIORS!!<br>You have succeeded in defeating the Shadow Lord!!<br>After an eternity, your quest to redeem your lost souls is over.<br>Indeed you truely are Heroes!<br>Your souls might now move on and finally give you peace.",0,0)
 end
 
 --custom hints for teleporters and spawners

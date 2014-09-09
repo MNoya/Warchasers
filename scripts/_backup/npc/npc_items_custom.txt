@@ -29,8 +29,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
 		"SecretShop"					"1"
-		
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 
 		"BaseClass" "item_aegis"
 		"AbilitySpecial"
@@ -56,8 +54,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"0"
 		"SecretShop"					"1"
-		
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 
 		"BaseClass" "item_aegis"
 		"AbilitySpecial"
@@ -77,13 +73,10 @@
 
 	"item_mana_pendant"
 	{
-		"ID"		"1010"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+		"ID"		"1010" 
 		"BaseClass" "item_energy_booster"
 		"AbilityTextureName" 	"item_mana_pendant"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"consumables"
 		"AbilitySpecial"
 		{
@@ -98,9 +91,6 @@
     "item_vitality_pendant"
     {
     	"ID"		"1011"
-		
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_vitality_booster"
 		"AbilityTextureName" "item_vitality_pendant"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -122,8 +112,6 @@
 	{
 		"ID"							"1012"
 		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" 	"item_lifesteal"
 		"AbilityTextureName"			"item_mask_of_death"
 		"SideShop" "1"
@@ -144,8 +132,6 @@
 	{
 		"ID"							"1013"
 		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_gauntlets_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" "item_gauntlets"
@@ -162,34 +148,9 @@
 
 	}
 
-	"item_belt_6"
-	{
-		"ID"							"1113"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"AbilityTextureName"			"item_belt_6"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass" "item_gauntlets"
-		"SideShop" "1"
-		"SecretShop" "1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_strength" "6"
-			}
-		}
-
-	}
-
 	"item_claws_3"
 	{
 		"ID"							"1014"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName" "item_claws_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -207,35 +168,9 @@
 		}
 	}
 
-	"item_claws_6"
-	{
-		"ID"							"1114"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"BaseClass" "item_blades_of_attack"
-		"AbilityTextureName" "item_claws_6"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SideShop" "1"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "6"
-			}
-		}
-	}
-
-
 	"item_claws_9"
 	{
 		"ID"							"1015"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName"			"item_claws_9"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -252,35 +187,9 @@
 		}
 	}
 
-	"item_claws_12"
-	{
-		"ID"							"1115"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"BaseClass" "item_blades_of_attack"
-		"AbilityTextureName" "item_claws_12"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemQuality"					"consumables"
-		"SideShop" "1"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "12"
-			}
-		}
-	}
-
 	"item_robe_6"
 	{
 		"ID"							"1016"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_robe"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_robe_6"
@@ -300,12 +209,9 @@
     "item_ror_2"
     {
     	"ID"							"1017"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_ring_of_regen"
+
     	"AbilityTextureName"			"ror_2"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
     	"SideShop" "0"
 		"SecretShop" "1"
 
@@ -322,9 +228,6 @@
 	"item_mantle_3"
 	{
 		"ID"							"1018"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_mantle"
 		"AbilityTextureName" "item_mantle_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -342,15 +245,13 @@
     "item_slippers_3"
     {
     	"ID"							"1019"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_slippers"
 		"AbilityTextureName" "item_slippers_3"
 		"SideShop" "0"
 		"SecretShop" "1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"attributes"
 		"AbilitySpecial"
 		{
@@ -362,40 +263,16 @@
 		}
 	}
 
-	"item_boots_6"
-    {
-    	"ID"							"1119"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"BaseClass" "item_slippers"
-		"AbilityTextureName" "item_slippers_6"
-		"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_agility" "6"
-			}
-		}
-	}
-
     "item_botas"
     {
     	"ID"							"1020"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_boots"
     	"AbilityTextureName" "item_botas"
     	"SideShop" "0"
 		"SecretShop" "1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -409,9 +286,6 @@
     "item_rop_2"
     {
     	"ID"							"1021"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_ring_of_protection"
     	"AbilityTextureName" "item_rop_2"
     	"SideShop" "0"
@@ -428,34 +302,9 @@
 		}
     }
 
-    "item_rop_4"
-    {
-    	"ID"							"1121"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-    	"BaseClass" "item_ring_of_protection"
-    	"AbilityTextureName" "item_rop_2"
-    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_armor" "4"
-			}
-		}
-    }
-
     "item_sobi"
     {
     	"ID"							"1022"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_sobi_mask"
     	"AbilityTextureName" "item_sobi"
     	"SideShop" "0"
@@ -475,14 +324,10 @@
     "item_khadgars_gem"
     {
 		"ID"							"1023"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_vitality_booster"
     	"AbilityTextureName" "item_khadgars_gem"
     	"SideShop" "0"
 		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -494,34 +339,9 @@
 		}
 	}
 
-	"item_mana_gem"
-    {
-		"ID"							"1123"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-    	"BaseClass" "item_venergy_booster"
-    	"AbilityTextureName" "item_mana_gem"
-    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_mana" "300"
-			}
-		}
-	}
-
     "item_evasion"
     {
     	"ID"							"1024"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_vitality_booster"
     	"AbilityTextureName" "item_evasion"
     	"SideShop" "0"
@@ -542,9 +362,6 @@
     "item_orb_of_frost" //rewrite datadriven for ranged on air units
     {
     	"ID" "1025"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_skadi"
     	"AbilityTextureName" "item_orb_of_frost"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -593,9 +410,6 @@
     "item_orb_of_fire" //rewrite datadriven for ranged on air units, cleave, spell damage
     {
     	"ID" "1026"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
     	"BaseClass" "item_desolator"
     	"AbilityTextureName" "item_orb_of_fire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -625,8 +439,6 @@
     "item_battle_drums" //rewrite datadriven for no charge/no stats
     {
     	"ID" "1027"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
     	
     	"AbilityTextureName" "item_battle_drums"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -683,9 +495,6 @@
     "item_cloak_of_shadows" //rewrite datadriven
 	{
 		"ID"		"1028"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"BaseClass" "item_shadow_amulet"
 		"AbilityTextureName"			"item_cloak_of_shadows"
 		"SideShop" "0"
@@ -709,9 +518,6 @@
     "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
     {
     	"ID"		"1029"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_cloak_of_flames"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "1"
@@ -741,9 +547,6 @@
     "item_runed_bracers" //Cloak 33%
     {
 		"ID"		"1030"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_runed_bracers"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -768,9 +571,6 @@
 	"item_shield_amulet" //Linken 40sec
 	{
 		"ID"		"1031"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_shield_amulet"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -808,40 +608,6 @@
 		}
 	}
 
-	"item_gloves_15"
-	{	
-		"ID"		"1032"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"BaseClass" "item_gloves"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_attack_speed" "15"
-			}
-		}
-	}
-
-	"item_circlet_2"
-	{
-		"ID"		"1033"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"BaseClass" "item_circlet"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_all_stats" "2"
-			}
-		}
-	}
-
 
   
 	 
@@ -853,8 +619,6 @@
 	{
 		"ID"							"1041"
 		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_key1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
@@ -862,8 +626,6 @@
 		"ItemKillable"                  "0"
 		"ItemSellable"                  "0"
 		"ItemDroppable"                 "1"
-
-		"Model"							"models/props_debris/merchant_debris_key001.vmdl"
 
 		"BaseClass" "item_datadriven"
 	
@@ -873,9 +635,7 @@
 	{
 		"ID"							"1042"
 		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
-		"AbilityTextureName"			"item_key2"
+		"AbilityTextureName"			"item_key1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
 		"SecretShop"					"1"
@@ -890,8 +650,6 @@
 	{
 		"ID"							"1043"
 		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
 		"AbilityTextureName"			"item_key3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
@@ -906,12 +664,10 @@
 	"item_inferno_stone"
 	{
 		"ID"                            "1050"
-		"ItemCost"						"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"            "item_inferno_stone" 
+		"AbilityTextureName"            "item_inferno_stone"
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -927,8 +683,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -936,7 +691,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 	}
 	
@@ -949,7 +705,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_health"
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -966,14 +721,15 @@
 
 		"OnEquip"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"Increase50HP"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 	}
@@ -986,7 +742,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		//"Model"							"models/red_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -1003,14 +759,15 @@
 
 		"OnEquip"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"StrengthTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 	}
@@ -1023,7 +780,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		//"Model"							"models/green_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -1040,14 +797,15 @@
 
 		"OnEquip"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"AgilityTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 	}
@@ -1060,7 +818,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		//"Model"							"models/blue_book.vmdl"
 		"ItemKillable"					"1"
 		
 		// Item Info
@@ -1077,14 +835,15 @@
 
 		"OnEquip"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"				"IntellectTomeUsed"
+				"Target"				"TARGET"
+				"Caster"				"CASTER"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 	}
@@ -1099,7 +858,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve.vmdl" //Green
+		"Model"							"models/props_gameplay/salve_red.vmdl" //Green
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"potion_of_healing"
 		"ItemKillable"					"0"
@@ -1124,8 +883,6 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"		"itemfunctions.lua"
@@ -1139,7 +896,8 @@
 				"Target" 		"UNIT"
 				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 		// Special	
@@ -1149,7 +907,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"				"250"
+				"heal_amount"				"600"
 			}
 		}
 	}
@@ -1189,11 +947,9 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"custom_scripted_items.lua"
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
@@ -1204,71 +960,8 @@
 				"Target" 		"UNIT"
 				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
 			}
-			
-		}
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"				"500"
-			}
-		}
-	}
-
-	"item_potion_of_great_mana"
-	{
-		"ID"							"1156"
-
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve_blue.vmdl"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_potion_of_great_mana"
-		"ItemKillable"					"0"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"8.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"1"
-		"SecretShop" "1"
-
-		"OnSpellStart"
-		{
 			"SpendCharge"
 			{}
-			"RunScript"
-			{
-				"ScriptFile"		"itemfunctions.lua"
-				"Function"			"ReplenishMana"
-				"Target"			"UNIT"
-				"heal_amount"		"%mana_amount"
-
-			}
-			"FireSound"
-			{
-				"Target" 		"UNIT"
-				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
-			}
-		
 		}
 
 		// Special	
@@ -1278,7 +971,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_amount"				"300"
+				"heal_amount"				"5000"
 			}
 		}
 	}
@@ -1333,8 +1026,6 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"		"itemfunctions.lua"
@@ -1348,7 +1039,8 @@
 				"Target" 		"UNIT"
 				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 		// Special	
@@ -1417,8 +1109,6 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
 			"RunScript"
 			{
 				"ScriptFile"		"itemfunctions.lua"
@@ -1432,7 +1122,8 @@
 				"Target" 		"UNIT"
 				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 
 		// Special	
@@ -1516,8 +1207,7 @@
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1531,8 +1221,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1540,7 +1229,8 @@
 				"UnitCount"             "1"
 				"Duration"				"20"
 			}
-			
+			"SpendCharge"
+			{}
 			//doesn't heal
 		}
 
@@ -1560,7 +1250,6 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_demonic_figurine"
 		"ItemCost"                      "0" 
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1576,8 +1265,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1585,7 +1273,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 	}
 
@@ -1596,9 +1285,8 @@
 		"ID"                            "1066"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"            "item_red_drake"
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
+		"AbilityTextureName"            "item_spiked_collar"
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1613,9 +1301,8 @@
 		"SecretShop" "1"
 
 		"OnSpellStart"
-		{	
-			"SpendCharge"
-			{}			
+		{
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1623,7 +1310,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 	}
 
@@ -1635,8 +1323,7 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_spiked_collar"
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1652,8 +1339,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1661,7 +1347,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 	}
 
@@ -1673,8 +1360,7 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_stone_token"
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1690,8 +1376,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1699,6 +1384,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
+			"SpendCharge"
+			{}
 		}
 	}
 
@@ -1708,8 +1395,7 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_talisman_of_the_wild"
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1725,8 +1411,7 @@
 
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}
+			
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
@@ -1734,7 +1419,8 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 			}
-			
+			"SpendCharge"
+			{}
 		}
 	}
 
@@ -1752,8 +1438,7 @@
 		//"AbilityCooldown"    			"0"
 		//"AbilityManaCost"    			"0"
 
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"1"
@@ -1821,8 +1506,7 @@
 		//"AbilityCooldown"    			"0"
 		//"AbilityManaCost"    			"0"
 
-		"ItemCost"                      "0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+		"ItemCost"                      "0" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"1"
@@ -1854,7 +1538,7 @@
 
 	    		//Test Effect
                 "EffectName" "particles/items_fx/aura_assault.vpcf" //add precache
-                "EffectAttachType" "follow_origin"
+                "EffectAttachType" "follow_overhead"
                 "EffectLifeDurationScale" "1"
                 "EffectColorA" "255 255 0"
 	   		}
@@ -1872,36 +1556,5 @@
 		    }
 	   	}
 	}
-
-
-
-	//-------------------------------------------------------------------------------------------------------------
-	"item_apply_modifiers"
-	{
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "ID"                            "1190"  // unique ID number for this item.  Do not change this once 
-    "BaseClass"                     "item_datadriven"
-    "ItemBaseLevel"                 "1"
-
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "9999"
-    "AbilityCastPoint"                      "0.0"    
-
-    "Modifiers"
-       {
-             "modifier_make_deniable"
-             {
-                 "Passive"               "1"
-                 "IsHidden"              "1"
-                 "States"
-                 {
-                         "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
-                  }
-             }
-        }   
-
-}
 
 }
