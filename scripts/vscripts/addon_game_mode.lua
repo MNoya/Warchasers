@@ -51,13 +51,31 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_witch_doctor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
-	PrecacheResource(particle_folder,"particles/items_fx", context)
+	PrecacheResource( "particle_folder","particles/items_fx", context) --check if it changes without ""
+
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
+
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context ) --check bladestorm pink bug
 	
 	
 end
+
+XP_PER_LEVEL_TABLE = {
+	     0, -- 1
+	  200, -- 2
+	  500, -- 3
+	  900, -- 4
+	 1400, -- 5
+	 2000, -- 6
+	 2700, -- 7
+	 3500, -- 8
+	 4400, -- 9
+	 5400, -- 10
+ }
 
 -- Create the game mode when we activate
 function Activate()
@@ -80,6 +98,13 @@ function Warchasers:InitGameMode()
 	GameRules:SetHeroSelectionTime(0)
 	GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
+
+	--scorebar
+	GameRules:SetTopBarTeamValuesVisible( true ) --customized top bar values
+	GameRules:SetTopBarTeamValuesOverride( true ) --display the top bar score/count
+
+	GameRules:SetCustomHeroMaxLevel( 10 )
+	GameRules:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 
 
 	print( "GameRules set" )
@@ -144,10 +169,15 @@ function Warchasers:InitGameMode()
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
+    --ListenToGameEvent('last_hit', Dynamic_Wrap( Warchasers, 'OnLastHit'), self) --Add Score?
+    --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 
- 	
+	--Variables for tracking
+	self.nRadiantKills = 0
+  	self.nDireKills = 0
+
 	print( "Done loading gamemode" )
 
 end
@@ -159,6 +189,21 @@ function Warchasers:OnThink()
 	
 		--Permanent Night
 		GameRules:SetTimeOfDay( 0.8 )
+
+		-- Check for defeat
+		local bAnyHeroAlive = false
+		for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+			if PlayerResource:IsValidPlayer( nPlayerID ) and PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+				local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+				if not entHero or entHero:IsAlive() then
+					bAnyHeroAlive = true
+				end
+			end
+		end
+
+		if not bAnyHeroAlive then
+			GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+		end
 
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
@@ -193,6 +238,24 @@ function Warchasers:OnEntityKilled( event )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
 	print("1 mob dead")
 
+	--Count Creep kills as scoreboard kills
+	if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
+	      self.nRadiantKills = self.nRadiantKills + 1
+	      --update killer personal score
+	      --killerEntity:IncrementKills(1) works?
+	      PlayerResource:IncrementKills(killerEntity:GetPlayerID(), 1)
+	end
+
+	if killedUnit:IsRealHero() then 
+   		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
+	    if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
+	      self.nDireKills = self.nDireKills + 1
+	    end
+	end
+
+	GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireKills )
+    GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
+
     --if it's a cherubin, send to hell
     if killedUnit:GetName()=="cherub1" or killedUnit:GetName()=="cherub2" or killedUnit:GetName()=="cherub3" then
     	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
@@ -201,9 +264,18 @@ function Warchasers:OnEntityKilled( event )
     	--send to hell
     	SENDHELL = true
     	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-        FindClearSpaceForUnit(killerEntity, point, false)
-        killerEntity:Stop()
-        SendToConsole("dota_camera_center")
+
+    	--mass teleport
+    	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+    		if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+    			local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+	        	FindClearSpaceForUnit(entHero, point, false)
+	        	entHero:Stop()
+	        	SendToConsole("dota_camera_center")
+        	end
+        end
+
+       
         local messageinfo = {
         message = "Some seconds in Hell",
         duration = 5
