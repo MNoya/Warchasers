@@ -3,6 +3,7 @@ function Fire(data)
   if target ~= nil then
     local trap = thisEntity:FindAbilityByName("warchasers_fire_trap")
     thisEntity:CastAbilityOnPosition(target:GetOrigin(), trap, -1 )
+    print("Fire!")
   end
 end
 

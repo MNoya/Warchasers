@@ -18,12 +18,20 @@ end
 
 function TeleporterHeaven(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_heaven" ):GetAbsOrigin()
-        FindClearSpaceForUnit(trigger.activator, point, false)
-        trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
+        
+        --mass teleport
+        for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+            if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                FindClearSpaceForUnit(entHero, point, false)
+                entHero:Stop()
+                SendToConsole("dota_camera_center")
+            end
+        end
+
         local messageinfo = {
             message = "Some seconds in Heaven",
-            duration = 30
+            duration = 5
         }
         FireGameEvent("show_center_message",messageinfo) 
 
@@ -34,20 +42,33 @@ function TeleporterHeaven(trigger)
             callback = function()
                 if SENDHELL == false then 
                     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-                    FindClearSpaceForUnit(trigger.activator, point, false)
-                    trigger.activator:Stop()
-                    SendToConsole("dota_camera_center")
-                    print("Teleport Back")
+                    --mass teleport
+                    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+                        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                            FindClearSpaceForUnit(entHero, point, false)
+                            entHero:Stop()
+                            SendToConsole("dota_camera_center")
+                        end
+                    end
                 end
             end
         })
 end
 
 function TeleporterHell(trigger)
-          local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-          FindClearSpaceForUnit(trigger.activator, point, false)
-         trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
+        local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
+        
+        --mass teleport
+        for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+            if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                FindClearSpaceForUnit(entHero, point, false)
+                entHero:Stop()
+                SendToConsole("dota_camera_center")
+            end
+        end
+
         local messageinfo = {
         message = "Some seconds in Hell",
         duration = 5
@@ -61,11 +82,16 @@ function TeleporterHell(trigger)
             endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
             callback = function()
                     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-                    FindClearSpaceForUnit(trigger.activator, point, false)
-                    trigger.activator:Stop()
-                    SendToConsole("dota_camera_center")
-                    print("Teleport Back")
-            end
+                     --mass teleport
+                    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+                        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                            FindClearSpaceForUnit(entHero, point, false)
+                            entHero:Stop()
+                            SendToConsole("dota_camera_center")
+                        end
+                    end
+        end
         })
 end
 

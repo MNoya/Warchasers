@@ -11,11 +11,6 @@ if Convars:GetBool("developer") == true then
 	require( "developer" )
 end
 
-SENDHELL = false
-
-
-
-
 if Warchasers == nil then
 	Warchasers = class({})
 end
@@ -77,6 +72,16 @@ XP_PER_LEVEL_TABLE = {
 	 5400, -- 10
  }
 
+SENDHELL = false
+SHOWPOPUP = true
+P0_HAS_ANKH = true
+P1_HAS_ANKH = true
+P2_HAS_ANKH = true
+P3_HAS_ANKH = true
+P4_HAS_ANKH = true
+DEAD_PLAYER_COUNT = 0
+PLAYER_COUNT = 0
+
 -- Create the game mode when we activate
 function Activate()
 	GameRules.AddonTemplate = Warchasers()
@@ -93,19 +98,17 @@ function Warchasers:InitGameMode()
 	GameMode:SetAnnouncerDisabled(true)
 	GameMode:SetBuybackEnabled(false)
 	GameMode:SetRecommendedItemsDisabled(true) --broken
+	GameMode:SetFixedRespawnTime(999)
+	GameMode:SetTopBarTeamValuesVisible( true ) --customized top bar values
+	GameMode:SetTopBarTeamValuesOverride( true ) --display the top bar score/count
 
-	GameRules:SetPreGameTime(0)
-	GameRules:SetHeroSelectionTime(0)
-	GameRules:SetGoldPerTick(0)
+	GameMode:SetCustomHeroMaxLevel( 10 )
+	GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+
+	--GameRules:SetPreGameTime(0)
+	--GameRules:SetHeroSelectionTime(0)
+	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
-
-	--scorebar
-	GameRules:SetTopBarTeamValuesVisible( true ) --customized top bar values
-	GameRules:SetTopBarTeamValuesOverride( true ) --display the top bar score/count
-
-	GameRules:SetCustomHeroMaxLevel( 10 )
-	GameRules:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
-
 
 	print( "GameRules set" )
 
@@ -190,21 +193,6 @@ function Warchasers:OnThink()
 		--Permanent Night
 		GameRules:SetTimeOfDay( 0.8 )
 
-		-- Check for defeat
-		local bAnyHeroAlive = false
-		for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
-			if PlayerResource:IsValidPlayer( nPlayerID ) and PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-				local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-				if not entHero or entHero:IsAlive() then
-					bAnyHeroAlive = true
-				end
-			end
-		end
-
-		if not bAnyHeroAlive then
-			GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-		end
-
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -219,10 +207,11 @@ function Warchasers:OnNPCSpawned(keys)
 		npc.bFirstSpawned = true
 		SendToConsole("dota_camera_lock 1")
 		SendToConsole("dota_camera_center")
+		if npc:GetTeam() == DOTA_TEAM_GOODGUYS then
+			PLAYER_COUNT = PLAYER_COUNT +1
+		end
 		Warchasers:OnHeroInGame(npc)
-		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 	end
-
 end
 
 --Add Ankh
@@ -230,31 +219,117 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 	local item = CreateItem("item_ankh", hero, hero)
 	hero:AddItem(item)
-	
+
+	if SHOWPOPUP then
+		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+		SHOWPOPUP = false
+	end
 end
 
 function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
-	print("1 mob dead")
-
-	--Count Creep kills as scoreboard kills
-	if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then
-	      self.nRadiantKills = self.nRadiantKills + 1
-	      --update killer personal score
-	      --killerEntity:IncrementKills(1) works?
-	      PlayerResource:IncrementKills(killerEntity:GetPlayerID(), 1)
-	end
 
 	if killedUnit:IsRealHero() then 
-   		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
-	    if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
-	      self.nDireKills = self.nDireKills + 1
-	    end
+		
+		local KilledPlayerID = killedUnit:GetPlayerID()
+    	local respawning = false
+
+		--credit dire for the kill even if the player reincarnates
+		if killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
+		      self.nDireKills = self.nDireKills + 1
+		end    	
+
+		--Problems to fix with the current version: 
+			--doesn't work with multiple Ankhs
+			--doesn't work with dropping/picking Ankhs (will probably disable this)
+    	--check if the killed player has ankh
+      	if KilledPlayerID==0 and P0_HAS_ANKH then  
+    		P0_HAS_ANKH = false
+    		respawning = true
+    		GameRules:SendCustomMessage("Player 0 died but used Ankh",0,0)
+    	end
+
+    	if KilledPlayerID==1 and P1_HAS_ANKH then  
+    		P1_HAS_ANKH = false
+    		respawning = true
+    		GameRules:SendCustomMessage("Player 1 died but used Ankh",0,0)
+    	end
+	      
+	    if KilledPlayerID==2 and P2_HAS_ANKH then  
+    		P2_HAS_ANKH = false
+    		respawning = true
+    		GameRules:SendCustomMessage("Player 2 died but used Ankh",0,0)
+    	end
+
+    	if KilledPlayerID==3 and P3_HAS_ANKH then  
+    		P3_HAS_ANKH = false
+    		respawning = true
+    		GameRules:SendCustomMessage("Player 3 died but used Ankh",0,0)
+    	end
+
+    	if KilledPlayerID==4 and P4_HAS_ANKH then  
+    		P4_HAS_ANKH = false
+    		respawning = true
+    		GameRules:SendCustomMessage("Player 4 died but used Ankh",0,0)
+    	end     
+
+    	--RIP
+    	if not respawning then
+	    	if KilledPlayerID==0 and not P0_HAS_ANKH then  
+	    		GameRules:SendCustomMessage("RIP Blue",0,0)
+	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+	    	end
+
+	    	if KilledPlayerID==1 and not P1_HAS_ANKH then  
+	    		GameRules:SendCustomMessage("RIP Teal",0,0)
+	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+	    	end
+		      
+		    if KilledPlayerID==2 and not P2_HAS_ANKH then  
+	    		GameRules:SendCustomMessage("RIP Purple",0,0)
+	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+	    	end
+
+	    	if KilledPlayerID==3 and not P3_HAS_ANKH then  
+	    		GameRules:SendCustomMessage("RIP Yellow",0,0)
+	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+	    	end
+
+	    	if KilledPlayerID==4 and not P4_HAS_ANKH then  
+	    		GameRules:SendCustomMessage("RIP Orange",0,0)
+	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+	    	end  
+	 		
+	 		--Check for defeat
+		    if DEAD_PLAYER_COUNT == PLAYER_COUNT then
+		    	print("THEY'RE ALL DEAD BibleThump")
+				local messageinfo = {
+				        message = "YOU DEFEATED",
+				        duration = 2}
+				Timers:CreateTimer({
+	    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+	    			callback = function()
+						FireGameEvent("show_center_message",messageinfo)
+						GameRules:SetFogOfWarDisabled(true)
+						GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+					end
+				})
+			end
+		end
 	end
 
-	GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireKills )
-    GameRules:GetGameModeEntity():SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
+	--Count Creep kills as scoreboard kills
+	if not killedUnit:IsRealHero() then
+		print("1 mob dead")
+	    self.nRadiantKills = self.nRadiantKills + 1
+	    --update personal score
+	    killerEntity:IncrementKills(1)
+	end
+
+	--update team scores
+	GameMode:SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireKills )
+    GameMode:SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
 
     --if it's a cherubin, send to hell
     if killedUnit:GetName()=="cherub1" or killedUnit:GetName()=="cherub2" or killedUnit:GetName()=="cherub3" then
@@ -287,9 +362,15 @@ function Warchasers:OnEntityKilled( event )
 	    	endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 	    	callback = function()
 	      		local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-        		FindClearSpaceForUnit(killerEntity, point, false)
-        		killerEntity:Stop()
-       			SendToConsole("dota_camera_center")
+        		--mass teleport
+    			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+    				if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+	    			local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+		        	FindClearSpaceForUnit(entHero, point, false)
+		        	entHero:Stop()
+		        	SendToConsole("dota_camera_center")
+	        		end
+        		end
        			print("Teleport Back")
 	    	end
 	    })
