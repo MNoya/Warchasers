@@ -89,6 +89,8 @@
 		"ModelScale" 				".84"
 		"CanBeDominated"			"0"
 
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"2"								// Physical protection.
@@ -160,6 +162,8 @@
 		"ModelScale" 				".84"
 		"CanBeDominated"			"0"
 
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"2"								// Physical protection.
@@ -230,6 +234,8 @@
 		"Level"						"1"
 		"ModelScale" 				".84"
 		"CanBeDominated"			"0"
+
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -2161,7 +2167,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"                                      ""                      // Ability 1 Endurance Aura
+		"Ability1"                                      "alpha_wolf_command_aura"       // Ability 1
 		"Ability2"                                      "drop_tome"                      // Ability 2
 		"Ability3"                                      "drop_extra_tome"                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
@@ -2323,7 +2329,107 @@
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					"drop_tome"			// Ability 5. MIGHT BE ABUSABLE LATER
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		//"MagicalResistance"			"35"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"23"								// Damage range min.
+		"AttackDamageMax"			"27"								// Damage range max.
+		"AttackRate"				"1.6"								// Speed of attack.
+		"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"400"								// Range within a target can be acquired.
+		"AttackRange"				"500"								// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_lina/lina_base_attack.vpcf"					// Particle system model for projectile.
+		"ProjectileSpeed"			"800"								// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"18"		// Experience earn.
+		"BountyGoldMin"				"8"		// Gold earned min.
+		"BountyGoldMax"				"10"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"265"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+		
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"300"			// Base health.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
+		"StatusMana"				"300"			// Base mana.
+		"StatusManaRegen"			"2.0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			
+			
+			"AttachWearables" //Northlight
+			{
+				"Wearable1"	{ "ItemDef" "43" }
+				"Wearable2"	{ "ItemDef"	"5769" }
+				"Wearable3" { "ItemDef"	"5770" }
+				"Wearable4" { "ItemDef"	"5771" }
+				"Wearable4" { "ItemDef"	"5772" }
+				"Wearable5" { "ItemDef"	"5773" }
+			}
+		}
+	}
+
+	//=================================================================================
+	// Creature: Wizard
+	//=================================================================================
+	"npc_wizard_nonspawned"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
+		"ModelScale"				"1"
+		"Level"						"3"
+		//"ConsideredHero"			"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1. Blizzard?
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_tome"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -2579,11 +2685,97 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
-		"Ability5"					"drop_tome"			// Ability 5. MIGHT BE ABUSABLE LATER
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"17"									// Damage range min.
+		"AttackDamageMax"			"25"									// Damage range max.
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.45"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackRange"				"300"									// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"1250"									// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"26"		// Experience earn.
+		"BountyGoldMin"				"12"		// Gold earned min.
+		"BountyGoldMax"				"13"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"190"
+
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"300"		// Base health.
+		"StatusHealthRegen"			"0.1"			// Health regeneration rate.
+		"StatusMana"				"0"		// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+
+	}
+
+	//=================================================================================    
+    // Creature: Water Elemental "Enraged Elemental" (Magic Immune)
+    //=================================================================================
+	"npc_water_elemental_nonspawned"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"						"models/heroes/morphling/morphling.vmdl"		// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_morphling"													// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
+		"Level"						"4"
+		"ModelScale" 				".84"
+		"CanBeDominated"			"0"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"2"								// Physical protection.
+
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					"drop_tome"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -2896,8 +3088,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"drop_key1"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2.
+		"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -4643,7 +4835,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"slardar_bash"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4883,7 +5075,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"creep_searing_arrow"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -5305,7 +5497,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"creep_cold_arrow"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -5395,7 +5587,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"slardar_bash"			// Ability 1
 		"Ability2"					"drop_level3"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5474,8 +5666,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"ghost_frost_attack"			// Ability 1. 
+		"Ability2"					"neutral_spell_immunity"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_level3"			// Ability 5.
@@ -5565,7 +5757,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"dragon_knight_frost_breath"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -5993,7 +6185,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"venomancer_poison_sting"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					"drop_tome"			// Ability 4
@@ -6952,7 +7144,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"brewmaster_fire_permanent_immolation"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.

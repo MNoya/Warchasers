@@ -2219,18 +2219,24 @@
 	//Passive 
 	"creep_cold_arrow"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drow_ranger_frost_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		"AbilityDamage"					"0"
 		"AbilityManaCost"				"5"
 
+		// Data-Driven
+		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
 			"modifier_creep_cold_arrow"
@@ -2240,41 +2246,38 @@
 				"Orb"
 				{
 					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
-					//"ProjectileName"    "particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
-                	//"CastAttack"        "1"
+					"ProjectileName"    "particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
 				}
-				 "OnOrbFire"
-	            {
-	                "SpendMana"
-	                {
-	                    "Mana"    "%AbilityManaCost"
-	                }
-	            }
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+				}
+				
 				"OnOrbImpact"
 				{
-					"FireEffect"
-                	{
-	                    "EffectName"            "particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
-	                    "EffectAttachType"      "attach_hitloc"
-	                    "Target"                "TARGET"
-                	}
 					"ApplyModifier"
 					{
 						"Target"			"TARGET"
 						"ModifierName"		"modifier_creep_cold_arrow_slow"
 						"Duration"			"%slow_duration"
-					}
+					}		
 				}
 			}
 
 			"modifier_creep_cold_arrow_slow"
 			{
+				"IsDebuff" "1"
 				"Duration"	"%slow_duration"
 				"Properties"
 				{
-					// You may use "modifierProperty" completions within quotes here. Below is an example
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_speed"
 				}
+				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+				"EffectAttachType"      "attach_hitloc"
+				"Target"                "TARGET"
 
 			}
 		}
@@ -2289,7 +2292,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"slow_duration"					"0.75"
+				"slow_duration"					"2"
 			}
 			"03"
 			{
@@ -2299,21 +2302,32 @@
 		}
 	}
 
-	//"searing_arrows"
 	"creep_searing_arrow"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"clinkz_searing_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
-
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"RangeDamage"       "20"
+			}
+		}
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		"AbilityDamage"					"0"
 		"AbilityManaCost"				"5"
 
+		// Data-Driven
+		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
 			"modifier_creep_searing_arrow"
@@ -2323,41 +2337,25 @@
 				"Orb"
 				{
 					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
-					//"ProjectileName"    "particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
-                	//"CastAttack"        "1"
+					"ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
 				}
-
 				"OnOrbFire"
-		        {
-		            "SpendMana"
-		            {
-		                "Mana"    "%AbilityManaCost"
-		            }
-		        }
-
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+				}
+				
 				"OnOrbImpact"
 				{
-					"FireEffect"
-                	{
-	                    "EffectName"            "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
-	                    "EffectAttachType"      "attach_hitloc"
-	                    "Target"                "TARGET"
-                	}
 					"Damage"
-	                {
-	                    "Type"          "DAMAGE_TYPE_PHYSICAL"
-	                    "Damage"        "%RangeDamage"
-	                }
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%RangeDamage"
+						"Target"		"TARGET"
+					}
 				}
-			}
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"RangeDamage"						"20"
 			}
 		}
 	}

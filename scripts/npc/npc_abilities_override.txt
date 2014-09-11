@@ -65,14 +65,12 @@
 
 //END HERO SKILLS -----------------------------------------------------------------
 
-
-
 //CREEP PASSIVE SKILLS -----------------------------------------------------------------
 
 	//"command_aura" 10%
-	"AbilitySpecial"
 	"alpha_wolf_command_aura"
 	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -88,32 +86,6 @@
 		}
 	}
 
-	//"spell_immunity" = "neutral_spell_immunity"
-
-	//"frost_breath" 10sec
-	"dragon_knight_frost_breath"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"-50"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"-25"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"10.0"
-			}
-		}
-	}
-
-	//"bash" 15% 25dmg 2sec stun
 	"slardar_bash"
 	{
 		"MaxLevel"						"1"
@@ -141,36 +113,10 @@
 			}
 		}
 	}
-
-	//"envenomed_weapons" = "gnoll_assassin_envenomed_weapon"
 	
-	//"slow_poison" 50% ms 25% as 4dmg per sec, 5 sec dur
-	"venomancer_poison_sting"
-	{
-		"MaxLevel"						"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"4
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"-50"
-			}			
-		}
-	}
-
-	//"unholy_aura"  regen 1 ms 10% (use kobold aura)
 	"satyr_hellcaller_unholy_aura"
-	{
+	{	
+		"MaxLevel"						"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -185,8 +131,10 @@
 			}
 		}
 	}
+	
 	"kobold_taskmaster_speed_aura"
 	{
+		"MaxLevel"						"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -202,7 +150,6 @@
 		}
 	}
 
-	//"permanent_immolation" 10per sec
 	"brewmaster_fire_permanent_immolation"
 	{
 		"MaxLevel"							"1"
@@ -220,9 +167,34 @@
 			}
 		}
 	}
+	
+	"venomancer_poison_sting"
+	{
+		"MaxLevel" 						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"-50"
+			}			
+		}
+	}
 
 //END CREEP PASSIVE SKILLS -----------------------------------------------------------------
-
 
 // ITEM SHOPS---------------------------------------------------
 
