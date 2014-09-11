@@ -1,13 +1,13 @@
 TO DO
 - General -
 Hero Stats, Skills (done, need to check the rest), Tooltips
-Creep Skills, AI
+Creep Skills (started), AI (somewhat)
 Item Skills
-Lose condition (everyone dead, no Ankhs)
+Lose condition (everyone dead, no Ankhs) (Done, needs testing with multiple players)
 
 - Triggers -
 CheckForKey on Doors (Done)
-Heaven&Hell Teleporter only one and once (Done) for every player.
+Heaven&Hell Teleporter only one and once (Done) for every player. (Done)
 OnKill Cherubin -> Teleport Hell (Done)
 Enable Item dropping on Death (code done, needs to be added to every player)
 OnNPCSpawned Hero give Ankh at the start (done)
@@ -19,12 +19,12 @@ Finish unit placing port
 Sheep secret area (Done)
 Add Pyramids, Pillars, Lanterns, Light Sources.
 Adjust Fog/Vision/Camera Heights
-Firetraps
+Firetraps (Done, needs testing)
 
 - Tooltips/Information -
 Hell/Heaven Timers
 Death message
-Hints and general messages/Popups (started)
+Hints and general messages/Popups (Done, needs extending)
 Minimap
 Sounds for triggers
 

@@ -780,7 +780,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_rattletrap_cog"	//fix this
-		"Model"						"models/pedestal_lantern.vmdl"	// Model.
+		"Model"						"models/items/warlock/lantern_of_the_conjuring_sigil/lantern_of_the_conjuring_sigil.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"HealthBarOffset"			"200"
@@ -870,7 +870,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_rattletrap_cog"	//fix this
-		"Model"						"models/pedestal_lantern.vmdl"	// Model.
+		"Model"						"models/items/warlock/lantern_of_the_conjuring_sigil/lantern_of_the_conjuring_sigil.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"HealthBarOffset"			"200"
