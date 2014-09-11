@@ -46,7 +46,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_witch_doctor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
-	PrecacheResource( "particle_folder","particles/items_fx", context) --check if it changes without ""
+	PrecacheUnitByNameSync("npc_dota_hero_venomancer", context)
+	PrecacheResource( "particle_folder","particles/items_fx", context) --works
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -61,15 +62,15 @@ end
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
-	  200, -- 2
-	  500, -- 3
-	  900, -- 4
-	 1400, -- 5
-	 2000, -- 6
-	 2700, -- 7
-	 3500, -- 8
-	 4400, -- 9
-	 5400, -- 10
+	  200, -- 2 +200
+	  500, -- 3 +300
+	  900, -- 4 +400
+	 1400, -- 5 +500
+	 2000, -- 6 +600
+	 2700, -- 7 +700
+	 3500, -- 8 +800
+	 4400, -- 9 +900
+	 5400 -- 10 +1000
  }
 
 SENDHELL = false
@@ -104,6 +105,7 @@ function Warchasers:InitGameMode()
 
 	GameMode:SetCustomHeroMaxLevel( 10 )
 	GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+	GameMode:SetUseCustomHeroLevels ( true )
 
 	--GameRules:SetPreGameTime(0)
 	--GameRules:SetHeroSelectionTime(0)
@@ -172,7 +174,6 @@ function Warchasers:InitGameMode()
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
-    --ListenToGameEvent('last_hit', Dynamic_Wrap( Warchasers, 'OnLastHit'), self) --Add Score?
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
@@ -311,7 +312,7 @@ function Warchasers:OnEntityKilled( event )
 	    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 	    			callback = function()
 						FireGameEvent("show_center_message",messageinfo)
-						GameRules:SetFogOfWarDisabled(true)
+						GameMode:SetFogOfWarDisabled(true)
 						GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
 					end
 				})
