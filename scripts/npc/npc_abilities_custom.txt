@@ -2387,7 +2387,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
 				}
-			//attach ember spirit flameguard particles
+			//attach ember spirit flameguard particles particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf
 			}
 		"OnToggleOff"
 			{
@@ -2521,6 +2521,7 @@
 
 	"warchasers_megatron_tranquility"
 		{
+		"MaxLevel"	"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
@@ -2711,6 +2712,11 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"    "dragon_knight_dragon_tail"
+		 "AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "900"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+		
 		"AbilitySpecial"
 			{
 			"01"
@@ -2726,21 +2732,33 @@
 			}
 		"Modifiers"
 			{
-				"Passive" 			"1"
-    			"IsHidden" 			"1"
-    			"IsBuff"			"1"
-    			"Aura" 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
-    			"Aura_Radius" 		"%Range"
-    			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-   				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
-			
+				"Devotion_Aura_Modifier"
+				{
+					"OnCreated"
+					{
+						"AttachEffect"
+						{
+							"Target" "CASTER"
+							"EffectName"		"particles/units/heroes/hero_silencer/silencer_last_word_status.vpcf"
+							"EffectAttachType" "follow_origin"
+							"EffectLifeDurationScale" "1"
+						}
+					}
+					"Passive" 			"1"
+					"IsHidden" 			"1"
+					"IsBuff"			"1"
+					"Aura" 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
+					"Aura_Radius" 		"%Range"
+					"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+				}
 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
 				{
-				"Duration"				"1"
-				"IsBuff"				"1"
-				"Properties"
+					
+					"IsBuff"				"1"
+					"Properties"
 					{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					}
 				}
 				//attach aura effect
@@ -2946,6 +2964,7 @@
 
 
 	"warchasers_snake_cold_arrows" 
+	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
@@ -2966,7 +2985,7 @@
 		// Data-Driven
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
-		{
+		{ 
 			"modifier_snake_cold_arrow"
 			{
 				"Passive"               "1"
@@ -3002,7 +3021,7 @@
 				}
 			}
 
-			"modifier_snake_cold_arrow_attack_move_slow"
+			"modifier_snake_cold_arrow_slow"
 			{
 				"IsDebuff" "1"
 				"Duration"	"%slow_duration"
@@ -3015,7 +3034,7 @@
 				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"EffectAttachType"      "attach_hitloc"
 				"Target"                "TARGET"
-
+			
 			}
 		}
 

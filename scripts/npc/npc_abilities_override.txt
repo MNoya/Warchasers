@@ -235,7 +235,7 @@
 		//Rain of Fire does 50% damage to buildings. Rain of Fire is not that effective against buildings but it can work.
 		//Rain of Fire will not hurt enemy units with Spell Immunity 
 
-	"lycan_summon_wolves"
+	"lycan_summon_wolves" //default wolves need to be edited on npc_units.txt file
 	{
 		"MaxLevel"						"3"
 		"AbilityCooldown"				"30.0 25.0 25.0"
@@ -271,7 +271,7 @@
 		}
 	}
 
-	"warlock_rain_of_chaos"
+	"warlock_rain_of_chaos" //default golem need to be edited on npc_units.txt file
 	{
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"180"
@@ -563,10 +563,10 @@
 		}
 	}
 
-	"necronomicon_warrior_mana_burn"
+	"necronomicon_archer_mana_burn"
 	{
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"600" //was 300 but it's awkward 
 		"AbilityCooldown"				"7 6 5"
 		"AbilityManaCost"				"50"
 				

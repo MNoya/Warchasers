@@ -17,9 +17,9 @@
 		"Ability1"					"magnataur_shockwave"
 		"Ability2"					"brewmaster_thunder_clap"
 		"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs improving and attach particles
-		"Ability4"					"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
+		"Ability4"					"" 
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
     	"Ability7"				""
     	"Ability8"				""
 
@@ -142,9 +142,9 @@
 		"Ability1"					"omniknight_purification"
 		"Ability2"					"clinkz_searing_arrows"
 		"Ability3"					"warchasers_snake_cold_arrows" 
-		"Ability4"					"abyssal_underlord_firestorm" //No particles
+		"Ability4"					"" //No particles
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"abyssal_underlord_firestorm"
     	"Ability7"				""
     	"Ability8"				""
 
@@ -202,11 +202,11 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"omniknight_purification"
-		"Ability2"					"lycan_summon_wolves" //Needs custom
+		"Ability2"					"lycan_summon_wolves"
 		"Ability3"					"warchasers_beast_knight_summon_water_elemental"
-		"Ability4"					"warlock_rain_of_chaos"
+		"Ability4"					""
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"warlock_rain_of_chaos"
     	"Ability7"				""
     	"Ability8"				""
 
@@ -267,9 +267,9 @@
 		"Ability1"					"lich_frost_nova"
 		"Ability2"					"bane_nightmare"
 		"Ability3"					"skeleton_king_vampiric_aura"
-		"Ability4"					"warchasers_muhrah_animate_dead" //Needs custom	DONE
+		"Ability4"					""
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"warchasers_muhrah_animate_dead"
     	"Ability7"				""
     	"Ability8"				""
 
@@ -329,9 +329,9 @@
 		"Ability1"				"warchasers_assassin_entangle"  //Needs custom -- DONE
 		"Ability2"				"roshan_bash"	
 		"Ability3"				"sven_storm_bolt"	
-		"Ability4"				"warchasers_starfall" //Needs custom -- done custom
+		"Ability4"				"" 
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"warchasers_starfall"
     	"Ability7"				""
     	"Ability8"				""	
 
@@ -391,9 +391,9 @@
 		"Ability1"				"brewmaster_storm_wind_walk"	
 		"Ability2"				"warchasers_megatron_divine_shield"	//Needs attach particles
 		"Ability3"				"warchasers_megatron_thorns_aura"	//Needs attach particles
-		"Ability4"				"warchasers_megatron_tranquility" //Needs attach particles
+		"Ability4"				"" 
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"warchasers_megatron_tranquility" //Needs attach particles
     	"Ability7"				""
     	"Ability8"				""
 
@@ -452,12 +452,12 @@
 		"override_hero"				"npc_dota_hero_razor"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"necronomicon_warrior_mana_burn"	
+		"Ability1"				"necronomicon_archer_mana_burn"	
 		"Ability2"				"harpy_storm_chain_lightning"	
 		"Ability3"				"crystal_maiden_brilliance_aura"	
-		"Ability4"				"enigma_midnight_pulse"	
+		"Ability4"				""
 		"Ability5"				""
-		"Ability6"				""
+		"Ability6"				"enigma_midnight_pulse"	
     	"Ability7"				""
     	"Ability8"				""
 
