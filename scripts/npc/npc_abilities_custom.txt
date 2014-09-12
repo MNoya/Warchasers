@@ -2229,7 +2229,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		"AbilityDamage"					"0"
@@ -2287,14 +2287,9 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"0.75"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
 				"slow_duration"					"2"
 			}
-			"03"
+			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"movement_speed"	"-25"
@@ -2309,18 +2304,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"          "FIELD_INTEGER"
-				"RangeDamage"       "20"
-			}
-		}
 	
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		"AbilityDamage"					"0"
@@ -2358,6 +2345,15 @@
 				}
 			}
 		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"RangeDamage"       "20"
+			}
+		}
 	}
 
 	//"disease_cloud" "pudge_rot" 
@@ -2379,6 +2375,7 @@
 
 	"warchasers_blade_berserker_immolation"
 		{
+		"MaxLevel"		"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
@@ -2390,6 +2387,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
 				}
+			//attach ember spirit flameguard particles
 			}
 		"OnToggleOff"
 			{
@@ -2398,6 +2396,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
 				}
+			//destroy particles
 			}
 		"Modifiers"
 			{
@@ -2458,11 +2457,13 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"		"1"
 		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
 		"AbilityCooldown" "180"
 		"AbilityManacost" "175"
 		"OnSpellStart"
 			{
+				//attach particles
 			"RunScript"
 				{
 				"ScriptFile"	"abilities.lua"
@@ -2481,6 +2482,7 @@
 
 	"warchasers_megatron_thorns_aura"
 		{
+		"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"    "centaur_return"
@@ -2488,6 +2490,7 @@
 			{
 			"warchasers_megatron_thorns_aura_thinker"
 				{
+					//OnCreated attach aura particles
 				"Passive"	"1"
 				"ThinkInterval"	"0.5"
 				"OnIntervalThink"
@@ -2509,6 +2512,7 @@
 				{
 				"Duration"	"1"
 				"IsBuff"	"1"
+				"IsHidden"	"1"
 				}
 			}
 		}
@@ -2531,6 +2535,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_megatron_tranquility_modifier"
 				}
+				//attach witch doctor channel aoe particles here
 			}
 		"OnChannelFinish"
 			{
@@ -2559,6 +2564,7 @@
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							}
 						}
+					//attach holdout tranquil boots effect here
 					}
 				}
 			}
@@ -2566,9 +2572,10 @@
 
 	"warchasers_megatron_divine_shield"
 		{
+		"MaxLevel"			"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"35 50 65 65"
+		"AbilityCooldown"				"35 50 65"
 		"AbilityManaCost"	"25"
 		"AbilityTextureName"    "omniknight_repel"
 		"AbilitySpecial"
@@ -2576,7 +2583,7 @@
 			"01"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"shield_duration"	"15 30 45 45"
+				"shield_duration"	"15 30 45"
 				}
 			}
 		"OnSpellStart"
@@ -2586,6 +2593,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_megatron_divine_shield_modifier"
 				}
+			//attach guardian angel
 			}
 		
 		"Modifiers"
@@ -2658,6 +2666,7 @@
 
 	"warchasers_optimusprimo_avatar"
 		{
+		"MaxLevel"		"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"180"
@@ -2671,6 +2680,7 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_optimusprimo_avatar_modifier"
 				}
+				//attach scale hero, for khaz modan sound
 			}
 		
 		"Modifiers"
@@ -2693,55 +2703,54 @@
 			}
 		}
 
-	"warchasers_optimusprimo_devotion_aura" //"enraged_wildkin_toughness_aura"???
+	"warchasers_optimusprimo_devotion_aura"
 		{
+		"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"    "dragon_knight_dragon_tail"
 		"AbilitySpecial"
 			{
 			"01"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"armor_bonus"	"1.5 3 4.5 6"
+				"armor_bonus"	"1.5 3 4.5"
+				}
+			"02"
+				{
+				"var_type"	"FIELD_INTEGER"
+				"Range"		"900"
 				}
 			}
 		"Modifiers"
 			{
-			"warchasers_optimusprimo_devotion_aura_thinker"
+				"Passive" 			"1"
+    			"IsHidden" 			"1"
+    			"IsBuff"			"1"
+    			"Aura" 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
+    			"Aura_Radius" 		"%Range"
+    			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+   				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			
+				"warchasers_optimusprimo_devotion_aura_armor_bonus"
 				{
-				"Passive"	"1"
-				"ThinkInterval"	"0.5"
-				"OnIntervalThink"
-					{
-					"ApplyModifier"
-						{
-						"Target"
-							{
-							"Center"	"CASTER"
-							"Radius"	"900"
-							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-						"ModifierName"	"warchasers_optimusprimo_devotion_aura_armor_bonus"
-						}
-					}
-				}
-			"warchasers_optimusprimo_devotion_aura_armor_bonus"
-				{
-				"Duration"	"1"
-				"IsBuff"	"1"
+				"Duration"				"1"
+				"IsBuff"				"1"
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
 					}
 				}
+				//attach aura effect
 			}
 		}
 
 
 	"warchasers_assassin_entangle"
 		{
+			"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -2755,17 +2764,17 @@
 			"01"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_second"	"15 15 25 25"
+				"damage_per_second"	"15 15 25"
 				}
 			"02"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"hero_duration"	"3 4 5 6"
+				"hero_duration"	"3 4 5"
 				}
 			"03"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"creep_duration"	"9 24 36 50"
+				"creep_duration"	"9 24 36"
 				}
 			}
 
@@ -2788,6 +2797,7 @@
 				"Function"	"warchasers_assassin_entangle_definator"
 				"Target"	"TARGET"
 				}
+			//attach entangle particles
 			}
 
 
@@ -2932,6 +2942,112 @@
 				}
 			}
 		}
+
+
+
+	"warchasers_snake_cold_arrows" 
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"drow_ranger_frost_arrows"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"AbilityDamage"					"0"
+		"AbilityManaCost"				"10"
+		"MaxLevel"						"3"
+
+		// Data-Driven
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_snake_cold_arrow"
+			{
+				"Passive"               "1"
+				"IsHidden"				"1"
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+				}
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_snake_cold_arrow_slow"
+						"Duration"			"%slow_duration"
+					}
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%RangeDamage"
+						"Target"		"TARGET"
+					}
+
+				}
+			}
+
+			"modifier_snake_cold_arrow_attack_move_slow"
+			{
+				"IsDebuff" "1"
+				"Duration"	"%slow_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_slow_percentage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed_slow_percentage"
+
+				}
+				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+				"EffectAttachType"      "attach_hitloc"
+				"Target"                "TARGET"
+
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"						"5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed_slow_percentage"	"-30 -50 -70"
+				
+			}
+			"03"
+			{	
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed_slow_percentage"	"-30 -50 -70"	
+			}
+			"04"
+			{
+				"var_type"          			"FIELD_INTEGER"
+				"RangeDamage"       			"5 10 15"
+			}
+			
+		}
+
+	}
+
+
 
 // END HERO SKILLS ------------------------------------------------------------------------------------------------------
 

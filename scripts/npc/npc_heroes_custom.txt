@@ -16,8 +16,8 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"magnataur_shockwave"
 		"Ability2"					"brewmaster_thunder_clap"
-		"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs custom skill -- DONE
-		"Ability4"					"warchasers_optimusprimo_avatar"
+		"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs improving and attach particles
+		"Ability4"					"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
 		"Ability5"				""
 		"Ability6"				""
     	"Ability7"				""
@@ -77,11 +77,11 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"abaddon_death_coil"
-		"Ability2"					"warchasers_blade_berserker_immolation" //Needs custom skill	DONE
+		"Ability2"					"warchasers_blade_berserker_immolation" //Needs to attach particles
 		"Ability3"					"centaur_khan_endurance_aura"
-		"Ability4"					"" //Needs custom skill	DONE
+		"Ability4"					""
 		"Ability5"				""
-		"Ability6"				"juggernaut_blade_fury"
+		"Ability6"				"juggernaut_blade_fury" //Check if this uses R as hotkey
     	"Ability7"				""
     	"Ability8"				""
 		
@@ -102,7 +102,7 @@
 		//"ProjectileModel"			""							// Particle system model for projectile.
 		//"ProjectileSpeed"			"900"									// Speed of projectile.
 
-		// Attributes
+		// Attributes 
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"19"										// Base strength
@@ -141,7 +141,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"omniknight_purification"
 		"Ability2"					"clinkz_searing_arrows"
-		"Ability3"					"creep_cold_arrow"
+		"Ability3"					"warchasers_snake_cold_arrows" 
 		"Ability4"					"abyssal_underlord_firestorm" //No particles
 		"Ability5"				""
 		"Ability6"				""
@@ -388,10 +388,10 @@
 		"override_hero"				"npc_dota_hero_sven"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"clinkz_wind_walk"	
-		"Ability2"				"warchasers_megatron_divine_shield"	
-		"Ability3"				"warchasers_megatron_thorns_aura"	
-		"Ability4"				"warchasers_megatron_tranquility" //Needs custom	-- DONE
+		"Ability1"				"brewmaster_storm_wind_walk"	
+		"Ability2"				"warchasers_megatron_divine_shield"	//Needs attach particles
+		"Ability3"				"warchasers_megatron_thorns_aura"	//Needs attach particles
+		"Ability4"				"warchasers_megatron_tranquility" //Needs attach particles
 		"Ability5"				""
 		"Ability6"				""
     	"Ability7"				""

@@ -63,6 +63,568 @@
 		"AbilityManaCost"	"0"
 		}
 
+
+
+
+
+	"magnataur_shockwave"		//damages buildings
+	{
+		"MaxLevel"					"3"					
+		"AbilityCooldown"			"8"
+		"AbilityManaCost"			"100"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_speed"				"900"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_width"				"250"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_distance"			"700"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_damage"				"75 130 200"
+			}
+		}								
+	}
+
+	"brewmaster_thunder_clap"
+	{
+		"MaxLevel"					"3"
+		"AbilityCooldown"				"6"	
+		"AbilityManaCost"				"90 90 90"		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"250 300 350"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"5.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"60 100 140"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"50"
+			}
+		}				
+	}
+
+	"abaddon_death_coil" //Check Self damage? Undead/living behavior
+	{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"75"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"self_damage"			"75 100 125"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"target_damage"			"100 200 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"200 400 600"
+			}
+		}
+	}
+
+	"centaur_khan_endurance_aura" //must rewrite datadriven for Movement Speed 10% 20% 30% and attach particle effect
+	{
+		"MaxLevel"				"3"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"5 10 15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+		}
+	}
+
+	//"omniknight_purification" //check use death coil, opposite values, 5sec CD 65 mana cost
+
+	"clinkz_searing_arrows"
+	{
+		"MaxLevel"						"3"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"8"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_bonus"					"10 20 30"
+			}
+		}
+	}
+
+	//"abyssal_underlord_firestorm" //no particles, probably need datadriven, damages buildings
+	//Rain Of Fire
+		//Level	Duration	Cooldown	Mana Cost	Range	Area of Effect	Allowed Targets	Effect	Hero Level Req
+		//1	3 sec.	8 sec.	85	80	20	N/A	25 wave damage, 6 waves, 5 damage/sec., 125 max damage	1
+		//2	3 sec.	8 sec.	85	80	20	N/A	30 wave damage, 8 waves, 10 damage/sec., 150 max damage	3
+		//3	3 sec.	8 sec.	85	80	20	N/A	35 wave damage, 10 waves, 15 damage/sec., 175 max damage	5
+		//Channeling
+		
+		//Rain of Fire has a damage cap that is invoked when it hits more than 5 targets per wave.
+		//Similar to Blizzard, except it also ignites affected units, causing moderate damage over time to them. 
+		//Rain of Fire is an area effect spell. This spell will damage all units including friendly units.
+		//Rain of Fire does 50% damage to buildings. Rain of Fire is not that effective against buildings but it can work.
+		//Rain of Fire will not hurt enemy units with Spell Immunity 
+
+	"lycan_summon_wolves"
+	{
+		"MaxLevel"						"3"
+		"AbilityCooldown"				"30.0 25.0 25.0"
+		"AbilityManaCost"				"75"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_index"				"1 2 3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_duration"				"60.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_bat"					"1.25 1.2 1.15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_damage"				"11 16 21"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_hp"					"200 300 500"
+			}
+		}
+	}
+
+	"warlock_rain_of_chaos"
+	{
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"175"		
+		"AbilityCastRange"				"900"
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"golem_duration"			"180"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"4.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aoe"						"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_hp_tooltip"			"1500"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_dmg_tooltip"			"55"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_armor_tooltip"		"6"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"number_of_golems_scepter"	"1"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_dmg_reduction_scepter"	"0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bounty_reduction_scepter"	"0"
+			}
+		}
+	}
+
+	"warlock_golem_flaming_fists"
+	{
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"300"
+			}
+		}
+	}
+	
+	"warlock_golem_permanent_immolation"
+	{
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"220"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"10"
+			}
+		}
+	}
+
+	"lich_frost_nova"
+	{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"8.0"
+		"AbilityDuration"				"4.0 6.0 8.0"
+		"AbilityDamage"					"100"
+
+		"AbilityManaCost"				"125"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_damage"			"50 100 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200 200 200 200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_movement_speed"	"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed"		"-20"
+			}
+		}
+	}
+
+	"bane_nightmare" //probably gonna need datadriven, 20/40/60 sec sleep
+	{		
+		"MaxLevel"					"3"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6.0"
+		"AbilityDuration"				"20.0 40.0 60.0"
+
+		"AbilityDamage"					"0 0 0"
+		"AbilityManaCost"				"100 75 50"	
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"nightmare_dot_interval"	"60.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"nightmare_invuln_time"		"1.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0 40.0 60.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"animation_rate"			"0.2 0.2 0.2"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_tooltip"		"800"
+			}
+		}
+	}
+
+	"skeleton_king_vampiric_aura"
+	{
+		"MaxLevel"						"3"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"	//Check if works
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura_radius"	"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura"			"15 30 45"
+			}
+		}
+	}
+
+	"roshan_bash"
+	{
+		"MaxLevel"						"3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"		"20 30 40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2"
+			}
+		}
+	}	
+
+	"sven_storm_bolt"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"9.0"
+		"AbilityDamage"					"100 225 350"
+		"AbilityManaCost"				"75"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bolt_speed"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bolt_stun_duration"	"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bolt_aoe"			"0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"vision_radius"		"225"
+			}
+		}
+	}
+
+	"brewmaster_storm_wind_walk"
+	{
+		"MaxLevel"						"3"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"75 75 75 75"		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"40 70 100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speeed"		"10 40 100" // CHECK Hero walk speed is capped at 400. !!!?!?!?!?!?!
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0 35.0 50.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.6 0.6 0.6 0.6"
+			}
+		}
+	}
+
+	"necronomicon_warrior_mana_burn"
+	{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"300"
+		"AbilityCooldown"				"7 6 5"
+		"AbilityManaCost"				"50"
+				
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_amount"			"50 100 150"
+			}
+		}
+	}
+
+	"crystal_maiden_brilliance_aura" //need datadriven to disable self bonus, non global
+	{
+		"MaxLevel"					"3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen"		"0.75 1.5 2.25"
+			}
+		}
+	}	
+
+	"enigma_midnight_pulse"	 //need datadriven, damages buildings, channeling
+	{
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType" 					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"150"
+		"AbilityManaCost"				"250"
+		"AbilityChannelTime"			"35"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_percent"			"4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"35"
+			}
+		}
+
+	}
+
 //END HERO SKILLS -----------------------------------------------------------------
 
 //CREEP PASSIVE SKILLS -----------------------------------------------------------------
@@ -74,7 +636,7 @@
 		"AbilitySpecial"
 		{
 			"01"
-			{
+			{	
 				"var_type"			"FIELD_INTEGER"
 				"bonus_damage_pct"	"10"
 			}
