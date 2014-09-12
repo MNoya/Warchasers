@@ -321,7 +321,7 @@ function Warchasers:OnEntityKilled( event )
 	end
 
 	--Count Creep kills as scoreboard kills
-	if not killedUnit:IsRealHero() then
+	if not killedUnit:IsRealHero() and killedUnit:GetTeam() ~= DOTA_TEAM_GOODGUYS then
 		print("1 mob dead")
 	    self.nRadiantKills = self.nRadiantKills + 1
 	    --update personal score
