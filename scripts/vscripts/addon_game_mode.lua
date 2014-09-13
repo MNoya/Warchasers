@@ -182,6 +182,7 @@ function Warchasers:InitGameMode()
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
+    ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( CAddonGameMode, "OnPlayerPicked" ), self )
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
@@ -221,6 +222,10 @@ function Warchasers:OnNPCSpawned(keys)
 		end
 		Warchasers:OnHeroInGame(npc)
 	end
+
+	if npc:IsHero() then
+        npc.strBonus = 0
+    end
 end
 
 --Add Ankh
@@ -234,6 +239,71 @@ function Warchasers:OnHeroInGame(hero)
 		SHOWPOPUP = false
 	end
 end
+
+function Warchasers:OnPlayerPicked( event )
+    local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
+    -- Apply timer to update stats
+    Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+end
+
+
+--Custom Stat Rules
+function CAddonGameMode:ModifyStatBonuses(unit)
+	local spawnedUnitIndex = unit
+	print("modifying stat bonuses")
+		Timers:CreateTimer(DoUniqueString("updateHealth_" .. spawnedUnitIndex:GetPlayerID()), {
+		endTime = 0.25,
+		callback = function()
+			-- ==================================
+			-- Adjust health based on strength
+			-- ==================================
+ 
+			-- Get player strength
+			local strength = spawnedUnitIndex:GetStrength()
+ 
+			--Check if strBonus is stored on hero, if not set it to 0
+			if spawnedUnitIndex.strBonus == nil then
+				spawnedUnitIndex.strBonus = 0
+			end
+ 
+			-- If player strength is different this time around, start the adjustment
+			if strength ~= spawnedUnitIndex.strBonus then
+				-- Modifier values
+				local bitTable = {128,64,32,16,8,4,2,1}
+ 
+				-- Gets the list of modifiers on the hero and loops through removing and health modifier
+				local modCount = spawnedUnitIndex:GetModifierCount()
+				for i = 0, modCount do
+					for u = 1, #bitTable do
+						local val = bitTable[u]
+						if spawnedUnitIndex:GetModifierNameByIndex(i) == "modifier_health_mod_" .. val  then
+							spawnedUnitIndex:RemoveModifierByName("modifier_health_mod_" .. val)
+						end
+					end
+				end
+ 
+				-- Creates temporary item to steal the modifiers from
+				local healthUpdater = CreateItem("item_health_modifier", nil, nil) 
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(strength / val)
+					if count >= 1 then
+						healthUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_health_mod_" .. val, {})
+						strength = strength - val
+					end
+				end
+				-- Cleanup
+				UTIL_RemoveImmediate(healthUpdater)
+				healthUpdater = nil
+			end
+			-- Updates the stored strength bonus value for next timer cycle
+			spawnedUnitIndex.strBonus = spawnedUnitIndex:GetStrength()
+			return 0.25
+		end
+	})
+end
+
+
 
 function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
