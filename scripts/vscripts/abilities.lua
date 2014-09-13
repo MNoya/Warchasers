@@ -89,7 +89,7 @@ function star_fall_thinker( event )
 end
 
 function star_fall_ini( event )
-	local dummy = CreateUnitByName("dummy_unit", event.caster:GetOrigin(), false, event.caster:GetOwner(), event.caster:GetOwner(), event.caster:GetTeam())
+	local dummy = CreateUnitByName("dummy_unit", event.caster:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
 	--dummy:SetControllableByPlayer( event.caster:GetPlayerOwnerID(), true)
 	dummy:AddAbility("warchasers_starfall_dummy_helper")
 	dummy:AddAbility("mirana_starfall")
