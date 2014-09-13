@@ -93,6 +93,14 @@
 				"bonus_mana" "250"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
     "item_vitality_pendant"
@@ -114,6 +122,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_health" "150"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -138,6 +154,14 @@
 				"lifesteal_percent" "50"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
     
     "item_gauntlets_3"
@@ -157,6 +181,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_strength" "3"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 
@@ -179,6 +211,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_strength" "6"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 
@@ -205,6 +245,14 @@
 				"bonus_damage" "3"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_claws_6"
@@ -225,6 +273,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_damage" "6"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -250,6 +306,14 @@
 				"bonus_damage" "9"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_claws_12"
@@ -271,6 +335,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_damage" "12"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -295,6 +367,14 @@
 				"bonus_intellect" "6"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
     "item_ror_2"
@@ -317,6 +397,14 @@
 				"bonus_health_regen" "2"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_mantle_3"
@@ -335,6 +423,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_intellect" "3"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
     }
@@ -360,6 +456,14 @@
 				"bonus_agility" "3"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_boots_6"
@@ -380,6 +484,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_agility" "6"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -404,6 +516,14 @@
 				"bonus_movement_speed" "50"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
     "item_rop_2"
@@ -424,6 +544,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_armor" "2"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
     }
@@ -448,6 +576,14 @@
 				"bonus_armor" "4"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
     }
 
     "item_sobi"
@@ -468,6 +604,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_mana_regen" "50"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
     }
@@ -492,6 +636,14 @@
 				"bonus_health" "300"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_mana_gem"
@@ -514,6 +666,14 @@
 				"bonus_mana" "300"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
     "item_evasion"
@@ -534,6 +694,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_evasion" "15"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -589,6 +757,14 @@
 				"cold_duration_ranged" "6.0"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
     }
     "item_orb_of_fire" //rewrite datadriven for ranged on air units, cleave, spell damage
     {
@@ -618,6 +794,14 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"corruption_duration" "1"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
     }
@@ -678,6 +862,14 @@
 				"radius" "1800"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
     }
 
     "item_cloak_of_shadows" //rewrite datadriven
@@ -702,6 +894,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_attack_speed" "0"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -736,6 +936,14 @@
 				"aura_damage" "10"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
     }
 
     "item_runed_bracers" //Cloak 33%
@@ -761,6 +969,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"tooltip_resist" "33"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -806,6 +1022,14 @@
 				"bonus_damage" "0"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_gloves_15"
@@ -823,6 +1047,14 @@
 				"bonus_attack_speed" "15"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_circlet_2"
@@ -838,6 +1070,14 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"bonus_all_stats" "2"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -866,6 +1106,15 @@
 		"Model"							"models/props_debris/merchant_debris_key001.vmdl"
 
 		"BaseClass" "item_datadriven"
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	
 	}
 
@@ -884,6 +1133,15 @@
 		"ItemDroppable"                 "1"
 
 		"BaseClass" "item_datadriven"
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 	
 	 "item_key3" 
@@ -901,6 +1159,15 @@
 		"ItemDroppable"                 "1"
 
 		"BaseClass" "item_datadriven"
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_inferno_stone"
@@ -938,43 +1205,78 @@
 			}
 			
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 	
 
-	"item_tome_of_health"
+	"item_tome_of_health" //bug: health stat doesn't remain after reincarnation
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_tome_of_health"
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"0"
-		"SecretShop" "1"
+		"ID"							"1051"	 "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"   //should be a no target item, but it will be used as self-target
+		"BaseClass"             "item_datadriven"
+		"AbilityTextureName"    "item_tome_of_health"
+		"AbilityCastPoint"      "0.0"
 
-		"OnEquip"
+		"ItemCost"              "0"
+		"ItemPermanent"         "0"
+		"ItemInitialCharges"    "1"
+
+		"Modifiers"
 		{
-			"SpendCharge"
-			{}
-			"RunScript"
+			"modifier_book_auto_applier"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"				"Increase50HP"
+				"Passive"           "1"//a passive modifier will be auto created once equipt to unit
+				"OnCreated"
+				{
+					"SpendCharge"//spend the only charge
+					{}
+					"ApplyModifier"
+					{
+						 "ModifierName"      "modifier_warden_book_of_str_bonus"//the real strength bonus modifier
+						 "Target"            "CASTER"
+					 }
+					 //"FireEffect"              //Optional
+					 //{
+					 //  "EffectName"            "xxx.vpcf"
+					 //  "Target"                "CASTER"
+					 //  "EffectAttachType"      "follow_origin"
+					 //}
+
+					 //"FireSound"//Optional
+
+					"RemoveModifier"
+					{
+						 "Target"        "CASTER"
+						 "ModifierName"      "modifier_book_auto_applier"
+					}
+				}
 			}
-			
-		}
+			"modifier_warden_book_of_str_bonus"//the real strength bonus modifier
+			{
+				"IsHidden"              "1"//hidden
+				"Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
+				}
+			 }
+		 }
+		 "AbilitySpecial"
+		 {
+			 "01"
+			 {
+				 "var_type"          "FIELD_INTEGER"
+				 "bonus_health"         "50"
+			 }
+		 }
 
 	}
 
@@ -1007,10 +1309,26 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/items.lua"
 				"Function"				"StrengthTomeUsed"
 			}
-			
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}			
 		}
 
 	}
@@ -1044,10 +1362,26 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/items.lua"
 				"Function"				"AgilityTomeUsed"
 			}
-			
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}	
+			"AttachEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
+				"EffectAttachType" 	"follow_overhead"
+			}
 		}
 
 	}
@@ -1081,12 +1415,27 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"			"scripts/vscripts/items.lua"
 				"Function"				"IntellectTomeUsed"
 			}
-			
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/items2_fx/shivas_guard_impact.vpcf"
+				"EffectAttachType" 	"follow_overhead"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}	
 		}
-
 	}
 
 	
@@ -1128,7 +1477,7 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"items.lua"
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
@@ -1150,6 +1499,14 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal_amount"				"250"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -1193,7 +1550,7 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"items.lua"
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
@@ -1215,6 +1572,14 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal_amount"				"500"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -1257,7 +1622,7 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"items.lua"
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"heal_amount"		"%mana_amount"
@@ -1279,6 +1644,14 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mana_amount"				"300"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -1337,7 +1710,7 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"items.lua"
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
@@ -1364,6 +1737,15 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal_amount"				"500"
+			}
+		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -1421,7 +1803,7 @@
 			{}
 			"RunScript"
 			{
-				"ScriptFile"		"itemfunctions.lua"
+				"ScriptFile"		"items.lua"
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"mana_amount"		"%mana_amount"
@@ -1448,6 +1830,15 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"man_aamount"				"300"
+			}
+		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
 			}
 		}
 	}
@@ -1504,6 +1895,15 @@
 				"duration"				"2134568"
 			}
 		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_healing_wards"
@@ -1543,7 +1943,15 @@
 			
 			//doesn't heal
 		}
-
+	
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 
 	}    
    
@@ -1587,6 +1995,15 @@
 			}
 			
 		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	//"item_wand_of_illusion" //ilu hero
@@ -1624,6 +2041,15 @@
 				"Duration"				"180"
 			}
 			
+		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
 		}
 	}
 
@@ -1663,6 +2089,15 @@
 			}
 			
 		}
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 
@@ -1700,6 +2135,14 @@
 				"Duration"				"180"
 			}
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 	"item_talisman_of_the_wild"  //fulborg
@@ -1735,6 +2178,14 @@
 				"Duration"				"180"
 			}
 			
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
 		}
 	}
 
@@ -1803,6 +2254,14 @@
 		    	}
 		    }
 	   	}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
     //"item_bone_chimes"
@@ -1871,6 +2330,14 @@
 		    	}
 		    }
 	   	}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
 	}
 
 

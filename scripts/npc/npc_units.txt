@@ -10446,19 +10446,19 @@
 
 
 	//=================================================================================
-	// Warlock: Golem 1
+	// Warlock: Golem 1 //MODIFIED
 	//=================================================================================
 	"npc_dota_warlock_golem_1"
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/warlock/warlock_demon.mdl"	// Model.
+		"Model"						"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"	// Model.
 		"BaseClass"					"npc_dota_warlock_golem"
 		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
 		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
 		"IsSummoned"				"1"
 		"IsAncient"					"1"
-		"ModelScale"					".90"
+		"ModelScale"					"1"
 		"ConsideredHero"			"1"
 		"UnitLabel"			"golem"
 	
@@ -10471,174 +10471,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"6"			// Physical protection.
+		"ArmorPhysical"				"6"		// Physical protection.
 		"MagicalResistance"				"33"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"75"		// Damage range max.	
-		"AttackRate"				"1.35"		// Speed of attack.
-		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			"0"			// Speed of projectile.		   
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"240"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"98"		// Experience earn.
-		"BountyGoldMin"				"100"		// Gold earned min.
-		"BountyGoldMax"				"100"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"320"		// Speed.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"900"		// Base health.
-		"StatusHealthRegen"			"15"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-
-		"VoiceFile" 				"scripts/voscripts/game_sounds_vo_warlock_golem.txt"
-		//Inventory
-		"HasInventory"				"0"
-	}	
-	
-	//=================================================================================
-	// Warlock: Golem 2
-	//=================================================================================
-	"npc_dota_warlock_golem_2"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/warlock/warlock_demon.mdl"	// Model.
-		"BaseClass"					"npc_dota_warlock_golem"
-		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
-		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
-		"IsSummoned"				"1"
-		"IsAncient"					"1"
-		"ModelScale"					"1.0"
-		"ConsideredHero"			"1"
-		"UnitLabel"			"golem"
-	
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1
-		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"9"			// Physical protection.
-		"MagicalResistance"				"33"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"		// Damage range min.
-		"AttackDamageMax"			"100"		// Damage range max.	
-		"AttackRate"				"1.35"		// Speed of attack.
-		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			"0"			// Speed of projectile.		   
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"260"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"98"		// Experience earn.
-		"BountyGoldMin"				"150"		// Gold earned min.
-		"BountyGoldMax"				"150"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"340"		// Speed.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
-		"StatusHealthRegen"			"20"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-
-		"VoiceFile" 				"scripts/voscripts/game_sounds_vo_warlock_golem.txt"
-		//Inventory
-		"HasInventory"				"0"
-	}
-	
-	//=================================================================================
-	// Warlock: Golem 3
-	//=================================================================================
-	"npc_dota_warlock_golem_3"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/warlock/warlock_demon.mdl"	// Model.
-		"BaseClass"					"npc_dota_warlock_golem"
-		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
-		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
-		"IsSummoned"				"1"
-		"IsAncient"					"1"
-		"ModelScale"					"1.1"
-		"ConsideredHero"			"1"
-		"UnitLabel"			"golem"
-	
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1
-		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"12"		// Physical protection.
-		"MagicalResistance"				"33"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"125"		// Damage range min.
-		"AttackDamageMax"			"125"		// Damage range max.	
+		"AttackDamageMin"			"55"		// Damage range min.
+		"AttackDamageMax"			"56"		// Damage range max.	
 		"AttackRate"				"1.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -10671,7 +10511,167 @@
 		// Vision
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1800"		// Range of vision at night time.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VoiceFile" 				"scripts/voscripts/game_sounds_vo_warlock_golem.txt"
+		//Inventory
+		"HasInventory"				"0"
+	}	
+	
+	//=================================================================================
+	// Warlock: Golem 2 //MODIFIED
+	//=================================================================================
+	"npc_dota_warlock_golem_2"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"	// Model.
+		"BaseClass"					"npc_dota_warlock_golem"
+		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"ModelScale"					"1"
+		"ConsideredHero"			"1"
+		"UnitLabel"			"golem"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1
+		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"6"		// Physical protection.
+		"MagicalResistance"				"33"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"55"		// Damage range min.
+		"AttackDamageMax"			"56"		// Damage range max.	
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"280"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"98"		// Experience earn.
+		"BountyGoldMin"				"200"		// Gold earned min.
+		"BountyGoldMax"				"200"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"360"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"25"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VoiceFile" 				"scripts/voscripts/game_sounds_vo_warlock_golem.txt"
+		//Inventory
+		"HasInventory"				"0"
+	}
+	
+	//=================================================================================
+	// Warlock: Golem 3 //MODIFIED
+	//=================================================================================
+	"npc_dota_warlock_golem_3"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/items/warlock/golem/doom_of_ithogoaki/doom_of_ithogoaki.vmdl"	// Model.
+		"BaseClass"					"npc_dota_warlock_golem"
+		"SoundSet"					"Hero_WarlockGolem"			// Name of sound set.
+		"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"ModelScale"					"1.1"
+		"ConsideredHero"			"1"
+		"UnitLabel"			"golem"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1
+		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"6"		// Physical protection.
+		"MagicalResistance"				"33"		// Magical protection.  // this should be 33, switch it back once we implement Resistant Skin
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"55"		// Damage range min.
+		"AttackDamageMax"			"56"		// Damage range max.	
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.26"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"280"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"98"		// Experience earn.
+		"BountyGoldMin"				"200"		// Gold earned min.
+		"BountyGoldMax"				"200"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"360"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"25"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------
@@ -13251,7 +13251,7 @@
 	}
 
 //=================================================================================
-// Lycan Wolves
+// Lycan Wolves //MODIFIED 1 2 3
 //=================================================================================
 	"npc_dota_lycan_wolf1"
 	{										
@@ -13274,14 +13274,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"0"			// Physical protection.
 		"MagicalResistance"				"80"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"17"		// Damage range min.
-		"AttackDamageMax"			"18"		// Damage range max.	
+		"AttackDamageMin"			"11"		// Damage range min.
+		"AttackDamageMax"			"12"		// Damage range max.	
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -13304,7 +13304,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"400"		// Speed.
+		"MovementSpeed"				"320"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
@@ -13347,14 +13347,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"0"			// Physical protection.
 		"MagicalResistance"				"80"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"27"		// Damage range min.
-		"AttackDamageMax"			"30"		// Damage range max.	
+		"AttackDamageMin"			"16"		// Damage range min.
+		"AttackDamageMax"			"17"		// Damage range max.	
 		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -13377,7 +13377,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"420"		// Speed.
+		"MovementSpeed"				"350"		// Speed.
 
 
 		// Status
@@ -13409,7 +13409,7 @@
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"3"
 		"IsSummoned"				"1"
-		"ModelScale" 					".975"
+		"ModelScale" 					"1"
 		"UnitLabel"			"lycan_wolf"
 
 		// Abilities
@@ -13421,14 +13421,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"0"			// Physical protection.
 		"MagicalResistance"				"80"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"34"		// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.	
+		"AttackDamageMin"			"21"		// Damage range min.
+		"AttackDamageMax"			"22"		// Damage range max.	
 		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -13451,7 +13451,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"440"		// Speed.
+		"MovementSpeed"				"350"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------

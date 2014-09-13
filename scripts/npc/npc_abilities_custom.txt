@@ -2374,86 +2374,108 @@
 // START HERO SKILLS ------------------------------------------------------------------------------------------------------
 
 	"warchasers_blade_berserker_immolation"
-		{
+	{
 		"MaxLevel"		"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
 		"AbilityManacost" "35"
 		"OnToggleOn"
-			{
+		{
 			"ApplyModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
-				}
-			//attach ember spirit flameguard particles particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf
 			}
+		}
 		"OnToggleOff"
-			{
+		{
 			"RemoveModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
-				}
-			//destroy particles
 			}
+		}
 		"Modifiers"
-			{
+		{
 			"warchasers_blade_berserker_immolation_buff"
+			{	
+				"OnCreated" //Looks good.
 				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"	"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"IsPassive"	"1"
 				"IsBuff"	"1"
 				"IsPurgable"	"0"
 				"ThinkInterval"	"1"
 				"OnIntervalThink"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"	"abilities.lua"
 						"Function"	"warchasers_blade_berserker_immolation_function"
 						"Target"
-							{
+						{
 							"Center"	"CASTER"
 							"Radius"	"160"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
 						}
 					}
 				}
 			}
 		}
+	}
 
 	"warchasers_muhrah_animate_dead_helper"
-		{
+	{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
 		"Modifiers"
-			{
+		{
 			"warchasers_muhrah_animate_dead_helper_timer"
+			{
+				"OnCreated"
 				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+						"EffectAttachType" "follow_overhead"
+					}
+					"FireSound"
+					{
+						"EffectName"		"Hero_Abaddon.AphoticShield.Cast"
+						"Target"			  "CASTER"
+					}
+				}
 				"Passive"	"1"
 				"IsPurgable"	"0"
 				"Duration"	"40"
 				"States"
-					{
+				{
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
+				}
 				"OnDestroy"
-					{
+				{
 					"RunScript"
-						{
+					{
 						"ScriptFile"	"abilities.lua"
 						"Function"	"warchasers_muhrah_animate_dead_killer"
-						}
 					}
 				}
 			}
 		}
+	}
 
 	"warchasers_muhrah_animate_dead"
-		{
+	{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
@@ -2462,65 +2484,78 @@
 		"AbilityCooldown" "180"
 		"AbilityManacost" "175"
 		"OnSpellStart"
-			{
-				//attach particles
+		{
 			"RunScript"
-				{
+			{
 				"ScriptFile"	"abilities.lua"
 				"Function"	"warchasers_muhrah_animate_dead_ini"
 				"Target"
-					{
+				{
 					"Center"	"CASTER"
 					"Radius"	"400"
 					"Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
 					"Types"	"DOTA_UNIT_TARGET_BASIC"
 					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
-					}
 				}
 			}
 		}
+	}
 
 	"warchasers_megatron_thorns_aura"
-		{
+	{
 		"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"    "centaur_return"
 		"Modifiers"
+		{
+			"fx_thorns"
 			{
-			"warchasers_megatron_thorns_aura_thinker"
+				"IsHidden" "1"
+				"Passive" "1"
+				"OnCreated"
 				{
-					//OnCreated attach aura particles
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName" "particles/items_fx/aura_assault_ring.vpcf"
+						"EffectAttachType" "follow_origin"
+						//"EffectLifeDurationScale" "1"
+					}
+				}
+			}
+			"warchasers_megatron_thorns_aura_thinker"
+			{
 				"Passive"	"1"
 				"ThinkInterval"	"0.5"
 				"OnIntervalThink"
-					{
+				{
 					"ApplyModifier"
-						{
+					{
 						"Target"
-							{
+						{
 							"Center"	"CASTER"
 							"Radius"	"900"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-						"ModifierName"	"warchasers_megatron_thorns_aura_marker"
 						}
+						"ModifierName"	"warchasers_megatron_thorns_aura_marker"
 					}
 				}
+			}
 			"warchasers_megatron_thorns_aura_marker"
-				{
+			{
 				"Duration"	"1"
 				"IsBuff"	"1"
 				"IsHidden"	"1"
-				}
 			}
 		}
+	}
 		
 
 
 	"warchasers_megatron_tranquility"
-		{
+	{
 		"MaxLevel"	"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
@@ -2530,46 +2565,117 @@
 		"AbilityManacost" "125"
 		"AbilityChannelTime" "30"
 		"OnSpellStart"
-			{
+		{
 			"ApplyModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_megatron_tranquility_modifier"
-				}
-				//attach witch doctor channel aoe particles here
 			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"fx_tranquility"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName" "fx_tranquility_secondary"
+			}
+				
+		}
 		"OnChannelFinish"
-			{
+		{
 			"RemoveModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_megatron_tranquility_modifier"
-				}
-			}
-		"Modifiers"
+			}	
+			"RemoveModifier"
 			{
+				"Target"	"CASTER"
+				"ModifierName"	"fx_tranquility"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName" "fx_tranquility_secondary"
+			}
+		}
+		"Modifiers"
+		{
 			"warchasers_megatron_tranquility_modifier"
-				{
+			{
+				"IsPassive" "1"
 				"IsBuff"	"1"
 				"ThinkInterval" "1"
 				"OnIntervalThink"
-					{
+				{
 					"Heal"
-						{
+					{
 						"HealAmount" "20"
 						"Target"
-							{
+						{
 							"Center" "CASTER"
 							"Radius" "900"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							}
 						}
-					//attach holdout tranquil boots effect here
+					}
+				}
+			}
+			"fx_tranquility"
+			{
+				"IsPassive"			"1"
+				"IsHidden" 			"1"
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"AttachEffect"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+						}
+						"EffectName"		"particles/neutral_fx/troll_heal.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"FireSound"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+						}
+						"EffectName" "n_creep_ForestTrollHighPriest.Heal"
+					}			
+				}		
+			}
+			"fx_tranquility_secondary"
+			{
+				"IsHidden"	"1"
+				"IsPassive"	"1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"FireSound"
+					{
+						"Target" "CASTER"
+						"EffectName" "sven_sven_regen_02"
 					}
 				}
 			}
 		}
+	}
 
 	"warchasers_megatron_divine_shield"
 		{
@@ -2580,36 +2686,54 @@
 		"AbilityManaCost"	"25"
 		"AbilityTextureName"    "omniknight_repel"
 		"AbilitySpecial"
-			{
+		{
 			"01"
-				{
+			{
 				"var_type"	"FIELD_FLOAT"
 				"shield_duration"	"15 30 45"
-				}
 			}
+		}
 		"OnSpellStart"
-			{
+		{
 			"ApplyModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_megatron_divine_shield_modifier"
-				}
-			//attach guardian angel
 			}
+			
+			"FireSound"
+			{
+				"Target" "CASTER"
+				"EffectName" "sven_sven_rare_10"
+			}
+		}
 		
 		"Modifiers"
-			{
+		{
 			"warchasers_megatron_divine_shield_modifier"
-				{
+			{
+				"OnCreated"
+				 {
+				 	"AttachEffect"
+					{
+						"Target"					"CASTER"
+						"EffectName"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+						"EffectAttachType"			"follow_origin"
+						"EffectRadius"				"300"
+					}
+
+				 }
+				"IsPassive" "1"
+				"IsHidden" "0"
 				"IsBuff"	"1"
 				"Duration"	"%shield_duration"
 				"States"
-					{
+				{
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
 				}
 			}
 		}
+	}
 
 	"warchasers_beast_knight_summon_water_elemental"
 		{
@@ -2666,46 +2790,73 @@
 		}
 
 	"warchasers_optimusprimo_avatar"
-		{
+	{
 		"MaxLevel"		"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"	"150"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"    "invoker_ghost_walk"
+		"AbilityTextureName"    "alchemist_chemical_rage"
 		"OnSpellStart"
-			{
+		{
 			"ApplyModifier"
-				{
+			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_optimusprimo_avatar_modifier"
-				}
-				//attach scale hero, for khaz modan sound
 			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"warchasers_avatar_scale"
+				"Target"	"CASTER"
+			}
+			"FireSound"
+			{
+				"Target"	"CASTER"
+				"EffectName" "DOTA_Item.BlackKingBar.Activate"
+			}
+
+			"FireEffect"
+			{
+							"Target" "CASTER"
+							"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+							"EffectAttachType" "follow_origin"
+							"EffectLifeDurationScale" "1"
+			}
+		}
 		
 		"Modifiers"
-			{
+		{
 			"warchasers_optimusprimo_avatar_modifier"
+			{
+				"OnCreated"
 				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/items_fx/black_king_bar_avatar.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"		"CASTER"
+					}
+				}
 				"IsBuff"	"1"
 				"Duration"	"60"
 				"Properties"
-					{
+				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"20"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"500"
-					}
+				}
 				"States"
-					{
+				{
 					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
 				}
 			}
 		}
+	}
 
 	"warchasers_optimusprimo_devotion_aura"
-		{
+	{
 		"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -2716,54 +2867,53 @@
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
-		
+	
 		"AbilitySpecial"
-			{
+		{
 			"01"
-				{
+			{
 				"var_type"	"FIELD_FLOAT"
 				"armor_bonus"	"1.5 3 4.5"
-				}
+			}
 			"02"
-				{
+			{
 				"var_type"	"FIELD_INTEGER"
 				"Range"		"900"
-				}
-			}
-		"Modifiers"
-			{
-				"Devotion_Aura_Modifier"
-				{
-					"OnCreated"
-					{
-						"AttachEffect"
-						{
-							"Target" "CASTER"
-							"EffectName"		"particles/units/heroes/hero_silencer/silencer_last_word_status.vpcf"
-							"EffectAttachType" "follow_origin"
-							"EffectLifeDurationScale" "1"
-						}
-					}
-					"Passive" 			"1"
-					"IsHidden" 			"1"
-					"IsBuff"			"1"
-					"Aura" 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
-					"Aura_Radius" 		"%Range"
-					"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
-				}
-				"warchasers_optimusprimo_devotion_aura_armor_bonus"
-				{
-					
-					"IsBuff"				"1"
-					"Properties"
-					{
-						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
-					}
-				}
-				//attach aura effect
 			}
 		}
+		"Modifiers"
+		{
+			"Devotion_Aura_Modifier"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/items_fx/aura_assault.vpcf"
+						"EffectAttachType" "follow_origin"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"Aura" 				"warchasers_optimusprimo_devotion_aura_armor_bonus"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"warchasers_optimusprimo_devotion_aura_armor_bonus"
+			{
+				
+				"IsBuff"				"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+				}
+			}
+		}
+	}
 
 
 	"warchasers_assassin_entangle"
@@ -2820,9 +2970,26 @@
 
 
 		"Modifiers"
-			{
+		{
 			"warchasers_assassin_entangle_hero_debuff"
+			{
+				"OnCreated"
 				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+						"EffectAttachType" "attach_hitloc"
+						"EffectLifeDurationScale" "1"
+					}
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+						"EffectAttachType" "attach_hitloc"
+						"EffectLifeDurationScale" "1"
+					}			
+				}
 				"IsDebuff"	"1"
 				"IsPurgable"	"1"
 				"ThinkInterval"	"1"
@@ -2842,28 +3009,45 @@
 					}
 				}
 			"warchasers_assassin_entangle_creep_debuff"
+			{
+				"OnCreated"
 				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_bear_entangle_body.vpcf"
+						"EffectAttachType" "attach_hitloc"
+						"EffectLifeDurationScale" "1"
+					}
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+						"EffectAttachType" "attach_hitloc"
+						"EffectLifeDurationScale" "1"
+					}				
+				}
 				"IsDebuff"	"1"
 				"IsPurgable"	"1"
 				"ThinkInterval"	"1"
 				"Duration"	"%creep_duration"
 				"OnIntervalThink"
-					{
+				{
 					"Damage"
-						{
+					{
 						"Target"	"TARGET"
 						"Type"	"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"%damage_per_second"
-						}
-					}
-				"States"
-					{
-					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
-
 		}
+
+	}
 
 	"warchasers_starfall_dummy_helper"
 		{
@@ -2888,7 +3072,8 @@
 		}
 
 	"warchasers_starfall"
-		{
+	{
+		"MaxLevel"	"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_CHANNELLED	|	DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityManaCost"	"200"
@@ -2897,22 +3082,50 @@
 		"AbilityTextureName"    "mirana_starfall"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"OnSpellStart"
-			{
+		{
 			"RunScript"
-				{
+			{
 				"ScriptFile"	"abilities.lua"
 				"Function"	"star_fall_ini"
-				}
 			}
-		"OnChannelFinish"
+			"ApplyModifier"
 			{
+				"Target"	"CASTER"
+				"ModifierName"	"fx_starfall"
+			}
+		}
+		"OnChannelFinish"
+		{
 			"RunScript"
-				{
+			{
 				"ScriptFile"	"abilities.lua"
 				"Function"	"star_fall_ender"
+			}
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"fx_starfall"
+			}
+		}
+		"Modifiers"
+		{
+			"fx_starfall"
+			{
+				"IsPassive" "1"
+				"IsHidden" "0"
+				"IsPurgable" "0"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName" "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
+						"EffectAttachType" "follow_overhead"
+						"Target" "CASTER"
+					}
 				}
 			}
 		}
+	}
 
 
 	"dummy_passive"
@@ -3065,6 +3278,150 @@
 		}
 
 	}
+	
+	"warchasers_blade_berserker_death_coil"
+	{
+		"BaseClass" 					"abaddon_death_coil"
+		"MaxLevel"						"3"
+			
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		
+	
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"75"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"self_damage"			"0 0 0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"target_damage"			"100 200 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"200 400 600"
+			}
+		}
+	}
+	
+	"warchasers_hero_holy_light" //needs datadriven
+	{
+		"BaseClass" 					"abaddon_death_coil"
+		"MaxLevel"						"3"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"65"
+		"AbilityTextureName"			"omniknight_purification"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"self_damage"			"0 0 0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"target_damage"			"100 200 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"200 400 600"
+			}
+		}
+	}
+	
+	"warchasers_endurance_aura"
+	{
+		"MaxLevel"	"3"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"    "centaur_khan_endurance_aura"
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "900"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"move_speed_bonus"	"10 20 30"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"attack_speed_bonus"	"5 10 15"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Range"		"900"
+			}
+		}
+		"Modifiers"
+		{
+			"Endurance_Aura_Modifier"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/items_fx/aura_endurance.vpcf"
+						"EffectAttachType" "follow_origin"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"Aura" 				"warchasers_endurance_aura_bonus"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"warchasers_endurance_aura_bonus"
+			{
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_bonus"
+				}
+			}
+		}
+	}
+
 
 
 

@@ -115,6 +115,14 @@ function Warchasers:InitGameMode()
 	print( "GameRules set" )
 
 	print("Dropping items on the world")
+	
+	--    -5888 -7360 144 = start zone
+	position = Vector(-5888, -7360, 144)
+	local newItem = CreateItem("item_tome_of_health", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+	local newItem = CreateItem("item_inferno_stone", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+		
     position = Vector(-2940,2996,124)
 	local newItem = CreateItem("item_allerias_flute", nil, nil)
     CreateItemOnPositionSync(position, newItem)
@@ -248,57 +256,57 @@ function Warchasers:OnEntityKilled( event )
       	if KilledPlayerID==0 and P0_HAS_ANKH then  
     		P0_HAS_ANKH = false
     		respawning = true
-    		GameRules:SendCustomMessage("Player 0 died but used Ankh",0,0)
+    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
     	if KilledPlayerID==1 and P1_HAS_ANKH then  
     		P1_HAS_ANKH = false
     		respawning = true
-    		GameRules:SendCustomMessage("Player 1 died but used Ankh",0,0)
+    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 	      
 	    if KilledPlayerID==2 and P2_HAS_ANKH then  
     		P2_HAS_ANKH = false
     		respawning = true
-    		GameRules:SendCustomMessage("Player 2 died but used Ankh",0,0)
+    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
     	if KilledPlayerID==3 and P3_HAS_ANKH then  
     		P3_HAS_ANKH = false
     		respawning = true
-    		GameRules:SendCustomMessage("Player 3 died but used Ankh",0,0)
+    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
     	if KilledPlayerID==4 and P4_HAS_ANKH then  
     		P4_HAS_ANKH = false
     		respawning = true
-    		GameRules:SendCustomMessage("Player 4 died but used Ankh",0,0)
+    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end     
 
     	--RIP
     	if not respawning then
 	    	if KilledPlayerID==0 and not P0_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("RIP Blue",0,0)
+	    		GameRules:SendCustomMessage("<font color='#386BE8'>You</font> are dead! Your lost is soul forever...",0,0)
 	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
 	    	end
 
 	    	if KilledPlayerID==1 and not P1_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("RIP Teal",0,0)
+	    		GameRules:SendCustomMessage("<font color='#68FFC2'>You</font> are dead! Your lost is soul forever...",0,0)
 	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
 	    	end
 		      
 		    if KilledPlayerID==2 and not P2_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("RIP Purple",0,0)
+	    		GameRules:SendCustomMessage("<font color='#BC02BD'>You</font> are dead! Your lost is soul forever...",0,0)
 	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
 	    	end
 
 	    	if KilledPlayerID==3 and not P3_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("RIP Yellow",0,0)
+	    		GameRules:SendCustomMessage("<font color='#E3E015>You</font> are dead! Your lost is soul forever...",0,0)
 	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
 	    	end
 
 	    	if KilledPlayerID==4 and not P4_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("RIP Orange",0,0)
+	    		GameRules:SendCustomMessage("<font color='#E66A0A'>You</font> are dead! Your lost is soul forever...",0,0)
 	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
 	    	end  
 	 		
@@ -306,7 +314,7 @@ function Warchasers:OnEntityKilled( event )
 		    if DEAD_PLAYER_COUNT == PLAYER_COUNT then
 		    	print("THEY'RE ALL DEAD BibleThump")
 				local messageinfo = {
-				        message = "YOU DEFEATED",
+				        message = "RIP IN PIECES",
 				        duration = 2}
 				Timers:CreateTimer({
 	    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -325,7 +333,11 @@ function Warchasers:OnEntityKilled( event )
 		print("1 mob dead")
 	    self.nRadiantKills = self.nRadiantKills + 1
 	    --update personal score
-	    killerEntity:IncrementKills(1)
+		if killerEntity:GetOwner() ~= nil and not killerEntity:IsRealHero() then --it's a summon killing something, credit to the owner
+			killerEntity:GetOwner():IncrementKills(1)
+		elseif killerEntity:IsRealHero() then
+			killerEntity:IncrementKills(1) 
+		end
 	end
 
 	--update team scores

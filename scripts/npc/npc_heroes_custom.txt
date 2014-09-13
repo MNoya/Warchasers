@@ -76,12 +76,12 @@
 		"override_hero"				"npc_dota_hero_juggernaut"
 
 		"AbilityLayout"				"4"
-		"Ability1"					"abaddon_death_coil"
-		"Ability2"					"warchasers_blade_berserker_immolation" //Needs to attach particles
-		"Ability3"					"centaur_khan_endurance_aura"
+		"Ability1"					"warchasers_blade_berserker_death_coil"
+		"Ability2"					"warchasers_blade_berserker_immolation" 
+		"Ability3"					"warchasers_endurance_aura"
 		"Ability4"					""
 		"Ability5"				""
-		"Ability6"				"juggernaut_blade_fury" //Check if this uses R as hotkey
+		"Ability6"				"juggernaut_blade_fury"
     	"Ability7"				""
     	"Ability8"				""
 		
@@ -139,7 +139,7 @@
 		"override_hero"				"npc_dota_hero_drow_ranger"
 
 		"AbilityLayout"				"4"
-		"Ability1"					"omniknight_purification"
+		"Ability1"					"warchasers_hero_holy_light"
 		"Ability2"					"clinkz_searing_arrows"
 		"Ability3"					"warchasers_snake_cold_arrows" 
 		"Ability4"					"" //No particles
@@ -201,7 +201,7 @@
 		"override_hero"				"npc_dota_hero_chaos_knight"
 
 		"AbilityLayout"				"4"
-		"Ability1"					"omniknight_purification"
+		"Ability1"					"warchasers_hero_holy_light"
 		"Ability2"					"lycan_summon_wolves"
 		"Ability3"					"warchasers_beast_knight_summon_water_elemental"
 		"Ability4"					""
@@ -349,7 +349,7 @@
 		//"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
 		"AttackRange"				"600"									// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"			// Particle system model for projectile.
+		"ProjectileModel"			"particles/econ/items/luna/luna_lucent_rider/luna_attack_lucent_rider.vpcf"			// Particle system model for projectile.
 		"ProjectileSpeed"			"1050"									// Speed of projectile.
 
 		// Attributes

@@ -98,6 +98,32 @@
 			}
 		}								
 	}
+	
+	"lycan_summon_wolves_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5399"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_damage"					"200"
+			}
+		}
+	}
+
 
 	"brewmaster_thunder_clap"
 	{
@@ -140,38 +166,6 @@
 		}				
 	}
 
-	"abaddon_death_coil" //Check Self damage? Undead/living behavior
-	{
-		"MaxLevel"						"3"
-		"AbilityCastRange"				"800"
-		"AbilityCooldown"				"6"
-		"AbilityManaCost"				"75"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"self_damage"			"75 100 125"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"target_damage"			"100 200 300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 400 600"
-			}
-		}
-	}
-
 	"centaur_khan_endurance_aura" //must rewrite datadriven for Movement Speed 10% 20% 30% and attach particle effect
 	{
 		"MaxLevel"				"3"
@@ -190,8 +184,6 @@
 			}
 		}
 	}
-
-	//"omniknight_purification" //check use death coil, opposite values, 5sec CD 65 mana cost
 
 	"clinkz_searing_arrows"
 	{

@@ -334,7 +334,7 @@
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"ModelScale"				"0.7"
+		"ModelScale"				"0.5"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -425,7 +425,7 @@
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"ModelScale"				"0.7"
+		"ModelScale"				"0.5"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -606,7 +606,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
-		"ModelScale"				"0.7"
+		"ModelScale"				"0.5"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -699,6 +699,7 @@
 		"Model"						"models/buildings/building_racks_melee_reference.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"ModelScale"				"0.7"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1060,6 +1061,7 @@
 		"Model"						"models/buildings/building_racks_ranged_reference.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"ModelScale"				"0.7"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1148,7 +1150,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_structures/sniper_hut.vmdl"	// Model.
-		"ModelScale"				"0.7"
+		"ModelScale"				"0.6"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -1507,7 +1509,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	
 		"Model"						"models/props_winter/nest_03.vmdl"	// Model.
-		"ModelScale"				"2"
+		"ModelScale"				"1.8"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
@@ -1788,7 +1790,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -1890,7 +1892,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -1991,7 +1993,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -2103,7 +2105,7 @@
 		"AttackDamageMax"                       "15"            // Damage range max.
 		"AttackRate"                            "0.8"           // Speed of attack.
 		"AttackAnimationPoint"          "0.3"           // Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"        "800"           // Range within a target can be acquired.
+		"AttackAcquisitionRange"        "400"           // Range within a target can be acquired.
 		"AttackRange"                           "300"           // Range within a target can be attacked.
 		"ProjectileModel"                       "particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"                       "1500"          // Speed of projectile.              
@@ -2183,7 +2185,7 @@
 		"AttackDamageMax"                       "27"            // Damage range max.
 		"AttackRate"                            "1.6"           // Speed of attack.
 		"AttackAnimationPoint"          "0.4"           // Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"        "800"           // Range within a target can be acquired.
+		"AttackAcquisitionRange"        "400"           // Range within a target can be acquired.
 		"AttackRange"                           "300"           // Range within a target can be attacked.
 		"ProjectileModel"                       "particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"                       "1500"          // Speed of projectile.              
@@ -2265,7 +2267,7 @@
 		"AttackDamageMax"                       "15"            // Damage range max.
 		"AttackRate"                            "1.6"           // Speed of attack.
 		"AttackAnimationPoint"          "0.4"           // Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"        "800"           // Range within a target can be acquired.
+		"AttackAcquisitionRange"        "400"           // Range within a target can be acquired.
 		"AttackRange"                           "100"           // Range within a target can be attacked.
 		"ProjectileModel"                       "" // Particle system model for projectile.
 		"ProjectileSpeed"                       ""          // Speed of projectile.              
@@ -2538,7 +2540,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -2614,7 +2616,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -2701,7 +2703,7 @@
 		"AttackDamageMax"			"25"									// Damage range max.
 		"AttackRate"				"1.7"									// Speed of attack.
 		"AttackAnimationPoint"		"0.45"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"300"									// Range within a target can be acquired.
 		"AttackRange"				"300"									// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"		// Particle system model for projectile.
 		"ProjectileSpeed"			"1250"									// Speed of projectile.
@@ -7228,17 +7230,17 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/courier/mega_greevil_courier/mega_greevil_courier.vmdl"	// placeholder
+		"Model"						"models/heroes/nightstalker/nightstalker_night.vmdl"	// placeholder
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"322"
-		"ModelScale" 				"3.22"
+		"ModelScale" 				"2.33"
 		"ConsideredHero"			"0"
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"night_stalker_hunter_in_the_night"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -7304,6 +7306,13 @@
 			//	"Support"					"30.0"
 			//  "CanRespawn"				"0"
 			
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "337" }
+				"Wearable2"	{ "ItemDef"	"338" }
+				"Wearable3" { "ItemDef"	"339" }
+			}
+
 		}
 	}
 

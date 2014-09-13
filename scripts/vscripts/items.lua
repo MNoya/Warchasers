@@ -1,22 +1,5 @@
---[[if itemFunctions == nil then
-    print ( "[ItemFunctions] creating itemFunctions" )
-    itemFunctions = {} -- Creates an array to let us beable to index itemFunctions when creating new functions
-    itemFunctions.__index = itemFunctions
-end
- 
-function itemFunctions:new() -- Creates the new class
-    print ( "[ItemFunctions] itemFunctions:new" )
-    o = o or {}
-    setmetatable( o, itemFunctions )
-    return o
-end
- 
-function itemFunctions:start() -- Runs whenever the itemFunctions.lua is ran
-    print("[ItemFunctions] itemFunctions started!")
-end
- 
 function DropItemOnDeath(event) -- event is the information sent by the ability
-    print( "[ItemFunctions] DropItemOnDeath Called" )
+    print( "DropItemOnDeath Called" )
     local killedUnit = EntIndexToHScript( event.caster_entindex ) -- EntIndexToHScript takes the event.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
     local itemName = tostring(event.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. event.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
     if killedUnit:IsHero() or killedUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
@@ -31,16 +14,8 @@ function DropItemOnDeath(event) -- event is the information sent by the ability
                 end
         end
     end
-end]] --needs testing and adding to every item, making sure items don't drop while reincarnating, will do later
-
-function Increase50HP( event )
-    local casterUnit = event.caster
-    --local casterLevel = casterUnit:GetLevel()
-    --casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
-    --casterUnit:SetHealth( casterUnit:GetHealth() + 50 )
-    casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
-    event.caster:ModifyHealth(casterUnit:GetMaxHealth()+50, event.caster, false, 0)
 end
+
 
 function HealthTomeUsed( event )
     local casterUnit = event.caster
@@ -48,18 +23,7 @@ function HealthTomeUsed( event )
     casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
     casterUnit:SetHealth(casterUnit:GetHealth() + 50)
     --BUG: When buying a new item, the Health will reset. 
-    --Use ModifyHealth or try to apply a datadriven modifier
 end
-
---[[        local playerID = tonumber(event.PlayerID)
-        local playerHandle = PlayerResource:GetPlayer(playerID)
-        print(playerHandle)
-        local unit_to_pick_powerup =  playerHandle:GetAssignedHero()
-    unit_to_pick_powerup:SetMaxHealth( unit_to_pick_powerup:GetMaxHealth() + 50 )
-    unit_to_pick_powerup:SetHealth( unit_to_pick_powerup:GetHealth() + 50)
-end
-
-ListenToGameEvent( "dota_rune_activated_server", HealthTomeUsed, self )]]
 
 function StrengthTomeUsed( event )
     local casterUnit = event.caster
@@ -103,6 +67,9 @@ function CheckForKey(trigger)
                     door:Kill()
                 end
 
+                local hint_trigger = Entities:FindByName(nil,"show_hint_key1")
+                   hint_trigger:Disable()
+
                 local obstructions = Entities:FindByName(nil,"obstructions_2_1")
                 obstructions:SetEnabled(false,false)
 
@@ -136,6 +103,9 @@ function CheckForKey2(trigger)
                     print("Door detected")
                     door:Kill()
                 end
+				
+				 local hint_trigger = Entities:FindByName(nil,"show_hint_key2")
+                   hint_trigger:Disable()
 
                 local obstructions = Entities:FindByName(nil,"obstructions_3_1")
                 obstructions:SetEnabled(false,false)
@@ -170,6 +140,9 @@ function CheckForKey3(trigger)
                     print("Door detected")
                     door:Kill()
                 end
+				
+				local hint_trigger = Entities:FindByName(nil,"show_hint_key3")
+                   hint_trigger:Disable()
 
                 local obstructions = Entities:FindByName(nil,"obstructions_6_1")
                 obstructions:SetEnabled(false,false)

@@ -99,7 +99,56 @@ function star_fall_ini( event )
 end
 
 
-
+function warchasers_avatar_scale( event )
+	Timers:CreateTimer({
+	    			endTime = 0.25, 
+	    			callback = function()
+						event.caster:SetModelScale(1.05)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.50, 
+	    			callback = function()
+						event.caster:SetModelScale(1.10)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.75, 
+	    			callback = function()
+						event.caster:SetModelScale(1.15)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 1, 
+	    			callback = function()
+						event.caster:SetModelScale(1.20)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.25,
+	    			callback = function()
+						event.caster:SetModelScale(1.15)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.50,
+	    			callback = function()
+						event.caster:SetModelScale(1.10)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.75,
+	    			callback = function()
+						event.caster:SetModelScale(1.05)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 60,
+	    			callback = function()
+						event.caster:SetModelScale(1)
+					end
+				})
+end
 
 
 
