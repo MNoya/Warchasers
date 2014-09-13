@@ -2345,30 +2345,317 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"item_apply_modifiers"
 	{
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "ID"                            "1190"  // unique ID number for this item.  Do not change this once 
-    "BaseClass"                     "item_datadriven"
-    "ItemBaseLevel"                 "1"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "1190"  // unique ID number for this item.  Do not change this once 
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
 
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "9999"
-    "AbilityCastPoint"                      "0.0"    
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "9999"
+		"AbilityCastPoint"                      "0.0"    
 
-    "Modifiers"
-       {
-             "modifier_make_deniable"
-             {
-                 "Passive"               "1"
-                 "IsHidden"              "1"
-                 "States"
-                 {
-                         "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
-                  }
-             }
-        }   
+		"Modifiers"
+		{
+			 "modifier_make_deniable"
+			 {
+				 "Passive"               "1"
+				 "IsHidden"              "1"
+				 "States"
+				 {
+						 "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				  }
+			 }
+		}   
+	}
+	
+		"item_health_modifier"
+		{
+		"ID"							"2102"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
 
-}
+		"Modifiers"
+		{
+		//+6 HEALTH PER STR ======================================================
+
+			"modifier_health_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"6"
+				}
+			}
+			"modifier_health_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"12"
+				}
+			}
+			"modifier_health_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"24"
+				}
+			}
+			"modifier_health_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"48"
+				}
+			}
+			"modifier_health_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"96"
+				}
+			}
+			"modifier_health_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"192"
+				}
+			}
+			"modifier_health_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"384"
+				}
+			}
+			"modifier_health_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"768"
+				}
+			}
+
+		//END HEALTH PER STR =====================================================
+
+		//+2 MANA PER INT ========================================================
+
+			"modifier_mana_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"2"
+				}
+			}
+			"modifier_mana_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_BONUS"	"4"
+				}
+			}
+			"modifier_mana_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"8"
+				}
+			}
+			"modifier_mana_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"16"
+				}
+			}
+			"modifier_mana_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"32"
+				}
+			}
+			"modifier_mana_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"64"
+				}
+			}
+			"modifier_mana_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"128"
+				}
+			}
+			"modifier_mana_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_MANA_BONUS"	"256"
+				}
+			}
+
+		//END +2 MANA PER INT ====================================================
+
+		//+1 AS PER INT ==========================================================
+
+			"modifier_attackspeed_mod_1"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"1"
+				}
+			}
+			"modifier_attackspeed_mod_2"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"2"
+				}
+			}
+			"modifier_attackspeed_mod_4"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"4"
+				}
+			}
+			"modifier_attackspeed_mod_8"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"8"
+				}
+			}
+			"modifier_attackspeed_mod_16"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"16"
+				}
+			}
+			"modifier_attackspeed_mod_32"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"32"
+				}
+			}
+			"modifier_attackspeed_mod_64"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"64"
+				}
+			}
+			"modifier_attackspeed_mod_128"
+			{
+				"Passive"           	"1"
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"128"
+				}
+			}
+
+		//END +1 AS PER INT ======================================================
+		}
+	}
 
 }
