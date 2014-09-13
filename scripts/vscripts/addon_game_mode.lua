@@ -182,7 +182,7 @@ function Warchasers:InitGameMode()
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
-    ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( CAddonGameMode, "OnPlayerPicked" ), self )
+    ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( Warchasers, "OnPlayerPicked" ), self )
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
@@ -248,7 +248,7 @@ end
 
 
 --Custom Stat Rules
-function CAddonGameMode:ModifyStatBonuses(unit)
+function Warchasers:ModifyStatBonuses(unit)
 	local spawnedUnitIndex = unit
 	print("modifying stat bonuses")
 		Timers:CreateTimer(DoUniqueString("updateHealth_" .. spawnedUnitIndex:GetPlayerID()), {
