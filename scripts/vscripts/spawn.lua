@@ -106,7 +106,7 @@ function SpawnGhoulsZiggurat(trigger)
         end
 end
 
-function SpawnGhoulsZigguratFast(trigger)
+function SpawnGhoulsZiggurat2	(trigger)
         local building = Entities:FindByName(nil, "ghoul_ziggurat2")
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_ghoul")
@@ -114,7 +114,7 @@ function SpawnGhoulsZigguratFast(trigger)
                         if ability:IsFullyCastable() then
                                 ability:CastAbility();
                         end
-                        return 2;
+                        return 3;
                 end, 1);
         end
 end

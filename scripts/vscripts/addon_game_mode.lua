@@ -47,6 +47,9 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 	PrecacheUnitByNameSync("npc_dota_hero_venomancer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
+	PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
+	PrecacheUnitByNameSync("npc_dota_hero_enchantress", context)
 	PrecacheResource( "particle_folder","particles/items_fx", context) --works
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
@@ -643,7 +646,9 @@ function Warchasers:OnEntityKilled( event )
 	    self.nRadiantKills = self.nRadiantKills + 1
 	    --update personal score
 		if killerEntity:GetOwner() ~= nil and not killerEntity:IsRealHero() then --it's a summon killing something, credit to the owner
-			killerEntity:GetOwner():IncrementKills(1)
+			if killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then --exclude the cases which it's a unit summoned by an enemy
+				killerEntity:GetOwner():IncrementKills(1)
+			end
 		elseif killerEntity:IsRealHero() then
 			killerEntity:IncrementKills(1) 
 		end
@@ -660,25 +665,27 @@ function Warchasers:OnEntityKilled( event )
     	
     	--send to hell
     	SENDHELL = true
-    	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-
-    	--mass teleport
-    	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-    		if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-    			local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-	        	FindClearSpaceForUnit(entHero, point, false)
-	        	entHero:Stop()
-	        	SendToConsole("dota_camera_center")
-        	end
-        end
-
+    	Timers:CreateTimer({
+	    	endTime = 3, 
+	    	callback = function()
+				local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
+				--mass teleport
+				for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+					if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+					local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+					FindClearSpaceForUnit(entHero, point, false)
+					entHero:Stop()
+					SendToConsole("dota_camera_center")
+					end
+				end
+				 local messageinfo = {
+				message = "Some seconds in Hell",
+				duration = 5
+				}
+				FireGameEvent("show_center_message",messageinfo)
+			end	
+	    })
        
-        local messageinfo = {
-        message = "Some seconds in Hell",
-        duration = 5
-        }
-        FireGameEvent("show_center_message",messageinfo)
-
         --seconds later, teleport back
         Timers:CreateTimer({
 	    	endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -696,8 +703,8 @@ function Warchasers:OnEntityKilled( event )
        			print("Teleport Back")
 	    	end
 	    })
-    end
-end   
+	end
+end  
 
 --RANDOM ITEM DROPS --now done directly through datadriven KV
 

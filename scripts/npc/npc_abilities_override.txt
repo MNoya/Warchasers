@@ -621,7 +621,6 @@
 
 //CREEP PASSIVE SKILLS -----------------------------------------------------------------
 
-	//"command_aura" 10%
 	"alpha_wolf_command_aura"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -733,18 +732,53 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
+				"duration"				"1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"5"
+				"damage"					"4"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"movement_speed"			"-50"
 			}			
+		}
+	}
+	
+	"skeleton_king_reincarnation"
+	{
+		"MaxLevel"		"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reincarnate_time"		"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_radius"			"900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"				"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackslow_tooltip"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0"
+			}
 		}
 	}
 

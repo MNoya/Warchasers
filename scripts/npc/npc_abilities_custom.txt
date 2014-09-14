@@ -2198,7 +2198,7 @@
 // CREEP SKILLS-------------------------------------------------------------------------------------------
 		
 	//Actives
-	//"frost_armor" "lich_frost_armor"
+	//"frost_armor" "lich_frost_armor"	
 	//"purge" "satyr_trickster_purge"
 	//"heal" "forest_troll_high_priest_heal"
 	//"dispel_magic" "brewmaster_storm_dispel_magic"
@@ -2365,6 +2365,34 @@
 	//"thunder_clap" "polar_furbolg_ursa_warrior_thunder_clap"
 	//"earthquake" "elder_titan_earth_splitter"?
 
+	//CRITTER
+	"creep_make_deniable"
+	{	
+		"MaxLevel"		"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"OnCreated"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"deniable"
+			}
+		}
+		"Modifiers"
+		{
+			"deniable"
+			{
+				"Passive"               "1"
+				"IsHidden"              "1"
+				"States"
+				{
+					 "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
 
 // END CREEP SKILLS------------------------------------------------------------------------------------------------
 

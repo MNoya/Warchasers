@@ -584,7 +584,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"150"
 		"HealthBarOffset"			"400"
 
@@ -2082,7 +2082,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. Blizzard?
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -2151,9 +2151,19 @@
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
-		{
-			
-			
+		{	
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+				
 			"AttachWearables" //Northlight
 			{
 				"Wearable1"	{ "ItemDef" "43" }
@@ -2182,9 +2192,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. Blizzard?
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability1"					""			// Ability 1.
+		"Ability2"					"satyr_trickster_purge"			// Ability 2.
+		"Ability3"					"lich_frost_armor"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_tome"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -2252,7 +2262,40 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-			
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"satyr_trickster_purge"
+					"Debuff"			"1"
+					//"AOE"				"1" //if the skill should look for aoe
+					//"Radius"			"275" //search range
+					//"MinimumTargets"	"2" //cast trigger
+					//"Damage"			"1" //damage skill
+					//"Stun"				"1" //stun skill
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"lich_frost_armor"
+					"Buff"				"1" //dont buff twice
+					//"Heal"				"1"
+					
+				}
+			}
 			
 			"AttachWearables" //Northlight
 			{
@@ -2592,7 +2635,7 @@
 	}
 		
 	//=================================================================================
-	// Creature: Troll Healer (Heals mobs)
+	// Creature: Troll Priest Healer (Heals mobs)
 	//=================================================================================
 	"npc_troll_priest"
 	{
@@ -2607,7 +2650,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creature_aura_health_regen"			// Ability 1
+		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					"drop_extra_tome"			// Ability 4
@@ -2666,7 +2709,30 @@
 	
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-		
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"forest_troll_high_priest_heal"
+					//"Buff"			"1" //dont buff twice
+					"Heal"				"1"
+					
+				}
+			}
+		}
 	}
 	
 	//=================================================================================    
@@ -2743,7 +2809,7 @@
 	}
 	
 	//=================================================================================    
-    // Creature: Ghoul (Poison Sting)
+    // Creature: Ghoul
     //=================================================================================
 	"npc_ghoul"
 	{
@@ -2756,7 +2822,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"venomancer_poison_sting"			// Ability 1.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -2954,7 +3020,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"                                      ""                      // Ability 1
+		"Ability1"                                      "satyr_trickster_purge"                      // Ability 1
 		"Ability2"                                      ""                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
@@ -3009,6 +3075,29 @@
 		"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"satyr_trickster_purge"
+					"Debuff"			"1"
+				}
+			}
+		}
 	}
 		
 	//=================================================================================
@@ -3027,9 +3116,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. INNER FIRE
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1. 
+		"Ability2"					""			// Ability 2. ADD INNER FIRE
+		"Ability3"					"brewmaster_storm_dispel_magic"			// Ability 3. 
 		"Ability4"					"drop_potion_of_healing"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -3078,7 +3167,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"390"			// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
-		"StatusMana"				"200"			// Base mana.
+		"StatusMana"				"201"			// Base mana.
 		"StatusManaRegen"			"2.0"			// Mana regeneration rate.
 
 		// Team
@@ -3097,6 +3186,39 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"brewmaster_storm_dispel_magic"
+					"AOE"				"1" //if the skill should look for aoe
+					"Radius"			"275" //search range
+					"MinimumTargets"	"2" //cast trigger
+					//"Damage"			"1" //damage skill
+					//"Stun"				"1" //stun skill
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"forest_troll_high_priest_heal"
+					"Heal"			"1"
+				}
+			}
 					
 			"AttachWearables"
 			{
@@ -3131,8 +3253,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"                                      ""                      // Ability 1
-		"Ability2"                                      ""                      // Ability 2
+		"Ability1"                                      "neutral_spell_immunity"                      // Ability 1
+		"Ability2"                                      "enchantress_enchant"                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
 
@@ -3170,9 +3292,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"                          "322"           // Base health.
+		"StatusHealth"                          "220"           // Base health.
 		"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
-		"StatusMana"                            "0"                     // Base mana.
+		"StatusMana"                            "301"                     // Base mana.
 		"StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
 	   
 		// Vision
@@ -3186,6 +3308,30 @@
 		"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+		
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"enchantress_enchant"
+					"Debuff"			"1"
+				}
+			}
+		}
 	}
 	
 	//=================================================================================
@@ -3198,15 +3344,15 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1.2"
-		"Level"						"5"
+		"Level"						"6"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. Blizzard?
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability1"					"crystal_maiden_freezing_field"			// Ability 1. Blizzard?
+		"Ability2"					"satyr_trickster_purge"			// Ability 2.
+		"Ability3"					""			// Ability 3. ADD LIGHTNING SHIELD BUFF
 		"Ability4"					"drop_level3"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -3255,7 +3401,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"350"			// Base health.
 		"StatusHealthRegen"			"3"			// Health regeneration rate.
-		"StatusMana"				"400"			// Base mana.
+		"StatusMana"				"1001"			// Base mana.
 		"StatusManaRegen"			"2.0"			// Mana regeneration rate.
 
 		// Team
@@ -3274,7 +3420,35 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
 			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"crystal_maiden_freezing_field"
+					"AOE"				"1" //if the skill should look for aoe
+					"Radius"			"300" //search range
+					"MinimumTargets"	"2" //cast trigger
+					"Damage"			"1" //damage skill
+					//"Stun"				"1" //stun skill
+				}
+				"Ability2"
+				{
+					"Name"				"satyr_trickster_purge"
+					"Debuff"			"1"
+				}
+			}
 			
 			"AttachWearables"
 			{
@@ -3470,7 +3644,6 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-				
 			"AttachWearables"
 			{
 				"Wearable1"	{ "ItemDef" "277" } 
@@ -3497,7 +3670,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -3567,7 +3740,26 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-				
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"dark_troll_warlord_raise_dead"
+				}
+			}
+			
 			"AttachWearables"
 			{
 				"Wearable1"	{ "ItemDef" "277" } 
@@ -3671,7 +3863,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. INNER FIRE
+		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					"drop_tome"			// Ability 3.
 		"Ability4"					"drop_extra_tome"			// Ability 4.
@@ -3741,6 +3933,29 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+		
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"70.0" //start buffing
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"forest_troll_high_priest_heal"
+					"Buff"				"1" //dont buff twice
+					//"Heal"			"1"
+					
+				}
+			}
 					
 			"AttachWearables"
 			{
@@ -3834,7 +4049,7 @@
 	}
 	
 	//=================================================================================	
-	// Creature: Ghost
+	// Creature: Ghost Banshee
 	//=================================================================================
 	"npc_ghost"	
 	{
@@ -3849,7 +4064,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"enchantress_enchant"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3884,13 +4099,13 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.			
+		"MovementSpeed"				"300"		// Speed.			
 
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusMana"				"301"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -3907,7 +4122,29 @@
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+		
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"enchantress_enchant"
+					"Debuff"			"1"
+				}
+			}
+		}
 	}
 	
 	//=================================================================================	
@@ -3926,7 +4163,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"ghost_frost_attack"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4084,7 +4321,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. INNER FIRE
+		"Ability1"					""			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -4232,7 +4469,7 @@
 
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -4260,8 +4497,11 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-
+		"Ability1"					"brewmaster_storm_dispel_magic"			// Ability 1.
+		"Ability2"					"centaur_hoof_stomp"			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"3"			// Physical protection.
@@ -4321,6 +4561,30 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"0.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"centaur_hoof_stomp"
+					"AOE"				"1" //if the skill should look for aoe
+					"Radius"			"275" //search range
+					"MinimumTargets"	"2" //cast trigger
+					"Damage"			"1" //damage skill
+					"Stun"				"1" //stun skill
+				}
+			}
 					
 			"AttachWearables"
 			{
@@ -4426,8 +4690,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"brewmaster_thunder_clap"	// Ability 1.
+		"Ability2"					"warchasers_muhrah_animate_dead"		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -4491,7 +4755,45 @@
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
 
 		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
+		//----------------------------------------------------------------------------------------------------------------------	
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"brewmaster_thunder_clap"
+					"AOE"				"1" //if the skill should look for aoe
+					"Radius"			"400" //search range
+					"MinimumTargets"	"2" //cast trigger
+					"Damage"			"1" //damage skill
+					"Stun"				"1" //stun skill
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"warchasers_muhrah_animate_dead"
+					//"Buff"				"1" //dont buff twice
+					//"Heal"			"1"
+					
+				}
+			}
+		}
 	}
 	
 	//=================================================================================
@@ -6471,10 +6773,12 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"slardar_bash"			// Ability 1
 		"Ability2"					"drop_level6"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					"drop_potion_of_healing"			// Ability 4
+		"Ability5"					""
+		"Ability6"					"skeleton_king_reincarnation"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6512,7 +6816,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"600"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"100"			// Base mana.
+		"StatusMana"				"101"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision

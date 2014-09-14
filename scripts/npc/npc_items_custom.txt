@@ -16,7 +16,6 @@
 	//	"BaseClass" "item_dota_name"
 	//	"AbilitySpecial"
 	//	{
-			//check https://github.com/DarkSupremo/Multiplier/blob/1070fcf7c3a26d04972de269ace76e56d464efb9/tools/generator/npc_items_custom.txt
 	//	}
 	//}
 
@@ -1957,7 +1956,7 @@
    
     //"item_scepter_of_mastery" //secretshop 1
 
-    //"item_restoration_scroll"  //sideshop 1
+    //"item_restoration_scroll"  //sideshop 1 
 
     //"item_book_of_the_dead" //skeleton warriors+archers
 
@@ -2350,6 +2349,7 @@
 		"ID"                            "1190"  // unique ID number for this item.  Do not change this once 
 		"BaseClass"                     "item_datadriven"
 		"ItemBaseLevel"                 "1"
+		"AbilityTextureName"			"warchasers_stat_rules"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2381,7 +2381,6 @@
 	                    "EffectName" "particles/units/heroes/hero_magnataur/magnataur_empower.vpcf"
 	                    "EffectAttachType" "follow_origin"
 	                    "EffectLifeDurationScale" "1"
-	                    //"EffectColorA" "255 255 0"
 	                }
            		}
 			}
@@ -2391,6 +2390,10 @@
 				"IsBuff"				"1"
 				"Passive"           	"1"
 				"IsHidden"				"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	    "10"
+				}
 				"OnCreated"
            		{
 	                "AttachEffect"
@@ -2401,10 +2404,7 @@
 	                    "EffectLifeDurationScale" "1"
 	                }
            		}
-           		"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	    "10"
-				}
+           		
 			}
 		}
 	}   

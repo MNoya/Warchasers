@@ -2,7 +2,7 @@ TO DO
 - General -
 Hero Stats (done), Skills (done), Tooltips
 Add Custom HP Mana AS Armor System (done, add buff with tooltip)
-Creep Skills (started), AI (somewhat)
+Creep Skills (started), AI (done through KV, finish skills)
 Item Skills
 Lose condition (needs to support multiple ankhs/dropping/sharing)
 
@@ -15,7 +15,7 @@ Spawn mobs after activating circle
 Finish unit placing port (almost done, need some scripted spawns)
 Add Pyramids, Pillars, Lanterns, Light Sources.
 Adjust Fog/Vision/Camera Heights
-Firetraps (Done, needs testing)
+Firetraps (Done)
 
 - Tooltips/Information -
 Hell/Heaven Timers
