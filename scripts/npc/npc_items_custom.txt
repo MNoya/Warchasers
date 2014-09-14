@@ -2369,9 +2369,39 @@
 			 }
 		}   
 	}
-	
-		"item_health_modifier"
+
+	"item_stats_modifier"
+	{
+		"ID"							"2100"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+
+		"Modifiers"
 		{
+			"modifier_warchasers_stat_rules" //Add a description in tooltips
+			{
+				"IsBuff"				"1"
+				"Passive"           	"1"
+				"IsHidden"				"0"
+				"OnCreated"
+           		{
+	                "AttachEffect"
+	                {
+	                    "Target" "CASTER"
+	                    "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
+	                    "EffectAttachType" "follow_overhead"
+	                    "EffectLifeDurationScale" "1"
+	                    "EffectColorA" "255 255 0"
+	                }
+           		}
+			}
+		}
+	}
+
+
+	
+	"item_health_modifier"
+	{
 		"ID"							"2102"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2380,8 +2410,6 @@
 
 		"Modifiers"
 		{
-		//+6 HEALTH PER STR ======================================================
-
 			"modifier_health_mod_1"
 			{
 				"Passive"           	"1"
@@ -2469,10 +2497,20 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"768"
 				}
 			}
+		}
+	}
 
-		//END HEALTH PER STR =====================================================
 
-		//+2 MANA PER INT ========================================================
+	"item_mana_modifier"
+	{
+		"ID"							"2103"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+
+		"Modifiers"
+		{
 
 			"modifier_mana_mod_1"
 			{
@@ -2561,10 +2599,20 @@
 					"MODIFIER_PROPERTY_MANA_BONUS"	"256"
 				}
 			}
+		}
+	}
+		
 
-		//END +2 MANA PER INT ====================================================
+	"item_attackspeed_modifier"
+	{
+		"ID"							"2104"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
 
-		//+1 AS PER INT ==========================================================
+		"Modifiers"
+		{
 
 			"modifier_attackspeed_mod_1"
 			{
@@ -2653,9 +2701,148 @@
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"128"
 				}
 			}
-
-		//END +1 AS PER INT ======================================================
 		}
 	}
+
+	"item_armor_modifier"
+	{
+		"ID"							"2105"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_datadriven"
+
+		"Modifiers"
+		{
+			"modifier_armor_mod_1"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"1"
+				}
+			}
+			"modifier_armor_mod_2"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"2"
+				}
+			}
+			"modifier_armor_mod_4"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"4"
+				}
+			}
+			"modifier_armor_mod_8"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"8"
+				}
+			}
+			"modifier_armor_mod_16"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"16"
+				}
+			}
+			"modifier_armor_mod_32"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"32"
+				}
+			}
+			"modifier_armor_mod_64"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"64"
+				}
+			}
+
+			"modifier_negative_armor_mod_1"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-1"
+				}
+			}
+			"modifier_negative_armor_mod_2"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-2"
+				}
+			}
+			"modifier_negative_armor_mod_4"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-4"
+				}
+			}
+			"modifier_negative_armor_mod_8"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-8"
+				}
+			}
+			"modifier_negative_armor_mod_16"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-16"
+				}
+			}
+			"modifier_negative_armor_mod_32"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-32"
+				}
+			}
+			"modifier_negative_armor_mod_64"
+			{
+				"IsHidden"				"1"  
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"  
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-64"
+				}
+			}
+		}
+	}
+
 
 }

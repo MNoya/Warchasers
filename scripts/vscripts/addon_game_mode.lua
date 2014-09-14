@@ -118,10 +118,24 @@ function Warchasers:InitGameMode()
 	
 	--    -5888 -7360 144 = start zone
 	position = Vector(-5888, -7360, 144)
-	local newItem = CreateItem("item_tome_of_health", nil, nil)
+	--[[local newItem = CreateItem("item_red_drake", nil, nil)
     CreateItemOnPositionSync(position, newItem)
-	local newItem = CreateItem("item_inferno_stone", nil, nil)
+    local newItem = CreateItem("item_tome_of_agility", nil, nil)
     CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_strength", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_agility", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_strength", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_agility", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
+    CreateItemOnPositionSync(position, newItem)]]
 		
     position = Vector(-2940,2996,124)
 	local newItem = CreateItem("item_allerias_flute", nil, nil)
@@ -225,6 +239,8 @@ function Warchasers:OnNPCSpawned(keys)
 
 	if npc:IsHero() then
         npc.strBonus = 0
+        npc.intBonus = 0
+        npc.attackspeedBonus = 0
     end
 end
 
@@ -233,6 +249,10 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 	local item = CreateItem("item_ankh", hero, hero)
 	hero:AddItem(item)
+
+    giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
+
+    giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
 
 	if SHOWPOPUP then
 		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
@@ -244,13 +264,14 @@ function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
     Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+    print(strBonus)
 end
 
 
 --Custom Stat Rules
 function Warchasers:ModifyStatBonuses(unit)
 	local spawnedUnitIndex = unit
-	print("modifying stat bonuses")
+	print("Modifying Stats Bonus")
 		Timers:CreateTimer(DoUniqueString("updateHealth_" .. spawnedUnitIndex:GetPlayerID()), {
 		endTime = 0.25,
 		callback = function()
@@ -298,9 +319,167 @@ function Warchasers:ModifyStatBonuses(unit)
 			end
 			-- Updates the stored strength bonus value for next timer cycle
 			spawnedUnitIndex.strBonus = spawnedUnitIndex:GetStrength()
+		
+			-- ==================================
+			-- Adjust mana based on intellect
+			-- ==================================
+ 
+			-- Get player intellect
+			local intellect = spawnedUnitIndex:GetIntellect()
+ 
+			--Check if intBonus is stored on hero, if not set it to 0
+			if spawnedUnitIndex.intBonus == nil then
+				spawnedUnitIndex.intBonus = 0
+			end
+ 
+			-- If player intellect is different this time around, start the adjustment
+			if intellect ~= spawnedUnitIndex.intBonus then
+				-- Modifier values
+				local bitTable = {128,64,32,16,8,4,2,1}
+ 
+				-- Gets the list of modifiers on the hero and loops through removing and mana modifier
+				local modCount = spawnedUnitIndex:GetModifierCount()
+				for i = 0, modCount do
+					for u = 1, #bitTable do
+						local val = bitTable[u]
+						if spawnedUnitIndex:GetModifierNameByIndex(i) == "modifier_mana_mod_" .. val  then
+							spawnedUnitIndex:RemoveModifierByName("modifier_mana_mod_" .. val)
+						end
+					end
+				end
+ 
+				-- Creates temporary item to steal the modifiers from
+				local manaUpdater = CreateItem("item_mana_modifier", nil, nil) 
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(intellect / val)
+					if count >= 1 then
+						manaUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_mana_mod_" .. val, {})
+						intellect = intellect - val
+					end
+				end
+				-- Cleanup
+				UTIL_RemoveImmediate(healthUpdater)
+				healthUpdater = nil
+			end
+			-- Updates the stored intellect bonus value for next timer cycle
+			spawnedUnitIndex.intBonus = spawnedUnitIndex:GetIntellect()
+	
+			-- ==================================
+			-- Adjust attackspeed based on agility
+			-- ==================================
+ 
+			-- Get player agility
+			local agility = spawnedUnitIndex:GetAgility()
+ 
+			--Check if intBonus is stored on hero, if not set it to 0
+			if spawnedUnitIndex.attackspeedBonus == nil then
+				spawnedUnitIndex.attackspeedBonus = 0
+			end
+ 
+			-- If player agility is different this time around, start the adjustment
+			if agility ~= spawnedUnitIndex.attackspeedBonus then
+				-- Modifier values
+				local bitTable = {128,64,32,16,8,4,2,1}
+ 
+				-- Gets the list of modifiers on the hero and loops through removing and attackspeed modifier
+				local modCount = spawnedUnitIndex:GetModifierCount()
+				for i = 0, modCount do
+					for u = 1, #bitTable do
+						local val = bitTable[u]
+						if spawnedUnitIndex:GetModifierNameByIndex(i) == "modifier_attackspeed_mod_" .. val  then
+							spawnedUnitIndex:RemoveModifierByName("modifier_attackspeed_mod_" .. val)
+						end
+					end
+				end
+ 
+				-- Creates temporary item to steal the modifiers from
+				local attackspeedUpdater = CreateItem("item_attackspeed_modifier", nil, nil) 
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(agility / val)
+					if count >= 1 then
+						attackspeedUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_attackspeed_mod_" .. val, {})
+						agility = agility - val
+					end
+				end
+				-- Cleanup
+				UTIL_RemoveImmediate(healthUpdater)
+				healthUpdater = nil
+			end
+			-- Updates the stored agility bonus value for next timer cycle
+			spawnedUnitIndex.attackspeedBonus = spawnedUnitIndex:GetAgility()
+			
+			
+			-- ==================================
+			-- Adjust armor based on agi 
+			-- Added as +Armor and not Base Armor because there's no BaseArmor modifier (please...)
+			-- ==================================
+
+			-- Get player primary stat value
+			local agility = spawnedUnitIndex:GetAgility()
+
+			--Check if primaryStatBonus is stored on hero, if not set it to 0
+			if spawnedUnitIndex.agilityBonus == nil then
+				spawnedUnitIndex.agilityBonus = 0
+			end
+
+			-- If player int is different this time around, start the adjustment
+			if agility ~= spawnedUnitIndex.agilityBonus then
+				-- Modifier values
+				local bitTable = {64,32,16,8,4,2,1}
+
+				-- Gets the list of modifiers on the hero and loops through removing and health modifier
+				for u = 1, #bitTable do
+					local val = bitTable[u]
+					if spawnedUnitIndex:HasModifier( "modifier_armor_mod_" .. val)  then
+						spawnedUnitIndex:RemoveModifierByName("modifier_armor_mod_" .. val)
+					end
+					
+					if spawnedUnitIndex:HasModifier( "modifier_negative_armor_mod_" .. val)  then
+						spawnedUnitIndex:RemoveModifierByName("modifier_negative_armor_mod_" .. val)
+					end
+				end
+				print("========================")
+				agility = agility / 7
+				print("Agi / 7: "..agility)
+				-- Remove Armor
+				-- Creates temporary item to steal the modifiers from
+				local manaUpdater = CreateItem("item_armor_modifier", nil, nil) 
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(agility / val)
+					if count >= 1 then
+						manaUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_negative_armor_mod_" .. val, {})
+						print("Adding modifier_negative_armor_mod_" .. val)
+						agility = agility - val
+					end
+				end
+
+				agility = spawnedUnitIndex:GetAgility()
+				agility = agility / 3
+				print("Agi / 3: "..agility)
+				for p=1, #bitTable do
+					local val = bitTable[p]
+					local count = math.floor(agility / val)
+					if count >= 1 then
+						manaUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_armor_mod_" .. val, {})
+						agility = agility - val
+						print("Adding modifier_armor_mod_" .. val)
+					end
+				end
+
+				-- Cleanup
+				UTIL_RemoveImmediate(manaUpdater)
+				manaUpdater = nil
+			end
+			-- Updates the stored Int bonus value for next timer cycle
+			spawnedUnitIndex.agilityBonus = spawnedUnitIndex:GetAgility()
+
 			return 0.25
 		end
 	})
+
 end
 
 
