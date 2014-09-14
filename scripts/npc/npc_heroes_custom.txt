@@ -162,7 +162,7 @@
 		//"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
 		"AttackRange"				"600"									// Range within a target can be attacked.
-		"ProjectileModel"			"particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"				// Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"				// Particle system model for projectile.
 		"ProjectileSpeed"			"1050"									// Speed of projectile.
 
 		// Attributes
