@@ -83,6 +83,7 @@ P4_HAS_ANKH = true
 DEAD_PLAYER_COUNT = 0
 PLAYER_COUNT = 0
 
+
 -- Create the game mode when we activate
 function Activate()
 	GameRules.AddonTemplate = Warchasers()
@@ -198,12 +199,15 @@ function Warchasers:InitGameMode()
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
     ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( Warchasers, "OnPlayerPicked" ), self )
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
+    ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
 
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 
 	--Variables for tracking
 	self.nRadiantKills = 0
   	self.nDireKills = 0
+
+  	self.bSeenWaitForPlayers = false
 
 	print( "Done loading gamemode" )
 
@@ -223,6 +227,58 @@ function Warchasers:OnThink()
 	return 2
 end	
 
+function Warchasers:OnGameRulesStateChange(keys)
+  	print("GameRules State Changed")
+
+  	local newState = GameRules:State_Get()
+  	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
+    	self.bSeenWaitForPlayers = true
+  	elseif newState == DOTA_GAMERULES_STATE_INIT then
+    	Timers:RemoveTimer("alljointimer")
+  	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+    	local et = 6
+    	if self.bSeenWaitForPlayers then
+      		et = .01
+    	end
+    	Timers:CreateTimer("alljointimer", {
+	      	useGameTime = true,
+	      	endTime = et,
+	      	callback = function()
+	        if PlayerResource:HaveAllPlayersJoined() then
+	          	Warchasers:PostLoadPrecache()
+	          	Warchasers:OnAllPlayersLoaded()
+	          	return 
+	        end
+        return 1
+      	end
+      	})
+  	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    	Warchasers:OnGameInProgress()
+  	end
+end
+
+function Warchasers:PostLoadPrecache()
+	print("Performing Post-Load precache")
+
+  PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
+  PrecacheUnitByNameAsync("npc_dota_hero_enigma", function(...) end)
+end
+
+function Warchasers:OnGameInProgress()
+	print("Game started.")
+
+  	--[[Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
+  		function()
+    	print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
+    	return 30.0 -- Rerun this timer every 30 game-time seconds 
+  	end)]]
+end
+
+
+function Warchasers:OnAllPlayersLoaded()
+	print("All Players Have Loaded")
+end
+
 function Warchasers:OnNPCSpawned(keys)
 	print("NPC Spawned")
 	local npc = EntIndexToHScript(keys.entindex)
@@ -241,7 +297,7 @@ function Warchasers:OnNPCSpawned(keys)
         npc.strBonus = 0
         npc.intBonus = 0
         npc.attackspeedBonus = 0
-    end
+     end
 end
 
 --Add Ankh
@@ -251,8 +307,12 @@ function Warchasers:OnHeroInGame(hero)
 	hero:AddItem(item)
 
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
+	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
 
-    giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
+    if PLAYER_COUNT==1 then --apply solo buff
+    	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
+    end
+
 
 	if SHOWPOPUP then
 		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
@@ -429,7 +489,7 @@ function Warchasers:ModifyStatBonuses(unit)
 				-- Modifier values
 				local bitTable = {64,32,16,8,4,2,1}
 
-				-- Gets the list of modifiers on the hero and loops through removing and health modifier
+				-- Gets the list of modifiers on the hero and loops through removing and armor modifier
 				for u = 1, #bitTable do
 					local val = bitTable[u]
 					if spawnedUnitIndex:HasModifier( "modifier_armor_mod_" .. val)  then
@@ -445,12 +505,12 @@ function Warchasers:ModifyStatBonuses(unit)
 				print("Agi / 7: "..agility)
 				-- Remove Armor
 				-- Creates temporary item to steal the modifiers from
-				local manaUpdater = CreateItem("item_armor_modifier", nil, nil) 
+				local armorUpdater = CreateItem("item_armor_modifier", nil, nil) 
 				for p=1, #bitTable do
 					local val = bitTable[p]
 					local count = math.floor(agility / val)
 					if count >= 1 then
-						manaUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_negative_armor_mod_" .. val, {})
+						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_negative_armor_mod_" .. val, {})
 						print("Adding modifier_negative_armor_mod_" .. val)
 						agility = agility - val
 					end
@@ -463,15 +523,15 @@ function Warchasers:ModifyStatBonuses(unit)
 					local val = bitTable[p]
 					local count = math.floor(agility / val)
 					if count >= 1 then
-						manaUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_armor_mod_" .. val, {})
+						armorUpdater:ApplyDataDrivenModifier(spawnedUnitIndex, spawnedUnitIndex, "modifier_armor_mod_" .. val, {})
 						agility = agility - val
 						print("Adding modifier_armor_mod_" .. val)
 					end
 				end
 
 				-- Cleanup
-				UTIL_RemoveImmediate(manaUpdater)
-				manaUpdater = nil
+				UTIL_RemoveImmediate(armorUpdater)
+				armorUpdater = nil
 			end
 			-- Updates the stored Int bonus value for next timer cycle
 			spawnedUnitIndex.agilityBonus = spawnedUnitIndex:GetAgility()

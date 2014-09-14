@@ -2237,7 +2237,7 @@
 
 	    		//Test Effect
                 "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
-                "EffectAttachType" "follow_overhead" //"follow_origin" "attach_hitloc" ?
+                "EffectAttachType" "follow_origin" // "attach_hitloc" ?
                 "EffectLifeDurationScale" "1"
                 "EffectColorA" "255 255 0" //?
 	   		}
@@ -2358,27 +2358,17 @@
 
 		"Modifiers"
 		{
-			 "modifier_make_deniable"
-			 {
-				 "Passive"               "1"
-				 "IsHidden"              "1"
-				 "States"
-				 {
-						 "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
-				  }
-			 }
-		}   
-	}
+			"modifier_make_deniable"
+			{
+				"Passive"               "1"
+				"IsHidden"              "1"
+				"States"
+				{
+					 "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+           	}
 
-	"item_stats_modifier"
-	{
-		"ID"							"2100"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"BaseClass"						"item_datadriven"
-
-		"Modifiers"
-		{
-			"modifier_warchasers_stat_rules" //Add a description in tooltips
+           	"modifier_warchasers_stat_rules" //Add a description in tooltips
 			{
 				"IsBuff"				"1"
 				"Passive"           	"1"
@@ -2388,15 +2378,37 @@
 	                "AttachEffect"
 	                {
 	                    "Target" "CASTER"
-	                    "EffectName" "particles/econ/generic/generic_buff_1/generic_buff_1.vpcf"
-	                    "EffectAttachType" "follow_overhead"
+	                    "EffectName" "particles/units/heroes/hero_magnataur/magnataur_empower.vpcf"
+	                    "EffectAttachType" "follow_origin"
 	                    "EffectLifeDurationScale" "1"
-	                    "EffectColorA" "255 255 0"
+	                    //"EffectColorA" "255 255 0"
 	                }
            		}
 			}
+
+			"modifier_warchasers_solo_buff" //Add a description in tooltips
+			{
+				"IsBuff"				"1"
+				"Passive"           	"1"
+				"IsHidden"				"0"
+				"OnCreated"
+           		{
+	                "AttachEffect"
+	                {
+	                    "Target" "CASTER"
+	                    "EffectName" "particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "EffectLifeDurationScale" "1"
+	                }
+           		}
+           		"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	    "10"
+				}
+			}
 		}
-	}
+	}   
+
 
 
 	
