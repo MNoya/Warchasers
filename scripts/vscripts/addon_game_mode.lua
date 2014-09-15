@@ -55,6 +55,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
+	PrecacheResource( "model", "models/heroes/necrolyte/necrolyte.vmdl", context )
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
@@ -645,10 +646,9 @@ function Warchasers:OnEntityKilled( event )
 		print("1 mob dead")
 	    self.nRadiantKills = self.nRadiantKills + 1
 	    --update personal score
-		if killerEntity:GetOwner() ~= nil and not killerEntity:IsRealHero() then --it's a summon killing something, credit to the owner
-			if killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then --exclude the cases which it's a unit summoned by an enemy
+		if killerEntity:GetOwner() ~= nil and not killerEntity:IsRealHero() and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then 
+				--it's a friendly summon killing something, credit to the owner
 				killerEntity:GetOwner():IncrementKills(1)
-			end
 		elseif killerEntity:IsRealHero() then
 			killerEntity:IncrementKills(1) 
 		end

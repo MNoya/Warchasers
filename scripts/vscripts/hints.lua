@@ -45,7 +45,9 @@ function spiderhall_kill(trigger)
 end
 
 
-function soulkeeper_warning0(trigger)
+function soulkeeper_warning0(trigger) 
+	local position = Vector(-1625,-3072,129)
+    local necro = CreateUnitByName("npc_soul_keeper", position, true, nil, nil, DOTA_TEAM_BADGUYS)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!", 0,0 )
 	GameRules:SendCustomMessage("Still, you are entitled to your price. Step on a platform and let your hearts determine your prize...", 0,0)
 end
@@ -55,8 +57,11 @@ function soulkeeper_warning1(trigger)
 	GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
 end 
 
-function soulkeeper_warning2(trigger)
-	GameRules:SendCustomMessage(" <font color='#DBA901'>Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far! However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
+function soulkeeper_warning2(trigger) 
+	local position = Vector(3449,6687,521)
+    local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far!",0,0)
+	GameRules:SendCustomMessage("However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
 end
 
 function circle_zapsappers(trigger)
@@ -70,6 +75,8 @@ end
 --SUCESS (blue) [on both]
 
 function soulkeeper_warning3(trigger)
+	local position = Vector(2183,-1489,265)
+    local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
 end
 

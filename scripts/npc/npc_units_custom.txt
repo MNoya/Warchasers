@@ -4238,6 +4238,13 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"invulnerable"			// Ability 1.
+		"Ability2"					""			
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
 
 		// Armor
 		//----------------------------------------------------------------
