@@ -2356,12 +2356,149 @@
 		}
 	}
 
-	//"disease_cloud" "pudge_rot" 
+	"disease_cloud"
+	{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName" "pudge_rot" 
+		"MaxLevel" "1"
+ 
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "250"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+ 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"Range" "250"
+			}
+		}
+ 
+		"Modifiers"
+		{
+			"disease_cloud_modifier"
+			{
+				"Passive" "1"
+				"IsHidden" "0"
+				"Aura" "aura_disease_cloud"
+				"Aura_Radius" "%Range"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+			}
+		 
+			"aura_disease_cloud"
+			{
+				"Duration"	"120"
+				"IsDebuff" "1"
+				"IsPurgable" "0"
+				"ThinkInterval" "1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"1"
+					}
+				}
+			}
+		}
+	}
+	
 	//"reincarnation" "skeleton_king_reincarnation"
 	
 	//Need datadriven
-	//"inner_fire" 10% damage 5 armor
+	//"inner_fire" 10% damage 5 armor particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf
+	
 	//"curse"  "broodmother_incapacitating_bite" 60sec duration!
+	"creep_curse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"bane_enfeeble"
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"1"
+		
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"40"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"duration"       "60"
+			}
+			"02"
+			{
+				"var_type"          "FIELD_INTEGER"
+				"miss_chance"       "33"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/dropped_dust.vpcf"
+			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
+
+		}
+
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
+				"MoveSpeed"				"1000"
+				"EffectAttachType"		"follow_origin" //attach_hitloc?
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_creep_curse"		
+				"Target"	"TARGET"
+			}
+		}
+	
+		"Modifiers"
+		{
+
+			"modifier_creep_curse"
+			{
+				 "Duration" "%duration"
+				 
+				 "Properties"
+				 {
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	 "%miss_chance"
+				 }
+				
+				"EffectName" "particles/generic_gameplay/dropped_dust.vpcf"
+				"EffectAttachType" "attach_hitloc"
+			}
+		}
+	}
 	//"thunder_clap" "polar_furbolg_ursa_warrior_thunder_clap"
 	//"earthquake" "elder_titan_earth_splitter"?
 
@@ -2393,6 +2530,8 @@
 			}
 		}
 	}
+	
+	
 
 // END CREEP SKILLS------------------------------------------------------------------------------------------------
 
