@@ -50,16 +50,18 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
 	PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enchantress", context)
-	PrecacheResource( "particle_folder","particles/items_fx", context) --works
+	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
+	PrecacheUnitByNameSync("npc_soul_keeper", context)
+	
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
-	PrecacheResource( "model", "models/heroes/necrolyte/necrolyte.vmdl", context )
-
+	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
-  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context ) --check bladestorm pink bug
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
+	PrecacheResource( "particle_folder","particles/items_fx", context)
 	
 	
 end
@@ -123,7 +125,11 @@ function Warchasers:InitGameMode()
 	
 	--    -5888 -7360 144 = start zone
 	position = Vector(-5888, -7360, 144)
-	--[[local newItem = CreateItem("item_red_drake", nil, nil)
+	local newItem = CreateItem("item_blink", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+	--[[local newItem = CreateItem("item_inferno_stone", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+	local newItem = CreateItem("item_inferno_stone", nil, nil)
     CreateItemOnPositionSync(position, newItem)
     local newItem = CreateItem("item_tome_of_agility", nil, nil)
     CreateItemOnPositionSync(position, newItem)

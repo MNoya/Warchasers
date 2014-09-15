@@ -4089,6 +4089,7 @@
       "modifier_invulnerable"
       {
         "Passive" "1"
+		"IsHidden" "1"
         "States"
         {
          

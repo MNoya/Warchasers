@@ -1176,7 +1176,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		
 		"BaseClass"                     "item_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"            "item_inferno_stone" 
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
@@ -1190,6 +1190,8 @@
 		"ItemInitialCharges"            "1"
 		"SideShop"	"0"
 		"SecretShop" "1"
+		
+		"AOERadius"						"400"
 
 		"OnSpellStart"
 		{
@@ -1201,6 +1203,11 @@
 				"UnitName"              "npc_dota_warlock_golem_3"
 				"UnitCount"             "1"
 				"Duration"				"180"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_Warlock.RainOfChaos"
+				"Target"				"CASTER"
 			}
 			
 		}

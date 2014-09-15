@@ -423,9 +423,9 @@ end
 
 function SpawnLanternWeavers(event)
         local position = Vector(-2435,861,129)
-        local rangedweaver = CreateUnitByName("npc_nerubian_webspinner", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
+        local rangedweaver = CreateUnitByName("npc_nerubian_webspinner", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         --[[Returns:handle
         Creates a DOTA unit by its dota_npc_units.txt name ( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber )
         ]]
@@ -433,14 +433,14 @@ end
 
 function SpawnLanternTrolls(event)
         local position = Vector(-1678,844,129)
-        local troll1 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll2 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll3 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll4 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll5 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll6 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll7 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
-        local troll8 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_BADGUYS)
+        local troll1 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll2 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll3 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll4 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll5 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll6 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll7 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local troll8 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
 end
 --[[boss spawns
         //hell imps every second ]]--

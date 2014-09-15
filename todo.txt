@@ -7,8 +7,7 @@ Item Skills
 Lose condition (needs to support multiple ankhs/dropping/sharing)
 
 - Triggers -
-Spawns after pedestal kill (done)
-Spawn Necro after warning (done, need to fix orientation, particles, precache, invulnerablemod)
+Add particles on all spawns
 Spawn mobs after activating circle
 
 - Mapping -
