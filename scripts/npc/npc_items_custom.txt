@@ -651,7 +651,7 @@
 		"ItemCost"						"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
-    	"BaseClass" "item_venergy_booster"
+    	"BaseClass" "item_energy_booster"
     	"AbilityTextureName" "item_mana_gem"
     	"SideShop" "0"
 		"SecretShop" "1"
