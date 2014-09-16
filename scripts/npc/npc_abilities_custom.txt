@@ -2423,7 +2423,65 @@
 	//"reincarnation" "skeleton_king_reincarnation"
 	
 	//Need datadriven
-	//"inner_fire" 10% damage 5 armor particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf
+	//"inner_fire" 10% damage 5 armor
+	"inner_fire"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName" "legion_commander_press_the_attack"
+		"MaxLevel" "1"
+ 
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "500"
+		"AbilityCooldown"    "1"
+		"AbilityManaCost"    "35"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"duration" "60"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"inner_fire_buff"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"inner_fire_buff"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"		"CASTER"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+				"IsHidden"	"0"
+				"IsPurgeable" "1"
+				"IsBuff"	"1"
+				"Duration"	"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"10"
+				}
+			}
+		}
+	}
 	
 	//"curse"  "broodmother_incapacitating_bite" 60sec duration!
 	"creep_curse"
@@ -2499,7 +2557,6 @@
 			}
 		}
 	}
-	//"thunder_clap" "polar_furbolg_ursa_warrior_thunder_clap"
 	//"earthquake" "elder_titan_earth_splitter"?
 
 	//CRITTER
