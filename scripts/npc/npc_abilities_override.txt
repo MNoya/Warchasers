@@ -166,25 +166,6 @@
 		}				
 	}
 
-	"centaur_khan_endurance_aura" //must rewrite datadriven for Movement Speed 10% 20% 30% and attach particle effect
-	{
-		"MaxLevel"				"3"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"
-			}
-		}
-	}
-
 	"clinkz_searing_arrows"
 	{
 		"MaxLevel"						"3"
@@ -675,7 +656,7 @@
 		}
 	}
 	
-	"satyr_hellcaller_unholy_aura"
+	"satyr_hellcaller_unholy_aura" //datadriven, merge with kobold aura and apply particle HOWL?
 	{	
 		"MaxLevel"						"1"
 		"AbilitySpecial"
@@ -1693,6 +1674,18 @@
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
 	}
+	
+	"item_orb_of_frost"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_orb_of_fire"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
 
 	//SHOP 1
 
@@ -1787,6 +1780,8 @@
 		"ItemPurchasable"				"1"
 		"ItemDroppable"					"1"
 	}
+	
+	//Keys
 
 	"item_key1"
 	{
@@ -1808,70 +1803,21 @@
 		"ItemDroppable"					"1"
 
 	}
-
+	
+	//Add tooltips
 	"item_shield_amulet"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_runed_bracers"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
-	}
-	
-	"item_demonic_figurine"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	}
-	
-	"item_red_drake"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	} 
-	
-	"item_spiked_collar"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	} 
-	
-	"item_stone_token"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	}
-	
-	"item_talisman_of_the_wild"
-	{
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
 	}
 
     "item_bone_chimes"
-    {
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	}
-    "item_wand_of_illusion"
-    {
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
-
-	}
-
-    "item_book_of_the_dead" 
     {
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
@@ -1882,49 +1828,42 @@
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_claws_6"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_claws_12"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_boots_6"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_rop_4"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_mana_gem"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 	
 	"item_gloves_15"
 	{
 		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
-
 	}
 
 

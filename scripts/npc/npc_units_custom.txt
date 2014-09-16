@@ -2911,7 +2911,7 @@
 		"Ability1"					"drop_key1"			// Ability 1.
 		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2.
 		"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"enchantress_enchant"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -2976,7 +2976,26 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-			
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+		
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"enchantress_enchant"
+					"Debuff"			"1"
+				}
+			}
 			
 			"AttachWearables"
 			{
