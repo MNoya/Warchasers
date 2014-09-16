@@ -2419,6 +2419,11 @@
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
  
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+		}
+ 
 		"AbilitySpecial"
 		{
 			"01"
@@ -2428,19 +2433,13 @@
 			}
 		}
  
-		"precache"
-		{
-			"particle" 				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-		}
-		
-		
 		"Modifiers"
 		{
-			"disease_cloud_modifier"
+			"disease_cloud_aura"
 			{
 				"Passive" "1"
 				"IsHidden" "0"
-				"Aura" "aura_disease_cloud"
+				"Aura" "disease_cloud_aura_modifier"
 				"Aura_Radius" "%Range"
 				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types" "DOTA_UNIT_TARGET_ALL"
@@ -2450,13 +2449,12 @@
 					{
 						"Target" "CASTER"
 						"EffectName"		"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"EffectLifeDurationScale" "1"
+						"EffectAttachType"  "follow_overhead"
 					}
 				}
 			}
 		 
-			"aura_disease_cloud"
+			"disease_cloud_aura_modifier"
 			{
 				"Duration"	"120"
 				"IsDebuff" "1"
@@ -2485,7 +2483,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 			"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" "legion_commander_press_the_attack"
+		"AbilityTextureName" "inner_fire"
 		"MaxLevel" "1"
  
 		"AbilityCastPoint"    "0.0"

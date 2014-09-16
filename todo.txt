@@ -25,3 +25,4 @@ Ankh override SetHeroRespawnEnabled
 Health Tomes reset bug (ModifyHealth also bugged)
 Strange Blind Spots around teleporters
 Custom models for tomes and pedestal
+DROP SYSTEM BROKEN AFTER PATCH

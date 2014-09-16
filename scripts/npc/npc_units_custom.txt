@@ -4792,17 +4792,6 @@
 					"Stun"				"1" //stun skill
 				}
 			}
-			
-			"DefensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"warchasers_muhrah_animate_dead"
-					//"Buff"				"1" //dont buff twice
-					//"Heal"			"1"
-					
-				}
-			}
 		}
 	}
 	
@@ -7147,12 +7136,17 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/lone_druid/true_form/wizened_bear/wizened_bear.vmdl"	// Model.
+		"Model"						"models/heroes/lone_druid/true_form.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"7"
 		"ModelScale" 				"1.1"
+		
+		precache
+		{
+				"model"						"models/heroes/lone_druid/true_form.vmdl"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -7225,7 +7219,7 @@
 					"Name"				"Invade"
 					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
-					"Support"			"75.0" //start buffing
+					"Support"			"80.0" //start buffing
 				}
 			}
 			
@@ -7237,7 +7231,7 @@
 				}
 			}	
 			
-			"DefensiveAbilitiesAbilities"
+			"DefensiveAbilities"
 			{
 				"Ability1"
 				{
@@ -7270,7 +7264,7 @@
 		"Ability1"					"creep_bloodlust"			// Ability 1
 		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
 		"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3
-		"Ability4"					"warchasers_muhrah_animate_dead"			// Ability 4
+		"Ability4"					""			// Ability 4
 		"Ability5"					"drop_level3"
 		"Ability6"					"drop_level2"
 
@@ -7349,12 +7343,6 @@
 					"Name"				"creep_bloodlust"
 					"Buff"				"1"
 				}
-				
-				"Ability2"
-				{
-					"Name"				"warchasers_muhrah_animate_dead"
-					"Debuff"			"1"
-				}
 			}			
 		}
 	}
@@ -7396,7 +7384,7 @@
 		"AttackRate"				"1.8"			// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"450"		// Range within a target can be acquired.
-		"AttackRange"				"150"		// Range within a target can be attacked.
+		"AttackRange"				"200"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
 
