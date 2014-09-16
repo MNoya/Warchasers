@@ -37,3 +37,10 @@
 			}
 			
 		}
+		//More Ability Usage Parameters
+		"UseSelfishly"		"1"
+		"UseAtHealthPercent""50"
+		
+		Also:
+		"CanBeDominated"			"0"
+		

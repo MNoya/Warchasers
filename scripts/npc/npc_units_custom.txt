@@ -2650,7 +2650,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
+		"Ability1"					"inner_fire"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					"drop_extra_tome"			// Ability 4
@@ -2719,17 +2719,15 @@
 					"Name"				"Invade"
 					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
-					"Support"			"50.0" //start buffing
+					"Support"			"99.0" //start buffing
 				}
 			}
 			"DefensiveAbilities"
 			{
 				"Ability1"
 				{
-					"Name"				"forest_troll_high_priest_heal"
-					//"Buff"			"1" //dont buff twice
-					"Heal"				"1"
-					
+					"Name"				"inner_fire"
+					"Buff"				"1"
 				}
 			}
 		}
@@ -2969,7 +2967,7 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"140"
+		"HealthBarOffset"			"280"
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
@@ -3117,7 +3115,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1. 
-		"Ability2"					""			// Ability 2. ADD INNER FIRE
+		"Ability2"					"inner_fire"			// Ability 2. ADD INNER FIRE
 		"Ability3"					"brewmaster_storm_dispel_magic"			// Ability 3. 
 		"Ability4"					"drop_potion_of_healing"			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -3218,6 +3216,11 @@
 					"Name"				"forest_troll_high_priest_heal"
 					"Heal"			"1"
 				}
+				"Ability2"
+				{
+					"Name"				"inner_fire"
+					"Buff"				"1"
+				}
 			}
 					
 			"AttachWearables"
@@ -3294,7 +3297,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"                          "220"           // Base health.
 		"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
-		"StatusMana"                            "301"                     // Base mana.
+		"StatusMana"                            "300"                     // Base mana.
 		"StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
 	   
 		// Vision
@@ -4105,7 +4108,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"301"			// Base mana.
+		"StatusMana"				"300"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -4290,7 +4293,7 @@
 		"MovementTurnRate"			"1"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"140"
+		"HealthBarOffset"			"3000"
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
@@ -4377,7 +4380,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"			// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
-		"StatusMana"				"323"			// Base mana.
+		"StatusMana"				"322"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
 		// Team
@@ -4471,7 +4474,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"			// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
-		"StatusMana"				"323"			// Base mana.
+		"StatusMana"				"322"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
 		// Team
@@ -4756,7 +4759,7 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"140"
+		"HealthBarOffset"			"300"
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
@@ -5918,8 +5921,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"dark_troll_warlord_ensnare"			// Ability 1
+		"Ability2"					"gnoll_assassin_envenomed_weapon"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 		"Ability5"					"drop_level4"			// Ability 5.
@@ -5963,7 +5966,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"450"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusMana"				"201"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -5983,7 +5986,25 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"95.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
 			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"dark_troll_warlord_ensnare"
+				}
+			}
 			
 			"AttachWearables"
 			{
@@ -6014,7 +6035,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -6073,6 +6094,31 @@
 	
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"forest_troll_high_priest_heal"
+					//"Buff"			"1" //dont buff twice
+					"Heal"				"1"
+					
+				}
+			}
+		}
+		
 		
 	}
 	
@@ -6095,7 +6141,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"                                      ""                      // Ability 1
+		"Ability1"                                      "brewmaster_earth_hurl_boulder"   // Ability 1
 		"Ability2"                                      ""                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
@@ -6154,6 +6200,31 @@
 		"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+						
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"brewmaster_earth_hurl_boulder"
+					"Stun"				"1" //stun skill
+				}
+			}
+			
+		}
 	}
 	
 
@@ -6331,7 +6402,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"big_thunder_lizard_slam"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					"drop_level7"			// Ability 4
@@ -6392,14 +6463,28 @@
 		"Creature"
 		{
 
-			//Level Up
-			"HPGain"					"50"
-			"DamageGain"				"2"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0.1"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"15"
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"big_thunder_lizard_slam"
+					"Buff"				"1"
+				}
+			}
+
+			
 		}
 	}
 
@@ -6421,7 +6506,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6490,7 +6575,27 @@
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
-		{
+		{	
+		
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"90.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"dark_troll_warlord_raise_dead"
+				}
+			}
 				
 			"AttachWearables"
 			{
@@ -6521,7 +6626,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1. 
+		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6591,7 +6696,27 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-				
+			
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"90.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"dark_troll_warlord_raise_dead"
+				}
+			}
+			
 			"AttachWearables"
 			{
 				"Wearable1"	{ "ItemDef" "5594" } 
@@ -6623,8 +6748,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"venomancer_poison_sting"			// Ability 1
+		"Ability2"					"big_thunder_lizard_frenzy"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -6682,7 +6807,32 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"big_thunder_lizard_frenzy"
+					"Buff"				"1"
+				}
+			}
+			
+			
+		}
+		
 	}
 	
 	//=================================================================================
@@ -6701,7 +6851,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"necronomicon_archer_mana_burn"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -6760,7 +6910,30 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"necronomicon_archer_mana_burn"
+				}
+			}
+			
+		}
+		
 	}
 	//=================================================================================
 	// Creature: Titan Skeleton (Ank, Bash) 
@@ -6773,9 +6946,9 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"6"
 		"ModelScale" 				"1.4"
-		"Has Inventory"				"1"
+		"HasInventory"				"1"
 		"ConsideredHero"			"1"
 
 		// Abilities
@@ -6823,7 +6996,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"600"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"101"			// Base mana.
+		"StatusMana"				"201"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -6843,6 +7016,7 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"CanRespawn"	"1"
 			"EquippedItems"
 			{
 				"Ank"
@@ -6882,7 +7056,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"creep_curse"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -6940,10 +7114,34 @@
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"creep_curse"
+					"Debuff"				"1"					
+				}
+			}
+			
+		}
 	}
 
 	//=================================================================================
-	// Furbolg Elder Shaman (Bloodlust)
+	// Furbolg Elder Shaman (Rejuvenation)
 	//=================================================================================
 	"npc_furbolg"
 	{										
@@ -6958,8 +7156,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"warlock_shadow_word"			// Ability 1
+		"Ability2"					"zuus_arc_lightning"			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -7017,7 +7215,40 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"75.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"zuus_arc_lightning"
+				}
+			}	
+			
+			"DefensiveAbilitiesAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"warlock_shadow_word"
+					"Buff"				"1"
+				}
+			}
+				
+			
+		}
+		
 	}
 
 	//=================================================================================
@@ -7036,10 +7267,12 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					"drop_level3"			// Ability 3
-		"Ability4"					"drop_level2"			// Ability 4
+		"Ability1"					"creep_bloodlust"			// Ability 1
+		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
+		"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3
+		"Ability4"					"warchasers_muhrah_animate_dead"			// Ability 4
+		"Ability5"					"drop_level3"
+		"Ability6"					"drop_level2"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7095,7 +7328,35 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"creep_bloodlust"
+					"Buff"				"1"
+				}
+				
+				"Ability2"
+				{
+					"Name"				"warchasers_muhrah_animate_dead"
+					"Debuff"			"1"
+				}
+			}			
+		}
 	}
 
 	//=================================================================================
@@ -7112,8 +7373,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""						// Ability 2.
+		"Ability1"					"brewmaster_storm_cyclone"			// Ability 1.
+		"Ability2"					"disease_cloud"						// Ability 2.
 		"Ability3"					""					// Ability 3.
 		"Ability4"					""				// Ability 4.
 		"Ability5"					"drop_level3"		// Ability 5.
@@ -7171,7 +7432,7 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"140"
+		"HealthBarOffset"			"300"
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
@@ -7180,7 +7441,26 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"20.0" //start buffing
+				}
+			}
 			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"brewmaster_storm_cyclone"
+					"Debuff"				"1"
+				}
+			}			
 			
 			"AttachWearables"
 			{
@@ -7213,7 +7493,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_golem_permanent_immolation"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"neutral_spell_immunity"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_level8"			// Ability 5.
@@ -7252,7 +7532,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"322"		// Speed.
+		"MovementSpeed"				"180"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
@@ -7302,7 +7582,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"322"
 		"ModelScale" 				"2.33"
-		"ConsideredHero"			"0"
+		"ConsideredHero"			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -7367,10 +7647,7 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-			//	"Aggression"				"50.0"
-			//	"Avoidance"					"0.0"
-			//	"Support"					"30.0"
-			//  "CanRespawn"				"0"
+			"DisableResistance"			"50.0"
 			
 			"AttachWearables"
 			{
@@ -7380,6 +7657,8 @@
 			}
 
 		}
+		
+		//"vscripts"
 	}
 
 }

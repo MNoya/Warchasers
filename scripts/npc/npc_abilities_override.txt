@@ -621,6 +621,14 @@
 
 //CREEP PASSIVE SKILLS -----------------------------------------------------------------
 
+	"neutral_spell_immunity"
+	{
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"creep_spell_immunity"
+
+	}
+
 	"alpha_wolf_command_aura"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

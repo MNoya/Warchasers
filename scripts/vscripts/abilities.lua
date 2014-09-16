@@ -48,18 +48,20 @@ function warchasers_muhrah_animate_dead_ini( event )
 end
 
 function unit_hurt_container( event )
-	local attacker = EntIndexToHScript(event.entindex_attacker)
-	local target = EntIndexToHScript(event.entindex_killed)
+	if event.entindex_attacker~=nil then --still fails when it's a DoT from a Dead target			
+		local attacker = EntIndexToHScript(event.entindex_attacker)
+		local target = EntIndexToHScript(event.entindex_killed)
 
-	--Thorns aura
-	if target:HasModifier("warchasers_megatron_thorns_aura_marker") == true then
-		if attacker:IsAttackingEntity(target) == true and attacker:IsRangedAttacker() == false then
-			ApplyDamage({
-						victim = attacker,
-						attacker = target,
-						damage = attacker:GetAverageTrueAttackDamage() * 0.1 * Entities:FindByClassnameNearest("npc_dota_hero_sven", target:GetOrigin(), 2000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel(),
-						damage_type = DAMAGE_TYPE_MAGICAL
-						}) 
+		--Thorns aura
+		if target:HasModifier("warchasers_megatron_thorns_aura_marker") == true then
+			if attacker ~= nil and attacker:IsAttackingEntity(target) == true and attacker:IsRangedAttacker() == false then
+				ApplyDamage({
+							victim = attacker,
+							attacker = target,
+							damage = attacker:GetAverageTrueAttackDamage() * 0.1 * Entities:FindByClassnameNearest("npc_dota_hero_sven", target:GetOrigin(), 2000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel(),
+							damage_type = DAMAGE_TYPE_MAGICAL
+							}) 
+			end
 		end
 	end
 

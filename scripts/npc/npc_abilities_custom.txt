@@ -223,25 +223,17 @@
 
 		"OnOwnerDied"
 		{
-		"Random"
-				{
-					"Chance" "100"
-					"OnSuccess"
-					{
-						"CreateItem"
-						{
-						"Target"					"CASTER"
-						"ItemName"					"item_key1"
-						"ItemCount"					"1"
-						"SpawnRadius"		        "1"
-						//"ItemChargeCount"	        "150" 
-						"AutoUse"					"0"
-						"LaunchHeight"		    	"200"
-						"LaunchDistance"	        "?50 100"
-						"LaunchDuration"	        "0.5"
-						}
-					}
-				}
+			"CreateItem"
+			{
+				"Target"					"CASTER"
+				"ItemName"					"item_key1"
+				"ItemCount"					"1"
+				"SpawnRadius"		        "1"
+				"AutoUse"					"0"
+				"LaunchHeight"		    	"200"
+				"LaunchDistance"	        "?50 100"
+				"LaunchDuration"	        "0.5"
+			}
 		}
 	}
 
@@ -2208,6 +2200,63 @@
 	//"war_stomp" "centaur_hoof_stomp"
 	//"mana_burn" "necronomicon_warrior_mana_burn"
 	//"bloodlust" "ogre_magi_bloodlust"
+	"creep_bloodlust"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ogre_magi_bloodlust"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.56"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_ogre_magi"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"modelscale"			"25"
+			}	
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"10 12 14 16"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"20 40 60 80"
+			}
+		}
+	}
 	//"ensnare" "dark_troll_warlord_ensnare"
 	//"hurl_boulder" "brewmaster_earth_hurl_boulder"
 	//"slam" "big_thunder_lizard_slam"
@@ -2379,6 +2428,12 @@
 			}
 		}
  
+		"precache"
+		{
+			"particle" 				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+		}
+		
+		
 		"Modifiers"
 		{
 			"disease_cloud_modifier"
@@ -2435,7 +2490,7 @@
  
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "500"
-		"AbilityCooldown"    "1"
+		"AbilityCooldown"    "5"
 		"AbilityManaCost"    "35"
 		
 		"AbilitySpecial"
@@ -2464,9 +2519,9 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"	"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"		"CASTER"
+						"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+						"EffectAttachType"	"follow_overhead"
+						"Target"		"TARGET"
 						"EffectLifeDurationScale" "1"
 					}
 				}
@@ -2604,12 +2659,24 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
 		"AbilityManacost" "35"
+		
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_ember_spirit"
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+		
 		"OnToggleOn"
 		{
 			"ApplyModifier"
 			{
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_blade_berserker_immolation_buff"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_EmberSpirit.FlameGuard.Cast"
+				"Target"				"CASTER"
 			}
 		}
 		"OnToggleOff"
