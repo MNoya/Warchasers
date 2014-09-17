@@ -1,28 +1,68 @@
 TO DO
 - General -
-Hero Stats (done), Skills (done), Tooltips
-Add Custom HP Mana AS Armor System (done, add buff with tooltip)
-Creep Skills (started), AI (done through KV, finish skills)
-Item Skills
+Test item flag drops
+Compile missing tooltip list
+Check override tooltips
 Lose condition (needs to support multiple ankhs/dropping/sharing)
 
-- Triggers -
-Add particles on all spawns
+- Heroes -
+Balance solo-buff
+thorns aura bug?
+immolation no mana toggle off? 
+Holy ligth animation? 
+valid targets for deathcoil/holy light? 
+Bladestorm pink particles? Precache custom animations! 
+Searing and cold arrow interaction? 
+datadriven sleep, lifesteal aura with vlads fx
+  
+- Creeps -
+Make datadriven unholy aura
+Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
+Override cyclone and other skills to match wc3 version
+Datadriven healing hands, poison slow, slow, reincarnate. 
+Change general chase behavior
 Spawn mobs after activating circle
 
-- Mapping -
+- Items - 
+Make datadriven aegis item
+go ham with random drop models, use chests
+change key model to have bigger hitbox and glow
+adjust prices, 
+make dominate scepter (add can be dominated 0 to over lvl 5 mobs), 
+fix healing wards (add healing aura with fx in the unit, change to non move), 
+fix meld cloak (auto self target) 
+make bone chimes
+make wands (mjollnir with 3 charges) 
+make scrolls
+make restore invul mana potions
+add linkens particles to shielding amulet
+Fix Tome of Health. 
+Fix tome picking with full inv
+
+- Map -
 Finish unit placing port (almost done, need some scripted spawns)
 Add Pyramids, Pillars, Lanterns, Light Sources.
 Adjust Fog/Vision/Camera Heights
-Firetraps (Done)
+add vision dummies
+improve heaven/hell areas
+add rest of the world drops
+add 4 fountains
+make secrets
+
+- Sounds -
+events on every custom_unit
+on spawns
+on door open
+on new level entered
+on teleport
+on boss defeat
+on creep skills
+on item usage.
+
+- Particles - 
+on spawns
+on item usage
+on boss defeat
 
 - Tooltips/Information -
 Hell/Heaven Timers
-Sounds for triggers
-
-- Needs fixing -
-Ankh override SetHeroRespawnEnabled
-Health Tomes reset bug (ModifyHealth also bugged)
-Strange Blind Spots around teleporters
-Custom models for tomes and pedestal
-DROP SYSTEM BROKEN AFTER PATCH
