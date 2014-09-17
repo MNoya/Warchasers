@@ -3086,6 +3086,74 @@
 	}
 	
 	
+	
+	"creep_unholy_aura"
+	{
+		"MaxLevel"	"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"    "satyr_hellcaller_unholy_aura"
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "900"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"move_speed_bonus"	"10"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"regeneration_bonus"	"1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Range"		"900"
+			}
+		}
+		"Modifiers"
+		{
+			"Unholy_Aura_Modifier"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/units/heroes/hero_lycan/lycan_howl.vpcf"
+						"EffectAttachType" "follow_origin"
+						"EffectLifeDurationScale" "1"
+					}
+				}
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"Aura" 				"creep_unholy_aura_bonus"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"creep_unholy_aura_bonus"
+			{
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%regeneration_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_bonus"
+				}
+			}
+		}
+	}
+	
+	
 
 // END CREEP SKILLS------------------------------------------------------------------------------------------------
 
