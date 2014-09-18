@@ -266,7 +266,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"lich_frost_nova"
 		"Ability2"					"bane_nightmare"
-		"Ability3"					"skeleton_king_vampiric_aura"
+		"Ability3"					"warchasers_vampiric_aura"
 		"Ability4"					""
 		"Ability5"				""
 		"Ability6"				"warchasers_muhrah_animate_dead"

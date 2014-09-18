@@ -8,7 +8,8 @@ Holy ligth animation?
 valid targets for deathcoil/holy light? 
 Bladestorm pink particles? Precache custom animations! 
 Searing and cold arrow interaction?  (bugged, need fix)
-datadriven sleep, lifesteal aura with vlads fx
+datadriven sleep
+vampiric aura fix lifestealing from buildings
   
 - Creeps -
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
