@@ -211,7 +211,15 @@ function Warchasers:InitGameMode()
     ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( Warchasers, "OnPlayerPicked" ), self )
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
-
+	
+	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(Warchasers, 'OnItemPurchased'), self) --Purchase Ankh -> Add +1 to that player Ankh counter
+	ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(Warchasers, 'OnItemPickedUp'), self) --Pick Ankh -> Add +1 to that player Ankh counter
+	ListenToGameEvent('dota_item_drag_end', Dynamic_Wrap(Warchasers, 'OnItemDropped'), self) --> Drop an Ankh -> -1 to that player Ankh counter
+	ListenToGameEvent( "dota_inventory_changed", Dynamic_Wrap(Warchasers, 'OnInventoryChanged'), self) --> Do everything here?
+	--ListenToGameEvent('dota_inventory_player_got_item', Dynamic_Wrap(Warchasers, 'OnPlayerGotItem'), self)
+	--dota_inventory_item_changed
+	--dota_inventory_item_added
+	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 
 	--Variables for tracking
@@ -337,6 +345,20 @@ function Warchasers:OnPlayerPicked( event )
     Warchasers:ModifyStatBonuses(spawnedUnitIndex)
     print(strBonus)
 end
+
+--Item checking
+function Warchasers:OnItemPurchased( event )
+
+end
+
+function Warchasers:OnItemPickedUp( hero )
+
+end
+
+function Warchasers:OnItemDropped( hero )
+
+end
+
 
 
 --Custom Stat Rules
