@@ -1,22 +1,16 @@
 TO DO
 - General -
-Test item flag drops
-Compile missing tooltip list
-Check override tooltips
 Lose condition (needs to support multiple ankhs/dropping/sharing)
 
 - Heroes -
 Balance solo-buff
-thorns aura bug?
-immolation no mana toggle off? 
 Holy ligth animation? 
 valid targets for deathcoil/holy light? 
 Bladestorm pink particles? Precache custom animations! 
-Searing and cold arrow interaction? 
+Searing and cold arrow interaction?  (bugged, need fix)
 datadriven sleep, lifesteal aura with vlads fx
   
 - Creeps -
-Make datadriven unholy aura
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
 Override cyclone and other skills to match wc3 version
 Datadriven healing hands, poison slow, slow, reincarnate. 

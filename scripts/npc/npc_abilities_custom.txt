@@ -634,7 +634,7 @@
 		{
 			"Random"
 			{
-				"Chance" "4"
+				"Chance" "0"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -3128,7 +3128,7 @@
 					"AttachEffect"
 					{
 						"Target" "CASTER"
-						"EffectName"		"particles/units/heroes/hero_lycan/lycan_howl.vpcf"
+						"EffectName"		"particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
 						"EffectAttachType" "follow_origin"
 						"EffectLifeDurationScale" "1"
 					}

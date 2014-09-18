@@ -24,6 +24,7 @@
 		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
 
 		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"HealthBarOffset" "3000"
   	}
 
   	"npc_mine_trap"
@@ -86,7 +87,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
 		"Level"						"4"
-		"ModelScale" 				".84"
+		"ModelScale" 				"1.04"
 		"CanBeDominated"			"0"
 
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
@@ -159,7 +160,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
 		"Level"						"4"
-		"ModelScale" 				".84"
+		"ModelScale" 				".94"
 		"CanBeDominated"			"0"
 
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
@@ -232,7 +233,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
 		"Level"						"1"
-		"ModelScale" 				".84"
+		"ModelScale" 				"0.84"
 		"CanBeDominated"			"0"
 
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
@@ -1415,7 +1416,7 @@
 			"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 			"ProjectileCollisionSize"	"50"
 			"RingRadius"				"130"
-			"HealthBarOffset"			"260"
+			"HealthBarOffset"			"3000"
 	
 			// Movement
 			//----------------------------------------------------------------
@@ -2957,7 +2958,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"1800"		// Base health.
 		"StatusHealthRegen"			"0.1"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusMana"				"500"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
 		// Team
@@ -3363,6 +3364,7 @@
 				{
 					"Name"				"enchantress_enchant"
 					"Debuff"			"1"
+					"Slow"				"1"
 				}
 			}
 		}
@@ -5069,7 +5071,7 @@
 	}
 	
 	//=================================================================================	
-	// Creature: Blue Lizard (Bloodlust, Mana Burn) 
+	// Creature: Blue Lizard Vizier (Bloodlust, Mana Burn) 
 	//=================================================================================
 	"npc_blue_lizard"	
 	{
@@ -5084,8 +5086,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"creep_bloodlust"			// Ability 1
+		"Ability2"					"necronomicon_archer_mana_burn"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_level6"			// Ability 5.
@@ -5146,6 +5148,37 @@
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"90.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"50.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"necronomicon_archer_mana_burn"
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"creep_bloodlust"
+				}
+			}
+		}
 	}
 	
 	//=================================================================================
