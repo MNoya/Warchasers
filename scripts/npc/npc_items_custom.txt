@@ -1631,7 +1631,7 @@
 				"ScriptFile"		"items.lua"
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
-				"heal_amount"		"%mana_amount"
+				"mana_amount"		"%mana_amount"
 
 			}
 			"FireSound"

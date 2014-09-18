@@ -2718,7 +2718,7 @@
 		"AbilityTextureName"			"drow_ranger_frost_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2796,7 +2796,7 @@
 		"AbilityTextureName"			"clinkz_searing_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 	
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3042,6 +3042,7 @@
 
 			"modifier_creep_curse"
 			{
+				"IsDebuff" "1"
 				 "Duration" "%duration"
 				 
 				 "Properties"
@@ -3094,7 +3095,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName"    "satyr_hellcaller_unholy_aura"
+		"AbilityTextureName"    "unholy_aura"
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
@@ -3167,6 +3168,8 @@
 		"MaxLevel"		"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
 		"AbilityManacost" "35"
 		
@@ -3174,6 +3177,20 @@
 		{
 			"particle_folder"				"particles/units/heroes/hero_ember_spirit"
 			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_per_second"	"10 15 20"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"mana_cost_per_second"	"7"
+			}
 		}
 		
 		"OnToggleOn"
@@ -3284,6 +3301,20 @@
 		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
 		"AbilityCooldown" "180"
 		"AbilityManacost" "175"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Radius"	"400"
+			}
+		}
+		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -3307,7 +3338,19 @@
 		"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"    "centaur_return"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_return_percentage"	"10 20 30"
+			}
+		}
+		
 		"Modifiers"
 		{
 			"fx_thorns"
@@ -3351,8 +3394,7 @@
 				"IsHidden"	"1"
 			}
 		}
-	}
-		
+	}		
 
 
 	"warchasers_megatron_tranquility"
@@ -3365,6 +3407,14 @@
 		"AbilityCooldown" "60"
 		"AbilityManacost" "125"
 		"AbilityChannelTime" "30"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration" "30"
+			}
+		}
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -3548,18 +3598,34 @@
 			"01"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"water_elemental_1_count"	"1 0 0 0"
+				"water_elemental_1_count"	"1 0 0"
 				}
 			"02"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"water_elemental_2_count"	"0 1 0 0"
+				"water_elemental_2_count"	"0 1 0"
 				}
 			"03"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"water_elemental_3_count"	"0 0 1 1"
+				"water_elemental_3_count"	"0 0 1"
 				}
+			"04"
+				{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"60"
+				}
+			"05"
+				{
+				"var_type"	"FIELD_FLOAT"
+				"hit_points"	"525 675 900"
+				}			
+			"06"
+				{
+				"var_type"	"FIELD_FLOAT"
+				"damage"	"20 35 45"
+				}
+			
 			}
 		"OnSpellStart"
 			{
@@ -3662,7 +3728,7 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
 		"AbilityTextureName"    "dragon_knight_dragon_tail"
 		 "AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
@@ -3722,8 +3788,8 @@
 			"MaxLevel"	"3"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"	"75"
@@ -3882,6 +3948,8 @@
 		"AbilityChannelTime"	"45"
 		"AbilityTextureName"    "mirana_starfall"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -3984,8 +4052,8 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drow_ranger_frost_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4104,9 +4172,8 @@
 			
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		
-	
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"75"
@@ -4180,7 +4247,7 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
 		"AbilityTextureName"    "centaur_khan_endurance_aura"
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"

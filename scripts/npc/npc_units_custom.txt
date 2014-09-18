@@ -516,8 +516,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -591,8 +591,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -663,8 +663,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -968,8 +968,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -1040,8 +1040,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"100"			// Gold earned min.
+		"BountyGoldMax"				"100"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -1111,8 +1111,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"0"			// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyGoldMin"				"300"			// Gold earned min.
+		"BountyGoldMax"				"300"			// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -2921,9 +2921,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"drop_key1"			// Ability 1.
-		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2.
-		"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3.
-		"Ability4"					"enchantress_enchant"			// Ability 4.
+		"Ability2"					"creep_unholy_aura"			// Ability 2.
+		"Ability3"					"enchantress_enchant"			// Ability 3.
+		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -4953,8 +4953,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"16"		// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		"BountyGoldMin"				"8"		// Gold earned min.
+		"BountyGoldMax"				"10"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
