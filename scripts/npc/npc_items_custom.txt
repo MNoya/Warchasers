@@ -24,13 +24,14 @@
 	{
 		"ID"							"1000"
 		"ItemCost"						"0"
-		"AbilityTextureName"			"item_ankh"
+		//"AbilityTextureName"			"item_ankh"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop"						"1"
 		"SecretShop"					"1"
+		"Model"							"models/props_gameplay/aegis.vmdl"
 		
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"REMOVE"
 
 		"BaseClass" "item_aegis"
 		"AbilitySpecial"
@@ -48,32 +49,6 @@
 		}
 	}
 
-	"item_ankh_deluxe"  //rewrite datadriven
-	{
-		"ID"							"1001"
-		"ItemCost"						"0"
-		"AbilityTextureName"			"item_ankh_deluxe"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SideShop"						"0"
-		"SecretShop"					"1"
-		
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-
-		"BaseClass" "item_aegis"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_FLOAT"
-				"reincarnate_time" "1.0"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"disappear_time" "2147483647" //FLOAT_MAX
-			}
-		}
-	}
 
 	"item_mana_pendant"
 	{
@@ -878,8 +853,10 @@
 		"ItemCost"						"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
-		"BaseClass" "item_shadow_amulet"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass" 				"item_shadow_amulet"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO" //need autoself target
 		"AbilityTextureName"			"item_cloak_of_shadows"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -1104,7 +1081,7 @@
 		"ItemSellable"                  "0"
 		"ItemDroppable"                 "1"
 
-		"Model"							"models/props_debris/merchant_debris_key001.vmdl"
+		"Model"							"models/kappakey.vmdl"
 
 		"BaseClass" "item_datadriven"
 		
@@ -2275,15 +2252,27 @@
     "item_bone_chimes"
 	{
 		"ID"							"1071"
-		"BaseClass" "ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-		"AbilityTextureName"    "item_bone_chimes"
-		"AbilityCastPoint"    "0.0"
-		"AbilityCastRange"    "900"
-		"AbilityCooldown"    "0"
-		"AbilityManaCost"    "0"
+		"BaseClass" 					"item_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName" 			"item_bone_chimes"
+		
+		"AbilityCastPoint"    			"0.0"
+		"AbilityCastRange"    			"500"
+		//"AbilityCooldown"    			"0"
+		//"AbilityManaCost"    			"0"
+
+		"ItemCost"                      "0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPermanent"					"1"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+
+		"SecretShop" "1"
 	
 		"Modifiers"
 		{
@@ -2318,14 +2307,11 @@
 					{
 						"Target"
 						{
-							"Center"	"CASTER"
-							"ExcludeTypes" "DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL"
+							"Center"	"ATTACKER"
 						}
 						"LifestealPercent" "15"
 					}
 				}
-				"EffectName" 				"particles/items_fx/armlet.vpcf"
-				"EffectAttachType"			"attach_hitloc"
 				//need to check exclude buildings
 			}
 		}
@@ -2470,12 +2456,15 @@
 				"IsBuff"	"1"
 				"IsHidden"	"0"
 				"Duration"  "20"
-				"AttachEffect"
-				{
-					"Target" "TARGET"
-					"EffectName"		"particles/particles/items2_fx/mjollnir_shield.vpcf"
-					"EffectAttachType" "follow_origin"
-					"EffectLifeDurationScale" "1"
+				"OnCreated"
+				{	
+					"AttachEffect"
+					{
+						"Target" 	"CASTER"
+						"EffectName"		"particles/items2_fx/mjollnir_shield.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"EffectRadius"				"200"
+					}
 				}
 				"ThinkInterval"	"1"
 				"OnIntervalThink"

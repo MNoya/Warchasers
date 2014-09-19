@@ -7,6 +7,10 @@
 //HERO SKILLS -----------------------------------------------------------------
 	"juggernaut_blade_fury"
 		{
+		"precache"
+		{
+			"particle_folder"	"particles/econ/items/juggernaut"
+		}
 		"MaxLevel"						"1"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"180"

@@ -16,6 +16,10 @@ function DropItemOnDeath(event) -- event is the information sent by the ability
     end
 end
 
+function Ankh( event )
+    local killedPosition = event.caster:GetAbsOrigin()
+    GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+end
 
 function HealthTomeUsed( event )
     local casterUnit = event.caster

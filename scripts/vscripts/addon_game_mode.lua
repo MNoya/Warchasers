@@ -53,16 +53,23 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
 	PrecacheUnitByNameSync("npc_soul_keeper", context)
 	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
+	PrecacheUnitByNameSync("npc_dota_hero_doom", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context)
 	
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
+	PrecacheResource("model", "models/kappakey.vmdl", context)
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
 	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
 	PrecacheResource( "particle_folder","particles/items_fx", context)
+	PrecacheResource( "particle_folder","particles/items2_fx", context)
+	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
+	PrecacheResource( "particle_folder","particles/econ/items", context)
 	
 	
 end
@@ -82,11 +89,11 @@ XP_PER_LEVEL_TABLE = {
 
 SENDHELL = false
 SHOWPOPUP = true
-P0_HAS_ANKH = true
-P1_HAS_ANKH = true
-P2_HAS_ANKH = true
-P3_HAS_ANKH = true
-P4_HAS_ANKH = true
+P0_ANKH_COUNT = 0
+P1_ANKH_COUNT = 0
+P2_ANKH_COUNT = 0
+P3_ANKH_COUNT = 0
+P4_ANKH_COUNT = 0
 DEAD_PLAYER_COUNT = 0
 PLAYER_COUNT = 0
 
@@ -115,7 +122,11 @@ function Warchasers:InitGameMode()
 	GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	GameMode:SetUseCustomHeroLevels ( true )
 
+	--GameRules:SetCustomGameEndDelay(0.1)
+	--GameRules:SetCustomVictoryMessageDuration(0.1)
+
 	--GameRules:SetPreGameTime(0)
+	--GameRules:SetPostGameTime(0)
 	--GameRules:SetHeroSelectionTime(0)
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
@@ -126,11 +137,11 @@ function Warchasers:InitGameMode()
 	
 	--    -5888 -7360 144 = start zone
 	position = Vector(-5888, -7360, 144)
-	local newItem = CreateItem("item_blink", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-	--[[local newItem = CreateItem("item_inferno_stone", nil, nil)
+	local newItem = CreateItem("item_ankh", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 	local newItem = CreateItem("item_inferno_stone", nil, nil)
+    CreateItemOnPositionSync(position, newItem)
+	--[[local newItem = CreateItem("item_inferno_stone", nil, nil)
     CreateItemOnPositionSync(position, newItem)
     local newItem = CreateItem("item_tome_of_agility", nil, nil)
     CreateItemOnPositionSync(position, newItem)
@@ -212,15 +223,8 @@ function Warchasers:InitGameMode()
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
 	
-	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(Warchasers, 'OnItemPurchased'), self) --Purchase Ankh -> Add +1 to that player Ankh counter
-	ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(Warchasers, 'OnItemPickedUp'), self) --Pick Ankh -> Add +1 to that player Ankh counter
-	ListenToGameEvent('dota_item_drag_end', Dynamic_Wrap(Warchasers, 'OnItemDropped'), self) --> Drop an Ankh -> -1 to that player Ankh counter
-	ListenToGameEvent( "dota_inventory_changed", Dynamic_Wrap(Warchasers, 'OnInventoryChanged'), self) --> Do everything here?
-	--ListenToGameEvent('dota_inventory_player_got_item', Dynamic_Wrap(Warchasers, 'OnPlayerGotItem'), self)
-	--dota_inventory_item_changed
-	--dota_inventory_item_added
-	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	GameRules:GetGameModeEntity():SetThink("AnkhThink", self)
 
 	--Variables for tracking
 	self.nRadiantKills = 0
@@ -237,6 +241,8 @@ end
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 	
+		Warchasers:CheckForDefeat()
+		
 		--Permanent Night
 		GameRules:SetTimeOfDay( 0.8 )
 
@@ -244,7 +250,62 @@ function Warchasers:OnThink()
 		return nil
 	end
 	return 2
-end	
+end
+
+-- Evaluate Ankh counters
+function Warchasers:AnkhThink()
+	--for all valid players
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+    	if PlayerResource:IsValidPlayer(nPlayerID) and PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+			--go through their inventories
+			local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+			if hero~=nil and hero:IsAlive() then
+				local ankh_counter = 0
+				for itemSlot = 0, 5, 1 do
+		            local Item = hero:GetItemInSlot( itemSlot )
+		            if Item ~= nil and Item:GetName() == "item_ankh" then 
+		 				ankh_counter = ankh_counter+1 --set Ankh numbers
+		 			end
+		 		end
+		 		if nPlayerID == 0 then
+ 					P0_ANKH_COUNT = ankh_counter
+ 					print("Player 0 Ankh Count: " .. P0_ANKH_COUNT)
+				elseif nPlayerID == 1 then
+ 					P1_ANKH_COUNT = ankh_counter
+					print("Player 1 Ankh Count: " .. P1_ANKH_COUNT)
+ 				elseif nPlayerID == 2 then
+ 					P2_ANKH_COUNT = ankh_counter
+ 					print("Player 2 Ankh Count: " .. P2_ANKH_COUNT)
+ 				elseif nPlayerID == 3 then
+ 					P3_ANKH_COUNT = ankh_counter
+ 					print("Player 3 Ankh Count: " .. P3_ANKH_COUNT)
+ 				elseif nPlayerID == 4 then
+ 					P4_ANKH_COUNT = ankh_counter
+ 					print("Player 4 Ankh Count: " .. P4_ANKH_COUNT)
+ 				end
+		 	end		
+	 	end
+	end			
+	return 1
+end
+
+function Warchasers:CheckForDefeat()
+	
+	-- local bAllPlayersDead = true
+	-- for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		-- if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+			-- if not PlayerResource:HasSelectedHero( nPlayerID ) then
+				-- bAllPlayersDead = false
+			-- else
+				-- local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+				-- if hero and hero:IsAlive() then
+					-- bAllPlayersDead = false
+				-- end
+			-- end
+		-- end
+	-- end
+
+end
 
 function Warchasers:OnGameRulesStateChange(keys)
   	print("GameRules State Changed")
@@ -296,11 +357,6 @@ end
 
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
-	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
-		if PlayerResource:IsValidPlayer(nPlayerID) then 
-			PLAYER_COUNT = PLAYER_COUNT +1
-		end
-	end
 end
 
 function Warchasers:OnNPCSpawned(keys)
@@ -313,7 +369,7 @@ function Warchasers:OnNPCSpawned(keys)
 		SendToConsole("dota_camera_lock 1")
 		SendToConsole("dota_camera_center")
 		Warchasers:OnHeroInGame(npc)
-	else if npc:IsRealHero() and npc.bFirstSpawned == true then --respawn through Ankh
+	elseif npc:IsRealHero() and npc.bFirstSpawned == true then --respawn through Ankh
 		npc:SetHealth(500)
 	end	
 
@@ -333,6 +389,15 @@ function Warchasers:OnHeroInGame(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
 
+	local playercounter = 0
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+		if PlayerResource:IsValidPlayer(nPlayerID) then 
+			playercounter=playercounter+1
+		end
+	end
+	PLAYER_COUNT = playercounter
+
+	print("Total Players" .. PLAYER_COUNT)
     if PLAYER_COUNT==1 then --apply solo buff
     	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
     end
@@ -352,17 +417,6 @@ function Warchasers:OnPlayerPicked( event )
 end
 
 --Item checking
-function Warchasers:OnItemPurchased( event )
-
-end
-
-function Warchasers:OnItemPickedUp( hero )
-
-end
-
-function Warchasers:OnItemDropped( hero )
-
-end
 
 
 
@@ -586,6 +640,10 @@ function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
 
+	if killedUnit:GetName()=="finalboss" then
+		GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+	end	
+	
 	if killedUnit:IsRealHero() then 
 		
 		local KilledPlayerID = killedUnit:GetPlayerID()
@@ -599,78 +657,78 @@ function Warchasers:OnEntityKilled( event )
 		--Problems to fix with the current version: 
 			--doesn't work with multiple Ankhs
 			--doesn't work with dropping/picking Ankhs (will probably disable this)
+
     	--check if the killed player has ankh
-      	if KilledPlayerID==0 and P0_HAS_ANKH then  
-    		P0_HAS_ANKH = false
+      	if KilledPlayerID==0 and P0_ANKH_COUNT > 0 then  
     		respawning = true
-    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+    		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==1 and P1_HAS_ANKH then  
-    		P1_HAS_ANKH = false
+    	if KilledPlayerID==1 and P1_ANKH_COUNT > 0 then  
     		respawning = true
-    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+    		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 	      
-	    if KilledPlayerID==2 and P2_HAS_ANKH then  
-    		P2_HAS_ANKH = false
+	    if KilledPlayerID==2 and P2_ANKH_COUNT > 0 then  
     		respawning = true
-    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+    		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==3 and P3_HAS_ANKH then  
-    		P3_HAS_ANKH = false
+    	if KilledPlayerID==3 and P3_ANKH_COUNT > 0 then  
     		respawning = true
-    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+    		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==4 and P4_HAS_ANKH then  
-    		P4_HAS_ANKH = false
+    	if KilledPlayerID==4 and P4_ANKH_COUNT > 0 then  
     		respawning = true
-    		GameRules:SendCustomMessage("<font color='#4B088A'>The Ankh of Reincarnation glows brightly...</font>",0,0)
-    	end     
+    		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
+    	end   
 
-    	--RIP
-    	if not respawning then
-	    	if KilledPlayerID==0 and not P0_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("<font color='#386BE8'>You</font> are dead! Your lost is soul forever...",0,0)
-	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
-	    	end
+    	if KilledPlayerID==0 and P0_ANKH_COUNT == 0 then  
+    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		respawning=false
+    	end
 
-	    	if KilledPlayerID==1 and not P1_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("<font color='#68FFC2'>You</font> are dead! Your lost is soul forever...",0,0)
-	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
-	    	end
-		      
-		    if KilledPlayerID==2 and not P2_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("<font color='#BC02BD'>You</font> are dead! Your lost is soul forever...",0,0)
-	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
-	    	end
+    	if KilledPlayerID==1 and P1_ANKH_COUNT == 0 then  
+    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		respawning=false
+    	end
+	      
+	    if KilledPlayerID==2 and P2_ANKH_COUNT == 0 then  
+    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		respawning=false
+    	end
 
-	    	if KilledPlayerID==3 and not P3_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("<font color='#E3E015>You</font> are dead! Your lost is soul forever...",0,0)
-	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
-	    	end
+    	if KilledPlayerID==3 and P3_ANKH_COUNT == 0 then  
+    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		respawning=false
+    	end
 
-	    	if KilledPlayerID==4 and not P4_HAS_ANKH then  
-	    		GameRules:SendCustomMessage("<font color='#E66A0A'>You</font> are dead! Your lost is soul forever...",0,0)
-	    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
-	    	end  
-	 		
-	 		--Check for defeat
+    	if KilledPlayerID==4 and P4_ANKH_COUNT == 0 then  
+    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+    		respawning=false
+    	end 
+ 		
+ 		--Check for defeat
+ 		print("Dead Players: " .. DEAD_PLAYER_COUNT)
+ 		print("Total Players: " .. PLAYER_COUNT)
+ 		if not respawning then
 		    if DEAD_PLAYER_COUNT == PLAYER_COUNT then
 		    	print("THEY'RE ALL DEAD BibleThump")
 				local messageinfo = {
 				        message = "RIP IN PIECES",
-				        duration = 2}
+						duration = 2}
+				
 				Timers:CreateTimer({
-	    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-	    			callback = function()
-						FireGameEvent("show_center_message",messageinfo)
-						GameMode:SetFogOfWarDisabled(true)
-						GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-					end
-				})
+		    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+		    			callback = function()
+							FireGameEvent("show_center_message",messageinfo)
+							GameMode:SetFogOfWarDisabled(true)
+							SendToConsole("dota_camera_lock 0")
+							--GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+							GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+						end
+					})
 			end
 		end
 	end
@@ -738,6 +796,7 @@ function Warchasers:OnEntityKilled( event )
 	    	end
 	    })
 	end
+		
 end  
 
 --RANDOM ITEM DROPS --now done directly through datadriven KV

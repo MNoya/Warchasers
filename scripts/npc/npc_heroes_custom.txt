@@ -265,7 +265,7 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"lich_frost_nova"
-		"Ability2"					"bane_nightmare"
+		"Ability2"					"warchasers_sleep" //"warchasers_sleep"
 		"Ability3"					"warchasers_vampiric_aura"
 		"Ability4"					""
 		"Ability5"				""

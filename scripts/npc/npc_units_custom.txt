@@ -2918,12 +2918,15 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.4"
 		"Level"						"6"
+		"ConsideredHero"			"1"
+
+		"DisableResistance"			"75.0"
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"drop_key1"			// Ability 1.
 		"Ability2"					"creep_unholy_aura"			// Ability 2.
-		"Ability3"					"enchantress_enchant"			// Ability 3.
+		"Ability3"					"creep_slow"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -3005,7 +3008,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"enchantress_enchant"
+					"Name"				"creep_slow"
 					"Debuff"			"1"
 				}
 			}
@@ -3289,7 +3292,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"                                      "neutral_spell_immunity"                      // Ability 1
-		"Ability2"                                      "enchantress_enchant"                      // Ability 2
+		"Ability2"                                      "creep_slow"                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
 
@@ -3362,7 +3365,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"enchantress_enchant"
+					"Name"				"creep_slow"
 					"Debuff"			"1"
 					"Slow"				"1"
 				}
@@ -4100,7 +4103,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"enchantress_enchant"			// Ability 1
+		"Ability1"					"creep_slow"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4176,7 +4179,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"enchantress_enchant"
+					"Name"				"creep_slow"
 					"Debuff"			"1"
 				}
 			}
@@ -4731,6 +4734,8 @@
 		"ModelScale"				"1.5"
 		"Level"						"6"
 		
+		"DisableResistance"			"75.0"
+
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_thunder_clap"	// Ability 1.
@@ -7420,7 +7425,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
-		"ModelScale"				"1.4"
+		"ModelScale"				"1.3"
 		"Level"						"8"
 		
 		// Abilities
@@ -7636,10 +7641,12 @@
 		"ModelScale" 				"2.33"
 		"ConsideredHero"			"1"
 
+		"DisableResistance"			"100.0"
+
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"night_stalker_hunter_in_the_night"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"neutral_spell_immunity"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 

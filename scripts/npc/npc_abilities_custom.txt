@@ -2854,19 +2854,17 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"BaseClass"						"ability_datadriven"
 				
 		"OnSpellStart"
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"			"aura_disease_cloud"
+				"ModifierName"			"aura_rot"
 				"Target"
 				{
 					"Center"			"CASTER"
-					"Radius"			"%radius_rot"
+					"Radius"			"900"
 					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
 				}
@@ -2898,31 +2896,20 @@
 				}
 			}
 			
-			"aura_disease_cloud"
+			"aura_rot"
 			{
 				"IsHidden"				"0"
 				"Passive"				"1"				
-				"Aura"					"disease_cloud_aura_modifier"
+				"Aura"					"aura_modifier"
 				"Aura_Radius"			"%radius_rot"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"	
 			}
 			
-			"disease_cloud_aura_modifier"
+			"aura_modifier"
 			{
 				"IsDebuff"				"1"
-				"Duration"	"120"
-				"IsPurgable" "0"
-				"ThinkInterval" "1"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"	"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"1"
-					}
-				}
+				
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	"-5"
@@ -2938,12 +2925,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius_rot"			"250"
+				"radius_rot"			"200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"10.0"
+				"damage"				"25.0"
 			}
 		}
 	}
@@ -2988,7 +2975,7 @@
 				"IsDebuff"					"1"
 				"IsPurgable"				"0"
 
-				"EffectName"	"particles/units/heroes/hero_viper/viper_poison_attack_glow_2.vpcf"
+				"EffectName"	"particles/neutral_fx/gnoll_poison_debuff.vpcf"
 				"EffectAttachType" "attach_hitloc"
 
 				"Duration"					"%duration"
@@ -3064,7 +3051,7 @@
 				"IsDebuff"					"1"
 				"IsPurgable"				"0"
 
-				"EffectName"	"particles/units/heroes/hero_viper/viper_poison_attack_glow_2.vpcf"
+				"EffectName"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
 				"EffectAttachType" "attach_hitloc"
 
 				"Duration"					"%duration"
@@ -4539,24 +4526,22 @@
 				"IsBuff"				"1"
 				"OnAttackLanded"
 				{
+					//"ExcludeTypes" "DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL"
+					//Fix Lifestealing from Buildings
 					"Lifesteal"
 					{
-						"Target"
-						{
-							"Center"	"CASTER"
-							"ExcludeTypes" "DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL"
-						}
-						"LifestealPercent" "%lifesteal"
+						"Target" 				"ATTACKER"
+						"LifestealPercent"		"%lifesteal"
 					}
 				}
-				//need to exclude buildings
 			}
 		}
 	}
 	
-	"warchasers_muhrah_sleep"
+	"warchasers_sleep"
 	{	
-		"MaxLevel"						"3"		
+		"MaxLevel"	"3"
+		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
@@ -4565,16 +4550,16 @@
 		"AbilityManaCost"				"100 75 50"
 		"AbilityTextureName"			"bane_nightmare"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
-		
+	
 		"AbilitySpecial"
 		{
 			"01"
 			{
-			"var_type"	"FIELD_FLOAT"
-			"duration"	"20 40 60" //add disableresistance on bosses!
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"20 40 60" //add disable Resistance on bosses!
 			}
 		}
-
+		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -4583,7 +4568,7 @@
 				"ModifierName"	"warchasers_sleep_debuff"
 			}
 		}
-
+	
 		"Modifiers"
 		{
 			"warchasers_sleep_debuff"
@@ -4593,19 +4578,19 @@
 					"AttachEffect"
 					{
 						"Target" "TARGET"
-						"EffectName"		"particles/particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectName"		"particles/newplayer_fx/npx_sleeping.vpcf"
 						"EffectAttachType" "follow_overhead"
 						"EffectLifeDurationScale" "1"
 					}				
 				}
 				"IsDebuff"	"1"
 				"IsPurgable"	"1"
-				"ThinkInterval"	"1"
 				"IsHidden"		"0"
 				"Duration"	"%duration"
 				"States"
 				{
 					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NIGHTMARED"				"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_LOW_ATTACK_PRIORITY" 	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 				
@@ -4613,11 +4598,13 @@
 				{
 					"RemoveModifier"
 					{
+						"Target"	"TARGET"
 						"ModifierName"	"warchasers_sleep_debuff"
-					}
+					}					
 				}
+				
 			}
-		}	
+		}		
 	}
 
 	"ward_aura_health_regen"

@@ -4677,10 +4677,10 @@
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_base_additive"	// Class of entity of link to.
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/juggernaut/jugg_healing_ward.mdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
-		"Level"						"0"
+		"Level"						"1"
 		"UnitLabel"					"healing_ward"
 		
 		// Abilities
@@ -4752,7 +4752,7 @@
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
 		//----------------------------------------------------------------
