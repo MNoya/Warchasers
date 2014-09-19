@@ -162,7 +162,7 @@ function Warchasers:InitGameMode()
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(-3136,3200,124)
-	local newItem = CreateItem("item_evasion", nil, nil)
+	local newItem = CreateItem("item_bone_chimes", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 
     position = Vector(52,2145,128)

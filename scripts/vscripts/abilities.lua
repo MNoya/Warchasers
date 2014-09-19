@@ -78,6 +78,13 @@ function warchasers_assassin_entangle_definator( event )
 	end
 end
 
+function warchasers_muhrah_sleep_definator( event )
+	if event.target:IsHero() == true then
+		event.target:RemoveModifierByName("warchasers_muhrah_sleep_creep_debuff")
+	else
+		event.target:RemoveModifierByName("warchasers_muhrah_sleep_hero_debuff")
+	end
+end
 
 function star_fall_ender( event )
 	event.caster.star_fall_dummy:ForceKill(true)

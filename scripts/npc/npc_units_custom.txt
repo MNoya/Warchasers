@@ -1746,7 +1746,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"creep_poison_attack"			// Ability 1.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -2833,7 +2833,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"venomancer_poison_sting"			// Ability 1.
+		"Ability1"					"creep_poison_attack"			// Ability 1.
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6375,7 +6375,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"venomancer_poison_sting"			// Ability 1
+		"Ability1"					"creep_poison_attack"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					"drop_tome"			// Ability 4
@@ -6801,7 +6801,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"venomancer_poison_sting"			// Ability 1
+		"Ability1"					"creep_poison_attack"			// Ability 1
 		"Ability2"					"big_thunder_lizard_frenzy"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -7426,8 +7426,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_storm_cyclone"			// Ability 1.
-		"Ability2"					"disease_cloud"						// Ability 2.
-		"Ability3"					""					// Ability 3.
+		"Ability2"					"creep_disease_cloud"						// Ability 2.
+		"Ability3"					"creep_unholy_aura"					// Ability 3.
 		"Ability4"					""				// Ability 4.
 		"Ability5"					"drop_level3"		// Ability 5.
 		"Ability6"					"drop_level6"						// Ability 6 - Extra.
@@ -7501,7 +7501,7 @@
 					"Name"				"Invade"
 					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
-					"Support"			"20.0" //start buffing
+					"Support"			"30.0" //start buffing
 				}
 			}
 			

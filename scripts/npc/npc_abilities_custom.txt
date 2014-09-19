@@ -2849,59 +2849,69 @@
 		}
 	}
 
-	"disease_cloud"
+	"creep_disease_cloud"
 	{
-		"BaseClass" "ability_datadriven"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" "pudge_rot" 
-		"MaxLevel" "1"
- 
-		"AbilityCastPoint"    "0.0"
-		"AbilityCastRange"    "250"
-		"AbilityCooldown"    "0"
-		"AbilityManaCost"    "0"
- 
-		"precache"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+		"BaseClass"						"ability_datadriven"
+				
+		"OnSpellStart"
 		{
-			"particle"				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-		}
- 
-		"AbilitySpecial"
-		{
-			"01"
+			"ApplyModifier"
 			{
-				"var_type" "FIELD_INTEGER"
-				"Range" "250"
+				"ModifierName"			"aura_disease_cloud"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Radius"			"%radius_rot"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+				}
 			}
 		}
- 
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"disease_cloud_aura"
+			"aura_rot_fx"
 			{
-				"Passive" "1"
-				"IsHidden" "0"
-				"Aura" "disease_cloud_aura_modifier"
-				"Aura_Radius" "%Range"
-				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+				"Passive"				"1"
+				"IsHidden"				"1"
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
-						"Target" "CASTER"
+						"Target"			"CASTER"
 						"EffectName"		"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-						"EffectAttachType"  "follow_overhead"
+						"EffectAttachType"	"follow_origin"
+						
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+							"01"	"%radius_rot 0 0"
+						}
 					}
 				}
 			}
-		 
+			
+			"aura_disease_cloud"
+			{
+				"IsHidden"				"0"
+				"Passive"				"1"				
+				"Aura"					"disease_cloud_aura_modifier"
+				"Aura_Radius"			"%radius_rot"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"	
+			}
+			
 			"disease_cloud_aura_modifier"
 			{
+				"IsDebuff"				"1"
 				"Duration"	"120"
-				"IsDebuff" "1"
 				"IsPurgable" "0"
 				"ThinkInterval" "1"
 				"OnIntervalThink"
@@ -2913,9 +2923,184 @@
 						"Damage"	"1"
 					}
 				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	"-5"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"-1"
+				}
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_rot"			"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"10.0"
 			}
 		}
 	}
+	
+	"creep_poison_attack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName" 			"viper_poison_attack"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"MaxLevel"						"1"
+		
+		"Modifiers"
+		{
+			
+			"modifier_poison_attack"
+			{
+				"Passive"	 "1"
+				"IsHidden"	 "1"
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName" "modifier_poison_attack_slow"
+						"Target"	   "TARGET"	
+					}
+					"Damage"
+					{
+						"Type" 			"DAMAGE_TYPE_MAGICAL"
+						"Damage" 		"%damage"
+						"Target"		"TARGET"
+					}
+
+				}
+			}	
+
+			"modifier_poison_attack_slow"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+
+				"EffectName"	"particles/units/heroes/hero_viper/viper_poison_attack_glow_2.vpcf"
+				"EffectAttachType" "attach_hitloc"
+
+				"Duration"					"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+				}
+
+			}	
+		}
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"				"1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"				"4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed"				"-25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed"				"-50"
+			}
+		}
+		
+	}
+	
+	"creep_slow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"skywrath_mage_concussive_shot"
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"1"
+		
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"50"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_creep_slow"		
+				"Target"	"TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+
+			"modifier_creep_slow"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+
+				"EffectName"	"particles/units/heroes/hero_viper/viper_poison_attack_glow_2.vpcf"
+				"EffectAttachType" "attach_hitloc"
+
+				"Duration"					"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+				}
+			}
+		}
+	
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed"				"-25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed"				"-60"
+			}
+		}		
+
+	}
+	
 	
 	//"reincarnation" "skeleton_king_reincarnation"
 	
@@ -3532,10 +3717,13 @@
 		{
 		"MaxLevel"			"3"
 		"BaseClass" "ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityCooldown"				"35 50 65"
 		"AbilityManaCost"	"25"
 		"AbilityTextureName"    "omniknight_repel"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastPoint"				"0.5"
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -3832,7 +4020,6 @@
 				"Function"	"warchasers_assassin_entangle_definator"
 				"Target"	"TARGET"
 				}
-			//attach entangle particles
 			}
 
 
@@ -4051,9 +4238,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drow_ranger_frost_arrows"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_ATTACK"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4063,23 +4250,6 @@
 		"AbilityDamage"					"0"
 		"AbilityManaCost"				"10"
 		"MaxLevel"						"3"
-	
-		"OnToggleOn"
-		{
-			"ApplyModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_snake_cold_arrow"
-			}
-		}
-		"OnToggleOff"
-		{
-			"RemoveModifier"
-			{
-				"Target"	"CASTER"
-				"ModifierName"	"modifier_snake_cold_arrow"
-			}
-		}
 	
 		// Data-Driven
 		//-------------------------------------------------------------------------------------------------------------
@@ -4093,12 +4263,18 @@
 				{
 					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
 					"ProjectileName"    "particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+					"CastAttack"		"1"
 				}
 				"OnOrbFire"
 				{
 					"SpendMana"
 					{
 						"Mana"    "%AbilityManaCost"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_DrowRanger.FrostArrows"
+						"Target"				"CASTER"
 					}
 				}
 				
@@ -4365,13 +4541,83 @@
 				{
 					"Lifesteal"
 					{
-						"Target"	"CASTER"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"ExcludeTypes" "DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL"
+						}
 						"LifestealPercent" "%lifesteal"
 					}
 				}
 				//need to exclude buildings
 			}
 		}
+	}
+	
+	"warchasers_muhrah_sleep"
+	{	
+		"MaxLevel"						"3"		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"100 75 50"
+		"AbilityTextureName"			"bane_nightmare"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+			"var_type"	"FIELD_FLOAT"
+			"duration"	"20 40 60" //add disableresistance on bosses!
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"warchasers_sleep_debuff"
+			}
+		}
+
+		"Modifiers"
+		{
+			"warchasers_sleep_debuff"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/particles/newplayer_fx/npx_sleeping.vpcf"
+						"EffectAttachType" "follow_overhead"
+						"EffectLifeDurationScale" "1"
+					}				
+				}
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"ThinkInterval"	"1"
+				"IsHidden"		"0"
+				"Duration"	"%duration"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"OnAttacked" //wake up
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"warchasers_sleep_debuff"
+					}
+				}
+			}
+		}	
 	}
 
 	
@@ -4407,6 +4653,25 @@
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
 	            "UnitLimit" "20"
+				"OnSpawn"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+							"01"		"50 100 0"
+							"02"		"4 10 .5"
+							"03"		"20 200 0"
+							"04"		"0 0 0"
+							"05"		"0 0 0"
+						}
+					}
+				}
 	        }   
 		
 		}
@@ -4978,6 +5243,7 @@
 			        "MODIFIER_STATE_LOW_ATTACK_PRIORITY"  "MODIFIER_STATE_VALUE_ENABLED"
 			        "MODIFIER_STATE_FLYING"               "MODIFIER_STATE_VALUE_ENABLED"
 			        "MODIFIER_STATE_BLOCK_DISABLED"       "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
 		        }
 	      	}
 	    }
