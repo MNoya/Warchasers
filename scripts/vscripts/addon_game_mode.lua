@@ -296,21 +296,26 @@ end
 
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+		if PlayerResource:IsValidPlayer(nPlayerID) then 
+			PLAYER_COUNT = PLAYER_COUNT +1
+		end
+	end
 end
 
 function Warchasers:OnNPCSpawned(keys)
 	print("NPC Spawned")
 	local npc = EntIndexToHScript(keys.entindex)
 	
+	
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		SendToConsole("dota_camera_lock 1")
 		SendToConsole("dota_camera_center")
-		if npc:GetTeam() == DOTA_TEAM_GOODGUYS then
-			PLAYER_COUNT = PLAYER_COUNT +1
-		end
 		Warchasers:OnHeroInGame(npc)
-	end
+	else if npc:IsRealHero() and npc.bFirstSpawned == true then --respawn through Ankh
+		npc:SetHealth(500)
+	end	
 
 	if npc:IsHero() then
         npc.strBonus = 0
