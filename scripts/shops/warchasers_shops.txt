@@ -94,7 +94,7 @@
         //"item" "item_orb_of_fire"
     }
 
-
+	//Big Al's Shop
     "sideshop1"
     {
          //Shop 1
@@ -115,7 +115,8 @@
       
     }
 
-      "secretshop"
+	//Amy's Magical Shoppe
+    "secretshop"
     {
         //Shop 2
         "item" "item_inferno_stone"

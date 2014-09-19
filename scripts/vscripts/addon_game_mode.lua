@@ -512,7 +512,7 @@ function Warchasers:ModifyStatBonuses(unit)
 				end
 				-- Cleanup
 				UTIL_RemoveImmediate(healthUpdater)
-				healthUpdater = nil
+				manaUpdater = nil
 			end
 			-- Updates the stored intellect bonus value for next timer cycle
 			spawnedUnitIndex.intBonus = spawnedUnitIndex:GetIntellect()
@@ -557,7 +557,7 @@ function Warchasers:ModifyStatBonuses(unit)
 				end
 				-- Cleanup
 				UTIL_RemoveImmediate(healthUpdater)
-				healthUpdater = nil
+				attackspeedUpdater = nil
 			end
 			-- Updates the stored agility bonus value for next timer cycle
 			spawnedUnitIndex.attackspeedBonus = spawnedUnitIndex:GetAgility()

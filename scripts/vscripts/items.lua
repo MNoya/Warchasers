@@ -21,31 +21,43 @@ function Ankh( event )
     GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
 end
 
+function Dominate( event )
+    local hero = event.caster
+    local unit = event.target
+    if unit:GetLevel() < 6 then
+        unit:SetControllableByPlayer( hero:GetPlayerOwner():GetPlayerID(), true )
+    end
+end
+
 function HealthTomeUsed( event )
     local casterUnit = event.caster
-    local casterLevel = casterUnit:GetLevel()
-    casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
-    casterUnit:SetHealth(casterUnit:GetHealth() + 50)
-    --BUG: When buying a new item, the Health will reset. 
+    --casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
+    --casterUnit:SetHealth(casterUnit:GetHealth() + 50)
+    --BUG: When buying a new item, the Health will reset.
+    local item = CreateItem( "item_tome_of_health_modifier", source, source)
+    item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
 end
 
 function StrengthTomeUsed( event )
     local casterUnit = event.caster
+    local statBonus = event.bonus_stat
     --casterUnit:SetBaseStrength( casterUnit:GetBaseStrenght() + 1 )
-    casterUnit:ModifyStrength(1)
+    casterUnit:ModifyStrength(statBonus)
     
 end
 
 function AgilityTomeUsed( event )
     local casterUnit = event.caster
+    local statBonus = event.bonus_stat
     --casterUnit:SetBaseAgility( casterUnit:GetBaseAgility() + 1 )
-    casterUnit:ModifyAgility(1)
+    casterUnit:ModifyAgility(statBonus)
 end
 
 function IntellectTomeUsed( event )
     local casterUnit = event.caster
+    local statBonus = event.bonus_stat
     --casterUnit:SetBaseIntellect( casterUnit:GetBaseIntellect() + 1 )
-    casterUnit:ModifyIntellect(1)
+    casterUnit:ModifyIntellect(statBonus)
 end
 
 function Heal(event)
@@ -54,6 +66,24 @@ end
 
 function ReplenishMana(event)
     event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
+end
+
+function ReplenishManaAOE(event)
+
+    -- Find units
+    units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+                              event.caster:GetAbsOrigin(),
+                              nil,
+                              250,
+                              DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+                              DOTA_UNIT_TARGET_ALL,
+                              DOTA_UNIT_TARGET_FLAG_NONE,
+                              FIND_ANY_ORDER,
+                              false)
+ 
+    for _,unit in pairs(units) do
+        unit:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
+    end
 end
 
 function CheckForKey(trigger)

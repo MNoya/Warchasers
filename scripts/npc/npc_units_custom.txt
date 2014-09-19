@@ -2918,6 +2918,8 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.4"
 		"Level"						"6"
+		
+		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
 
 		"DisableResistance"			"75.0"
@@ -3384,6 +3386,7 @@
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1.2"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
@@ -4273,6 +4276,7 @@
 		"Model"						"models/heroes/necrolyte/necrolyte.vmdl"	// Model.	
 		"ModelScale"				"1.2"
 		"Level"						"10"
+		"CanBeDominated"			"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4540,6 +4544,7 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.2"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4733,6 +4738,7 @@
 		"Model"						"models/heroes/terrorblade/demon.vmdl"	// Model.	
 		"ModelScale"				"1.5"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		
 		"DisableResistance"			"75.0"
 
@@ -5296,6 +5302,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.3"
 
 		// Abilities
@@ -5788,6 +5795,7 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
@@ -5879,6 +5887,7 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
@@ -5975,6 +5984,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.4"
 
 		// Abilities
@@ -6456,6 +6466,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
+		"CanBeDominated"			"0"
 		"ModelScale" 				".9"
 
 		// Abilities
@@ -7005,6 +7016,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.4"
 		"HasInventory"				"1"
 		"ConsideredHero"			"1"
@@ -7210,6 +7222,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"7"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.1"
 		
 		precache
@@ -7326,6 +7339,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.4"
 
 		// Abilities
@@ -7427,6 +7441,7 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.3"
 		"Level"						"8"
+		"CanBeDominated"			"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -7545,6 +7560,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"10"
+		"CanBeDominated"			"0"
 		"ModelScale" 				"1.5"
 
 		// Abilities
@@ -7640,6 +7656,7 @@
 		"Level"						"322"
 		"ModelScale" 				"2.33"
 		"ConsideredHero"			"1"
+		"CanBeDominated"			"0"
 
 		"DisableResistance"			"100.0"
 

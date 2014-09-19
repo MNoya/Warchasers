@@ -1,37 +1,42 @@
 TO DO
 - General -
 Lose condition (needs to support multiple ankhs/dropping/sharing)
+Add divided health bars DONE
+Make UI for Pierce/Chaos/Hero dmg and Armors
 
 - Heroes -
 Balance solo-buff
 Holy ligth animation? 
 valid targets for deathcoil/holy light? 
 Bladestorm pink particles? Precache custom animations! 
-Searing and cold arrow interaction?  (bugged, need fix)
-datadriven sleep
+Searing and cold arrow interaction?  FIXED
+datadriven sleep DONE
 vampiric aura fix lifestealing from buildings
   
 - Creeps -
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
 Override cyclone and other skills to match wc3 version
-Datadriven healing hands, poison slow, slow, reincarnate. 
+Datadriven healing hands
+poison slow, slow DONE
+reincarnate. 
 Change general chase behavior
 Spawn mobs after activating circle
 
 - Items - 
 Make datadriven aegis item
 go ham with random drop models, use chests
-change key model to have bigger hitbox and glow
-adjust prices, 
-make dominate scepter (add can be dominated 0 to over lvl 5 mobs), 
-fix healing wards (add healing aura with fx in the unit, change to non move), 
-fix meld cloak (auto self target) 
-make bone chimes
-make wands (mjollnir with 3 charges) 
-make scrolls
-make restore invul mana potions
-add linkens particles to shielding amulet
-Fix Tome of Health. 
+change key model to have bigger hitbox DONE
+key glow
+adjust prices DONE
+make dominate scepter (add can be dominated 0 to over lvl 5 mobs), DONE 
+fix healing wards (add healing aura with fx in the unit, change to non move), DONE
+fix meld cloak (auto self target) DONE
+make bone chimes DONE
+make wands (mjollnir with 3 charges) DONE
+make scrolls DONE
+make restore invul mana potions DONE
+add linkens particles to shielding amulet TOO HARD
+Fix Tome of Health. DONE, TEST
 Fix tome picking with full inv
 
 - Map -
