@@ -11,7 +11,7 @@ valid targets for deathcoil/holy light?
 Bladestorm pink particles? Precache custom animations! DONE
 Searing and cold arrow interaction?  FIXED
 datadriven sleep DONE
-vampiric aura fix lifestealing from buildings
+vampiric aura fix lifestealing from buildings	DONE
   
 - Creeps -
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
