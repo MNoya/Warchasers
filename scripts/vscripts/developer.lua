@@ -12,7 +12,7 @@ end
 function log_npc( event )
 	local index = event.entindex
 	local unit = EntIndexToHScript(index)
-	print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GetSystemTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
+	print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
 end
 
 
