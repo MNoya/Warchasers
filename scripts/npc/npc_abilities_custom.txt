@@ -404,7 +404,7 @@
 		{
 			"Random"
 			{
-				"Chance" "0" //Tome of Health is not working
+				"Chance" "30" //Tome of Health is not working
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -519,7 +519,7 @@
 		{
 			"Random"
 			{
-				"Chance" "0"
+				"Chance" "30"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -634,7 +634,7 @@
 		{
 			"Random"
 			{
-				"Chance" "0"
+				"Chance" "4"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1133,7 +1133,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 3 Item = GreaterHealing GreaterMana HealingPotion (Wands, Add more here)
+	// Drop Level 3 Item = GreaterHealing GreaterMana HealingPotion. Added ManaPotion, Invulnerability, Wand (high chances for now)
 	//=================================================================================================================
 	"drop_level3"
 	{
@@ -1147,7 +1147,7 @@
 		{
 			"Random" //GreaterHealing
 			{
-				"Chance" "33"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1171,7 +1171,7 @@
 
 			"Random" //GreaterMana
 			{
-				"Chance" "33"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1195,7 +1195,7 @@
 
 			"Random" //Healing
 			{
-				"Chance" "33"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1217,6 +1217,77 @@
 				}
 			}
 
+			"Random" //Mana
+			{
+				"Chance" "25"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_potion_of_mana"
+						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+
+			"Random" //Invulnerability
+			{
+				"Chance" "10"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_potion_of_invulnerability"
+						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+
+			"Random" //Wand
+			{
+				"Chance" "10"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_lightning_shield"
+						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
 		}
 	}
 
@@ -1674,7 +1745,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet, (add Tomes+2, Tome +100 Exp, Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet, (added Tomes+2, Tome +1All)
 	//=================================================================================================================
 	"drop_level5"
 	{
@@ -1688,7 +1759,7 @@
 		{
 			"Random" //LinkensAmulet
 			{
-				"Chance" "100"
+				"Chance" "20"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1707,14 +1778,102 @@
 						"LaunchDuration"	        "0.5"
 					}
 				}
+			}
+			"Random" //STR+2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_strength_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //AGI2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_agility_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //INT2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_intellect_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //Knowledge
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_knowledge"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
 			}		
 		}
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet, (add Tomes+2, Tome +100 Exp, Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet, (added Tomes+2, Tome +1All)
 	//=================================================================================================================
-	"drop_extra_level5"
+	"drop_level5"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1726,7 +1885,7 @@
 		{
 			"Random" //LinkensAmulet
 			{
-				"Chance" "100"
+				"Chance" "20"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1738,6 +1897,94 @@
 						}
 						
 						"ItemName"					"item_shield_amulet"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //STR+2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_strength_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //AGI2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_agility_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //INT2
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_intellect_2"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			"Random" //Knowledge
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_tome_of_knowledge"
 						"ItemCount"					"1" 
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
@@ -3574,7 +3821,7 @@
 					}
 			}
 		}
-	}		
+	}
 	"warchasers_megatron_thorns_aura_helper"
 		{
 		"BaseClass" "ability_datadriven"
@@ -3596,6 +3843,8 @@
 				}
 			}
 		}
+	
+
 
 	"warchasers_megatron_tranquility"
 	{

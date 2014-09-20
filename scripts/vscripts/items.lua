@@ -25,7 +25,11 @@ function Dominate( event )
     local hero = event.caster
     local unit = event.target
     if unit:GetLevel() < 6 then
-        unit:SetControllableByPlayer( hero:GetPlayerOwner():GetPlayerID(), true )
+        unit:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
+        unit:SetTeam( DOTA_TEAM_GOODGUYS ) --hero:GetTeam()
+        hero:SetOwner(unit)
+        local item = CreateItem( "item_apply_modifiers", source, source)
+        item:ApplyDataDrivenModifier( unit, unit, "modifier_dominated", {})
     end
 end
 
@@ -34,6 +38,7 @@ function HealthTomeUsed( event )
     --casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
     --casterUnit:SetHealth(casterUnit:GetHealth() + 50)
     --BUG: When buying a new item, the Health will reset.
+
     local item = CreateItem( "item_tome_of_health_modifier", source, source)
     item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
 end
@@ -84,6 +89,7 @@ function ReplenishManaAOE(event)
     for _,unit in pairs(units) do
         unit:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
     end
+    event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
 end
 
 function CheckForKey(trigger)

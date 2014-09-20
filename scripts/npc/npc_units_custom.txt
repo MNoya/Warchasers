@@ -326,6 +326,7 @@
 	"vision_dummy"
 		{	
 		"BaseClass"                                     "npc_dota_creature"
+		"Model"		"models/development/invisiblebox.vmdl"
 		"AttackCapabilities"            "DOTA_UNIT_CAP_NO_ATTACK"
 		"VisionDaytimeRange"            "2000" 
 		"VisionNighttimeRange"          "2000"

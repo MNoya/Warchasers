@@ -96,6 +96,11 @@ P3_ANKH_COUNT = 0
 P4_ANKH_COUNT = 0
 DEAD_PLAYER_COUNT = 0
 PLAYER_COUNT = 0
+P0_TOME_COUNT = 0
+P1_TOME_COUNT = 0
+P2_TOME_COUNT = 0
+P3_TOME_COUNT = 0
+P4_TOME_COUNT = 0
 
 
 -- Create the game mode when we activate
@@ -136,28 +141,8 @@ function Warchasers:InitGameMode()
 	print("Dropping items on the world")
 	
 	--    -5888 -7360 144 = start zone
-	position = Vector(-5888, -7360, 144)
-	local newItem = CreateItem("item_ankh", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-	local newItem = CreateItem("item_inferno_stone", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-	--[[local newItem = CreateItem("item_inferno_stone", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_agility", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_strength", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_agility", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_strength", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_agility", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-    local newItem = CreateItem("item_tome_of_intellect", nil, nil)
+	--[[position = Vector(-5888, -7360, 144)
+	local newItem = CreateItem("item_tome_of_health", nil, nil)
     CreateItemOnPositionSync(position, newItem)]]
 		
     position = Vector(-2940,2996,124)
@@ -222,6 +207,7 @@ function Warchasers:InitGameMode()
     ListenToGameEvent( "dota_player_pick_hero", Dynamic_Wrap( Warchasers, "OnPlayerPicked" ), self )
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
+    ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(Warchasers, 'OnItemPickedUp'), self)
 	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	GameRules:GetGameModeEntity():SetThink("AnkhThink", self)
@@ -269,19 +255,19 @@ function Warchasers:AnkhThink()
 		 		end
 		 		if nPlayerID == 0 then
  					P0_ANKH_COUNT = ankh_counter
- 					print("Player 0 Ankh Count: " .. P0_ANKH_COUNT)
+ 					--print("Player 0 Ankh Count: " .. P0_ANKH_COUNT)
 				elseif nPlayerID == 1 then
  					P1_ANKH_COUNT = ankh_counter
-					print("Player 1 Ankh Count: " .. P1_ANKH_COUNT)
+					--print("Player 1 Ankh Count: " .. P1_ANKH_COUNT)
  				elseif nPlayerID == 2 then
  					P2_ANKH_COUNT = ankh_counter
- 					print("Player 2 Ankh Count: " .. P2_ANKH_COUNT)
+ 					--print("Player 2 Ankh Count: " .. P2_ANKH_COUNT)
  				elseif nPlayerID == 3 then
  					P3_ANKH_COUNT = ankh_counter
- 					print("Player 3 Ankh Count: " .. P3_ANKH_COUNT)
+ 					--print("Player 3 Ankh Count: " .. P3_ANKH_COUNT)
  				elseif nPlayerID == 4 then
  					P4_ANKH_COUNT = ankh_counter
- 					print("Player 4 Ankh Count: " .. P4_ANKH_COUNT)
+ 					--print("Player 4 Ankh Count: " .. P4_ANKH_COUNT)
  				end
 		 	end		
 	 	end
@@ -357,38 +343,48 @@ end
 
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
+
+	if SHOWPOPUP then
+		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+		SHOWPOPUP = false
+	end
 end
 
 function Warchasers:OnNPCSpawned(keys)
 	print("NPC Spawned")
 	local npc = EntIndexToHScript(keys.entindex)
 	
-	
+	if npc:IsHero() then
+		npc.strBonus = 0
+        npc.intBonus = 0
+        npc.agilityBonus = 0
+        npc.attackspeedBonus = 0
+    end
+
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		SendToConsole("dota_camera_lock 1")
 		SendToConsole("dota_camera_center")
+		local item = CreateItem("item_ankh", npc, npc)
+		npc:AddItem(item)
 		Warchasers:OnHeroInGame(npc)
 	elseif npc:IsRealHero() and npc.bFirstSpawned == true then --respawn through Ankh
-		npc:SetHealth(500)
-	end	
+		--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+		--Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
+		Warchasers:OnHeroInGame(npc)
+		npc:SetHealth(500) --it's a little more based on the STR
+		print(npc:GetHealth())
 
-	if npc:IsHero() then
-        npc.strBonus = 0
-        npc.intBonus = 0
-        npc.attackspeedBonus = 0
-     end
+	end	
 end
 
 --Add Ankh
 function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
-	local item = CreateItem("item_ankh", hero, hero)
-	hero:AddItem(item)
 
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
-
+	
 	local playercounter = 0
 	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
 		if PlayerResource:IsValidPlayer(nPlayerID) then 
@@ -402,21 +398,72 @@ function Warchasers:OnHeroInGame(hero)
     	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
     end
 
-
-	if SHOWPOPUP then
-		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-		SHOWPOPUP = false
+    --warning: awful code, should be done differently. Need to learn how indexes are stored after death.
+	if hero:GetPlayerID()==0 then 
+		print("This hero had " .. P0_TOME_COUNT .. " tomes of health stored")
+		local item = CreateItem( "item_tome_of_health_modifier", source, source)
+		for i=0, P0_TOME_COUNT do
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
+		end
+	elseif hero:GetPlayerID()==1 then 
+		print("This hero had " .. P1_TOME_COUNT .. " tomes of health stored")
+		local item = CreateItem( "item_tome_of_health_modifier", source, source)
+		for i=0, P1_TOME_COUNT do
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
+		end
+	elseif hero:GetPlayerID()==2 then 
+		print("This hero had " .. P2_TOME_COUNT .. " tomes of health stored")
+		local item = CreateItem( "item_tome_of_health_modifier", source, source)
+		for i=0, P2_TOME_COUNT do
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
+		end
+	elseif hero:GetPlayerID()==3 then 
+		print("This hero had " .. P3_TOME_COUNT .. " tomes of health stored")
+		local item = CreateItem( "item_tome_of_health_modifier", source, source)
+		for i=0, P3_TOME_COUNT do
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
+		end
 	end
+	if hero:GetPlayerID()==4 then 
+		print("This hero had " .. P4_TOME_COUNT .. " tomes of health stored")
+    	--reapply tomes of health on death
+		local item = CreateItem( "item_tome_of_health_modifier", source, source)
+		for i=0, P4_TOME_COUNT do
+			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
+		end
+	end
+	--you didn't read this, it never happened.
 end
 
 function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
     Warchasers:ModifyStatBonuses(spawnedUnitIndex)
-    print(strBonus)
+    --Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
 end
 
 --Item checking
+function Warchasers:OnItemPickedUp( event )
+	
+	 --record how many tomes the player has
+	if event.itemname == "item_tome_of_health" then
+		print("1 Health Tome Picked Up")
+		print(event.PlayerID)
+		if event.PlayerID==0 then
+	    	P0_TOME_COUNT = P0_TOME_COUNT+1
+	    	print(P0_TOME_COUNT .. " Tomes Picked by player 0")
+		elseif event.PlayerID==1 then
+	    	P1_TOME_COUNT = P1_TOME_COUNT+1
+	    elseif event.PlayerID==2 then
+	    	P2_TOME_COUNT = P2_TOME_COUNT+1
+	    elseif event.PlayerID==3 then
+	    	P3_TOME_COUNT = P3_TOME_COUNT+1
+	    elseif event.PlayerID==4 then
+	    	P4_TOME_COUNT = P4_TOME_COUNT+1
+	    end
+	end
+
+end
 
 
 

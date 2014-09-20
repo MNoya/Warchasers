@@ -61,6 +61,8 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+
+		"Model" "models/props_items/ring_voidstone.vmdl"
 		
 		"BaseClass" "item_energy_booster"
 		"AbilityTextureName" 	"item_mana_pendant"
@@ -92,6 +94,8 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+
+		"Model"	"models/props_items/ring_health.vmdl"
 		
 		"BaseClass" "item_vitality_booster"
 		"AbilityTextureName" "item_vitality_pendant"
@@ -525,6 +529,8 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"			"models/props_gameplay/boots_of_speed.vmdl"
+
     	"BaseClass" "item_boots"
     	"AbilityTextureName" "item_botas"
     	"SideShop" "0"
@@ -657,6 +663,8 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/props_gameplay/gem01.vmdl"
+
     	"BaseClass" "item_vitality_booster"
     	"AbilityTextureName" "item_khadgars_gem"
     	"SideShop" "0"
@@ -1243,7 +1251,7 @@
 		"ID"                            "1050"
 		"ItemCost"						"1500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		
+
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"            "item_inferno_stone" 
@@ -1292,7 +1300,7 @@
 	}
 	
 
-	"item_tome_of_health" //bug: health stat doesn't remain after reincarnation
+	"item_tome_of_health_datadriven" //bug: health stat doesn't remain after reincarnation
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -1356,6 +1364,66 @@
 
 	}
 
+	"item_tome_of_health"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1052"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_strength"
+		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		"ItemKillable"					"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		//"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+		
+		"OnEquip"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"HealthTomeUsed"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
+				"EffectAttachType" 	"follow_overhead"
+			}	
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}			
+		}
+
+	}
+	
+	
 	"item_tome_of_strength"
 	{
 		// General
@@ -1967,7 +2035,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"Model"							"models/props_gameplay/salve.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_great_healing"
 		"ItemKillable"                  "1"
@@ -2117,7 +2185,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve.vmdl" //Green
+		"Model"							"models/props_gameplay/salve_red.vmdl" //Green
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_restoration"
 		"ItemKillable"                  "1"
@@ -2205,7 +2273,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve.vmdl" //Green
+		"Model"							"models/items/alchemist/convict_trophy_offhand/convict_trophy_offhand.vmdl" //"models/props_gameplay/salve_red.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_invulnerability"
 		"ItemKillable"                  "1"
@@ -2496,6 +2564,8 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_spell_immunity"
 
+		"Model"	"models/props_items/black_king_bar.vmdl"
+
 
 		
 		// Item Info
@@ -2559,6 +2629,8 @@
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
+
+		"Model"		"models/heroes/juggernaut/jugg_healing_ward.vmdl"
 		
 		"ItemCost"                      "1000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
@@ -2610,6 +2682,8 @@
 		"AbilityCooldown"               "120" //??
 		"AbilityManaCost"               "0" //??
 		
+		"Model"		"models/props_items/staff_wizardry01.vmdl"
+
 		"ItemCost"                      "1100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
 		"ItemShopTags"					"consumable"
@@ -2626,6 +2700,8 @@
 		//MODIFIER_STATE_DOMINATED
 		//DOTA_UNIT_TARGET_FLAG_NOT_DOMINATED
 		//"CanBeDominated"			"0"
+		
+		//modifier_dominated
 		
 		"OnSpellStart"
 		{
@@ -2677,6 +2753,12 @@
 		{
 			"SpendCharge"
 			{}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"	"particles/items2_fx/mekanism.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
 			"Heal"
 			{
 				"Target" //AOE
@@ -2707,6 +2789,7 @@
 	}
 
     //"item_book_of_the_dead" //skeleton warriors+archers
+    //"Model" "models/props_items/necronomicon.vmdl"
 
 	"item_demonic_figurine" //doom guard
 	{
@@ -2714,6 +2797,8 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_demonic_figurine"
+
+
 		
 		"ItemCost"                      "750" 
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2949,6 +3034,8 @@
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName" 			"item_allerias_flute"
+
+		"Model"	"models/props_items/monkey_king_bar01.vmdl"
 		
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
@@ -3024,6 +3111,8 @@
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName" 			"item_bone_chimes"
+
+		"Model"		"models/props_items/blinkdagger.vmdl"
 		
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
@@ -3102,6 +3191,8 @@
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName" 			"item_stormwind_horn"
 		
+		"Model"	"models/props_items/assault_cuirass.vmdl"
+
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
 		//"AbilityCooldown"    			"0"
@@ -3183,7 +3274,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityTextureName"			"item_wand_of_shielding"
+		"AbilityTextureName"			"item_lightning_shield"
+
+		"Model"		"models/props_items/mjolnir01.vmdl"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3336,6 +3429,15 @@
 	                }
            		}
            		
+			}
+			"modifier_dominated"
+			{
+				"Passive"               "1"
+				"IsHidden"              "0"
+				"Properties"
+				{
+					"MODIFIER_STATE_DOMINATED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}   
