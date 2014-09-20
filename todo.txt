@@ -1,14 +1,14 @@
 TO DO
 - General -
-Lose condition (needs to support multiple ankhs/dropping/sharing)
-Add divided health bars DONE
+Lose condition (needs to support multiple ankhs/dropping/sharing) DONE
+Add divided health bars (on hold for now)
 Make UI for Pierce/Chaos/Hero dmg and Armors
 
 - Heroes -
 Balance solo-buff
 Holy ligth animation? 
 valid targets for deathcoil/holy light? 
-Bladestorm pink particles? Precache custom animations! 
+Bladestorm pink particles? Precache custom animations! DONE
 Searing and cold arrow interaction?  FIXED
 datadriven sleep DONE
 vampiric aura fix lifestealing from buildings
@@ -23,10 +23,11 @@ Change general chase behavior
 Spawn mobs after activating circle
 
 - Items - 
-Make datadriven aegis item
-go ham with random drop models, use chests
+Make datadriven aegis item TOO HARD
+go ham with random drop models DONE~
+use custom chests
 change key model to have bigger hitbox DONE
-key glow
+key glow ?
 adjust prices DONE
 make dominate scepter (add can be dominated 0 to over lvl 5 mobs), DONE 
 fix healing wards (add healing aura with fx in the unit, change to non move), DONE
