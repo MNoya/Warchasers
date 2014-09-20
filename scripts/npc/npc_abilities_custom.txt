@@ -3564,10 +3564,38 @@
 				"Duration"	"1"
 				"IsBuff"	"1"
 				"IsHidden"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"megatron_thorns_aura_func"
+						}
+					}
 			}
 		}
 	}		
-
+	"warchasers_megatron_thorns_aura_helper"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"Modifiers"
+			{
+			"thorns_aura_helper"
+				{
+				"Passive"	"1"
+				"Duration"	"0.033"
+				"OnTakeDamage"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"megatron_thorns_aura_damage"
+						}
+					}
+				}
+			}
+		}
 
 	"warchasers_megatron_tranquility"
 	{

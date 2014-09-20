@@ -47,12 +47,37 @@ function warchasers_muhrah_animate_dead_ini( event )
 	end
 end
 
+function megatron_thorns_aura_damage( event )
+	local thorn_damage = event.caster.thorns_aura_ini_hp - event.caster:GetHealth()
+	local thorn_attacker = EntIndexToHScript(event.caster.thorns_aura_attacker)
+	ApplyDamage({
+							victim = thorn_attacker,
+							attacker = event.caster,
+							damage = thorn_damage * 0.1 * Entities:FindByClassnameNearest("npc_dota_hero_sven", event.caster:GetOrigin(), 9000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel(),
+							damage_type = DAMAGE_TYPE_MAGICAL
+							}) 
+	event.caster:RemoveModifierByName("megatron_thorns_aura_damage")
+end
+
+function megatron_thorns_aura_func( event )
+	if  event.attacker:IsRangedAttacker() == false then
+		event.caster.thorns_aura_attacker = event.attacker:GetEntityIndex()
+		event.caster.thorns_aura_ini_hp = event.caster:GetHealth()
+		event.caster:AddAbility("warchasers_megatron_thorns_aura_helper")
+		event.caster:FindAbilityByName("warchasers_megatron_thorns_aura_helper"):SetLevel(1)
+		event.caster:RemoveAbility("warchasers_megatron_thorns_aura_helper")
+	end
+end
+
+
+
+
 function unit_hurt_container( event )
 	if event.entindex_attacker~=nil then --still fails when it's a DoT from a Dead target			
 		local attacker = EntIndexToHScript(event.entindex_attacker)
 		local target = EntIndexToHScript(event.entindex_killed)
 
-		--Thorns aura
+		--[[Thorns aura
 		if target:HasModifier("warchasers_megatron_thorns_aura_marker") == true then
 			if attacker ~= nil and attacker:IsAttackingEntity(target) == true and attacker:IsRangedAttacker() == false then
 				ApplyDamage({
@@ -62,12 +87,12 @@ function unit_hurt_container( event )
 							damage_type = DAMAGE_TYPE_MAGICAL
 							}) 
 			end
-		end
+		end]]
 	end
 
 end
 
-ListenToGameEvent("entity_hurt", unit_hurt_container, nil) 
+--ListenToGameEvent("entity_hurt", Dynamic_Wrap(Warchasers_abilities, "unit_hurt_container"), nil) 
 
 
 function warchasers_assassin_entangle_definator( event )
