@@ -1,6 +1,19 @@
 print("Abilities are loading")
 
 
+function warchasers_vampiric_aura_damage( event )
+	event.caster:RemoveModifierByName("warchasers_vampiric_aura_helper_modifier")
+end
+
+function warchasers_vampiric_aura_ini( event )
+	if event.target.GetInvulnCount == nil and event.target:IsMechanical() == false then
+		local level_aura = event.ability:GetLevel()
+		event.caster:AddAbility("warchasers_vampiric_aura_helper")
+		event.caster:FindAbilityByName("warchasers_vampiric_aura_helper"):SetLevel(level_aura)
+		event.caster:RemoveAbility("warchasers_vampiric_aura_helper")
+	end
+end
+
 function giveUnitDataDrivenModifier(source, target, modifier,dur)
     --source and target should be hscript-units. The same unit can be in both source and target
     local item = CreateItem( "item_apply_modifiers", source, source)
@@ -57,6 +70,7 @@ function megatron_thorns_aura_damage( event )
 							damage_type = DAMAGE_TYPE_MAGICAL
 							}) 
 	event.caster:RemoveModifierByName("megatron_thorns_aura_damage")
+	event.caster.thorns_aura_ini_hp = nil
 end
 
 function megatron_thorns_aura_func( event )

@@ -4746,7 +4746,42 @@
 			}
 		}
 	}
-	
+	"warchasers_vampiric_aura_helper"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"	"FIELD_INTEGER"
+				"lifesteal"	"15 30 45"
+				}
+			}
+		"Modifiers"
+			{
+			"warchasers_vampiric_aura_helper_modifier"
+				{
+				"Passive" "1"
+				"IsHidden"	"1"
+				"OnDealDamage"
+					{
+					"Lifesteal"
+						{
+							"Target" 				"ATTACKER"
+							"LifestealPercent"		"%lifesteal"
+						}
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_vampiric_aura_damage"
+						}
+					}
+				}
+			}
+		}
+
+
 	"warchasers_vampiric_aura"
 	{
 		"MaxLevel"	"3"
@@ -4802,15 +4837,20 @@
 				"IsHidden"				"0"
 				"IsBuff"				"1"
 				"OnAttackLanded"
-				{
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_vampiric_aura_ini"
+						}
 					//"ExcludeTypes" "DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL"
 					//Fix Lifestealing from Buildings
-					"Lifesteal"
-					{
-						"Target" 				"ATTACKER"
-						"LifestealPercent"		"%lifesteal"
+					//"Lifesteal"
+					//{
+					//	"Target" 				"ATTACKER"
+					//	"LifestealPercent"		"%lifesteal"
+					//}
 					}
-				}
 			}
 		}
 	}
