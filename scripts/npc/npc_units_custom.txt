@@ -7678,10 +7678,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"night_stalker_hunter_in_the_night"			// Ability 1
+		"Ability1"					"final_boss_void"			// Ability 1
 		"Ability2"					"neutral_spell_immunity"			// Ability 2
 		"Ability3"					"final_boss_thinker"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"night_stalker_hunter_in_the_night"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7692,16 +7692,16 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"100"		// Damage range min.
 		"AttackDamageMax"			"120"		// Damage range max.	
-		"AttackRate"				"1"		// Speed of attack.
+		"AttackRate"				"1.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.322"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
-		"AttackRange"				"150"		// Range within a target can be attacked.
+		"AttackRange"				"180"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"900"			// Speed of projectile.		   
 
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"322"
+		"RingRadius"				"160"
 		"HealthBarOffset"			"322"
 
 		// Bounty
@@ -7717,7 +7717,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
+		"StatusHealth"				"3500"		// Base health.
 		"StatusHealthRegen"			"3.22"		// Health regeneration rate.
 		"StatusMana"				"322"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

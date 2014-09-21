@@ -2888,7 +2888,7 @@
 			"final_boss_think_modifier"
 				{
 				"Passive"	"1"
-				"ThinkInterval"	"5"
+				"ThinkInterval"	"3"
 				"OnIntervalThink"
 					{
 					"RunScript"
@@ -2929,6 +2929,85 @@
 	//"war_stomp" "centaur_hoof_stomp"
 	//"mana_burn" "necronomicon_warrior_mana_burn"
 	//"bloodlust" "ogre_magi_bloodlust"
+
+	"final_boss_void"
+		{
+		"BaseClass"	"night_stalker_void"
+		"AbilityManaCost"				"0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"525"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCooldown"				"8 8 8 8"
+		"AbilityManaCost"				"0"
+		"AbilityDamage"					"400"
+			
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"duration_day"			"2.0 2.0 2.0 2.0"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"duration_night"		"4.0 4.0 4.0 4.0"
+				}
+			"03"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_slow"		"-80"
+				}
+			"04"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed_slow"		"-35 -35 -35 -35"
+				}
+			}
+		}
+
+	"final_boss_buff"
+		{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"Modifiers"
+			{
+			"final_boss_powerup"
+				{
+				"Passive"	"1"
+
+				"AttachEffect"
+					{
+					"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"		"CASTER"
+					"EffectLifeDurationScale" "1"
+					}
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"1"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"70"
+					}
+				}
+			}
+		}
+
 	"creep_bloodlust"
 	{
 		// General
