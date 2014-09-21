@@ -3,6 +3,112 @@
 {
 	"Version"		"1"
 
+	
+	// START FOUNTAINS --------------------------------------------------------------------------------------------------
+	"health_fountain_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"			"fountain_aura_health_regen"
+				"Target"				"CASTER"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"fountain_aura_health_regen"
+			{
+				"IsHidden"				"0"
+				"Passive"				"1"
+				
+				"Aura"					"fountain_health_regen"
+				"Aura_Radius"			"400"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster"	"1"
+				
+			}
+			
+			"fountain_health_regen"
+			{
+				"IsBuff" "1"
+				"Passive" "1"
+				"IsHidden" "0"
+				"EffectName"		"particles/generic_gameplay/rune_regen_owner.vpcf" //"particles/items_fx/healing_flask.vpcf" //"particles/econ/events/ti4/radiant_fountain_regen_ti4.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"5"
+				}
+			}	
+		}
+	}
+	
+	
+	"mana_fountain_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"			"fountain_aura_mana_regen"
+				"Target" 				"CASTER"
+			}
+		}
+		
+		// Modifiers
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"fountain_aura_mana_regen"
+			{
+				"IsHidden"				"0"
+				"Passive"				"1"
+				
+				"Aura"					"fountain_mana_regen"
+				"Aura_Radius"			"400"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster"	"1"
+				
+			}
+			
+			"fountain_mana_regen"
+			{
+				"IsBuff" "1"
+				"Passive" "1"
+				"IsHidden" "0"
+				"EffectName"		"particles/items_fx/healing_clarity.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"5"
+				}
+			}	
+		}
+	}
+	
+	
+	
+	
 // START TRAPS ------------------------------------------------------------------------------------------------------
 
 	//=================================================================================================================
