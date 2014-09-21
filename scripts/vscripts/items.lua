@@ -27,7 +27,7 @@ function Dominate( event )
     if unit:GetLevel() < 6 then
         unit:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
         unit:SetTeam( DOTA_TEAM_GOODGUYS ) --hero:GetTeam()
-        hero:SetOwner(unit)
+        unit:SetOwner(hero)
         local item = CreateItem( "item_apply_modifiers", source, source)
         item:ApplyDataDrivenModifier( unit, unit, "modifier_dominated", {})
     end

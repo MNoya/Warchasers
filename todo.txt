@@ -1,16 +1,10 @@
 TO DO
 - General -
-Lose condition (needs to support multiple ankhs/dropping/sharing) DONE
-Add divided health bars (on hold for now)
-Make UI for Pierce/Chaos/Hero dmg and Armors
 
 - Heroes -
 Balance solo-buff
 Holy ligth animation? 
 valid targets for deathcoil/holy light? 
-Bladestorm pink particles? Precache custom animations! DONE
-Searing and cold arrow interaction?  FIXED
-datadriven sleep DONE
 vampiric aura fix lifestealing from buildings	DONE
   
 - Creeps -
@@ -23,30 +17,16 @@ Change general chase behavior
 Spawn mobs after activating circle
 
 - Items - 
-Make datadriven aegis item TOO HARD
-go ham with random drop models DONE~
 use custom chests
-change key model to have bigger hitbox DONE
 key glow ?
-adjust prices DONE
-make dominate scepter (add can be dominated 0 to over lvl 5 mobs), DONE 
-fix healing wards (add healing aura with fx in the unit, change to non move), DONE
-fix meld cloak (auto self target) DONE
-make bone chimes DONE
-make wands (mjollnir with 3 charges) DONE
-make scrolls DONE
-make restore invul mana potions DONE
-add linkens particles to shielding amulet TOO HARD
-Fix Tome of Health. DONE, TEST
-Fix tome picking with full inv
 
 - Map -
 Finish unit placing port (almost done, need some scripted spawns)
 Add Pyramids, Pillars, Lanterns, Light Sources.
 Adjust Fog/Vision/Camera Heights
-add vision dummies
-improve heaven/hell areas
-add rest of the world drops
+add vision dummies STARTED, BUGGY
+improve heaven/hell areas STARTED
+add rest of the world drops DONE
 add 4 fountains
 make secrets
 
