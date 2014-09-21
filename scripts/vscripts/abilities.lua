@@ -1,5 +1,17 @@
 print("Abilities are loading")
 
+function holy_light_cast( event )
+	if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
+		ApplyDamage({
+					victim = event.target,
+					attacker = event.caster,
+					damage = event.ability:GetLevelSpecialValueFor("target_damage", (event.ability:GetLevel()-1)),
+					damage_type = DAMAGE_TYPE_MAGICAL
+					})
+	else
+		event.target:Heal( event.ability:GetLevelSpecialValueFor("heal_amount", (event.ability:GetLevel()-1)), event.caster)
+	end
+end
 
 function warchasers_titan_reincarnation_outro( event )
 	if event.caster.titan_reincarnate_thinker_eval_count ~= nil then

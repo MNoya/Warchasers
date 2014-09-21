@@ -4701,6 +4701,56 @@
 		}
 	}
 	
+	"warchasers_snake_beast_holy_light"
+		{
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"3"
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"65"
+		"AbilityTextureName"			"omniknight_purification"
+		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_2"
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"target_damage"			"100 200 300"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"heal_amount"			"200 400 600"
+				}
+			}
+
+		"OnSpellStart"
+			{
+			"FireEffect"
+				{
+				"Target" "TARGET"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+				"EffectAttachType" "follow_origin"
+				"EffectLifeDurationScale" "1"
+				}
+			"FireSound"
+				{
+				"EffectName"	"sounds/weapons/hero/omniknight/purification.vsnd"
+				"Target"	"CASTER"
+				}
+
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"holy_light_cast"
+				}
+			}
+		}
+
 	"warchasers_hero_holy_light" //needs datadriven
 	{
 		"BaseClass" 					"abaddon_death_coil"
