@@ -4377,7 +4377,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/lina/lina.vmdl"	// Model.
+		"Model"						"models/heroes/skywrath_mage/skywrath_mage.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"1"
 		//"ConsideredHero"			"1"
@@ -4455,10 +4455,12 @@
 		{					
 			"AttachWearables"
 			{
-				"Wearable1"	{ "ItemDef" "4753" }
-				"Wearable2"	{ "ItemDef"	"4754" }
-				"Wearable3" { "ItemDef"	"4755" }
-				"Wearable4" { "ItemDef"	"4756" }
+				"Wearable1"	{ "ItemDef" "6124" }
+				"Wearable2"	{ "ItemDef"	"6125" }
+				"Wearable3" { "ItemDef"	"6126" }
+				"Wearable4" { "ItemDef"	"6127" }
+				"Wearable5" { "ItemDef"	"6128" }
+				"Wearable6" { "ItemDef"	"6919" } //golden empyrean
 			}
 		}
 	}

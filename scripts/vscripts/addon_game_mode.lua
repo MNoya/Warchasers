@@ -140,11 +140,8 @@ function Warchasers:InitGameMode()
 
 	print("Dropping items on the world")
 	
-	--    -5888 -7360 144 = start zone
-	--[[position = Vector(-5888, -7360, 144)
-	local newItem = CreateItem("item_tome_of_health", nil, nil)
-    CreateItemOnPositionSync(position, newItem)]]
-		
+	--point = Vector(-5888, -7360, 144) --start zone
+
     position = Vector(-2940,2996,124)
 	local newItem = CreateItem("item_allerias_flute", nil, nil)
     CreateItemOnPositionSync(position, newItem)
@@ -811,8 +808,11 @@ function Warchasers:OnEntityKilled( event )
     	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
         GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
     	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-    	local dummy = CreateUnitByName("vision_dummy", point, true, event.caster, event.caster, DOTA_TEAM_GOODGUYS) --malfunctioning
-    	print("Vision Dummy Spawned!")
+    	
+
+    	local spot_hell = Vector(-6571, 3002, 40)
+    	local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    	print("Entered Hell")
 
     	--send to hell
     	SENDHELL = true
@@ -826,7 +826,7 @@ function Warchasers:OnEntityKilled( event )
 					FindClearSpaceForUnit(entHero, point, false)
 					entHero:Stop()
 					SendToConsole("dota_camera_center")
-					GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1500 )
+					GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
 					end
 				end
 				local messageinfo = {
@@ -853,10 +853,10 @@ function Warchasers:OnEntityKilled( event )
 		        	--kill the vision dummy
 		       		end
         		end
-       			print("Teleport Back")
+       			dummy:ForceKill(true)
+       			print("Teleport Back, Dummy killed")
 	    	end
-	    })
-	    dummy:ForceKill(true)
+	    })  
 	end
 		
 end  
