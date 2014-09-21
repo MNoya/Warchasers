@@ -4739,8 +4739,8 @@
 				}
 			"FireSound"
 				{
-				"EffectName"	"sounds/weapons/hero/omniknight/purification.vsnd"
-				"Target"	"CASTER"
+				"EffectName"	"Hero_Omniknight.Purification"
+				"Target"	"TARGET"
 				}
 
 			"RunScript"
