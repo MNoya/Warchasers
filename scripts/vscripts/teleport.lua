@@ -18,8 +18,11 @@ end
 
 function TeleporterHeaven(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_heaven" ):GetAbsOrigin()
-        local dummy = CreateUnitByName("vision_dummy", point, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
-        print("Vision Dummy Spawned!")
+        
+        spot_heaven = Vector(-6734, 5082, 40)
+        local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        print("Entered Heaven")
+
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
             if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -56,16 +59,20 @@ function TeleporterHeaven(trigger)
                         end
                     end
                 end
+                --kill the vision dummy
+                dummy:ForceKill(true)
+                print("Teleport Back, Dummy killed")
             end
         })
-        --kill the vision dummy
-        dummy:ForceKill(true)
+
 end
 
 function TeleporterHell(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-        local dummy = CreateUnitByName("vision_dummy", point, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
-        print("Vision Dummy Spawned!")
+
+        local spot_hell = Vector(-6571, 3002, 40)
+        local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        print("Entered Hell")
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
             if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -101,10 +108,12 @@ function TeleporterHell(trigger)
                             
                         end
                     end
-        end
+                --kill the vision dummy
+                dummy:ForceKill(true)
+                print("Teleport Back, Dummy killed")
+            end
         })
-        --kill the vision dummy
-        dummy:ForceKill(true)
+        
 end
 
 --[[function TeleporterBack(trigger)
