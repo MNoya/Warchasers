@@ -1,6 +1,22 @@
 print("Abilities are loading")
 
 
+function warchasers_titan_reincarnation_outro( event )
+	if event.caster.titan_reincarnate_thinker_eval_count ~= nil then
+		if event.caster.titan_reincarnate_thinker_eval_count >= 15 then
+			event.caster:RespawnUnit()
+			event.caster:RemoveModifierByName("warchasers_titan_reincarnation_death_mod")
+		else
+			event.caster.titan_reincarnate_thinker_eval_count = event.caster.titan_reincarnate_thinker_eval_count + 1
+		end
+	end
+end
+
+function warchasers_titan_reincarnation_ini( event )
+	event.caster.titan_reincarnate_thinker_eval_count = 0
+end
+
+
 function warchasers_vampiric_aura_damage( event )
 	event.caster:RemoveModifierByName("warchasers_vampiric_aura_helper_modifier")
 end

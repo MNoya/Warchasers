@@ -400,7 +400,7 @@
 		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BARRACKS"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -7028,7 +7028,7 @@
 		"Ability3"					""			// Ability 3
 		"Ability4"					"drop_potion_of_healing"			// Ability 4
 		"Ability5"					""
-		"Ability6"					"skeleton_king_reincarnation"
+		"Ability6"					"warchasers_titan_reincarnation"
 
 		// Armor
 		//----------------------------------------------------------------

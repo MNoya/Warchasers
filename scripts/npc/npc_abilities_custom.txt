@@ -3337,7 +3337,59 @@
 	
 	
 	//"reincarnation" "skeleton_king_reincarnation"
-	
+	"warchasers_titan_reincarnation_thinker"
+		{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"Modifiers"
+			{
+			"Passive"	"1"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+				{
+				"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_titan_reincarnation_outro"
+						}
+				}
+			}
+		}
+	"warchasers_titan_reincarnation"
+		{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"		"1"
+		"AbilityTextureName"	"skeleton_king_reincarnation"
+		"Modifiers"
+			{
+			"warchasers_titan_reincarnation_death_mod"
+				{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"ThinkInterval"	"0.2"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_titan_reincarnation_outro"
+						}
+					}
+				"OnDeath"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_titan_reincarnation_ini"
+						}
+					}
+				}
+			}
+		}
+
+
 	//Need datadriven
 	//"inner_fire" 10% damage 5 armor
 	"inner_fire"
@@ -4461,11 +4513,15 @@
 				"Passive"	"1"
 				"States"
 					{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_OUT_OF_GAME "	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
 			}

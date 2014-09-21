@@ -12,7 +12,7 @@ Change disease cloud to something that interacts with cyclone (scorched earth au
 Override cyclone and other skills to match wc3 version
 Datadriven healing hands
 poison slow, slow DONE
-reincarnate. 
+reincarnate. DONE
 Change general chase behavior
 Spawn mobs after activating circle
 
