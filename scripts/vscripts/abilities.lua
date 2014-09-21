@@ -24,9 +24,9 @@ end
 function warchasers_vampiric_aura_ini( event )
 	if event.target.GetInvulnCount == nil and event.target:IsMechanical() == false then
 		local level_aura = event.ability:GetLevel()
-		event.caster:AddAbility("warchasers_vampiric_aura_helper")
-		event.caster:FindAbilityByName("warchasers_vampiric_aura_helper"):SetLevel(level_aura)
-		event.caster:RemoveAbility("warchasers_vampiric_aura_helper")
+		event.attacker:AddAbility("warchasers_vampiric_aura_helper")
+		event.attacker:FindAbilityByName("warchasers_vampiric_aura_helper"):SetLevel(level_aura)
+		event.attacker:RemoveAbility("warchasers_vampiric_aura_helper")
 	end
 end
 
