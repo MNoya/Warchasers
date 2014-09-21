@@ -16520,9 +16520,10 @@
 		"BaseClass"					"npc_dota_base_additive"
 		"SoundSet"					"0"			// Name of sound set.
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		"MovementSpeed"				"0"
-		"VisionDaytimeRange"		"200"
-		"VisionNighttimeRange"		"200"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"1200"
 	}
 
 	"npc_dota_techies_land_mine"

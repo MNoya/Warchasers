@@ -18,7 +18,8 @@ end
 
 function TeleporterHeaven(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_heaven" ):GetAbsOrigin()
-        
+        local dummy = CreateUnitByName("vision_dummy", point, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
+        print("Vision Dummy Spawned!")
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
             if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -26,6 +27,7 @@ function TeleporterHeaven(trigger)
                 FindClearSpaceForUnit(entHero, point, false)
                 entHero:Stop()
                 SendToConsole("dota_camera_center")
+                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
             end
         end
 
@@ -49,16 +51,21 @@ function TeleporterHeaven(trigger)
                             FindClearSpaceForUnit(entHero, point, false)
                             entHero:Stop()
                             SendToConsole("dota_camera_center")
+                            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+                            
                         end
                     end
                 end
             end
         })
+        --kill the vision dummy
+        dummy:ForceKill(true)
 end
 
 function TeleporterHell(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-        
+        local dummy = CreateUnitByName("vision_dummy", point, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
+        print("Vision Dummy Spawned!")
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
             if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -66,6 +73,7 @@ function TeleporterHell(trigger)
                 FindClearSpaceForUnit(entHero, point, false)
                 entHero:Stop()
                 SendToConsole("dota_camera_center")
+                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
             end
         end
 
@@ -89,10 +97,14 @@ function TeleporterHell(trigger)
                             FindClearSpaceForUnit(entHero, point, false)
                             entHero:Stop()
                             SendToConsole("dota_camera_center")
+                            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+                            
                         end
                     end
         end
         })
+        --kill the vision dummy
+        dummy:ForceKill(true)
 end
 
 --[[function TeleporterBack(trigger)

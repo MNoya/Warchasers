@@ -1,7 +1,7 @@
 --dota_launch_custom_game warchasers warchasers
 
 --require( 'util' )
---require( 'camera' ) --drives me crazy, can't pick/drop items
+require( 'camera' )
 require( 'abilities' )
 require( 'timers')
 require( 'teleport')
@@ -165,19 +165,40 @@ function Warchasers:InitGameMode()
 	local newItem = CreateItem("item_key3", nil, nil)
     CreateItemOnPositionSync(position, newItem)
 	
-	--[[global drops 
-		heaven
-			restoration scroll
-			animate scroll
-			orb of fire
-			evasion
+	heaven1 = Vector(-6762, 5583, 40)
+	local newItem = CreateItem("item_restoration_scroll", nil, nil)
+    CreateItemOnPositionSync(heaven1, newItem)
 
-		hell
-			5potion of healing
-			spiked collar
+    heaven2 = Vector(6762, 5475, 40)
+	local newItem = CreateItem("item_orb_of_frost", nil, nil)
+    CreateItemOnPositionSync(heaven2, newItem)
 
-		secret area
-			gloves of haste (add many towers and sheeps)]]
+    heaven3 = Vector(-6652, 5475, 40)
+    local newItem = CreateItem("item_orb_of_fire", nil, nil)
+    CreateItemOnPositionSync(heaven3, newItem)
+
+    heaven4 = Vector(-6652, 5583, 40)
+    local newItem = CreateItem("item_evasion", nil, nil)
+    CreateItemOnPositionSync(heaven4, newItem)
+ 
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell1 = Vector(-7585.9, 3618.39, 40)
+	CreateItemOnPositionSync(hell1, newItem)
+
+	hell2 = Vector(-7634.45, 2930.77, 40)
+	CreateItemOnPositionSync(hell2, newItem)
+
+	hell3 = Vector(-7550.46, 2382.61, 40)
+	CreateItemOnPositionSync(hell3, newItem)
+
+	hell4 = Vector(-5834.61, 3493.86, 40)
+	CreateItemOnPositionSync(hell4, newItem)
+
+	hell5 = Vector(-5658.03, 2879.14, 40)
+	CreateItemOnPositionSync(hell5, newItem)
+
+	hell6 = Vector(-5719.82, 2403.32, 40)
+	CreateItemOnPositionSync(hell6, newItem)
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -189,18 +210,6 @@ function Warchasers:InitGameMode()
         end
     end
     
-    print("Applying Unit Modifiers")
-    local source = Entities:FindByName(nil, "cherub1")
-    local target = Entities:FindByName(nil, "cherub1")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-	local source = Entities:FindByName(nil, "cherub2")
-    local target = Entities:FindByName(nil, "cherub2")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-    local source = Entities:FindByName(nil, "cherub3")
-    local target = Entities:FindByName(nil, "cherub3")
-    giveUnitDataDrivenModifier(source, target, "modifier_make_deniable",-1) -- "-1" means that it will last forever (or until its removed)
-
-
     --Listeners
     ListenToGameEvent( "entity_killed", Dynamic_Wrap( Warchasers, 'OnEntityKilled' ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Warchasers, 'OnNPCSpawned' ), self )
@@ -798,16 +807,18 @@ function Warchasers:OnEntityKilled( event )
     GameMode:SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
 
     --if it's a cherubin, send to hell
-    if killedUnit:GetName()=="cherub1" or killedUnit:GetName()=="cherub2" or killedUnit:GetName()=="cherub3" then
+    if killedUnit:GetName()=="cherub" then
     	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
         GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
-    	
+    	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
+    	local dummy = CreateUnitByName("vision_dummy", point, true, event.caster, event.caster, DOTA_TEAM_GOODGUYS) --malfunctioning
+    	print("Vision Dummy Spawned!")
+
     	--send to hell
     	SENDHELL = true
     	Timers:CreateTimer({
 	    	endTime = 3, 
-	    	callback = function()
-				local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
+	    	callback = function()			
 				--mass teleport
 				for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
 					if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -815,9 +826,10 @@ function Warchasers:OnEntityKilled( event )
 					FindClearSpaceForUnit(entHero, point, false)
 					entHero:Stop()
 					SendToConsole("dota_camera_center")
+					GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1500 )
 					end
 				end
-				 local messageinfo = {
+				local messageinfo = {
 				message = "Some seconds in Hell",
 				duration = 5
 				}
@@ -837,11 +849,14 @@ function Warchasers:OnEntityKilled( event )
 		        	FindClearSpaceForUnit(entHero, point, false)
 		        	entHero:Stop()
 		        	SendToConsole("dota_camera_center")
-	        		end
+		        	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+		        	--kill the vision dummy
+		       		end
         		end
        			print("Teleport Back")
 	    	end
 	    })
+	    dummy:ForceKill(true)
 	end
 		
 end  

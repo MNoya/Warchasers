@@ -37,3 +37,7 @@ function decrease_camera_height(trigger)
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 end
 
+function increase_camera_height_high(trigger)
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 2000 )
+end
+

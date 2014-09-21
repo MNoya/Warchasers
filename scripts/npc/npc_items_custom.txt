@@ -766,7 +766,7 @@
 		"ItemDroppable"                 "1"
 		
     	"BaseClass" "item_skadi"
-    	"AbilityTextureName" "item_orb_of_frost"
+    	"AbilityTextureName" 		"item_orb_of_frost"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -818,6 +818,8 @@
 			}
 		}
     }
+
+
     "item_orb_of_fire" //rewrite datadriven for ranged on air units, cleave, spell damage
     {
     	"ID" "1026"
@@ -827,8 +829,8 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
-    	"BaseClass" "item_desolator"
-    	"AbilityTextureName" "item_orb_of_fire"
+    	"BaseClass" 			"item_desolator"
+    	"AbilityTextureName" 		"item_orb_of_fire"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SideShop" "0"
 		"SecretShop" "1"
