@@ -3,7 +3,7 @@ TO DO
 
 - Heroes -
 Balance solo-buff
-Holy ligth animation? 
+Holy ligth animation? DONE
 valid targets for deathcoil/holy light? 
 vampiric aura fix lifestealing from buildings	DONE
   
