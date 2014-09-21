@@ -5,6 +5,7 @@ require( 'camera' )
 require( 'abilities' )
 require( 'timers')
 require( 'teleport')
+require( "ai" )
 
 
 if Convars:GetBool("developer") == true then

@@ -7670,7 +7670,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"322"
-		"ModelScale" 				"2.33"
+		"ModelScale" 				"1.7"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
 
@@ -7680,24 +7680,24 @@
 		//----------------------------------------------------------------
 		"Ability1"					"night_stalker_hunter_in_the_night"			// Ability 1
 		"Ability2"					"neutral_spell_immunity"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"final_boss_thinker"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"322"			// Physical protection.
+		"ArmorPhysical"				"40"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"322"		// Damage range min.
-		"AttackDamageMax"			"322"		// Damage range max.	
-		"AttackRate"				"0.322"		// Speed of attack.
-		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+		"AttackDamageMin"			"100"		// Damage range min.
+		"AttackDamageMax"			"120"		// Damage range max.	
+		"AttackRate"				"1"		// Speed of attack.
+		"AttackAnimationPoint"		"0.322"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
+		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+		"ProjectileSpeed"			"900"			// Speed of projectile.		   
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -7717,7 +7717,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"322"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"3.22"		// Health regeneration rate.
 		"StatusMana"				"322"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

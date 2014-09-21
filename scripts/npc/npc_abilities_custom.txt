@@ -2877,6 +2877,44 @@
 // END DROPS ------------------------------------------------------------------------------------------------------
 
 
+//CREEPS THINKERS
+
+	"final_boss_thinker"
+		{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"Modifiers"
+			{
+			"final_boss_think_modifier"
+				{
+				"Passive"	"1"
+				"ThinkInterval"	"5"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"ai.lua"
+						"Function"	"final_boss_think"
+						}
+					}
+				}
+
+			"defeat_modifier"
+				{
+				"Passive"	"1"
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"ai.lua"
+						"Function"	"final_boss_defeat"
+						}
+					}
+				}
+			}
+		}
+
+//CREEPS THINKERS END
 
 // CREEP SKILLS-------------------------------------------------------------------------------------------
 		
@@ -4095,6 +4133,7 @@
 	"warchasers_beast_knight_summon_water_elemental"
 		{
 		"BaseClass" "ability_datadriven"
+		"MaxLevel"	"3"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"	"125"
