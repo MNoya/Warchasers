@@ -10,7 +10,7 @@ vampiric aura fix lifestealing from buildings	DONE
 - Creeps -
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) attach aoe radius...
 Override cyclone and other skills to match wc3 version
-Datadriven healing hands
+Datadriven healing hands DONE
 poison slow, slow DONE
 reincarnate. DONE
 Change general chase behavior

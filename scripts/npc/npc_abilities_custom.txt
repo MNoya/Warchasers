@@ -3027,7 +3027,41 @@
 	//Actives
 	//"frost_armor" "lich_frost_armor"	
 	//"purge" "satyr_trickster_purge"
+	
 	//"heal" "forest_troll_high_priest_heal"
+	"creep_heal"
+	//Heals a target friendly non-mechanical wounded unit for 25 hit points.
+	{	
+		"MaxLevel"	"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"    			"creep_heal"
+		"AbilityCooldown" "1"
+		"AbilityManacost" "5"
+			
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"HealAmount" "25"
+				"Target" "TARGET"
+			}
+			"FireEffect"
+			{
+				"Target" "TARGET"
+				"EffectName"		"particles/neutral_fx/troll_heal.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.Purification"
+				"Target"	"TARGET"
+			}
+		}
+	}
+	
 	//"dispel_magic" "brewmaster_storm_dispel_magic"
 	//"blizzard" "crystal_maiden_freezing_field"
 	//"raise_dead" "dark_troll_warlord_raise_dead"

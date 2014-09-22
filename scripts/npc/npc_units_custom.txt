@@ -2704,7 +2704,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"inner_fire"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"creep_heal"			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					"drop_extra_tome"			// Ability 4
 
@@ -2781,6 +2781,11 @@
 				{
 					"Name"				"inner_fire"
 					"Buff"				"1"
+				}
+				"Ability2"
+				{
+					"Name"				"creep_heal"
+					"Heal"				"1"
 				}
 			}
 		}
@@ -2958,6 +2963,7 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.4"
 		"Level"						"6"
+		"IsAncient"					"1"
 		
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
@@ -3191,7 +3197,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1. 
+		"Ability1"					"creep_heal"			// Ability 1. 
 		"Ability2"					"inner_fire"			// Ability 2. ADD INNER FIRE
 		"Ability3"					"brewmaster_storm_dispel_magic"			// Ability 3. 
 		"Ability4"					"drop_potion_of_healing"			// Ability 4.
@@ -3290,7 +3296,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"forest_troll_high_priest_heal"
+					"Name"				"creep_heal"
 					"Heal"			"1"
 				}
 				"Ability2"
@@ -3426,6 +3432,7 @@
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1.2"
 		"Level"						"6"
+		"IsAncient"					"1"
 		"CanBeDominated"			"0"
 		//"ConsideredHero"			"1"
 		
@@ -3945,7 +3952,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1.
+		"Ability1"					"creep_heal"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					"drop_tome"			// Ability 3.
 		"Ability4"					"drop_extra_tome"			// Ability 4.
@@ -4032,7 +4039,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"forest_troll_high_priest_heal"
+					"Name"				"creep_heal"
 					"Buff"				"1" //dont buff twice
 					//"Heal"			"1"
 					
@@ -4681,6 +4688,7 @@
 		"ModelScale"				"1.2"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4875,6 +4883,7 @@
 		"ModelScale"				"1.5"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		
 		"DisableResistance"			"75.0"
 
@@ -5439,6 +5448,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.3"
 
 		// Abilities
@@ -5932,6 +5942,7 @@
 		"ModelScale"				"1"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
@@ -6024,6 +6035,7 @@
 		"ModelScale"				"1"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
@@ -6121,6 +6133,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 
 		// Abilities
@@ -6239,8 +6252,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"forest_troll_high_priest_heal"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"creep_heal"			// Ability 1
+		"Ability2"					""	//add a frozen debuff		// Ability 2 
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -6315,7 +6328,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"forest_troll_high_priest_heal"
+					"Name"				"creep_heal"
 					//"Buff"			"1" //dont buff twice
 					"Heal"				"1"
 					
@@ -6603,6 +6616,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				".9"
 
 		// Abilities
@@ -7153,6 +7167,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 		"HasInventory"				"1"
 		"ConsideredHero"			"1"
@@ -7359,6 +7374,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"7"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.1"
 		
 		precache
@@ -7476,6 +7492,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 
 		// Abilities
@@ -7577,6 +7594,7 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.3"
 		"Level"						"8"
+		"IsAncient"					"1"
 		"CanBeDominated"			"0"
 		
 		// Abilities
@@ -7697,6 +7715,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"10"
 		"CanBeDominated"			"0"
+		"IsAncient"					"1"
 		"ModelScale" 				"1.5"
 
 		// Abilities
