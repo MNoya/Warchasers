@@ -7600,7 +7600,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_storm_cyclone"			// Ability 1.
-		"Ability2"					"creep_disease_cloud"						// Ability 2.
+		"Ability2"					"doom_bringer_scorched_earth"						// Ability 2.
 		"Ability3"					"creep_unholy_aura"					// Ability 3.
 		"Ability4"					""				// Ability 4.
 		"Ability5"					"drop_level3"		// Ability 5.
@@ -7673,9 +7673,17 @@
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"100.0" //cast offensive spells whenever
+					"Aggression"		"99.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
 					"Support"			"30.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1
+				{
+					"Name"	"doom_bringer_scorched_earth"
 				}
 			}
 			
