@@ -22,7 +22,7 @@ key glow ?
 
 - Map -
 Finish unit placing port (almost done, need some scripted spawns)
-Add Pyramids, Pillars, Lanterns, Light Sources.
+Add Pyramids, Pillars, Lanterns, Light Sources. STARTED
 Adjust Fog/Vision/Camera Heights DONE
 add vision dummies DONE
 improve heaven/hell areas DONE
