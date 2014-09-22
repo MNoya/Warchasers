@@ -140,3 +140,11 @@ function TeleporterSecret(trigger)
         SendToConsole("dota_camera_center")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
+
+function TeleporterSecret2(trigger)
+        local point =  Entities:FindByName( nil, "teleport_spot_secret2" ):GetAbsOrigin()
+        FindClearSpaceForUnit(trigger.activator, point, false)
+        trigger.activator:Stop()
+        SendToConsole("dota_camera_center")
+        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+end

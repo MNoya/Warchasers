@@ -185,18 +185,23 @@ function Warchasers:InitGameMode()
     hell1 = Vector(-7585.9, 3618.39, 40)
 	CreateItemOnPositionSync(hell1, newItem)
 
+	local newItem = CreateItem("item_potion_of_healing", nil, nil)
 	hell2 = Vector(-7634.45, 2930.77, 40)
 	CreateItemOnPositionSync(hell2, newItem)
 
+	local newItem = CreateItem("item_potion_of_healing", nil, nil)
 	hell3 = Vector(-7550.46, 2382.61, 40)
 	CreateItemOnPositionSync(hell3, newItem)
 
+	local newItem = CreateItem("item_potion_of_healing", nil, nil)
 	hell4 = Vector(-5834.61, 3493.86, 40)
 	CreateItemOnPositionSync(hell4, newItem)
 
+	local newItem = CreateItem("item_potion_of_healing", nil, nil)
 	hell5 = Vector(-5658.03, 2879.14, 40)
 	CreateItemOnPositionSync(hell5, newItem)
 
+	local newItem = CreateItem("item_potion_of_healing", nil, nil)
 	hell6 = Vector(-5719.82, 2403.32, 40)
 	CreateItemOnPositionSync(hell6, newItem)
 

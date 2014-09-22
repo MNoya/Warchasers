@@ -28,7 +28,7 @@ add vision dummies DONE
 improve heaven/hell areas DONE
 add rest of the world drops DONE
 add 4 fountains DONE
-make secrets
+make secrets STARTED
 
 - Sounds -
 events on every custom_unit
