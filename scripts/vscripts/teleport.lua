@@ -14,6 +14,16 @@ function Teleporter2(trigger)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
         GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
+		point = Vector(2193, -1400, 256)
+        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        print("Entered Heaven")
+		point = Vector(2193, -2200, 256)
+        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        print("Entered Heaven")
+		point = Vector(2193, -2900, 256)
+        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        print("Entered Heaven")
+
 end
 
 function TeleporterHeaven(trigger)

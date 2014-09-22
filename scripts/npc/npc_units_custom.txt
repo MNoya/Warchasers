@@ -348,6 +348,32 @@
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
 	}
+	
+	"vision_dummy_minor"
+	{
+		// General
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/development/invisiblebox.mdl"	// Model.
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"unselectable"			// Ability 1.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+	}
 
 
 	//=================================================================================
@@ -4425,7 +4451,9 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"100"									// Speed.
+		"MovementTurnRate"			"0.4"									// Turning rate.
 	
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
@@ -4611,7 +4639,9 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"1"									// Speed.
+		"MovementTurnRate"			"0.4"									// Turning rate.
 	
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
