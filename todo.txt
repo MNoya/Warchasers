@@ -13,7 +13,7 @@ Datadriven healing hands DONE
 poison slow, slow DONE
 reincarnate. TO FIX: delete drops before reincarnate
 Change general chase behavior
-Spawn mobs after activating circle
+Spawn mobs after activating circle DONE
 
 - Items - 
 use custom chests
@@ -21,7 +21,7 @@ key glow DONE
 Fix Dominate scepter DONE
 
 - Map -
-Finish unit placing port (almost done, need some scripted spawns)
+Finish unit placing port DONE
 Add Pyramids, Pillars, Lanterns, Light Sources. STARTED
 Adjust Fog/Vision/Camera Heights DONE
 add vision dummies DONE

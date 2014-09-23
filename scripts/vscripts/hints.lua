@@ -72,12 +72,6 @@ function circle_zapsappers(trigger)
 	GameRules:SendCustomMessage("The Magic of the circle finds no sappers to destroy.",0,0)
 end 
 
-function circle_activated(trigger)
-	GameRules:SendCustomMessage("The circle has been activated!<br>The magical barrier has been dispelled and now the path is clear",0,0)
-end  
---Now, find and activate the other magic circle
---SUCESS (blue) [on both]
-
 function soulkeeper_warning3(trigger)
 	local position = Vector(2183,-1489,265)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
