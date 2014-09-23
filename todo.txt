@@ -17,7 +17,7 @@ Spawn mobs after activating circle
 
 - Items - 
 use custom chests
-key glow ?
+key glow DONE
 Fix Dominate scepter DONE
 
 - Map -

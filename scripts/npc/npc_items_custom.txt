@@ -602,6 +602,8 @@
     	"BaseClass" 			"item_skadi"
     	"AbilityTextureName" 		"item_orb_of_frost"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"Effect"		"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -666,6 +668,8 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Effect"				"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
 		
     	"BaseClass" 			"item_desolator"
     	"AbilityTextureName" 		"item_orb_of_fire"
@@ -956,6 +960,7 @@
 		"ItemDroppable"                 "1"
 
 		"Model"							"models/kappakey.vmdl"
+		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
 
 		"BaseClass" "item_datadriven"
 		
@@ -985,6 +990,9 @@
 		"ItemDroppable"                 "1"
 
 		"BaseClass" "item_datadriven"
+		"Model"							"models/kappakey.vmdl"
+		"Effect"						"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
+
 		
 		"OnOwnerDied"
 		{
@@ -1011,6 +1019,8 @@
 		"ItemDroppable"                 "1"
 
 		"BaseClass" "item_datadriven"
+		"Model"							"models/kappakey.vmdl"
+		"Effect"						"particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf"
 		
 		"OnOwnerDied"
 		{
@@ -1031,6 +1041,7 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"            "item_inferno_stone" 
+		
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
@@ -1147,9 +1158,9 @@
 		"ID"							"1052"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_tome_of_strength"
+		"AbilityTextureName"			"item_tome_of_health"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1157,6 +1168,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1209,7 +1221,8 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
+
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1217,6 +1230,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1272,7 +1286,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1280,6 +1294,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1335,7 +1350,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1343,6 +1358,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1397,7 +1413,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1405,6 +1421,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1460,7 +1477,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1468,6 +1485,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1523,7 +1541,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1531,6 +1549,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -1586,7 +1605,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"ItemKillable"					"1"
+		"Effect"						"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1594,6 +1613,7 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
+		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
@@ -2886,6 +2906,7 @@
 		"AbilityTextureName" 			"item_bone_chimes"
 
 		"Model"		"models/props_items/blinkdagger.vmdl"
+		//"Effect"	"particles/generic_gameplay/dropped_smoke.vpcf"
 		
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
