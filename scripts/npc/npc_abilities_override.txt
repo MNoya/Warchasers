@@ -861,6 +861,13 @@
 	//=================================================================================================================
 	"doom_bringer_scorched_earth"
 	{
+	
+		"precache"
+		{
+			"particle_folder"	"particles/econ/items/doom"
+			"particle_folder"	"particles/units/heroes/hero_doom_bringer"
+		}
+		
 		"MaxLevel"	"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"

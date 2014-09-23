@@ -3051,7 +3051,7 @@
 			"FireEffect"
 			{
 				"Target" "TARGET"
-				"EffectName"		"particles/neutral_fx/troll_heal.vpcf"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_d_glow.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
 			"FireSound"
@@ -3853,16 +3853,9 @@
 		{
 			"Unholy_Aura_Modifier"
 			{
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" "CASTER"
-						"EffectName"		"particles/units/heroes/hero_lycan/lycan_howl_buff.vpcf"
-						"EffectAttachType" "follow_origin"
-						"EffectLifeDurationScale" "1"
-					}
-				}
+				"EffectName"		"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
+				"EffectAttachType"   "follow_origin"
+				
 				"Passive" 			"1"
 				"IsHidden" 			"1"
 				"IsBuff"			"1"

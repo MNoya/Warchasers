@@ -7681,7 +7681,7 @@
 			
 			"OffensiveAbilities"
 			{
-				"Ability1
+				"Ability1"
 				{
 					"Name"	"doom_bringer_scorched_earth"
 				}

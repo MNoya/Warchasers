@@ -55,7 +55,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_soul_keeper", context)
 	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
 	PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
-	PrecacheUnitByNameSync("npc_dota_hero_doom", context)
+	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
 	PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context)
 	
 
@@ -73,7 +73,7 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/econ/items", context)
 	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
 	PrecacheResource( "particles_folder","particles/generic_gameplay", context)
-	
+
 	
 end
 
@@ -169,7 +169,7 @@ function Warchasers:InitGameMode()
 	local newItem = CreateItem("item_restoration_scroll", nil, nil)
     CreateItemOnPositionSync(heaven1, newItem)
 
-    heaven2 = Vector(6762, 5475, 40)
+    heaven2 = Vector(-6762, 5475, 40)
 	local newItem = CreateItem("item_orb_of_frost", nil, nil)
     CreateItemOnPositionSync(heaven2, newItem)
 

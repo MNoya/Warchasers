@@ -2452,8 +2452,9 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP" //DOTA_UNIT_TARGET_BASIC? DOTA_UNIT_TARGET_CUSTOM?
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"            "item_scepter_of_mastery"
+		"AbilityUnitTargetFlag" 		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityCastRange"              "400" //??
 		"AbilityCooldown"               "120" //??
 		"AbilityManaCost"               "0" //??
