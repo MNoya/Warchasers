@@ -16,7 +16,8 @@ Change general chase behavior
 Spawn mobs after activating circle DONE
 
 - Items - 
-use custom chests
+Add item quality colors
+use custom chests DONE
 key glow DONE
 Fix Dominate scepter DONE
 

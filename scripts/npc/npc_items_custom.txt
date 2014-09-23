@@ -18,6 +18,9 @@
 	//	{
 	//	}
 	//}
+	
+	//	"Model"							"models/chest_worlddrop.vmdl"
+	//	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
 
 	"item_ankh"  //rewrite datadriven
@@ -115,6 +118,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" 	"item_lifesteal"
 		"AbilityTextureName"			"item_mask_of_death"
 		"SideShop" "1"
@@ -140,6 +146,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"AbilityTextureName"			"item_gauntlets_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" "item_gauntlets"
@@ -164,6 +173,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"AbilityTextureName"			"item_belt_6"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" "item_gauntlets"
@@ -187,6 +199,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName" "item_claws_3"
@@ -214,6 +229,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName" "item_claws_6"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -240,6 +258,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName"			"item_claws_9"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -264,6 +285,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_blades_of_attack"
 		"AbilityTextureName" "item_claws_12"
@@ -291,6 +315,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_robe"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_robe_6"
@@ -315,6 +342,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
     	"BaseClass" "item_ring_of_regen"
     	"AbilityTextureName"			"ror_2"
@@ -341,6 +371,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_mantle"
 		"AbilityTextureName" "item_mantle_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -363,6 +396,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_slippers"
 		"AbilityTextureName" "item_slippers_3"
@@ -390,6 +426,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_slippers"
 		"AbilityTextureName" "item_slippers_6"
 		"SideShop" "0"
@@ -416,6 +455,7 @@
 		"ItemDroppable"                 "1"
 		
 		"Model"			"models/props_gameplay/boots_of_speed.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 
     	"BaseClass" "item_boots"
     	"AbilityTextureName" "item_botas"
@@ -450,6 +490,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
     	"BaseClass" "item_ring_of_protection"
     	"AbilityTextureName" "item_rop_2"
     	"SideShop" "0"
@@ -475,6 +518,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
     	"BaseClass" "item_ring_of_protection"
     	"AbilityTextureName" "item_rop_2"
     	"SideShop" "0"
@@ -499,6 +545,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
     	"BaseClass" "item_sobi_mask"
     	"AbilityTextureName" "item_sobi"
@@ -526,6 +575,7 @@
 		"ItemDroppable"                 "1"
 		
 		"Model"	"models/props_gameplay/gem01.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_gem.vpcf"
 
     	"BaseClass" "item_vitality_booster"
     	"AbilityTextureName" "item_khadgars_gem"
@@ -552,6 +602,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
     	"BaseClass" "item_energy_booster"
     	"AbilityTextureName" "item_mana_gem"
     	"SideShop" "0"
@@ -576,6 +629,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
     	"BaseClass" "item_vitality_booster"
     	"AbilityTextureName" "item_evasion"
@@ -603,7 +659,8 @@
     	"AbilityTextureName" 		"item_orb_of_frost"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		"Effect"		"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect"						"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -669,6 +726,7 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect"				"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
 		
     	"BaseClass" 			"item_desolator"
@@ -705,6 +763,9 @@
     	"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
     	"AbilityTextureName" "item_battle_drums"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -767,6 +828,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" 				"item_shadow_amulet"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -799,6 +863,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityTextureName"			"item_cloak_of_flames"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -835,6 +902,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"AbilityTextureName"			"item_runed_bracers"
 		"SideShop" "0"
 		"SecretShop" "1"
@@ -864,6 +934,9 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityTextureName"			"item_shield_amulet"
 		"SideShop" "0"
@@ -911,6 +984,9 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass" "item_gloves"
 		"AbilitySpecial"
 		{
@@ -925,8 +1001,14 @@
 	"item_circlet_2"
 	{
 		"ID"		"1033"
-		"ItemCost"						"0"
+		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_circlet"
 		"AbilitySpecial"
@@ -1037,6 +1119,9 @@
 		"ID"                            "1050"
 		"ItemCost"						"1500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		
+		"Model"	"models/chest_worlddrop.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -1159,6 +1244,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_health"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 		
@@ -1285,6 +1371,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
 		
@@ -1349,6 +1436,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
 		
@@ -1412,6 +1500,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
 		
@@ -1476,6 +1565,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
 		
@@ -1540,6 +1630,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
 		
@@ -1604,6 +1695,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
 		
@@ -1682,7 +1774,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/salve.vmdl" //Green
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_healing"
 		"ItemKillable"                  "1"
@@ -1756,7 +1851,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/clarity.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_mana"
 		"ItemKillable"                  "1"
@@ -1831,7 +1929,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/salve.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_great_healing"
 		"ItemKillable"                  "1"
@@ -1905,7 +2006,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/salve_blue.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_great_mana"
 		"ItemKillable"                  "1"
@@ -1981,7 +2085,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"Model"							"models/props_gameplay/salve_red.vmdl" //Green
+		
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_restoration"
 		"ItemKillable"                  "1"
@@ -2069,7 +2176,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/items/alchemist/convict_trophy_offhand/convict_trophy_offhand.vmdl" //"models/props_gameplay/salve_red.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_potion_of_invulnerability"
 		"ItemKillable"                  "1"
@@ -2167,11 +2277,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_health_stone"
-
-
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -2263,7 +2374,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		
 		"Model"							"models/props_gameplay/salve_blue.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_mana_stone"
 
@@ -2361,7 +2475,7 @@
 		"AbilityTextureName"			"item_spell_immunity"
 
 		"Model"	"models/props_items/black_king_bar.vmdl"
-
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
 		
 		// Item Info
@@ -2426,7 +2540,8 @@
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 
-		"Model"		"models/heroes/juggernaut/jugg_healing_ward.vmdl"
+		"Model"							"models/heroes/juggernaut/jugg_healing_ward.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "1000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
@@ -2479,8 +2594,8 @@
 		"AbilityCooldown"               "120" //??
 		"AbilityManaCost"               "0" //??
 		
-		"Model"		"models/props_items/staff_wizardry01.vmdl"
-		"Effect" "particles/econ/items/faceless_void/faceless_void_weapon_viridus/faceless_void_weapon_glow_viridus.vpcf" //GLOW
+		"Model"							"models/props_items/staff_wizardry01.vmdl"
+		"Effect" 						"particles/econ/items/faceless_void/faceless_void_weapon_viridus/faceless_void_weapon_glow_viridus.vpcf" //GLOW
 
 		"ItemCost"                      "1100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
@@ -2528,6 +2643,10 @@
 		"AbilityTextureName"            "item_restoration_scroll"
 		"AbilityCooldown"               "60" //??
 		"AbilityManaCost"               "0" //??
+		
+		
+		"Model"							"models/props_gameplay/tpscroll01.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "1900"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
@@ -2591,7 +2710,8 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_demonic_figurine"
 
-
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "750" 
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2641,6 +2761,9 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_red_drake"
 		
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
 		"ItemShopTags"					"consumable"
@@ -2688,6 +2811,9 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_spiked_collar"
+		
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
@@ -2737,6 +2863,9 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_stone_token"
 		
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemShopTags"					"consumable"
@@ -2780,6 +2909,9 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"            "item_talisman_of_the_wild"
+		
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -2828,7 +2960,8 @@
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName" 			"item_allerias_flute"
 
-		"Model"	"models/props_items/monkey_king_bar01.vmdl"
+		"Model"							"models/props_items/monkey_king_bar01.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
@@ -2906,7 +3039,7 @@
 		"AbilityTextureName" 			"item_bone_chimes"
 
 		"Model"		"models/props_items/blinkdagger.vmdl"
-		//"Effect"	"particles/generic_gameplay/dropped_smoke.vpcf"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
@@ -2986,6 +3119,7 @@
 		"AbilityTextureName" 			"item_stormwind_horn"
 		
 		"Model"	"models/props_items/assault_cuirass.vmdl"
+		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
 		"AbilityCastPoint"    			"0.0"
 		"AbilityCastRange"    			"500"
@@ -3070,7 +3204,8 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_lightning_shield"
 
-		"Model"		"models/props_items/mjolnir01.vmdl"
+		"Model"							"models/props_items/mjolnir01.vmdl"
+		"Effect" 						"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
