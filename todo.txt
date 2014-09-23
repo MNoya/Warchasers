@@ -3,22 +3,22 @@ TO DO
 
 - Heroes -
 Balance solo-buff
-Holy ligth animation? DONE
-valid targets for deathcoil/holy light? 
+Holy ligth animation? TO FIX: add can't target self
 vampiric aura fix lifestealing from buildings	DONE
   
 - Creeps -
-Change disease cloud to something that interacts with cyclone (scorched earth aura?) ATTEMPT
+Change disease cloud to something that interacts with cyclone (scorched earth aura?) ATTEMPT, needs precache particle
 Override cyclone and other skills to match wc3 version
 Datadriven healing hands DONE
 poison slow, slow DONE
-reincarnate. DONE
+reincarnate. TO FIX: delete drops before reincarnate
 Change general chase behavior
 Spawn mobs after activating circle
 
 - Items - 
 use custom chests
 key glow ?
+Fix Dominate scepter vs mobs over lvl 5 (ancient tag)
 
 - Map -
 Finish unit placing port (almost done, need some scripted spawns)
