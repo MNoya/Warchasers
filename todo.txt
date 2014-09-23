@@ -18,7 +18,7 @@ Spawn mobs after activating circle
 - Items - 
 use custom chests
 key glow ?
-Fix Dominate scepter vs mobs over lvl 5 (ancient tag)
+Fix Dominate scepter DONE
 
 - Map -
 Finish unit placing port (almost done, need some scripted spawns)

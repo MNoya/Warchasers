@@ -2965,7 +2965,6 @@
 		"Level"						"6"
 		"IsAncient"					"1"
 		
-		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
 
 		"DisableResistance"			"75.0"
@@ -3433,8 +3432,7 @@
 		"ModelScale"				"1.2"
 		"Level"						"6"
 		"IsAncient"					"1"
-		"CanBeDominated"			"0"
-		//"ConsideredHero"			"1"
+
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4687,7 +4685,6 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.2"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		
 		// Abilities
@@ -4882,7 +4879,6 @@
 		"Model"						"models/heroes/terrorblade/demon.vmdl"	// Model.	
 		"ModelScale"				"1.5"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		
 		"DisableResistance"			"75.0"
@@ -5156,7 +5152,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"5"
 		"ModelScale" 				"0.9"
 
 		// Abilities
@@ -5237,8 +5233,9 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"7"
 		"ModelScale" 				"1"
+		"IsAncient"					"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -5447,7 +5444,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.3"
 
@@ -5941,9 +5937,7 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
-		//"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -6034,9 +6028,7 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
-		//"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -6132,7 +6124,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 
@@ -6615,9 +6606,8 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
-		"ModelScale" 				".9"
+		"ModelScale" 				"1.1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -7166,7 +7156,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"6"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 		"HasInventory"				"1"
@@ -7373,7 +7362,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"7"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.1"
 		
@@ -7491,7 +7479,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"9"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 
@@ -7595,7 +7582,6 @@
 		"ModelScale"				"1.3"
 		"Level"						"8"
 		"IsAncient"					"1"
-		"CanBeDominated"			"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -7722,7 +7708,6 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"10"
-		"CanBeDominated"			"0"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.5"
 

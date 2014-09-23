@@ -2450,16 +2450,17 @@
 	{
 		"ID"                            "1061"
 		"BaseClass"                     "item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"            "item_scepter_of_mastery"
-		"AbilityUnitTargetFlag" 		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 		"AbilityCastRange"              "400" //??
 		"AbilityCooldown"               "120" //??
 		"AbilityManaCost"               "0" //??
 		
 		"Model"		"models/props_items/staff_wizardry01.vmdl"
+		"Effect" "particles/econ/items/faceless_void/faceless_void_weapon_viridus/faceless_void_weapon_glow_viridus.vpcf" //GLOW
 
 		"ItemCost"                      "1100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
@@ -2473,13 +2474,8 @@
 
 		"SideShop"						"1"
 		"SecretShop"					"1"
-
-		//MODIFIER_STATE_DOMINATED
-		//DOTA_UNIT_TARGET_FLAG_NOT_DOMINATED
-		//"CanBeDominated"			"0"
 		
-		//modifier_dominated
-		
+	
 		"OnSpellStart"
 		{
 			"SpendCharge"
