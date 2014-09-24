@@ -319,7 +319,7 @@ function Warchasers:OnAllPlayersLoaded()
 
 		print("Creating itemdrops")
 
-		position = Vector(124.449 2175,128)
+		position = Vector(124,2175,128)
 		local newItem = CreateItem("item_key3", nil, nil)
 		CreateItemOnPositionSync(position, newItem)
 
