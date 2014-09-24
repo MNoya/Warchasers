@@ -4524,6 +4524,103 @@
 		}
 	}
 	
+	
+	"npc_sapper"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"	
+		"Model"						"models/heroes/axe/axe.vmdl"	// Replace by Techies
+		"ModelScale"				"1"
+		"Level"						"4"
+		//"ConsideredHero"			"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"techies_suicide" //Kaboom! in WC3
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			
+		"MagicalResistance"			"0"		
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"								
+		"AttackDamageMax"			"0"								
+		"AttackRate"				"1.6"								
+		"AttackAnimationPoint"		"0.3"								
+		"AttackAcquisitionRange"	"800"								
+		"AttackRange"				"600"								
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"40"		// Experience earn.
+		"BountyGoldMin"				"32"		// Gold earned min.
+		"BountyGoldMax"				"36"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"200"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			
+		"MovementSpeed"				"275"									
+		"MovementTurnRate"			"0.4"									
+	
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_techies.vsndevts"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"50"			// Base health.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
+		"StatusMana"				"200"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.						
+
+		"Creature"
+		{
+			"DefaultState"			"Invade"
+			"States"	
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0" //cast offensive spells whenever
+					"Avoidance"			"0.0" //dont flee
+					"Support"			"0.0" //start buffing
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"techies_suicide"
+					"Damage"			"1"
+				}
+			}
+		}
+	}	
+	
+	
 	//=================================================================================
 	// Creature: Health Fountain
 	//=================================================================================
