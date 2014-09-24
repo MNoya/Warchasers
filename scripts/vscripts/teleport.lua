@@ -26,6 +26,15 @@ function Teleporter2(trigger)
 
 end
 
+function TeleporterHeavenHell(trigger)
+    --Randomize teleporting Heaven or Hell
+    if RollPercentage(50) then
+        TeleporterHell(trigger)
+    else
+        TeleporterHeaven(trigger)
+    end
+end
+
 function TeleporterHeaven(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_heaven" ):GetAbsOrigin()
         
@@ -55,7 +64,7 @@ function TeleporterHeaven(trigger)
         Timers:CreateTimer({
             endTime = 30, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
             callback = function()
-                if SENDHELL == false then 
+                if GameRules.SENDHELL == false then 
                     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
                     --mass teleport
                     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -83,6 +92,7 @@ function TeleporterHell(trigger)
         local spot_hell = Vector(-6571, 3002, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
         print("Entered Hell")
+
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
             if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -147,4 +157,20 @@ function TeleporterSecret2(trigger)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+end
+
+function TeleportAtBarrier(trigger)
+    GameRules:SendCustomMessage("<font color='#0000FF'>SUCCESS</font><br><br>", 0, 0)        
+    GameRules:SendCustomMessage("Both circles have been activated!<br>The magical barrier has been dispelled and now the path is clear",0,0)
+    local point =  Entities:FindByName( nil, "teleport_circles_down" ):GetAbsOrigin()
+    --mass teleport
+    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            FindClearSpaceForUnit(entHero, point, false)
+            entHero:Stop()
+            SendToConsole("dota_camera_center")                
+        end
+    end
+
 end

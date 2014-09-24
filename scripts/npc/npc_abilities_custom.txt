@@ -36,7 +36,7 @@
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
 				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-				"Aura_ApplyToCaster"	"1"
+				"Aura_ApplyToCaster"	"0"
 				
 			}
 			
@@ -87,7 +87,7 @@
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
 				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-				"Aura_ApplyToCaster"	"1"
+				"Aura_ApplyToCaster"	"0"
 				
 			}
 			
@@ -357,31 +357,51 @@
 
 		"OnOwnerDied"
 		{
-		"Random"
+			"CreateItem"
+			{
+				"Target"
 				{
-					"Chance" "100"
-					"OnSuccess"
-					{
-						"CreateItem"
-						{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-						
-						"ItemName"					"item_key2"
-						"ItemCount"					"1"
-						"SpawnRadius"		        "1"
-						"LaunchHeight"		        "100"
-						"LaunchDistance"	        "?50 100"
-						"LaunchDuration"	        "0.5"
-						}
-					}
+					"Center" "CASTER"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
+				
+				"ItemName"					"item_key2"
+				"ItemCount"					"1"
+				"SpawnRadius"		        "1"
+				"LaunchHeight"		        "100"
+				"LaunchDistance"	        "?50 100"
+				"LaunchDuration"	        "0.5"
+			}
 		}
 	}
-	//key 3 is dropped on initialization
+
+	"drop_key3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" "CASTER"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}	
+				"ItemName"					"item_key3"
+				"ItemCount"					"1"
+				"SpawnRadius"		        "1"
+				"AutoUse"					"0"
+			}
+		}
+	}
+
+
+
 
 	"drop_red_drake" //roost
 	{

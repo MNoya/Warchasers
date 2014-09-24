@@ -5,7 +5,8 @@ require( 'camera' )
 require( 'abilities' )
 require( 'timers')
 require( 'teleport')
-require( "ai" )
+require( 'ai' )
+require( 'spawn' )
 
 
 if Convars:GetBool("developer") == true then
@@ -93,8 +94,6 @@ XP_PER_LEVEL_TABLE = {
 	 5400 -- 10 +1000
  }
 
-SENDHELL = false
-SHOWPOPUP = true
 P0_ANKH_COUNT = 0
 P1_ANKH_COUNT = 0
 P2_ANKH_COUNT = 0
@@ -107,7 +106,6 @@ P1_TOME_COUNT = 0
 P2_TOME_COUNT = 0
 P3_TOME_COUNT = 0
 P4_TOME_COUNT = 0
-
 
 -- Create the game mode when we activate
 function Activate()
@@ -144,69 +142,9 @@ function Warchasers:InitGameMode()
 
 	print( "GameRules set" )
 
-	print("Dropping items on the world")
-	
-	--point = Vector(-5888, -7360, 144) --start zone
-
-    position = Vector(-2940,2996,124)
-	local newItem = CreateItem("item_allerias_flute", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-
-    position = Vector(-3136,2996,124)
-	local newItem = CreateItem("item_khadgars_gem", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-
-    position = Vector(-2940,3200,124)
-	local newItem = CreateItem("item_stormwind_horn", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-
-    position = Vector(-3136,3200,124)
-	local newItem = CreateItem("item_bone_chimes", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-
-    position = Vector(52,2145,128)
-	local newItem = CreateItem("item_key3", nil, nil)
-    CreateItemOnPositionSync(position, newItem)
-	
-	heaven1 = Vector(-6762, 5583, 40)
-	local newItem = CreateItem("item_restoration_scroll", nil, nil)
-    CreateItemOnPositionSync(heaven1, newItem)
-
-    heaven2 = Vector(-6762, 5475, 40)
-	local newItem = CreateItem("item_orb_of_frost", nil, nil)
-    CreateItemOnPositionSync(heaven2, newItem)
-
-    heaven3 = Vector(-6652, 5475, 40)
-    local newItem = CreateItem("item_orb_of_fire", nil, nil)
-    CreateItemOnPositionSync(heaven3, newItem)
-
-    heaven4 = Vector(-6652, 5583, 40)
-    local newItem = CreateItem("item_evasion", nil, nil)
-    CreateItemOnPositionSync(heaven4, newItem)
- 
-    local newItem = CreateItem("item_potion_of_healing", nil, nil)
-    hell1 = Vector(-7585.9, 3618.39, 40)
-	CreateItemOnPositionSync(hell1, newItem)
-
-	local newItem = CreateItem("item_potion_of_healing", nil, nil)
-	hell2 = Vector(-7634.45, 2930.77, 40)
-	CreateItemOnPositionSync(hell2, newItem)
-
-	local newItem = CreateItem("item_potion_of_healing", nil, nil)
-	hell3 = Vector(-7550.46, 2382.61, 40)
-	CreateItemOnPositionSync(hell3, newItem)
-
-	local newItem = CreateItem("item_potion_of_healing", nil, nil)
-	hell4 = Vector(-5834.61, 3493.86, 40)
-	CreateItemOnPositionSync(hell4, newItem)
-
-	local newItem = CreateItem("item_potion_of_healing", nil, nil)
-	hell5 = Vector(-5658.03, 2879.14, 40)
-	CreateItemOnPositionSync(hell5, newItem)
-
-	local newItem = CreateItem("item_potion_of_healing", nil, nil)
-	hell6 = Vector(-5719.82, 2403.32, 40)
-	CreateItemOnPositionSync(hell6, newItem)
+	GameRules.FIRST_CIRCLE_ACTIVADED = false
+	GameRules.SENDHELL = false
+	GameRules.SHOWPOPUP = true
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -361,10 +299,97 @@ end
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
 
-	if SHOWPOPUP then
+	if GameRules.SHOWPOPUP then
 		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-		SHOWPOPUP = false
+		GameRules.SHOWPOPUP = false
 	end
+
+		--Create Dummy so we can see the particle glow
+	    position = Vector(-6719,5541,40)
+        local dummy1 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+        --Create Dummy so we can see the particle glow
+	    position = Vector(-3062,2976,192) --secret
+        local dummy2 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+        --Create Dummy so we can see the particle glow
+	    position = Vector(123,2174,129) --sunkey
+        local dummy3 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+
+		print("Creating itemdrops")
+
+		position = Vector(124.449 2175,128)
+		local newItem = CreateItem("item_key3", nil, nil)
+		CreateItemOnPositionSync(position, newItem)
+
+		position = Vector(-2940,2996,128)
+		local newItem = CreateItem("item_allerias_flute", nil, nil)
+	    CreateItemOnPositionSync(position, newItem)
+
+	    position = Vector(-3136,2996,128)
+		local newItem = CreateItem("item_khadgars_gem", nil, nil)
+	    CreateItemOnPositionSync(position, newItem)
+
+	    position = Vector(-2940,3200,128)
+		local newItem = CreateItem("item_stormwind_horn", nil, nil)
+	    CreateItemOnPositionSync(position, newItem)
+
+	    position = Vector(-3136,3200,128)
+		local newItem = CreateItem("item_bone_chimes", nil, nil)
+	    CreateItemOnPositionSync(position, newItem)
+
+
+        heaven1 = Vector(-6762, 5583, 40)
+        local newItem = CreateItem("item_orb_of_fire", nil, nil)
+        CreateItemOnPositionSync(heaven1, newItem)
+
+        heaven2 = Vector(-6762, 5475, 40)
+        local newItem = CreateItem("item_restoration_scroll", nil, nil)
+        CreateItemOnPositionSync(heaven2, newItem)
+
+        heaven3 = Vector(-6652, 5475, 40)
+        local newItem = CreateItem("item_restoration_scroll", nil, nil)
+        CreateItemOnPositionSync(heaven3, newItem)
+
+        heaven4 = Vector(-6652, 5583, 40)
+        local newItem = CreateItem("item_evasion", nil, nil)
+        CreateItemOnPositionSync(heaven4, newItem)
+
+
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell1 = Vector(-7585.9, 3618.39, 40)
+        CreateItemOnPositionSync(hell1, newItem)
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell2 = Vector(-7634.45, 2930.77, 40)
+        CreateItemOnPositionSync(hell2, newItem)
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell3 = Vector(-7550.46, 2382.61, 40)
+        CreateItemOnPositionSync(hell3, newItem)
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell4 = Vector(-5834.61, 3493.86, 40)
+        CreateItemOnPositionSync(hell4, newItem)
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell5 = Vector(-5658.03, 2879.14, 40)
+        CreateItemOnPositionSync(hell5, newItem)
+
+        local newItem = CreateItem("item_potion_of_healing", nil, nil)
+        hell6 = Vector(-5719.82, 2403.32, 40)
+        CreateItemOnPositionSync(hell6, newItem)
+
+		Timers:CreateTimer({
+            endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+            callback = function()
+				dummy1:ForceKill(true)
+				dummy2:ForceKill(true)
+				dummy3:ForceKill(true)
+			end
+		})
 end
 
 function Warchasers:OnNPCSpawned(keys)
@@ -450,6 +475,7 @@ function Warchasers:OnHeroInGame(hero)
 		end
 	end
 	--you didn't read this, it never happened.
+
 end
 
 function Warchasers:OnPlayerPicked( event )
@@ -826,7 +852,7 @@ function Warchasers:OnEntityKilled( event )
     	print("Entered Hell")
 
     	--send to hell
-    	SENDHELL = true
+    	GameRules.SENDHELL = true
     	Timers:CreateTimer({
 	    	endTime = 3, 
 	    	callback = function()			

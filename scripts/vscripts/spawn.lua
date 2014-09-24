@@ -18,7 +18,6 @@
         end
 end]]
 
-
 function SpawnMurlocs1(trigger)
         local building = Entities:FindByName(nil, "murloc_hut1") --2
         if building ~= nil then
@@ -449,81 +448,98 @@ function SpawnLanternTrolls(event)
         local troll8 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
 end
 
+function SpawnCircleActivated1(event)
+        GameRules:SendCustomMessage("The circle has been activated!",0,0)
 
-function SpawnCircleActivated(event)
-        GameRules:SendCustomMessage("The circle has been activated!<br>The magical barrier has been dispelled and now the path is clear",0,0)
-        --Now, find and activate the other magic circle
-        --SUCESS (blue) [on both]
+        if not GameRules.FIRST_CIRCLE_ACTIVADED then
+                GameRules.FIRST_CIRCLE_ACTIVADED = true
+                print(GameRules.FIRST_CIRCLE_ACTIVADED)
+                
+                --SUCESS (blue) [on both]
 
-        --Spawns on the way back
-        position = Vector(3870, 5212, 394)
-        rotationSouth = Vector(3755,-4456,128)
-        local lizard2 = CreateUnitByName("npc_blue_lizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        lizard2:SetForwardVector(rotationSouth)
-        local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghost1:SetForwardVector(rotationSouth)
-        local ghost2 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghost2:SetForwardVector(rotationSouth)
-        local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghost3:SetForwardVector(rotationSouth)
-        local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghost4:SetForwardVector(rotationSouth)
+                GameRules:SendCustomMessage("Now, find and activate the other magic circle.<br><br>",0,0)
+                --Spawns on the way back
+                position = Vector(3870, 5212, 394)
+                rotationSouth = Vector(3755,-4456,128)
+                local lizard2 = CreateUnitByName("npc_blue_lizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                lizard2:SetForwardVector(rotationSouth)
+                local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost1:SetForwardVector(rotationSouth)
+                local ghost2 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost2:SetForwardVector(rotationSouth)
+                local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost3:SetForwardVector(rotationSouth)
+                local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost4:SetForwardVector(rotationSouth)
 
-        position = Vector(2558,3226,150)
-        rotationWest = Vector(-6801,4736,126)
-        local weaver1 = CreateUnitByName("npc_nerubian_webspinner" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        weaver1:SetForwardVector(rotationWest)
-        local weaver2 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        weaver2:SetForwardVector(rotationWest)
-        local weaver3 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        weaver3:SetForwardVector(rotationWest)
-        local ghoul1 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghoul1:SetForwardVector(rotationWest)
-        local ghoul2 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghoul2:SetForwardVector(rotationWest)
-        local ghoul3 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghoul3:SetForwardVector(rotationWest)
-        local ghoul4 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        ghoul4:SetForwardVector(rotationWest)
-          
+                position = Vector(2558,3226,150)
+                rotationWest = Vector(-6801,4736,126)
+                local weaver1 = CreateUnitByName("npc_nerubian_webspinner" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver1:SetForwardVector(rotationWest)
+                local weaver2 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver2:SetForwardVector(rotationWest)
+                local weaver3 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver3:SetForwardVector(rotationWest)
+                local ghoul1 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul1:SetForwardVector(rotationWest)
+                local ghoul2 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul2:SetForwardVector(rotationWest)
+                local ghoul3 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul3:SetForwardVector(rotationWest)
+                local ghoul4 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul4:SetForwardVector(rotationWest)
+                  
 
-        position = Vector(416, 4415, 128)
-        rotationWest = Vector(-6801,4736,126)
-        local bigsludge1 = CreateUnitByName("npc_big_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        bigsludge1:SetForwardVector(rotationWest)
-        local medsludge1 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        medsludge1:SetForwardVector(rotationWest)
-        local medsludge2 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        medsludge2:SetForwardVector(rotationWest)
-        local smallsludge1 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        smallsludge1:SetForwardVector(rotationWest)
-        local smallsludge2 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        smallsludge2:SetForwardVector(rotationWest)
-        local smallsludge3 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        smallsludge3:SetForwardVector(rotationWest)
-        local smallsludge4 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        smallsludge4:SetForwardVector(rotationWest)
-
-
-        position = Vector(-1512, 5841, 128)
-        local wizard1 = CreateUnitByName("npc_big_wizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local elemental1 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local elemental2 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local mudgolem1 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local mudgolem2 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local priest1 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local priest2 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                position = Vector(416, 4415, 128)
+                rotationWest = Vector(-6801,4736,126)
+                local bigsludge1 = CreateUnitByName("npc_big_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                bigsludge1:SetForwardVector(rotationWest)
+                local medsludge1 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                medsludge1:SetForwardVector(rotationWest)
+                local medsludge2 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                medsludge2:SetForwardVector(rotationWest)
+                local smallsludge1 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                smallsludge1:SetForwardVector(rotationWest)
+                local smallsludge2 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                smallsludge2:SetForwardVector(rotationWest)
+                local smallsludge3 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                smallsludge3:SetForwardVector(rotationWest)
+                local smallsludge4 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                smallsludge4:SetForwardVector(rotationWest)
 
 
-        position = Vector(751, 5375, 128)
-        local meleeskeleton1 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local meleeskeleton2 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local meleeskeleton3 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local burnskeleton1 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local burnskeleton2 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local frostskeleton1 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        local frostskeleton2 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                position = Vector(-1512, 5841, 128)
+                local wizard1 = CreateUnitByName("npc_big_wizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local elemental1 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local elemental2 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local mudgolem1 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local mudgolem2 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local priest1 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local priest2 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
 
+
+                position = Vector(751, 5375, 128)
+                local meleeskeleton1 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local meleeskeleton2 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local meleeskeleton3 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local burnskeleton1 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local burnskeleton2 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local frostskeleton1 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local frostskeleton2 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        end
+end
+
+function SpawnCircleActivated2(event)
+        GameRules:SendCustomMessage("The circle has been activated!",0,0)
+        print(GameRules.FIRST_CIRCLE_ACTIVADED)
+        if not GameRules.FIRST_CIRCLE_ACTIVADED then
+                GameRules.FIRST_CIRCLE_ACTIVADED = true
+                print(GameRules.FIRST_CIRCLE_ACTIVADED)
+                
+                GameRules:SendCustomMessage("Now, find and activate the other magic circle.<br><br>",0,0)
+                --Spawns on the way back
+                
+        end
 end
 
 --[[boss spawns

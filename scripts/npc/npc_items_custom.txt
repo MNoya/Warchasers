@@ -2689,7 +2689,7 @@
 		"AbilityManaCost"               "0" //??
 		
 		
-		"Model"							"models/chest_worlddrop.vmdl" //"models/props_gameplay/tpscroll01.vmdl"
+		"Model"							"models/props_gameplay/tpscroll01.vmdl"
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "1900"
