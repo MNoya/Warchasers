@@ -16,7 +16,8 @@ Change general chase behavior
 Spawn mobs after activating circle DONE
 
 - Items - 
-Add item quality colors
+check why drops made from lua show no particles
+Add item quality colors DONE
 use custom chests DONE
 key glow DONE
 Fix Dominate scepter DONE

@@ -21,6 +21,13 @@
 	
 	//	"Model"							"models/chest_worlddrop.vmdl"
 	//	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+	// Rules for tagging
+	// "artifact" (Orange) - Permanent Items with custom effect/aura
+	// "epic" (Purple) - Summonings and elite items
+	// "rare" (Blue) - Scrolls and other actives
+	// "common" (Green) - 2nd level stat items
+	// "component" "consumable" (White)  - Tomes, Potions, Basic items
 
 
 	"item_ankh"  //rewrite datadriven
@@ -38,6 +45,8 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
+		"ItemInitialCharges"            "1"
 
 		"BaseClass" "item_aegis"
 		"AbilitySpecial"
@@ -64,8 +73,10 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 
 		"Model" "models/props_items/ring_voidstone.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_energy_booster"
 		"AbilityTextureName" 	"item_mana_pendant"
@@ -89,8 +100,10 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 
 		"Model"	"models/props_items/ring_health.vmdl"
+		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_vitality_booster"
 		"AbilityTextureName" "item_vitality_pendant"
@@ -117,6 +130,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -145,6 +159,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -172,6 +187,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -199,6 +215,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -228,6 +245,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -257,6 +275,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"rare"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -285,6 +304,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"epic"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -314,6 +334,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -342,6 +363,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -370,6 +392,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -396,6 +419,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -425,6 +449,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -453,6 +478,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"			"models/props_gameplay/boots_of_speed.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -489,6 +515,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -517,6 +544,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"common"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -545,6 +573,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -573,6 +602,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"rare"
 		
 		"Model"	"models/props_gameplay/gem01.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_gem.vpcf"
@@ -601,6 +631,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"rare"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -629,6 +660,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"epic"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -725,6 +757,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect"				"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
@@ -763,6 +796,7 @@
     	"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -827,6 +861,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -863,6 +898,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"epic"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -901,6 +937,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"rare"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -934,6 +971,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"rare"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -983,6 +1021,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -1006,6 +1045,7 @@
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"component"
 		
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
@@ -1040,6 +1080,7 @@
 		"ItemKillable"                  "0"
 		"ItemSellable"                  "0"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 
 		"Model"							"models/kappakey.vmdl"
 		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
@@ -1070,6 +1111,7 @@
 		"ItemKillable"                  "0"
 		"ItemSellable"                  "0"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 
 		"BaseClass" "item_datadriven"
 		"Model"							"models/kappakey.vmdl"
@@ -1099,6 +1141,7 @@
 		"ItemKillable"                  "0"
 		"ItemSellable"                  "0"
 		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
 
 		"BaseClass" "item_datadriven"
 		"Model"							"models/kappakey.vmdl"
@@ -1130,6 +1173,8 @@
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemPermanent"					"0"
+		"ItemQuality"					"epic"
+		
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "60"
 		"AbilityManaCost"               "0"
@@ -2195,8 +2240,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1200"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"common"
+		"ItemQuality"					"common"
 		"ItemStackable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
@@ -2293,8 +2338,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"450"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"rare"
+		"ItemQuality"					"rare"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
@@ -2391,8 +2436,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"450"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"rare"
+		"ItemQuality"					"rare"
 		"ItemStackable"					"1"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -2470,7 +2515,6 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		//"Model"							"models/props_gameplay/salve_red.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_spell_immunity"
 
@@ -2481,8 +2525,8 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"4000"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"artifact"
+		"ItemQuality"					"artifact"
 		"ItemStackable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPermanent"					"1"
@@ -2545,8 +2589,8 @@
 		
 		"ItemCost"                      "1000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"rare"
+		"ItemQuality"					"rare"
 		"ItemPermanent"					"0"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -2599,8 +2643,8 @@
 
 		"ItemCost"                      "1100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -2645,13 +2689,13 @@
 		"AbilityManaCost"               "0" //??
 		
 		
-		"Model"							"models/props_gameplay/tpscroll01.vmdl"
+		"Model"							"models/chest_worlddrop.vmdl" //"models/props_gameplay/tpscroll01.vmdl"
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"ItemCost"                      "1900"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"rare"
+		"ItemQuality"					"rare"
 		"ItemPermanent"					"0"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -2715,8 +2759,8 @@
 		
 		"ItemCost"                      "750" 
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "20"
@@ -2766,8 +2810,8 @@
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "20"
@@ -2817,8 +2861,8 @@
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "20"
@@ -2868,8 +2912,8 @@
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "20"
@@ -2915,8 +2959,8 @@
 		
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"epic"
+		"ItemQuality"					"epic"
 		"ItemPermanent"					"0"
 		"AbilityCastRange"              "400"
 		"AbilityCooldown"               "20"
@@ -2970,8 +3014,8 @@
 
 		"ItemCost"                      "1200"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"artifact"
+		"ItemQuality"					"artifact"
 		"ItemPermanent"					"1"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -3048,8 +3092,8 @@
 
 		"ItemCost"                      "450"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"artifact"
+		"ItemQuality"					"artifact"
 		"ItemPermanent"					"1"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -3128,8 +3172,8 @@
 
 		"ItemCost"                      "1500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemShopTags"					"artifact"
+		"ItemQuality"					"artifact"
 		"ItemPermanent"					"1"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -3222,6 +3266,8 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		"ItemInitialCharges"            "2"
+		
+		"ItemQuality"					"rare"
 		
 		"SideShop"						"0"
 		"SecretShop" 					"1"
