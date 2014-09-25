@@ -4559,13 +4559,13 @@
 		"BaseClass"					"npc_dota_creature"	
 		"Model"						"models/heroes/axe/axe.vmdl"	// Replace by Techies
 		"ModelScale"				"1"
-		"Level"						"4"
+		"Level"						"6"
 		//"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"techies_suicide" //Kaboom! in WC3
+		"Ability1"					"axe_culling_blade" //Kaboom! in WC3
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4574,9 +4574,9 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		"AttackDamageMin"			"0"								
-		"AttackDamageMax"			"0"								
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"								
+		"AttackDamageMax"			"1"								
 		"AttackRate"				"1.6"								
 		"AttackAnimationPoint"		"0.3"								
 		"AttackAcquisitionRange"	"800"								
@@ -4640,7 +4640,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"techies_suicide"
+					"Name"				"axe_culling_blade"
 					"Damage"			"1"
 				}
 			}
@@ -6858,6 +6858,8 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"1"
+		
+		//"UseNeutralCreepBehavior" 	"1"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6877,7 +6879,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"30"
 		"HealthBarOffset"			"80"
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -6958,7 +6960,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_SIEGE"			// Hull type used for navigation/locomotion.
+		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"80"
 		"HealthBarOffset"			"160"
 
@@ -7032,7 +7034,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_SIEGE"			// Hull type used for navigation/locomotion.
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"80"
 		"HealthBarOffset"			"160"
 

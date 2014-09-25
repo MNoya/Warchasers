@@ -180,6 +180,8 @@ function TeleporterTanksStart(trigger)
 
         local player_id = trigger.activator:GetPlayerOwnerID()
         PlayerResource:SetCameraTarget( player_id, tank)
+		local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
 end
 
 
@@ -187,24 +189,28 @@ function TeleporterFinal(trigger)
 
 		--Teleport the real hero who owns the tank
         local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
+
         local nPlayerID = trigger.activator:GetPlayerOwnerID()
         local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
         FindClearSpaceForUnit(hero, point, false)
         hero:Stop()
-        PlayerResource:SetCameraTarget( nPlayerID, hero)
         trigger.activator:Stop()
-        --camera is buggy.
-
+      
 		--Set Teleport Zone
 		point = Vector(2193, -1400, 256)
+		
+		 --camera is buggy.
         local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
+		
 		point = Vector(2193, -2200, 256)
         local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		point = Vector(2193, -2900, 256)
         local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	
 
 		
 		--Remove Tank from the game
-        trigger.activator:ForceKill(true)
+        --trigger.activator:ForceKill(true)
 
 end
