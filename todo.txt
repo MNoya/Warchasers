@@ -8,7 +8,7 @@ vampiric aura fix lifestealing from buildings	DONE
   
 - Creeps -
 Change disease cloud to something that interacts with cyclone (scorched earth aura?) ATTEMPT, needs precache particle
-Override cyclone and other skills to match wc3 version
+Override cyclone and other skills to match wc3 version DONE
 Datadriven healing hands DONE
 poison slow, slow DONE
 reincarnate. TO FIX: delete drops before reincarnate

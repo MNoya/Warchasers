@@ -3193,11 +3193,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"40"
 
 		"precache"
 		{
@@ -3211,7 +3211,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"30"
+				"duration"				"60"
 			}
 
 			"02"
@@ -3223,13 +3223,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"10 12 14 16"
+				"bonus_movement_speed"	"25"
 			}
 
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"20 40 60 80"
+				"bonus_attack_speed"	"40"
 			}
 		}
 	}
@@ -3736,7 +3736,6 @@
 		}
 	}
 	
-	//"curse"  "broodmother_incapacitating_bite" 60sec duration!
 	"creep_curse"
 	{
 		// General

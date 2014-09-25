@@ -2300,7 +2300,7 @@
 		
 		"Ability1"					""			// Ability 1.
 		"Ability2"					"satyr_trickster_purge"			// Ability 2.
-		"Ability3"					"lich_frost_armor"			// Ability 3.
+		"Ability3"					"ogre_magi_frost_armor"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_tome"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -2396,7 +2396,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"lich_frost_armor"
+					"Name"				"ogre_magi_frost_armor"
 					"Buff"				"1" //dont buff twice
 					//"Heal"				"1"
 					
@@ -6500,7 +6500,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"                                      "brewmaster_earth_hurl_boulder"   // Ability 1
-		"Ability2"                                      ""                      // Ability 2
+		"Ability2"                                      "neutral_spell_immunity"                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3
 		"Ability4"                                      ""                      // Ability 4
 		"Ability5"					"drop_tome"			// Ability 5.
@@ -6516,7 +6516,7 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"            "DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"                       "29"            // Damage range min.
-		"AttackDamageMax"                       "34"            // Damage range max.
+		"AttackDamageMax"                       "33"            // Damage range max.
 		"AttackRate"                            "1.35"           // Speed of attack.
 		"AttackAnimationPoint"          "0.3"           // Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"        "500"           // Range within a target can be acquired.
@@ -6531,7 +6531,7 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"                                      "60"            // Experience earn.
+		"BountyXP"                               "60"            // Experience earn.
 		"BountyGoldMin"                         "43"            // Gold earned min.
 		"BountyGoldMax"                         "55"            // Gold earned max.
 
@@ -6542,10 +6542,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"                          "322"           // Base health.
+		"StatusHealth"                          "250"           // Base health.
 		"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
-		"StatusMana"                            "0"                     // Base mana.
-		"StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+		"StatusMana"                            "400"                     // Base mana.
+		"StatusManaRegen"                       "1"           // Mana regeneration rate.               
 	   
 		// Vision
 		//----------------------------------------------------------------
