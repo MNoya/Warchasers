@@ -530,7 +530,7 @@
 		{
 			"Random"
 			{
-				"Chance" "30" //Tome of Health is not working
+				"Chance" "30"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -571,7 +571,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "100"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -596,7 +596,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "100"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -621,7 +621,7 @@
 						"SpawnRadius"		        "1"
 						"ItemChargeCount"	        "1"
 						"AutoUse"					"0"
-						"LaunchHeight"		        "100"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -1920,8 +1920,10 @@
 						
 						"ItemName"					"item_tome_of_strength_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -1942,8 +1944,10 @@
 						
 						"ItemName"					"item_tome_of_agility_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -1964,8 +1968,10 @@
 						
 						"ItemName"					"item_tome_of_intellect_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -1986,8 +1992,10 @@
 						
 						"ItemName"					"item_tome_of_knowledge"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
