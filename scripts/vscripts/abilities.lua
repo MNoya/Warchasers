@@ -65,6 +65,23 @@ function warchasers_blade_berserker_immolation_function( event )
 	end
 end
 
+
+function warchasers_steamtank_immolation_function( event )
+	if event.caster:GetMana() >= 7 then
+		event.caster:SpendMana( 7, event.ability)
+		for key, unit in pairs(event.target_entities) do
+			ApplyDamage({
+						victim = unit,
+						attacker = event.caster,
+						damage = 10,
+						damage_type = DAMAGE_TYPE_MAGICAL
+						})
+		end
+	else
+		event.ability:ToggleAbility()
+	end
+end
+
 function warchasers_muhrah_animate_dead_killer( event )
 	event.caster:Kill(event.abilty, event.caster)
 end

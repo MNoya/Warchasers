@@ -6921,12 +6921,16 @@
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
-		"ModelScale" 					"1"
+		"ModelScale" 					"2"
 		"Level"						"10"
+		"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------	
-		"Ability1"					""			// Ability 1. IMMOLATION 10DPS, 35 activation cost, 7 cost to mantain
+		"Ability1"					"warchasers_steamtank_immolation" // Ability 1. IMMOLATION 10DPS, 35 activation cost, 7 cost to mantain
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
 
 		// Armor
 		//----------------------------------------------------------------
@@ -6943,7 +6947,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1150"		// Range within a target can be acquired.
 		"AttackRange"				"400"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_good" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"600"		// Speed of projectile.
 
 		// Bounty
@@ -6976,7 +6980,7 @@
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_SIEGE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -6990,12 +6994,13 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/npc_minions/draft_siege_evil.vmdl"
+		"Model"						"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl" // "models/npc_minions/draft_siege_evil.vmdl"
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
-		"ModelScale" 					"4"
+		"ModelScale" 					"1"
 		"Level"						"5"
+		"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------	
@@ -7016,7 +7021,7 @@
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
 		"AttackRange"				"400"		// Range within a target can be attacked.
-		"ProjectileModel"			"ranged_siege_bad" // Particle system model for projectile.
+		"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"600"		// Speed of projectile.
 
 		// Bounty

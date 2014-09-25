@@ -1060,7 +1060,46 @@
 			}
 		}
 	}
+		
+		
+		
+		
+	"item_frostmourne"
+	{
 	
+		"ID"		"1034"
+		"ItemCost"						"322"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
+		"AbilityTextureName"			"item_frostmourne"
+		
+		"Model"	"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
+		"Effect" "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+		
+		"BaseClass" "item_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"99999"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_damage_cooldown"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range_clamp"	"99999"
+			}
+		}		
+	}
   
 	 
 	//====================================================================
@@ -2222,7 +2261,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		
-		"Model"							"models/items/alchemist/convict_trophy_offhand/convict_trophy_offhand.vmdl" //"models/props_gameplay/salve_red.vmdl"
+		"Model"							"models\props_gameplay\smoke.vmdl" //"models/props_gameplay/salve_red.vmdl"
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass"						"item_datadriven"

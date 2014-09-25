@@ -4000,7 +4000,85 @@
 			}
 		}
 	}
-
+	
+	
+	"warchasers_steamtank_immolation"
+	{
+		"MaxLevel"		"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"    "ember_spirit_flame_guard"
+		"AbilityManacost" "35"
+			
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_per_second"	"10"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"mana_cost_per_second"	"7"
+			}
+		}
+		
+		"OnToggleOn"
+		{
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"warchasers_steamtank_immolation_buff"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"warchasers_steamtank_immolation_buff"
+			}
+		}
+		"Modifiers"
+		{
+			"warchasers_steamtank_immolation_buff"
+			{	
+				"OnCreated" //Looks good.
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"	"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+				"IsPassive"	"1"
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_steamtank_immolation_function"
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Radius"	"160"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
 	"warchasers_muhrah_animate_dead_helper"
 	{
 		"BaseClass" "ability_datadriven"

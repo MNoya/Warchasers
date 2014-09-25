@@ -65,6 +65,9 @@ function Precache( context )
 	PrecacheResource("model", "models/kappakey.vmdl", context)
 	PrecacheResource("model", "models/chest_worlddrop.vmdl", context)
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
+	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
+	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
+	
 	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
