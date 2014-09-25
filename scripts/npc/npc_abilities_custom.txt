@@ -341,7 +341,7 @@
 				"SpawnRadius"		        "1"
 				"AutoUse"					"0"
 				"LaunchHeight"		    	"200"
-				"LaunchDistance"	        "?50 100"
+				"LaunchDistance"	        "?20 50"
 				"LaunchDuration"	        "0.5"
 			}
 		}
@@ -369,7 +369,7 @@
 				"ItemCount"					"1"
 				"SpawnRadius"		        "1"
 				"LaunchHeight"		        "100"
-				"LaunchDistance"	        "?50 100"
+				"LaunchDistance"	        "?20 50"
 				"LaunchDuration"	        "0.5"
 			}
 		}

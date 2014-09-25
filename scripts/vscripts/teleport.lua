@@ -9,7 +9,7 @@ function Teleporter(trigger)
         SendToConsole("dota_camera_center")
 end
 function Teleporter2(trigger)
-        local point =  Entities:FindByName( nil, "teleport_spot_2" ):GetAbsOrigin()
+        local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
@@ -173,4 +173,19 @@ function TeleportAtBarrier(trigger)
         end
     end
 
+end
+
+
+function TeleporterTanks(trigger)
+        local point =  Entities:FindByName( nil, "teleport_spot_tanks" ):GetAbsOrigin()
+        FindClearSpaceForUnit(trigger.activator, point, false)
+        trigger.activator:Stop()
+        SendToConsole("dota_camera_center")
+end
+
+function TeleporterTanksStart(trigger)
+        local point =  Entities:FindByName( nil, "teleport_spot_tanks_start" ):GetAbsOrigin()
+        FindClearSpaceForUnit(trigger.activator, point, false)
+        trigger.activator:Stop()
+        SendToConsole("dota_camera_center")
 end

@@ -81,6 +81,15 @@ function soulkeeper_warning3(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
 end
 
+function soulkeeper_warning_tanks(trigger)
+	local position = Vector(4050,-1026,409)
+    local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
+	local rotation = Vector(-5746.03 -713.903,416)
+	necro:SetForwardVector(rotation)
+	EmitGlobalSound("Hero_Necrolyte.ReapersScythe.Cast")
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> I hate this part.",0,0)
+end
+
 function boss_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font>  So you dare to challenge the Shadow Lord? <br>I will feast on your lost souls and show you no mercy!!<br>Come and accept your fate!",0,0)
 end

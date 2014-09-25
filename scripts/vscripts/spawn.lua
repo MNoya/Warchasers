@@ -124,6 +124,19 @@ function SpawnGhoulsZiggurat2	(trigger)
         end
 end
 
+function SpawnGhoulsZiggurat3	(trigger)
+        local building = Entities:FindByName(nil, "ghoul_ziggurat3")
+        if building ~= nil then
+                local ability = building:FindAbilityByName("spawn_ghoul")
+                ability:SetContextThink("SpawnLoop", function()
+                        if ability:IsFullyCastable() then
+                                ability:CastAbility();
+                        end
+                        return 2;
+                end, 1);
+        end
+end
+
 function SpawnSatyrs1(trigger)
         local building = Entities:FindByName(nil, "forest_troll_hut1")
         if building ~= nil then
@@ -320,6 +333,13 @@ function SpawnArchers2(trigger)
                         return 4 
                 end, 1)
         end
+		
+	--add vision dummy to properly show the particle effect of the key (weird but works)
+	local point = Vector(118, 2185,136)
+	local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	--kill it later, after the key is used
+	
+
 end
         
 function SpawnIceTrolls(trigger)
@@ -446,6 +466,20 @@ function SpawnLanternTrolls(event)
         local troll6 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll7 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll8 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+		
+		--add vision dummy to properly show the particle effect of the key (weird but works)
+		local point = Vector(-1280, 256, 256)
+		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		
+		--cosmetic vision dummies
+		local point = Vector(-1280, 768, 256)
+		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		
+		local point = Vector(-1280, 1280, 256)
+		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		
+		
+
 end
 
 function SpawnCircleActivated1(event)
