@@ -1,5 +1,15 @@
 print("Abilities are loading")
 
+function holy_light_check( event )
+	if event.target == event.caster then --disable self target, refund spell
+		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))
+		event.ability:EndCooldown()
+		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
+	else
+		event.ability:OnChannelFinish(true)
+	end
+end
+
 function holy_light_cast( event )
 	if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
 		ApplyDamage({

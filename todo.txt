@@ -3,7 +3,7 @@ TO DO
 
 - Heroes -
 Balance solo-buff
-Holy ligth animation? TO FIX: add can't target self
+Holy ligth animation? FIXED add can't target self
 vampiric aura fix lifestealing from buildings	DONE
   
 - Creeps -

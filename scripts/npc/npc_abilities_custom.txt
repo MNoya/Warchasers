@@ -1406,7 +1406,7 @@
 						
 						"ItemName"					"item_lightning_shield"
 						"ItemCount"					"1" 
-						"ItemChargeCount"	        "1"
+						"ItemChargeCount"	        "2"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
@@ -2158,6 +2158,7 @@
 						
 						"ItemName"					"item_ankh"
 						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
@@ -2293,6 +2294,7 @@
 						
 						"ItemName"					"item_ankh"
 						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
@@ -4351,6 +4353,12 @@
 						"EffectName"		"particles/neutral_fx/troll_heal.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
+					"FireEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/units/heroes/hero_luna/luna_eclipse.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
 					"FireSound"
 					{
 						"Target"
@@ -4375,7 +4383,7 @@
 						"Target" "CASTER"
 						"EffectName"		"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
 						"EffectAttachType"	"follow_origin"
-					}
+					}				
 					"FireSound"
 					{
 						"Target" "CASTER"
@@ -4878,6 +4886,7 @@
 					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
 			}
@@ -5027,6 +5036,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"jugg_death_coil"
 		
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
@@ -5058,7 +5068,7 @@
 	}
 	
 	"warchasers_snake_beast_holy_light"
-		{
+	{
 		"BaseClass" 					"ability_datadriven"
 		"MaxLevel"						"3"
 		
@@ -5068,44 +5078,53 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"65"
+		"AbilityCastPoint"    			"0.3"
 		"AbilityTextureName"			"ck_holy_light"
 		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_2"
 		"AbilitySpecial"
-			{
+		{
 			"01"
-				{
+			{
 				"var_type"				"FIELD_FLOAT"
 				"target_damage"			"100 200 300"
-				}
+			}
 			"02"
-				{
+			{
 				"var_type"				"FIELD_FLOAT"
 				"heal_amount"			"200 400 600"
-				}
 			}
+		}
 
 		"OnSpellStart"
+		{
+			"RunScript"
 			{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"holy_light_check"
+			}
+		}
+		"OnChannelSucceeded"
+		{
 			"FireEffect"
-				{
+			{
 				"Target" "TARGET"
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
 				"EffectAttachType" "follow_origin"
 				"EffectLifeDurationScale" "1"
-				}
+			}
 			"FireSound"
-				{
+			{
 				"EffectName"	"Hero_Omniknight.Purification"
 				"Target"	"TARGET"
-				}
+			}
 
 			"RunScript"
-				{
+			{
 				"ScriptFile"	"abilities.lua"
 				"Function"	"holy_light_cast"
-				}
 			}
 		}
+	}
 
 	"warchasers_hero_holy_light" //needs datadriven
 	{

@@ -469,11 +469,11 @@
 		}
 	}
 
-	"roshan_bash"
+	"roshan_bash" //try void bash instead
 	{
 		"MaxLevel"						"3"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"templar_bash_glaive" //try void bash animation
+		"AbilityTextureName"			"templar_bash" 
 
 		"AbilitySpecial"
 		{
@@ -785,7 +785,7 @@
 		"MaxLevel"		"1"
 		"AbilityManaCost"				"100"
 		"AbilityCooldown"				"100"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE" //TEST IF THIS WORKS, try spawning the unit on dire side
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
