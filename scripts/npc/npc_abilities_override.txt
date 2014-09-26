@@ -414,6 +414,7 @@
 	"warlock_golem_permanent_immolation"
 	{
 		"MaxLevel"						"1"
+		"AbilityTextureName"	"infernal_permanent_immolation"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
