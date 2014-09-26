@@ -88,6 +88,7 @@ function soulkeeper_warning_tanks(trigger)
 	necro:SetForwardVector(rotation)
 	EmitGlobalSound("Hero_Necrolyte.ReapersScythe.Cast")
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redemption grows tiresome...<br> we'll see how you fare in these Dwarven contraptions!<br>Step on the magic circle to begin your jorney.",0,0)
+end
 
 function hint_tanks(trigger)
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You get no experience for killing monsters while in a tank.", 0, 0) 

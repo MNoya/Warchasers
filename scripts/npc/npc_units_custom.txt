@@ -5219,7 +5219,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_c/n_creep_kobold_frost.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -7321,12 +7321,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+		"Model"						"models/heroes/enigma/enigma.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"5"
-		"ModelScale" 				"1.6"
+		"ModelScale" 				"1"
 
 		// Abilities
 		//----------------------------------------------------------------
