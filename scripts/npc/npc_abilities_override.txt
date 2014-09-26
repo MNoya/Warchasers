@@ -643,6 +643,7 @@
 	"alpha_wolf_command_aura"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"creep_command_aura"
 		"AbilitySpecial"
 		{
 			"01"
