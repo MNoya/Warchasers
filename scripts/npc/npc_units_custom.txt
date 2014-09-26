@@ -8164,7 +8164,7 @@
 
 	
 	//=================================================================================
-	// Creature: Final Boss (Spawns Satyrs) //CHECK INGAME
+	// Creature: Final Boss (Spawns Satyrs)
 	//=================================================================================
 	"npc_boss"
 	{										
@@ -8174,7 +8174,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"322"
+		"Level"						"10"
 		"ModelScale" 				"1.7"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
@@ -8190,42 +8190,40 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"40"			// Physical protection.
+		"ArmorPhysical"				"5"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"		// Damage range min.
-		"AttackDamageMax"			"120"		// Damage range max.	
+		"AttackDamageMin"			"100"		// Damage range min. 63
+		"AttackDamageMax"			"120"		// Damage range max. 70
 		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.322"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.55"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
-		"AttackRange"				"180"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			"900"			// Speed of projectile.		   
+		"AttackRange"				"180"		// Range within a target can be attacked.  
 
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"160"
-		"HealthBarOffset"			"322"
+		"HealthBarOffset"			"400"
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"322"		// Experience earn.
-		"BountyGoldMin"				"322"		// Gold earned min.
-		"BountyGoldMax"				"322"		// Gold earned max.
+		"BountyXP"					"300"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"322"		// Speed.
+		"MovementSpeed"				"300"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3500"		// Base health.
-		"StatusHealthRegen"			"3.22"		// Health regeneration rate.
-		"StatusMana"				"322"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusHealth"				"5200"		// Base health.
+		"StatusHealthRegen"			"3"		// Health regeneration rate.
+		"StatusMana"				"1480"			// Base mana.
+		"StatusManaRegen"			"1"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -8235,8 +8233,8 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		

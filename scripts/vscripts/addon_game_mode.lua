@@ -59,7 +59,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
 	PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context)
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
-	
+	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -69,8 +69,8 @@ function Precache( context )
 	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
 	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
 	
-	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
 	PrecacheResource( "particle_folder","particles/items_fx", context)

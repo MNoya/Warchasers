@@ -576,5 +576,27 @@ function SpawnCircleActivated2(event)
         end
 end
 
+
+
+function SpawnSappers(event)
+        print("Don not run, we are your friends!")
+
+        position = Vector(7418,6661,640)
+        rotationEast = Vector(-3958, 6636,416)
+        --local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        --sapper1:SetForwardVector(rotationEast)
+
+        position = Vector(7397, 6554, 640)
+        local sapper2 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        sapper2:SetForwardVector(rotationEast)
+
+        position = Vector(7397, 6762, 640)
+        local sapper3 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        sapper3:SetForwardVector(rotationEast)
+
+
+end
+
+
 --[[boss spawns
         //hell imps every second ]]--

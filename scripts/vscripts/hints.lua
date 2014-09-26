@@ -87,7 +87,16 @@ function soulkeeper_warning_tanks(trigger)
 	local rotation = Vector(-5746.03 -713.903,416)
 	necro:SetForwardVector(rotation)
 	EmitGlobalSound("Hero_Necrolyte.ReapersScythe.Cast")
-	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> I hate this part.",0,0)
+	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redemption grows tiresome...<br> we'll see how you fare in these Dwarven contraptions!<br>Step on the magic circle to begin your jorney.",0,0)
+
+function hint_tanks(trigger)
+	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You get no experience for killing monsters while in a tank.", 0, 0) 
+	GameRules:SendCustomMessage("Avoid the monsters you can avoid, and kill the ones you have to.", 0, 0)
+	GameRules:SendCustomMessage("Find and kill the enemy steam tanks to open the end door.", 0, 0)
+end
+
+function hint_tanks_end(trigger) 
+	GameRules:SendCustomMessage("You have vanquished the enemies. The gate has opened...", 0, 0)
 end
 
 function boss_engage(trigger)
