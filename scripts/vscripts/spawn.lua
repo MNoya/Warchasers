@@ -11,7 +11,7 @@
                         if trigger ~= nil then
                                 if trigger:IsTouching(value) == true then
                                         local ability = event.caster:GetAbilityByIndex(0)
-                                        ability:CastAbility()
+                                        building:CastAbilityNoTarget(ability, -1)
                                 end
                         end
                 end
@@ -25,24 +25,22 @@ function SpawnMurlocs1(trigger)
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1)
-                                end 
+                        end 
                         return 4 
                 end, 1)
         end
 end
---ty Quintinity
 
 function SpawnMurlocs2(trigger)
         local building = Entities:FindByName(nil, "murloc_hut2")
         if building ~= nil then
                 local ability = building:FindAbilityByName("spawn_murloc")
                 ability:SetContextThink("SpawnLoop", function() 
-                                                        if ability:IsFullyCastable() then 
-                                                                building:CastAbilityNoTarget(ability, -1)
-                                                        end 
-                                                        return 4 
-                                                        end, 
-                                                        1)
+                        if ability:IsFullyCastable() then 
+                                building:CastAbilityNoTarget(ability, -1)
+                        end 
+                        return 4 
+                end, 1)
         end
 end
 
@@ -52,10 +50,10 @@ function SpawnGnolls1(trigger)
                 local ability = building:FindAbilityByName("spawn_gnoll")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1)
                         end
-                        return 4;
-                end, 1);
+                        return 4
+                end, 1)
         end
 end
 
@@ -65,10 +63,10 @@ function SpawnGnolls2(trigger)
                 local ability = building:FindAbilityByName("spawn_gnoll")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -78,10 +76,10 @@ function SpawnGhouls1(trigger)
                 local ability = building:FindAbilityByName("spawn_ghoul")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -91,10 +89,10 @@ function SpawnGhouls2(trigger)
                 local ability = building:FindAbilityByName("spawn_ghoul")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -104,10 +102,10 @@ function SpawnGhoulsZiggurat(trigger)
                 local ability = building:FindAbilityByName("spawn_ghoul")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -117,10 +115,10 @@ function SpawnGhoulsZiggurat2	(trigger)
                 local ability = building:FindAbilityByName("spawn_ghoul")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 3;
-                end, 1);
+                        return 3 
+                end, 1) 
         end
 end
 
@@ -130,10 +128,10 @@ function SpawnGhoulsZiggurat3	(trigger)
                 local ability = building:FindAbilityByName("spawn_ghoul")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 2;
-                end, 1);
+                        return 2 
+                end, 1) 
         end
 end
 
@@ -143,10 +141,10 @@ function SpawnSatyrs1(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_satyr")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -156,10 +154,10 @@ function SpawnGolems(trigger)
                 local ability = building:FindAbilityByName("spawn_golem")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -169,10 +167,10 @@ function SpawnMediumMurlocs1(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_murloc")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -182,10 +180,10 @@ function SpawnMediumMurlocs2(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_murloc")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -195,10 +193,10 @@ function SpawnMediumMurlocs3(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_murloc")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 4;
-                end, 1);
+                        return 4 
+                end, 1) 
         end
 end
 
@@ -208,10 +206,10 @@ function SpawnWaterElementals1(trigger)
                 local ability = building:FindAbilityByName("spawn_water_elemental")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 6;
-                end, 1);
+                        return 6 
+                end, 1) 
         end
 end
 
@@ -222,10 +220,10 @@ function SpawnWaterElementals2(trigger)
                 local ability = building:FindAbilityByName("spawn_water_elemental")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 6;
-                end, 1);
+                        return 6 
+                end, 1) 
         end
 end
 
@@ -235,10 +233,10 @@ function SpawnDarkTrolls1(trigger)
                 local ability = building:FindAbilityByName("spawn_ranged_troll")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 3;
-                end, 1);
+                        return 3 
+                end, 1) 
         end
 end
 
@@ -248,10 +246,10 @@ function SpawnDarkTrolls2(trigger)
                 local ability = building:FindAbilityByName("spawn_ranged_troll")
                 ability:SetContextThink("SpawnLoop", function()
                         if ability:IsFullyCastable() then
-                                ability:CastAbility();
+                                building:CastAbilityNoTarget(ability, -1) 
                         end
-                        return 3;
-                end, 1);
+                        return 3 
+                end, 1) 
         end
 end
 
@@ -263,7 +261,7 @@ function SpawnSmallSludges(trigger)
                 local ability = building:FindAbilityByName("spawn_small_sludge")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -276,7 +274,7 @@ function SpawnTreants1(trigger)
                 local ability = building:FindAbilityByName("spawn_treant")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -289,7 +287,7 @@ function SpawnTreants2(trigger)
                 local ability = building:FindAbilityByName("spawn_treant")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -302,7 +300,7 @@ function SpawnKobolds(trigger)
                 local ability = building:FindAbilityByName("spawn_kobold_tunneler")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 3 
                 end, 1)
@@ -315,7 +313,7 @@ function SpawnArchers1(trigger)
                 local ability = building:FindAbilityByName("spawn_frost_archer")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -328,7 +326,7 @@ function SpawnArchers2(trigger)
                 local ability = building:FindAbilityByName("spawn_frost_archer")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -348,7 +346,7 @@ function SpawnIceTrolls(trigger)
                 local ability = building:FindAbilityByName("spawn_ice_priest")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -361,7 +359,7 @@ function SpawnMediumSludges(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_sludge")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
@@ -374,7 +372,7 @@ function SpawnWizards(trigger)
                 local ability = building:FindAbilityByName("spawn_wizard")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 7 
                 end, 1)
@@ -387,7 +385,7 @@ function SpawnHellhounds1(trigger)
                 local ability = building:FindAbilityByName("spawn_fellhound")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 6 
                 end, 1)
@@ -400,7 +398,7 @@ function SpawnHellhounds2(trigger)
                 local ability = building:FindAbilityByName("spawn_fellhound")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 6 
                 end, 1)
@@ -413,7 +411,7 @@ function SpawnBigSludges1(trigger)
                 local ability = building:FindAbilityByName("spawn_big_sludge")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 6 
                 end, 1)
@@ -426,7 +424,7 @@ function SpawnBigSludges2(trigger)
                 local ability = building:FindAbilityByName("spawn_big_sludge")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 6 
                 end, 1)
@@ -439,7 +437,7 @@ function SpawnMediumSatyrs(trigger)
                 local ability = building:FindAbilityByName("spawn_medium_satyr")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
-                                ability:CastAbility() 
+                                building:CastAbilityNoTarget(ability, -1) 
                                 end 
                         return 4 
                 end, 1)
