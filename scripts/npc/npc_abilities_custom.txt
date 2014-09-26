@@ -3683,7 +3683,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" 			"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" "inner_fire"
+		"AbilityTextureName" "creep_inner_fire"
 		"MaxLevel" "1"
  
 		"AbilityCastPoint"    "0.0"
@@ -3852,7 +3852,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName"    "unholy_aura"
+		"AbilityTextureName"    "creep_unholy_aura"
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
@@ -3920,7 +3920,7 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"    "ember_spirit_flame_guard"
+		"AbilityTextureName"    "jugg_immolation"
 		"AbilityManacost" "35"
 		
 		"precache"
@@ -4126,7 +4126,7 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"		"1"
-		"AbilityTextureName"    "dark_troll_warlord_raise_dead"
+		"AbilityTextureName"    "sd_animate_dead"
 		"AbilityCooldown" "180"
 		"AbilityManacost" "175"
 		"AbilitySpecial"
@@ -4168,7 +4168,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName"    "centaur_return"
+		"AbilityTextureName"    "sven_thorns_aura"
 		
 		"AbilitySpecial"
 		{
@@ -4261,7 +4261,7 @@
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"    "witch_doctor_voodoo_restoration"
+		"AbilityTextureName"    "sven_tranquility"
 		"AbilityCooldown" "60"
 		"AbilityManacost" "125"
 		"AbilityChannelTime" "30"
@@ -4393,7 +4393,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityCooldown"				"35 50 65"
 		"AbilityManaCost"	"25"
-		"AbilityTextureName"    "omniknight_repel"
+		"AbilityTextureName"    "sven_divine_shield"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityCastPoint"				"0.5"
 		
@@ -4454,7 +4454,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"	"125"
-		"AbilityTextureName"    "morphling_morph_agi"
+		"AbilityTextureName"    "ck_elemental"
 		"AbilitySpecial"
 			{
 			"01"
@@ -4526,7 +4526,7 @@
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"	"150"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"    "alchemist_chemical_rage"
+		"AbilityTextureName"    "timber_avatar"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -4591,7 +4591,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-		"AbilityTextureName"    "dragon_knight_dragon_tail"
+		"AbilityTextureName"    "timber_devotion_aura"
 		 "AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
@@ -4655,7 +4655,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"	"75"
-		"AbilityTextureName"    "lone_druid_spirit_bear_entangle"
+		"AbilityTextureName"    "templar_entangle"
 		"AbilitySpecial"
 			{
 			"01"
@@ -4807,7 +4807,7 @@
 		"AbilityManaCost"	"200"
 		"AbilityCooldown"	"180"
 		"AbilityChannelTime"	"45"
-		"AbilityTextureName"    "mirana_starfall"
+		"AbilityTextureName"    "templar_starstorm"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
@@ -4915,7 +4915,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"drow_ranger_frost_arrows"
+		"AbilityTextureName"			"drow_cold_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
@@ -5068,7 +5068,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"65"
-		"AbilityTextureName"			"omniknight_purification"
+		"AbilityTextureName"			"ck_holy_light"
 		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_2"
 		"AbilitySpecial"
 			{
@@ -5152,7 +5152,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-		"AbilityTextureName"    "centaur_khan_endurance_aura"
+		"AbilityTextureName"    "jugg_endurance_aura"
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
@@ -5253,7 +5253,7 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
   		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_NONE"
-		"AbilityTextureName"    "vampiric_aura"
+		"AbilityTextureName"    "sd_vampiric_aura"
 		"AbilityCastPoint"    "0.0"
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
@@ -5329,7 +5329,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"100 75 50"
-		"AbilityTextureName"			"bane_nightmare"
+		"AbilityTextureName"			"sd_sleep"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 	
 		"AbilitySpecial"
@@ -5394,7 +5394,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		"AbilityTextureName"			"juggernaut_healing_ward"
 		
 		"OnSpellStart"
 		{
