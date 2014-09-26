@@ -5564,6 +5564,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_gnoll"
 		
 		"OnSpellStart"
 		{
@@ -5591,6 +5592,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_ghoul"
 		
 		"OnSpellStart"
 		{
@@ -5618,6 +5620,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_medium_satyr"
 		
 		"OnSpellStart"
 		{
@@ -5645,6 +5648,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_golem"
 		
 		"OnSpellStart"
 		{
@@ -5672,6 +5676,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_medium_murloc"
 		
 		"OnSpellStart"
 		{
@@ -5699,6 +5704,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_water_elemental"
 		
 		"OnSpellStart"
 		{
@@ -5727,6 +5733,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_ranged_troll"
 		
 		"OnSpellStart"
 		{
@@ -5754,6 +5761,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_small_sludge"	
 		
 		"OnSpellStart"
 		{
@@ -5781,6 +5789,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_treant"	
 		
 		"OnSpellStart"
 		{
@@ -5808,6 +5817,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	
 		
 		"OnSpellStart"
 		{
@@ -5835,6 +5845,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_kobold_tunneler"
 		
 		"OnSpellStart"
 		{
@@ -5864,6 +5875,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_medium_sludge"
 		
 		"OnSpellStart"
 		{
@@ -5892,6 +5904,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_frost_archer"	
 		
 		"OnSpellStart"
 		{
@@ -5919,6 +5932,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_ice_priest"
 		
 		"OnSpellStart"
 		{
@@ -5946,6 +5960,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_wizard"
 		
 		"OnSpellStart"
 		{
@@ -5973,6 +5988,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_fellhound"
 		
 		"OnSpellStart"
 		{
@@ -6000,6 +6016,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_big_sludge"
 		
 		"OnSpellStart"
 		{
@@ -6027,6 +6044,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_imp"
 		
 		"OnSpellStart"
 		{

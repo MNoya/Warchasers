@@ -439,7 +439,7 @@ function SpawnMediumSatyrs(trigger)
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1) 
                                 end 
-                        return 4 
+                        return 2 
                 end, 1)
         end
 end
