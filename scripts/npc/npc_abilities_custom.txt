@@ -5817,7 +5817,7 @@
 		"AbilityManaCost" "0"
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
-		"AbilityTextureName"	
+		"AbilityTextureName"	"spawn_burning_archer"
 		
 		"OnSpellStart"
 		{

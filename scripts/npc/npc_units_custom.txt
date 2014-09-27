@@ -4094,12 +4094,12 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"                                         "models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"   // Model.
+		"Model"                                         "models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"   // Model.
 		"BaseClass"                                     "npc_dota_creature"
 		"SoundSet"                                      "n_creep_Melee"
 		"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
 		"Level"                                         "2"
-		"ModelScale"                            "0.8"
+		"ModelScale"                            "0.7"
 		
 		"precache"
 		{
@@ -5936,12 +5936,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"	// Model.
+		"Model"						"models/heroes/meepo/meepo.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".9"
+		"ModelScale" 				"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -6004,7 +6004,13 @@
 		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "104" } //weapon
+			}
+		}
 	}
 
 	
@@ -7207,12 +7213,12 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"                                         "models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"   // Model.
+		"Model"                                         "models/heroes/tiny_03/tiny_03.vmdl"   // Model.
 		"BaseClass"                                     "npc_dota_creature"
 		"SoundSet"                                      "n_creep_Melee"
 		"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
 		"Level"                                         "6"
-		"ModelScale"                            "1"
+		"ModelScale"                            "1.2"
 
 		// Abilities
 		//----------------------------------------------------------------
