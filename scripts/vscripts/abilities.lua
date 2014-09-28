@@ -27,6 +27,8 @@ function warchasers_titan_reincarnation_outro( event )
 	if event.caster.titan_reincarnate_thinker_eval_count ~= nil then
 		if event.caster.titan_reincarnate_thinker_eval_count >= 15 then
 			event.caster:RespawnUnit()
+			event.caster:AddAbility("drop_level6")
+			event.caster:AddAbility("drop_potion_of_healing")
 			event.caster:RemoveModifierByName("warchasers_titan_reincarnation_death_mod")
 		else
 			event.caster.titan_reincarnate_thinker_eval_count = event.caster.titan_reincarnate_thinker_eval_count + 1

@@ -3800,7 +3800,7 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"HealthBarOffset"			"280"
+		"HealthBarOffset"			"350"
 
 		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
@@ -3832,13 +3832,13 @@
 			
 			"AttachWearables"
 			{
-				"Wearable1"		{	"ItemDef"	"6501"		}
+				"Wearable1"		{	"ItemDef"	"6501"		} 
 				"Wearable2"		{	"ItemDef"	"6502"		}
 				"Wearable3"		{	"ItemDef"	"6503"		}
-				"Wearable4"		{	"ItemDef"	"6504"		}
+				"Wearable4"		{	"ItemDef"	"5127" 		} //Helmet: Transgressions="5127".  Omoz="5574"	
 				"Wearable5"		{	"ItemDef"	"6505"		}
 				"Wearable6"		{	"ItemDef"	"6506"		}
-				"Wearable7"		{	"ItemDef"	"6507"		}
+				"Wearable7"		{	"ItemDef"	"5447"		} //Weapon: "Infernal Pactblade"="5833".   Eye of Omoz= "4905"  . Fallen Sword="5447"  
 				
 			}
 		}
@@ -8241,7 +8241,7 @@
 		
 	}
 	//=================================================================================
-	// Creature: Titan Skeleton (Ank, Bash) 
+	// Creature: Titan Skeleton Standard (Ank, Bash) 
 	//=================================================================================
 	"npc_titan"
 	{										
@@ -8254,17 +8254,15 @@
 		"Level"						"6"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
-		"HasInventory"				"1"
-		"ConsideredHero"			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"slardar_bash"			// Ability 1
 		"Ability2"					"drop_level6"			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					"drop_potion_of_healing"			// Ability 4
+		"Ability3"					"drop_potion_of_healing"			// Ability 3
+		"Ability4"					""						// Ability 4
 		"Ability5"					""
-		"Ability6"					"warchasers_titan_reincarnation"
+		"Ability6"					""
 
 		// Armor
 		//----------------------------------------------------------------
@@ -8287,11 +8285,11 @@
 		"RingRadius"				"40"
 		"HealthBarOffset"			"150"
 
-		// Bounty //CHECK INGAME
+		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					""		// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		"BountyXP"					"100"		// Experience earn.
+		"BountyGoldMin"				"100"		// Gold earned min.
+		"BountyGoldMax"				"100"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
@@ -8322,25 +8320,110 @@
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
 		{
-			"CanRespawn"	"1"
-			"EquippedItems"
-			{
-				"Ank"
-				{
-					"Item"					"item_aegis"
-				}
-			}	
-
-
 			"AttachWearables"
 			{
 				"Wearable1"		{	"ItemDef"	"5052"		}
-				"Wearable2"		{	"ItemDef"	"6568"		} //relic sword
+				"Wearable2"		{	"ItemDef"	"5099"		} //relic sword="6568", blood shard="4445", spine splitter="5099"
 				"Wearable3"		{	"ItemDef"	"5054"		}
 				"Wearable4"		{	"ItemDef"	"5055"		}
 				"Wearable5"		{	"ItemDef"	"5056"		}
 
 				
+			}
+		}
+
+	}
+	
+	//=================================================================================
+	// Creature: Titan Skeleton Reincarnate (Ank, Bash) 
+	//=================================================================================
+	"npc_titan_reincarnate"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/wraith_king/wraith_frost.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Melee"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"6"
+		"IsAncient"					"1"
+		"ModelScale" 				"1.4"
+		"HasInventory"				"1"
+		"ConsideredHero"			"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"slardar_bash"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+		"Ability5"					""
+		"Ability6"					"warchasers_titan_reincarnation"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"14"		// Damage range min.
+		"AttackDamageMax"			"15"		// Damage range max.	
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"350"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"250"
+
+		// Bounty //CHECK INGAME
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"600"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"201"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"GameSoundsFile"		    "soundevents/game_sounds_heroes/game_sounds_wraith_king.vsndevts"
+		
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"	"5052"		}
+				"Wearable2"		{	"ItemDef"	"6568"		} //relic sword="6568", blood shard="4445", spine splitter="5099"
+				"Wearable3"		{	"ItemDef"	"5054"		}
+				"Wearable4"		{	"ItemDef"	"5055"		}
+				"Wearable5"		{	"ItemDef"	"5056"		}
 			}
 		}
 
@@ -8782,7 +8865,7 @@
 			{
 				"Wearable1"		{	"ItemDef"	"6096"		} //f2p wings
 				"Wearable2"		{	"ItemDef"	"6098"		} //crown of gore
-				"Wearable3"		{	"ItemDef"	"5471"		} //demon shard
+				"Wearable3"		{	"ItemDef"	"5833"		} //Weapon: "Infernal Pactblade"="5833".   Eye of Omoz= "4905"  . Fallen Sword="5447"  
 				"Wearable4"		{	"ItemDef"	"5122"		} 
 				"Wearable5"		{	"ItemDef"	"6273"		} //tail incantation
 				"Wearable6"		{	"ItemDef"	"6100"		} //f2p pauldrons

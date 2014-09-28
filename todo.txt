@@ -7,7 +7,7 @@ Shake camera on boss engage
 Balance solo-buff DONE
   
 - Creeps -
-reincarnate. TO FIX: delete drops before reincarnate
+reincarnate DONE
 Change general chase behavior
 
 - Items - 
