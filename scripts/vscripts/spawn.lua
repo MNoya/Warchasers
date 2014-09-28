@@ -336,6 +336,14 @@ function SpawnArchers2(trigger)
 	local point = Vector(118, 2185,136)
 	local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	--kill it later, after the key is used
+	Timers:CreateTimer({
+			endTime = 100,
+			callback = function()
+			  dummy1:ForceKill(true)
+			  dummy2:ForceKill(true)
+			  dummy3:ForceKill(true)
+			end
+		})
 	
 
 end
@@ -467,16 +475,24 @@ function SpawnLanternTrolls(event)
 		
 		--add vision dummy to properly show the particle effect of the key (weird but works)
 		local point = Vector(-1280, 256, 256)
-		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local dummy1 = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		
 		--cosmetic vision dummies
 		local point = Vector(-1280, 768, 256)
-		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local dummy2 = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		
 		local point = Vector(-1280, 1280, 256)
-		local dummy = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local dummy3 = CreateUnitByName("vision_dummy_point", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		
-		
+
+		Timers:CreateTimer({
+			endTime = 20,
+			callback = function()
+			  dummy1:ForceKill(true)
+			  dummy2:ForceKill(true)
+			  dummy3:ForceKill(true)
+			end
+		})
 
 end
 

@@ -19,7 +19,7 @@ function TeleporterHeavenHell(trigger)
 end
 
 function TeleporterHeaven(trigger)
-        local point =  Entities:FindByName( nil, "teleport_spot_heaven" ):GetAbsOrigin()
+        local point =  Vector(-6713,5089,20)
         
         spot_heaven = Vector(-6734, 5082, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)

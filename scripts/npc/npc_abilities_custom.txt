@@ -3559,7 +3559,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityTextureName"			"skywrath_mage_concussive_shot"
+		"AbilityTextureName"			"creep_slow"
 		"BaseClass" 					"ability_datadriven"
 		"MaxLevel"						"1"
 		
