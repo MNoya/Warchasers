@@ -4231,6 +4231,18 @@
 						}
 					}
 			}
+			"thorns_aura_helper"
+				{
+				"Duration"	"0.033"
+				"OnTakeDamage"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"megatron_thorns_aura_damage"
+						}
+					}
+				}
 		}
 	}
 	"warchasers_megatron_thorns_aura_helper"

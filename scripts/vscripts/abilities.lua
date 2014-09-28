@@ -116,25 +116,26 @@ function warchasers_muhrah_animate_dead_ini( event )
 end
 
 function megatron_thorns_aura_damage( event )
-	local thorn_damage = event.caster.thorns_aura_ini_hp - event.caster:GetHealth()
-	local thorn_attacker = EntIndexToHScript(event.caster.thorns_aura_attacker)
+	local thorn_damage = event.unit.thorns_aura_ini_hp - event.unit:GetHealth()
+	local thorn_attacker = EntIndexToHScript(event.unit.thorns_aura_attacker)
 	ApplyDamage({
 							victim = thorn_attacker,
-							attacker = event.caster,
-							damage = thorn_damage * 0.1 * Entities:FindByClassnameNearest("npc_dota_hero_sven", event.caster:GetOrigin(), 9000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel(),
+							attacker = event.unit,
+							damage = thorn_damage * 0.01 * event.ability:GetLevelSpecialValueFor("damage_return_percentage", (event.ability:GetLevel() - 1)),
 							damage_type = DAMAGE_TYPE_MAGICAL
 							}) 
-	event.caster:RemoveModifierByName("megatron_thorns_aura_damage")
-	event.caster.thorns_aura_ini_hp = nil
+	event.unit:RemoveModifierByName("thorns_aura_helper")
+	event.unit.thorns_aura_ini_hp = nil
 end
 
 function megatron_thorns_aura_func( event )
 	if  event.attacker:IsRangedAttacker() == false then
-		event.caster.thorns_aura_attacker = event.attacker:GetEntityIndex()
-		event.caster.thorns_aura_ini_hp = event.caster:GetHealth()
-		event.caster:AddAbility("warchasers_megatron_thorns_aura_helper")
+		event.target.thorns_aura_attacker = event.attacker:GetEntityIndex()
+		event.target.thorns_aura_ini_hp = event.target:GetHealth()
+		event.ability:ApplyDataDrivenModifier(event.caster, event.target, "thorns_aura_helper", nil) 
+		--[[event.caster:AddAbility("warchasers_megatron_thorns_aura_helper")
 		event.caster:FindAbilityByName("warchasers_megatron_thorns_aura_helper"):SetLevel(1)
-		event.caster:RemoveAbility("warchasers_megatron_thorns_aura_helper")
+		event.caster:RemoveAbility("warchasers_megatron_thorns_aura_helper")]]
 	end
 end
 
