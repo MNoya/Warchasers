@@ -92,6 +92,28 @@ function ReplenishManaAOE(event)
     event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
 end
 
+
+function DisableRegenOnEnemyNear(event) 
+    print("Checking Units in Range")
+    local units_in_range = FindUnitsInRadius(   DOTA_TEAM_GOODGUYS,
+                                                event.caster:GetAbsOrigin(),
+                                                nil,
+                                                300,
+                                                DOTA_UNIT_TARGET_TEAM_ENEMY,
+                                                DOTA_UNIT_TARGET_ALL,
+                                                DOTA_UNIT_TARGET_FLAG_NONE,
+                                                FIND_ANY_ORDER,
+                                                false)   
+    if units_in_range[1] ~= nil then
+        print("Regen Disabled")
+        event.ability:ApplyDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff_combat", {})
+    else 
+        print ("No Units Found")
+    end
+    --event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_warchasers_solo_buff_combat", nil) 
+
+end
+
 function CheckForKey(trigger)
     print("Checking for Key")
     local hero = trigger.activator

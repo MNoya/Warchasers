@@ -2326,7 +2326,9 @@
 				"Duration"	"%shield_duration"
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"	
 				}
 			}
 		}
@@ -3393,7 +3395,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"              "9999"
 		"AbilityCastPoint"                      "0.0"	
-		"AbilityUnitTargetFlags"  "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		"Modifiers"
 		{
@@ -3434,6 +3435,7 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "10"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"30"
 				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"OnCreated"
            		{
 					"AttachEffect"
@@ -3449,8 +3451,17 @@
 	                    "EffectName" "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
 						"EffectAttachType" "follow_origin"
 	                    "EffectLifeDurationScale" "1"
-	                }				
+	                }
 				}
+				//"ThinkInterval" "1"
+				//"OnIntervalThink"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"			"scripts/vscripts/items.lua"
+				//		"Function"				"DisableRegenOnEnemyNear"
+				//	}
+				//}
 				"OnAttacked"
 				{
 					"ApplyModifier"
@@ -3465,13 +3476,8 @@
 					{
 						"ModifierName" 			"modifier_warchasers_solo_buff_combat"
 						"Target" "CASTER"
-						//"Target" //Bug: Doesn't apply on invulnerables
-						//{
-						//	"Target" "CASTER"
-						//	"Flags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-						//}
 					}					
-				}
+				}				
            		
 			}
 			"modifier_warchasers_solo_buff_combat"
@@ -3485,7 +3491,7 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "-10"
 				}
-				
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			}
 			
 			"modifier_dominated"
