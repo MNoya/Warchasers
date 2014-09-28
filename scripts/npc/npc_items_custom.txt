@@ -3392,7 +3392,8 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"              "9999"
-		"AbilityCastPoint"                      "0.0"    
+		"AbilityCastPoint"                      "0.0"	
+		"AbilityUnitTargetFlags"  "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		"Modifiers"
 		{
@@ -3423,25 +3424,18 @@
            		}
 			}
 
-			"modifier_warchasers_solo_buff" //Add a description in tooltips
+			"modifier_warchasers_solo_buff"
 			{
 				"IsBuff"				"1"
 				"Passive"           	"1"
 				"IsHidden"				"0"
-				//Need to Flag invulnerables, reapply after divine shield/invulnerability goes off
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"30"
 				}
 				"OnCreated"
            		{
-					"AttachEffect"
-	                {
-						"Target" "CASTER"
-						"EffectName" "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
-						"EffectAttachType" "follow_origin"
-	                    "EffectLifeDurationScale" "1"
-	                }
 					"AttachEffect"
 	                {
 	                    "Target" "CASTER"
@@ -3449,22 +3443,34 @@
 	                    "EffectAttachType" "follow_origin"
 	                    "EffectLifeDurationScale" "1"
 	                }
-           		}
-				"OnTakeDamage"
+					"AttachEffect"
+	                {
+	                    "Target" "CASTER"
+	                    "EffectName" "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
+						"EffectAttachType" "follow_origin"
+	                    "EffectLifeDurationScale" "1"
+	                }				
+				}
+				"OnAttacked"
 				{
 					"ApplyModifier"
 					{
 						"ModifierName" 			"modifier_warchasers_solo_buff_combat"
-						"Target"				"CASTER"
-					}
+						"Target" 	"CASTER"
+					}				
 				}
 				"OnAttack"
 				{
 					"ApplyModifier"
 					{
 						"ModifierName" 			"modifier_warchasers_solo_buff_combat"
-						"Target"				"CASTER"
-					}
+						"Target" "CASTER"
+						//"Target" //Bug: Doesn't apply on invulnerables
+						//{
+						//	"Target" "CASTER"
+						//	"Flags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+						//}
+					}					
 				}
            		
 			}
@@ -3478,8 +3484,8 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "-10"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"30"
 				}
+				
 			}
 			
 			"modifier_dominated"
