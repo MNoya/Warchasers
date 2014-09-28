@@ -4069,7 +4069,7 @@
 						"Target"
 						{
 							"Center"	"CASTER"
-							"Radius"	"160"
+							"Radius"	"180"
 							"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 						}

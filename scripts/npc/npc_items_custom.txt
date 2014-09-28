@@ -3283,7 +3283,7 @@
 		"ID"							"1090"									
 		"BaseClass" 					"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"item_lightning_shield"
 
@@ -3428,13 +3428,21 @@
 				"IsBuff"				"1"
 				"Passive"           	"1"
 				"IsHidden"				"0"
+				//Need to Flag invulnerables, reapply after divine shield/invulnerability goes off
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	    "10"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "10"
 				}
 				"OnCreated"
            		{
-	                "AttachEffect"
+					"AttachEffect"
+	                {
+						"Target" "CASTER"
+						"EffectName" "particles/units/heroes/hero_troll_warlord/troll_warlord_berserk_buff.vpcf"
+						"EffectAttachType" "follow_origin"
+	                    "EffectLifeDurationScale" "1"
+	                }
+					"AttachEffect"
 	                {
 	                    "Target" "CASTER"
 	                    "EffectName" "particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
@@ -3442,8 +3450,38 @@
 	                    "EffectLifeDurationScale" "1"
 	                }
            		}
+				"OnTakeDamage"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName" 			"modifier_warchasers_solo_buff_combat"
+						"Target"				"CASTER"
+					}
+				}
+				"OnAttack"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName" 			"modifier_warchasers_solo_buff_combat"
+						"Target"				"CASTER"
+					}
+				}
            		
 			}
+			"modifier_warchasers_solo_buff_combat"
+			{
+				"EffectName" "particles/items2_fx/satanic_buff.vpcf" //"particles/items_fx/armlet.vpcf" //"particles/items2_fx/mask_of_madness.vpcf"
+	            "EffectAttachType" "follow_origin"
+				"Passive"           	"1"
+				"IsHidden"				"0"
+				"Duration"				"7"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" 	    "-10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"30"
+				}
+			}
+			
 			"modifier_dominated"
 			{
 				"Passive"               "1"
