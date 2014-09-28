@@ -1,36 +1,25 @@
 TO DO
 - General -
+Flash Camera Lock and Center
+Shake camera on boss engage
 
 - Heroes -
-Balance solo-buff
-Holy ligth animation? FIXED add can't target self
-vampiric aura fix lifestealing from buildings	DONE
+Balance solo-buff DONE
   
 - Creeps -
-Change disease cloud to something that interacts with cyclone (scorched earth aura?) ATTEMPT, needs precache particle
-Override cyclone and other skills to match wc3 version DONE
-Datadriven healing hands DONE
-poison slow, slow DONE
 reincarnate. TO FIX: delete drops before reincarnate
 Change general chase behavior
-Spawn mobs after activating circle DONE
 
 - Items - 
-check why drops made from lua show no particles DONE
-Add item quality colors DONE
-use custom chests DONE
-key glow DONE
-Fix Dominate scepter DONE
+Fix tome picking with full inv
 
 - Map -
-Finish unit placing port DONE
+Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
 Add Pyramids, Pillars, Lanterns, Light Sources. STARTED
-Adjust Fog/Vision/Camera Heights DONE
-add vision dummies DONE
-improve heaven/hell areas DONE
-add rest of the world drops DONE
-add 4 fountains DONE
 make secrets STARTED
+Improve each door (normalize textures, add split)
+Spawn trigger skull hint (ligth up a green? particle when activated spawner)
+Adjust blues in fog
 
 - Sounds -
 events on every custom_unit
