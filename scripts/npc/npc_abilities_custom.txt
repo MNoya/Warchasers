@@ -3679,7 +3679,7 @@
 
 	//Need datadriven
 	//"inner_fire" 10% damage 5 armor
-	"inner_fire"
+	"creep_inner_fire"
 	{	
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -3707,20 +3707,20 @@
 			"ApplyModifier"
 			{
 				"Target"	"TARGET"
-				"ModifierName"	"inner_fire_buff"
+				"ModifierName"	"creep_inner_fire_buff"
 			}
 		}
 		
 		"Modifiers"
 		{
-			"inner_fire_buff"
+			"creep_inner_fire_buff"
 			{
 				"OnCreated"
 				{
 					"AttachEffect"
 					{
-						"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
-						"EffectAttachType"	"follow_overhead"
+						"EffectName"	"particles/items_fx/buckler.vpcf"
+						"EffectAttachType"	"follow_origin"
 						"Target"		"TARGET"
 						"EffectLifeDurationScale" "1"
 					}

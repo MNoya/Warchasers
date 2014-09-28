@@ -3473,7 +3473,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"inner_fire"			// Ability 1
+		"Ability1"					"creep_inner_fire"			// Ability 1
 		"Ability2"					"creep_heal"			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					"drop_extra_tome"			// Ability 4
@@ -3549,7 +3549,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"inner_fire"
+					"Name"				"creep_inner_fire"
 					"Buff"				"1"
 				}
 				"Ability2"
@@ -3967,7 +3967,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"creep_heal"			// Ability 1. 
-		"Ability2"					"inner_fire"			// Ability 2. ADD INNER FIRE
+		"Ability2"					"creep_inner_fire"			// Ability 2. ADD INNER FIRE
 		"Ability3"					"brewmaster_storm_dispel_magic"			// Ability 3. 
 		"Ability4"					"drop_potion_of_healing"			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -4070,7 +4070,7 @@
 				}
 				"Ability2"
 				{
-					"Name"				"inner_fire"
+					"Name"				"creep_inner_fire"
 					"Buff"				"1"
 				}
 			}

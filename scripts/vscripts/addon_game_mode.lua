@@ -86,6 +86,7 @@ function Precache( context )
 	PrecacheResource( "particles_folder","particles/generic_gameplay", context)
 	PrecacheResource( "particles_folder","particles/units/heroes/hero_witchdoctor", context)
 	PrecacheResource( "particles_folder","particles/units/heroes/hero_bloodseeker", context)
+	PrecacheResource( "particles_folder","particles/units/heroes/hero_lina", context)
 	
 end
 
