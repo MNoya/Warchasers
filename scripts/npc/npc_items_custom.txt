@@ -1345,7 +1345,8 @@
 		"SideShop"						"0"
 		"SecretShop" "1"
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1416,7 +1417,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1481,7 +1483,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1546,7 +1549,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1610,7 +1614,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1675,7 +1680,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1740,7 +1746,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
@@ -1805,7 +1812,8 @@
 			}
 		}
 		
-		"OnEquip"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
 		{
 			"SpendCharge"
 			{}
