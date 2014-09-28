@@ -4143,6 +4143,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"Radius"	"400"
 			}
+			"03"
+				{
+				"var_type"	"FIELD_INTEGER"
+				"resurrections_limit"	"6"
+				}
 		}
 		
 		"OnSpellStart"
@@ -4161,6 +4166,40 @@
 				}
 			}
 		}
+		"Modifiers"
+			{
+			"warchasers_muhrah_animate_dead_helper_timer"
+				{
+				"OnCreated"
+					{
+					"AttachEffect"
+						{
+						"Target" "TARGET"
+						"EffectName"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+						"EffectAttachType" "follow_overhead"
+						}
+					"FireSound"
+						{
+						"EffectName"		"Hero_Abaddon.AphoticShield.Cast"
+						"Target"			  "CASTER"
+						}
+					}
+				"IsPurgable"	"0"
+				"Duration"	"%duration"
+				"States"
+					{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_muhrah_animate_dead_killer"
+						}
+					}
+				}
+			}
 	}
 
 	"warchasers_megatron_thorns_aura"

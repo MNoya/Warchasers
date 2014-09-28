@@ -93,7 +93,7 @@ function warchasers_steamtank_immolation_function( event )
 end
 
 function warchasers_muhrah_animate_dead_killer( event )
-	event.caster:Kill(event.abilty, event.caster)
+	event.target:Kill(event.abilty, event.caster)
 end
 
 
@@ -102,14 +102,16 @@ function warchasers_muhrah_animate_dead_ini( event )
 	local player_id = event.caster:GetPlayerID()
 	local team_id = event.caster:GetTeamNumber()
 	local number_of_resurrections = 0
+	local resurrections_limit = event.ability:GetLevelSpecialValueFor( "resurrections_limit", (event.ability:GetLevel() - 1))
 	for number, unit in pairs(event.target_entities) do
-		if unit:IsAlive() == false and number_of_resurrections < 7 then
+		if unit:IsAlive() == false and number_of_resurrections < resurrections_limit then
 			unit:SetOwner(owner)
 			unit:SetControllableByPlayer(player_id, true)
 			unit:SetTeam(team_id)
 			unit:RespawnUnit()
-			unit:AddAbility("warchasers_muhrah_animate_dead_helper")
-			unit:FindAbilityByName("warchasers_muhrah_animate_dead_helper"):SetLevel(1)
+			event.ability:ApplyDataDrivenModifier( owner, unit, "warchasers_muhrah_animate_dead_helper_timer", nil)
+			--[[unit:AddAbility("warchasers_muhrah_animate_dead_helper")
+			unit:FindAbilityByName("warchasers_muhrah_animate_dead_helper"):SetLevel(1)]]
 			number_of_resurrections = number_of_resurrections + 1
 		end
 	end
