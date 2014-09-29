@@ -1,7 +1,7 @@
 TO DO
 - General -
 Flash Camera Lock and Center
-Shake camera on boss engage
+Shake camera on boss engage DONE
 
 - Heroes -
 Balance solo-buff DONE

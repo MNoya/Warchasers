@@ -102,6 +102,9 @@ end
 
 function boss_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font>  So you dare to challenge the Shadow Lord? <br>I will feast on your lost souls and show you no mercy!!<br>Come and accept your fate!",0,0)
+	local ShakeOn = Vector(3558, -7210, 160)
+	ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true) 
+	--[[vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake ]]
 end
 
 function boss_dead(trigger)
