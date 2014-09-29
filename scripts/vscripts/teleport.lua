@@ -196,6 +196,8 @@ function TeleporterFinal(trigger)
         hero:Stop()
         trigger.activator:Stop()
       
+        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )
+
 		--Set Teleport Zone
 		point = Vector(2193, -1400, 256)
 		
