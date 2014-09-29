@@ -948,7 +948,7 @@
 	}
 	
 	//=================================================================================================================
-	// Doom Bringer: Scorched Earth
+	// Doom Bringer: Scorched Earth    //Doesn't work for some reason, replaced
 	//=================================================================================================================
 	"doom_bringer_scorched_earth"
 	{
@@ -974,7 +974,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"10"
+				"damage_per_second"		"60"
 			}
 			"02"
 			{

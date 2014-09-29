@@ -8,7 +8,7 @@ Balance solo-buff DONE
   
 - Creeps -
 reincarnate DONE
-Change general chase behavior
+Change general chase behavior DONE
 
 - Items - 
 Fix tome picking with full inv    DONE

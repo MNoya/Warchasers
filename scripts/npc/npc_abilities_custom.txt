@@ -2145,7 +2145,7 @@
 		{
 			"Random" //Ankh
 			{
-				"Chance" "20"
+				"Chance" "10"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -3622,7 +3622,6 @@
 
 	}
 	
-	
 	//"reincarnation" "skeleton_king_reincarnation"
 	"warchasers_titan_reincarnation_thinker"
 		{
@@ -3901,6 +3900,61 @@
 				{
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%regeneration_bonus"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_bonus"
+				}
+			}
+		}
+	}
+	
+	
+	"creep_command_aura"
+	{
+	
+		"MaxLevel"	"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"    "creep_command_aura"
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "900"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_bonus"	"10"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"Range"		"900"
+			}
+		}
+		"Modifiers"
+		{
+			"Command_Aura_Modifier"
+			{
+				"EffectName"		"particles/items_fx/aura_assault_ring.vpcf"
+				"EffectAttachType"   "follow_origin"
+				
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+				"Aura" 				"creep_command_aura_bonus"
+				"Aura_Radius" 		"%Range"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
+			}
+			"creep_command_aura_bonus"
+			{
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_bonus"
 				}
 			}
 		}
@@ -4231,11 +4285,10 @@
 					"AttachEffect"
 					{
 						"Target" "CASTER"
-						"EffectName" "particles/items_fx/aura_assault_ring.vpcf"
-						"EffectAttachType" "follow_origin"
-						//"EffectLifeDurationScale" "1"
+						"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_degen_aura_b.vpcf"
+						"EffectAttachType"	"follow_origin"
 					}
-				}
+				}		
 			}
 			"warchasers_megatron_thorns_aura_thinker"
 			{

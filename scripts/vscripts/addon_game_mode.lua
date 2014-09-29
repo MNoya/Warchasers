@@ -61,6 +61,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
 	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
 	PrecacheUnitByNameSync("npc_dota_hero_troll_warlord", context)
+	PrecacheUnitByNameSync("npc_dota_hero_slark", context)
+	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -84,9 +86,6 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/econ/courier", context)
 	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
 	PrecacheResource( "particles_folder","particles/generic_gameplay", context)
-	PrecacheResource( "particles_folder","particles/units/heroes/hero_witchdoctor", context)
-	PrecacheResource( "particles_folder","particles/units/heroes/hero_bloodseeker", context)
-	PrecacheResource( "particles_folder","particles/units/heroes/hero_lina", context)
 	
 end
 
