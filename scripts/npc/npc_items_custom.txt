@@ -1391,6 +1391,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
+		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
 		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
 
@@ -1459,7 +1460,7 @@
 		"AbilityTextureName"			"item_tome_of_agility"
 		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
+		"Effect"						"particles/units/heroes/hero_brewmaster/brewmaster_earth_ambient_noportrait.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1656,7 +1657,7 @@
 		"AbilityTextureName"			"item_tome_of_agility"
 		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
+		"Effect"						"particles/units/heroes/hero_brewmaster/brewmaster_earth_ambient_noportrait.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------

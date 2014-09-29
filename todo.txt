@@ -17,8 +17,7 @@ Fix tome picking with full inv    DONE
 Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
 Add Pyramids, Pillars, Lanterns, Light Sources. STARTED
 make secrets STARTED
-Improve each door (normalize textures, add split) DONE
-Spawn trigger skull hint (ligth up a green? particle when activated spawner)
+Spawn trigger skull hint (ligth up a green? particle when activated spawner) DONE
 Adjust blues in fog
 
 - Sounds -

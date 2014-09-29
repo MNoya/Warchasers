@@ -410,7 +410,7 @@ function Warchasers:OnNPCSpawned(keys)
         npc.agilityBonus = 0
         npc.attackspeedBonus = 0
     end
-
+		
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
 		npc.bFirstSpawned = true
 		SendToConsole("dota_camera_lock 1")
@@ -434,7 +434,7 @@ function Warchasers:OnHeroInGame(hero)
 
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
-	
+		
 	local playercounter = 0
 	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
 		if PlayerResource:IsValidPlayer(nPlayerID) then 

@@ -5608,7 +5608,7 @@
 
 // START SPAWNERS ------------------------------------------------------------------------------------------------------
 
-	"spawn_murloc"
+	"spawn_murloc_a"
 	{
 		"BaseClass" "ability_datadriven"
 
@@ -5625,13 +5625,66 @@
 		{  
 	        "SpawnUnit"
 	        {
-	            "UnitName" "npc_small_murloc"
+	            "UnitName" "npc_small_murloc_a"
 	            "UnitCount" "1"
 	            "SpawnRadius" "100"
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
-	            "UnitLimit" "20"
+	            "UnitLimit" "8"  //max possible of this unit in the entire map at the same time
+				"OnSpawn"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+							"01"		"50 100 0"
+							"02"		"4 10 .5"
+							"03"		"20 200 0" //color
+							"04"		"0 0 0"
+							"05"		"0 0 0"
+						}
+					}
+					"FireSound"
+					{
+						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"Target"			"CASTER"
+					}
+				}
+	        }   
+		
+		}
+	}
+	
+	"spawn_murloc_b"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		//"AbilityChannelTime" "4.0" //spawn rate is controlled through LUA
+		"AbilityCastPoint" "0"
+		"AbilityCooldown"        "0"
+		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_murloc"
+		
+		"OnSpellStart"
+		{  
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_small_murloc_b"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	            "UnitLimit" "8"
 				"OnSpawn"
 				{
 					"AttachEffect"

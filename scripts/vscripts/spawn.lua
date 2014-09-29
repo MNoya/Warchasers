@@ -21,7 +21,7 @@ end]]
 function SpawnMurlocs1(trigger)
         local building = Entities:FindByName(nil, "murloc_hut1") --2
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_murloc")
+                local ability = building:FindAbilityByName("spawn_murloc_a")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1)
@@ -34,7 +34,7 @@ end
 function SpawnMurlocs2(trigger)
         local building = Entities:FindByName(nil, "murloc_hut2")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_murloc")
+                local ability = building:FindAbilityByName("spawn_murloc_b")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1)
