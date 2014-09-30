@@ -13257,12 +13257,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/lycan/summon_wolves.mdl"	// Model.
+		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"1"
 		"IsSummoned"				"1"
-		"ModelScale" 					"0.9"
+		"ModelScale" 					"0.85"
 		"UnitLabel"			"lycan_wolf"
 
 		// Abilities
@@ -13330,7 +13330,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/lycan/summon_wolves.mdl"	// Model.	// Model.
+		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"2"
@@ -13404,12 +13404,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/lycan/summon_wolves.mdl"	// Model.
+		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"3"
 		"IsSummoned"				"1"
-		"ModelScale" 					"1"
+		"ModelScale" 					"1.05"
 		"UnitLabel"			"lycan_wolf"
 
 		// Abilities
