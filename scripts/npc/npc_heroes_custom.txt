@@ -454,7 +454,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"				"necronomicon_archer_mana_burn"	
 		"Ability2"				"harpy_storm_chain_lightning"	
-		"Ability3"				"crystal_maiden_brilliance_aura"	
+		"Ability3"				"warchasers_skeletorus_brilliance_aura"	
 		"Ability4"				""
 		"Ability5"				""
 		"Ability6"				"enigma_midnight_pulse"	
