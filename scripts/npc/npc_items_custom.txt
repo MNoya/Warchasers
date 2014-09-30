@@ -3084,7 +3084,7 @@
 	 
 	  	"Modifiers"
 	  	{
-	   		"aura_Modifier"
+	   		"flute_aura_Modifier"
 	   		{
 	    		"Passive" "1"
 	    		"IsHidden" "1"
@@ -3092,16 +3092,16 @@
 	    		"Aura_Radius" "%Range"
 	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
-	    		"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+	    		//"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY" //lame wc3 mechanic
 
 	    		//Test Effect
                 "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
                 "EffectAttachType" "follow_origin" // "attach_hitloc" ?
                 "EffectLifeDurationScale" "1"
-                "EffectColorA" "255 255 0" //?
+                "EffectColorA" "255 255 0"
 	   		}
 	 
-	   		"aura_ranged"
+	   		"flute_aura"
 	   		{
 	    	
 		    	"IsBuff" "1"
@@ -3109,7 +3109,7 @@
 		    	
 		    	"Properties"
 		    	{
-		     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "10" //or try MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE?
+		     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "10"
 		    	}
 		    }
 	   	}
@@ -3242,11 +3242,11 @@
 	 
 	  	"Modifiers"
 	  	{
-	   		"aura_Modifier"
+	   		"horn_aura_Modifier"
 	   		{
 	    		"Passive" "1"
 	    		"IsHidden" "1"
-	    		"Aura" "aura_armor"
+	    		"Aura" "horn_aura_armor"
 	    		"Aura_Radius" "%Range"
 	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
@@ -3258,7 +3258,7 @@
                 "EffectColorA" "255 255 0"
 	   		}
 	 
-	   		"aura_armor"
+	   		"horn_aura_armor"
 	   		{
 	    	
 		    	"IsBuff" "1"
