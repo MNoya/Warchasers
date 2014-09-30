@@ -1255,71 +1255,6 @@
 		}
 	}
 	
-
-	"item_tome_of_health_datadriven" //bug: health stat doesn't remain after reincarnation
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"1051"	 "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"   //should be a no target item, but it will be used as self-target
-		"BaseClass"             "item_datadriven"
-		"AbilityTextureName"    "item_tome_of_health"
-		"AbilityCastPoint"      "0.0"
-
-		//"ItemCost"              "0"
-		"ItemPermanent"         "0"
-		"ItemInitialCharges"    "1"
-
-		"Modifiers"
-		{
-			"modifier_book_auto_applier"
-			{
-				"Passive"           "1"//a passive modifier will be auto created once equipt to unit
-				"OnCreated"
-				{
-					"SpendCharge"//spend the only charge
-					{}
-					"ApplyModifier"
-					{
-						 "ModifierName"      "modifier_warden_book_of_str_bonus"//the real strength bonus modifier
-						 "Target"            "CASTER"
-					 }
-					 //"FireEffect"              //Optional
-					 //{
-					 //  "EffectName"            "xxx.vpcf"
-					 //  "Target"                "CASTER"
-					 //  "EffectAttachType"      "follow_origin"
-					 //}
-
-					 //"FireSound"//Optional
-
-					"RemoveModifier"
-					{
-						 "Target"        "CASTER"
-						 "ModifierName"      "modifier_book_auto_applier"
-					}
-				}
-			}
-			"modifier_warden_book_of_str_bonus"//the real strength bonus modifier
-			{
-				"IsHidden"              "1"//hidden
-				"Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
-				}
-			 }
-		 }
-		 "AbilitySpecial"
-		 {
-			 "01"
-			 {
-				 "var_type"          "FIELD_INTEGER"
-				 "bonus_health"         "50"
-			 }
-		 }
-
-	}
-
 	"item_tome_of_health"
 	{
 		// General
@@ -1363,21 +1298,15 @@
 			"FireEffect"
 			{
 				"Target" "CASTER"
-				"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_b.vpcf" //"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
 				"EffectAttachType" 	"follow_origin"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
-				"EffectAttachType" 	"follow_overhead"
 			}	
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
-				"EffectAttachType" 	"follow_origin"
-			}			
+			//"FireEffect"
+			//{
+			//	"Target" "CASTER"
+			//	"EffectName"		"particles/generic_hero_status/hero_levelup_flash_hit.vpcf"
+			//	"EffectAttachType" 	"follow_origin"
+			//}			
 		}
 
 	}
@@ -1460,7 +1389,7 @@
 		"AbilityTextureName"			"item_tome_of_agility"
 		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/units/heroes/hero_brewmaster/brewmaster_earth_ambient_noportrait.vpcf"
+		"Effect"						"particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1657,7 +1586,7 @@
 		"AbilityTextureName"			"item_tome_of_agility"
 		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/units/heroes/hero_brewmaster/brewmaster_earth_ambient_noportrait.vpcf"
+		"Effect"						"particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1789,7 +1718,7 @@
 		"AbilityTextureName"			"item_tome_of_intellect"
 		
 		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
+		"Effect"						"particles/econ/courier/courier_trail_03/courier_trail_03.vpcf"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1852,7 +1781,19 @@
 				"Target" "CASTER"
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 				"EffectAttachType" 	"follow_origin"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+				"EffectAttachType" 	"follow_origin"
 			}	
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}				
 		}
 	}
 
@@ -3058,7 +2999,7 @@
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"500"
+		"AbilityCastRange"    			"900"
 		//"AbilityCooldown"    			"0"
 		//"AbilityManaCost"    			"0"
 
@@ -3078,7 +3019,7 @@
 		   	"01"
 		   	{
 			    "var_type" "FIELD_INTEGER"
-			    "Range" "500"
+			    "Range" "900"
 		   	}
 	  	}
 	 
@@ -3088,11 +3029,11 @@
 	   		{
 	    		"Passive" "1"
 	    		"IsHidden" "1"
-	    		"Aura" "aura_ranged"
+	    		"Aura" "flute_aura"
 	    		"Aura_Radius" "%Range"
 	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
-	    		//"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY" //lame wc3 mechanic
+	    		//"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY" doesn't work
 
 	    		//Test Effect
                 "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
@@ -3136,7 +3077,7 @@
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 		
 		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"500"
+		"AbilityCastRange"    			"900"
 		//"AbilityCooldown"    			"0"
 		//"AbilityManaCost"    			"0"
 
@@ -3216,7 +3157,7 @@
 		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
 		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"500"
+		"AbilityCastRange"    			"900"
 		//"AbilityCooldown"    			"0"
 		//"AbilityManaCost"    			"0"
 
@@ -3236,7 +3177,7 @@
 		   	"01"
 		   	{
 			    "var_type" "FIELD_INTEGER"
-			    "Range" "500"
+			    "Range" "900"
 		   	}
 	  	}
 	 

@@ -208,10 +208,59 @@ end
 
 
 function warchasers_avatar_scale( event )
+	--You Only Code Once.
+	Timers:CreateTimer({
+	    			endTime = 0.5, 
+	    			callback = function()
+						event.caster:SetModelScale(1.01)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.10, 
+	    			callback = function()
+						event.caster:SetModelScale(1.02)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.15, 
+	    			callback = function()
+						event.caster:SetModelScale(1.03)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.20, 
+	    			callback = function()
+						event.caster:SetModelScale(1.04)
+					end
+				})
 	Timers:CreateTimer({
 	    			endTime = 0.25, 
 	    			callback = function()
 						event.caster:SetModelScale(1.05)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.30, 
+	    			callback = function()
+						event.caster:SetModelScale(1.06)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.35, 
+	    			callback = function()
+						event.caster:SetModelScale(1.07)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.40, 
+	    			callback = function()
+						event.caster:SetModelScale(1.08)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.45, 
+	    			callback = function()
+						event.caster:SetModelScale(1.09)
 					end
 				})
 	Timers:CreateTimer({
@@ -221,9 +270,57 @@ function warchasers_avatar_scale( event )
 					end
 				})
 	Timers:CreateTimer({
+	    			endTime = 0.55, 
+	    			callback = function()
+						event.caster:SetModelScale(1.11)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.60, 
+	    			callback = function()
+						event.caster:SetModelScale(1.12)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.65, 
+	    			callback = function()
+						event.caster:SetModelScale(1.13)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.70, 
+	    			callback = function()
+						event.caster:SetModelScale(1.14)
+					end
+				})
+	Timers:CreateTimer({
 	    			endTime = 0.75, 
 	    			callback = function()
 						event.caster:SetModelScale(1.15)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.80, 
+	    			callback = function()
+						event.caster:SetModelScale(1.16)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.85, 
+	    			callback = function()
+						event.caster:SetModelScale(1.17)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.90, 
+	    			callback = function()
+						event.caster:SetModelScale(1.18)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 0.95, 
+	    			callback = function()
+						event.caster:SetModelScale(1.19)
 					end
 				})
 	Timers:CreateTimer({
@@ -233,29 +330,126 @@ function warchasers_avatar_scale( event )
 					end
 				})
 	Timers:CreateTimer({
+	    			endTime = 59.05,
+	    			callback = function()
+						event.caster:SetModelScale(1.19)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.10,
+	    			callback = function()
+						event.caster:SetModelScale(1.18)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.15,
+	    			callback = function()
+						event.caster:SetModelScale(1.17)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.20,
+	    			callback = function()
+						event.caster:SetModelScale(1.16)
+					end
+				})
+	Timers:CreateTimer({
 	    			endTime = 59.25,
 	    			callback = function()
 						event.caster:SetModelScale(1.15)
 					end
 				})
 	Timers:CreateTimer({
-	    			endTime = 59.50,
+	    			endTime = 59.30,
+	    			callback = function()
+						event.caster:SetModelScale(1.14)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.25,
+	    			callback = function()
+						event.caster:SetModelScale(1.13)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.25,
+	    			callback = function()
+						event.caster:SetModelScale(1.12)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.25,
+	    			callback = function()
+						event.caster:SetModelScale(1.11)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.30,
 	    			callback = function()
 						event.caster:SetModelScale(1.10)
 					end
 				})
 	Timers:CreateTimer({
-	    			endTime = 59.75,
+	    			endTime = 59.35,
+	    			callback = function()
+						event.caster:SetModelScale(1.09)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.40,
+	    			callback = function()
+						event.caster:SetModelScale(1.08)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.45,
+	    			callback = function()
+						event.caster:SetModelScale(1.07)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.50,
+	    			callback = function()
+						event.caster:SetModelScale(1.06)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.55,
 	    			callback = function()
 						event.caster:SetModelScale(1.05)
 					end
 				})
 	Timers:CreateTimer({
-	    			endTime = 60,
+	    			endTime = 59.60,
+	    			callback = function()
+						event.caster:SetModelScale(1.04)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.65,
+	    			callback = function()
+						event.caster:SetModelScale(1.03)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.70,
+	    			callback = function()
+						event.caster:SetModelScale(1.02)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.75,
+	    			callback = function()
+						event.caster:SetModelScale(1.01)
+					end
+				})
+	Timers:CreateTimer({
+	    			endTime = 59.80,
 	    			callback = function()
 						event.caster:SetModelScale(1)
 					end
 				})
+
 end
 
 

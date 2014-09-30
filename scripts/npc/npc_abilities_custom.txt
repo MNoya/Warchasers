@@ -3038,6 +3038,7 @@
 
 			"defeat_modifier"
 				{
+				"IsHidden"	"1"
 				"Passive"	"1"
 				"OnDestroy"
 					{
@@ -3156,21 +3157,31 @@
 	"final_boss_buff"
 		{
 		"BaseClass"	"ability_datadriven"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"night_stalker_crippling_fear"
 		"Modifiers"
 			{
 			"final_boss_powerup"
 				{
 				"Passive"	"1"
-				"IsHidden"				"1"
-				"AttachEffect"
-					{
-					"EffectName"	"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"  //Change particle
-					"EffectAttachType"	"follow_overhead"
-					"Target"		"CASTER"
-					"EffectLifeDurationScale" "1"
-					}
+				"IsHidden"				"0"
+				"OnCreated"
+				{
+					"AttachEffect"
+						{
+						"EffectName"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf" //needs a better aura particle glow
+						"EffectAttachType"	"follow_origin"
+						"Target"		"CASTER"
+						"EffectLifeDurationScale" "1"
+						}
+					"AttachEffect"
+						{
+						"EffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"		"CASTER"
+						"EffectLifeDurationScale" "1"
+						}
+				}
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"1"
@@ -4650,12 +4661,12 @@
 				"Target"	"CASTER"
 				"ModifierName"	"warchasers_optimusprimo_avatar_modifier"
 			}
-			//"RunScript"
-			//{
-			//	"ScriptFile"	"abilities.lua"
-			//	"Function"	"warchasers_avatar_scale"
-			//	"Target"	"CASTER"
-			//}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"warchasers_avatar_scale"
+				"Target"	"CASTER"
+			}
 			"FireSound"
 			{
 				"Target"	"CASTER"
@@ -4691,10 +4702,10 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"20"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"500"
+					//"MODIFIER_PROPERTY_MODEL_SCALE"	"1.25"     gives unhandled 
 				}
 				"States"
 				{
-					"MODIFIER_PROPERTY_MODEL_SCALE"	"1.25"
 					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}

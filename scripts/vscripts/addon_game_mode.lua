@@ -63,6 +63,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_troll_warlord", context)
 	PrecacheUnitByNameSync("npc_dota_hero_slark", context)
 	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
+	PrecacheUnitByNameSync("npc_dota_hero_keeper_of_the_light", context)
+	PrecacheUnitByNameSync("npc_dota_hero_night_stalker", context)
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
