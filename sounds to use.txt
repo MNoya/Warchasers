@@ -1,0 +1,45 @@
+list of sounds to use
+
+"DOTA_Item.Armlet.Activate"				Door Open
+ui_barn_door_open_01	"BARNDOORS_OPEN"				
+ui_barn_door_close_01	"BARNDOORS_CLOSE"
+crafting_slide			"ui.crafting_slotslide"			
+
+"DOTA_Item.Mjollnir.Loop"				Lightning Shield Buff
+
+"DOTA_Item.VeilofDiscord.Activate"      Discovery
+"DOTA_Item.DustOfAppearance.Activate"	Discovery
+
+"Hero_KeeperOfTheLight.Recall.End" 		After Teleport
+portal_disappear
+portal_appear		
+
+"General.FemaleLevelUp"					Circle 1
+"General.MaleLevelUp"					Circle 2
+
+stinger_short 	"Loot_Drop_Stinger_Short"	Activation
+
+"Hero_Warlock.ShadowWord" //loops on target Hell
+
+"Hero_Chen.HolyPersuasionEnemy"   		Scepter of Mastery
+
+"Hero_Chen.PenitenceCast"				Call To Arms?
+
+"Hero_Necrolyte.ReapersScythe.Target"	Necro Spawn
+"Hero_Necrolyte.ReapersScythe.Cast"		Necro Spawn
+
+ui/inventory sounds						Many sounds WorldDrops and Pickups
+
+map_quest_highlight		"ui.quest_highlight"
+trophy_new				"ui.trophy_new"
+
+/music/valve_dota_001/music (lol)
+countdown
+ui_world_map
+
+/music/valve_ti4/music
+ui_main_01
+ui_startup_01
+
+/ambient/sheep
+/ambient/test/test_muse

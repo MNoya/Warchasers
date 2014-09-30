@@ -22,7 +22,7 @@ Adjust blues in fog
 
 - Sounds -
 events on every custom_unit
-on spawns
+on spawns STARTED
 on door open
 on new level entered
 on teleport
