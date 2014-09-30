@@ -1,5 +1,9 @@
-function hint1(trigger)
-	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> Kappa", 0, 0)
+function hint_test(trigger)
+	print("Start")
+	--GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> Kappa", 0, 0)
+  	--EmitGlobalSound() --
+  	--EmitGlobalSound("DOTA_Item.DustOfAppearance.Activate") --Discovery
+  	--EmitGlobalSound("Hero_Chen.HolyPersuasionEnemy") --Dominated, need to precache Chen
 end
 
 function hint_key1(trigger) 
@@ -12,15 +16,29 @@ function hint_key3(trigger)
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You need the key to open this door.", 0, 0) 
 end
 
-function hint_keydrop(trigger) 
-	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - A key has been dropped!", 0, 0) 
+function hint_keydrop(trigger)
+	Timers:CreateTimer({
+    endTime = 3,
+    callback = function()
+      	EmitGlobalSound("Item.DropGemWorld") --Drop Sound
+		GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - A key has been dropped!", 0, 0) 
+    end
+  	})
+	
 end
 
-function announce_open_doors(trigger) 
-	GameRules:SendCustomMessage("The doors have been opened.", 0, 0) 
+function announce_open_doors(trigger)
+  	Timers:CreateTimer({
+    endTime = 2,
+    callback = function()
+      	EmitGlobalSound("ui.crafting_slotslide") --Minor Door open
+		GameRules:SendCustomMessage("The doors have been opened.", 0, 0)
+    end
+  	})
 end
  
 function announce_level2(trigger) 
+	EmitGlobalSound("BARNDOORS_OPEN")
 	GameRules:SendCustomMessage("Level <font color='#2E64FE'>2</font> has been opened. Fools enter at its own peril.", 0, 0) 
 end
 
@@ -50,7 +68,9 @@ function soulkeeper_warning0(trigger)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, nil, nil, DOTA_TEAM_BADGUYS)
 	local rotation = Vector(-7936,-3072,498)
 	necro:SetForwardVector(rotation)
-	EmitGlobalSound("DOTAMusic_Stinger.005")
+	--EmitGlobalSound("DOTAMusic_Stinger.005")
+	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
+  	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!", 0,0 )
 	GameRules:SendCustomMessage("Still, you are entitled to your price. Step on a platform and let your hearts determine your prize...", 0,0)
 end
@@ -63,7 +83,8 @@ end
 function soulkeeper_warning2(trigger) 
 	local position = Vector(3449,6687,521)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
-	EmitGlobalSound("DOTAMusic_Stinger.005")
+	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
+  	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far!",0,0)
 	GameRules:SendCustomMessage("However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
 end
@@ -77,7 +98,8 @@ function soulkeeper_warning3(trigger)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
 	local rotation = Vector(2517,6680,512)
 	necro:SetForwardVector(rotation)
-	EmitGlobalSound("DOTAMusic_Stinger.007")
+	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
+  	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
 end
 
@@ -86,7 +108,8 @@ function soulkeeper_warning_tanks(trigger)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
 	local rotation = Vector(-5746.03 -713.903,416)
 	necro:SetForwardVector(rotation)
-	EmitGlobalSound("Hero_Necrolyte.ReapersScythe.Cast")
+	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
+  	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redemption grows tiresome...<br> we'll see how you fare in these Dwarven contraptions!<br>Step on the magic circle to begin your jorney.",0,0)
 end
 

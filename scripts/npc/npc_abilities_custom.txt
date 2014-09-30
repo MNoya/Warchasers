@@ -5909,7 +5909,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_LifeStealer.Consume"
 						"Target"			"CASTER"
 					}
 				}
@@ -6170,7 +6170,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_TrollWarlord.BattleTrance.Cast.Team"
 						"Target"			"CASTER"
 					}
 				}
@@ -6222,7 +6222,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_Enigma.Demonic_Conversion"
 						"Target"			"CASTER"
 					}
 				}
@@ -6274,7 +6274,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_Furion.TreantSpawn"
 						"Target"			"CASTER"
 					}
 				}
@@ -6378,7 +6378,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_Meepo.Poof.End"
 						"Target"			"CASTER"
 					}
 				}
@@ -6432,7 +6432,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_Enigma.Demonic_Conversion"
 						"Target"			"CASTER"
 					}
 				}
@@ -6589,7 +6589,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_KeeperOfTheLight.Spawn"
 						"Target"			"CASTER"
 					}
 				}
@@ -6693,7 +6693,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"EffectName" "Hero_Enigma.Black_Hole.Stop"
 						"Target"			"CASTER"
 					}
 				}

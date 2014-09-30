@@ -7,6 +7,7 @@ function Teleporter(trigger)
         trigger.activator:Stop()
         -- Refocus the camera of said player to the position of the teleported hero.
         SendToConsole("dota_camera_center")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 end
 
 function TeleporterHeavenHell(trigger)
@@ -24,6 +25,7 @@ function TeleporterHeaven(trigger)
         spot_heaven = Vector(-6734, 5082, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
         print("Entered Heaven")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -75,6 +77,7 @@ function TeleporterHell(trigger)
         local spot_hell = Vector(-6571, 3002, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
         print("Entered Hell")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")  --change to a different sound
 
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -131,6 +134,7 @@ function TeleporterSecret(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
@@ -139,12 +143,14 @@ function TeleporterSecret2(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
 function TeleportAtBarrier(trigger)
     GameRules:SendCustomMessage("<font color='#0000FF'>SUCCESS</font><br><br>", 0, 0)        
     GameRules:SendCustomMessage("Both circles have been activated!<br>The magical barrier has been dispelled and now the path is clear",0,0)
+    EmitGlobalSound("General.MaleLevelUp")
     local point =  Entities:FindByName( nil, "teleport_circles_down" ):GetAbsOrigin()
     --mass teleport
     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -152,7 +158,7 @@ function TeleportAtBarrier(trigger)
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
             entHero:Stop()
-            SendToConsole("dota_camera_center")                
+            SendToConsole("dota_camera_center")              
         end
     end
 
