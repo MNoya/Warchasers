@@ -209,7 +209,7 @@ end
 
 function warchasers_avatar_scale( event )
 	--You Only Code Once.
-	Timers:CreateTimer({
+	--[[Timers:CreateTimer({
 	    			endTime = 0.5, 
 	    			callback = function()
 						event.caster:SetModelScale(1.01)
@@ -448,7 +448,25 @@ function warchasers_avatar_scale( event )
 	    			callback = function()
 						event.caster:SetModelScale(1)
 					end
+				})--]]
+
+	for i=1,60 do --60 intervals
+		Timers:CreateTimer({
+	    			endTime = i/100, --every 0.01 second, 0.6sec duration
+	    			callback = function()
+						event.caster:SetModelScale(1+i/50) 	--increment by .02 each time, up to 1.20 size
+					end
 				})
+	end
+
+	for i=1,60 --60 intervals
+		Timers:CreateTimer({
+	    			endTime = 59.4 + (i/100), --every 0.01 second, 0.6sec duration
+	    			callback = function()
+						event.caster:SetModelScale(1.20-i/50)	--decrease by .02 each time, from 1.20 to 1
+					end
+				})
+	end
 
 end
 
