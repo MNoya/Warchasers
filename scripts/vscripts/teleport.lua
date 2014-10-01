@@ -25,7 +25,7 @@ function TeleporterHeaven(trigger)
         spot_heaven = Vector(-6734, 5082, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
         print("Entered Heaven")
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+        EmitGlobalSound("DOTAMusic_Stinger.003") --EmitGlobalSound("valve_dota_001.stinger.respawn") how to precache?
 
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -77,7 +77,7 @@ function TeleporterHell(trigger)
         local spot_hell = Vector(-6571, 3002, 40)
         local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
         print("Entered Hell")
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")  --change to a different sound
+        EmitGlobalSound("DOTAMusic_Stinger.004") --EmitGlobalSound("terrorblade_arcana.stinger.respawn") how to precache?
 
         --mass teleport
         for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -134,7 +134,7 @@ function TeleporterSecret(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+        EmitGlobalSound("DOTAMusic_Stinger.007")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
@@ -143,7 +143,7 @@ function TeleporterSecret2(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+        EmitGlobalSound("DOTAMusic_Stinger.007")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
@@ -170,6 +170,7 @@ function TeleporterTanks(trigger)
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 end
 
 function TeleporterTanksStart(trigger)
@@ -195,6 +196,7 @@ function TeleporterFinal(trigger)
 
 		--Teleport the real hero who owns the tank
         local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
+        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
         local nPlayerID = trigger.activator:GetPlayerOwnerID()
         local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )

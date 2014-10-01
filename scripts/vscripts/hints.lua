@@ -1,9 +1,7 @@
 function hint_test(trigger)
 	print("Start")
 	--GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> Kappa", 0, 0)
-  	--EmitGlobalSound() --
-  	--EmitGlobalSound("DOTA_Item.DustOfAppearance.Activate") --Discovery
-  	--EmitGlobalSound("Hero_Chen.HolyPersuasionEnemy") --Dominated, need to precache Chen
+	--EmitGlobalSound("valve_dota_001.stinger.respawn")
 end
 
 function hint_key1(trigger) 
@@ -38,20 +36,28 @@ function announce_open_doors(trigger)
 end
  
 function announce_level2(trigger) 
-	EmitGlobalSound("BARNDOORS_OPEN")
 	GameRules:SendCustomMessage("Level <font color='#2E64FE'>2</font> has been opened. Fools enter at its own peril.", 0, 0) 
+	EmitGlobalSound("DOTAMusic_Stinger.007")
 end
 
 function miniboss2_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> COME, HEROES!<br>COME AND CLAIM THE REWARD FOR YOUR SO CALLED HONOR!", 0,0)
+	EmitGlobalSound("DOTAMusic.Tutorial_Ducker")
 end
 
 function miniboss2_dead(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> UNTIL NEXT TIME...HEROES...", 0,0)
+	--StopSound("DOTAMusic.Tutorial_Ducker")
 end
 
 function spiderhall_warning(trigger)
 	GameRules:SendCustomMessage("BEHOLD THE HALL OF SPIDERS! If you have the courage, your salvation lies at the end.",0,0)
+		Timers:CreateTimer({ useGameTime = false, endTime = 2,
+            callback = function() EmitGlobalSound("BARNDOORS_OPEN") end
+        })
+        Timers:CreateTimer({ useGameTime = false, endTime = 3,
+            callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+        })
 end
 
 function spiderhall_hint(trigger) 
@@ -60,6 +66,7 @@ end
 
 function spiderhall_kill(trigger)
 	GameRules:SendCustomMessage("All Spiders were destroyed.", 0,0)
+	EmitGlobalSound("Hero_Omniknight.GuardianAngel.Cast")
 end
 
 
@@ -91,6 +98,10 @@ end
 
 function circle_zapsappers(trigger)
 	GameRules:SendCustomMessage("The Magic of the circle finds no sappers to destroy.",0,0)
+	EmitGlobalSound("BARNDOORS_OPEN")
+    Timers:CreateTimer({ useGameTime = false, endTime = 3,
+        callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+    })
 end 
 
 function soulkeeper_warning3(trigger)
@@ -126,7 +137,8 @@ end
 function boss_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font>  So you dare to challenge the Shadow Lord? <br>I will feast on your lost souls and show you no mercy!!<br>Come and accept your fate!",0,0)
 	local ShakeOn = Vector(3558, -7210, 160)
-	ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true) 
+	ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
+	EmitGlobalSound("DOTAMusic_Diretide_Finale")
 	--[[vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake ]]
 end
 

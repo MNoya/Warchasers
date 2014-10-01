@@ -22,10 +22,10 @@ Adjust blues in fog
 
 - Sounds -
 events on every custom_unit
-on spawns STARTED
-on door open STARTED
-on new level entered
-on teleport STARTED
+on spawns DONE
+on door open DONE
+on new level entered STARTED
+on teleport DONE
 on boss defeat
 on creep skills
 on item usage.

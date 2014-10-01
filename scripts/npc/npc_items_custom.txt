@@ -3291,6 +3291,11 @@
 						"EffectAttachType" 	"follow_origin"
 						"EffectRadius"				"200"
 					}
+					"FireEffect"
+					{
+						"EffectName"	"DOTA_Item.Mjollnir.Activate"
+						"Target"		"CASTER"
+					}
 				}
 				"ThinkInterval"	"1"
 				"OnIntervalThink"

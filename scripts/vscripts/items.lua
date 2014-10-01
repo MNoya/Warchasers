@@ -146,6 +146,11 @@ function CheckForKey(trigger)
 				print("Obstructions disabled")
 
                 hero:RemoveItem(Item)
+
+                EmitGlobalSound("BARNDOORS_OPEN")
+                Timers:CreateTimer({ useGameTime = false, endTime = 1,
+                    callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+                })
             end
         end              
     end
@@ -183,6 +188,11 @@ function CheckForKey2(trigger)
                 print("Obstructions disabled")
 
                 hero:RemoveItem(Item)
+
+                EmitGlobalSound("BARNDOORS_OPEN")
+                Timers:CreateTimer({ useGameTime = false, endTime = 1,
+                    callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+                })
             end
         end              
     end
@@ -220,6 +230,11 @@ function CheckForKey3(trigger)
                 print("Obstructions disabled")
 
                 hero:RemoveItem(Item)
+
+                EmitGlobalSound("BARNDOORS_OPEN")
+                Timers:CreateTimer({ useGameTime = false, endTime = 1,
+                    callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+                })
             end
         end              
     end

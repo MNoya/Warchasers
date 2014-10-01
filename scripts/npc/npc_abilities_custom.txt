@@ -2206,7 +2206,7 @@
 						
 						"ItemName"					"item_red_drake"
 						"ItemCount"					"1"
-						"ItemChargeCount"	        "3"
+						"ItemChargeCount"	        "1"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
@@ -4676,7 +4676,7 @@
 			"FireEffect"
 			{
 							"Target" "CASTER"
-							"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+							"EffectName"		"particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf"
 							"EffectAttachType" "follow_origin"
 							"EffectLifeDurationScale" "1"
 			}
@@ -4702,7 +4702,6 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"20"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"500"
-					//"MODIFIER_PROPERTY_MODEL_SCALE"	"1.25"     gives unhandled 
 				}
 				"States"
 				{
@@ -6170,7 +6169,7 @@
 					}
 					"FireSound"
 					{
-						"EffectName" "Hero_TrollWarlord.BattleTrance.Cast.Team"
+						"EffectName" "Hero_TrollWarlord.WhirlingAxes.Ranged" //"Hero_TrollWarlord.BattleTrance.Cast.Team"
 						"Target"			"CASTER"
 					}
 				}
