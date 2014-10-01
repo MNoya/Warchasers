@@ -454,6 +454,7 @@ end
 
 function SpawnLanternWeavers(event)
         local position = Vector(-2435,861,129)
+        EmitGlobalSound("DOTAMusic_Stinger.005")
         local rangedweaver = CreateUnitByName("npc_nerubian_webspinner", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
@@ -464,6 +465,7 @@ end
 
 function SpawnLanternTrolls(event)
         local position = Vector(-1678,844,129)
+        EmitGlobalSound("DOTAMusic_Stinger.005")
         local troll1 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll2 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll3 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
@@ -498,6 +500,7 @@ end
 
 function SpawnCircleActivated1(event)
         GameRules:SendCustomMessage("The circle has been activated!",0,0)
+        EmitGlobalSound("Loot_Drop_Stinger_Short")
 
         if not GameRules.FIRST_CIRCLE_ACTIVADED then
                 GameRules.FIRST_CIRCLE_ACTIVADED = true
@@ -509,6 +512,7 @@ function SpawnCircleActivated1(event)
                 --Spawns on the way back
                 position = Vector(3870, 5212, 394)
                 rotationSouth = Vector(3755,-4456,128)
+                --red lizard area
                 local lizard2 = CreateUnitByName("npc_blue_lizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 lizard2:SetForwardVector(rotationSouth)
                 local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
@@ -518,25 +522,7 @@ function SpawnCircleActivated1(event)
                 local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost3:SetForwardVector(rotationSouth)
                 local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                ghost4:SetForwardVector(rotationSouth)
-
-                position = Vector(2558,3226,150)
-                rotationWest = Vector(-6801,4736,126)
-                local weaver1 = CreateUnitByName("npc_nerubian_webspinner" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                weaver1:SetForwardVector(rotationWest)
-                local weaver2 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                weaver2:SetForwardVector(rotationWest)
-                local weaver3 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                weaver3:SetForwardVector(rotationWest)
-                local ghoul1 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                ghoul1:SetForwardVector(rotationWest)
-                local ghoul2 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                ghoul2:SetForwardVector(rotationWest)
-                local ghoul3 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                ghoul3:SetForwardVector(rotationWest)
-                local ghoul4 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                ghoul4:SetForwardVector(rotationWest)
-                  
+                ghost4:SetForwardVector(rotationSouth)             
 
                 position = Vector(416, 4415, 128)
                 rotationWest = Vector(-6801,4736,126)
@@ -579,6 +565,8 @@ end
 
 function SpawnCircleActivated2(event)
         GameRules:SendCustomMessage("The circle has been activated!",0,0)
+        EmitGlobalSound("Loot_Drop_Stinger_Short")
+
         print(GameRules.FIRST_CIRCLE_ACTIVADED)
         if not GameRules.FIRST_CIRCLE_ACTIVADED then
                 GameRules.FIRST_CIRCLE_ACTIVADED = true
@@ -586,6 +574,35 @@ function SpawnCircleActivated2(event)
                 
                 GameRules:SendCustomMessage("Now, find and activate the other magic circle.<br><br>",0,0)
                 --Spawns on the way back
+                --ziggurat area
+                position = Vector(2558,3226,150)
+                rotationWest = Vector(-6801,4736,126)
+                local weaver1 = CreateUnitByName("npc_nerubian_webspinner" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver1:SetForwardVector(rotationWest)
+                local weaver2 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver2:SetForwardVector(rotationWest)
+                local weaver3 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                weaver3:SetForwardVector(rotationWest)
+                local ghoul1 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul1:SetForwardVector(rotationWest)
+                local ghoul2 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul2:SetForwardVector(rotationWest)
+                local ghoul3 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul3:SetForwardVector(rotationWest)
+                local ghoul4 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghoul4:SetForwardVector(rotationWest)
+
+                --sapper area
+                position = Vector(3870, 5212, 394)
+                rotationSouth = Vector(3755,-4456,128)
+                local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost1:SetForwardVector(rotationSouth)
+                local ghost2 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost2:SetForwardVector(rotationSouth)
+                local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost3:SetForwardVector(rotationSouth)
+                local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost4:SetForwardVector(rotationSouth)  
                 
         end
 end

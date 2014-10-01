@@ -80,6 +80,8 @@ function Precache( context )
 	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
 	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
