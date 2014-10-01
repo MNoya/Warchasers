@@ -208,266 +208,27 @@ end
 
 
 function warchasers_avatar_scale( event )
-	--You Only Code Once.
-	--[[Timers:CreateTimer({
-	    			endTime = 0.5, 
-	    			callback = function()
-						event.caster:SetModelScale(1.01)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.10, 
-	    			callback = function()
-						event.caster:SetModelScale(1.02)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.15, 
-	    			callback = function()
-						event.caster:SetModelScale(1.03)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.20, 
-	    			callback = function()
-						event.caster:SetModelScale(1.04)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.25, 
-	    			callback = function()
-						event.caster:SetModelScale(1.05)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.30, 
-	    			callback = function()
-						event.caster:SetModelScale(1.06)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.35, 
-	    			callback = function()
-						event.caster:SetModelScale(1.07)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.40, 
-	    			callback = function()
-						event.caster:SetModelScale(1.08)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.45, 
-	    			callback = function()
-						event.caster:SetModelScale(1.09)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.50, 
-	    			callback = function()
-						event.caster:SetModelScale(1.10)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.55, 
-	    			callback = function()
-						event.caster:SetModelScale(1.11)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.60, 
-	    			callback = function()
-						event.caster:SetModelScale(1.12)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.65, 
-	    			callback = function()
-						event.caster:SetModelScale(1.13)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.70, 
-	    			callback = function()
-						event.caster:SetModelScale(1.14)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.75, 
-	    			callback = function()
-						event.caster:SetModelScale(1.15)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.80, 
-	    			callback = function()
-						event.caster:SetModelScale(1.16)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.85, 
-	    			callback = function()
-						event.caster:SetModelScale(1.17)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.90, 
-	    			callback = function()
-						event.caster:SetModelScale(1.18)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 0.95, 
-	    			callback = function()
-						event.caster:SetModelScale(1.19)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 1, 
-	    			callback = function()
-						event.caster:SetModelScale(1.20)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.05,
-	    			callback = function()
-						event.caster:SetModelScale(1.19)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.10,
-	    			callback = function()
-						event.caster:SetModelScale(1.18)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.15,
-	    			callback = function()
-						event.caster:SetModelScale(1.17)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.20,
-	    			callback = function()
-						event.caster:SetModelScale(1.16)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.25,
-	    			callback = function()
-						event.caster:SetModelScale(1.15)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.30,
-	    			callback = function()
-						event.caster:SetModelScale(1.14)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.25,
-	    			callback = function()
-						event.caster:SetModelScale(1.13)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.25,
-	    			callback = function()
-						event.caster:SetModelScale(1.12)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.25,
-	    			callback = function()
-						event.caster:SetModelScale(1.11)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.30,
-	    			callback = function()
-						event.caster:SetModelScale(1.10)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.35,
-	    			callback = function()
-						event.caster:SetModelScale(1.09)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.40,
-	    			callback = function()
-						event.caster:SetModelScale(1.08)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.45,
-	    			callback = function()
-						event.caster:SetModelScale(1.07)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.50,
-	    			callback = function()
-						event.caster:SetModelScale(1.06)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.55,
-	    			callback = function()
-						event.caster:SetModelScale(1.05)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.60,
-	    			callback = function()
-						event.caster:SetModelScale(1.04)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.65,
-	    			callback = function()
-						event.caster:SetModelScale(1.03)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.70,
-	    			callback = function()
-						event.caster:SetModelScale(1.02)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.75,
-	    			callback = function()
-						event.caster:SetModelScale(1.01)
-					end
-				})
-	Timers:CreateTimer({
-	    			endTime = 59.80,
-	    			callback = function()
-						event.caster:SetModelScale(1)
-					end
-				})--]]
-
-	for i=1,60 do --60 intervals
+	--Scale Up
+	for i=1,100 do
 		Timers:CreateTimer({
-	    			endTime = i/100, --every 0.01 second, 0.6sec duration
+	    			endTime = i/75, 
 	    			callback = function()
-						event.caster:SetModelScale(1+i/50) 	--increment by .02 each time, up to 1.20 size
+						event.caster:SetModelScale(1+ (i/500) ) --1.20
+						if i==100 then print("Scaled to 1 + " .. i/500 .. " in " .. endTime .. " seconds.") end
 					end
 				})
 	end
 
-	for i=1,60 --60 intervals
+	--Scale Down
+	for i=1,100 do
 		Timers:CreateTimer({
-	    			endTime = 59.4 + (i/100), --every 0.01 second, 0.6sec duration
+	    			endTime = 59 + (i/50),
 	    			callback = function()
-						event.caster:SetModelScale(1.20-i/50)	--decrease by .02 each time, from 1.20 to 1
+						event.caster:SetModelScale(1.20-i/500)
+					if i==100 then print("Scaled to 1 + " .. i/500 .. " in " .. endTime .. " seconds.") end
 					end
 				})
 	end
-
 end
 
 
