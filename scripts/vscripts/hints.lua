@@ -67,6 +67,15 @@ end
 function spiderhall_kill(trigger)
 	GameRules:SendCustomMessage("All Spiders were destroyed.", 0,0)
 	EmitGlobalSound("Hero_Omniknight.GuardianAngel.Cast")
+	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 3000)
+	print("Creeps Found")
+	 for i = 1, #allCreepsNear, 1 do
+	 	local creep = allCreepsNear[i]
+        local name = creep:GetUnitName()
+        if name == "npc_hell_spider" then
+        	creep:ForceKill(true)
+        end
+    end
 end
 
 
@@ -97,8 +106,25 @@ function soulkeeper_warning2(trigger)
 end
 
 function circle_zapsappers(trigger)
-	GameRules:SendCustomMessage("The Magic of the circle finds no sappers to destroy.",0,0)
-	EmitGlobalSound("BARNDOORS_OPEN")
+	GameRules:SendCustomMessage("The Magic of the circle destroyed nearby sappers.",0,0)
+	--kill sappers
+	EmitGlobalSound("Axe_axe_death_05")
+	
+	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 1000)
+	print("Creeps Found")
+	 for i = 1, #allCreepsNear, 1 do
+	 	local creep = allCreepsNear[i]
+        local name = creep:GetUnitName()
+        if name == "npc_sapper" then
+        	creep:ForceKill(true)
+        end
+    end
+
+
+	Timers:CreateTimer({ useGameTime = false, endTime = 2,
+        callback = function() 	EmitGlobalSound("BARNDOORS_OPEN") end
+    })
+
     Timers:CreateTimer({ useGameTime = false, endTime = 3,
         callback = function() EmitGlobalSound("ui.crafting_slotslide") end
     })

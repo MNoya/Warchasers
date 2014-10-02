@@ -122,12 +122,12 @@ function TeleporterHell(trigger)
         
 end
 
---[[function TeleporterBack(trigger)
+function TeleporterBack(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
-end]]
+end
 
 function TeleporterSecret(trigger)
         local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
@@ -222,5 +222,19 @@ function TeleporterFinal(trigger)
 		
 		--Remove Tank from the game
         --trigger.activator:ForceKill(true)
+
+end
+
+function TeleporterDarkForest(trigger)
+    --mass teleport
+    local point =  Vector(0,-322,128)
+    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            FindClearSpaceForUnit(entHero, point, false)
+            entHero:Stop()
+            SendToConsole("dota_camera_center")              
+        end
+    end
 
 end

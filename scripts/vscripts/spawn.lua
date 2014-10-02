@@ -510,55 +510,100 @@ function SpawnCircleActivated1(event)
 
                 GameRules:SendCustomMessage("Now, find and activate the other magic circle.<br><br>",0,0)
                 --Spawns on the way back
-                position = Vector(3870, 5212, 394)
+                position = Vector(3870,5148,394)
                 rotationSouth = Vector(3755,-4456,128)
                 --red lizard area
                 local lizard2 = CreateUnitByName("npc_blue_lizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 lizard2:SetForwardVector(rotationSouth)
+
+                position = Vector(3739,5058,385)
                 local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost1:SetForwardVector(rotationSouth)
+
+                position = Vector(4054,5059,400)
                 local ghost2 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost2:SetForwardVector(rotationSouth)
+
+                position = Vector(4036,5424,393)
                 local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost3:SetForwardVector(rotationSouth)
+
+                position = Vector(3730,5405, 393)
                 local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost4:SetForwardVector(rotationSouth)             
 
-                position = Vector(416, 4415, 128)
+                --2nd pack sludges
+                position = Vector(178,4676,128)
                 rotationWest = Vector(-6801,4736,126)
                 local bigsludge1 = CreateUnitByName("npc_big_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 bigsludge1:SetForwardVector(rotationWest)
+
+                position = Vector(214,4546,128)
                 local medsludge1 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 medsludge1:SetForwardVector(rotationWest)
+
+                position = Vector(302,4651,128)
                 local medsludge2 = CreateUnitByName("npc_medium_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 medsludge2:SetForwardVector(rotationWest)
+
+                position = Vector(296,4460,128)
                 local smallsludge1 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 smallsludge1:SetForwardVector(rotationWest)
+
+                position = Vector(305,4576,128)
                 local smallsludge2 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 smallsludge2:SetForwardVector(rotationWest)
+
+                position = Vector(290,4576,128)
                 local smallsludge3 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 smallsludge3:SetForwardVector(rotationWest)
+
+                position = Vector(305,4415,128)
                 local smallsludge4 = CreateUnitByName("npc_small_sludge" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 smallsludge4:SetForwardVector(rotationWest)
 
 
-                position = Vector(-1512, 5841, 128)
+                position = Vector(-1370,5814, 128)
                 local wizard1 = CreateUnitByName("npc_big_wizard" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(-1114,5814, 128)
                 local elemental1 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(-1114,5735, 128)
                 local elemental2 = CreateUnitByName("npc_water_elemental_nonspawned" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(-1178,5814, 128)               
                 local mudgolem1 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                 position = Vector(-1178,5735, 128)
                 local mudgolem2 = CreateUnitByName("npc_mud_golem" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(-1438, 5948, 129)
                 local priest1 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector (-1310, 5564, 128)
                 local priest2 = CreateUnitByName("npc_priest" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
 
 
                 position = Vector(751, 5375, 128)
                 local meleeskeleton1 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(751, 5247, 128)
                 local meleeskeleton2 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(751, 5503, 128)
                 local meleeskeleton3 = CreateUnitByName("npc_skeleton_warrior" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                local burnskeleton1 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                local burnskeleton2 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(652, 5167, 128)
                 local frostskeleton1 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(652, 5295, 128)
+                local burnskeleton2 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(652, 5423, 128)
+                local burnskeleton1 = CreateUnitByName("npc_burning_skeleton_archer"  , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+
+                position = Vector(652, 5551, 128)
                 local frostskeleton2 = CreateUnitByName( "npc_frost_skeleton_archer" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         end
 end
@@ -574,35 +619,72 @@ function SpawnCircleActivated2(event)
                 
                 GameRules:SendCustomMessage("Now, find and activate the other magic circle.<br><br>",0,0)
                 --Spawns on the way back
+
                 --ziggurat area
-                position = Vector(2558,3226,150)
+                position = Vector(3967, 7705, 384)
                 rotationWest = Vector(-6801,4736,126)
                 local weaver1 = CreateUnitByName("npc_nerubian_webspinner" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 weaver1:SetForwardVector(rotationWest)
+
+                position = Vector(3801, 7808, 384)
                 local weaver2 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 weaver2:SetForwardVector(rotationWest)
+
+                position = Vector(3811, 7624, 384)
                 local weaver3 = CreateUnitByName("npc_nerubian_melee" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 weaver3:SetForwardVector(rotationWest)
+
+                position = Vector(3616, 7880, 392)         
                 local ghoul1 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghoul1:SetForwardVector(rotationWest)
+
+                position = Vector(3616, 7780, 392)   
                 local ghoul2 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghoul2:SetForwardVector(rotationWest)
+
+                position = Vector(3616, 7680, 392)   
                 local ghoul3 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghoul3:SetForwardVector(rotationWest)
+
+                position = Vector(3616, 7580, 392)   
                 local ghoul4 = CreateUnitByName("npc_ghoul" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghoul4:SetForwardVector(rotationWest)
 
                 --sapper area
-                position = Vector(3870, 5212, 394)
                 rotationSouth = Vector(3755,-4456,128)
+
+                position = Vector(2335,7704,256)
                 local ghost1 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost1:SetForwardVector(rotationSouth)
+
+                position = Vector(1835,7704,256)
                 local ghost2 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost2:SetForwardVector(rotationSouth)
+
+                position = Vector(1335,7704,256)
                 local ghost3 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost3:SetForwardVector(rotationSouth)
+
+                position = Vector(835,7704,256)
                 local ghost4 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 ghost4:SetForwardVector(rotationSouth)  
+
+                position = Vector(541, 7052, 256)
+                local ghost6 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost6:SetForwardVector(rotationSouth) 
+
+                position = Vector(181, 6693, 256)
+                local ghost7 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost7:SetForwardVector(rotationSouth) 
+
+                position = Vector(-161, 7054, 256)
+                local ghost8 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost8:SetForwardVector(rotationSouth) 
+
+                position = Vector(171, 7424, 256)
+                local ghost9 = CreateUnitByName("npc_ghost" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                ghost9:SetForwardVector(rotationSouth) 
+
                 
         end
 end
@@ -612,18 +694,40 @@ end
 function SpawnSappers(event)
         print("Don not run, we are your friends!")
 
-        position = Vector(7418,6661,640)
-        rotationEast = Vector(-3958, 6636,416)
-        --local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        --sapper1:SetForwardVector(rotationEast)
+        rotation = Vector(-3958, 6636,416) --west of the bridge
 
-        position = Vector(7397, 6554, 640)
-        local sapper2 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        sapper2:SetForwardVector(rotationEast)
+        EmitGlobalSound("Axe_axe_ability_berserk_03") --Come to Axe!
+        if GameRules.PLAYER_COUNT >= 1 then
+                position = Vector(7418,6661,640)
+                local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper1:SetForwardVector(rotation)
+        end
 
-        position = Vector(7397, 6762, 640)
-        local sapper3 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-        sapper3:SetForwardVector(rotationEast)
+
+
+        if GameRules.PLAYER_COUNT >= 2 then
+                position = Vector(7397, 6554, 640)
+                self.sappers[2] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper2:SetForwardVector(rotation)
+        end
+
+        if GameRules.PLAYER_COUNT >= 3 then
+                position = Vector(7397, 6762, 640)
+                self.sappers[3] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper3:SetForwardVector(rotation)
+        end
+
+        if GameRules.PLAYER_COUNT >= 4 then
+                position = Vector(7535, 6790, 640)
+                self.sappers[4] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper4:SetForwardVector(rotation)
+        end
+
+        if GameRules.PLAYER_COUNT >= 5 then
+                position = Vector(7535, 6500, 640)
+                self.sappers[5] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper5:SetForwardVector(rotation)
+        end
 
 
 end
