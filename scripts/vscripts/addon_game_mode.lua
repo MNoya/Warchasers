@@ -69,6 +69,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
 	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
 	PrecacheUnitByNameSync("npc_skeleton_archer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_broodmother", context)
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -473,7 +474,7 @@ function Warchasers:OnHeroInGame(hero)
 	print("Total Players" .. GameRules.PLAYER_COUNT)
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	Timers:CreateTimer({
-			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+			endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 			callback = function()
 				giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
 			end

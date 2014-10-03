@@ -1667,7 +1667,7 @@
 	}
 
 	//=================================================================================
-	// Building: Skull of Guldan
+	// Skull of Guldan
 	//=================================================================================
 	"npc_skull"
 	{
@@ -2486,7 +2486,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
+		"Model"						"models/heroes/slark/slark.vmdl"	// Model
+		"SoundSet"                  "Hero_Slark"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"ModelScale"				"0.7"
 		"Level"						"1"
 		
@@ -2547,9 +2549,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
-
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -2589,6 +2588,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
 		"ModelScale"				"0.7"
+		"SoundSet"                  "Hero_Slark"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -2610,7 +2611,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -2648,9 +2649,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
-
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -2690,6 +2688,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
 		"ModelScale"				"0.7"
+		"SoundSet"                  "Hero_Slark"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -2711,7 +2711,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -2749,9 +2749,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
-
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -2794,6 +2791,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
 		"ModelScale"				"0.80"
+		"SoundSet"                  "Hero_Slark"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"2"
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -2853,9 +2852,6 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
-
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
@@ -2881,6 +2877,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
 		"ModelScale"				"1"
+		"SoundSet"                  "Hero_Slark"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"3"
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -2940,9 +2938,6 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
-
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
@@ -2965,12 +2960,12 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"                                         "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"   // Model.
-		"BaseClass"                                     "npc_dota_creature"
-		"SoundSet"                                      "n_creep_Melee"
-		"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
-		"Level"                                         "1"
-		"ModelScale"                            "0.8"
+		"Model"                                "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll.vmdl"   // Model.
+		"BaseClass"                            "npc_dota_creature"
+		"SoundSet"                             "n_creep_Melee"
+		"GameSoundsFile"                       "soundevents/game_sounds_creeps.vsndevts"
+		"Level"                                "1"
+		"ModelScale"                           "0.8"
 		
 		"precache"
 		{
@@ -3049,8 +3044,8 @@
 		//----------------------------------------------------------------
 		"Model"                                         "models/heroes/bristleback/bristleback.vmdl"   // Model.
 		"BaseClass"                                     "npc_dota_creature"
-		"SoundSet"                                      "n_creep_Melee"
-		"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"                  "Hero_Bristleback"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
 		"Level"                                         "5"
 		"ModelScale"                            "1.4"
 				
@@ -3223,6 +3218,9 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1"
+		"SoundSet"                  "Hero_KeeperOfTheLight"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 		"Level"						"3"
 
 		"UseNeutralCreepBehavior" 	"1"
@@ -3334,15 +3332,18 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1"
+		"SoundSet"                  "Hero_KeeperOfTheLight"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 		"Level"						"3"
-		
+
 		"UseNeutralCreepBehavior" 	"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
 		
 		"Ability1"					""			// Ability 1.
-		"Ability2"					"satyr_trickster_purge"			// Ability 2.
+		"Ability2"					"satyr_trickster_purge"	--need to rewrite datadriven for sound	// Ability 2.
 		"Ability3"					"ogre_magi_frost_armor"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_tome"			// Ability 5.
@@ -3468,6 +3469,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/items/broodmother/spiderling/spiderling_dlotus_red/spiderling_dlotus_red.vmdl"	// Model.	
 		"ModelScale"				"0.4"
+		"SoundSet"                  "Hero_BroodMother"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -3528,9 +3531,6 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
-
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		
@@ -3546,6 +3546,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl"	// Model.	
 		"ModelScale"				"0.5"
+		"SoundSet"                  "Hero_BroodMother"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -3606,9 +3608,6 @@
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
 
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
-		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_slark.vsndevts"
-
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		
@@ -3624,7 +3623,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"Model"						"models/heroes/morphling/morphling.vmdl"		// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"Hero_morphling"													// Name of sound set.
+		"SoundSet"					"Hero_Morphling"													// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
 		"Level"						"4"
@@ -3981,6 +3980,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/life_stealer/life_stealer.vmdl"	// Model.	
 		"ModelScale"				"0.7"
+		"SoundSet"                  "Hero_Lifestealer"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -4071,6 +4072,10 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.4"
+		"SoundSet"					"Hero_DoomBringer"			
+		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+
 		"Level"						"6"
 		"IsAncient"					"1"
 		
@@ -4141,9 +4146,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"350"
-
-		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
-		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -4301,9 +4303,11 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/silencer/silencer.vmdl"	// Model.
+		"SoundSet"                  "Hero_Silencer"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_silencer.vsndevts"
 		"ModelScale"				"0.8"
 		"Level"						"1"
-		//"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4544,10 +4548,18 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
 		"ModelScale"				"1.2"
+		"SoundSet"                  "Hero_KeeperOfTheLight"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 		"Level"						"6"
 		"IsAncient"					"1"
 
 		"UseNeutralCreepBehavior" 	"0"
+
+		"precache"
+		{
+			"sound"	"sounds/weapons/creep/neutral/satyr_trickster_purge.vsnd"
+		}	
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4672,6 +4684,9 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/troll_warlord/troll_warlord.vmdl"	// Model.
+		"SoundSet"                  "Hero_TrollWarlord"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_troll_warlord.vsndevts"
 		"ModelScale"				"0.8"
 		"Level"						"2"
 		
@@ -4723,10 +4738,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"265"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-		
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
-
+	
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"150"			// Base health.
@@ -4772,6 +4784,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/weaver/weaver.vmdl"	// Model.
 		"ModelScale"				"0.8"
+		"SoundSet"                  "Hero_Weaver"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
 		"Level"						"3"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -4822,9 +4836,6 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"265"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-		
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_weaver.vsndevts"
 
 		// Status
 		//----------------------------------------------------------------
@@ -4869,6 +4880,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/weaver/weaver.vmdl"	// Model.
 		"ModelScale"				"1.1"
+		"SoundSet"                  "Hero_Weaver"					
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
 		"Level"						"3"
 		
 		"UseNeutralCreepBehavior" 	"1"
@@ -5064,6 +5077,8 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/dazzle/dazzle.vmdl"	// Model.
+		"SoundSet"                  "Hero_Dazzle"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
 		"ModelScale"				"1"
 		"Level"						"2"
 		
@@ -5115,9 +5130,6 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-		
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
 
 		// Status
 		//----------------------------------------------------------------
@@ -5189,8 +5201,8 @@
 		//----------------------------------------------------------------
 		"Model"						"models/items/beastmaster/boar/beast_deming/beast_deming.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_Ranged"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"					"Beastmaster_Boar"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				".5"
 		
@@ -5396,7 +5408,7 @@
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"400"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/neutral_fx/black_dragon_attack.vpcf" // Particle system model for projectile.
+		"ProjectileModel"			"black_dragon_attack" // Particle system model for projectile.
 		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
 
 		// Bounds
@@ -5448,6 +5460,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/necrolyte/necrolyte.vmdl"	// Model.	
 		"ModelScale"				"1.2"
+		"SoundSet"                  "Hero_Necrolyte"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 		"Level"						"10"
 		"CanBeDominated"			"0"
 		
@@ -5507,9 +5521,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"3000"
-
-		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
-		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -5916,6 +5927,7 @@
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.2"
 		"Level"						"6"
+		"Portrait"					"vgui/hud/heroportraits/portrait_doom_bringer"
 		"IsAncient"					"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -5978,9 +5990,6 @@
 		
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"140"
-
-		//"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
-		//"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_doom.vsndevts"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
