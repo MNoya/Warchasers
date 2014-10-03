@@ -1,39 +1,28 @@
-TO DO
-- General -
-Flash Camera Lock and Center
-Shake camera on boss engage DONE
+TO DO - Priority List
+1. Missing Gameplay
+[ ]Flash Camera Lock and Center
+[ ]Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
+[ ]Book of the dead (invulnerable? mini skeletons (raise animation/sound)+clinkz?, world drop in 2nd circle zone
+[ ]Add missing sound events on every custom_unit
+[ ]Fix/Add sounds on creeps/items
+[ ]Hell/Heaven Quest Timers
 
-- Heroes -
-Balance solo-buff DONE
-  
-- Creeps -
-reincarnate DONE
-Change general chase behavior DONE
+2. Adding Gameplay
+[ ]skull of guldan npc > Passive OnDeath corrupts the killer, add grom buff, metamorphosis-berserk skill on 5th slot
+[ ]Frostmourne casket
+[ ]Finish Secret Heaven: drop frosmourne from an ice casket (npc). Delayed Drop, OnKilled ShakeCamera.
+[ ]Add Music track sets
+[ ]Add/Fix particles on creeps/items
+[ ]Add particles on special spawns/death (bosses, necro)
 
-- Items - 
-Fix tome picking with full inv    DONE
+3. Cosmetic & Adjustments
+[ ]Make snow blend (After doing last secret area in mid)
+[ ]Improve tilesets (add proper ligth sources to architecture)
+[ ]Fix stupid fountain particle
+[ ]Improve boss areas and AI
+[ ]Adjust blues in fog
+[ ]Error message holy light
+[ ]Fix Orb of Fire residual particle effect
+[ ]Credits, Screenshots, Workshop Text.
+   
 
-- Map -
-Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
-Add Pyramids, Pillars, Lanterns, Light Sources. STARTED
-make secrets STARTED
-Spawn trigger skull hint (ligth up a green? particle when activated spawner) DONE
-Adjust blues in fog
-
-- Sounds -
-events on every custom_unit
-on spawns DONE
-on door open DONE
-on new level entered STARTED
-on teleport DONE
-on boss defeat
-on creep skills
-on item usage.
-
-- Particles - 
-on spawns
-on item usage
-on boss defeat
-
-- Tooltips/Information -
-Hell/Heaven Timers
