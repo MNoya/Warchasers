@@ -3016,9 +3016,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"item_frostmourne"
+		"AbilityTextureName"			"drop_frostmourne"
 
 		"OnOwnerDied"
 		{
@@ -5654,7 +5654,7 @@
 	"warchasers_skull_of_guldan"
 	{	
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"warchasers_buff"
+		"AbilityTextureName"			"warchasers_skull_of_guldan"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		// Stats
