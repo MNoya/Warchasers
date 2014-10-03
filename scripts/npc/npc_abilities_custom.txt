@@ -3009,6 +3009,62 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Drop Special
+	//=================================================================================================================
+	"drop_frostmourne"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_frostmourne"
+
+		"OnOwnerDied"
+		{
+			"AttachEffect"
+			{
+				"IsHidden" "1"
+				"EffectName"		"particles/test_particle/channel_field_2.vpcf"
+				//"gyro_calldown_marker_c" //"gyrocopter_call_down"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				
+				"EffectRadius"			"200"
+				"EffectColorA"			"255 0 0"
+				"EffectColorB"			"255 0 0"
+			
+				"ControlPoints"
+				{
+					"00"		"50 100 5"
+				}
+			}
+			
+			"DelayedAction"
+			{
+				"Delay"			"2.0"
+				"Action"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_frostmourne"
+						"ItemCount"					"1"
+						"SpawnRadius"		        "100"
+						"LaunchHeight"		        "200"
+						"LaunchDistance"	        "?100 200"
+						"LaunchDuration"	        "1.0"
+					}
+				}
+			}
+		}
+	}
+
 
 // END DROPS ------------------------------------------------------------------------------------------------------
 
@@ -5590,7 +5646,57 @@
 				}
 			}
 		}
-	}	
+	}
+
+
+
+
+	"warchasers_skull_of_guldan"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"warchasers_buff"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"AbilityDamage"					"0"
+		"AbilityManaCost"				"0"
+
+		// Data-Driven
+		//-------------------------------------------------------------------------------------------------------------
+		"OnOwnerDied"
+		{
+			//Ability is added OnEntityKilled
+			
+			"FireEffect"
+			{
+				"EffectName"		"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf"
+				"EffectAttachType" "follow_origin"
+				"Target" "CASTER"
+			}
+			"FireEffect"
+			{
+				"TargetPoint" "POINT"
+				"EffectName" "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1_a.vpcf"
+				"EffectAttachType" "world_origin" //?
+				"EffectRadius" "%radius"
+				"EffectColorA" "25 50 200"
+				"EffectColorB" "25 50 200"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Tower.Fire.Attack"
+				"Target" "CASTER"
+				"EffectDurationScale" "1"
+				"EffectLifeDurationScale" "1"
+			}
+		}
+	}
+
+
 
 		
 

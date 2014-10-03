@@ -158,6 +158,8 @@ function Warchasers:InitGameMode()
 
 	GameRules.FIRST_CIRCLE_ACTIVADED = false
 	GameRules.SENDHELL = false
+	GameRules.SENDSECRETHEAVEN = false
+	GameRules.SENDSECRETHELL = false
 	GameRules.SHOWPOPUP = true
 
     -- Remove building invulnerability
@@ -856,6 +858,10 @@ function Warchasers:OnEntityKilled( event )
 
     --if it's a cherubin, send to hell
     if killedUnit:GetName()=="cherub" then
+    	GameRules.SENDHELL = true
+    	TeleporterHell( event )
+    end	
+    	--[[
     	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
         GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
     	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
@@ -908,7 +914,19 @@ function Warchasers:OnEntityKilled( event )
        			print("Teleport Back, Dummy killed")
 	    	end
 	    })  
+	end]]
+
+	if killedUnit:GetName() == "skull" then
+		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
+		if killerEntity:IsRealHero() then
+			killerEntity:AddAbility("terrorblade_metamorphosis")
+			killerEntity:GetAbilityByIndex(GetAbilityIndex("terrorblade_metamorphosis")):SetLevel(4)
+		else --apply to the owner
+			killerEntity:GetOwner():AddAbility("terrorblade_metamorphosis")
+			killerEntity:GetOwner():GetAbilityByIndex(GetAbilityIndex("terrorblade_metamorphosis")):SetLevel(4)
+		end
 	end
+
 		
 end  
 

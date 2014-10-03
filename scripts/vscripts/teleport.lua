@@ -47,9 +47,10 @@ function TeleporterHeaven(trigger)
         GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0)
 
         Timers:CreateTimer({
-            endTime = 30, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+            endTime = 30,
             callback = function()
-                if GameRules.SENDHELL == false then 
+                if GameRules.SENDHELL == false and GameRules.SENDFROSTHEAVEN == false and GameRules.SENDFORESTHELL == false then 
+                    --send back everyone, no secret area triggered
                     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
                     --mass teleport
                     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -102,6 +103,8 @@ function TeleporterHell(trigger)
         Timers:CreateTimer({
             endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
             callback = function()
+                if GameRules.SENDFORESTHELL == false then
+                    -- send everyone back, no secret area discovered
                     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
                      --mass teleport
                     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -117,6 +120,7 @@ function TeleporterHell(trigger)
                 --kill the vision dummy
                 dummy:ForceKill(true)
                 print("Teleport Back, Dummy killed")
+                end
             end
         })
         
@@ -129,7 +133,7 @@ function TeleporterBack(trigger)
         SendToConsole("dota_camera_center")
 end
 
-function TeleporterSecret(trigger)
+function TeleporterSecret(trigger) --Sheeps
         local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
@@ -138,13 +142,32 @@ function TeleporterSecret(trigger)
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
-function TeleporterSecret2(trigger)
+function TeleporterSecret2(trigger) --Frostmourne (rename function). Teleport back to heaven with refresher timer, on cave trigger
+    GameRules.SENDFROSTHEAVEN = true 
         local point =  Entities:FindByName( nil, "teleport_spot_secret2" ):GetAbsOrigin()
         FindClearSpaceForUnit(trigger.activator, point, false)
         trigger.activator:Stop()
         SendToConsole("dota_camera_center")
         EmitGlobalSound("DOTAMusic_Stinger.007")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+end
+
+function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done directly through a trigger in the map
+    GameRules.SENDFORESTHELL = true
+
+    --mass teleport to map center
+    local point =  Vector(0,-322,128)
+    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            FindClearSpaceForUnit(entHero, point, false)
+            entHero:Stop()
+            SendToConsole("dota_camera_center")              
+        end
+    end
+
+    EmitGlobalSound("DOTAMusic_Stinger.007")
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0)
 end
 
 function TeleportAtBarrier(trigger)
@@ -222,19 +245,5 @@ function TeleporterFinal(trigger)
 		
 		--Remove Tank from the game
         --trigger.activator:ForceKill(true)
-
-end
-
-function TeleporterDarkForest(trigger)
-    --mass teleport
-    local point =  Vector(0,-322,128)
-    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-            FindClearSpaceForUnit(entHero, point, false)
-            entHero:Stop()
-            SendToConsole("dota_camera_center")              
-        end
-    end
 
 end
