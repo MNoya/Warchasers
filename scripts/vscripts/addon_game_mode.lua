@@ -91,7 +91,8 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/econ/items", context)
 	PrecacheResource( "particle_folder","particles/econ/courier", context)
 	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
-	PrecacheResource( "particles_folder","particles/generic_gameplay", context)
+	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
+	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
 end
 
@@ -113,8 +114,6 @@ P1_ANKH_COUNT = 0
 P2_ANKH_COUNT = 0
 P3_ANKH_COUNT = 0
 P4_ANKH_COUNT = 0
-DEAD_PLAYER_COUNT = 0
-PLAYER_COUNT = 0
 P0_TOME_COUNT = 0
 P1_TOME_COUNT = 0
 P2_TOME_COUNT = 0
@@ -161,6 +160,9 @@ function Warchasers:InitGameMode()
 	GameRules.SENDSECRETHEAVEN = false
 	GameRules.SENDSECRETHELL = false
 	GameRules.SHOWPOPUP = true
+
+	GameRules.DEAD_PLAYER_COUNT = 0
+	GameRules.PLAYER_COUNT = 0
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -441,7 +443,7 @@ function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
-	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_stat_rules",-1)
+	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
 		
 	local playercounter = 0
 	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
@@ -449,10 +451,10 @@ function Warchasers:OnHeroInGame(hero)
 			playercounter=playercounter+1
 		end
 	end
-	PLAYER_COUNT = playercounter
+	GameRules.PLAYER_COUNT = playercounter
 
-	print("Total Players" .. PLAYER_COUNT)
-    if PLAYER_COUNT==1 then --apply solo buff
+	print("Total Players" .. GameRules.PLAYER_COUNT)
+    if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
     end
 
@@ -791,35 +793,35 @@ function Warchasers:OnEntityKilled( event )
     	end   
 
     	if KilledPlayerID==0 and P0_ANKH_COUNT == 0 then  
-    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
     	if KilledPlayerID==1 and P1_ANKH_COUNT == 0 then  
-    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 	      
 	    if KilledPlayerID==2 and P2_ANKH_COUNT == 0 then  
-    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
     	if KilledPlayerID==3 and P3_ANKH_COUNT == 0 then  
-    		DEAD_PLAYER_COUNT=DEAD_PLAYER_COUNT+1
+    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
     	if KilledPlayerID==4 and P4_ANKH_COUNT == 0 then  
-    		DEAD_PLAYER_COUNT = DEAD_PLAYER_COUNT+1
+    		GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end 
  		
  		--Check for defeat
- 		print("Dead Players: " .. DEAD_PLAYER_COUNT)
- 		print("Total Players: " .. PLAYER_COUNT)
+ 		print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
+ 		print("Total Players: " .. GameRules.PLAYER_COUNT)
  		if not respawning then
-		    if DEAD_PLAYER_COUNT == PLAYER_COUNT then
+		    if GameRules.DEAD_PLAYER_COUNT == GameRules.PLAYER_COUNT then
 		    	print("THEY'RE ALL DEAD BibleThump")
 				local messageinfo = {
 				        message = "RIP IN PIECES",

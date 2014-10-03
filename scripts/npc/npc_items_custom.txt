@@ -3328,7 +3328,40 @@
 	
 	
 
-	
+	"item_apply_buff"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "1189"  // unique ID number for this item.  Do not change this once 
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
+		"AbilityTextureName"			"warchasers_buff"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"              "9999"
+		"AbilityCastPoint"                      "0.0"	
+
+		"Modifiers"
+		{
+			"modifier_warchasers_stat_rules" //Add a description in tooltips
+			{
+				"IsBuff"				"1"
+				"Passive"           	"1"
+				"IsHidden"				"0"
+				"OnCreated"
+           		{
+	                "AttachEffect"
+	                {
+	                    "Target" "CASTER"
+	                    "EffectName" "particles/units/heroes/hero_magnataur/magnataur_empower.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "EffectLifeDurationScale" "1"
+	                }
+           		}
+			}
+		}
+	}
 	
 	
 	
@@ -3344,7 +3377,7 @@
 		"ID"                            "1190"  // unique ID number for this item.  Do not change this once 
 		"BaseClass"                     "item_datadriven"
 		"ItemBaseLevel"                 "1"
-		"AbilityTextureName"			"warchasers_stat_rules"
+		"AbilityTextureName"			"warchasers_solo_buff"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3362,23 +3395,6 @@
 					 "MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
            	}
-
-           	"modifier_warchasers_stat_rules" //Add a description in tooltips
-			{
-				"IsBuff"				"1"
-				"Passive"           	"1"
-				"IsHidden"				"0"
-				"OnCreated"
-           		{
-	                "AttachEffect"
-	                {
-	                    "Target" "CASTER"
-	                    "EffectName" "particles/units/heroes/hero_magnataur/magnataur_empower.vpcf"
-	                    "EffectAttachType" "follow_origin"
-	                    "EffectLifeDurationScale" "1"
-	                }
-           		}
-			}
 
 			"modifier_warchasers_solo_buff"
 			{

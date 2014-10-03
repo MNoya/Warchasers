@@ -707,25 +707,25 @@ function SpawnSappers(event)
 
         if GameRules.PLAYER_COUNT >= 2 then
                 position = Vector(7397, 6554, 640)
-                self.sappers[2] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local sapper2 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper2:SetForwardVector(rotation)
         end
 
         if GameRules.PLAYER_COUNT >= 3 then
                 position = Vector(7397, 6762, 640)
-                self.sappers[3] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local sapper3 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper3:SetForwardVector(rotation)
         end
 
         if GameRules.PLAYER_COUNT >= 4 then
                 position = Vector(7535, 6790, 640)
-                self.sappers[4] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local sapper4 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper4:SetForwardVector(rotation)
         end
 
         if GameRules.PLAYER_COUNT >= 5 then
                 position = Vector(7535, 6500, 640)
-                self.sappers[5] =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                local sapper5 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper5:SetForwardVector(rotation)
         end
 

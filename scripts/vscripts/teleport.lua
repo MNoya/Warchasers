@@ -20,136 +20,228 @@ function TeleporterHeavenHell(trigger)
 end
 
 function TeleporterHeaven(trigger)
-        local point =  Vector(-6713,5089,20)
-        
-        spot_heaven = Vector(-6734, 5082, 40)
-        local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
-        print("Entered Heaven")
-        EmitGlobalSound("DOTAMusic_Stinger.003") --EmitGlobalSound("valve_dota_001.stinger.respawn") how to precache?
+    local point =  Vector(-6713,5089,20)
+    
+    spot_heaven = Vector(-6734, 5082, 40)
+    local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    print("Entered Heaven")
+    EmitGlobalSound("DOTAMusic_Stinger.003") --EmitGlobalSound("valve_dota_001.stinger.respawn") how to precache?
 
-        --mass teleport
-        for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-            if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-                local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                FindClearSpaceForUnit(entHero, point, false)
-                entHero:Stop()
-                SendToConsole("dota_camera_center")
-                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
-            end
+    --mass teleport
+    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            FindClearSpaceForUnit(entHero, point, false)
+            entHero:Stop()
+            SendToConsole("dota_camera_center")
+            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
+    end
 
-        local messageinfo = {
-            message = "Some seconds in Heaven",
-            duration = 5
-        }
-        FireGameEvent("show_center_message",messageinfo) 
+    local messageinfo = {
+        message = "Some seconds in Heaven",
+        duration = 5
+    }
+    FireGameEvent("show_center_message",messageinfo) 
 
-        GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0)
+    GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0)
 
-        Timers:CreateTimer({
-            endTime = 30,
-            callback = function()
-                if GameRules.SENDHELL == false and GameRules.SENDFROSTHEAVEN == false and GameRules.SENDFORESTHELL == false then 
-                    --send back everyone, no secret area triggered
-                    local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-                    --mass teleport
-                    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-                        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-                            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                            FindClearSpaceForUnit(entHero, point, false)
-                            entHero:Stop()
-                            SendToConsole("dota_camera_center")
-                            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-                            
-                        end
+    Timers:CreateTimer({
+        endTime = 30,
+        callback = function()
+            if GameRules.SENDHELL == false and GameRules.SENDFROSTHEAVEN == false and GameRules.SENDFORESTHELL == false then 
+                --send back everyone, no secret area triggered
+                local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
+                --mass teleport
+                for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+                    if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                        local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                        FindClearSpaceForUnit(entHero, point, false)
+                        entHero:Stop()
+                        SendToConsole("dota_camera_center")
+                        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
                     end
                 end
-                --kill the vision dummy
-                dummy:ForceKill(true)
-                print("Teleport Back, Dummy killed")
+
+                --open door to 2nd miniboss
+                local door = Entities:FindByName(nil, "gate_4")
+                if door ~= nil then
+                    door:Kill()
+                end
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_1")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_2")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_3")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_4")
+                obstructions:SetEnabled(false,false)
+                print("Obstructions disabled")
+
+                EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+                Timers:CreateTimer({ useGameTime = false, endTime = 2,
+                    callback = function() EmitGlobalSound("BARNDOORS_OPEN") end
+                })
+                Timers:CreateTimer({ useGameTime = false, endTime = 3,
+                    callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+                })
+
+                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
             end
-        })
+
+            --kill the vision dummy, regardless of being sent to a secret area.
+            dummy:ForceKill(true)
+            print("Teleport Back, Dummy killed")
+        end
+    })
 
 end
 
 function TeleporterHell(trigger)
-        local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
+    local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
 
-        local spot_hell = Vector(-6571, 3002, 40)
-        local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
-        print("Entered Hell")
-        EmitGlobalSound("DOTAMusic_Stinger.004") --EmitGlobalSound("terrorblade_arcana.stinger.respawn") how to precache?
+    local spot_hell = Vector(-6571, 3002, 40)
+    local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    print("Entered Hell")
+    EmitGlobalSound("DOTAMusic_Stinger.004") --EmitGlobalSound("terrorblade_arcana.stinger.respawn") how to precache?
 
-        --mass teleport
-        for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-            if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-                local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                FindClearSpaceForUnit(entHero, point, false)
-                entHero:Stop()
-                SendToConsole("dota_camera_center")
-                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
-            end
+    --mass teleport
+    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            FindClearSpaceForUnit(entHero, point, false)
+            entHero:Stop()
+            SendToConsole("dota_camera_center")
+            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
+    end
 
-        local messageinfo = {
-        message = "Some seconds in Hell",
-        duration = 5
-        }
-        FireGameEvent("show_center_message",messageinfo)
+    local messageinfo = {
+    message = "Some seconds in Hell",
+    duration = 5
+    }
+    FireGameEvent("show_center_message",messageinfo)
 
-        GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
-        GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
+    GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
+    GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
 
-        Timers:CreateTimer({
-            endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-            callback = function()
-                if GameRules.SENDFORESTHELL == false then
-                    -- send everyone back, no secret area discovered
-                    local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-                     --mass teleport
-                    for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-                        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-                            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                            FindClearSpaceForUnit(entHero, point, false)
-                            entHero:Stop()
-                            SendToConsole("dota_camera_center")
-                            GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-                            
-                        end
+    Timers:CreateTimer({
+        endTime = 40,
+        callback = function()
+            if GameRules.SENDFORESTHELL == false then
+                -- send everyone back, no secret area discovered
+                local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
+                 --mass teleport
+                for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+                    if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+                        local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+                        FindClearSpaceForUnit(entHero, point, false)
+                        entHero:Stop()
+                        SendToConsole("dota_camera_center")
+                        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+                        
                     end
-                --kill the vision dummy
-                dummy:ForceKill(true)
-                print("Teleport Back, Dummy killed")
                 end
+
+                --open door to 2nd miniboss
+                local door = Entities:FindByName(nil, "gate_4")
+                if door ~= nil then
+                    door:Kill()
+                end
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_1")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_2")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_3")
+                obstructions:SetEnabled(false,false)
+
+                local obstructions = Entities:FindByName(nil,"obstructions_4_4")
+                obstructions:SetEnabled(false,false)
+                print("Obstructions disabled")
+                
+                EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+                Timers:CreateTimer({ useGameTime = false, endTime = 2,
+                    callback = function() EmitGlobalSound("BARNDOORS_OPEN") end
+                })
+                Timers:CreateTimer({ useGameTime = false, endTime = 3,
+                    callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+                })
+
+                GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+
             end
-        })
-        
+            
+            --kill the vision dummy, regardless of being sent to a secret area.
+            dummy:ForceKill(true)
+            print("Teleport Back, Dummy killed")
+        end
+    })
+
 end
 
 function TeleporterBack(trigger)
-        local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-        FindClearSpaceForUnit(trigger.activator, point, false)
-        trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
+    --single player
+    local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
+    FindClearSpaceForUnit(trigger.activator, point, false)
+    trigger.activator:Stop()
+    SendToConsole("dota_camera_center")
+
+    --open door to 2nd miniboss
+    local door = Entities:FindByName(nil, "gate_4")
+    if door ~= nil then
+        door:Kill()
+    end
+
+    local obstructions = Entities:FindByName(nil,"obstructions_4_1")
+    obstructions:SetEnabled(false,false)
+
+    local obstructions = Entities:FindByName(nil,"obstructions_4_2")
+    obstructions:SetEnabled(false,false)
+
+    local obstructions = Entities:FindByName(nil,"obstructions_4_3")
+    obstructions:SetEnabled(false,false)
+
+    local obstructions = Entities:FindByName(nil,"obstructions_4_4")
+    obstructions:SetEnabled(false,false)
+    print("Obstructions disabled")
+
+    EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+    Timers:CreateTimer({ useGameTime = false, endTime = 2,
+        callback = function() EmitGlobalSound("BARNDOORS_OPEN") end
+    })
+    Timers:CreateTimer({ useGameTime = false, endTime = 3,
+        callback = function() EmitGlobalSound("ui.crafting_slotslide") end
+    })
+
+    GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+
 end
 
 function TeleporterSecret(trigger) --Sheeps
-        local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
-        FindClearSpaceForUnit(trigger.activator, point, false)
-        trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
-        EmitGlobalSound("DOTAMusic_Stinger.007")
-        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+    local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
+    FindClearSpaceForUnit(trigger.activator, point, false)
+    trigger.activator:Stop()
+    SendToConsole("dota_camera_center")
+    EmitGlobalSound("DOTAMusic_Stinger.007")
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
-function TeleporterSecret2(trigger) --Frostmourne (rename function). Teleport back to heaven with refresher timer, on cave trigger
+function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven with refresher timer, on cave trigger
     GameRules.SENDFROSTHEAVEN = true 
-        local point =  Entities:FindByName( nil, "teleport_spot_secret2" ):GetAbsOrigin()
-        FindClearSpaceForUnit(trigger.activator, point, false)
-        trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
-        EmitGlobalSound("DOTAMusic_Stinger.007")
-        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+
+    local point =  Entities:FindByName( nil, "teleport_spot_secret2" ):GetAbsOrigin()
+    FindClearSpaceForUnit(trigger.activator, point, false)
+    trigger.activator:Stop()
+    SendToConsole("dota_camera_center")
+    EmitGlobalSound("DOTAMusic_Stinger.007")
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
 
 function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done directly through a trigger in the map
@@ -189,61 +281,61 @@ end
 
 
 function TeleporterTanks(trigger)
-        local point =  Entities:FindByName( nil, "teleport_spot_tanks" ):GetAbsOrigin()
-        FindClearSpaceForUnit(trigger.activator, point, false)
-        trigger.activator:Stop()
-        SendToConsole("dota_camera_center")
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+    local point =  Entities:FindByName( nil, "teleport_spot_tanks" ):GetAbsOrigin()
+    FindClearSpaceForUnit(trigger.activator, point, false)
+    trigger.activator:Stop()
+    SendToConsole("dota_camera_center")
+    EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 end
 
 function TeleporterTanksStart(trigger)
 
-        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
-        local position = Vector(4553, -418, 135)
-        local hero = trigger.activator
+    GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
+    local position = Vector(4553, -418, 135)
+    local hero = trigger.activator
 
-        local tank = CreateUnitByName("npc_rocknroll_steamtank", position, true, trigger.activator, trigger.activator, DOTA_TEAM_GOODGUYS)
-        tank:SetRenderColor(128,128,255)
-        tank:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
-        tank:SetTeam( DOTA_TEAM_GOODGUYS ) --hero:GetTeam()
-        tank:SetOwner(hero)
+    local tank = CreateUnitByName("npc_rocknroll_steamtank", position, true, trigger.activator, trigger.activator, DOTA_TEAM_GOODGUYS)
+    tank:SetRenderColor(128,128,255)
+    tank:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
+    tank:SetTeam( DOTA_TEAM_GOODGUYS ) --hero:GetTeam()
+    tank:SetOwner(hero)
 
-        local player_id = trigger.activator:GetPlayerOwnerID()
-        PlayerResource:SetCameraTarget( player_id, tank)
-		local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
+    local player_id = trigger.activator:GetPlayerOwnerID()
+    PlayerResource:SetCameraTarget( player_id, tank)
+	local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
 end
 
 
 function TeleporterFinal(trigger)
 
-		--Teleport the real hero who owns the tank
-        local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
-        EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+	--Teleport the real hero who owns the tank
+    local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
+    EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
-        local nPlayerID = trigger.activator:GetPlayerOwnerID()
-        local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-        FindClearSpaceForUnit(hero, point, false)
-        hero:Stop()
-        trigger.activator:Stop()
-      
-        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )
+    local nPlayerID = trigger.activator:GetPlayerOwnerID()
+    local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+    FindClearSpaceForUnit(hero, point, false)
+    hero:Stop()
+    trigger.activator:Stop()
+  
+    GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )
 
-		--Set Teleport Zone
-		point = Vector(2193, -1400, 256)
-		
-		 --camera is buggy.
-        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
-		
-		point = Vector(2193, -2200, 256)
-        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		point = Vector(2193, -2900, 256)
-        local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	--Set Teleport Zone
+	point = Vector(2193, -1400, 256)
 	
+	 --camera is buggy.
+    local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
+	
+	point = Vector(2193, -2200, 256)
+    local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	point = Vector(2193, -2900, 256)
+    local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 
-		
-		--Remove Tank from the game
-        --trigger.activator:ForceKill(true)
+
+	
+	--Remove Tank from the game
+    --trigger.activator:ForceKill(true)
 
 end

@@ -5584,8 +5584,8 @@
 		"AttackDamageMax"			"1"								
 		"AttackRate"				"1.6"								
 		"AttackAnimationPoint"		"0.3"								
-		"AttackAcquisitionRange"	"800"								
-		"AttackRange"				"600"								
+		"AttackAcquisitionRange"	"1000"								
+		"AttackRange"				"128"								
 	
 		// Bounty
 		//----------------------------------------------------------------
@@ -5632,9 +5632,8 @@
 
 			"AttachWearables"
 			{
-				"Wearable1"	{ "ItemDef" "6571" } //	6571= Red Guard   "5675"=Phractos "5819"=Mountain Splitter
-				"Wearable2"	{ "ItemDef"	"6217" } //ES EG Totem
-				"Wearable3"	{ "ItemDef"	"5640" } //ES Impasse Head
+				"Wearable1"	{ "ItemDef" "5675" } //	 "5675"=Phractos "5819"=Mountain Splitter
+				"Wearable2"	{ "ItemDef"	"5640" } //ES Impasse Head
 			}
 
 			"DefaultState"			"Invade"

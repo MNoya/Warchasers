@@ -60,6 +60,12 @@ function giveUnitDataDrivenModifier(source, target, modifier,dur)
     item:ApplyDataDrivenModifier( source, target, modifier, {duration=dur} )
 end
 
+function giveUnitDataDrivenBuff(source, target, modifier,dur)
+    --source and target should be hscript-units. The same unit can be in both source and target
+    local item = CreateItem( "item_apply_buff", source, source)
+    item:ApplyDataDrivenModifier( source, target, modifier, {duration=dur} )
+end
+
 
 function warchasers_blade_berserker_immolation_function( event )
 	if event.caster:GetMana() >= 7 then
