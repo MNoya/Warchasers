@@ -5629,6 +5629,14 @@
 
 		"Creature"
 		{
+
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "6571" } //	6571= Red Guard   "5675"=Phractos "5819"=Mountain Splitter
+				"Wearable2"	{ "ItemDef"	"6217" } //ES EG Totem
+				"Wearable3"	{ "ItemDef"	"5640" } //ES Impasse Head
+			}
+
 			"DefaultState"			"Invade"
 			"States"	
 			{
