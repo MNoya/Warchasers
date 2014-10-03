@@ -1667,6 +1667,76 @@
 	}
 
 	//=================================================================================
+	// Building: Skull of Guldan
+	//=================================================================================
+	"npc_skull"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/props_structures/well_skull.vmdl"	// Model.
+		"ModelScale"				"1.5"
+		"HealthBarOffset"			"2000"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"warchasers_skull_of_guldan"			// Ability 1.
+		"Ability2"					"creep_make_deniable"			// Ability 2.
+		"Ability3"					"not_on_minimap"			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"		// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"0"			// Gold earned min.
+		"BountyGoldMax"				"0"			// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"60"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"50"	// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	}
+
+	//=================================================================================
 	// Building: Ice Troll Hut
 	//=================================================================================
 	"npc_ice_troll_hut"
@@ -6533,6 +6603,106 @@
 			}
 		}
 	}
+
+	//=================================================================================
+	// Creature: Skeleton Archer (Summon)
+	//=================================================================================
+	"npc_skeleton_archer"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/clinkz/clinkz.vmdl"	// Model.
+		"ModelScale"				"0.5"
+		"Level"						"1"
+		
+		"UseNeutralCreepBehavior" 	"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					""			// Ability 1. 
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		//"MagicalResistance"			"35"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"13"								// Damage range min.
+		"AttackDamageMax"			"15"								// Damage range max.
+		"AttackRate"				"1.8"								// Speed of attack.
+		"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
+		"AttackRange"				"500"								// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"				// Particle system model for projectile.
+		"ProjectileSpeed"			"900"								// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"30"		// Experience earn.
+		"BountyGoldMin"				"8"		// Gold earned min.
+		"BountyGoldMax"				"10"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		//"RingRadius"				"40"
+		"HealthBarOffset"			"140"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"270"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+		
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"180"			// Base health.
+		"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.75"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+				
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "4600" } //spine bow
+				"Wearable2"	{ "ItemDef"	"56" } //skull
+				"Wearable3" { "ItemDef"	"4972" } //gauntlets
+				"Wearable4" { "ItemDef"	"59" } //quiver
+				"Wearable5" { "ItemDef"	"4742" } //pauldrons
+				"Wearable6" { "ItemDef"	"60" } //horns
+			}
+		}
+	}
 	
 	//=================================================================================
 	// Creature: Burning Archer (Fire Arrows)
@@ -6625,10 +6795,11 @@
 			"AttachWearables"
 			{
 				"Wearable1"	{ "ItemDef" "5178" } //heat bow
-				"Wearable2"	{ "ItemDef"	"4971" } //horns crypt guardian
+				"Wearable2"	{ "ItemDef"	"56" } //skull
 				"Wearable3" { "ItemDef"	"4972" } //gauntlets
 				"Wearable4" { "ItemDef"	"5151" } //lost hill shield
 				"Wearable5" { "ItemDef"	"4742" } //pauldrons
+				"Wearable6" { "ItemDef"	"4971" } //horns crypt guardian
 			}
 		}
 	}
@@ -7999,7 +8170,7 @@
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
-		"ModelScale" 					"2.4"
+		"ModelScale" 					"2"
 		"Level"						"10"
 		"ConsideredHero"			"1"
 		
@@ -8036,8 +8207,8 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"			// Hull type used for navigation/locomotion.
-		"RingRadius"				"160"
+		"BoundsHullName"			"DOTA_HULL_SIZE_BUILDING"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"120"
 		"HealthBarOffset"			"160"
 
 		// Movement

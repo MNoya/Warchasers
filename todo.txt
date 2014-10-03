@@ -1,14 +1,14 @@
 TO DO - Priority List
 1. Missing Gameplay
 [ ]Flash Camera Lock and Center
-[ ]Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
-[ ]Book of the dead (invulnerable? mini skeletons (raise animation/sound)+clinkz?, world drop in 2nd circle zone
+[X]Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
+[X]Book of the dead, world drop in 2nd circle zone
 [ ]Add missing sound events on every custom_unit
 [ ]Fix/Add sounds on creeps/items
 [ ]Hell/Heaven Quest Timers
 
 2. Adding Gameplay
-[ ]skull of guldan npc > Passive OnDeath corrupts the killer, add grom buff, metamorphosis-berserk skill on 5th slot
+[~]skull of guldan npc > Passive OnDeath corrupts the killer, add grom buff, metamorphosis-berserk skill on 5th slot
 [ ]Frostmourne casket
 [ ]Finish Secret Heaven: drop frosmourne from an ice casket (npc). Delayed Drop, OnKilled ShakeCamera.
 [ ]Add Music track sets
@@ -24,5 +24,9 @@ TO DO - Priority List
 [ ]Error message holy light
 [ ]Fix Orb of Fire residual particle effect
 [ ]Credits, Screenshots, Workshop Text.
+
+X= Completed
+~= In Progress
+!= Check if it works
    
 

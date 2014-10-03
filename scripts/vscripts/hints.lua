@@ -143,6 +143,7 @@ end
 function soulkeeper_warning_tanks(trigger)
 	local position = Vector(4050,-1026,409)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
+    local dummy =  CreateUnitByName("vision_dummy_tiny", position, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
 	local rotation = Vector(-5746.03 -713.903,416)
 	necro:SetForwardVector(rotation)
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
@@ -158,6 +159,18 @@ end
 
 function hint_tanks_end(trigger) 
 	GameRules:SendCustomMessage("You have vanquished the enemies. The gate has opened...", 0, 0)
+
+	--find and kill dummy
+	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 1000)
+	print("Creeps Found")
+	 for i = 1, #allCreepsNear, 1 do
+	 	local creep = allCreepsNear[i]
+        local name = creep:GetUnitName()
+        if name == "vision_dummy_tiny" then
+        	creep:ForceKill(true)
+        end
+    end
+
 end
 
 function boss_engage(trigger)

@@ -67,6 +67,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_night_stalker", context)
 	PrecacheUnitByNameSync("npc_dota_hero_furion", context)
 	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
+	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
+	PrecacheUnitByNameSync("npc_skeleton_archer", context)
 
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -78,6 +80,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
 	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
 	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
+	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
 	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
@@ -334,7 +337,11 @@ function Warchasers:OnAllPlayersLoaded()
 	    position = Vector(123,2174,129) --sunkey
         local dummy3 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
 
+        position = Vector(-1404,7732,256) --books
+        local dummy4 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS) 
 
+
+        --WORLD ITEMDROPS
 		print("Creating itemdrops")
 
 		position = Vector(124,2175,128)
@@ -400,12 +407,22 @@ function Warchasers:OnAllPlayersLoaded()
         hell6 = Vector(-5719.82, 2403.32, 40)
         CreateItemOnPositionSync(hell6, newItem)
 
+
+        local newItem = CreateItem("item_book_of_the_dead", nil, nil)
+        book1 = Vector(-1540,7713,256)
+        CreateItemOnPositionSync(book1, newItem)
+
+        local newItem = CreateItem("item_book_of_the_dead", nil, nil)
+        book2 = Vector(-1316,7713,256)
+        CreateItemOnPositionSync(book2, newItem)
+
 		Timers:CreateTimer({
             endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
             callback = function()
 				dummy1:ForceKill(true)
 				dummy2:ForceKill(true)
 				dummy3:ForceKill(true)
+				dummy4:ForceKill(true)
 			end
 		})
 end
@@ -455,7 +472,12 @@ function Warchasers:OnHeroInGame(hero)
 
 	print("Total Players" .. GameRules.PLAYER_COUNT)
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
-    	giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
+    	Timers:CreateTimer({
+			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+			callback = function()
+				giveUnitDataDrivenModifier(hero, hero, "modifier_warchasers_solo_buff",-1)
+			end
+		})
     end
 
     --warning: awful code, should be done differently. Need to learn how indexes are stored after death.
@@ -762,10 +784,6 @@ function Warchasers:OnEntityKilled( event )
 		      self.nDireKills = self.nDireKills + 1
 		end    	
 
-		--Problems to fix with the current version: 
-			--doesn't work with multiple Ankhs
-			--doesn't work with dropping/picking Ankhs (will probably disable this)
-
     	--check if the killed player has ankh
       	if KilledPlayerID==0 and P0_ANKH_COUNT > 0 then  
     		respawning = true
@@ -922,10 +940,10 @@ function Warchasers:OnEntityKilled( event )
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
 		if killerEntity:IsRealHero() then
 			killerEntity:AddAbility("terrorblade_metamorphosis")
-			killerEntity:GetAbilityByIndex(GetAbilityIndex("terrorblade_metamorphosis")):SetLevel(4)
+			killerEntity:FindAbilityByName("terrorblade_metamorphosis"):SetLevel(4)
 		else --apply to the owner
 			killerEntity:GetOwner():AddAbility("terrorblade_metamorphosis")
-			killerEntity:GetOwner():GetAbilityByIndex(GetAbilityIndex("terrorblade_metamorphosis")):SetLevel(4)
+			killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis"):SetLevel(4)
 		end
 	end
 
