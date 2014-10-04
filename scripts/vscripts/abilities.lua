@@ -114,9 +114,9 @@ function warchasers_muhrah_animate_dead_ini( event )
 	for number, unit in pairs(event.target_entities) do
 		if unit:IsAlive() == false and number_of_resurrections < resurrections_limit then
 			unit:SetOwner(owner)
-			unit:SetControllableByPlayer(player_id, true)
 			unit:SetTeam(team_id)
 			unit:RespawnUnit()
+			unit:SetControllableByPlayer(player_id, true)
 			event.ability:ApplyDataDrivenModifier( owner, unit, "warchasers_muhrah_animate_dead_helper_timer", nil)
 			--[[unit:AddAbility("warchasers_muhrah_animate_dead_helper")
 			unit:FindAbilityByName("warchasers_muhrah_animate_dead_helper"):SetLevel(1)]]

@@ -34,35 +34,68 @@ function Dominate( event )
 end
 
 function HealthTomeUsed( event )
-    local casterUnit = event.caster
+    local picker = event.caster
+    local tome = event.ability
+    local statBonus = event.bonus_stat
     --casterUnit:SetMaxHealth( casterUnit:GetMaxHealth() + 50 )
     --casterUnit:SetHealth(casterUnit:GetHealth() + 50)
     --BUG: When buying a new item, the Health will reset.
 
-    local item = CreateItem( "item_tome_of_health_modifier", source, source)
-    item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
+    --local item = CreateItem( "item_tome_of_health_modifier", source, source)
+    --item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
+    if picker:HasModifier("tome_health_modifier") == false then
+        tome:ApplyDataDrivenModifier( picker, picker, "tome_health_modifier", nil)
+        picker:SetModifierStackCount("tome_health_modifier", picker, 50)
+        picker.HealthTomesStack = 0
+    else
+        picker:SetModifierStackCount("tome_health_modifier", picker, (picker:GetModifierStackCount("tome_health_modifier", picker) + 50))
+    end
+    --print(event.caster:GetModifierStackCount("tome_health_modifier", nil))
 end
 
 function StrengthTomeUsed( event )
-    local casterUnit = event.caster
+    local picker = event.caster
+    local tome = event.ability
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseStrength( casterUnit:GetBaseStrenght() + 1 )
-    casterUnit:ModifyStrength(statBonus)
+    --casterUnit:ModifyStrength(statBonus)
+    if picker:HasModifier("tome_strenght_modifier") == false then
+        tome:ApplyDataDrivenModifier( picker, picker, "tome_strenght_modifier", nil)
+        picker:SetModifierStackCount("tome_strenght_modifier", picker, statBonus)
+    else
+        picker:SetModifierStackCount("tome_strenght_modifier", picker, (picker:GetModifierStackCount("tome_strenght_modifier", picker) + statBonus))
+    end
+    --SetModifierStackCount(string modifierName, handle b, int modifierCount) 
+    --GetModifierStackCount(string modifierName, handle b) 
     
 end
 
 function AgilityTomeUsed( event )
-    local casterUnit = event.caster
+    local picker = event.caster
+    local tome = event.ability
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseAgility( casterUnit:GetBaseAgility() + 1 )
-    casterUnit:ModifyAgility(statBonus)
+    --casterUnit:ModifyAgility(statBonus)
+    if picker:HasModifier("tome_agility_modifier") == false then
+        tome:ApplyDataDrivenModifier( picker, picker, "tome_agility_modifier", nil)
+        picker:SetModifierStackCount("tome_agility_modifier", picker, statBonus)
+    else
+        picker:SetModifierStackCount("tome_agility_modifier", picker, (picker:GetModifierStackCount("tome_agility_modifier", picker) + statBonus))
+    end
 end
 
 function IntellectTomeUsed( event )
-    local casterUnit = event.caster
+    local picker = event.caster
+    local tome = event.ability
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseIntellect( casterUnit:GetBaseIntellect() + 1 )
-    casterUnit:ModifyIntellect(statBonus)
+    --casterUnit:ModifyIntellect(statBonus)
+    if picker:HasModifier("tome_intelect_modifier") == false then
+        tome:ApplyDataDrivenModifier( picker, picker, "tome_intelect_modifier", nil)
+        picker:SetModifierStackCount("tome_intelect_modifier", picker, statBonus)
+    else
+        picker:SetModifierStackCount("tome_intelect_modifier", picker, (picker:GetModifierStackCount("tome_intelect_modifier", picker) + statBonus))
+    end
 end
 
 function Heal(event)

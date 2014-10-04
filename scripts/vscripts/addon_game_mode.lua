@@ -118,11 +118,11 @@ P1_ANKH_COUNT = 0
 P2_ANKH_COUNT = 0
 P3_ANKH_COUNT = 0
 P4_ANKH_COUNT = 0
-P0_TOME_COUNT = 0
+--[[P0_TOME_COUNT = 0
 P1_TOME_COUNT = 0
 P2_TOME_COUNT = 0
 P3_TOME_COUNT = 0
-P4_TOME_COUNT = 0
+P4_TOME_COUNT = 0]]
 
 -- Create the game mode when we activate
 function Activate()
@@ -482,7 +482,7 @@ function Warchasers:OnHeroInGame(hero)
     end
 
     --warning: awful code, should be done differently. Need to learn how indexes are stored after death.
-	if hero:GetPlayerID()==0 then 
+	--[[if hero:GetPlayerID()==0 then 
 		print("This hero had " .. P0_TOME_COUNT .. " tomes of health stored")
 		local item = CreateItem( "item_tome_of_health_modifier", source, source)
 		for i=0, P0_TOME_COUNT do
@@ -514,7 +514,7 @@ function Warchasers:OnHeroInGame(hero)
 		for i=0, P4_TOME_COUNT do
 			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
 		end
-	end
+	end]]
 	--you didn't read this, it never happened.
 
 end
@@ -530,7 +530,7 @@ end
 function Warchasers:OnItemPickedUp( event )
 	
 	 --record how many tomes the player has
-	if event.itemname == "item_tome_of_health" then
+	--[[if event.itemname == "item_tome_of_health" then
 		print("1 Health Tome Picked Up")
 		print(event.PlayerID)
 		if event.PlayerID==0 then
@@ -545,7 +545,7 @@ function Warchasers:OnItemPickedUp( event )
 	    elseif event.PlayerID==4 then
 	    	P4_TOME_COUNT = P4_TOME_COUNT+1
 	    end
-	end
+	end]]
 
 end
 
@@ -564,14 +564,13 @@ function Warchasers:ModifyStatBonuses(unit)
  
 			-- Get player strength
 			local strength = spawnedUnitIndex:GetStrength()
- 
 			--Check if strBonus is stored on hero, if not set it to 0
 			if spawnedUnitIndex.strBonus == nil then
 				spawnedUnitIndex.strBonus = 0
 			end
  
 			-- If player strength is different this time around, start the adjustment
-			if strength ~= spawnedUnitIndex.strBonus then
+			if strength ~= spawnedUnitIndex.strBonus or spawnedUnitIndex:GetModifierStackCount("tome_health_modifier", spawnedUnitIndex) ~= spawnedUnitIndex.HealthTomesStack then
 				-- Modifier values
 				local bitTable = {128,64,32,16,8,4,2,1}
  
@@ -602,7 +601,7 @@ function Warchasers:ModifyStatBonuses(unit)
 			end
 			-- Updates the stored strength bonus value for next timer cycle
 			spawnedUnitIndex.strBonus = spawnedUnitIndex:GetStrength()
-		
+			spawnedUnitIndex.HealthTomesStack = spawnedUnitIndex:GetModifierStackCount("tome_health_modifier", spawnedUnitIndex)
 			-- ==================================
 			-- Adjust mana based on intellect
 			-- ==================================

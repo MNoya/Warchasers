@@ -1309,6 +1309,20 @@
 			//}			
 		}
 
+		"Modifiers"
+			{
+			"tome_health_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_health"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"1"
+					}
+				}
+			}
+
 	}
 	
 	
@@ -1377,6 +1391,19 @@
 			}			
 		}
 
+		"Modifiers"
+			{
+			"tome_strenght_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_strength"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+					}
+				}
+			}
 	}
 
 	"item_tome_of_agility"
@@ -1442,7 +1469,19 @@
 				"EffectAttachType" 	"follow_overhead"
 			}
 		}
-
+		"Modifiers"
+			{
+			"tome_agility_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_agility"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
+					}
+				}
+			}
 	}
 
 	"item_tome_of_intellect"
@@ -1508,6 +1547,19 @@
 				"EffectAttachType" 	"follow_origin"
 			}	
 		}
+		"Modifiers"
+			{
+			"tome_intelect_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_intellect"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+					}
+				}
+			}
 	}
 	
 	"item_tome_of_strength_2"
@@ -1574,6 +1626,19 @@
 			}			
 		}
 
+	"Modifiers"
+			{
+			"tome_strenght_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_strength"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+					}
+				}
+			}
 	}
 
 	"item_tome_of_agility_2"
@@ -1639,6 +1704,19 @@
 				"EffectAttachType" 	"follow_overhead"
 			}
 		}
+	"Modifiers"
+			{
+			"tome_agility_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_agility"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
+					}
+				}
+			}
 
 	}
 
@@ -1705,6 +1783,19 @@
 				"EffectAttachType" 	"follow_origin"
 			}	
 		}
+	"Modifiers"
+			{
+			"tome_intelect_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_intellect"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+					}
+				}
+			}
 	}
 
 	"item_tome_of_knowledge"
