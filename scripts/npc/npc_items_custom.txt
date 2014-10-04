@@ -67,7 +67,7 @@
 
 	"item_mana_pendant" //pendant of energy
 	{
-		"ID"		"1010"
+		"ID"							"1010"
 		"ItemCost"						"400"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -94,7 +94,7 @@
 
     "item_vitality_pendant"
     {
-    	"ID"		"1011"
+    	"ID"							"1011"
 		"ItemCost"						"350"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -181,7 +181,7 @@
 
 	"item_belt_6"
 	{
-		"ID"							"1113"
+		"ID"							"1014"
 		"ItemCost"						"500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -209,7 +209,7 @@
 
 	"item_claws_3"
 	{
-		"ID"							"1014"
+		"ID"							"1015"
 		"ItemCost"						"900"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -239,7 +239,7 @@
 
 	"item_claws_6"
 	{
-		"ID"							"1114"
+		"ID"							"1016"
 		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -269,7 +269,7 @@
 
 	"item_claws_9"
 	{
-		"ID"							"1015"
+		"ID"							"1017"
 		"ItemCost"						"2100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -298,7 +298,7 @@
 
 	"item_claws_12"
 	{
-		"ID"							"1115"
+		"ID"							"1018"
 		"ItemCost"						"500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -328,7 +328,7 @@
 
 	"item_robe_6"
 	{
-		"ID"							"1016"
+		"ID"							"1019"
 		"ItemCost"						"3000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -357,7 +357,7 @@
 
     "item_ror_2"
     {
-    	"ID"							"1017"
+    	"ID"							"1020"
 		"ItemCost"						"3000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -386,7 +386,7 @@
 
 	"item_mantle_3"
 	{
-		"ID"							"1018"
+		"ID"							"1021"
 		"ItemCost"						"900"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -413,7 +413,7 @@
 
     "item_slippers_3"
     {
-    	"ID"							"1019"
+    	"ID"							"1022"
 		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -443,7 +443,7 @@
 
 	"item_boots_6"
     {
-    	"ID"							"1119"
+    	"ID"							"1023"
 		"ItemCost"						"500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -472,7 +472,7 @@
 
     "item_botas"
     {
-    	"ID"							"1020"
+    	"ID"							"1024"
 		"ItemCost"						"150"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -509,7 +509,7 @@
 
     "item_rop_2"
     {
-    	"ID"							"1021"
+    	"ID"							"1025"
 		"ItemCost"						"150"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -538,7 +538,7 @@
 
     "item_rop_4"
     {
-    	"ID"							"1121"
+    	"ID"							"1026"
 		"ItemCost"						"2200"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -567,7 +567,7 @@
 
     "item_sobi"
     {
-    	"ID"							"1022"
+    	"ID"							"1027"
 		"ItemCost"						"1300"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -596,7 +596,7 @@
 
     "item_khadgars_gem"
     {
-		"ID"							"1023"
+		"ID"							"1028"
 		"ItemCost"						"1500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -625,7 +625,7 @@
 
 	"item_mana_gem" //pendant of mana
     {
-		"ID"							"1123"
+		"ID"							"1029"
 		"ItemCost"						"1200"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -654,7 +654,7 @@
 
     "item_evasion"
     {
-    	"ID"							"1024"
+    	"ID"							"1030"
 		"ItemCost"						"800"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -682,115 +682,9 @@
 
 	}
 
-    //Need Rewrite Data Driven
-    "item_orb_of_frost" //rewrite datadriven for ranged on air units
-    {
-    	"ID" "1125"
-
-    	"BaseClass" 			"item_skadi"
-    	"AbilityTextureName" 		"item_orb_of_frost"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		"Model"							"models/chest_worlddrop.vmdl"
-		"Effect"						"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemQuality"					"artifact"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		
-		"SideShop" 		"0"
-		"SecretShop" 	"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_movement_speed"	"-35"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cold_attack_speed"		"-35"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cold_duration_melee"	"5.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cold_duration_ranged"	"3.0"
-			}
-		}
-	}
-
-
-    "item_orb_of_fire" //rewrite datadriven for ranged on air units, cleave, spell damage
-    {
-    	"ID" "1026"
-		"ItemCost"						"800"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"artifact"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect"				"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
-		
-    	"BaseClass" 			"item_desolator"
-    	"AbilityTextureName" 		"item_orb_of_fire"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SideShop" "0"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "5"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"corruption_armor" "0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_FLOAT"
-				"corruption_duration" "1"
-			}
-		}
-    }
-
     "item_battle_drums" //rewrite datadriven for no charge/no stats
     {
-    	"ID" "1027"
+    	"ID" 							"1031"
 		"ItemCost"						"1800"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
     	"ItemKillable"                  "1"
@@ -855,7 +749,7 @@
 
     "item_cloak_of_shadows" //rewrite datadriven
 	{
-		"ID"		"1028"
+		"ID"							"1032"
 		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -892,7 +786,7 @@
 
     "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
     {
-    	"ID"		"1029"
+    	"ID"							"1033"
 		"ItemCost"						"2000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -931,7 +825,7 @@
 
     "item_runed_bracers" //Cloak 33%
     {
-		"ID"		"1030"
+		"ID"							"1034"
 		"ItemCost"						"400"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -965,7 +859,7 @@
 
 	"item_shield_amulet" //Linken 40sec
 	{
-		"ID"		"1031"
+		"ID"							"1035"
 		"ItemCost"						"400"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -1015,7 +909,7 @@
 
 	"item_gloves_15"
 	{	
-		"ID"		"1032"
+		"ID"							"1036"
 		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -1039,7 +933,7 @@
 
 	"item_circlet_2"
 	{
-		"ID"		"1033"
+		"ID"							"1037"
 		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
@@ -1060,48 +954,9 @@
 			}
 		}
 	}
-		
-		
-		
-		
-	"item_frostmourne"
-	{
-	
-		"ID"		"1034"
-		"ItemCost"						"322"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"artifact"
-		"AbilityTextureName"			"item_frostmourne"
-		
-		"Model"	"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
-		"Effect" "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
-		
-		"BaseClass" "item_blink"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"99999"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blink_damage_cooldown"	"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blink_range_clamp"	"99999"
-			}
-		}		
-	}
-  
-	 
+			
+	//Free IDs 1038-1040
+ 	
 	//====================================================================
 	// Data Driven Items
 	//====================================================================
@@ -1196,6 +1051,8 @@
 		}
 	}
 
+	//Free IDs 1044-1049
+
 	"item_inferno_stone"
 	{
 		"ID"                            "1050"
@@ -1259,7 +1116,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1052"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1051"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_health"
@@ -1330,7 +1187,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1052"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1052"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_strength"
@@ -1410,7 +1267,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1053"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_agility"
@@ -1488,7 +1345,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1054"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1054"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
@@ -1561,249 +1418,13 @@
 				}
 			}
 	}
-	
-	"item_tome_of_strength_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1152"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_tome_of_strength"
-		
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		//"ItemCost"						"0"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemKillable"					"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"0"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_stat"	"2"
-			}
-		}
-		
-		"ItemCastOnPickup"				"1"
-		"OnSpellStart"
-		{
-			"SpendCharge"
-			{}
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"				"StrengthTomeUsed"
-				"bonus_stat"	"%bonus_stat"
-			}
-			"FireSound"
-			{
-				"EffectName"			"DOTA_Item.Refresher.Activate"
-				"Target"				"CASTER"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
-				"EffectAttachType" 	"follow_origin"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
-				"EffectAttachType" 	"follow_origin"
-			}			
-		}
-
-	"Modifiers"
-			{
-			"tome_strenght_modifier"
-				{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsBuff"	"1"
-				"TextureName"	"item_tome_of_strength"
-				"Properties"
-					{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
-					}
-				}
-			}
-	}
-
-	"item_tome_of_agility_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1153"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_tome_of_agility"
-		
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		//"ItemCost"						"0"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemKillable"					"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"0"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_stat"	"2"
-			}
-		}
-		
-		"ItemCastOnPickup"				"1"
-		"OnSpellStart"
-		{
-			"SpendCharge"
-			{}
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"				"AgilityTomeUsed"
-				"bonus_stat"	"%bonus_stat"
-			}
-			"FireSound"
-			{
-				"EffectName"			"DOTA_Item.Refresher.Activate"
-				"Target"				"CASTER"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
-				"EffectAttachType" 	"follow_origin"
-			}	
-			"AttachEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
-				"EffectAttachType" 	"follow_overhead"
-			}
-		}
-	"Modifiers"
-			{
-			"tome_agility_modifier"
-				{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsBuff"	"1"
-				"TextureName"	"item_tome_of_agility"
-				"Properties"
-					{
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
-					}
-				}
-			}
-
-	}
-
-	"item_tome_of_intellect_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1154"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_tome_of_intellect"
-		
-		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
-		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		//"ItemCost"						"0"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemKillable"					"1"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"SideShop"						"0"
-		"SecretShop" "1"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_stat"	"2"
-			}
-		}
-		
-		"ItemCastOnPickup"				"1"
-		"OnSpellStart"
-		{
-			"SpendCharge"
-			{}
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"				"IntellectTomeUsed"
-				"bonus_stat"	"%bonus_stat"
-			}
-			"FireSound"
-			{
-				"EffectName"			"DOTA_Item.Refresher.Activate"
-				"Target"				"CASTER"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/items2_fx/shivas_guard_impact.vpcf"
-				"EffectAttachType" 	"follow_overhead"
-			}
-			"FireEffect"
-			{
-				"Target" "CASTER"
-				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
-				"EffectAttachType" 	"follow_origin"
-			}	
-		}
-	"Modifiers"
-			{
-			"tome_intelect_modifier"
-				{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"IsBuff"	"1"
-				"TextureName"	"item_tome_of_intellect"
-				"Properties"
-					{
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
-					}
-				}
-			}
-	}
 
 	"item_tome_of_knowledge"
 	//Permanently increases the Strength, Agility and Intelligence of the Hero by 1 when used.
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"1151"				
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_tome_of_intellect"
@@ -1886,10 +1507,256 @@
 				"EffectAttachType" 	"follow_origin"
 			}				
 		}
+<<<<<<< HEAD
+
+	"Modifiers"
+			{
+			"tome_strenght_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_strength"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+					}
+				}
+			}
+=======
+>>>>>>> origin/master
+	}
+
+	
+	"item_tome_of_strength_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1152"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_strength"
+		
+		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		//"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_stat"	"2"
+			}
+		}
+		
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"StrengthTomeUsed"
+				"bonus_stat"	"%bonus_stat"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}			
+		}
+	"Modifiers"
+			{
+			"tome_agility_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_agility"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
+					}
+				}
+			}
+
+	}
+
+	"item_tome_of_agility_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1153"				
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_agility"
+		
+		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		"Effect"						"particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		//"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_stat"	"2"
+			}
+		}
+		
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"AgilityTomeUsed"
+				"bonus_stat"	"%bonus_stat"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}	
+			"AttachEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
+				"EffectAttachType" 	"follow_overhead"
+			}
+		}
+<<<<<<< HEAD
+	"Modifiers"
+			{
+			"tome_intelect_modifier"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsBuff"	"1"
+				"TextureName"	"item_tome_of_intellect"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+					}
+				}
+			}
+=======
+
+>>>>>>> origin/master
+	}
+
+	"item_tome_of_intellect_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1154"			
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_tome_of_intellect"
+		
+		"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+		"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"	
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		//"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"SideShop"						"0"
+		"SecretShop" "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_stat"	"2"
+			}
+		}
+		
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"IntellectTomeUsed"
+				"bonus_stat"	"%bonus_stat"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Refresher.Activate"
+				"Target"				"CASTER"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/items2_fx/shivas_guard_impact.vpcf"
+				"EffectAttachType" 	"follow_overhead"
+			}
+			"FireEffect"
+			{
+				"Target" "CASTER"
+				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}	
+		}
 	}
 
 
 	
+	// POTIONS
+	//-------------------------------------------------------------------------------------------------------------
 	"item_potion_of_healing"
 	{
 		"ID"							"1055"
@@ -3488,7 +3355,196 @@
 		}
 	}
 	
+	"item_orb_of_frost"
+    {
+    	"ID" "1125"
+
+    	"BaseClass" 					"item_datadriven"
+    	"AbilityTextureName" 			"item_orb_of_frost"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"Model"							"models/chest_worlddrop.vmdl"
+		"Effect"						"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		
+		"SideShop" 		"0"
+		"SecretShop" 	"1"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		// Adds 6 bonus cold damage to the attacks of a Hero when carried. 
+		// The Hero's attacks also slow the movement speed and attack rate of the enemy for 3 seconds.
+		"Modifiers"
+		{
+			"modifier_orb_of_frost"
+			{
+				"Passive"               "1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "6"
+				}
+
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles\items2_fx\skadi_projectile.vpcf"
+				}
+				"OnOrbImpact"
+				{
+					"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_orb_of_frost_slow"
+						"Duration"			"%slow_duration"
+					}		
+				}
+			}
+
+			"modifier_orb_of_frost_slow"
+			{
+				"IsDebuff" "1"
+				"Duration"	"3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"50"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"25"
+				}
+				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+				"EffectAttachType"      "attach_hitloc"
+				"Target"                "TARGET"
+
+			}
+		}
+	}
+
 	
+	"item_orb_of_fire"
+    {
+    	"ID" "1126"
+		"ItemCost"						"800"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
+		
+		"Model"					"models/chest_worlddrop.vmdl"
+		"Effect"				"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+		
+    	"BaseClass" 					"item_datadriven"
+    	"AbilityTextureName" 			"item_orb_of_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SideShop" "0"
+		"SecretShop" "1"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		// Adds 5 bonus fire damage to the attacks of a Hero when carried. 
+		// The Hero's attacks also do splash damage to nearby enemy units.
+
+		"Modifiers"
+		{
+			"modifier_orb_of_fire"
+			{
+				"Passive"               "1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "5"
+				}
+
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles\items_fx\desolator_projectile.vpcf"
+				}
+				"OnAttackLanded"
+				{
+					"CleaveAttack"
+					{
+						"CleavePercent"				"10"
+						"CleaveRadius"				"140"
+						//"CleaveEffect"				""
+					}
+				}
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+    }
+	
+		
+	"item_frostmourne"
+	{
+	
+		"ID"		"1134"
+		"ItemCost"						"322"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemQuality"					"artifact"
+		"AbilityTextureName"			"item_frostmourne"
+		
+		"Model"	"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
+		"Effect" "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+		
+		"BaseClass" "item_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"99999"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_damage_cooldown"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range_clamp"	"99999"
+			}
+		}		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	"item_apply_buff"
 	{
