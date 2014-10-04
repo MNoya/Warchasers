@@ -466,6 +466,13 @@ end
 function SpawnLanternTrolls(event)
         local position = Vector(-1678,844,129)
         EmitGlobalSound("DOTAMusic_Stinger.005")
+        Timers:CreateTimer({
+            endTime = 3,
+            callback = function()
+                EmitGlobalSound("General.PingRune")
+                        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - A key has been dropped!", 0, 0) 
+            end
+                })
         local troll1 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll2 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local troll3 = CreateUnitByName("npc_forest_troll", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)

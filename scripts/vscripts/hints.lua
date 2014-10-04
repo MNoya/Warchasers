@@ -4,13 +4,16 @@ function hint_test(trigger)
 	--EmitGlobalSound("valve_dota_001.stinger.respawn")
 end
 
-function hint_key1(trigger) 
+function hint_key1(trigger)
+	EmitGlobalSound("General.PingRune")
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You need the key to open this door.", 0, 0) 
 end
-function hint_key2(trigger) 
+function hint_key2(trigger)
+	EmitGlobalSound("General.PingRune")
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You need the key to open this door.", 0, 0) 
 end
-function hint_key3(trigger) 
+function hint_key3(trigger)
+	EmitGlobalSound("General.PingRune") 
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You need the key to open this door.", 0, 0) 
 end
 
@@ -18,7 +21,7 @@ function hint_keydrop(trigger)
 	Timers:CreateTimer({
     endTime = 3,
     callback = function()
-      	EmitGlobalSound("Item.DropGemWorld") --Drop Sound
+      	EmitGlobalSound("General.PingRune")
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - A key has been dropped!", 0, 0) 
     end
   	})
@@ -61,6 +64,7 @@ function spiderhall_warning(trigger)
 end
 
 function spiderhall_hint(trigger) 
+	EmitGlobalSound("General.PingRune")
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - If you can reach the magic circle at the end of the hall, all the spiders are killed.", 0, 0) 
 end
 
@@ -152,6 +156,7 @@ function soulkeeper_warning_tanks(trigger)
 end
 
 function hint_tanks(trigger)
+	EmitGlobalSound("General.PingRune")
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You get no experience for killing monsters while in a tank.", 0, 0) 
 	GameRules:SendCustomMessage("Avoid the monsters you can avoid, and kill the ones you have to.", 0, 0)
 	GameRules:SendCustomMessage("Find and kill the enemy steam tanks to open the end door.", 0, 0)

@@ -3237,6 +3237,11 @@
 						"Target"		"CASTER"
 						"EffectLifeDurationScale" "1"
 						}
+					"FireSound"
+						{
+						"EffectName"		"Hero_Nightstalker.Darkness"		
+						"Target"			"TARGET"
+						}
 				}
 				"Properties"
 					{

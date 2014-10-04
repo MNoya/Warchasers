@@ -4,7 +4,7 @@ TO DO - Priority List
 [X]Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
 [X]Book of the dead, world drop in 2nd circle zone
 [X]Add missing sound events on every custom_unit
-[~]Fix/Add sounds on creeps/items
+[X]Fix/Add sounds on creeps/items
 [ ]Hell/Heaven Quest Timers
 
 2. Adding Gameplay
@@ -16,6 +16,9 @@ TO DO - Priority List
 [ ]Add particles on special spawns/death (bosses, necro)
 
 3. Cosmetic & Adjustments
+[ ]Rewrite satyr_trickster_purge for "DOTA_Item.DiffusalBlade.Activate" sound
+[ ]Rewrite necronomicon_archer_mana_burn for "Hero_NyxAssassin.ManaBurn.Cast" sound
+[ ]Rewrite most items to datadriven to allow custom particles and effects
 [ ]Make snow blend (After doing last secret area in mid)
 [ ]Improve tilesets (add proper ligth sources to architecture)
 [ ]Fix stupid fountain particle

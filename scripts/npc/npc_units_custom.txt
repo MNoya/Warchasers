@@ -7745,7 +7745,7 @@
 		"Level"                                         "6"
 		"ModelScale"                            "1.2"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
