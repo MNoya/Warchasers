@@ -3507,7 +3507,7 @@
 					{
 						"CleavePercent"				"10"
 						"CleaveRadius"				"140"
-						//"CleaveEffect"				""
+						"CleaveEffect"				"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
 					}
 				}
 			}

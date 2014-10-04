@@ -3344,7 +3344,7 @@
 		
 		"Ability1"					""			// Ability 1.
 		"Ability2"					"satyr_trickster_purge"	--need to rewrite datadriven for sound	// Ability 2.
-		"Ability3"					"ogre_magi_frost_armor"			// Ability 3.
+		"Ability3"					"lich_frost_armor"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_tome"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -3440,7 +3440,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"ogre_magi_frost_armor"
+					"Name"				"lich_frost_armor"
 					"Buff"				"1" //dont buff twice
 					//"Heal"				"1"
 					
@@ -5390,7 +5390,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"ghost_frost_attack"			// Ability 1
+		"Ability1"					"creep_frost_breath"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5408,7 +5408,7 @@
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"400"		// Range within a target can be attacked.
-		"ProjectileModel"			"black_dragon_attack" // Particle system model for projectile.
+		"ProjectileModel"			"particles/neutral_fx/black_dragon_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1500"		// Speed of projectile.		     
 
 		// Bounds
@@ -6419,7 +6419,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"ogre_magi_fireblast"			// Ability 1
+		"Ability1"					"creep_bloodlust"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4.
@@ -6476,31 +6476,36 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
+		
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
-		"DefaultState"			"Invade"
+		"Creature"
+		{
+			"DefaultState"			"Invade"
 			"States"	
 			{
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"90.0" //cast offensive spells whenever
+					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
-					"Support"			"50.0" //start buffing
+					"Support"			"90.0" //start buffing
 				}
 			}
 			
-			"OffensiveAbilities"
+			"DefensiveAbilities"
 			{
 				"Ability1"
 				{
-					"Name"				"ogre_magi_fireblast"
+					"Name"				"creep_bloodlust"
+					"Buff"				"1"
 				}
-			}
+			}			
+		}
 	}
 	
 	//=================================================================================	
@@ -6522,8 +6527,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_bloodlust"			// Ability 1
-		"Ability2"					"necronomicon_archer_mana_burn"			// Ability 2
+		"Ability1"					"necronomicon_archer_mana_burn"			// Ability 1
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4.
 		"Ability5"					"drop_level6"			// Ability 5.
@@ -6593,7 +6598,7 @@
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"90.0" //cast offensive spells whenever
+					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
 					"Support"			"50.0" //start buffing
 				}
@@ -6605,15 +6610,7 @@
 				{
 					"Name"				"necronomicon_archer_mana_burn"
 				}
-			}
-			
-			"DefensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"creep_bloodlust"
-				}
-			}
+			}	
 		}
 	}
 
@@ -6727,9 +6724,9 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/clinkz/clinkz.vmdl"	// Model.
 		"ModelScale"				"0.8"
-		"SoundSet"                  "Hero_Clinkz"			
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		"SoundSet"                  "Hero_Lina"			
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 		"Level"						"2"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -7343,7 +7340,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"ghost_frost_attack"			// Ability 1. 
+		"Ability1"					"creep_frost_breath"			// Ability 1. 
 		"Ability2"					"neutral_spell_immunity"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.

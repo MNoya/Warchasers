@@ -3350,6 +3350,11 @@
 					{
 						"Mana"    "%AbilityManaCost"
 					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_DrowRanger.FrostArrows"
+						"Target"				"TARGET"
+					}
 				}
 				
 				"OnOrbImpact"
@@ -3569,6 +3574,11 @@
 						"Damage" 		"%damage"
 						"Target"		"TARGET"
 					}
+					//"FireSound"
+					//{
+					//	"EffectName"			"Hero_Dazzle.Poison_Tick"
+					//	"Target"				"TARGET"
+					//}
 
 				}
 			}	
@@ -3619,6 +3629,96 @@
 		}
 		
 	}
+
+	"creep_frost_breath"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName" 			"creep_frost_breath"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"MaxLevel"						"1"
+		
+		"Modifiers"
+		{
+			
+			"modifier_creep_frost_breath"
+			{
+				"Passive"	 "1"
+				"IsHidden"	 "1"
+				"OnAttack"
+				{
+					"FireSound"
+					{
+						"EffectName"			"Hero_DragonKnight.ElderDragonShoot3.Attack"
+						"Target"				"TARGET"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName" "modifier_creep_frost_breath_slow"
+						"Target"	   "TARGET"
+					}
+
+					"CleaveAttack"
+					{
+						"CleavePercent"				"50"
+						"CleaveRadius"				"%cleave_radius"
+						"CleaveEffect"				""
+					}
+				}
+			}	
+
+			"modifier_creep_frost_breath_slow"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+
+				"EffectName"		"particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
+				"EffectAttachType" 	"attach_hitloc"
+
+				"Duration"					"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed"
+				}
+
+			}	
+		}
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed"				"-50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed"				"-50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cleave_radius"				"500"
+			}
+		}
+		
+	}
 	
 	"creep_slow"
 	{
@@ -3634,7 +3734,7 @@
 		
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"50"
 
 		"OnSpellStart"
@@ -3643,6 +3743,11 @@
 			{
 				"ModifierName"	"modifier_creep_slow"		
 				"Target"	"TARGET"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.RodOfAtos.Activate"
+				"Target"				"TARGET"
 			}
 		}
 
@@ -3776,6 +3881,11 @@
 			{
 				"Target"	"TARGET"
 				"ModifierName"	"creep_inner_fire_buff"
+			}
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.Buckler.Activate"
+				"Target"				"TARGET"
 			}
 		}
 		
