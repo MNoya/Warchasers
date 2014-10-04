@@ -161,8 +161,8 @@ function Warchasers:InitGameMode()
 
 	GameRules.FIRST_CIRCLE_ACTIVADED = false
 	GameRules.SENDHELL = false
-	GameRules.SENDSECRETHEAVEN = false
-	GameRules.SENDSECRETHELL = false
+	GameRules.SENDFROSTHEAVEN = false
+	GameRules.SENDFORESTHELL = false
 	GameRules.SHOWPOPUP = true
 
 	GameRules.DEAD_PLAYER_COUNT = 0
