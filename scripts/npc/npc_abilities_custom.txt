@@ -3129,6 +3129,7 @@
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"5.0"
 		"AbilityManaCost"				"75"
+		"AbilityTextureName"			"satyr_trickster_purge"
 		"AbilitySpecial"
 			{
 			"01"
