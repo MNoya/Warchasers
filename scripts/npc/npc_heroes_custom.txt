@@ -452,7 +452,7 @@
 		"override_hero"				"npc_dota_hero_razor"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"necronomicon_archer_mana_burn"	
+		"Ability1"				"warchasers_mana_burn"	
 		"Ability2"				"harpy_storm_chain_lightning"	
 		"Ability3"				"warchasers_skeletorus_brilliance_aura"	
 		"Ability4"				""

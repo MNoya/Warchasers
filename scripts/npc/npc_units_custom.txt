@@ -6599,7 +6599,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"necronomicon_archer_mana_burn"			// Ability 1
+		"Ability1"					"warchasers_mana_burn"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4.
@@ -6680,7 +6680,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"necronomicon_archer_mana_burn"
+					"Name"				"warchasers_mana_burn"
 				}
 			}	
 		}
@@ -8767,7 +8767,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"necronomicon_archer_mana_burn"			// Ability 1
+		"Ability1"					"warchasers_mana_burn"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -8844,7 +8844,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"necronomicon_archer_mana_burn"
+					"Name"				"warchasers_mana_burn"
 				}
 			}
 			

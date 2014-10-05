@@ -1,6 +1,12 @@
 print("Abilities are loading")
 
-
+function mana_burn( event )
+	event.caster:AddAbility("necronomicon_archer_mana_burn")
+	local ability = event.caster:FindAbilityByName("necronomicon_archer_mana_burn")
+	ability:SetLevel(event.ability:GetLevel())
+	event.caster:CastAbilityOnTarget( event.target, ability, event.caster:GetPlayerOwnerID())
+	event.caster:RemoveAbility("necronomicon_archer_mana_burn")
+end
 
 function wizard_purge( event )
 	event.caster:AddAbility("satyr_trickster_purge")

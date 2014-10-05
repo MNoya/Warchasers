@@ -3118,6 +3118,46 @@
 	
 	//"heal" "forest_troll_high_priest_heal"
 
+	"warchasers_mana_burn"
+		{
+		"BaseClass" "ability_datadriven"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"600"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCooldown"				"7 6 5"
+		"AbilityManaCost"				"50"
+		"AbilityTextureName"			"razor_mana_burn"
+				
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"burn_amount"			"50 100 150"
+				}
+			}
+		"OnSpellStart"
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"mana_burn"
+				}
+			"FireSound"
+				{
+				"EffectName"	"Hero_NyxAssassin.ManaBurn.Cast"
+				"Target"	"CASTER"
+				}
+			"FireSound"
+				{
+				"EffectName"	 "Hero_NyxAssassin.ManaBurn.Target"
+				"Target"	"TARGET"
+				}
+			}
+		}
+
 	"warchasers_wizard_purge"
 		{
 		"MaxLevel"	"1"

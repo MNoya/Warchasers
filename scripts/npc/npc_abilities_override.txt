@@ -566,11 +566,11 @@
 	"necronomicon_archer_mana_burn"
 	{
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"600" //was 300 but it's awkward 
-		"AbilityCooldown"				"7 6 5"
-		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"9001" //was 300 but it's awkward 
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
 		"AbilityTextureName"			"razor_mana_burn"
-				
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET	|	DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilitySpecial"
 		{
 			"01"

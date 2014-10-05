@@ -98,6 +98,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context)
 	
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
