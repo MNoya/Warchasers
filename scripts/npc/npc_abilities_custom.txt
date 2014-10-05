@@ -3744,6 +3744,11 @@
 
 		"OnSpellStart"
 		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_creep_slow"		
+				"Target"	"TARGET"
+			}
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_creep_slow"		
@@ -3762,13 +3767,11 @@
 			"modifier_creep_slow"
 			{
 				"IsDebuff"					"1"
-				"IsPurgable"				"0"
-
 				"EffectName"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
 				"EffectAttachType" "attach_hitloc"
 
 				"Duration"					"%duration"
-
+				"Attributes"			"MODIFIER_ATTRIBUTE_NONE"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"

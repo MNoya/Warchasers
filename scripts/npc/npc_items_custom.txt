@@ -3836,7 +3836,7 @@
 				"EffectName" "particles/items2_fx/satanic_buff.vpcf" //"particles/items_fx/armlet.vpcf" //"particles/items2_fx/mask_of_madness.vpcf"
 	            "EffectAttachType" "follow_origin"
 				"Passive"           	"1"
-				"IsHidden"				"0"
+				"IsHidden"				"1"
 				"Duration"				"7"
 				"Properties"
 				{
