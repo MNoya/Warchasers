@@ -1,5 +1,15 @@
 print("Abilities are loading")
 
+
+
+function wizard_purge( event )
+	event.caster:AddAbility("satyr_trickster_purge")
+	local ability = event.caster:FindAbilityByName("satyr_trickster_purge")
+	ability:SetLevel(1)
+	event.caster:CastAbilityOnTarget( event.target, ability, event.caster:GetPlayerOwnerID())
+	event.caster:RemoveAbility("satyr_trickster_purge")
+end
+
 function holy_light_check( event )
 	if event.target == event.caster then --disable self target, refund spell
 		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))

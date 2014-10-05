@@ -3117,6 +3117,52 @@
 	//"purge" "satyr_trickster_purge"
 	
 	//"heal" "forest_troll_high_priest_heal"
+
+	"warchasers_wizard_purge"
+		{
+		"MaxLevel"	"1"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"75"
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"purge_rate"		"5"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+				}
+			"03"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"summon_damage"			"400"
+				}
+			}
+		"OnSpellStart"
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"wizard_purge"
+				}
+			"FireSound"
+				{
+				"EffectName"	"DOTA_Item.DiffusalBlade.Activate"
+				"Target"	"TARGET"
+				}
+			}
+		}
+
+
 	"creep_heal"
 	//Heals a target friendly non-mechanical wounded unit for 25 hit points.
 	{	
@@ -3745,10 +3791,11 @@
 		"OnSpellStart"
 		{
 			"RemoveModifier"
-			{
+				{
 				"ModifierName"	"modifier_creep_slow"		
 				"Target"	"TARGET"
-			}
+				}			
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_creep_slow"		
@@ -3767,11 +3814,13 @@
 			"modifier_creep_slow"
 			{
 				"IsDebuff"					"1"
+				"IsPurgable"				"1"
+
 				"EffectName"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
 				"EffectAttachType" "attach_hitloc"
 
 				"Duration"					"%duration"
-				"Attributes"			"MODIFIER_ATTRIBUTE_NONE"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%move_speed"
@@ -5181,6 +5230,7 @@
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+					
 					}
 				}
 			}

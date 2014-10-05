@@ -826,7 +826,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET	|	DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -836,10 +836,10 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"900001"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"5.0"
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
