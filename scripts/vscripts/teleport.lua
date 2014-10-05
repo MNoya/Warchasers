@@ -236,7 +236,7 @@ end
 function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven with refresher timer, on cave trigger
     GameRules.SENDFROSTHEAVEN = true 
 
-    local point =  Entities:FindByName( nil, "teleport_spot_secret2" ):GetAbsOrigin()
+    local point =  Vector(-7935, 6662, 135)
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
     SendToConsole("dota_camera_center")

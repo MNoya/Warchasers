@@ -3055,9 +3055,9 @@
 						
 						"ItemName"					"item_frostmourne"
 						"ItemCount"					"1"
-						"SpawnRadius"		        "100"
-						"LaunchHeight"		        "200"
-						"LaunchDistance"	        "?100 200"
+						"SpawnRadius"		        "1"
+						"LaunchHeight"		        "300"
+						"LaunchDistance"	        "?1 10"
 						"LaunchDuration"	        "1.0"
 					}
 				}

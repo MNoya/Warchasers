@@ -9,8 +9,8 @@ TO DO - Priority List
 
 2. Adding Gameplay
 [~]skull of guldan npc > Passive OnDeath corrupts the killer, add grom buff, metamorphosis-berserk skill on 5th slot
-[ ]Frostmourne casket
-[ ]Finish Secret Heaven: drop frosmourne from an ice casket (npc). Delayed Drop, OnKilled ShakeCamera.
+[~]Frostmourne casket
+[~]Finish Secret Heaven: drop frosmourne from an ice casket (npc). Delayed Drop, OnKilled ShakeCamera.
 [ ]Add Music track sets
 [ ]Add/Fix particles on creeps/items
 [ ]Add particles on special spawns/death (bosses, necro)
