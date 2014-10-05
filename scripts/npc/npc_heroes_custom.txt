@@ -4,7 +4,7 @@
 "DOTAHeroes"
 {
 
-	//	HP = 100 + 25 * Hero's STR
+	//	HP = Base health + 25 * Hero's STR
 	//	MP =  15 * Hero's INT. 	
 	//	1 point of Agility = 0.3 increase in armor
 	//	Total Armor = -2 (Base Armor) + 0.3 * Hero's AGI (roughly 3agi=1armor)
@@ -506,5 +506,156 @@
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
 		"VisionNighttimeRange"		"800"									// Range of vision at night time.
 		
+	}
+
+
+	"npc_warchasers_wisp"
+	{
+		"override_hero"				"npc_dota_hero_wisp"
+
+		"Model"						"models/heroes/wisp/wisp.mdl"		// Model.
+		"Portrait"					"vgui/hud/heroportraits/portrait_wisp"						// Small image for hero selection
+		"SoundSet"					"Hero_Wisp"													// Name of sound set.
+		"IdleSoundLoop"				"Hero_Wisp.IdleLoop"
+		"Enabled"					"1"
+		"Role"						"Support,LaneSupport,Nuker"
+		"Rolelevels"				"3,2,1"
+		"Team"						"Good"
+		"HeroID"					"91"			// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.	
+		"ModelScale" 				"0.93"
+		"url"						"Io"
+		"PickSound"					"wisp_move03"
+		"BanSound"					"wisp_shitty_crummy_wizard"
+		"CMEnabled"					"1"
+		"NameAliases"				"wisp"
+		"NoCombine"					"1"
+		"LastHitChallengeRival"		"npc_dota_hero_zuus"
+		"AbilityDraftDisabled"		"1"
+		"HeroSelectSoundEffect"		")weapons/hero/wisp/spirits_cast.wav"
+
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"6"
+		"Ability1"					""
+		"Ability2"					""							
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
+		"Ability10"					""
+
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"				"-2.0"								// Physical protection.
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"26"									// Damage range min.
+		"AttackDamageMax"			"35"									// Damage range max.
+		"AttackRate"				"1.7"									// Speed of attack.
+		"AttackAnimationPoint"		"0.15"									// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
+		"AttackRange"				"575"									// Range within a target can be attacked.
+		"ProjectileModel"			"wisp_base_attack"					// Particle system model for projectile.
+		"ProjectileSpeed"			"1200"									// Speed of projectile.
+		
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"17"									// Base strength
+		"AttributeStrengthGain"			"1.9"									// Strength bonus per level.
+		"AttributeBaseAgility"			"14"									// Base agility
+		"AttributeAgilityGain"			"1.6"									// Agility bonus per level.
+		"AttributeBaseIntelligence"		"23"									// Base intelligence
+		"AttributeIntelligenceGain"		"1.7"									// Intelligence bonus per level.
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"				"295"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"HealthBarOffset"			"160"
+		
+		"ParticleFile"				"particles/units/heroes/hero_wisp.pcf"
+		"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_wisp.txt"
+		"VoiceFile"					"scripts/voscripts/game_sounds_vo_wisp.txt"
+
+		// Additional data needed to render the out of game portrait
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"wisp_ambient"
+				{
+					"0"
+					{
+						"type"		"follow_attachment"
+						"location"	"attach_hitloc"
+					}
+					"1"
+					{
+						"type"		"follow_origin"
+						"location"	"attach_hitloc"  //Note : shouldn't need this
+					}
+					"10"
+					{
+						"type"		"world_origin"
+						"position"	"1 1 0"  
+					}
+					"11"
+					{
+						"type"		"world_origin"
+						"position"	"1 1 1"  
+					}
+					"13"
+					{
+						"type"		"world_origin"
+						"position"	"0 1 1"  
+					}
+				}	
+			}
+		}	
+
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"model"			"models/development/invisiblebox.mdl"
+		}
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"	"0"
+				"SlotName"	"weapon"
+				"SlotText"	"#LoadoutSlot_Weapon"
+			}
+
+		}
+
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_PURE_SUPPORT"
+			"LaningInfo"
+			{
+				"SoloDesire"			"0"
+				"RequiresBabysit"		"0"
+				"ProvidesBabysit"		"2"
+				"SurvivalRating"		"2"
+				"RequiresFarm"			"1"
+				"ProvidesSetup"			"0"
+				"RequiresSetup"			"2"
+			}
+		}
 	}
 }

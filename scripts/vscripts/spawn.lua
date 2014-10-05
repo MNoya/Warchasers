@@ -1,4 +1,69 @@
 
+function ReplaceByTimber(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_shredder", 0, 0)
+        local starting_point = Vector(-6030,-7611, 128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceByRazor(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_razor", 0, 0)
+        local starting_point = Vector(-5774,-7611,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceByJugg(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_juggernaut", 0, 0)
+        local starting_point = Vector(-5902,-7611,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceBySven(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_sven", 0, 0)
+        local starting_point = Vector(-5902, -7739,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+
+function ReplaceByDrow(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_drow_ranger", 0, 0)
+        local starting_point = Vector(-6030, -7739,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceByTemplar(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_templar_assassin", 0, 0)
+        local starting_point = Vector(-5774, -7739,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceByCK(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_chaos_knight", 0, 0)
+        local starting_point = Vector(-5966, -7867, 128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+function ReplaceBySD(event)
+        local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_shadow_demon", 0, 0)
+        local starting_point = Vector(-5838,-7867,128)
+        FindClearSpaceForUnit(newHero, starting_point, true)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --[[function structure_spawner_func( event )

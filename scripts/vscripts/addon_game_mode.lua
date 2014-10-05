@@ -26,16 +26,22 @@ function Precache( context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
 	
-	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
+	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
+	PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context)
+	PrecacheUnitByNameSync("npc_dota_hero_chaos_knight", context)
+	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
+	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
+
+	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
 	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
 	PrecacheUnitByNameSync("npc_dota_hero_ember_spirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
 	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
 	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
-	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
 	PrecacheUnitByNameSync("npc_dota_hero_abyssal_underlord", context)
 	PrecacheUnitByNameSync("npc_dota_hero_lycan", context)
 	PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
@@ -444,28 +450,36 @@ function Warchasers:OnNPCSpawned(keys)
         npc.agilityBonus = 0
         npc.attackspeedBonus = 0
     end
-		
-	if npc:IsRealHero() and npc.bFirstSpawned == nil then
-		npc.bFirstSpawned = true
-		SendToConsole("dota_camera_lock 1")
-		SendToConsole("dota_camera_center")
-		local item = CreateItem("item_ankh", npc, npc)
-		npc:AddItem(item)
-		Warchasers:OnHeroInGame(npc)
-	elseif npc:IsRealHero() and npc.bFirstSpawned == true then --respawn through Ankh
-		--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
-		--Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
-		Warchasers:OnHeroInGame(npc)
-		npc:SetHealth(500) --it's a little more based on the STR
-		print(npc:GetHealth())
-
-	end	
+	
+	if npc:IsRealHero() then
+		local heroPlayerID = npc:GetPlayerID()
+		print("ID " .. heroPlayerID)
+		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
+		print("hero Name " .. heroName)
+		if heroName ~= "npc_dota_hero_wisp" then
+			if npc.bFirstSpawned == nil then
+				npc.bFirstSpawned = true
+				--SendToConsole("dota_camera_lock 1")
+				--SendToConsole("dota_camera_center")
+				--Add Ankh
+				local item = CreateItem("item_ankh", npc, npc)
+				npc:AddItem(item)
+				Warchasers:OnHeroInGame(npc)
+			elseif npc.bFirstSpawned == true then --respawn through Ankh
+				--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+				--Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
+				Warchasers:OnHeroInGame(npc)
+				npc:SetHealth(500) --it's a little more based on the STR
+				print(npc:GetHealth())
+			end
+		end	
+	end
 end
 
---Add Ankh
 function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
 
+	Warchasers:ModifyStatBonuses(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
 		
@@ -477,7 +491,7 @@ function Warchasers:OnHeroInGame(hero)
 	end
 	GameRules.PLAYER_COUNT = playercounter
 
-	print("Total Players" .. GameRules.PLAYER_COUNT)
+	print("Total Players: " .. GameRules.PLAYER_COUNT)
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	Timers:CreateTimer({
 			endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -528,7 +542,7 @@ end
 function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
-    Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+    --Warchasers:ModifyStatBonuses(spawnedUnitIndex)
     --Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
 end
 
