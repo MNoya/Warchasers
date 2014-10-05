@@ -452,7 +452,7 @@
 		"override_hero"				"npc_dota_hero_razor"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"warchasers_mana_burn"	
+		"Ability1"				"warchasers_mana_burn"
 		"Ability2"				"harpy_storm_chain_lightning"	
 		"Ability3"				"warchasers_skeletorus_brilliance_aura"	
 		"Ability4"				""
@@ -516,13 +516,12 @@
 		"Model"						"models/heroes/wisp/wisp.mdl"		// Model.
 		"Portrait"					"vgui/hud/heroportraits/portrait_wisp"						// Small image for hero selection
 		"SoundSet"					"Hero_Wisp"													// Name of sound set.
-		"IdleSoundLoop"				"Hero_Wisp.IdleLoop"
 		"Enabled"					"1"
 		"Role"						"Support,LaneSupport,Nuker"
 		"Rolelevels"				"3,2,1"
 		"Team"						"Good"
 		"HeroID"					"91"			// unique ID number for this hero.  Do not change this once established or it will invalidate collected stats.	
-		"ModelScale" 				"0.93"
+		"ModelScale" 				"0.6"
 		"url"						"Io"
 		"PickSound"					"wisp_move03"
 		"BanSound"					"wisp_shitty_crummy_wizard"
@@ -551,13 +550,13 @@
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"-2.0"								// Physical protection.
+		"ArmorPhysical"				"0"								// Physical protection.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"26"									// Damage range min.
-		"AttackDamageMax"			"35"									// Damage range max.
+		"AttackDamageMin"			"0"									// Damage range min.
+		"AttackDamageMax"			"0"									// Damage range max.
 		"AttackRate"				"1.7"									// Speed of attack.
 		"AttackAnimationPoint"		"0.15"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"									// Range within a target can be acquired.
@@ -568,19 +567,24 @@
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"			"17"									// Base strength
-		"AttributeStrengthGain"			"1.9"									// Strength bonus per level.
-		"AttributeBaseAgility"			"14"									// Base agility
-		"AttributeAgilityGain"			"1.6"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"23"									// Base intelligence
-		"AttributeIntelligenceGain"		"1.7"									// Intelligence bonus per level.
+		"AttributeBaseStrength"			"1"									// Base strength
+		"AttributeStrengthGain"			"1"									// Strength bonus per level.
+		"AttributeBaseAgility"			"1"									// Base agility
+		"AttributeAgilityGain"			"1"									// Agility bonus per level.
+		"AttributeBaseIntelligence"		"0"									// Base intelligence
+		"AttributeIntelligenceGain"		"0"									// Intelligence bonus per level.
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"295"									// Speed.
+		"MovementSpeed"				"200"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"HealthBarOffset"			"160"
+		"HealthBarOffset"			"3000"
+
+		"StatusHealth"				"101"									// Base health.
+		"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+		"StatusMana"				"0"											// Base mana.
+		"StatusManaRegen"			"1"									// Mana regeneration rate.
 		
 		"ParticleFile"				"particles/units/heroes/hero_wisp.pcf"
 		"GameSoundsFile"			"scripts/game_sounds_heroes/game_sounds_wisp.txt"

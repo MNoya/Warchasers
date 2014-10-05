@@ -6,6 +6,7 @@ TO DO - Priority List
 [X]Add missing sound events on every custom_unit
 [X]Fix/Add sounds on creeps/items
 [ ]Hell/Heaven Quest Timers
+[!]Wisp Selection System
 
 2. Adding Gameplay
 [~]skull of guldan npc > Passive OnDeath corrupts the killer, add grom buff, metamorphosis-berserk skill on 5th slot

@@ -45,7 +45,7 @@
 				"IsBuff" "1"
 				"Passive" "1"
 				"IsHidden" "0"
-				"EffectName"		"particles/generic_gameplay/rune_regen_owner.vpcf" //"particles/items_fx/healing_flask.vpcf" //"particles/econ/events/ti4/radiant_fountain_regen_ti4.vpcf" 
+				"EffectName"		"particles/generic_gameplay/rune_regeneration.vpcf" //"particles/items_fx/healing_flask.vpcf" //"particles/econ/events/ti4/radiant_fountain_regen_ti4.vpcf" 
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
@@ -4558,6 +4558,11 @@
 			{
 				"IsHidden" "1"
 				"Passive" "1"
+				"IsBuff"			"1"
+				"Aura" 				"warchasers_optimusprimo_thorns_aura_indicator"
+				"Aura_Radius" 		"900"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -4568,10 +4573,17 @@
 					}
 				}		
 			}
+
+			"warchasers_optimusprimo_thorns_aura_indicator"
+			{
+				"IsBuff"				"1"			
+			}
+
 			"warchasers_megatron_thorns_aura_thinker"
 			{
 				"Passive"	"1"
 				"ThinkInterval"	"0.5"
+				"IsHidden"	"1"
 				"OnIntervalThink"
 				{
 					"ApplyModifier"
@@ -7149,6 +7161,7 @@
          
           "MODIFIER_STATE_NOT_ON_MINIMAP"         "MODIFIER_STATE_VALUE_ENABLED"
 		  "MODIFIER_STATE_PROVIDES_VISION"         "MODIFIER_STATE_VALUE_DISABLED"
+		  "MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
         }
       }
     }

@@ -34,6 +34,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_chaos_knight", context)
 	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
+	PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
 
 	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
@@ -78,6 +79,23 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_broodmother", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 
+	PrecacheUnitByNameSync("npc_timber", context)
+	PrecacheUnitByNameSync("npc_dota_hero_optimus_primo", context)
+	PrecacheUnitByNameSync("npc_jugg", context)
+	PrecacheUnitByNameSync("npc_dota_hero_blade_berserker", context)
+	PrecacheUnitByNameSync("npc_drow", context)
+	PrecacheUnitByNameSync("npc_dota_hero_snake_eyes", context)
+	PrecacheUnitByNameSync("npc_ck", context)
+	PrecacheUnitByNameSync("npc_warchasers_hero_beast_knight", context)
+	PrecacheUnitByNameSync("npc_sd", context)
+	PrecacheUnitByNameSync("npc_dota_hero_mummrah", context)
+	PrecacheUnitByNameSync("npc_templar", context)
+	PrecacheUnitByNameSync("npc_dota_hero_assassin", context)
+	PrecacheUnitByNameSync("npc_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_megotron", context)
+	PrecacheUnitByNameSync("npc_razor", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skeletorus", context)
+
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
 	PrecacheResource("model", "models/kappakey.vmdl", context)
@@ -99,6 +117,8 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_wisp.vsndevts", context)
 	
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
@@ -111,6 +131,16 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
 	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
+	--NEED TO PRECACHE ALL HATS?
+	--Juggernaut
+	PrecacheModel("models/items/juggernaut/wandering_demon_sword/wandering_demon_sword.vmdl", context )
+	PrecacheModel("models/items/juggernaut/scowl_of_kogu/scowl_of_kogu.vmdl", context )
+	PrecacheModel("models/items/juggernaut/sturdy_bracers_of_the_exiled_ronin/sturdy_bracers_of_the_exiled_ronin.vmdl", context )
+	PrecacheModel("models/items/juggernaut/jugg_flag/jugg_flag.vmdl", context )
+	PrecacheModel("models/items/juggernaut/armour_of_the_exiled_ronin/armour_of_the_exiled_ronin.vmdl", context )
+	--[[PrecacheModel("", context )]]
+
+
 end
 
 XP_PER_LEVEL_TABLE = {
@@ -149,7 +179,7 @@ function Warchasers:InitGameMode()
 	--self:ReadDropConfiguration()
 	GameMode = GameRules:GetGameModeEntity()
 
-	GameMode:SetCameraDistanceOverride( 1000 )
+	GameMode:SetCameraDistanceOverride( 1600 )
 	GameMode:SetAnnouncerDisabled(true)
 	GameMode:SetBuybackEnabled(false)
 	GameMode:SetRecommendedItemsDisabled(true) --broken
@@ -316,8 +346,16 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-  PrecacheUnitByNameAsync("npc_dota_hero_viper", function(...) end)
-  PrecacheUnitByNameAsync("npc_dota_hero_enigma", function(...) end)
+  	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_wisp", function(...) end)
+
 end
 
 function Warchasers:OnGameInProgress()
@@ -439,6 +477,48 @@ function Warchasers:OnAllPlayersLoaded()
 				dummy4:ForceKill(true)
 			end
 		})
+
+		--Create Hall of Legends Heroes
+		
+		--[[local origin = Vector(-2926,-5920,129)
+		local dummy1 = CreateUnitByName("vision_dummy", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local origin = Vector(-2926,-5320,129)
+		local dummy2 = CreateUnitByName("vision_dummy", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)]]
+
+
+		--left row
+		local origin = Entities:FindByName( nil, "timber_circle" ):GetAbsOrigin()
+		local timbersaw = CreateUnitByName("npc_timber", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+		local origin = Entities:FindByName( nil, "jugg_circle" ):GetAbsOrigin()
+		local juggernaut = CreateUnitByName("npc_jugg", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+		local origin = Entities:FindByName( nil, "drow_circle" ):GetAbsOrigin()
+		local drow = CreateUnitByName("npc_drow", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+		local origin = Entities:FindByName( nil, "ck_circle" ):GetAbsOrigin()
+		local ck = CreateUnitByName("npc_ck", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+
+
+
+		--right row
+		local origin = Entities:FindByName( nil, "sd_circle" ):GetAbsOrigin()
+		local rotation = Vector(-6912,-5856,500)
+		local sd = CreateUnitByName("npc_sd", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		sd:SetForwardVector(rotation)
+
+		local origin = Entities:FindByName( nil, "templar_circle" ):GetAbsOrigin()
+		local templar = CreateUnitByName("npc_templar", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		templar:SetForwardVector(rotation)
+
+		local origin = Entities:FindByName( nil, "sven_circle" ):GetAbsOrigin()
+		local sven = CreateUnitByName("npc_sven", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		sven:SetForwardVector(rotation)
+
+		local origin = Entities:FindByName( nil, "razor_circle" ):GetAbsOrigin()
+		local razor = CreateUnitByName("npc_razor", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		razor:SetForwardVector(rotation)
+
 end
 
 function Warchasers:OnNPCSpawned(keys)
@@ -457,11 +537,12 @@ function Warchasers:OnNPCSpawned(keys)
 		print("ID " .. heroPlayerID)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
 		print("hero Name " .. heroName)
+		SendToConsole("dota_camera_lock 1")
+		SendToConsole("dota_camera_center")
 		if heroName ~= "npc_dota_hero_wisp" then
+			GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 			if npc.bFirstSpawned == nil then
 				npc.bFirstSpawned = true
-				--SendToConsole("dota_camera_lock 1")
-				--SendToConsole("dota_camera_center")
 				--Add Ankh
 				local item = CreateItem("item_ankh", npc, npc)
 				npc:AddItem(item)

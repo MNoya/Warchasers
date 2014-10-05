@@ -48,7 +48,37 @@ function ReplaceBySD(event)
         FindClearSpaceForUnit(newHero, starting_point, true)
 end
 
+function ShowTimber(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
 
+function ShowJugg(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowDrow(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowCK(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowSD(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowTemplar(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowSven(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
+
+function ShowRazor(event)
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+end
 
 
 
