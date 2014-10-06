@@ -533,6 +533,7 @@ function Warchasers:OnNPCSpawned(keys)
     end
 	
 	if npc:IsRealHero() then
+		--Warchasers:RemoveWearables(npc) --doesn't work
 		local heroPlayerID = npc:GetPlayerID()
 		print("ID " .. heroPlayerID)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
@@ -1111,3 +1112,29 @@ function Warchasers:CheckForLootItemDrop( killedUnit )
 		end
 	end
 end]]
+
+function Warchasers:RemoveWearables(hero) 
+	local wearables = {}
+	print("Removing Wearables")
+	-- Store all of the wearables into the wearables array
+	local cur = hero:FirstMoveChild()
+	print(cur:GetName())
+ 	while cur ~= nil do
+    cur = cur:NextMovePeer()
+    print(cur:GetName())
+    if cur ~= nil and cur:GetClassname() ~= "" and cur:GetClassname() == "dota_item_wearable" then
+      print(cur:GetClassname())  -- also can use cur:GetName()
+      print(cur:GetName())
+      table.insert(wearables, cur)
+    end
+  end
+
+  print("Wearables List")
+  DeepPrintTable(wearables)
+   -- Remove all the wearables
+  for i=1, #wearables do
+  	UTIL_RemoveImmediate(wearables[i])
+	end
+end
+
+
