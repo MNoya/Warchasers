@@ -1,5 +1,4 @@
 --Camera Lock
-print("camera_ini")
 
 --[[function camera_umlocker( hero )
 	local player_id = hero:GetPlayerOwnerID()
@@ -25,9 +24,6 @@ function camera_lock_on_hero( event )
 end	]]
 --<BMD> there is another way, via using the "modifier_camera_follow" modifier
 --<Myll> if you use SetAbsOrigin on a player u can lock their camera to that position. so u can doing player:SetAbsOrigin(heroToLock:GetAbsOrigin()) in a think loop
-
-
-ListenToGameEvent( "npc_spawned", camera_lock_on_hero, nil )
 
 function increase_camera_height(trigger)
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )

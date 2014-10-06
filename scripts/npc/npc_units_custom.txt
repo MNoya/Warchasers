@@ -24,7 +24,7 @@
 		"Ability5"				""
 		"Ability6"				"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
     	"Ability7"				 "not_on_minimap"
-    	"Ability8"				""
+    	"Ability8"				"cant_act"
 
     	"HealthBarOffset" "3000"
 
@@ -40,7 +40,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"1.6"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.65"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"128"									// Range within a target can be attacked.
 		//"ProjectileModel"			""							// Particle system model for projectile.
 		//"ProjectileSpeed"			"900"									// Speed of projectile.
@@ -71,7 +71,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 
 		"Creature"
 		{
@@ -109,7 +109,7 @@
 		"Ability5"				""
 		"Ability6"				"juggernaut_blade_fury"
     	"Ability7"				"not_on_minimap"
-    	"Ability8"				""
+    	"Ability8"				"cant_act"
 
     	"HealthBarOffset" "3000"
     	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
@@ -126,7 +126,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"1.77"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.84"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"100"									// Range within a target can be attacked.
 		//"ProjectileModel"			""							// Particle system model for projectile.
 		//"ProjectileSpeed"			"900"									// Speed of projectile.
@@ -157,7 +157,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -191,7 +191,7 @@
 		"Ability3"					"warchasers_snake_cold_arrows" 
 		"Ability4"					"abyssal_underlord_firestorm" //No particles
 		"Ability5"				"not_on_minimap"
-		"Ability6"				""
+		"Ability6"				"cant_act"
     	"Ability7"				""
     	"Ability8"				""
 
@@ -209,7 +209,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"1.5"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"600"									// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"				// Particle system model for projectile.
 		"ProjectileSpeed"			"1050"									// Speed of projectile.
@@ -240,7 +240,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -273,11 +273,11 @@
 		"Ability1"					"warchasers_snake_beast_holy_light"
 		"Ability2"					"lycan_summon_wolves"
 		"Ability3"					"warchasers_beast_knight_summon_water_elemental"
-		"Ability4"					"not_on_minimap"
+		"Ability4"					""
 		"Ability5"				""
 		"Ability6"				"warlock_rain_of_chaos"
-    	"Ability7"				""
-    	"Ability8"				""
+    	"Ability7"				"not_on_minimap"
+    	"Ability8"				"cant_act"
 
     	"HealthBarOffset" "3000"
 
@@ -293,7 +293,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"2.33"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.41"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"100"									// Range within a target can be attacked.
 		//"ProjectileModel"			""							// Particle system model for projectile.
 		//"ProjectileSpeed"			"900"									// Speed of projectile.
@@ -324,7 +324,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -360,7 +360,7 @@
 		"Ability5"				""
 		"Ability6"				"warchasers_muhrah_animate_dead"
     	"Ability7"				"not_on_minimap"
-    	"Ability8"				""
+    	"Ability8"				"cant_act"
 
     	"HealthBarOffset" "3000"
 
@@ -376,7 +376,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"2.0"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.55"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"350"									// Range within a target can be attacked.
 		//"ProjectileModel"			""							// Particle system model for projectile.
 		//"ProjectileSpeed"			"900"									// Speed of projectile.
@@ -407,7 +407,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -442,7 +442,7 @@
 		"Ability5"				""
 		"Ability6"				"warchasers_starfall"
     	"Ability7"				"not_on_minimap"
-    	"Ability8"				""	
+    	"Ability8"				"cant_act"	
 
     	"HealthBarOffset" "3000"
 
@@ -458,7 +458,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"1.5"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"600"									// Range within a target can be attacked.
 		"ProjectileModel"			"particles/econ/items/luna/luna_lucent_rider/luna_attack_lucent_rider.vpcf"			// Particle system model for projectile.
 		"ProjectileSpeed"			"1050"									// Speed of projectile.
@@ -489,7 +489,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"900"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -518,7 +518,7 @@
 		"Ability1"				"brewmaster_storm_wind_walk"	
 		"Ability2"				"warchasers_megatron_divine_shield"	//Needs attach particles
 		"Ability3"				"warchasers_megatron_thorns_aura"	//Needs attach particles
-		"Ability4"				"" 
+		"Ability4"				"cant_act" 
 		"Ability5"				""
 		"Ability6"				"warchasers_megatron_tranquility" //Needs attach particles
     	"Ability7"				"not_on_minimap"
@@ -539,7 +539,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
 		"AttackRate"				"1.7"									// Speed of attack.
 		//"AttackAnimationPoint"		"0.97"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
 		"AttackRange"				"160"									// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"			// Particle system model for projectile.
 		"ProjectileSpeed"			"250"									// Speed of projectile.
@@ -570,7 +570,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 		
 		"Creature"
 		{
@@ -605,7 +605,7 @@
 		"Ability5"				""
 		"Ability6"				"enigma_midnight_pulse"	
     	"Ability7"				"not_on_minimap"
-    	"Ability8"				""
+    	"Ability8"				"cant_act"
 
     	"HealthBarOffset" "3000"
 
@@ -652,7 +652,7 @@
 		// Vision
 		//-------------------------------------------------------------------------------------------------------------
 		"VisionDaytimeRange"		"1800"									// Range of vision during day light.
-		"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		"VisionNighttimeRange"		"0"										// Range of vision at night time.
 			
 		"Creature"
 		{
@@ -1099,6 +1099,32 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"100"		// Range of vision during day light.
 		"VisionNighttimeRange"		"100"		// Range of vision at night time.
+	}
+
+	"vision_dummy_hall"
+	{
+		// General
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/development/invisiblebox.mdl"	// Model.
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ground_dummy"			// Ability 1.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
 	}
 
 
@@ -2424,7 +2450,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"drop_frostmourne"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"not_on_minimap"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.

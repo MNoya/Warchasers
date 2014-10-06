@@ -1,52 +1,141 @@
 
 function ReplaceByTimber(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_shredder", 0, 0)
         local starting_point = Vector(-6030,-7611, 128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+       
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_timber" then
+                        creep:ForceKill(true)
+                        print("Timber Replaced")
+                end
+        end
 end
 
 function ReplaceByRazor(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_razor", 0, 0)
         local starting_point = Vector(-5774,-7611,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+        
+       
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_razor" then
+                        creep:ForceKill(true)
+                        print("Razor Replaced")
+                end
+        end
 end
 
 function ReplaceByJugg(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_juggernaut", 0, 0)
         local starting_point = Vector(-5902,-7611,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_jugg" then
+                        creep:ForceKill(true)
+                        print("Jugg Replaced")
+                end
+        end
 end
 
 function ReplaceBySven(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_sven", 0, 0)
         local starting_point = Vector(-5902, -7739,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_sven" then
+                        creep:ForceKill(true)
+                        print("Sven Replaced")
+                end
+        end
 end
 
 
 function ReplaceByDrow(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_drow_ranger", 0, 0)
         local starting_point = Vector(-6030, -7739,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_drow" then
+                        creep:ForceKill(true)
+                        print("Drow Replaced")
+                end
+        end
 end
 
 function ReplaceByTemplar(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_templar_assassin", 0, 0)
         local starting_point = Vector(-5774, -7739,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_templar" then
+                        creep:ForceKill(true)
+                        print("Templar Replaced")
+                end
+        end
 end
 
 function ReplaceByCK(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_chaos_knight", 0, 0)
         local starting_point = Vector(-5966, -7867, 128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_ck" then
+                        creep:ForceKill(true)
+                        print("CK Replaced")
+                end
+        end
 end
 
 function ReplaceBySD(event)
+        local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_shadow_demon", 0, 0)
         local starting_point = Vector(-5838,-7867,128)
         FindClearSpaceForUnit(newHero, starting_point, true)
+
+        
+        for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "npc_sd" then
+                        creep:ForceKill(true)
+                        print("SD Replaced")
+                end
+        end
 end
+
 
 function ShowTimber(event)
         GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 

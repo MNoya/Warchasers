@@ -6,7 +6,7 @@ function Teleporter(trigger)
         -- Stop the hero, so he doesn't move
         trigger.activator:Stop()
         -- Refocus the camera of said player to the position of the teleported hero.
-        SendToConsole("dota_camera_center")
+        --SendToConsole("dota_camera_center") --done through flash for all clients
         EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 end
 
@@ -33,7 +33,6 @@ function TeleporterHeaven(trigger)
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
             entHero:Stop()
-            SendToConsole("dota_camera_center")
             GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
     end
@@ -58,7 +57,6 @@ function TeleporterHeaven(trigger)
                         local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
                         FindClearSpaceForUnit(entHero, point, false)
                         entHero:Stop()
-                        SendToConsole("dota_camera_center")
                         GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
                     end
                 end
@@ -115,7 +113,6 @@ function TeleporterHell(trigger)
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
             entHero:Stop()
-            SendToConsole("dota_camera_center")
             GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
     end
@@ -141,7 +138,6 @@ function TeleporterHell(trigger)
                         local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
                         FindClearSpaceForUnit(entHero, point, false)
                         entHero:Stop()
-                        SendToConsole("dota_camera_center")
                         GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
                         
                     end
@@ -191,7 +187,6 @@ function TeleporterBack(trigger)
     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
-    SendToConsole("dota_camera_center")
 
     --open door to 2nd miniboss
     local door = Entities:FindByName(nil, "gate_4")
@@ -228,7 +223,6 @@ function TeleporterSecret(trigger) --Sheeps
     local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
-    SendToConsole("dota_camera_center")
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
@@ -239,7 +233,6 @@ function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven w
     local point =  Vector(-7935, 6662, 135)
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
-    SendToConsole("dota_camera_center")
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 end
@@ -253,8 +246,7 @@ function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done 
         if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
-            entHero:Stop()
-            SendToConsole("dota_camera_center")              
+            entHero:Stop()             
         end
     end
 
@@ -272,8 +264,7 @@ function TeleportAtBarrier(trigger)
         if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
-            entHero:Stop()
-            SendToConsole("dota_camera_center")              
+            entHero:Stop()             
         end
     end
 
@@ -284,7 +275,6 @@ function TeleporterTanks(trigger)
     local point =  Entities:FindByName( nil, "teleport_spot_tanks" ):GetAbsOrigin()
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
-    SendToConsole("dota_camera_center")
     EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 end
 

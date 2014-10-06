@@ -210,6 +210,7 @@ function Warchasers:InitGameMode()
 
 	GameRules.DEAD_PLAYER_COUNT = 0
 	GameRules.PLAYER_COUNT = 0
+	GameRules.PLAYERS_PICKED_HERO = 0
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -480,10 +481,13 @@ function Warchasers:OnAllPlayersLoaded()
 
 		--Create Hall of Legends Heroes
 		
-		--[[local origin = Vector(-2926,-5920,129)
-		local dummy1 = CreateUnitByName("vision_dummy", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		local origin = Vector(-2926,-5320,129)
-		local dummy2 = CreateUnitByName("vision_dummy", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)]]
+		local origin = Vector(-2955,-5280,512)
+		local dummy1 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local origin = Vector(-2955,-6045,512)
+		local dummy2 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		local origin = Vector(-2955,-6657,512)
+		local dummy3 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		--kill after everyone picked their heroes
 
 
 		--left row
@@ -538,8 +542,8 @@ function Warchasers:OnNPCSpawned(keys)
 		print("ID " .. heroPlayerID)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
 		print("hero Name " .. heroName)
-		SendToConsole("dota_camera_lock 1")
-		SendToConsole("dota_camera_center")
+		--SendToConsole("dota_camera_lock 1")
+		--SendToConsole("dota_camera_center")
 		if heroName ~= "npc_dota_hero_wisp" then
 			GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 			if npc.bFirstSpawned == nil then
@@ -560,8 +564,9 @@ function Warchasers:OnNPCSpawned(keys)
 end
 
 function Warchasers:OnHeroInGame(hero)
-	print("Hero Spawned")
+	print("Hero Spawned") --not a wisp
 
+	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1
 	Warchasers:ModifyStatBonuses(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
@@ -583,42 +588,6 @@ function Warchasers:OnHeroInGame(hero)
 			end
 		})
     end
-
-    --warning: awful code, should be done differently. Need to learn how indexes are stored after death.
-	--[[if hero:GetPlayerID()==0 then 
-		print("This hero had " .. P0_TOME_COUNT .. " tomes of health stored")
-		local item = CreateItem( "item_tome_of_health_modifier", source, source)
-		for i=0, P0_TOME_COUNT do
-			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
-		end
-	elseif hero:GetPlayerID()==1 then 
-		print("This hero had " .. P1_TOME_COUNT .. " tomes of health stored")
-		local item = CreateItem( "item_tome_of_health_modifier", source, source)
-		for i=0, P1_TOME_COUNT do
-			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
-		end
-	elseif hero:GetPlayerID()==2 then 
-		print("This hero had " .. P2_TOME_COUNT .. " tomes of health stored")
-		local item = CreateItem( "item_tome_of_health_modifier", source, source)
-		for i=0, P2_TOME_COUNT do
-			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
-		end
-	elseif hero:GetPlayerID()==3 then 
-		print("This hero had " .. P3_TOME_COUNT .. " tomes of health stored")
-		local item = CreateItem( "item_tome_of_health_modifier", source, source)
-		for i=0, P3_TOME_COUNT do
-			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
-		end
-	end
-	if hero:GetPlayerID()==4 then 
-		print("This hero had " .. P4_TOME_COUNT .. " tomes of health stored")
-    	--reapply tomes of health on death
-		local item = CreateItem( "item_tome_of_health_modifier", source, source)
-		for i=0, P4_TOME_COUNT do
-			item:ApplyDataDrivenModifier(hero, hero, "modifier_tome_of_health_mod_1", {})
-		end
-	end]]
-	--you didn't read this, it never happened.
 
 end
 
@@ -982,7 +951,12 @@ function Warchasers:OnEntityKilled( event )
     --if it's a cherubin, send to hell
     if killedUnit:GetName()=="cherub" then
     	GameRules.SENDHELL = true
-    	TeleporterHell( event )
+    	Timers:CreateTimer({
+	    	endTime = 3, 
+	    	callback = function()
+    			TeleporterHell( event )
+    		end
+    	})
     end	
     	--[[
     	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
