@@ -1,34 +1,72 @@
-﻿package  {
-    
-   import flash.display.MovieClip;
-
-    //import some stuff from the valve lib
-    import ValveLib.Globals;
-    import ValveLib.ResizeManager;
-    
-    public class CustomUI extends MovieClip{
-        
-        //these three variables are required by the engine
-        public var gameAPI:Object;
+package  {
+	
+	import flash.display.MovieClip;
+	import ValveLib.*;
+	import scaleform.clik.controls.Button;
+	import scaleform.clik.events.ButtonEvent;
+	import flash.events.MouseEvent;
+	import flash.events.Event;
+	
+	public class DDcameralock extends MovieClip {
+		public var gameAPI:Object;
         public var globals:Object;
         public var elementName:String;
-        
-        //constructor, you usually will use onLoaded() instead
-        public function CustomUI() : void {
-        }
-        
-        //this function is called
-        public function onLoaded() : void {            
-            //make this UI visible
-            visible = true;
+		
+		public var cameraLockBtn:Button;
+		public var cameraLocked:Boolean;
+		public var warning_mc:MovieClip;
+		
+		public function DDcameralock() {
 			
-            Globals.instance.GameInterface.SetConvar("dota_camera_lock", "1");
+		}
+		
+		public function onLoaded():void{
 			
-            //this is not needed, but it shows you your UI has loaded (needs 'scaleform_spew 1' in console)
-            trace("Custom UI loaded!");
+			this.cameraLockBtn.addEventListener(ButtonEvent.CLICK, this.cameraLockToggle);
+			this.warning_mc.warningConfirmationBtn.addEventListener(ButtonEvent.CLICK, this.lockCamera);
+			this.warning_mc.warningDenialBtn.addEventListener(ButtonEvent.CLICK, this.denyCameraLock);
+			this.gameAPI.SubscribeToGameEvent("hero_picker_hidden", this.OnHeroPickerHidden);
+			this.gameAPI.OnUnload = OnUnload;
+		}
+		
+        public function OnUnload():Boolean {
+           Globals.instance.GameInterface.SetConvar("dota_camera_lock", "0");
+		   return true;
         }
-        
-        public function onScreenSizeChanged():void{
+		
+		public function cameraLockToggle():void
+		{
+			if(cameraLocked)
+			{
+				cameraLocked = false;
+				Globals.instance.GameInterface.SetConvar("dota_camera_lock", "0");
+				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_off");
+			}else{
+				cameraLocked = true;
+				Globals.instance.GameInterface.SetConvar("dota_camera_lock", "1");
+				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_on");
+			}
+		}
+		
+		public function lockCamera():void
+		{
+			cameraLocked = true;
+			Globals.instance.GameInterface.SetConvar("dota_camera_lock", "1");
+			this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_on");
+			this.warning_mc.visible = false;
+		}
+		
+		public function denyCameraLock():void
+		{
+			this.warning_mc.visible = false;
+		}
+		
+		public function OnHeroPickerHidden(keyValues:Object):void
+		{
+			this.visible = true;
+		}
+		
+		public function onScreenSizeChanged():void{
             this.scaleX = (this.globals.resizeManager.ScreenWidth / 1920);
             this.scaleY = (this.globals.resizeManager.ScreenHeight / 1080);
             x = 0;
@@ -37,6 +75,6 @@
             trace(("  stage.width/height = " + stage.width), stage.height);
             trace(("  rm.screenWidth/height = " + this.globals.resizeManager.ScreenWidth), this.globals.resizeManager.ScreenHeight);
         }
-    }
-    
+	}
+	
 }
