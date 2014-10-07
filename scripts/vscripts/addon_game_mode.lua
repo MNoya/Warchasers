@@ -161,11 +161,6 @@ P1_ANKH_COUNT = 0
 P2_ANKH_COUNT = 0
 P3_ANKH_COUNT = 0
 P4_ANKH_COUNT = 0
---[[P0_TOME_COUNT = 0
-P1_TOME_COUNT = 0
-P2_TOME_COUNT = 0
-P3_TOME_COUNT = 0
-P4_TOME_COUNT = 0]]
 
 -- Create the game mode when we activate
 function Activate()
@@ -211,6 +206,7 @@ function Warchasers:InitGameMode()
 	GameRules.DEAD_PLAYER_COUNT = 0
 	GameRules.PLAYER_COUNT = 0
 	GameRules.PLAYERS_PICKED_HERO = 0
+	GameRules.HALL_CLEARED = false
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -479,7 +475,7 @@ function Warchasers:OnAllPlayersLoaded()
 			end
 		})
 
-		--Create Hall of Legends Heroes
+		--Create Hall of Heroes
 		
 		local origin = Vector(-2955,-5280,512)
 		local dummy1 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -539,11 +535,14 @@ function Warchasers:OnNPCSpawned(keys)
 	if npc:IsRealHero() then
 		--Warchasers:RemoveWearables(npc) --doesn't work
 		local heroPlayerID = npc:GetPlayerID()
-		print("ID " .. heroPlayerID)
+		print("Player ID: " .. heroPlayerID)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
-		print("hero Name " .. heroName)
+		print("Hero Name: " .. heroName)
+
+		--done through Flash for all clients
 		--SendToConsole("dota_camera_lock 1")
 		--SendToConsole("dota_camera_center")
+
 		if heroName ~= "npc_dota_hero_wisp" then
 			GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 			if npc.bFirstSpawned == nil then
@@ -554,7 +553,6 @@ function Warchasers:OnNPCSpawned(keys)
 				Warchasers:OnHeroInGame(npc)
 			elseif npc.bFirstSpawned == true then --respawn through Ankh
 				--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
-				--Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
 				Warchasers:OnHeroInGame(npc)
 				npc:SetHealth(500) --it's a little more based on the STR
 				print(npc:GetHealth())
@@ -566,20 +564,69 @@ end
 function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned") --not a wisp
 
-	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1
+	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1 --real players, not wisps
+
+	local playercounter = 0
+		for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+			if PlayerResource:IsValidPlayer(nPlayerID) then 
+				playercounter=playercounter+1
+			end
+		end
+	
+	GameRules.PLAYER_COUNT = playercounter
+	print("Total Players: " .. GameRules.PLAYER_COUNT)
+
+	if (PLAYERS_PICKED_HERO==PLAYER_COUNT) and not GameRules.HALL_CLEARED then --every player selected a hero, no wisps remaining
+		--find and kill the npcs in the hall
+		local hallOrigin = Vector()
+		local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", hallOrigin, 3000)
+		for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if 	name == "npc_timber" or 
+                	name == "npc_jugg" or 
+                	name == "npc_drow" or 
+                	name == "npc_ck" or 
+                	name == "npc_sd" or 
+                	name == "npc_templar" or 
+                	name == "npc_sven" or
+                	name == "npc_razor" or
+                	name == "vision_dummy_hall" then
+                        creep:ForceKill(true)
+                        print(name .. " killed")
+                end
+        end
+
+		--disable hero triggers (prevent weird reroll case)
+		local trigger = Entities:FindByName( nil, "timber_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "jugg_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "drow_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "ck_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "sd_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "templar_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "sven_circle_activate" )
+		trigger:Disable()
+		local trigger = Entities:FindByName( nil, "razor_circle_activate" )
+		trigger:Disable()
+
+		
+
+		GameRules.HALL_CLEARED = true
+		print("Hall of Heroes Cleared")
+	end
+
 	Warchasers:ModifyStatBonuses(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
-		
-	local playercounter = 0
-	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
-		if PlayerResource:IsValidPlayer(nPlayerID) then 
-			playercounter=playercounter+1
-		end
-	end
-	GameRules.PLAYER_COUNT = playercounter
 
-	print("Total Players: " .. GameRules.PLAYER_COUNT)
+	
+
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	Timers:CreateTimer({
 			endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -595,29 +642,10 @@ function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
     --Warchasers:ModifyStatBonuses(spawnedUnitIndex)
-    --Warchasers:ModifyHealthTomeBonuses(spawnedUnitIndex)
 end
 
 --Item checking
 function Warchasers:OnItemPickedUp( event )
-	
-	 --record how many tomes the player has
-	--[[if event.itemname == "item_tome_of_health" then
-		print("1 Health Tome Picked Up")
-		print(event.PlayerID)
-		if event.PlayerID==0 then
-	    	P0_TOME_COUNT = P0_TOME_COUNT+1
-	    	print(P0_TOME_COUNT .. " Tomes Picked by player 0")
-		elseif event.PlayerID==1 then
-	    	P1_TOME_COUNT = P1_TOME_COUNT+1
-	    elseif event.PlayerID==2 then
-	    	P2_TOME_COUNT = P2_TOME_COUNT+1
-	    elseif event.PlayerID==3 then
-	    	P3_TOME_COUNT = P3_TOME_COUNT+1
-	    elseif event.PlayerID==4 then
-	    	P4_TOME_COUNT = P4_TOME_COUNT+1
-	    end
-	end]]
 
 end
 
@@ -922,7 +950,6 @@ function Warchasers:OnEntityKilled( event )
 		    			callback = function()
 							FireGameEvent("show_center_message",messageinfo)
 							GameMode:SetFogOfWarDisabled(true)
-							SendToConsole("dota_camera_lock 0")
 							--GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
 							GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
 						end
@@ -958,60 +985,6 @@ function Warchasers:OnEntityKilled( event )
     		end
     	})
     end	
-    	--[[
-    	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
-        GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
-    	local point =  Entities:FindByName( nil, "teleport_spot_hell" ):GetAbsOrigin()
-    	
-
-    	local spot_hell = Vector(-6571, 3002, 40)
-    	local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
-    	print("Entered Hell")
-
-    	--send to hell
-    	GameRules.SENDHELL = true
-    	Timers:CreateTimer({
-	    	endTime = 3, 
-	    	callback = function()			
-				--mass teleport
-				for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-					if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-					local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-					FindClearSpaceForUnit(entHero, point, false)
-					entHero:Stop()
-					SendToConsole("dota_camera_center")
-					GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
-					end
-				end
-				local messageinfo = {
-				message = "Some seconds in Hell",
-				duration = 5
-				}
-				FireGameEvent("show_center_message",messageinfo)
-			end	
-	    })
-       
-        --seconds later, teleport back
-        Timers:CreateTimer({
-	    	endTime = 40, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-	    	callback = function()
-	      		local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
-        		--mass teleport
-    			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-    				if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-	    			local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-		        	FindClearSpaceForUnit(entHero, point, false)
-		        	entHero:Stop()
-		        	SendToConsole("dota_camera_center")
-		        	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-		        	--kill the vision dummy
-		       		end
-        		end
-       			dummy:ForceKill(true)
-       			print("Teleport Back, Dummy killed")
-	    	end
-	    })  
-	end]]
 
 	if killedUnit:GetName() == "skull" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
