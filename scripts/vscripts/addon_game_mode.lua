@@ -988,21 +988,28 @@ function Warchasers:OnEntityKilled( event )
 
 	if killedUnit:GetName() == "skull" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
-		EmitGlobalSound("General.PingRune") --find better sound
+		EmitGlobalSound("General.PingRune") --find better sound, Terrorblade Laugh
 		local ShakeOn = Vector(3558, -7210, 160)
 		ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
 		if killerEntity:IsRealHero() then
 			killerEntity:AddAbility("terrorblade_metamorphosis")
-			killerEntity:FindAbilityByName("terrorblade_metamorphosis"):SetLevel(4)
+			local ability = killerEntity:FindAbilityByName("terrorblade_metamorphosis")
+			ability:SetLevel(1)
+			ability:CastAbility()
+			killerEntity:RemoveAbility("terrorblade_metamorphosis")
 		else --apply to the owner
 			killerEntity:GetOwner():AddAbility("terrorblade_metamorphosis")
-			killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis"):SetLevel(4)
+			killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis"):SetLevel(1)
+			local ability = killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis")
+			ability:SetLevel(1)
+			ability:CastAbility()
+			killerEntity:RemoveAbility("terrorblade_metamorphosis")
 		end
 	end
 
 	if killedUnit:GetName() == "casket" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Frostmourne released</font>", 0, 0)
-		EmitGlobalSound("General.PingRune") --find better sound
+		EmitGlobalSound("General.PingRune") --find better sound, Abaddon Laugh
 		local ShakeOn = Vector(3558, -7210, 160)
 		ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
 		
