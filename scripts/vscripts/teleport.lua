@@ -37,13 +37,43 @@ function TeleporterHeaven(trigger)
         end
     end
 
-    local messageinfo = {
+    --[[local messageinfo = {
         message = "Some seconds in Heaven",
         duration = 5
     }
-    FireGameEvent("show_center_message",messageinfo) 
+    FireGameEvent("show_center_message",messageinfo) ]]
 
-    GameRules:SendCustomMessage("Welcome to paradise. Rest your weary vessels.", 0, 0)
+    -- Show Quest
+    heavenQuest = SpawnEntityFromTableSynchronous( "quest", { name = "HeavenQuest", title = "#HeavenQuestTimer" } )
+    
+    questTimeEnd = GameRules:GetGameTime() + 30 --Time to Finish the quest
+
+    --bar system
+    heavenKillCountSubQuest = SpawnEntityFromTableSynchronous( "subquest_base", {
+        show_progress_bar = true,
+        progress_bar_hue_shift = -119
+    } )
+    heavenQuest:AddSubquest( heavenKillCountSubQuest )
+    heavenQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 30 ) --text on the quest timer at start
+    heavenQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 30 ) --text on the quest timer
+    heavenKillCountSubQuest:SetTextReplaceValue( SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 30 ) --value on the bar at start
+    heavenKillCountSubQuest:SetTextReplaceValue( SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 30 ) --value on the bar
+    
+    Timers:CreateTimer(0.9, function()
+        heavenQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() )
+        heavenKillCountSubQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
+        if (questTimeEnd - GameRules:GetGameTime())<=0 then
+            EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
+            UTIL_RemoveImmediate( heavenQuest )
+            heavenQuest = nil
+            heavenKillCountSubQuest = nil
+        end
+        return 1        
+    end
+    )
+    
+
+    GameRules:SendCustomMessage("Welcome to paradise.", 0, 0)
 
     Timers:CreateTimer({
         endTime = 30,
@@ -117,11 +147,40 @@ function TeleporterHell(trigger)
         end
     end
 
-    local messageinfo = {
+    --[[local messageinfo = {
     message = "Some seconds in Hell",
     duration = 5
     }
-    FireGameEvent("show_center_message",messageinfo)
+    FireGameEvent("show_center_message",messageinfo)]]
+
+    -- Show Quest
+    hellQuest = SpawnEntityFromTableSynchronous( "quest", { name = "HellQuest", title = "#HellQuestTimer" } )
+    
+    questHellTimeEnd = GameRules:GetGameTime() + 45 --Time to Finish the quest
+
+    --bar system
+    hellKillCountSubquest = SpawnEntityFromTableSynchronous( "subquest_base", {
+        show_progress_bar = true,
+        progress_bar_hue_shift = -119
+    } )
+    hellQuest:AddSubquest( hellKillCountSubquest )
+    hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 45 ) --text on the quest timer at start
+    hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 45 ) --text on the quest timer
+    hellKillCountSubquest:SetTextReplaceValue( SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 45 ) --value on the bar at start
+    hellKillCountSubquest:SetTextReplaceValue( SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 45 ) --value on the bar
+    
+    Timers:CreateTimer(0.9, function()
+        hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() )
+        hellKillCountSubquest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
+        if (questHellTimeEnd - GameRules:GetGameTime())<=0 then
+            EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
+            UTIL_RemoveImmediate( hellQuest )
+            hellQuest = nil
+            hellKillCountSubquest = nil
+        end
+        return 1        
+    end
+    )
 
     GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
     GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
