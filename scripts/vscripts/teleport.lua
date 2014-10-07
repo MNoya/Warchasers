@@ -62,11 +62,11 @@ function TeleporterHeaven(trigger)
     Timers:CreateTimer(0.9, function()
         heavenQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() )
         heavenKillCountSubQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
-        if (questTimeEnd - GameRules:GetGameTime())<=0 then
+        --[[if (questTimeEnd - GameRules:GetGameTime())<=0 then --finish the quest
             EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
             UTIL_RemoveImmediate( heavenQuest )
             heavenQuest = nil
-            heavenKillCountSubQuest = nil
+            heavenKillCountSubQuest = nil]]
         end
         return 1        
     end
@@ -90,6 +90,12 @@ function TeleporterHeaven(trigger)
                         GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
                     end
                 end
+
+                --finish the quest after 30 seconds
+                EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
+                UTIL_RemoveImmediate( heavenQuest )
+                heavenQuest = nil
+                heavenKillCountSubQuest = nil
 
                 --open door to 2nd miniboss
                 local door = Entities:FindByName(nil, "gate_4")
@@ -172,11 +178,11 @@ function TeleporterHell(trigger)
     Timers:CreateTimer(0.9, function()
         hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() )
         hellKillCountSubquest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
-        if (questHellTimeEnd - GameRules:GetGameTime())<=0 then
+        --[[if (questHellTimeEnd - GameRules:GetGameTime())<=0 then
             EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
             UTIL_RemoveImmediate( hellQuest )
             hellQuest = nil
-            hellKillCountSubquest = nil
+            hellKillCountSubquest = nil]]
         end
         return 1        
     end
@@ -186,7 +192,7 @@ function TeleporterHell(trigger)
     GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
 
     Timers:CreateTimer({
-        endTime = 40,
+        endTime = 45,
         callback = function()
             if GameRules.SENDFORESTHELL == false then
                 -- send everyone back, no secret area discovered
@@ -220,6 +226,12 @@ function TeleporterHell(trigger)
                 local obstructions = Entities:FindByName(nil,"obstructions_4_4")
                 obstructions:SetEnabled(false,false)
                 print("Obstructions disabled")
+
+                --finish the quest after 45 seconds
+                EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
+                UTIL_RemoveImmediate( hellQuest )
+                hellQuest = nil
+                hellKillCountSubquest = nil
                 
                 EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
                 Timers:CreateTimer({ useGameTime = false, endTime = 2,
@@ -294,6 +306,12 @@ function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven w
     trigger.activator:Stop()
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+
+    --are quests accessible globally? else declare them under GameRules.
+    --finish the quest after discovering a secret area
+    UTIL_RemoveImmediate( heavenQuest )
+    heavenQuest = nil
+    heavenKillCountSubquest = nil
 end
 
 function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done directly through a trigger in the map
@@ -311,6 +329,12 @@ function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done 
 
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0)
+
+    --are quests accessible globally?
+    --finish the quest after discovering a secret area
+    UTIL_RemoveImmediate( hellQuest )
+    hellQuest = nil
+    hellKillCountSubquest = nil
 end
 
 function TeleportAtBarrier(trigger)
