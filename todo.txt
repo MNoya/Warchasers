@@ -1,6 +1,6 @@
 TO DO - Priority List
 1. Missing Gameplay
-[!]Flash Camera Lock and Center
+[X]Flash Camera Lock and Center
 [X]Replace player by tank: apply modifier unselectable & out of game to the hero, remove it when the tank reaches its end
 [X]Book of the dead, world drop in 2nd circle zone
 [X]Add missing sound events on every custom_unit

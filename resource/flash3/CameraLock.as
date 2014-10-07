@@ -33,12 +33,13 @@
 			{
 				cameraLocked = false;
 				Globals.instance.GameInterface.SetConvar("dota_camera_lock", "0");
-				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_off");
+				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#camera_lock_off");
+				trace("Camera Unlocked")
 			}else{
 				cameraLocked = true;
 				Globals.instance.GameInterface.SetConvar("dota_camera_lock", "1");
-				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_on");
-				trace("camera locked")
+				this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#camera_lock_on");
+				trace("Camera Locked")
 			}
 		}
 		
@@ -46,8 +47,8 @@
 		{
 			cameraLocked = true;
 			Globals.instance.GameInterface.SetConvar("dota_camera_lock", "1");
-			this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#dd_camera_lock_on");
-			trace("camera locked")
+			this.cameraLockBtn.label = Globals.instance.GameInterface.Translate("#camera_lock_on");
+			trace("Camera Locked")			
 		}
 			
 		public function OnHeroPickerHidden(keyValues:Object):void

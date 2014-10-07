@@ -2,7 +2,7 @@
 {
     "1"
     {
-        "File"      "DDCameralock"
+        "File"      "CameraLock"
         "Depth"     "51"
     }
 }
