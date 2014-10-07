@@ -5,7 +5,7 @@ TO DO - Priority List
 [X]Book of the dead, world drop in 2nd circle zone
 [X]Add missing sound events on every custom_unit
 [X]Fix/Add sounds on creeps/items
-[ ]Hell/Heaven Quest Timers
+[~]Hell/Heaven Quest Timers
 [!]Wisp Selection System
 
 2. Adding Gameplay
