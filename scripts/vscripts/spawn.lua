@@ -138,35 +138,35 @@ end
 
 
 function ShowTimber(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Optimus Primo</font><br>Shock Wave, Thunder Clap, Devotion Aura and Avatar<br><br>", 0, 0) 
 end
 
 function ShowJugg(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Blade Berserker</font><br>Death Coil, Immolation, Endurance Aura and Bladestorm<br><br>", 0, 0) 
 end
 
 function ShowDrow(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Snake Eyes</font><br>Holy Light, Searing Arrows, Cold Arrows and Firestorm<br><br>", 0, 0) 
 end
 
 function ShowCK(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Beast Knight</font><br>Holy Light, Feral Spirit, Summon Water Elemental and Inferno<br><br>", 0, 0) 
 end
 
 function ShowSD(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Mumm'Rah</font><br>Frost Nova, Sleep, Vampiric Aura and Animate Dead<br><br>", 0, 0) 
 end
 
 function ShowTemplar(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Assassin</font><br>Entangling Roots, Bash, Storm Bolt and Starstorm<br><br>", 0, 0) 
 end
 
 function ShowSven(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Megotron X</font><br>Wind Walk, Divine Shield, Thorns Aura and Tranquility<br><br>", 0, 0) 
 end
 
 function ShowRazor(event)
-        GameRules:SendCustomMessage("<font color='#2E64FE'>Hero Name</font><br>Ability 1, Ability 2, Ability 3, Ultimate<br><br>", 0, 0) 
+        GameRules:SendCustomMessage("<font color='#2E64FE'>Skeletorus</font><br>Mana Burn, Chain Lightning, Brilliance Aura and Midnight Pulse<br><br>", 0, 0) 
 end
 
 
