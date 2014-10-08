@@ -135,13 +135,30 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
 	--NEED TO PRECACHE ALL HATS?
-	--Juggernaut
-	PrecacheModel("models/items/juggernaut/wandering_demon_sword/wandering_demon_sword.vmdl", context )
-	PrecacheModel("models/items/juggernaut/scowl_of_kogu/scowl_of_kogu.vmdl", context )
-	PrecacheModel("models/items/juggernaut/sturdy_bracers_of_the_exiled_ronin/sturdy_bracers_of_the_exiled_ronin.vmdl", context )
-	PrecacheModel("models/items/juggernaut/jugg_flag/jugg_flag.vmdl", context )
-	PrecacheModel("models/items/juggernaut/armour_of_the_exiled_ronin/armour_of_the_exiled_ronin.vmdl", context )
-	--[[PrecacheModel("", context )]]
+	--taken from https://github.com/madbyte/omg_dota/blob/55750b221e27c084dbd0f38319febae277b8d49b/scripts/vscripts/addon_game_mode.lua
+	print('Precaching hats...')
+	local wearables = LoadKeyValues("scripts/items/items_game.txt")
+	DeepPrintTable(wearables)
+
+	local wearablesList = {}
+	local precacheWearables = {}
+	for k, v in pairs(wearables) do
+		if k == 'items' then
+			wearablesList = v
+		end
+	end
+	
+	for k, v in pairs(wearablesList) do
+		for key, value in pairs(wearablesList[k]) do
+			if key == 'model_player' then
+				precacheWearables[value] = true
+			end
+		end
+	end
+	for wearable,_ in pairs( precacheWearables ) do
+		PrecacheResource( "model", wearable, context )
+	end
+	print('Done precaching!')
 
 
 end

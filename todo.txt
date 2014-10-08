@@ -1,6 +1,7 @@
 TO DO - Priority List
 1. Missing Gameplay
 [!]Wisp Selection System (Fix)
+[*]Fix Cosmetic Precache
 [ ]Fix Holy Light not casting properly
 
 2. Adding Gameplay
