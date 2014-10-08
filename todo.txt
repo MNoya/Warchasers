@@ -21,7 +21,7 @@ TO DO - Priority List
 [ ]Improve boss areas and AI
 [X]Error message holy light
 [X]Fix Orb of Fire residual particle effect
-[ ]Fix item summons dropping items (just make new units, add strings)
+[X]Fix item summons dropping items (just make new units, add strings)
 [ ]Adjust HealthBarOffsets
 [ ]Credits, Screenshots, Workshop Text.
 

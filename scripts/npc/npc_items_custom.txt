@@ -2974,7 +2974,7 @@
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
-				"UnitName"              "npc_doom_guard"
+				"UnitName"              "npc_doom_guard_spawn"
 				"UnitCount"             "1"
 				"Duration"				"180"
 				"OnSpawn"
@@ -3169,7 +3169,7 @@
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
-				"UnitName"              "npc_rock_golem" 
+				"UnitName"              "npc_rock_golem_spawn" 
 				"UnitCount"             "1"
 				"Duration"				"180"
 				"SpawnRadius"			"100"
@@ -3231,7 +3231,7 @@
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
-				"UnitName"              "npc_furbolg"
+				"UnitName"              "npc_furbolg_spawn"
 				"UnitCount"             "1"
 				"Duration"				"180"
 				"OnSpawn"
