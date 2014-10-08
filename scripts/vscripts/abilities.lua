@@ -21,6 +21,7 @@ function holy_light_check( event )
 		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))
 		event.ability:EndCooldown()
 		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
+		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Ability Can't Target Self" } )
 	else
 		event.ability:OnChannelFinish(true)
 	end
