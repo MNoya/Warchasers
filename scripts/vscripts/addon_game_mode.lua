@@ -360,16 +360,18 @@ function Warchasers:OnGameInProgress()
 	print("Game started.")
 	--Start at Night
 	GameRules:SetTimeOfDay( 0.8 )
-end
 
-
-function Warchasers:OnAllPlayersLoaded()
-	print("All Players Have Loaded")
+	EmitGlobalSound("valve_dota_001.music.ui_startup")
 
 	if GameRules.SHOWPOPUP then
 		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 		GameRules.SHOWPOPUP = false
 	end
+end
+
+
+function Warchasers:OnAllPlayersLoaded()
+	print("All Players Have Loaded")
 
 		--Create Dummy so we can see the particle glow
 	    position = Vector(-6719,5541,40)

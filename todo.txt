@@ -12,7 +12,7 @@ TO DO - Priority List
 [X]skull of guldan npc > Passive OnDeath corrupts the killer
 [X]Frostmourne casket
 [X]Finish Secret Heaven
-[ ]Add Music track sets
+[~]Add Music track sets
 [ ]Add/Fix particles on creeps/items
 [~]Add particles on special spawns/death (bosses, necro)
 
