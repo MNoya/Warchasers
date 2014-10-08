@@ -33,6 +33,9 @@ function ReplaceByRazor(event)
 end
 
 function ReplaceByJugg(event)
+        --local items = Entities:FindAllByClassname("dota_item_wearable")
+        --for _,v in pairs(items) do print(v:GetModel()) end --?
+
         local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_juggernaut", 0, 0)
         local starting_point = Vector(-5902,-7611,128)

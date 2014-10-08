@@ -5,16 +5,16 @@ TO DO - Priority List
 [X]Book of the dead, world drop in 2nd circle zone
 [X]Add missing sound events on every custom_unit
 [X]Fix/Add sounds on creeps/items
-[~]Hell/Heaven Quest Timers
+[X]Hell/Heaven Quest Timers
 [!]Wisp Selection System
 
 2. Adding Gameplay
-[X]skull of guldan npc > Passive OnDeath corrupts the killers
+[X]skull of guldan npc > Passive OnDeath corrupts the killer
 [X]Frostmourne casket
-[~]Finish Secret Heaven: drop frosmourne from an ice casket (npc). Delayed Drop, OnKilled ShakeCamera.
+[X]Finish Secret Heaven
 [ ]Add Music track sets
 [ ]Add/Fix particles on creeps/items
-[ ]Add particles on special spawns/death (bosses, necro)
+[~]Add particles on special spawns/death (bosses, necro)
 
 3. Cosmetic & Adjustments
 [ ]Rewrite satyr_trickster_purge for "DOTA_Item.DiffusalBlade.Activate" sound

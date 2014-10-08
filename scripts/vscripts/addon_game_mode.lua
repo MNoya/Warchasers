@@ -78,6 +78,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_skeleton_archer", context)
 	PrecacheUnitByNameSync("npc_dota_hero_broodmother", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
+	PrecacheUnitByNameSync("npc_dota_hero_terrorblade", context)
+	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
 
 	PrecacheUnitByNameSync("npc_timber", context)
 	PrecacheUnitByNameSync("npc_dota_hero_optimus_primo", context)
@@ -226,7 +228,7 @@ function Warchasers:InitGameMode()
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
     ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(Warchasers, 'OnItemPickedUp'), self)
 	
-	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 1 )
 	GameRules:GetGameModeEntity():SetThink("AnkhThink", self)
 
 	--Variables for tracking
@@ -245,10 +247,9 @@ function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 	
 		Warchasers:CheckForDefeat()
-		
-		--Permanent Night
-		GameRules:SetTimeOfDay( 0.8 )
 
+		GameRules:SetTimeOfDay( 0.8 )
+		
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -357,12 +358,8 @@ end
 
 function Warchasers:OnGameInProgress()
 	print("Game started.")
-
-  	--[[Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
-  		function()
-    	print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
-    	return 30.0 -- Rerun this timer every 30 game-time seconds 
-  	end)]]
+	--Start at Night
+	GameRules:SetTimeOfDay( 0.8 )
 end
 
 
@@ -489,6 +486,8 @@ function Warchasers:OnAllPlayersLoaded()
 		--left row
 		local origin = Entities:FindByName( nil, "timber_circle" ):GetAbsOrigin()
 		local timbersaw = CreateUnitByName("npc_timber", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		timbersaw:AddNewModifier(nil, nil, "modifier_tutorial_forceanimation", {act=ACT_DOTA_CAST_ABILITY_1, loop=1})
+		print("modifier added")
 
 		local origin = Entities:FindByName( nil, "jugg_circle" ):GetAbsOrigin()
 		local juggernaut = CreateUnitByName("npc_jugg", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -534,17 +533,25 @@ function Warchasers:OnNPCSpawned(keys)
 	
 	if npc:IsRealHero() then
 		--Warchasers:RemoveWearables(npc) --doesn't work
+
 		local heroPlayerID = npc:GetPlayerID()
 		print("Player ID: " .. heroPlayerID)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
 		print("Hero Name: " .. heroName)
 
-		--done through Flash for all clients
-		--SendToConsole("dota_camera_lock 1")
-		--SendToConsole("dota_camera_center")
+		if heroName == "npc_dota_hero_wisp" then
+			local playercounter = 0
+			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+				if PlayerResource:IsValidPlayer(nPlayerID) then 
+					playercounter=playercounter+1
+				end
+			end
 
-		if heroName ~= "npc_dota_hero_wisp" then
-			GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+			GameRules.PLAYER_COUNT = playercounter
+			print("Total Players: " .. GameRules.PLAYER_COUNT)
+
+		else --if heroName ~= "npc_dota_hero_wisp" then
+			--GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 			if npc.bFirstSpawned == nil then
 				npc.bFirstSpawned = true
 				--Add Ankh
@@ -566,20 +573,12 @@ function Warchasers:OnHeroInGame(hero)
 
 	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1 --real players, not wisps
 
-	local playercounter = 0
-		for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
-			if PlayerResource:IsValidPlayer(nPlayerID) then 
-				playercounter=playercounter+1
-			end
-		end
-	
-	GameRules.PLAYER_COUNT = playercounter
-	print("Total Players: " .. GameRules.PLAYER_COUNT)
-
-	if (PLAYERS_PICKED_HERO==PLAYER_COUNT) and not GameRules.HALL_CLEARED then --every player selected a hero, no wisps remaining
+	print("Total Players In Game: " .. GameRules.PLAYER_COUNT)
+	print("Players with a hero picked: " .. GameRules.PLAYERS_PICKED_HERO)
+	if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) and not GameRules.HALL_CLEARED then --every player selected a hero, no wisps remaining
 		--find and kill the npcs in the hall
-		local hallOrigin = Vector()
-		local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", hallOrigin, 3000)
+		local hallOrigin = Vector(-2955,-6000,512)
+		local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", hallOrigin, 2000)
 		for i = 1, #allNPCNear, 1 do
                 local creep = allNPCNear[i]
                 local name = creep:GetUnitName()
@@ -598,27 +597,29 @@ function Warchasers:OnHeroInGame(hero)
         end
 
 		--disable hero triggers (prevent weird reroll case)
-		local trigger = Entities:FindByName( nil, "timber_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_timber" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "jugg_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_jugg" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "drow_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_drow" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "ck_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_ck" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "sd_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_sd" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "templar_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_templar" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "sven_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_sven" )
 		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "razor_circle_activate" )
+		local trigger = Entities:FindByName( nil, "circle_razor" )
 		trigger:Disable()
 
 		
 
 		GameRules.HALL_CLEARED = true
 		print("Hall of Heroes Cleared")
+
+		GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 	end
 
 	Warchasers:ModifyStatBonuses(hero)
@@ -976,7 +977,7 @@ function Warchasers:OnEntityKilled( event )
     GameMode:SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantKills )
 
     --if it's a cherubin, send to hell
-    if killedUnit:GetName()=="cherub" then
+    if killedUnit:GetName()=="cherub" and GameRules.SENDHELL == false then
     	GameRules.SENDHELL = true
     	Timers:CreateTimer({
 	    	endTime = 3, 
@@ -988,7 +989,7 @@ function Warchasers:OnEntityKilled( event )
 
 	if killedUnit:GetName() == "skull" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
-		EmitGlobalSound("General.PingRune") --find better sound, Terrorblade Laugh
+		EmitGlobalSound("DOTAMusic_Diretide_Finale") 
 		local ShakeOn = Vector(3558, -7210, 160)
 		ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
 		if killerEntity:IsRealHero() then
@@ -996,20 +997,18 @@ function Warchasers:OnEntityKilled( event )
 			local ability = killerEntity:FindAbilityByName("terrorblade_metamorphosis")
 			ability:SetLevel(1)
 			ability:CastAbility()
-			killerEntity:RemoveAbility("terrorblade_metamorphosis")
 		else --apply to the owner
 			killerEntity:GetOwner():AddAbility("terrorblade_metamorphosis")
 			killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis"):SetLevel(1)
 			local ability = killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis")
 			ability:SetLevel(1)
 			ability:CastAbility()
-			killerEntity:RemoveAbility("terrorblade_metamorphosis")
 		end
 	end
 
 	if killedUnit:GetName() == "casket" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Frostmourne released</font>", 0, 0)
-		EmitGlobalSound("General.PingRune") --find better sound, Abaddon Laugh
+		EmitGlobalSound("DOTAMusic_Diretide_Finale") 
 		local ShakeOn = Vector(3558, -7210, 160)
 		ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
 		

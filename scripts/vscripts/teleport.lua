@@ -37,15 +37,9 @@ function TeleporterHeaven(trigger)
         end
     end
 
-    --[[local messageinfo = {
-        message = "Some seconds in Heaven",
-        duration = 5
-    }
-    FireGameEvent("show_center_message",messageinfo) ]]
-
     -- Show Quest
     heavenQuest = SpawnEntityFromTableSynchronous( "quest", { name = "HeavenQuest", title = "#HeavenQuestTimer" } )
-    
+
     questTimeEnd = GameRules:GetGameTime() + 30 --Time to Finish the quest
 
     --bar system
@@ -62,11 +56,11 @@ function TeleporterHeaven(trigger)
     Timers:CreateTimer(0.9, function()
         heavenQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() )
         heavenKillCountSubQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
-        --[[if (questTimeEnd - GameRules:GetGameTime())<=0 then --finish the quest
+        if (questTimeEnd - GameRules:GetGameTime())<=0 and heavenQuest ~= nil then --finish the quest
             EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
             UTIL_RemoveImmediate( heavenQuest )
             heavenQuest = nil
-            heavenKillCountSubQuest = nil]]
+            heavenKillCountSubQuest = nil
         end
         return 1        
     end
@@ -78,8 +72,8 @@ function TeleporterHeaven(trigger)
     Timers:CreateTimer({
         endTime = 30,
         callback = function()
-            if GameRules.SENDHELL == false and GameRules.SENDFROSTHEAVEN == false and GameRules.SENDFORESTHELL == false then 
-                --send back everyone, no secret area triggered
+            if GameRules.SENDHELL == false and GameRules.SENDFORESTHELL == false then
+                --send back everyone, no hell triggered
                 local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
                 --mass teleport
                 for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
@@ -87,15 +81,8 @@ function TeleporterHeaven(trigger)
                         local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
                         FindClearSpaceForUnit(entHero, point, false)
                         entHero:Stop()
-                        GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
                     end
                 end
-
-                --finish the quest after 30 seconds
-                EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
-                UTIL_RemoveImmediate( heavenQuest )
-                heavenQuest = nil
-                heavenKillCountSubQuest = nil
 
                 --open door to 2nd miniboss
                 local door = Entities:FindByName(nil, "gate_4")
@@ -125,11 +112,12 @@ function TeleporterHeaven(trigger)
                 })
 
                 GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+                print("Teleport Back")
             end
 
             --kill the vision dummy, regardless of being sent to a secret area.
             dummy:ForceKill(true)
-            print("Teleport Back, Dummy killed")
+            print("Dummy killed")
         end
     })
 
@@ -140,6 +128,7 @@ function TeleporterHell(trigger)
 
     local spot_hell = Vector(-6571, 3002, 40)
     local dummy = CreateUnitByName("vision_dummy", spot_hell, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    GameRules.SENDHELL = true
     print("Entered Hell")
     EmitGlobalSound("DOTAMusic_Stinger.004") --EmitGlobalSound("terrorblade_arcana.stinger.respawn") how to precache?
 
@@ -153,12 +142,6 @@ function TeleporterHell(trigger)
         end
     end
 
-    --[[local messageinfo = {
-    message = "Some seconds in Hell",
-    duration = 5
-    }
-    FireGameEvent("show_center_message",messageinfo)]]
-
     -- Show Quest
     hellQuest = SpawnEntityFromTableSynchronous( "quest", { name = "HellQuest", title = "#HellQuestTimer" } )
     
@@ -169,6 +152,7 @@ function TeleporterHell(trigger)
         show_progress_bar = true,
         progress_bar_hue_shift = -119
     } )
+
     hellQuest:AddSubquest( hellKillCountSubquest )
     hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 45 ) --text on the quest timer at start
     hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 45 ) --text on the quest timer
@@ -178,11 +162,11 @@ function TeleporterHell(trigger)
     Timers:CreateTimer(0.9, function()
         hellQuest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() )
         hellKillCountSubquest:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, questHellTimeEnd - GameRules:GetGameTime() ) --update the bar with the time passed        
-        --[[if (questHellTimeEnd - GameRules:GetGameTime())<=0 then
+        if (questHellTimeEnd - GameRules:GetGameTime())<=0 and hellQuest ~= nil then
             EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
             UTIL_RemoveImmediate( hellQuest )
             hellQuest = nil
-            hellKillCountSubquest = nil]]
+            hellKillCountSubquest = nil
         end
         return 1        
     end
@@ -226,12 +210,6 @@ function TeleporterHell(trigger)
                 local obstructions = Entities:FindByName(nil,"obstructions_4_4")
                 obstructions:SetEnabled(false,false)
                 print("Obstructions disabled")
-
-                --finish the quest after 45 seconds
-                EmitGlobalSound("Tutorial.Quest.complete_01") --on game_sounds_music_tutorial, check others
-                UTIL_RemoveImmediate( hellQuest )
-                hellQuest = nil
-                hellKillCountSubquest = nil
                 
                 EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
                 Timers:CreateTimer({ useGameTime = false, endTime = 2,
@@ -290,6 +268,13 @@ function TeleporterBack(trigger)
 
 end
 
+function TeleporterBackHeaven(trigger)
+    local heavenReturnSpot =  Vector(-7361,5732,0)
+    FindClearSpaceForUnit(trigger.activator, heavenReturnSpot, false)
+    trigger.activator:Stop()
+end
+
+
 function TeleporterSecret(trigger) --Sheeps
     local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()
     FindClearSpaceForUnit(trigger.activator, point, false)
@@ -307,11 +292,6 @@ function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven w
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
 
-    --are quests accessible globally? else declare them under GameRules.
-    --finish the quest after discovering a secret area
-    UTIL_RemoveImmediate( heavenQuest )
-    heavenQuest = nil
-    heavenKillCountSubquest = nil
 end
 
 function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done directly through a trigger in the map
@@ -330,7 +310,6 @@ function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done 
     EmitGlobalSound("DOTAMusic_Stinger.007")
     GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0)
 
-    --are quests accessible globally?
     --finish the quest after discovering a secret area
     UTIL_RemoveImmediate( hellQuest )
     hellQuest = nil

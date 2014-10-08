@@ -91,7 +91,11 @@ function soulkeeper_warning0(trigger)
 	--EmitGlobalSound("DOTAMusic_Stinger.005")
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
   	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
-	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!", 0,0 )
+
+  	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	local necroGlow = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	ParticleManager:SetParticleControl(necroGlow, 1, necro:GetAbsOrigin())
+  	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> You come again so soon? HAHAHA! Will your souls finally tire of this endless quest of redemption?!", 0,0 )
 	GameRules:SendCustomMessage("Still, you are entitled to your price. Step on a platform and let your hearts determine your prize...", 0,0)
 end
 
@@ -105,6 +109,9 @@ function soulkeeper_warning2(trigger)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, trigger.caster, trigger.caster, DOTA_TEAM_BADGUYS)
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
   	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
+  	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	local necroGlow = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	ParticleManager:SetParticleControl(necroGlow, 1, necro:GetAbsOrigin())
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> HOLD! I can't believe such fools and cowards have made it this far!",0,0)
 	GameRules:SendCustomMessage("However...<br>There are two platforms that must be activated before this magical barrier is dispelled.",0,0)
 end
@@ -141,6 +148,9 @@ function soulkeeper_warning3(trigger)
 	necro:SetForwardVector(rotation)
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
   	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
+  	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	local necroGlow = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	ParticleManager:SetParticleControl(necroGlow, 1, necro:GetAbsOrigin())
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redeption grows tiresome.<br>No matter, you have reached the sacred halls of the Shadow Lord.<br>Your quest ends here!!!",0,0)
 end
 
@@ -152,6 +162,9 @@ function soulkeeper_warning_tanks(trigger)
 	necro:SetForwardVector(rotation)
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
   	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
+  	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	local necroGlow = ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", PATTACH_ABSORIGIN_FOLLOW, necro)
+  	ParticleManager:SetParticleControl(necroGlow, 1, necro:GetAbsOrigin())
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redemption grows tiresome...<br> we'll see how you fare in these Dwarven contraptions!<br>Step on the magic circle to begin your jorney.",0,0)
 end
 
