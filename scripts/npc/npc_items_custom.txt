@@ -1099,21 +1099,54 @@
 		"OnSpellStart"
 		{
 			"SpendCharge"
-			{}
+			{}				
+			"FireSound"
+			{
+				"EffectName"			"Hero_Warlock.RainOfChaos_buildup"
+				"Target"				"CASTER"
+			}
 			"SpawnUnit"
 			{
 				"Target"            "POINT"
 				"UnitName"              "npc_dota_warlock_golem_3"
 				"UnitCount"             "1"
 				"Duration"				"180"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/items.lua"
+						"Function"			"SummonInferno"
+						"Target"			"POINT"
+					}
+				}
 			}
-			"FireSound"
+			"ActOnTargets"
 			{
-				"EffectName"			"Hero_Warlock.RainOfChaos"
-				"Target"				"CASTER"
+				"Target"
+				{
+					"Center"	"POINT"
+					"Radius"	"400"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Type" "DAMAGE_TYPE_MAGICAL"
+						"Damage" "50"
+						"Target" "TARGET"
+					}
+
+					"Stun"
+					{
+						"Duration"		"4"
+						"Target" "TARGET"
+					}
+				}
 			}
-			
-		}
+		}			
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -1852,6 +1885,12 @@
 				"heal_amount"		"%heal_amount"
 
 			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+				"EffectAttachType"			"follow_origin"
+			}
 			"FireSound"
 			{
 				"Target" 		"UNIT"
@@ -1931,7 +1970,12 @@
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"mana_amount"		"%mana_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2013,7 +2057,12 @@
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2094,7 +2143,12 @@
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"mana_amount"		"%mana_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2177,7 +2231,6 @@
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
-
 			}
 			"RunScript"
 			{
@@ -2185,7 +2238,12 @@
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"mana_amount"		"%mana_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glow_trail.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2393,7 +2451,12 @@
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2473,7 +2536,7 @@
 
 		"Modifiers"
 		{
-			"modifier_health_stone"
+			"modifier_mana_stone"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
@@ -2495,7 +2558,12 @@
 				"Function"			"ReplenishMana"
 				"Target"			"UNIT"
 				"mana_amount"		"%mana_amount"
-
+			}
+			"AttachEffect"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+				"EffectAttachType"			"follow_origin"
 			}
 			"FireSound"
 			{
@@ -2704,6 +2772,12 @@
 				"ScriptFile"		"scripts/vscripts/items.lua"
 				"Function"			"Dominate"
 			}
+			"AttachEffect"
+			{
+				"Target"					"TARGET"
+				"EffectName"				"particles/units/heroes/hero_chen/chen_test_of_faith.vpcf"
+				"EffectAttachType"			"follow_origin"
+			}
 			"FireSound"
 			{
 				"EffectName"	"Hero_Chen.HolyPersuasionCast"
@@ -2903,6 +2977,15 @@
 				"UnitName"              "npc_doom_guard"
 				"UnitCount"             "1"
 				"Duration"				"180"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/items.lua"
+						"Function"			"SummonDoomGuard"
+						"Target"			"POINT"
+					}
+				}
 			}
 			"FireSound"
 			{
@@ -2959,6 +3042,15 @@
 				"UnitName"              "npc_red_drake"
 				"UnitCount"             "1"
 				"Duration"				"180"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/items.lua"
+						"Function"			"SummonRedDrake"
+						"Target"			"POINT"
+					}
+				}
 			}
 			"FireSound"
 			{
@@ -3015,6 +3107,15 @@
 				"UnitName"              "npc_fellhound"
 				"UnitCount"             "1"
 				"Duration"				"180"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/items.lua"
+						"Function"			"SummonFellhound"
+						"Target"			"POINT"
+					}
+				}
 			}
 			"FireSound"
 			{
@@ -3072,6 +3173,15 @@
 				"UnitCount"             "1"
 				"Duration"				"180"
 				"SpawnRadius"			"100"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/items.lua"
+						"Function"			"SummonTony"
+						"Target"			"POINT"
+					}
+				}
 			}
 			"FireSound"
 			{
@@ -3124,6 +3234,15 @@
 				"UnitName"              "npc_furbolg"
 				"UnitCount"             "1"
 				"Duration"				"180"
+				"OnSpawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/items.lua"
+						"Function"			"SummonFulborg"
+						"Target"			"POINT"
+					}
+				}
 			}
 			"FireSound"
 			{
@@ -3481,6 +3600,19 @@
 						}
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"15"
+					}
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf"
+						"Target" //AOE
+						{
+							"Center" "CASTER"
+							"Radius" "200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" //Actually it should damage both
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+						"EffectAttachType" 	"follow_origin"
+
 					}
 				}
 			}

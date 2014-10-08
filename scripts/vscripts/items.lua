@@ -147,6 +147,39 @@ function DisableRegenOnEnemyNear(event)
 
 end
 
+function SummonInferno(event)
+    local inferno_cast = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    local inferno_landed = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(inferno_landed, 0, event.target:GetAbsOrigin())
+end
+
+function SummonDoomGuard(event)
+    local doomguard = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death_bonus.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(doomguard, 0, event.target:GetAbsOrigin())
+end
+
+function SummonRedDrake(event)
+    local reddrake = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(reddrake, 0, event.target:GetAbsOrigin())
+end
+
+function SummonFellhound(event)
+    local fellhound = ParticleManager:CreateParticle("particles/econ/items/doom/doom_f2p_death_effect/doom_bringer_f2p_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(fellhound, 0, event.target:GetAbsOrigin())
+end
+
+function SummonTony(event)
+    local tony = ParticleManager:CreateParticle("particles/units/heroes/hero_tiny/tiny_death_rocks.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(tony, 0, event.target:GetAbsOrigin())
+    local tony = ParticleManager:CreateParticle("particles/units/heroes/hero_tiny/tiny_transform.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(tony, 0, event.target:GetAbsOrigin())
+end
+
+function SummonFulborg(event)
+    local bear = ParticleManager:CreateParticle("particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(bear, 0, event.target:GetAbsOrigin())
+end
+
 function CheckForKey(trigger)
     print("Checking for Key")
     local hero = trigger.activator
