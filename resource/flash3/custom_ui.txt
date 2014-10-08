@@ -1,6 +1,11 @@
 "CustomUI"
 {
-    "1"
+	"1"
+	{
+		"File"		"CustomError"
+		"Depth"		"50"
+	}
+    "2"
     {
         "File"      "CameraLock"
         "Depth"     "51"
