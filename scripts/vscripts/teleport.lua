@@ -29,6 +29,22 @@ function TeleporterHeaven(trigger)
     print("Entered Heaven")
     EmitGlobalSound("DOTAMusic_Stinger.003") --EmitGlobalSound("valve_dota_001.stinger.respawn") how to precache?
 
+    heaven1 = Vector(-6762, 5583, 40)
+    local newItem = CreateItem("item_orb_of_fire", nil, nil)
+    CreateItemOnPositionSync(heaven1, newItem)
+
+    heaven2 = Vector(-6762, 5475, 40)
+    local newItem = CreateItem("item_restoration_scroll", nil, nil)
+    CreateItemOnPositionSync(heaven2, newItem)
+
+    heaven3 = Vector(-6652, 5475, 40)
+    local newItem = CreateItem("item_restoration_scroll", nil, nil)
+    CreateItemOnPositionSync(heaven3, newItem)
+
+    heaven4 = Vector(-6652, 5583, 40)
+    local newItem = CreateItem("item_evasion", nil, nil)
+    CreateItemOnPositionSync(heaven4, newItem)
+
     --mass teleport
     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
         if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then

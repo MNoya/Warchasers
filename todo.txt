@@ -1,25 +1,28 @@
 TO DO - Priority List
 1. Missing Gameplay
 [!]Wisp Selection System (Fix)
+[ ]Fix Holy Light not casting properly
 
 2. Adding Gameplay
 [X]skull of guldan npc > Passive OnDeath corrupts the killer
 [X]Frostmourne casket
 [X]Finish Secret Heaven
 [~]Add Music track sets
-[ ]Add/Fix particles on creeps/items
-[~]Add particles on special spawns/death (bosses, necro)
+[X]Add/Fix particles on creeps/items
+[~]Add particles on special spawns/death (bosses)
 [X]Add hell burning debuff over time
 
 3. Cosmetic & Adjustments
 [ ]Rewrite most items to datadriven to allow custom particles and effects
-[ ]Make snow blend (After doing last secret area in mid)
+[X]Make snow blend (After doing last secret area in mid)
 [ ]Improve tilesets (add proper ligth sources to architecture)
-[ ]Fix stupid fountain particle
+[~]Fix stupid fountain particle
+[ ]Fix dominate scepter with creep AI
 [ ]Improve boss areas and AI
-[ ]Adjust blues in fog
-[ ]Error message holy light
-[ ]Fix Orb of Fire residual particle effect
+[X]Error message holy light
+[X]Fix Orb of Fire residual particle effect
+[ ]Fix item summons dropping items (just make new units, add strings)
+[ ]Adjust HealthBarOffsets
 [ ]Credits, Screenshots, Workshop Text.
 
 X= Completed
