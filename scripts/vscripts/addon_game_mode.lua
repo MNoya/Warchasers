@@ -981,6 +981,9 @@ function Warchasers:OnEntityKilled( event )
     --if it's a cherubin, send to hell
     if killedUnit:GetName()=="cherub" and GameRules.SENDHELL == false then
     	GameRules.SENDHELL = true
+    	EmitGlobalSound("diretide_eventstart_Stinger")
+    	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
+    	GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
     	Timers:CreateTimer({
 	    	endTime = 3, 
 	    	callback = function()

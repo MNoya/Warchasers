@@ -13,6 +13,8 @@ end
 function TeleporterHeavenHell(trigger)
     --Randomize teleporting Heaven or Hell
     if RollPercentage(50) then
+        GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
+        GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
         TeleporterHell(trigger)
     else
         TeleporterHeaven(trigger)
@@ -172,9 +174,6 @@ function TeleporterHell(trigger)
         return 1        
     end
     )
-
-    GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
-    GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
 
     Timers:CreateTimer({
         endTime = 45,
