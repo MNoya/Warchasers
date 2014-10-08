@@ -138,6 +138,7 @@ function TeleporterHell(trigger)
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
             entHero:Stop()
+            giveUnitDataDrivenModifier(entHero, entHero, "modifier_hell_burn",45)
             GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
     end
@@ -188,7 +189,7 @@ function TeleporterHell(trigger)
                         FindClearSpaceForUnit(entHero, point, false)
                         entHero:Stop()
                         GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-                        
+                        entHero:RemoveModifierByName("modifier_hell_burn")                     
                     end
                 end
 
@@ -303,7 +304,8 @@ function TeleporterDarkForest(trigger) --Skull of Guldan. Teleport back is done 
         if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
             local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
             FindClearSpaceForUnit(entHero, point, false)
-            entHero:Stop()             
+            entHero:Stop()
+            entHero:RemoveModifierByName("modifier_hell_burn")            
         end
     end
 
@@ -432,11 +434,7 @@ function TeleporterFinal(trigger)
 
 	--Set Teleport Zone
 	point = Vector(2193, -1400, 256)
-	
-	 --camera is buggy.
-    local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-	hero:AddNewModifier(dummy, nil, "modifier_camera_follow", {duration=0})
-	
+    local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)	
 	point = Vector(2193, -2200, 256)
     local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	point = Vector(2193, -2900, 256)

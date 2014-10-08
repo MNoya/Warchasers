@@ -3855,6 +3855,39 @@
 				}
 			}
 
+			"modifier_hell_burn"
+			{
+				"Passive"               "1"
+				"IsHidden"              "0"
+				"IsDebuff"				"1"
+				"TextureName"	"drow_firestorm"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"	"CASTER"
+						"EffectName"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+						"EffectAttachType"	"follow_origin"
+
+					}
+				}
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target" "CASTER"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"25"
+					}
+				}
+				"AddAbility"
+				{
+					"Target" "CASTER" 
+					"AbilityName" "terrorblade_metamorphosis"
+				}
+           	}
+
 	      	"modifier_out_of_game"
 	      	{
 	        	"Passive" "1"
