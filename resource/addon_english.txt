@@ -11,7 +11,7 @@
 
     	"camera_lock_on"                    "Camera Lock ON"
     	"camera_lock_off"                    "Camera Lock OFF"
-//test edit hello
+
 		"HeavenQuestTimer"					"Rest your weary vessels"
 		"HellQuestTimer"					"Survive for %quest_current_value% seconds"
 		
