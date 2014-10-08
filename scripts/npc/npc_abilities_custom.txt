@@ -5493,34 +5493,34 @@
 		}
 
 		"OnSpellStart"
-		{
+			{
 			"RunScript"
-			{
-				"ScriptFile"	"abilities.lua"
-				"Function"	"holy_light_check"
-			}
-		}
-		"OnChannelSucceeded"
-		{
-			"FireEffect"
-			{
-				"Target" "TARGET"
-				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-				"EffectAttachType" "follow_origin"
-				"EffectLifeDurationScale" "1"
-			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_Omniknight.Purification"
-				"Target"	"TARGET"
-			}
-
-			"RunScript"
-			{
+				{
 				"ScriptFile"	"abilities.lua"
 				"Function"	"holy_light_cast"
+				}
 			}
-		}
+		//"OnChannelSucceeded"
+		//{
+		//	"FireEffect"
+		//	{
+		//		"Target" "TARGET"
+		//		"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		//		"EffectAttachType" "follow_origin"
+		//		"EffectLifeDurationScale" "1"
+		//	}
+		//	"FireSound"
+		//	{
+		//		"EffectName"	"Hero_Omniknight.Purification"
+		//		"Target"	"TARGET"
+		//	}
+		//
+		//	"RunScript"
+		//	{
+		//		"ScriptFile"	"abilities.lua"
+		//		"Function"	"holy_light_cast"
+		//	}
+		//}
 	}
 
 	"warchasers_hero_holy_light" //needs datadriven

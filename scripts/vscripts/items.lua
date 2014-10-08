@@ -185,7 +185,7 @@ function FrostmourneAttack(event)
     ApplyDamage({
                     victim = event.target,
                     attacker = event.caster,
-                    damage = event.target:GetHealth() * 0.5
+                    damage = event.target:GetHealth() * 0.5,
                     damage_type = DAMAGE_TYPE_PHYSICAL
                     })
 end
@@ -195,7 +195,7 @@ function FrostmourneRuin(event)
     ApplyDamage({
                     victim = event.target, --does it take the attacked unit as the target?
                     attacker = event.caster,
-                    damage = event.target:GetMaxHealth() * 0.15
+                    damage = event.target:GetMaxHealth() * 0.15,
                     damage_type = DAMAGE_TYPE_PHYSICAL
                     })
 

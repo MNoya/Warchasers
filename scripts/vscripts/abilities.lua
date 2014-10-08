@@ -28,15 +28,22 @@ function holy_light_check( event )
 end
 
 function holy_light_cast( event )
-	if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
-		ApplyDamage({
-					victim = event.target,
-					attacker = event.caster,
-					damage = event.ability:GetLevelSpecialValueFor("target_damage", (event.ability:GetLevel()-1)),
-					damage_type = DAMAGE_TYPE_MAGICAL
-					})
+	if event.target ~= event.caster then
+		if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
+			ApplyDamage({
+						victim = event.target,
+						attacker = event.caster,
+						damage = event.ability:GetLevelSpecialValueFor("target_damage", (event.ability:GetLevel()-1)),
+						damage_type = DAMAGE_TYPE_MAGICAL
+						})
+		else
+			event.target:Heal( event.ability:GetLevelSpecialValueFor("heal_amount", (event.ability:GetLevel()-1)), event.caster)
+		end
 	else
-		event.target:Heal( event.ability:GetLevelSpecialValueFor("heal_amount", (event.ability:GetLevel()-1)), event.caster)
+		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))
+		event.ability:EndCooldown()
+		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
+		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Ability Can't Target Self" } )
 	end
 end
 
