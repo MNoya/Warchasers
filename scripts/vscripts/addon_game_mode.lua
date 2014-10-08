@@ -124,6 +124,7 @@ function Precache( context )
 	
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
   	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_chen", context )
 	PrecacheResource( "particle_folder","particles/items_fx", context)
 	PrecacheResource( "particle_folder","particles/items2_fx", context)
 	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
@@ -412,25 +413,6 @@ function Warchasers:OnAllPlayersLoaded()
 		local newItem = CreateItem("item_bone_chimes", nil, nil)
 	    CreateItemOnPositionSync(position, newItem)
 
-
-        heaven1 = Vector(-6762, 5583, 40)
-        local newItem = CreateItem("item_orb_of_fire", nil, nil)
-        CreateItemOnPositionSync(heaven1, newItem)
-
-        heaven2 = Vector(-6762, 5475, 40)
-        local newItem = CreateItem("item_restoration_scroll", nil, nil)
-        CreateItemOnPositionSync(heaven2, newItem)
-
-        heaven3 = Vector(-6652, 5475, 40)
-        local newItem = CreateItem("item_restoration_scroll", nil, nil)
-        CreateItemOnPositionSync(heaven3, newItem)
-
-        heaven4 = Vector(-6652, 5583, 40)
-        local newItem = CreateItem("item_evasion", nil, nil)
-        CreateItemOnPositionSync(heaven4, newItem)
-
-
-
         local newItem = CreateItem("item_potion_of_healing", nil, nil)
         hell1 = Vector(-7585.9, 3618.39, 40)
         CreateItemOnPositionSync(hell1, newItem)
@@ -542,6 +524,8 @@ function Warchasers:OnNPCSpawned(keys)
 		print("Hero Name: " .. heroName)
 
 		if heroName == "npc_dota_hero_wisp" then
+			--[[local item = CreateItem("item_talisman_of_the_wild", npc, npc) --testing items
+			npc:AddItem(item)]]
 			local playercounter = 0
 			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
 				if PlayerResource:IsValidPlayer(nPlayerID) then 
@@ -559,6 +543,8 @@ function Warchasers:OnNPCSpawned(keys)
 				--Add Ankh
 				local item = CreateItem("item_ankh", npc, npc)
 				npc:AddItem(item)
+				--[[local item = CreateItem("item_frostmourne", npc, npc) --testing items
+				npc:AddItem(item)]]
 				Warchasers:OnHeroInGame(npc)
 			elseif npc.bFirstSpawned == true then --respawn through Ankh
 				--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
