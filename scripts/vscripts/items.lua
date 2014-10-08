@@ -180,6 +180,35 @@ function SummonFulborg(event)
     ParticleManager:SetParticleControl(bear, 0, event.target:GetAbsOrigin())
 end
 
+function FrostmourneAttack(event)
+    --Deal 5% of the target's current health in physical damage
+    ApplyDamage({
+                    victim = event.target,
+                    attacker = event.caster,
+                    damage = event.target:GetHealth() * 0.5
+                    damage_type = DAMAGE_TYPE_PHYSICAL
+                    })
+end
+
+function FrostmourneRuin(event)
+    --take 15% of targets max HP
+    ApplyDamage({
+                    victim = event.target, --does it take the attacked unit as the target?
+                    attacker = event.caster,
+                    damage = event.target:GetMaxHealth() * 0.15
+                    damage_type = DAMAGE_TYPE_PHYSICAL
+                    })
+
+    --slow target by 30%
+    local targetMoveSpeed = event.target:GetBaseMoveSpeed()
+    event.target:SetBaseMoveSpeed( targetMoveSpeed * 0.7 )
+
+    --and give it to the caster for 3 sec
+    event.caster:SetBaseMoveSpeed(event.caster:GetBaseMoveSpeed() + (targetMoveSpeed * 0.3) )
+    --either create a timer here, or make this a modifier with 3sec duration
+end
+
+
 function CheckForKey(trigger)
     print("Checking for Key")
     local hero = trigger.activator

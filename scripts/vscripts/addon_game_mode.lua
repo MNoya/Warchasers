@@ -560,8 +560,10 @@ function Warchasers:OnNPCSpawned(keys)
 				--Add Ankh
 				local item = CreateItem("item_ankh", npc, npc)
 				npc:AddItem(item)
-				--[[local item = CreateItem("item_frostmourne", npc, npc) --testing items
-				npc:AddItem(item)]]
+				if Convars:GetBool("developer") then
+					local item = CreateItem("item_ublink", npc, npc) --testing items
+					npc:AddItem(item)
+				end
 				Warchasers:OnHeroInGame(npc)
 			elseif npc.bFirstSpawned == true then --respawn through Ankh
 				--Warchasers:ModifyStatBonuses(spawnedUnitIndex)

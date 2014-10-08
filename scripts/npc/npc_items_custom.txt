@@ -3773,11 +3773,11 @@
     }
 	
 		
-	"item_frostmourne"
+	"item_ublink"
 	{
 	
-		"ID"		"1134"
-		"ItemCost"						"322"
+		"ID"		"1127"
+		"ItemCost"						"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -3819,6 +3819,89 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blink_range_clamp"	"99999"
+			}
+		}		
+	}
+
+	"item_frostmourne" //totally not Blade of the Ruined King
+	{	
+		"ID"		"1134"
+		"ItemCost"						"644"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "0"
+		"AbilityCastRange"              "200"
+		"AbilityCooldown"               "60"
+		"ItemQuality"					"artifact"
+		"BaseClass" 					"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+
+		"AbilityTextureName"			"item_frostmourne"
+		
+		"Model"		"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
+		"Effect" 	"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+
+		"OnEquip"
+	  	{
+	  		"FireSound"
+			{
+				"EffectName"	"Hero_Abaddon.BorrowedTime"	
+				"Target" 		"UNIT"
+			}
+	  	}
+	  	"OnSpellStart"
+	  	{
+	  		"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/items.lua"
+				"Function"			"FrostmourneRuin"
+				//sunder~abyssal effect
+    			//go through magic immunity
+			}
+	  	}
+
+	  	"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/items.lua"
+				"Function"			"DropItemOnDeath"
+			}
+		}
+		
+		"Modifiers"    				
+		{  							
+			"modifier_frostmourne"  
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				//"EffectName"				"effect_name"
+				//"EffectAttachType"			"attach_hitloc"
+				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "25"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"40"
+				}
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{
+						"Target"	"ATTACKER"
+						"LifestealPercent" "15"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/items.lua"
+						"Function"			"FrostmourneAttack"
+					}
+				}		
 			}
 		}		
 	}
