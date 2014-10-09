@@ -3783,7 +3783,7 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		"ItemQuality"					"artifact"
-		"AbilityTextureName"			"item_frostmourne"
+		"AbilityTextureName"			"item_ublink"
 		
 		"Model"	"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
 		"Effect" "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
