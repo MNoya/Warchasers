@@ -2793,6 +2793,18 @@
 				"Function"			"DropItemOnDeath"
 			}
 		}
+		"Modifiers"
+			{
+			"item_scepter_of_mastery_dominate_modifier"
+				{
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"States"
+					{
+					"MODIFIER_STATE_DOMINATED"	"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
 	}
 	
 	"item_restoration_scroll"

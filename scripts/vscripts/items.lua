@@ -24,12 +24,15 @@ end
 function Dominate( event )
     local hero = event.caster
     local unit = event.target
+    local unit_hp = unit:GetHealth()
     if unit:GetLevel() < 6 then
-        unit:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
-        unit:SetTeam( DOTA_TEAM_GOODGUYS ) --hero:GetTeam()
+        unit:Stop()
+        unit:SetTeam( DOTA_TEAM_GOODGUYS )
         unit:SetOwner(hero)
-        local item = CreateItem( "item_apply_modifiers", source, source)
-        item:ApplyDataDrivenModifier( unit, unit, "modifier_dominated", {})
+        unit:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
+        event.ability:ApplyDataDrivenModifier( hero, unit, "item_scepter_of_mastery_dominate_modifier", nil)
+        unit:RespawnUnit()
+        unit:SetHealth(unit_hp)
     end
 end
 
