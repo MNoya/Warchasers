@@ -31,7 +31,7 @@
 		"npc_timber"			"Optimus Primo"
 		"npc_sven"				"Megotron X"
 		"npc_razor"				"Skeletorus"
-		"npc_sd"			"Mum'Rah"
+		"npc_sd"			"Mumm'Rah"
 		"npc_templar"		"Assassin"
 		"npc_drow"			"Snake Ayes"
 
