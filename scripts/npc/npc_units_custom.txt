@@ -186,7 +186,7 @@
 		"Level"						"1"
 
 		"AbilityLayout"				"4"
-		"Ability1"					"warchasers_snake_beast_holy_light"
+		"Ability1"					"warchasers_snake_holy_light"
 		"Ability2"					"clinkz_searing_arrows"
 		"Ability3"					"warchasers_snake_cold_arrows" 
 		"Ability4"					"abyssal_underlord_firestorm" //No particles
@@ -270,7 +270,7 @@
 		"Level"						"1"
 
 		"AbilityLayout"				"4"
-		"Ability1"					"warchasers_snake_beast_holy_light"
+		"Ability1"					"warchasers_beast_knight_holy_light"
 		"Ability2"					"lycan_summon_wolves"
 		"Ability3"					"warchasers_beast_knight_summon_water_elemental"
 		"Ability4"					""

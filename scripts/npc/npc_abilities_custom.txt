@@ -5464,7 +5464,7 @@
 		}
 	}
 	
-	"warchasers_snake_beast_holy_light"
+	"warchasers_snake_holy_light"
 	{
 		"BaseClass" 					"ability_datadriven"
 		"MaxLevel"						"3"
@@ -5500,32 +5500,11 @@
 				"Function"	"holy_light_cast"
 				}
 			}
-		//"OnChannelSucceeded"
-		//{
-		//	"FireEffect"
-		//	{
-		//		"Target" "TARGET"
-		//		"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-		//		"EffectAttachType" "follow_origin"
-		//		"EffectLifeDurationScale" "1"
-		//	}
-		//	"FireSound"
-		//	{
-		//		"EffectName"	"Hero_Omniknight.Purification"
-		//		"Target"	"TARGET"
-		//	}
-		//
-		//	"RunScript"
-		//	{
-		//		"ScriptFile"	"abilities.lua"
-		//		"Function"	"holy_light_cast"
-		//	}
-		//}
 	}
 
-	"warchasers_hero_holy_light" //needs datadriven
+	"warchasers_beast_knight_holy_light"
 	{
-		"BaseClass" 					"abaddon_death_coil"
+		"BaseClass" 					"ability_datadriven"
 		"MaxLevel"						"3"
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -5534,32 +5513,34 @@
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"65"
-		"AbilityTextureName"			"omniknight_purification"
-
+		"AbilityCastPoint"    			"0.3"
+		"AbilityTextureName"			"ck_holy_light"
+		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_1" //Chaos Bolt Animation
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1250"
+				"var_type"				"FIELD_FLOAT"
+				"target_damage"			"100 200 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"self_damage"			"0 0 0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"target_damage"			"100 200 300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"heal_amount"			"200 400 600"
 			}
 		}
+
+		"OnSpellStart"
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"holy_light_cast"
+				}
+			}
 	}
+
+	
 	
 	"warchasers_endurance_aura"
 	{

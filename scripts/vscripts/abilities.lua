@@ -16,20 +16,11 @@ function wizard_purge( event )
 	event.caster:RemoveAbility("satyr_trickster_purge")
 end
 
-function holy_light_check( event )
-	if event.target == event.caster then --disable self target, refund spell
-		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))
-		event.ability:EndCooldown()
-		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
-		FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Ability Can't Target Self" } )
-	else
-		event.ability:OnChannelFinish(true)
-	end
-end
-
 function holy_light_cast( event )
-	if event.target ~= event.caster then
+	if event.target ~= event.caster then --not self target
 		if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
+			event.target:EmitSound("Hero_Omniknight.Purification")
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 			ApplyDamage({
 						victim = event.target,
 						attacker = event.caster,
@@ -37,9 +28,11 @@ function holy_light_cast( event )
 						damage_type = DAMAGE_TYPE_MAGICAL
 						})
 		else
+			event.target:EmitSound("Hero_Omniknight.Purification")
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 			event.target:Heal( event.ability:GetLevelSpecialValueFor("heal_amount", (event.ability:GetLevel()-1)), event.caster)
 		end
-	else
+	else --disable self target, refund spell. callback event.ability:OnChannelFinish(true) not needed
 		event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.ability:GetManaCost(1))
 		event.ability:EndCooldown()
 		EmitSoundOnClient("General.CastFail_InvalidTarget_Hero", event.caster:GetPlayerOwner())
