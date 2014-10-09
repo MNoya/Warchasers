@@ -136,7 +136,7 @@ function Precache( context )
 	
 	--NEED TO PRECACHE ALL HATS?
 	--taken from https://github.com/madbyte/omg_dota/blob/55750b221e27c084dbd0f38319febae277b8d49b/scripts/vscripts/addon_game_mode.lua
-	print('Precaching hats...')
+	--[[print('Precaching hats...')
 	local wearables = LoadKeyValues("scripts/items/items_game.txt")
 	DeepPrintTable(wearables)
 
@@ -158,7 +158,7 @@ function Precache( context )
 	for wearable,_ in pairs( precacheWearables ) do
 		PrecacheResource( "model", wearable, context )
 	end
-	print('Done precaching!')
+	print('Done precaching!')]]--
 
 
 end
