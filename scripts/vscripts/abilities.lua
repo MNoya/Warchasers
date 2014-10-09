@@ -1,5 +1,22 @@
 print("Abilities are loading")
 
+function warchasers_tb_miniboss_animate_dead_killer( event )
+	event.target:Kill(event.abilty, event.caster)
+end
+
+function warchasers_tb_miniboss_animate_dead( event )
+	local owner = event.caster
+	local team_id = event.caster:GetTeamNumber()
+	for number, unit in pairs(event.target_entities) do
+		if unit:IsAlive() == false then
+			unit:SetOwner(owner)
+			unit:SetTeam(team_id)
+			unit:RespawnUnit()
+			event.ability:ApplyDataDrivenModifier( owner, unit, "warchasers_tb_miniboss_animate_dead_helper_timer", nil)
+		end
+	end
+end
+
 function mana_burn( event )
 	event.caster:AddAbility("necronomicon_archer_mana_burn")
 	local ability = event.caster:FindAbilityByName("necronomicon_archer_mana_burn")

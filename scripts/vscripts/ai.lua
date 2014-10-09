@@ -4,6 +4,18 @@ function physical_ehp( unit )
 	return unit:GetHealth() * ((0.06 * unit:GetPhysicalArmorValue()) / (1 + 0.06 * unit:GetPhysicalArmorValue()))
 end
 
+function tb_miniboss_think( event )
+	local dead_units = false
+	for number, unit in pairs(event.target_entities) do
+		if unit:IsAlive() == false then
+			dead_units = true
+		end
+	end
+	if dead_units == true and event.ability:IsChanneling() == false and event.ability:IsFullyCastable() == true  then
+		event.caster:CastAbilityNoTarget(event.caster:FindAbilityByName("tb_miniboss_animate_dead"), -1)
+	end
+end
+
 
 function final_boss_think( event )
 	local boss = event.caster

@@ -3071,6 +3071,29 @@
 
 //CREEPS THINKERS
 
+	"tb_miniboss_thinker"
+		{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"Modifiers"
+			{
+			"tb_boss_think_modifier"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"	
+				"ThinkInterval"	"3"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"ai.lua"
+						"Function"	"tb_miniboss_think"
+						}
+					}
+				}
+			}
+		}
+
 	"final_boss_thinker"
 		{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -3117,6 +3140,83 @@
 	//"purge" "satyr_trickster_purge"
 	
 	//"heal" "forest_troll_high_priest_heal"
+
+	"tb_miniboss_animate_dead"
+		{
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" "8"
+		"OnChannelSucceeded"
+			{
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"warchasers_tb_miniboss_animate_dead"
+				"Target"
+					{
+					"Center"	"CASTER"
+					"Radius"	"1300"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+					"Types"	"DOTA_UNIT_TARGET_BASIC"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+				}
+			}
+
+
+		"Modifiers"
+			{
+			"warchasers_tb_miniboss_animate_dead_helper_timer"
+				{
+				"OnCreated"
+					{
+					"AttachEffect"
+						{
+						"Target" "TARGET"
+						"EffectName"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+						"EffectAttachType" "follow_overhead"
+						}
+					"FireSound"
+						{
+						"EffectName"		"Hero_Abaddon.AphoticShield.Cast"
+						"Target"			  "CASTER"
+						}
+					}
+				"IsPurgable"	"0"
+				"Duration"	"15"
+				"OnDestroy"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_tb_miniboss_animate_dead_killer"
+						}
+					}
+				}
+			"tb_boss_think_modifier"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"	
+				"ThinkInterval"	"3"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"ai.lua"
+						"Function"	"tb_miniboss_think"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"1325"
+							"Teams"	"DOTA_UNIT_TARGET_TEAM_BOTH"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+							}
+						}
+					}
+				}
+			}
+		}
 
 	"warchasers_mana_burn"
 		{

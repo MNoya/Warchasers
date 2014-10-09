@@ -7001,12 +7001,12 @@
 		
 		"DisableResistance"			"75.0"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		
 
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_thunder_clap"	// Ability 1.
-		"Ability2"					"warchasers_muhrah_animate_dead"		// Ability 2.
+		"Ability2"					"tb_miniboss_animate_dead"		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
