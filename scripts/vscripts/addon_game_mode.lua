@@ -134,11 +134,9 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
 	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
-	--NEED TO PRECACHE ALL HATS?
-	--taken from https://github.com/madbyte/omg_dota/blob/55750b221e27c084dbd0f38319febae277b8d49b/scripts/vscripts/addon_game_mode.lua
-	--[[print('Precaching hats...')
+	--NEED TO PRECACHE ALL HATS
+	print('[Precache] Start')
 	local wearables = LoadKeyValues("scripts/items/items_game.txt")
-	DeepPrintTable(wearables)
 
 	local wearablesList = {}
 	local precacheWearables = {}
@@ -147,20 +145,110 @@ function Precache( context )
 			wearablesList = v
 		end
 	end
+	local hatCounter = 0
 	
+	--check wearablesList for jugg hats
 	for k, v in pairs(wearablesList) do
-		for key, value in pairs(wearablesList[k]) do
-			if key == 'model_player' then
-				precacheWearables[value] = true
+	  	if IsForHero("npc_dota_hero_juggernaut", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache jugg hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_shredder", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache timber hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_drow_ranger", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache drow hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_sven", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache sven hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_chaos_knight", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache ck hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_shadow_demon", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache sd hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_razor", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache razor hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_templar", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache templar hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
 			end
 		end
 	end
+
 	for wearable,_ in pairs( precacheWearables ) do
+		print("Precache: " .. wearable)
 		PrecacheResource( "model", wearable, context )
 	end
-	print('Done precaching!')]]--
+	print('[Precache]' .. hatCounter .. " models loaded!")
+	print('[Precache] End')
 
+end
 
+--thanks Aderum
+function IsForHero(hero, k, wearablesListEntry)
+	for key, value in pairs(wearablesListEntry) do
+		if key == 'used_by_heroes' then
+			print("Precache used_by_heroes Entry")
+			DeepPrintTable(wearablesListEntry)
+			if (wearablesListEntry[key]) ~= nil and (type(wearablesListEntry[key]) == "table") then
+				print("wearablesListEntry[key] is a table")
+				for key_hero,value_bool in pairs (wearablesListEntry[key]) do
+					if key_hero == hero then
+						return true
+					end
+				end
+			end
+		end
+	end
+	return false
 end
 
 XP_PER_LEVEL_TABLE = {

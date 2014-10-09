@@ -1,7 +1,7 @@
 TO DO - Priority List
 1. Missing Gameplay
 [!]Wisp Selection System (Fix)
-[ ]Fix Cosmetic Precache
+[!]Fix Cosmetic Precache
 [ ]Tank Area Defeat when tank killed
 
 2. Adding Gameplay
