@@ -3848,9 +3848,29 @@
 		"ItemQuality"					"artifact"
 		"BaseClass" 					"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
 		"AbilityTextureName"			"item_frostmourne"
 		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_lifesteal"			"15"
+			}	
+		}
+				
 		"Model"		"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
 		"Effect" 	"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
 
@@ -3898,15 +3918,15 @@
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "25"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"40"
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
 				}
 				"OnAttackLanded"
 				{
 					"Lifesteal"
 					{
 						"Target"	"ATTACKER"
-						"LifestealPercent" "15"
+						"LifestealPercent" "%bonus_lifesteal"
 					}
 					"RunScript"
 					{

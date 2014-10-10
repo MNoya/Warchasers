@@ -508,13 +508,13 @@
 		"npc_water_elemental_nonspawned"		"Enraged Elemental"
 		"npc_gnoll"								"Gnoll"
 		"npc_ghoul"								"Ghoul"
-		"npc_doom_miniboss"						"Miniboss - KATHUULON"
+		"npc_doom_miniboss"						"KATHUULON"
 
 		"npc_shadow_priest"						"Dark Troll Shadow Priest"
 		"npc_medium_satyr"						"Satyr"
 		"npc_priest"							"Priest"
 		"npc_mud_golem"  						"Mud Golem"
-		"npc_red_wizard"						"Renegade Wizard"
+		"npc_big_wizard"						"Renegade Wizard"
 		"npc_dark_troll_archer"					"Dark Troll"
 		"npc_forest_troll"						"Forest Troll"
 		"npc_nerubian_melee"					"Nerubian Warrior"
@@ -532,7 +532,7 @@
 		"npc_cherub"							"Cherub"
 		"npc_doom_guard"						"Doom Guard"
 		"npc_imp"								"Hell Imp"					
-		"npc_tb_miniboss"						"MiniBoss2 - RaAdoom"
+		"npc_tb_miniboss"						"RaAdoom"
 
 		"npc_small_sludge"						"Sludge Minion"
 		"npc_kobold_tunneler"					"Kobold Tunneler"
@@ -575,7 +575,7 @@
 		"npc_big_satyr"							"Satyr Hellcaller"
 		"npc_soul_smasher"						"Soul Smasher"
 		"npc_infernal"							"Infernal"
-		"npc_boss"								"BOSS - Xaxion Drakeem"
+		"npc_boss"								"Xaxion Drakeem"
 
 
 		// Creature Ability Names
@@ -752,7 +752,29 @@
 		"DOTA_Tooltip_ability_item_ublink_Description"						"Blink and you're gone."
 
 		"DOTA_Tooltip_ability_item_frostmourne"									"Frostmourne"
-		"DOTA_Tooltip_ability_item_frostmourne_Description"						"Blink and you're gone."
+		"DOTA_Tooltip_ability_item_frostmourne_Description"						"Active: Frostmourne Hungers - Drains the target enemy, dealing 15%% of its maximum health and healing you for the damage dealt. Additionally you steal 30%% of their movement speed for 3 seconds. \nPassive: Deals 5%% of the attacked enemy's current HP per attack."
+		"DOTA_Tooltip_ability_item_frostmourne_Lore"							"Hail to the king, baby!"
+		"DOTA_Tooltip_ability_item_frostmourne_Note0"								"The wielder of Frostmourne will become the new Lich King."
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_attack_speed"					"+$attack"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_lifesteal"							"%LIFESTEAL:"		
+		
+		// To create a new key ( like $health ) just add the entry here
+		"dota_ability_variable_health"			"Health"					// $health
+		"dota_ability_variable_mana"			"Mana"						// $mana
+		"dota_ability_variable_armor"			"Armor"						// $armor
+		"dota_ability_variable_damage"			"Damage"					// $damage
+		"dota_ability_variable_str"				"Strength"					// $str
+		"dota_ability_variable_int"				"Intelligence"					// $int
+		"dota_ability_variable_agi"				"Agility"					// $agi
+		"dota_ability_variable_all"				"All Attributes"			// $all
+		"dota_ability_variable_attack"			"Attack Speed"				// $attack
+		"dota_ability_variable_hp_regen"		"HP Regeneration"			// $hp_regen
+		"dota_ability_variable_mana_regen"		"Mana Regeneration"			// $mana_regen
+		"dota_ability_variable_move_speed"		"Movement Speed"			// $move_speed	
+		"dota_ability_variable_evasion"			"Evasion"					// $evasion
+		"dota_ability_variable_spell_resist"	"Spell Resistance"			// $spell_resist
+		"dota_ability_variable_selected_attrib"	"Selected Attribute"		// $selected_attribute
 		
 		//Shop 1
         "DOTA_Tooltip_ability_item_ankh"										"Ankh of Reincarnation"
