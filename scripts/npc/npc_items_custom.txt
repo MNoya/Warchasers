@@ -2798,6 +2798,7 @@
 			"item_scepter_of_mastery_dominate_modifier"
 				{
 				"IsBuff"	"1"
+				"TextureName"	"modifier_dominated"
 				"IsPurgable"	"0"
 				"States"
 					{

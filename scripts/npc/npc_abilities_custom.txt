@@ -3145,7 +3145,9 @@
 		{
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityChannelTime" "8"
+		"AbilityChannelTime" "4"
+		"AbilityTextureName"	"sd_animate_dead"
+	
 		"OnChannelSucceeded"
 			{
 			"RunScript"
