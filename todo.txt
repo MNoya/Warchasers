@@ -7,20 +7,19 @@ TO DO - Priority List
 2. Adding Gameplay
 [X]skull of guldan npc > Passive OnDeath corrupts the killer
 [X]Frostmourne casket
-[X]Finish Secret Heaven
 [~]Add Music track sets
 [~]Add particles on special spawns/death (bosses)
 
 3. Cosmetic & Adjustments
 [ ]Rewrite most items to datadriven to allow custom particles and effects
+[ ]Fix DropItemOnDeath dropping items while still having an Ankh
 [ ]Improve tilesets (add proper ligth sources to architecture)
 [~]Fix stupid fountain particle
-[X]Fix dominate scepter with creep AI
-[ ]Improve boss areas and AI
-[X]Fix item summons dropping items (just make new units, add strings)
+[~]Improve boss areas and AI
 [ ]Fix double spawners (extend the murloc solution, make different unit names for each)
 [ ]Adjust HealthBarOffsets
-[ ]Credits, Screenshots, Workshop Text.
+[~]Credits, Screenshots, Workshop Text.
+[ ]Test Dire Team
 
 X= Completed
 ~= In Progress

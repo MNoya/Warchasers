@@ -45,12 +45,26 @@ end
 
 function miniboss2_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> COME, HEROES!<br>COME AND CLAIM THE REWARD FOR YOUR SO CALLED HONOR!", 0,0)
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
 	EmitGlobalSound("DOTAMusic.Tutorial_Ducker")
+	local statue_origin = Vector(-1408, -5780, 256)
+	local dummy_statue = CreateUnitByName("vision_dummy_hall", statue_origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
 end
 
 function miniboss2_dead(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> UNTIL NEXT TIME...HEROES...", 0,0)
 	--StopSound("DOTAMusic.Tutorial_Ducker")
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+	local statue_origin = Vector(-1408, -5780, 256)
+	local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", statue_origin, 500)
+		for i = 1, #allNPCNear, 1 do
+                local creep = allNPCNear[i]
+                local name = creep:GetUnitName()
+                if name == "vision_dummy_hall" then
+                        creep:ForceKill(true)
+                        print(name .. " killed")
+                end
+        end
 end
 
 function spiderhall_warning(trigger)

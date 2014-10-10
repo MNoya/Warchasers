@@ -5487,7 +5487,7 @@
 		"AttackDamageMax"			"20"								// Damage range max.
 		"AttackRate"				"1.6"								// Speed of attack.
 		"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"800"								// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"1000"								// Range within a target can be acquired.
 		"AttackRange"				"600"								// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_troll_warlord/troll_warlord_base_attack.vpcf"				// Particle system model for projectile.
 		"ProjectileSpeed"			"800"								// Speed of projectile.
