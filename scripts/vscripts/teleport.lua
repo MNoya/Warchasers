@@ -300,13 +300,16 @@ function TeleporterSecret(trigger) --Sheeps
 end
 
 function TeleporterFrostHeaven(trigger) --Frostmourne. Teleport back to heaven with refresher timer, on cave trigger
-    GameRules.SENDFROSTHEAVEN = true 
-
+    
+    if GameRules.SENDFROSTHEAVEN == false then 
+        EmitGlobalSound("DOTAMusic_Stinger.007")
+        GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+        GameRules.SENDFROSTHEAVEN = true 
+    end
     local point =  Vector(-7935, 6662, 135)
     FindClearSpaceForUnit(trigger.activator, point, false)
     trigger.activator:Stop()
-    EmitGlobalSound("DOTAMusic_Stinger.007")
-    GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0) 
+    
 
 end
 
