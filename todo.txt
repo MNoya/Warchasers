@@ -15,7 +15,7 @@ TO DO - Priority List
 [ ]Rewrite most items to datadriven to allow custom particles and effects
 [ ]Improve tilesets (add proper ligth sources to architecture)
 [~]Fix stupid fountain particle
-[ ]Fix dominate scepter with creep AI
+[X]Fix dominate scepter with creep AI
 [ ]Improve boss areas and AI
 [X]Fix item summons dropping items (just make new units, add strings)
 [ ]Fix double spawners (extend the murloc solution, make different unit names for each)
