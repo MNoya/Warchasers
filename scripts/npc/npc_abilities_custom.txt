@@ -3149,7 +3149,7 @@
     	{
 	        "CreateThinker"
 	        {
-	            "ModifierName" "boss_death_fx"
+	            "ModifierName" "doom_miniboss_death_fx"
 	            "Target" "CASTER"
 	        }
 	    }
@@ -3190,7 +3190,7 @@
     	{
 	        "CreateThinker"
 	        {
-	            "ModifierName" "boss_death_fx"
+	            "ModifierName" "tb_miniboss_death_fx"
 	            "Target" "CASTER"
 	        }
 	    }

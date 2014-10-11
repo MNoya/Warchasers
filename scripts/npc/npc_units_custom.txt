@@ -4860,7 +4860,7 @@
 		"Ability1"					"drop_key1"			// Ability 1.
 		"Ability2"					"creep_unholy_aura"			// Ability 2.
 		"Ability3"					"creep_slow"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"doom_miniboss_death"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -6714,7 +6714,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_storm_dispel_magic"			// Ability 1.
 		"Ability2"					"centaur_hoof_stomp"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"neutral_spell_immunity"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		
 		// Armor
@@ -7007,7 +7007,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_thunder_clap"	// Ability 1.
 		"Ability2"					"tb_miniboss_animate_dead"		// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"tb_miniboss_death"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -10591,7 +10591,7 @@
 
 	
 	//=================================================================================
-	// Creature: Final Boss (Spawns Satyrs)
+	// Creature: Final Boss
 	//=================================================================================
 	"npc_boss"
 	{										
@@ -10615,6 +10615,7 @@
 		"Ability2"					"neutral_spell_immunity"			// Ability 2
 		"Ability3"					"final_boss_thinker"			// Ability 3
 		"Ability4"					"night_stalker_hunter_in_the_night"			// Ability 4
+		"Ability5"					"boss_death"
 
 		// Armor
 		//----------------------------------------------------------------

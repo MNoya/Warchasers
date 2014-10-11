@@ -98,6 +98,10 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_razor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_skeletorus", context)
 
+	PrecacheUnitByNameSync("npc_doom_miniboss", context)
+	PrecacheUnitByNameSync("npc_tb_miniboss", context)
+	PrecacheUnitByNameSync("npc_boss", context)
+
 	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
 	PrecacheResource("model", "models/kappakey.vmdl", context)
@@ -607,6 +611,27 @@ function Warchasers:OnAllPlayersLoaded()
 		local origin = Entities:FindByName( nil, "razor_circle" ):GetAbsOrigin()
 		local razor = CreateUnitByName("npc_razor", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		razor:SetForwardVector(rotation)
+
+		--Spawning Bosses
+
+		local owner_location = Vector(-7970,-7767,512)
+		local soul_keeper = CreateUnitByName("npc_soul_keeper", owner_location, true, nil, nil, DOTA_TEAM_NEUTRALS)
+		
+		local boss_location = Vector(-5512,-5497,-112)
+		local boss_rotation = Vector(-7872,-5504,265)
+		local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		boss1:SetForwardVector(boss_rotation)
+
+		local boss_location = Vector(-1408,-7560,137)
+		local boss_rotation = Vector(-1408,6540,256)
+		local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		boss2:SetForwardVector(boss_rotation)
+
+		local boss_location = Vector(2038, -7212, 257)
+		local boss_rotation = Vector(7662, -7152, 113)
+		local final_boss = CreateUnitByName("npc_boss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		final_boss:SetForwardVector(boss_rotation)
+
 
 end
 

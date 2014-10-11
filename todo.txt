@@ -1,12 +1,13 @@
 TO DO - Priority List
 1. Missing Gameplay
 [X][Code]Tank Area Defeat when tank killed
-[ ][Critical] Check bug when adding extra ability to npc_units_custom
+[!][Critical] Check bug when adding extra ability to npc_units_custom
+Workaround Fix: Spawn new units directly through lua.
 
 2. Adding Gameplay
 [ ][Code] Fix Skull Modifier
 [X][Code] Fix Frostmourne
-[~][Code] Particles on bosses death (Doom TB Roshan fx)
+[X][Code] Particles on bosses death (Doom TB Roshan fx)
 [ ][Code] SetCustomGameEndDelay win cinematic
 [ ][Sound] Add Music track sets for all zones. Use TI4 sound track
 [ ][Map] Ground vision dummies in necro spawn 1, 2 (3 and 4 should be ready)
