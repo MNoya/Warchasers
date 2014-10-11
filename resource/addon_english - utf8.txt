@@ -751,7 +751,7 @@
 		"DOTA_Tooltip_ability_item_orb_of_fire"									"Orb of Fire"
 		"DOTA_Tooltip_ability_item_orb_of_fire_Description"						"Adds 5 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also do splash damage to nearby enemy units."
 		
-		"DOTA_Tooltip_ability_item_ublink"									"Uber Blink"
+		"DOTA_Tooltip_ability_item_ublink"									"Uber Blink of Many Tests"
 		"DOTA_Tooltip_ability_item_ublink_Description"						"Blink and you're gone."
 
 		"DOTA_Tooltip_ability_item_frostmourne"									"Frostmourne"
