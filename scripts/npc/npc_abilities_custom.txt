@@ -3141,6 +3141,132 @@
 	
 	//"heal" "forest_troll_high_priest_heal"
 
+	"doom_miniboss_death"
+	{
+	    "BaseClass"              "ability_datadriven"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "OnOwnerDied"
+    	{
+	        "CreateThinker"
+	        {
+	            "ModifierName" "boss_death_fx"
+	            "Target" "CASTER"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	        "doom_miniboss_death_fx"
+	        {            
+	            "Duration" "2"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+	                {	      
+	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {
+	                    "EffectName" "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                    "ControlPoints"
+	                    {
+	                        "00" "0 0 0"
+	                        "01" "200 5 5"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+
+	"tb_miniboss_death"
+	{
+	    "BaseClass"              "ability_datadriven"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "OnOwnerDied"
+    	{
+	        "CreateThinker"
+	        {
+	            "ModifierName" "boss_death_fx"
+	            "Target" "CASTER"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	        "tb_miniboss_death_fx"
+	        {            
+	            "Duration" "2"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+	                {	      
+	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {
+	                    "EffectName" "particles/units/heroes/hero_terrorblade/terrorblade_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {
+	                    "EffectName" "particles/units/heroes/hero_invoker/invoker_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                
+	            }
+	        }
+	    }
+	}
+
+	"boss_death"
+	{
+	    "BaseClass"              "ability_datadriven"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "OnOwnerDied"
+    	{
+	        "CreateThinker"
+	        {
+	            "ModifierName" "boss_death_fx"
+	            "Target" "CASTER"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	        "boss_death_fx"
+	        {            
+	            "Duration" "2"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+	                {	      
+	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {	      
+	                    "EffectName" "particles/hw_fx/hw_roshan_death_j.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {	      
+	                    "EffectName" "particles/units/heroes/hero_death_prophet/death_prophet_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	            }
+	        }
+	    }
+	}
+
 	"tb_miniboss_animate_dead"
 		{
 		"BaseClass" "ability_datadriven"
