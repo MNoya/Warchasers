@@ -2260,7 +2260,7 @@
 	"item_frostmourne"
 	{
 		"ItemPurchasable"				"0"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 	}
 
 

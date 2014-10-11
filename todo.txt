@@ -4,7 +4,7 @@ TO DO - Priority List
 
 2. Adding Gameplay
 [ ][Code] Fix Skull Modifier
-[ ][Code] Fix Frostmourne
+[X][Code] Fix Frostmourne
 [ ][Code] Particles on bosses death (Doom TB Roshan fx)
 [ ][Code] SetCustomGameEndDelay win cinematic
 [ ][Sound] Add Music track sets for all zones. Use TI4 sound track

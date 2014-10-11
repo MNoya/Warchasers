@@ -36,6 +36,23 @@ function hasAnkh(hero)
     end
 end
 
+function DropFrostmourne(event)
+    local killedUnit = EntIndexToHScript( event.caster_entindex )
+    local itemName = tostring(event.ability:GetAbilityName()) 
+    if killedUnit:IsHero() or killedUnit:HasInventory() then 
+        for itemSlot = 0, 5, 1 do
+            if killedUnit ~= nil then
+                local Item = killedUnit:GetItemInSlot( itemSlot )
+                if Item ~= nil and Item:GetName() == itemName then
+                    local newItem = CreateItem(itemName, nil, nil)
+                    CreateItemOnPositionSync(killedUnit:GetOrigin(), newItem)
+                    killedUnit:RemoveItem(Item)
+                end
+            end
+        end
+    end
+end
+
 function Ankh( event )
     local killedPosition = event.caster:GetAbsOrigin()
     GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
@@ -208,27 +225,24 @@ function FrostmourneAttack(event)
     ApplyDamage({
                     victim = event.target,
                     attacker = event.caster,
-                    damage = event.target:GetHealth() * 0.5,
+                    damage = event.target:GetHealth() * 0.05,
                     damage_type = DAMAGE_TYPE_PHYSICAL
                     })
 end
 
 function FrostmourneRuin(event)
     --take 15% of targets max HP
+    local targetHP = event.target:GetMaxHealth() * 0.15
     ApplyDamage({
-                    victim = event.target, --does it take the attacked unit as the target?
+                    victim = event.target,
                     attacker = event.caster,
                     damage = event.target:GetMaxHealth() * 0.15,
                     damage_type = DAMAGE_TYPE_PHYSICAL
                     })
+    event.caster:Heal(targetHP, event.caster)
+    local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+    ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
 
-    --slow target by 30%
-    local targetMoveSpeed = event.target:GetBaseMoveSpeed()
-    event.target:SetBaseMoveSpeed( targetMoveSpeed * 0.7 )
-
-    --and give it to the caster for 3 sec
-    event.caster:SetBaseMoveSpeed(event.caster:GetBaseMoveSpeed() + (targetMoveSpeed * 0.3) )
-    --either create a timer here, or make this a modifier with 3sec duration
 end
 
 

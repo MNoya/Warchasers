@@ -310,6 +310,9 @@
 		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_Radius"	"RADIUS:"
 		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_resurrections_limit"	"AMOUNT:"
 		
+		"DOTA_Tooltip_ability_tb_miniboss_animate_dead"				"Animate Dead"
+		"DOTA_Tooltip_Ability_tb_miniboss_animate_dead_Description"	"Raises dead units in a giant area to fight for the Soulless once more."
+		
 		"DOTA_Tooltip_ability_warchasers_sleep"				"Sleep"
 		"DOTA_Tooltip_ability_warchasers_sleep_Description"	"Puts a target enemy unit to sleep. A sleeping unit can be awoken by attacking it."
 		"DOTA_Tooltip_ability_warchasers_sleep_duration"	"DURATION:"
@@ -508,13 +511,13 @@
 		"npc_water_elemental_nonspawned"		"Enraged Elemental"
 		"npc_gnoll"								"Gnoll"
 		"npc_ghoul"								"Ghoul"
-		"npc_doom_miniboss"						"Miniboss - KATHUULON"
+		"npc_doom_miniboss"						"KATHUULON"
 
 		"npc_shadow_priest"						"Dark Troll Shadow Priest"
 		"npc_medium_satyr"						"Satyr"
 		"npc_priest"							"Priest"
 		"npc_mud_golem"  						"Mud Golem"
-		"npc_red_wizard"						"Renegade Wizard"
+		"npc_big_wizard"						"Renegade Wizard"
 		"npc_dark_troll_archer"					"Dark Troll"
 		"npc_forest_troll"						"Forest Troll"
 		"npc_nerubian_melee"					"Nerubian Warrior"
@@ -532,7 +535,7 @@
 		"npc_cherub"							"Cherub"
 		"npc_doom_guard"						"Doom Guard"
 		"npc_imp"								"Hell Imp"					
-		"npc_tb_miniboss"						"MiniBoss2 - RaAdoom"
+		"npc_tb_miniboss"						"RaAdoom"
 
 		"npc_small_sludge"						"Sludge Minion"
 		"npc_kobold_tunneler"					"Kobold Tunneler"
@@ -575,7 +578,7 @@
 		"npc_big_satyr"							"Satyr Hellcaller"
 		"npc_soul_smasher"						"Soul Smasher"
 		"npc_infernal"							"Infernal"
-		"npc_boss"								"BOSS - Xaxion Drakeem"
+		"npc_boss"								"Xaxion Drakeem"
 
 
 		// Creature Ability Names
@@ -743,16 +746,44 @@
 		
 		//orbs
         "DOTA_Tooltip_ability_item_orb_of_frost"								"Orb of Frost"
-		"DOTA_Tooltip_ability_item_orb_of_frost_Description"					"Adds 6 bonus cold damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and slow the movement speed and attack rate of the enemy for 3 seconds."
+		"DOTA_Tooltip_ability_item_orb_of_frost_Description"					"Adds 6 bonus cold damage to the attack of a Hero when carried. The Hero's attacks also slow the movement speed and attack rate of the enemy for 3 seconds."
         
 		"DOTA_Tooltip_ability_item_orb_of_fire"									"Orb of Fire"
-		"DOTA_Tooltip_ability_item_orb_of_fire_Description"						"Adds 5 bonus fire damage to the attack of a Hero when carried. Deals spell damage. The Hero's attacks also become ranged when attacking air and do splash damage (14 radius) to nearby enemy units."
+		"DOTA_Tooltip_ability_item_orb_of_fire_Description"						"Adds 5 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also do splash damage to nearby enemy units."
 		
 		"DOTA_Tooltip_ability_item_ublink"									"Uber Blink"
 		"DOTA_Tooltip_ability_item_ublink_Description"						"Blink and you're gone."
 
 		"DOTA_Tooltip_ability_item_frostmourne"									"Frostmourne"
-		"DOTA_Tooltip_ability_item_frostmourne_Description"						"Blink and you're gone."
+		"DOTA_Tooltip_ability_item_frostmourne_Description"						"Active: Frostmourne Hungers - Drains the target, dealing 15%% of its maximum health and healing you for the damage dealt. Additionally you steal 30%% of their movement speed for 3 seconds. \nPassive: Deals 5%% of the attacked enemy's current HP per attack."
+		"DOTA_Tooltip_ability_item_frostmourne_Lore"							"Hail to the king, baby!"
+		"DOTA_Tooltip_ability_item_frostmourne_Note0"								"The wielder of Frostmourne will become the new Lich King."
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_lifesteal"							"%LIFESTEAL:"	
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_attack_speed"					"+$attack"		
+		"DOTA_Tooltip_modifier_frostmourne"										"Holding Frostmourne"
+		"DOTA_Tooltip_modifier_frostmourne_Description"										"The new Lich King"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff"						"Frostmourne Hungers"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff_Description"					"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff"						"Frostmourne Hungers"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff_Description"					"Slowed by 30%%"
+		
+		// To create a new key ( like $health ) just add the entry here
+		"dota_ability_variable_health"			"Health"					// $health
+		"dota_ability_variable_mana"			"Mana"						// $mana
+		"dota_ability_variable_armor"			"Armor"						// $armor
+		"dota_ability_variable_damage"			"Damage"					// $damage
+		"dota_ability_variable_str"				"Strength"					// $str
+		"dota_ability_variable_int"				"Intelligence"					// $int
+		"dota_ability_variable_agi"				"Agility"					// $agi
+		"dota_ability_variable_all"				"All Attributes"			// $all
+		"dota_ability_variable_attack"			"Attack Speed"				// $attack
+		"dota_ability_variable_hp_regen"		"HP Regeneration"			// $hp_regen
+		"dota_ability_variable_mana_regen"		"Mana Regeneration"			// $mana_regen
+		"dota_ability_variable_move_speed"		"Movement Speed"			// $move_speed	
+		"dota_ability_variable_evasion"			"Evasion"					// $evasion
+		"dota_ability_variable_spell_resist"	"Spell Resistance"			// $spell_resist
+		"dota_ability_variable_selected_attrib"	"Selected Attribute"		// $selected_attribute
 		
 		//Shop 1
         "DOTA_Tooltip_ability_item_ankh"										"Ankh of Reincarnation"
@@ -767,6 +798,7 @@
 		
 		"DOTA_Tooltip_ability_item_scepter_of_mastery"							"Scepter of Mastery"
 		"DOTA_Tooltip_ability_item_scepter_of_mastery_Description"				"Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. Cannot be used on Heroes or on creeps higher than level 5."
+		"DOTA_Tooltip_item_scepter_of_mastery_dominate_modifier"				"Dominated"
         
 		"DOTA_Tooltip_ability_item_mask_of_death"								"Mask of Death"
 		"DOTA_Tooltip_ability_item_mask_of_death_Description"					"While wearing this mask, a Hero will recover hit points equal to 50%% of the attack damage dealt to an enemy unit."

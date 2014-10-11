@@ -3849,26 +3849,27 @@
 		"ItemQuality"					"artifact"
 		"BaseClass" 					"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
 		"AbilityTextureName"			"item_frostmourne"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
+				"bonus_lifesteal"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"			"40"
+				"bonus_damage"			"25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_lifesteal"			"15"
+				"bonus_attack_speed"			"40"
 			}	
 		}
 				
@@ -3884,7 +3885,18 @@
 	  		"FireSound"
 			{
 				"EffectName"	"Hero_Abaddon.BorrowedTime"	
-				"Target" 		"UNIT"
+				"Target" 		"CASTER"
+			}
+			"AttachEffect"
+			{
+				"EffectName" "particles/units/heroes/hero_abaddon/abaddon_spawn.vpcf"
+				"EffectAttachType"			"follow_origin"
+				"Target"		"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 			"modifier_frostmourne"
+				"Target" 	"CASTER"
 			}
 	  	}
 	  	"OnSpellStart"
@@ -3896,6 +3908,27 @@
 				//sunder~abyssal effect
     			//go through magic immunity
 			}
+			"AttachEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"	"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Terrorblade.Sunder.Target"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 			"modifier_frostmourne_hungers_debuff"
+				"Target" 	"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 			"modifier_frostmourne_hungers_buff"
+				"Target" 	"CASTER"
+			}	
 	  	}
 
 	  	"OnOwnerDied"
@@ -3903,7 +3936,7 @@
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
+				"Function"			"DropFrostmourne"
 			}
 		}
 		
@@ -3911,12 +3944,13 @@
 		{  							
 			"modifier_frostmourne"  
 			{
-				"IsDebuff"					"1"
+				"IsDebuff"					"0"
 				"IsPurgable"				"0"
 				"IsHidden"					"0"
-				//"EffectName"				"effect_name"
-				//"EffectAttachType"			"attach_hitloc"
+				"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+				"EffectAttachType"			"follow_origin"
 				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"				"frostmourne_holder"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "%bonus_damage"
@@ -3929,6 +3963,11 @@
 						"Target"	"ATTACKER"
 						"LifestealPercent" "%bonus_lifesteal"
 					}
+					"FireSound"
+					{
+						"EffectName"	"Hero_Abaddon.Attack"
+						"Target"	"CASTER"
+					}
 					"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/items.lua"
@@ -3936,6 +3975,35 @@
 					}
 				}		
 			}
+			"modifier_frostmourne_hungers_debuff"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+				"EffectAttachType"			"follow_origin"
+				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"      			"3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-30"
+				}
+			}	
+			"modifier_frostmourne_hungers_buff"
+			{
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"EffectName"				"particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+				"EffectAttachType"			"follow_origin"
+				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"      			"3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+				}
+			}		
+
 		}		
 	}
 
