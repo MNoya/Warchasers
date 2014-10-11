@@ -1,28 +1,33 @@
 TO DO - Priority List
 1. Missing Gameplay
-[!]Wisp Selection System (Fix)
-[!]Fix Cosmetic Precache
-[ ]Tank Area Defeat when tank killed
+[ ][Code]Tank Area Defeat when tank killed
 
 2. Adding Gameplay
-[X]skull of guldan npc > Passive OnDeath corrupts the killer
-[X]Frostmourne casket
-[~]Add Music track sets
-[~]Add particles on special spawns/death (bosses)
+[ ][Code] Fix Skull Modifier
+[ ][Code] Fix Frostmourne
+[ ][Code] Particles on bosses death (Doom TB Roshan fx)
+[ ][Code] SetCustomGameEndDelay win cinematic
+[ ][Sound] Add Music track sets for all zones. Use TI4 sound track
+[ ][Map] Ground vision dummies in necro spawn 1, 2 (3 and 4 should be ready)
 
 3. Cosmetic & Adjustments
-[ ]Rewrite most items to datadriven to allow custom particles and effects
-[ ]Fix DropItemOnDeath dropping items while still having an Ankh
-[ ]Improve tilesets (add proper ligth sources to architecture)
-[~]Fix stupid fountain particle
-[~]Improve boss areas and AI
-[ ]Fix double spawners (extend the murloc solution, make different unit names for each)
-[ ]Adjust HealthBarOffsets
-[~]Credits, Screenshots, Workshop Text.
-[ ]Test Dire Team
+[ ][Code] Fix DropItemOnDeath dropping items while still having an Ankh
+[ ][Map] Improve tilesets (add proper ligth sources to architecture)
+[ ][Test] Fix double spawners (extend the murloc solution, make different unit names for each)
+[ ][Map] Improve tilesets (add proper ligth sources to architecture)
+[ ][Map] Improve 2nd boss area
+[ ][Map] Improve wisp and water areas
+[ ][Text] Improve popup and hero hall appear
+[ ][Test] Review NeutralCreep AI
+[ ][Test] Review drop_levelX to add missing/new items
+[ ][Text] Credits, Screenshots, Workshop Text
+[ ][Test] Dire team (apply out of game?)
+[ ][Test] Check doomguard bug when adding extra ability
+[ ][Test] Adjust HealthBarOffsets
+[ ][Icon] Improve statrules icon background
 
 X= Completed
 ~= In Progress
 != Check if it works
-   
+
 
