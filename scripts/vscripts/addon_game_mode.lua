@@ -264,12 +264,6 @@ XP_PER_LEVEL_TABLE = {
 	 5400 -- 10 +1000
  }
 
-P0_ANKH_COUNT = 0
-P1_ANKH_COUNT = 0
-P2_ANKH_COUNT = 0
-P3_ANKH_COUNT = 0
-P4_ANKH_COUNT = 0
-
 -- Create the game mode when we activate
 function Activate()
 	GameRules.AddonTemplate = Warchasers()
@@ -315,6 +309,12 @@ function Warchasers:InitGameMode()
 	GameRules.PLAYER_COUNT = 0
 	GameRules.PLAYERS_PICKED_HERO = 0
 	GameRules.HALL_CLEARED = false
+
+	GameRules.P0_ANKH_COUNT = 0
+	GameRules.P1_ANKH_COUNT = 0
+	GameRules.P2_ANKH_COUNT = 0
+	GameRules.P3_ANKH_COUNT = 0
+	GameRules.P4_ANKH_COUNT = 0
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -378,20 +378,20 @@ function Warchasers:AnkhThink()
 		 			end
 		 		end
 		 		if nPlayerID == 0 then
- 					P0_ANKH_COUNT = ankh_counter
- 					--print("Player 0 Ankh Count: " .. P0_ANKH_COUNT)
+ 					GameRules.P0_ANKH_COUNT = ankh_counter
+ 					--print("Player 0 Ankh Count: " .. GameRules.P0_ANKH_COUNT)
 				elseif nPlayerID == 1 then
- 					P1_ANKH_COUNT = ankh_counter
-					--print("Player 1 Ankh Count: " .. P1_ANKH_COUNT)
+ 					GameRules.P1_ANKH_COUNT = ankh_counter
+					--print("Player 1 Ankh Count: " .. GameRules.P1_ANKH_COUNT)
  				elseif nPlayerID == 2 then
- 					P2_ANKH_COUNT = ankh_counter
- 					--print("Player 2 Ankh Count: " .. P2_ANKH_COUNT)
+ 					GameRules.P2_ANKH_COUNT = ankh_counter
+ 					--print("Player 2 Ankh Count: " .. GameRules.P2_ANKH_COUNT)
  				elseif nPlayerID == 3 then
- 					P3_ANKH_COUNT = ankh_counter
- 					--print("Player 3 Ankh Count: " .. P3_ANKH_COUNT)
+ 					GameRules.P3_ANKH_COUNT = ankh_counter
+ 					--print("Player 3 Ankh Count: " .. GameRules.P3_ANKH_COUNT)
  				elseif nPlayerID == 4 then
- 					P4_ANKH_COUNT = ankh_counter
- 					--print("Player 4 Ankh Count: " .. P4_ANKH_COUNT)
+ 					GameRules.P4_ANKH_COUNT = ankh_counter
+ 					--print("Player 4 Ankh Count: " .. GameRules.P4_ANKH_COUNT)
  				end
 		 	end		
 	 	end
@@ -981,52 +981,52 @@ function Warchasers:OnEntityKilled( event )
 		end    	
 
     	--check if the killed player has ankh
-      	if KilledPlayerID==0 and P0_ANKH_COUNT > 0 then  
+      	if KilledPlayerID==0 and GameRules.P0_ANKH_COUNT > 0 then  
     		respawning = true
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==1 and P1_ANKH_COUNT > 0 then  
+    	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT > 0 then  
     		respawning = true
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 	      
-	    if KilledPlayerID==2 and P2_ANKH_COUNT > 0 then  
+	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT > 0 then  
     		respawning = true
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==3 and P3_ANKH_COUNT > 0 then  
+    	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT > 0 then  
     		respawning = true
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end
 
-    	if KilledPlayerID==4 and P4_ANKH_COUNT > 0 then  
+    	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT > 0 then  
     		respawning = true
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end   
 
-    	if KilledPlayerID==0 and P0_ANKH_COUNT == 0 then  
+    	if KilledPlayerID==0 and GameRules.P0_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
-    	if KilledPlayerID==1 and P1_ANKH_COUNT == 0 then  
+    	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 	      
-	    if KilledPlayerID==2 and P2_ANKH_COUNT == 0 then  
+	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
-    	if KilledPlayerID==3 and P3_ANKH_COUNT == 0 then  
+    	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end
 
-    	if KilledPlayerID==4 and P4_ANKH_COUNT == 0 then  
+    	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
     	end 

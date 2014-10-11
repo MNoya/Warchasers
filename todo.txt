@@ -11,7 +11,7 @@ TO DO - Priority List
 [ ][Map] Ground vision dummies in necro spawn 1, 2 (3 and 4 should be ready)
 
 3. Cosmetic & Adjustments
-[ ][Code] Fix DropItemOnDeath dropping items while still having an Ankh
+[X][Code] Fix DropItemOnDeath dropping items while still having an Ankh
 [ ][Map] Improve tilesets (add proper ligth sources to architecture)
 [ ][Test] Fix double spawners (extend the murloc solution, make different unit names for each)
 [ ][Map] Improve tilesets (add proper ligth sources to architecture)

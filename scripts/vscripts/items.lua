@@ -3,7 +3,9 @@ function DropItemOnDeath(event) -- event is the information sent by the ability
     local killedUnit = EntIndexToHScript( event.caster_entindex ) -- EntIndexToHScript takes the event.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
     local itemName = tostring(event.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. event.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
     if killedUnit:IsHero() or killedUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-        for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+        if not hasAnkh(killedUnit) then
+            print("No Ankh detected, dropping item`")
+            for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
                 if killedUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                         local Item = killedUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
                         if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
@@ -12,7 +14,25 @@ function DropItemOnDeath(event) -- event is the information sent by the ability
                                 killedUnit:RemoveItem(Item) -- finally, the item is removed from the original units inventory.
                         end
                 end
+            end
         end
+    end
+end
+
+function hasAnkh(hero)
+    --Ankhs are used before we can get the hero killed, so we need to compare the global ANKH_COUNT variable
+    local nPlayerID = hero:GetPlayerID()
+
+    if nPlayerID == 0 then
+        return (GameRules.P0_ANKH_COUNT>0)
+     elseif nPlayerID == 1 then
+        return (GameRules.P1_ANKH_COUNT>0)
+    elseif nPlayerID == 2 then
+        return (GameRules.P2_ANKH_COUNT>0)
+    elseif nPlayerID == 3 then
+        return (GameRules.P3_ANKH_COUNT>0)
+    elseif nPlayerID == 4 then
+        return (GameRules.P4_ANKH_COUNT>0)
     end
 end
 
