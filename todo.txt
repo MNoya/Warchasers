@@ -1,6 +1,6 @@
 TO DO - Priority List
 1. Missing Gameplay
-[ ][Code]Tank Area Defeat when tank killed
+[X][Code]Tank Area Defeat when tank killed
 
 2. Adding Gameplay
 [ ][Code] Fix Skull Modifier

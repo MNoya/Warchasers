@@ -309,6 +309,7 @@ function Warchasers:InitGameMode()
 	GameRules.PLAYER_COUNT = 0
 	GameRules.PLAYERS_PICKED_HERO = 0
 	GameRules.HALL_CLEARED = false
+	GameRules.TANK_BOSS_KILLED = false
 
 	GameRules.P0_ANKH_COUNT = 0
 	GameRules.P1_ANKH_COUNT = 0
@@ -966,9 +967,34 @@ function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
 
-	if killedUnit:GetName()=="finalboss" then
-		GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-	end	
+	--if killedUnit:GetName()=="finalboss" then
+		--GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+	--end
+
+	if killedUnit:GetName() == "tank_boss" then
+		print("Tank Area Cleared")
+		GameRules.TANK_BOSS_KILLED=true
+	end
+
+	if killedUnit:GetUnitName() == "npc_rocknroll_steamtank" then
+		--remove all ankhs if possible, then kill the player
+		local tankHero = killedUnit:GetOwner()
+		for itemSlot = 0, 5, 1 do
+            if tankHero ~= nil then
+                local Item = tankHero:GetItemInSlot( itemSlot )
+                if Item ~= nil and Item:GetName() == "item_ankh" then
+                    tankHero:RemoveItem(Item)
+                end
+            end
+        end
+       --wait time for ankh update thinker
+       Timers:CreateTimer({
+			endTime = 2,
+			callback = function()
+				tankHero:ForceKill(true)
+			end
+		})
+	end
 	
 	if killedUnit:IsRealHero() then 
 		
