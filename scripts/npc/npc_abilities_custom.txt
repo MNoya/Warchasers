@@ -6295,6 +6295,28 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnAttackLanded"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 	
 	"spawn_murloc_b"
@@ -6348,6 +6370,28 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnAttackLanded"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_gnoll"

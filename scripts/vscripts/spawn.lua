@@ -1,4 +1,13 @@
 
+function attack_agro_func( event )
+        for key, unit in pairs(event.target_entities) do
+                unit:MoveToPositionAggressive(event.attacker:GetAbsOrigin()) 
+        end
+end
+
+
+
+
 function ReplaceByTimber(event)
         local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", event.activator:GetAbsOrigin(), 100)
         local newHero = PlayerResource:ReplaceHeroWith(event.activator:GetPlayerID(), "npc_dota_hero_shredder", 0, 0)
