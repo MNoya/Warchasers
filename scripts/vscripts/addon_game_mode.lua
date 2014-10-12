@@ -308,6 +308,7 @@ function Warchasers:InitGameMode()
 	GameRules.SENDFROSTHEAVEN = false
 	GameRules.SENDFORESTHELL = false
 	GameRules.SHOWPOPUP = true
+	GameRules.SENDSPIDERHALL = false
 
 	GameRules.DEAD_PLAYER_COUNT = 0
 	GameRules.PLAYER_COUNT = 0

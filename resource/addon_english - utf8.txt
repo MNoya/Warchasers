@@ -217,8 +217,8 @@
 		"DOTA_Tooltip_creep_command_aura_bonus"					"Command Aura"
 		"DOTA_Tooltip_creep_command_aura_bonus_Description" "This unit is under the effects of Command Aura; it has increased damage."
 					
-		"DOTA_Tooltip_modifier_aura_health_regen"			"Ward Regen"
-		"DOTA_Tooltip_modifier_aura_health_regen_Description"	"This unit has increased health regeneration"
+		"DOTA_Tooltip_modifier_ward_health_regen"			"Ward Regen"
+		"DOTA_Tooltip_modifier_ward_health_regen_Description"	"This unit has increased health regeneration"
 		
 		//"health_fountain_aura"
 		"DOTA_Tooltip_modifier_fountain_health_regen"			"Fountain of Health Regen"

@@ -25,7 +25,7 @@ Workaround Fix: Spawn new units directly through lua.
 [ ][Text] Credits, Screenshots, Workshop Text
 [ ][Test] Dire team (apply out of game?)
 [ ][Test] Adjust HealthBarOffsets
-[ ][Icon] Improve statrules icon background
+[X][Icon] Improve statrules icon background
 
 X= Completed
 ~= In Progress
