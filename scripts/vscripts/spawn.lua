@@ -1,8 +1,21 @@
 
+
+
 function attack_agro_func( event )
         for key, unit in pairs(event.target_entities) do
                 if unit:GetAttackTarget() == nil then
                         unit:SetForceAttackTarget(event.attacker) 
+                        unit.initial_position = unit:GetAbsOrigin()
+                        unit:SetContextThink("deagro_func", 
+                                function ()
+                                        if (unit.initial_position - unit:GetAbsOrigin()):Length2D() > 900 then
+                                                unit:SetForceAttackTarget(nil)
+                                                return nil
+                                        else
+                                                return 0.5
+                                        end
+                                end
+                                , 2)
                 end
         end
 end
