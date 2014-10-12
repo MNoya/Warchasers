@@ -28,6 +28,12 @@
 
     	"HealthBarOffset" "3000"
 
+    	"precache"
+		{
+			"model"	"models/heroes/shredder/shredder.vmdl"
+			"model_folder"	"models/heroes/shredder"
+		}
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"2"									// Physical protection.

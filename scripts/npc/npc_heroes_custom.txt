@@ -536,7 +536,7 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"6"
-		"Ability1"					""
+		"Ability1"					"warchasers_precache"
 		"Ability2"					""							
 		"Ability3"					""
 		"Ability4"					""

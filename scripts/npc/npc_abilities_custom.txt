@@ -4,6 +4,55 @@
 	"Version"		"1"
 
 	
+
+	"warchasers_precache"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5343"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"0"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+
+		"precache"
+		{
+			"model"			"models/heroes/shredder/shredder.vmdl"
+			"model_folder"	"models/heroes/shredder"
+			"model"			"models/heroes/juggernaut/juggernaut.vmdl"
+			"model_folder"	"models/heroes/juggernaut"
+			"model"			"models/heroes/drow/drow.vmdl"
+			"model_folder"	"models/heroes/drow"
+			"model"			"models/heroes/chaos_knight/chaos_knight.vmdl"
+			"model_folder"	"models/heroes/chaos_knight"
+			"model"			"models/heroes/shadow_demon/shadow_demon.vmdl"
+			"model_folder"	"models/heroes/shadow_demon"
+			"model"			"models/heroes/lanaya/lanaya.vmdl"
+			"model_folder"	"models/heroes/lanaya"
+			"model"			"models/heroes/sven/sven.vmdl"
+			"model_folder"	"models/heroes/sven"
+			"model"			"models/heroes/razor/razor.vmdl"
+			"model_folder"	"models/heroes/razor"
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// START FOUNTAINS --------------------------------------------------------------------------------------------------
 	"health_fountain_aura"
 	{
