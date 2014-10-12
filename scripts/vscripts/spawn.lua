@@ -1,7 +1,9 @@
 
 function attack_agro_func( event )
         for key, unit in pairs(event.target_entities) do
-                unit:MoveToPositionAggressive(event.attacker:GetAbsOrigin()) 
+                if unit:GetAttackTarget() == nil then
+                        unit:SetForceAttackTarget(event.attacker) 
+                end
         end
 end
 

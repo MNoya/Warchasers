@@ -6303,8 +6303,9 @@
 			{
 			"attack_agro"
 				{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"OnAttackLanded"
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
 					{
 					"RunScript"
 						{
@@ -6378,8 +6379,10 @@
 			{
 			"attack_agro"
 				{
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-				"OnAttackLanded"
+				"IsHidden" "0"
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
 					{
 					"RunScript"
 						{
