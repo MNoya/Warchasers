@@ -6451,6 +6451,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_ghoul"
@@ -6503,6 +6526,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_medium_satyr"
@@ -6555,6 +6601,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_golem"
@@ -6607,6 +6676,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_medium_murloc"
@@ -6659,6 +6751,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_water_elemental"
@@ -6712,6 +6827,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_ranged_troll"
@@ -6764,6 +6902,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_small_sludge"
@@ -6816,6 +6977,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_treant"
@@ -6868,6 +7052,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_burning_archer"
@@ -6920,6 +7127,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_kobold_tunneler"
@@ -6972,6 +7202,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	
@@ -7026,6 +7279,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	
@@ -7079,6 +7355,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 	
 	"spawn_ice_priest"
@@ -7131,6 +7430,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_wizard"
@@ -7183,6 +7505,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_fellhound"
@@ -7235,6 +7580,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_big_sludge"
@@ -7287,6 +7655,29 @@
 	        }   
 		
 		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
 	}
 
 	"spawn_imp"

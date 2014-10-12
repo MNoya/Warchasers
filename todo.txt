@@ -4,6 +4,8 @@ TO DO - Priority List
 [!][Critical] Check bug when adding extra ability to npc_units_custom
 Workaround Fix: Spawn new units directly through lua.
 
+[ ][Critical] Fix Precache problem with clients
+
 2. Adding Gameplay
 [ ][Code] Fix Skull Modifier
 [X][Code] Fix Frostmourne
@@ -20,7 +22,7 @@ Workaround Fix: Spawn new units directly through lua.
 [ ][Map] Improve 2nd boss area
 [ ][Map] Improve wisp and water areas
 [ ][Text] Improve popup and hero hall appear
-[ ][Test] Review NeutralCreep AI
+[X][Test] Review NeutralCreep AI
 [ ][Test] Review drop_levelX to add missing/new items
 [ ][Text] Credits, Screenshots, Workshop Text
 [ ][Test] Dire team (apply out of game?)
