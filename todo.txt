@@ -4,10 +4,10 @@ TO DO - Priority List
 [!][Critical] Check bug when adding extra ability to npc_units_custom
 Workaround Fix: Spawn new units directly through lua.
 
-[!][Critical] Fix Precache problem with clients
+[~][Critical] Fix Precache problem with clients
 
 2. Adding Gameplay
-[ ][Code] Fix Skull Modifier
+[~][Code] Fix Skull Modifier
 [X][Code] Fix Frostmourne
 [X][Code] Particles on bosses death (Doom TB Roshan fx)
 [ ][Code] SetCustomGameEndDelay win cinematic
