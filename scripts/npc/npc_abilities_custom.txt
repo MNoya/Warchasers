@@ -33,6 +33,42 @@
 			"model_folder"	"models/heroes/sven"
 			"model"			"models/heroes/razor/razor.vmdl"
 			"model_folder"	"models/heroes/razor"
+
+			"model" "models/props_debris/merchant_debris_key001.vmdl"
+	 		"model" "models/props_debris/merchant_debris_chest001.vmdl"
+			"model" "models/kappakey.vmdl" 
+			"model" "models/chest_worlddrop.vmdl" 
+			"model" "models/props_items/monkey_king_bar01.vmdl" 
+			"model" "models/props_items/blinkdagger.vmdl" 
+			"model" "models/props_items/assault_cuirass.vmdl"  
+	 		"model" "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"
+	 		"model" "models/npc_minions/draft_siege_good.vmdl" 
+	 		"model" "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl" 
+			"model" "models/props_items/necronomicon.vmdl"
+
+			"particle_folder" "particles/units/heroes/hero_dragon_knight"
+		  	"particle_folder" "particles/units/heroes/hero_juggernaut"
+		  	"particle_folder" "particles/units/heroes/hero_chen"
+			"particle_folder" "particles/items_fx" 
+			"particle_folder" "particles/items2_fx" 
+			"particle_folder" "particles/newplayer_fx" 
+			"particle_folder" "particles/econ/items" 
+			"particle_folder" "particles/econ/courier" 
+			"particle_folder" "particles/econ/events/ti4" 
+			"particle_folder" "particles/generic_gameplay" 
+			"particle_folder" "particles/neutral_fx" 
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts" 
+			"soundfile" "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts" 
+			"soundfile" "soundevents/game_sounds_stingers_diretide.vsndevts" 
+			"soundfile" "soundevents/game_sounds_creeps.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts" 
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts" 
+			"soundfile" "soundevents/voscripts/game_sounds_vo_wisp.vsndevts" 
 		}
 	}
 
@@ -1308,7 +1344,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 3 Item = GreaterHealing GreaterMana HealingPotion. Added ManaPotion, Invulnerability, Wand (high chances for now)
+	// Drop Level 3 Item = GreaterHealing GreaterMana HealingPotion. Added ManaPotion Invulnerability Wand (high chances for now)
 	//=================================================================================================================
 	"drop_level3"
 	{
@@ -1467,7 +1503,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 4 Item = 2Stones, 2+150 Pendants, RoR2, Bracers, Sobi, Claws9, Circlet2
+	// Drop Level 4 Item = 2Stones 2+150 Pendants RoR2 Bracers Sobi Claws9 Circlet2
 	//=================================================================================================================
 	"drop_level4"
 	{
@@ -1696,7 +1732,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Another Level 4 Item = 2Stones, 2+150 Pendants, RoR2, Bracers, Sobi, Claws9, Circlet2
+	// Drop Another Level 4 Item = 2Stones 2+150 Pendants RoR2 Bracers Sobi Claws9 Circlet2
 	//=================================================================================================================
 	"drop_extra_level4"
 	{
@@ -1920,7 +1956,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet, (added Tomes+2, Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet (added Tomes+2 Tome +1All)
 	//=================================================================================================================
 	"drop_level5"
 	{
@@ -2054,7 +2090,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet, (added Tomes+2, Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet (added Tomes+2 Tome +1All)
 	//=================================================================================================================
 	"drop_extra_level5"
 	{
@@ -2180,7 +2216,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 6 Item = Anhk, Healing Wards, Summon Drake, Hellhound, Golem (add Book of the Dead, 20s CycloneWand)
+	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (add Book of the Dead 20s CycloneWand)
 	//=================================================================================================================
 	"drop_level6"
 	{
@@ -2316,7 +2352,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 6 Item = Anhk, Healing Wards, Summon Drake, Hellhound, Golem (add Book of the Dead, 20s CycloneWand)
+	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (add Book of the Dead 20s CycloneWand)
 	//=================================================================================================================
 	"drop_extra_level6"
 	{
@@ -2451,7 +2487,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 7 Item = Summon Furbolg, Orbs, Claws12, Aura items, +300pendants (add more)
+	// Drop Level 7 Item = Summon Furbolg Orbs Claws12 Aura items +300pendants (add more)
 	//=================================================================================================================
 	"drop_level7"
 	{
@@ -2674,7 +2710,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 8 Item = Summon DoomGuard, Inferno, +6 stats boosters, RoP4  (add Scroll Animate Dead/Ress)
+	// Drop Level 8 Item = Summon DoomGuard Inferno +6 stats boosters RoP4  (add Scroll Animate Dead/Ress)
 	//=================================================================================================================
 	"drop_level8"
 	{
@@ -2829,9 +2865,9 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 8 Item = Summon DoomGuard, Inferno, +6 stats boosters, RoP4  (add Scroll Animate Dead/Ress)
+	// Drop Level 8 Item = Summon DoomGuard Inferno +6 stats boosters RoP4  (add Scroll Animate Dead/Ress)
 	//=================================================================================================================
-	"drop_vault" //Magic Vault in the end area, 4 drops assured
+	"drop_vault" //Magic Vault in the end area 4 drops assured
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2979,7 +3015,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 9 Item = ( +1 level tome, claws15, rop5, +4 str/agi agi/int str/int )
+	// Drop Level 9 Item = ( +1 level tome claws15 rop5 +4 str/agi agi/int str/int )
 	//=================================================================================================================
 	"drop_level9" //not used
 	{
@@ -3019,7 +3055,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 10 Item = (add +5All Stats, 50%lifesteal, lightning orb)
+	// Drop Level 10 Item = (add +5All Stats 50%lifesteal lightning orb)
 	//=================================================================================================================
 	"drop_level10" //not used
 	{
