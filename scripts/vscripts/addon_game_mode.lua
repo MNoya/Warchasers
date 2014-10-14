@@ -1033,7 +1033,7 @@ function Warchasers:OnEntityKilled( event )
 
         local triggerino = Entities:FindByName(nil,"tb_miniboss_dead")
         triggerino:ForceKill(true)
-        
+
     	miniboss2_dead(event) 		
 	end
 
@@ -1042,7 +1042,7 @@ function Warchasers:OnEntityKilled( event )
 		GameRules.TANK_BOSS_KILLED=true
 	end
 
-	if killedUnit:GetUnitName() == "npc_rocknroll_steamtank" then
+	if killedUnit:GetUnitName() == "npc_rocknroll_steamtank" and GameRules.TANK_BOSS_KILLED == false then
 		--remove all ankhs if possible, then kill the player
 		local tankHero = killedUnit:GetOwner()
 		for itemSlot = 0, 5, 1 do
