@@ -33,6 +33,14 @@ function wizard_purge( event )
 	event.caster:RemoveAbility("satyr_trickster_purge")
 end
 
+function firestorm_cast( event )
+	event.caster:AddAbility("abyssal_underlord_firestorm")
+	local ability = event.caster:FindAbilityByName("abyssal_underlord_firestorm")
+	ability:SetLevel(event.ability:GetLevel())
+	event.caster:CastAbilityOnPosition(event.target:GetAbsOrigin(), ability, event.caster:GetPlayerOwnerID())
+	event.caster:RemoveAbility("abyssal_underlord_firestorm")
+end
+
 function holy_light_cast( event )
 	if event.target ~= event.caster then --not self target
 		if event.target:GetTeamNumber() ~= event.caster:GetTeamNumber() then
