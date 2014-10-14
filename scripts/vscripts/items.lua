@@ -245,6 +245,29 @@ function FrostmourneRuin(event)
 
 end
 
+function GuldanSkull(event)
+
+    local hero = EntIndexToHScript( event.caster_entindex )
+    --hero:SetRenderColor(0, 0, 0)
+    hero:SetModel("models/heroes/warlock/warlock_demon.vmdl")
+    local feet_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_feet_effects.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+
+    local transform_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+
+    if hero:IsRangedAttacker() then
+        hero:SetRangedProjectileName("particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf")
+    else
+        hero:SetAttackCapability(2)
+        hero:SetRangedProjectileName("particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf")
+    end
+
+    if hero:HasModifier("modifier_warchasers_solo_buff") then
+        print("Removed Modifier")
+        hero:RemoveModifierByName("modifier_warchasers_solo_buff")
+    end
+
+end
+
 
 function CheckForKey(trigger)
     print("Checking for Key")

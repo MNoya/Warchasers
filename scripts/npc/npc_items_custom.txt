@@ -4056,6 +4056,53 @@
 	                }
            		}
 			}
+
+			"modifier_warchasers_guldan_powers"
+			{
+				"IsBuff"				"1"
+				"Passive"           	"1"
+				"IsHidden"				"0"
+				"TextureName"			"warchasers_skull_of_guldan"
+				"Properties"
+			    {
+			        "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"      "100"
+			        "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"100"
+			    }
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{
+						"Target"	"ATTACKER"
+						"LifestealPercent" "10"
+					}
+				}
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target" "CASTER"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"10"
+					}
+				}
+				"OnCreated"
+				{
+				 	"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/items.lua"
+						"Function"			"GuldanSkull"
+					}
+					"AttachEffect"
+			        {
+			            "Target" "CASTER"
+			            "EffectName" "particles/items_fx/armlet.vpcf"
+			            "EffectAttachType" "follow_origin"
+			            "EffectLifeDurationScale" "1"
+			        }
+				}
+			}
 		}
 	}
 	

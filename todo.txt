@@ -7,12 +7,12 @@ Workaround Fix: Spawn new units directly through lua.
 [~][Critical] Fix Precache problem with clients
 
 2. Adding Gameplay
-[~][Code] Fix Skull Modifier
+[X][Code] Fix Skull Modifier
 [X][Code] Fix Frostmourne
 [X][Code] Particles on bosses death (Doom TB Roshan fx)
-[ ][Code] SetCustomGameEndDelay win cinematic
+[ ][Code] SetCustomGameEndDelay (broken) win cinematic 
 [ ][Sound] Add Music track sets for all zones. Use TI4 sound track
-[ ][Map] Ground vision dummies in necro spawn 1, 2 (3 and 4 should be ready)
+[X][Map] Ground vision dummies in necro spawn 1, 2
 
 3. Cosmetic & Adjustments
 [X][Code] Fix DropItemOnDeath dropping items while still having an Ankh

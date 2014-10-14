@@ -1177,22 +1177,15 @@ function Warchasers:OnEntityKilled( event )
     	})
     end	
 
-	if killedUnit:GetName() == "skull" then
+	if killedUnit:GetUnitName() == "npc_skull" then
 		GameRules:SendCustomMessage("<font color='#2EFE2E'>Skull consumed</font>", 0, 0)
 		EmitGlobalSound("DOTAMusic_Diretide_Finale") 
 		local ShakeOn = Vector(3558, -7210, 160)
 		ScreenShake(ShakeOn, 10.0, 10.0, 7.0, 99999, 0, true)
 		if killerEntity:IsRealHero() then
-			killerEntity:AddAbility("terrorblade_metamorphosis")
-			local ability = killerEntity:FindAbilityByName("terrorblade_metamorphosis")
-			ability:SetLevel(1)
-			ability:CastAbility()
+			giveUnitDataDrivenBuff(killerEntity, killerEntity, "modifier_warchasers_guldan_powers",-1)
 		else --apply to the owner
-			killerEntity:GetOwner():AddAbility("terrorblade_metamorphosis")
-			killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis"):SetLevel(1)
-			local ability = killerEntity:GetOwner():FindAbilityByName("terrorblade_metamorphosis")
-			ability:SetLevel(1)
-			ability:CastAbility()
+			giveUnitDataDrivenBuff(killerEntity:GetOwner(), killerEntity:GetOwner(), "modifier_warchasers_guldan_powers",-1)
 		end
 	end
 

@@ -102,6 +102,7 @@ function soulkeeper_warning0(trigger)
     local necro = CreateUnitByName("npc_soul_keeper", position, true, nil, nil, DOTA_TEAM_BADGUYS)
 	local rotation = Vector(-7936,-3072,498)
 	necro:SetForwardVector(rotation)
+	local dummy =  CreateUnitByName("vision_dummy_ground", position, true, trigger.caster, trigger.caster, DOTA_TEAM_GOODGUYS)
 	--EmitGlobalSound("DOTAMusic_Stinger.005")
 	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast",trigger.activator) --Necro Spawn
   	EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target",trigger.activator) --Necro Spawn
@@ -135,7 +136,7 @@ function circle_zapsappers(trigger)
 	--kill sappers
 	EmitGlobalSound("Axe_axe_death_05")
 	
-	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 1000)
+	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 1500)
 	print("Creeps Found")
 	 for i = 1, #allCreepsNear, 1 do
 	 	local creep = allCreepsNear[i]

@@ -136,6 +136,18 @@ function TeleporterHeaven(trigger)
             --kill the vision dummy, regardless of being sent to a secret area.
             dummy:ForceKill(true)
             print("Dummy killed")
+
+              --find and kill necro dummy
+            local necrodummy = Vector(-1625,-3072,129)
+            local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", necrodummy, 1000)
+            for i = 1, #allCreepsNear, 1 do
+                local creep = allCreepsNear[i]
+                local name = creep:GetUnitName()
+                if name == "vision_dummy_ground" then
+                    creep:ForceKill(true)
+                end
+            end
+
         end
     })
 
@@ -242,6 +254,18 @@ function TeleporterHell(trigger)
             --kill the vision dummy, regardless of being sent to a secret area.
             dummy:ForceKill(true)
             print("Teleport Back, Dummy killed")
+
+              --find and kill necro dummy
+            local necrodummy = Vector(-1625,-3072,129)
+            local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", necrodummy, 1000)
+            for i = 1, #allCreepsNear, 1 do
+                local creep = allCreepsNear[i]
+                local name = creep:GetUnitName()
+                if name == "vision_dummy_ground" then
+                    creep:ForceKill(true)
+                end
+            end
+
         end
     })
 
@@ -281,6 +305,16 @@ function TeleporterBack(trigger)
     })
 
     GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
+    --find and kill necro dummy
+    local necrodummy = Vector(-1625,-3072,129)
+    local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", necrodummy, 1000)
+    for i = 1, #allCreepsNear, 1 do
+        local creep = allCreepsNear[i]
+        local name = creep:GetUnitName()
+        if name == "vision_dummy_ground" then
+            creep:ForceKill(true)
+        end
+    end
 
 end
 
