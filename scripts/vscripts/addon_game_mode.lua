@@ -7,6 +7,7 @@ require( 'timers')
 require( 'teleport')
 require( 'ai' )
 require( 'spawn' )
+local hints = require( 'hints' )
 
 
 if Convars:GetBool("developer") == true then
@@ -102,7 +103,41 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
 
-  	
+  	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
+	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
+	PrecacheResource("model", "models/kappakey.vmdl", context)
+	PrecacheResource("model", "models/chest_worlddrop.vmdl", context)
+	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
+	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
+	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
+	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
+	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
+	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
+	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
+	
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_wisp.vsndevts", context)
+	
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_chen", context )
+	PrecacheResource( "particle_folder","particles/items_fx", context)
+	PrecacheResource( "particle_folder","particles/items2_fx", context)
+	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
+	PrecacheResource( "particle_folder","particles/econ/items", context)
+	PrecacheResource( "particle_folder","particles/econ/courier", context)
+	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
+	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
+	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
 	--NEED TO PRECACHE ALL HATS
 	print('[Precache] Start')
@@ -962,6 +997,45 @@ function Warchasers:OnEntityKilled( event )
 	--if killedUnit:GetName()=="finalboss" then
 		--GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
 	--end
+
+	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
+
+		local door = Entities:FindByName(nil, "gate_1_a")
+        door:Kill()
+        local door = Entities:FindByName(nil, "gate_1_b")
+        door:Kill()
+        				
+		local obstructions = Entities:FindAllByName("obstructions_1")
+		for i = 1, #obstructions, 1 do
+	        obstructions[i]:SetEnabled(false,false)     
+    	end     
+
+    	announce_open_doors(event)
+    	hint_keydrop(event)
+            
+
+	end
+
+	if killedUnit:GetUnitName() == "npc_tb_miniboss" then
+
+		local obstructions = Entities:FindByName(nil,"obstructions_4_1")
+        obstructions:SetEnabled(false,false)
+
+        local obstructions = Entities:FindByName(nil,"obstructions_4_2")
+        obstructions:SetEnabled(false,false)
+
+        local obstructions = Entities:FindByName(nil,"obstructions_4_3")
+        obstructions:SetEnabled(false,false)
+
+        local obstructions = Entities:FindByName(nil,"obstructions_4_4")
+        obstructions:SetEnabled(false,false)
+        print("Obstructions disabled")
+
+        local triggerino = Entities:FindByName(nil,"tb_miniboss_dead")
+        triggerino:ForceKill(true)
+        
+    	miniboss2_dead(event) 		
+	end
 
 	if killedUnit:GetName() == "tank_boss" then
 		print("Tank Area Cleared")
