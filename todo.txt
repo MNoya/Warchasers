@@ -25,7 +25,7 @@ Workaround Fix: Spawn new units directly through lua.
 [X][Test] Review NeutralCreep AI
 [ ][Test] Review drop_levelX to add missing/new items
 [ ][Text] Credits, Screenshots, Workshop Text
-[ ][Test] Dire team (apply out of game?)
+[X][Test] Dire team (apply out of game)
 [ ][Test] Adjust HealthBarOffsets
 [X][Icon] Improve statrules icon background
 

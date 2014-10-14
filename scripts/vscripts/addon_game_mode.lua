@@ -656,9 +656,14 @@ function Warchasers:OnNPCSpawned(keys)
 		local heroName = PlayerResource:GetSelectedHeroName(heroPlayerID)
 		print("Hero Name: " .. heroName)
 
+		if npc:GetTeam() == DOTA_TEAM_BADGUYS then
+			giveUnitDataDrivenModifier(npc, npc,"modifier_out_of_game",{-1})
+		end
+
 		if heroName == "npc_dota_hero_wisp" then
 			--[[local item = CreateItem("item_talisman_of_the_wild", npc, npc) --testing items
 			npc:AddItem(item)]]
+			giveUnitDataDrivenModifier(npc, npc,"wisp",{-1})
 			local playercounter = 0
 			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
 				if PlayerResource:IsValidPlayer(nPlayerID) then 
