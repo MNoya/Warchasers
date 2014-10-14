@@ -5215,6 +5215,30 @@
 				"SpawnRadius"	"100"
 				"Duration"	"60"
 				"Target"	"CASTER"
+					"OnSpawn"
+					{
+						"AttachEffect"
+						{
+							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target"			"TARGET"
+							
+							"ControlPoints"
+							{
+								"00"		"0 0 0"
+								"01"		"50 100 0"
+								"02"		"4 10 .5"
+								"03"		"70 150 225" //color
+								"04"		"0 0 0"
+								"05"		"0 0 0"
+							}
+						}
+						"FireSound"
+						{
+							"EffectName" "Hero_Morphling.Waveform"
+							"Target"			"CASTER"
+						}
+					}
 				}
 			"SpawnUnit"
 				{
@@ -5223,6 +5247,30 @@
 				"SpawnRadius"	"100"
 				"Duration"	"60"
 				"Target"	"CASTER"
+				"OnSpawn"
+					{
+						"AttachEffect"
+						{
+							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target"			"TARGET"
+							
+							"ControlPoints"
+							{
+								"00"		"0 0 0"
+								"01"		"50 100 0"
+								"02"		"4 10 .5"
+								"03"		"70 150 225" //color
+								"04"		"0 0 0"
+								"05"		"0 0 0"
+							}
+						}
+						"FireSound"
+						{
+							"EffectName" "Hero_Morphling.Waveform"
+							"Target"			"CASTER"
+						}
+					}
 				}
 			"SpawnUnit"
 				{
@@ -5231,6 +5279,30 @@
 				"SpawnRadius"	"100"
 				"Duration"	"60"
 				"Target"	"CASTER"
+				"OnSpawn"
+					{
+						"AttachEffect"
+						{
+							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target"			"TARGET"
+							
+							"ControlPoints"
+							{
+								"00"		"0 0 0"
+								"01"		"50 100 0"
+								"02"		"4 10 .5"
+								"03"		"70 150 225" //color
+								"04"		"0 0 0"
+								"05"		"0 0 0"
+							}
+						}
+						"FireSound"
+						{
+							"EffectName" "Hero_Morphling.Waveform"
+							"Target"			"CASTER"
+						}
+					}
 				}
 			}
 		}
