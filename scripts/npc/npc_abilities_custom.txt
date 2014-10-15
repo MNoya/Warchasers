@@ -5801,6 +5801,10 @@
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
 			"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_invoker/invoker_sun_strike_team.vpcf"
+			"particle"	"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -5879,6 +5883,21 @@
 
 	    "Modifiers"
 	    {
+	    	"firestorm_burning_fx"
+			{
+				"IsHidden"	"1"
+				"IsDebuff"	"1"
+				"Duration"	"2"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}						
+			}
 	    	"firestorm_fx_landing"
 	    	{
 	    		"Duration"	"2"
@@ -5898,6 +5917,29 @@
 	            "ThinkInterval"	"1"
 	            "OnIntervalThink"
 	         	{
+	         		"Damage"
+					{
+						"Type" "DAMAGE_TYPE_MAGICAL"
+						"Damage" "0" //just for aggro
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"%radius"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+						}
+					}
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"%radius"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+						}
+						"ModifierName"	"firestorm_burning_fx"
+					}
 					"FireSound"
 					{
 						"EffectName"	"Hero_Jakiro.LiquidFire"

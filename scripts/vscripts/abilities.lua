@@ -41,13 +41,14 @@ function firestorm_cast( event )
 	ability:SetLevel(event.ability:GetLevel())
 	print(ability:GetLevel().. " = " .. event.ability:GetLevel())
 	dummy:CastAbilityOnPosition(point, ability, event.caster:GetPlayerOwnerID())
-	--[[Timers:CreateTimer({
+	
+	Timers:CreateTimer({
 			    			endTime = 7, 
 			    			callback = function()
 								dummy:ForceKill(true)
 								print("Firestorm end")
 							end
-						})]]
+						})
 end
 
 
