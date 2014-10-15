@@ -34,12 +34,24 @@ function wizard_purge( event )
 end
 
 function firestorm_cast( event )
-	event.caster:AddAbility("abyssal_underlord_firestorm")
-	local ability = event.caster:FindAbilityByName("abyssal_underlord_firestorm")
+	local point = event.target_points[1]
+	local dummy = CreateUnitByName("dummy_unit", point, false, event.caster, event.caster, event.caster:GetTeam())
+	dummy:AddAbility("abyssal_underlord_firestorm")
+	local ability = dummy:FindAbilityByName("abyssal_underlord_firestorm")
 	ability:SetLevel(event.ability:GetLevel())
-	event.caster:CastAbilityOnPosition(event.target:GetAbsOrigin(), ability, event.caster:GetPlayerOwnerID())
-	event.caster:RemoveAbility("abyssal_underlord_firestorm")
+	print(ability:GetLevel().. " = " .. event.ability:GetLevel())
+	dummy:CastAbilityOnPosition(point, ability, event.caster:GetPlayerOwnerID())
+	--[[Timers:CreateTimer({
+			    			endTime = 7, 
+			    			callback = function()
+								dummy:ForceKill(true)
+								print("Firestorm end")
+							end
+						})]]
 end
+
+
+
 
 function holy_light_cast( event )
 	if event.target ~= event.caster then --not self target

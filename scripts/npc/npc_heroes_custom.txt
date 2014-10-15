@@ -142,7 +142,7 @@
 		"Ability1"					"warchasers_snake_holy_light"
 		"Ability2"					"clinkz_searing_arrows"
 		"Ability3"					"warchasers_snake_cold_arrows" 
-		"Ability4"					"abyssal_underlord_firestorm" //No particles
+		"Ability4"					"warchasers_snake_firestorm"
 		"Ability5"				""
 		"Ability6"				""
     	"Ability7"				""

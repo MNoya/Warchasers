@@ -5779,6 +5779,152 @@
 		}
 
 	}
+
+	"warchasers_snake_firestorm"
+	{
+	
+		"MaxLevel"	"3"
+		"BaseClass" "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 		"drow_firestorm"	
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.6"		
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"85 85 85"
+		"AOERadius"     "%radius"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+			"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"wave_duration"					"7.0"
+			}		
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wave_count"					"6"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wave_damage"					"25 40 55 70"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"wave_interval"					"1.0"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"burn_damage"					"5 10 15 20"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_interval"					"1.0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_duration"					"2.0"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"first_wave_delay"				"0.9"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"firestorm_cast"
+				"Target"	"POINT"
+			}
+			"FireSound"
+			{
+					"EffectName"	"Hero_Jakiro.DualBreath"
+					"Target"	"CASTER"
+			}
+			"CreateThinker"
+	        {
+	            "ModifierName" "firestorm_fx_landing"
+	            "Target" "POINT"
+	        }
+			"CreateThinker"
+	        {
+	            "ModifierName" "firestorm_fx"
+	            "Target" "POINT"
+	        }
+	    }
+
+	    "Modifiers"
+	    {
+	    	"firestorm_fx_landing"
+	    	{
+	    		"Duration"	"2"
+	    		"OnCreated"
+	    		{
+			    	"AttachEffect"
+					{
+						"Target" 		"TARGET"
+						"EffectName"			"particles/units/heroes/hero_invoker/invoker_sun_strike_team.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+				}
+	    	}
+	        "firestorm_fx"
+	        {            
+	            "Duration" "6.5"
+	            "ThinkInterval"	"1"
+	            "OnIntervalThink"
+	         	{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Jakiro.LiquidFire"
+						"Target"	"TARGET"
+					}
+					"AttachEffect"
+					{
+						"Target" 		"TARGET"
+						"EffectName"			"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"Target" 		"TARGET"
+						"EffectName"			"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"Target" 		"TARGET"
+						"EffectName"			"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+				}
+			}
+		}
+	}
 	
 	"warchasers_blade_berserker_death_coil"
 	{
