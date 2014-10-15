@@ -140,7 +140,7 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
 	
 	--NEED TO PRECACHE ALL HATS
-	print('[Precache] Start')
+	--[[print('[Precache] Start')
 	local wearables = LoadKeyValues("scripts/items/items_game.txt")
 
 	local wearablesList = {}
@@ -233,7 +233,7 @@ function Precache( context )
 		PrecacheResource( "model", wearable, context )
 	end
 	print('[Precache]' .. hatCounter .. " models loaded!")
-	print('[Precache] End')
+	print('[Precache] End')]]
 
 end
 

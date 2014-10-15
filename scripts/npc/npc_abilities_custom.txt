@@ -5219,23 +5219,13 @@
 					{
 						"AttachEffect"
 						{
-							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectName"		"particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf"
 							"EffectAttachType"	"follow_origin"
 							"Target"			"TARGET"
-							
-							"ControlPoints"
-							{
-								"00"		"0 0 0"
-								"01"		"50 100 0"
-								"02"		"4 10 .5"
-								"03"		"70 150 225" //color
-								"04"		"0 0 0"
-								"05"		"0 0 0"
-							}
 						}
 						"FireSound"
 						{
-							"EffectName" "Hero_Morphling.Waveform"
+							"EffectName" "Hero_Morphling.Replicate"
 							"Target"			"CASTER"
 						}
 					}
@@ -5251,23 +5241,13 @@
 					{
 						"AttachEffect"
 						{
-							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectName"		"particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf"
 							"EffectAttachType"	"follow_origin"
 							"Target"			"TARGET"
-							
-							"ControlPoints"
-							{
-								"00"		"0 0 0"
-								"01"		"50 100 0"
-								"02"		"4 10 .5"
-								"03"		"70 150 225" //color
-								"04"		"0 0 0"
-								"05"		"0 0 0"
-							}
 						}
 						"FireSound"
 						{
-							"EffectName" "Hero_Morphling.Waveform"
+							"EffectName" "Hero_Morphling.Replicate"
 							"Target"			"CASTER"
 						}
 					}
@@ -5283,23 +5263,13 @@
 					{
 						"AttachEffect"
 						{
-							"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+							"EffectName"		"particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf"
 							"EffectAttachType"	"follow_origin"
 							"Target"			"TARGET"
-							
-							"ControlPoints"
-							{
-								"00"		"0 0 0"
-								"01"		"50 100 0"
-								"02"		"4 10 .5"
-								"03"		"70 150 225" //color
-								"04"		"0 0 0"
-								"05"		"0 0 0"
-							}
 						}
 						"FireSound"
 						{
-							"EffectName" "Hero_Morphling.Waveform"
+							"EffectName" "Hero_Morphling.Replicate"
 							"Target"			"CASTER"
 						}
 					}

@@ -827,6 +827,14 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			}
+		}
+
 	}
 	
 	"warchasers_beast_knight_water_elemental_2"
@@ -900,6 +908,14 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			}
+		}
+
 	}
 
 	"warchasers_beast_knight_water_elemental_1"
@@ -972,6 +988,14 @@
 		
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			}
+		}
 
 	}
 
@@ -4502,6 +4526,14 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			}
+		}
+
 	}
 
 	//=================================================================================    
@@ -4589,6 +4621,14 @@
 		
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			}
+		}
 
 	}
 		
