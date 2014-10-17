@@ -1,24 +1,17 @@
 TO DO - Priority List
 1. Missing Gameplay
-[X][Code]Tank Area Defeat when tank killed
 [!][Critical] Check bug when adding extra ability to npc_units_custom
 Workaround Fix: Spawn new units directly through lua.
 
 [~][Critical] Fix Precache problem with clients
 
 2. Adding Gameplay
-[X][Code] Fix Skull Modifier
-[X][Code] Fix Frostmourne
-[X][Code] Particles on bosses death (Doom TB Roshan fx)
 [ ][Code] SetCustomGameEndDelay (broken) win cinematic 
 [ ][Sound] Add Music track sets for all zones. Use TI4 sound track
-[X][Map] Ground vision dummies in necro spawn 1, 2
 
 3. Cosmetic & Adjustments
-[X][Code] Fix DropItemOnDeath dropping items while still having an Ankh
 [ ][Test] Fix double spawners (extend the murloc solution, make different unit names for each)
-[X][Map] Improve tilesets (add proper ligth sources to architecture)
-[ ][Map] Improve 2nd boss area
+[X][Map] Improve 2nd boss area
 [~][Map] Improve wisp and water areas
 [ ][Text] Improve popup and hero hall appear
 [X][Test] Review NeutralCreep AI
