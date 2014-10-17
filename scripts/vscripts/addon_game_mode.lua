@@ -474,7 +474,7 @@ function Warchasers:OnGameInProgress()
 	--Start at Night
 	GameRules:SetTimeOfDay( 0.8 )
 
-	EmitGlobalSound("valve_dota_001.music.ui_startup")
+	--EmitGlobalSound("valve_dota_001.music.ui_startup")
 
 	if GameRules.SHOWPOPUP then
 		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )

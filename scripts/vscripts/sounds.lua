@@ -1,9 +1,12 @@
---EmitSound(string soundName) --[[Returns:void ]]
 --EmitGlobalSound(string a) --[[Returns:void Play named sound for all players]]
 
-
---EmitGlobalSound("DOTA_Item.DustOfAppearance.Activate") --Discovery
---EmitGlobalSound("Hero_Chen.HolyPersuasionEnemy") --Dominated, need to precache Chen
+--StartSoundEvent(string a, handle b) --[[Returns:void Start a sound event]]
+--StopSoundEvent(string a, handle b) --[[Returns:void Stops a sound event ]]
+--Entity:StopSound(string soundName) --[[Returns:void Stops a named sound playing from this entity. ]]
+--Entity:EmitSound(string soundName) --[[Returns:void ]]
+--EmitSoundOn(string a, handle b) --[[Returns:void Play named sound on Entity ]]
+--GetSoundDuration(string soundName, string actormodelname) 
+	--[[Returns:float Returns ''float'' duration of the sound. Takes soundname and optional actormodelname.]]
 
 function DoorOpenSound()
 	EmitGlobalSound("ui.crafting_slotslide")
@@ -26,4 +29,40 @@ end
 
 function FemaleChrorus()
 	EmitGlobalSound("General.FemaleLevelUp")
+end
+
+function WorldMusic(event)
+	EmitGlobalSound("valve_dota_001.music.ui_world_map")
+end
+
+function Level1()
+	EmitGlobalSound("valve_dota_001.music.battle_01")
+end
+
+function Level2()
+	EmitGlobalSound("valve_dota_001.music.battle_02")
+end
+
+function Level3()
+	EmitGlobalSound("valve_dota_001.music.battle_03")
+end
+
+function Level4()
+	EmitGlobalSound("valve_dota_001.music.battle_01")
+end
+
+function Laning1()
+	EmitGlobalSound("valve_dota_001.music.laning_01_layer_01")
+end
+
+function Laning2()
+	EmitGlobalSound("valve_dota_001.music.laning_02_layer_01")
+end
+
+function Laning3() --quiet
+	EmitGlobalSound("valve_dota_001.music.laning_03_layer_01")
+end
+
+function Ganked()
+	EmitGlobalSound("valve_dota_001.music.ganked_lg")
 end

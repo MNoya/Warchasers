@@ -7,7 +7,7 @@ Workaround Fix: Spawn new units directly through lua.
 
 2. Adding Gameplay
 [ ][Code] SetCustomGameEndDelay (broken) win cinematic 
-[ ][Sound] Add Music track sets for all zones. Use TI4 sound track
+[~][Sound] Add Music track sets for all zones. Use TI4 sound track
 
 3. Cosmetic & Adjustments
 [ ][Test] Fix double spawners (extend the murloc solution, make different unit names for each)
