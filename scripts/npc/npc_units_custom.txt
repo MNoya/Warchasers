@@ -107,6 +107,12 @@
 		"Level"						"1"
 		"SoundSet"				"Hero_Juggernaut"
 
+		"precache"
+		{
+			"model"	"models/heroes/juggernaut/juggernaut.vmdl"
+			"model_folder"	"models/heroes/juggernaut"
+		}
+
 		"AbilityLayout"				"4"
 		"Ability1"					"warchasers_blade_berserker_death_coil"
 		"Ability2"					"warchasers_blade_berserker_immolation" 
@@ -190,6 +196,12 @@
 		"Model"						"models/heroes/drow/drow.vmdl"
 		"ModelScale"				"1"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/drow/drow.vmdl"
+			"model_folder"	"models/heroes/drow"
+		}
 
 		"AbilityLayout"				"4"
 		"Ability1"					"warchasers_snake_holy_light"
@@ -287,6 +299,12 @@
 
     	"HealthBarOffset" "3000"
 
+    	"precache"
+		{
+			"model"	"models/heroes/chaos_knight/chaos_knight.vmdl"
+			"model_folder"	"models/heroes/chaos_knight"
+		}
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"4"									// Physical protection.
@@ -370,6 +388,12 @@
 
     	"HealthBarOffset" "3000"
 
+    	"precache"
+		{
+			"model"	"models/heroes/shadow_demon/shadow_demon.vmdl"
+			"model_folder"	"models/heroes/shadow_demon"
+		}
+
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
 		"ArmorPhysical"				"3"									// Physical protection.
@@ -439,6 +463,12 @@
 		"Model"						"models/heroes/lanaya/lanaya.vmdl"
 		"ModelScale"				"1"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/lanaya/lanaya.vmdl"
+			"model_folder"	"models/heroes/lanaya"
+		}
 
 		"AbilityLayout"				"4"
 		"Ability1"				"warchasers_assassin_entangle"  //Needs custom -- DONE
@@ -519,6 +549,12 @@
 		"Model"						"models/heroes/sven/sven.vmdl"
 		"ModelScale"				"1"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/sven/sven.vmdl"
+			"model_folder"	"models/heroes/sven"
+		}
 
 		"AbilityLayout"				"4"
 		"Ability1"				"brewmaster_storm_wind_walk"	
@@ -602,6 +638,12 @@
 		"Model"						"models/heroes/razor/razor.vmdl"
 		"ModelScale"				"1"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/razor/razor.vmdl"
+			"model_folder"	"models/heroes/razor"
+		}
 
 		"AbilityLayout"				"4"
 		"Ability1"				"warchasers_mana_burn"	
@@ -769,6 +811,13 @@
 		"ModelScale" 				"1.04"
 		"CanBeDominated"			"0"
 
+		"precache"
+		{
+			"model"	"models/heroes/morphling/morphling.vmdl"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+			"particle" "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		}
+
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 
 		// Armor
@@ -850,6 +899,13 @@
 		"ModelScale" 				".94"
 		"CanBeDominated"			"0"
 
+		"precache"
+		{
+			"model"	"models/heroes/morphling/morphling.vmdl"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+			"particle" "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		}
+
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 
 		// Armor
@@ -930,6 +986,13 @@
 		"Level"						"1"
 		"ModelScale" 				"0.84"
 		"CanBeDominated"			"0"
+
+		"precache"
+		{
+			"model"	"models/heroes/morphling/morphling.vmdl"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+			"particle" "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+		}
 
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 
@@ -1196,6 +1259,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1265,6 +1333,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1337,6 +1410,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1409,6 +1487,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1481,6 +1564,11 @@
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/cathedral001.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1553,6 +1641,11 @@
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/cathedral001.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1623,6 +1716,11 @@
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
 		"ModelScale"				"0.5"
+
+		"precache"
+		{
+			"model"	"models/props_structures/cathedral001.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1694,6 +1792,11 @@
 		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
 		"ModelScale"				"0.5"
 		
+		"precache"
+		{
+			"model"	"models/props_structures/cathedral001.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		
@@ -1767,6 +1870,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		
@@ -1839,6 +1947,11 @@
 		"ModelScale"				"0.5"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1912,6 +2025,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.7"
+
+		"precache"
+		{
+			"model"	"models/buildings/building_racks_melee_reference.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1984,6 +2102,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.7"
+
+		"precache"
+		{
+			"model"	"models/buildings/building_racks_melee_reference.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2056,6 +2179,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"HealthBarOffset"			"200"
+
+		"precache"
+		{
+			"model"	"models/items/warlock/lantern_of_the_conjuring_sigil/lantern_of_the_conjuring_sigil.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2127,6 +2255,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"HealthBarOffset"			"200"
+
+		"precache"
+		{
+			"model"	"models/items/warlock/lantern_of_the_conjuring_sigil/lantern_of_the_conjuring_sigil.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2198,6 +2331,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"                "1.4"
+
+		"precache"
+		{
+			"model"	"models/items/rattletrap/cog_tesla/cog_tesla.vmdl"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -2289,6 +2427,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.7"
+
+		"precache"
+		{
+			"model"	"models/buildings/building_racks_ranged_reference.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2361,6 +2504,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"ModelScale"				"0.7"
+
+		"precache"
+		{
+			"model"	"models/buildings/building_racks_ranged_reference.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2432,6 +2580,11 @@
 		"Model"						"models/props_structures/well_skull.vmdl"	// Model.
 		"ModelScale"				"1.5"
 		"HealthBarOffset"			"2000"
+
+		"precache"
+		{
+			"model"	"models/props_structures/well_skull.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2501,6 +2654,11 @@
 		"Model"						"models/heroes/crystal_maiden/crystal_maiden_ice.vmdl"	// Model.
 		"ModelScale"				"3"
 		"HealthBarOffset"			"300"
+
+		"precache"
+		{
+			"model"	"models/heroes/crystal_maiden/crystal_maiden_ice.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2574,6 +2732,11 @@
 		"ModelScale"				"0.6"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2646,6 +2809,11 @@
 		"ModelScale"				"0.6"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2719,6 +2887,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
+		"precache"
+		{
+			"model"	"models/props_structures/sniper_hut.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		
@@ -2791,6 +2964,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
+		"precache"
+		{
+			"model"	"models/props_structures/statue_dragon003.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		
@@ -2863,6 +3041,11 @@
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		
+		"precache"
+		{
+			"model"	"models/props_debris/merchant_debris_chest001.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		
@@ -2929,6 +3112,11 @@
 		"ModelScale"				"1.2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_structures/tent_dk_small.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3001,6 +3189,11 @@
 		"ModelScale"				"1.2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_structures/tent_dk_small.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3074,6 +3267,11 @@
 		"ModelScale"				"1.8"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+		"precache"
+		{
+			"model"	"models/props_winter/nest_03.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3149,6 +3347,11 @@
 			"Model"						"models/props_structures/boat_dragonknight.vmdl"// Model.
 			"SoundSet"					"Tower.Water"					// Name of sound set.
 			"Level"						"1"
+
+			"precache"
+			{
+				"model"	"models/props_structures/boat_dragonknight.vmdl"
+			}
 			
 			// Abilities
 			//----------------------------------------------------------------
@@ -3231,6 +3434,11 @@
 			"SoundSet"					"Tower.Water"					// Name of sound set.
 			"Level"						"1"
 			
+			"precache"
+			{
+				"model"	"models/props_structures/tower_dragon_white.vmdl"
+			}
+
 			// Abilities
 			//----------------------------------------------------------------
 			
