@@ -1,18 +1,18 @@
 TO DO - PreRelease
 
 [!][Critical] Check bug when adding extra ability to npc_units_custom
-[~][Critical] Fix Precache problem with clients
+[X][Critical] Fix Precache problem with clients
 
 [ ][Code] Win cinematic 
 [~][Sound] Add Music track sets for all zones. Use TI4 sound track
 
-[ ] [Map] Finish Wisp area or disable it. 
+[~] [Map] Finish Wisp area or disable it. 
 
-[ ][Text] Improve popup or remove it
-[ ][Text] Credits, Screenshots, Workshop Text
+[~][Text] Improve popup or remove it
+[~][Text] Credits, Screenshots, Workshop Text
 
 [ ][Test] Fix double spawners
-[ ][Test] Review drop_levelX to add missing/new items
+[~][Test] Review drop_levelX to add missing/new items
 [ ][Test] Adjust HealthBarOffsets
 [] [Test] Heroes and everything properly appearing in clients
 [ ][Test] Difficulty. Damage/Armor Types and Values

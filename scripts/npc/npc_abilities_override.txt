@@ -7,16 +7,13 @@
 //HERO SKILLS -----------------------------------------------------------------
 	"juggernaut_blade_fury"
 		{
-		"precache"
-		{
-			"particle_folder"	"particles/econ/items/juggernaut"
-		}
 		"MaxLevel"						"1"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"200"
 		"AbilityDamage"					"110"
 		"AbilityTextureName"			"jugg_bladestorm"
+
 		}
 
 
@@ -28,6 +25,11 @@
 		"AbilityCooldown"				"9"
 		"AbilityManaCost"				"120"
 		"AbilityTextureName"			"razor_chain"
+
+		"precache"
+			{
+				"particle"	"particles/neutral_fx/harpy_chain_lightning.vpcf"
+			}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -79,6 +81,12 @@
 		"AbilityCooldown"			"8"
 		"AbilityManaCost"			"100"
 		"AbilityTextureName"			"timber_shockwave"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -138,6 +146,12 @@
 		"AbilityCooldown"				"6"	
 		"AbilityManaCost"				"90 90 90"	
 		"AbilityTextureName"			"timber_thunderclap"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
 
 		"AbilitySpecial"
 		{
@@ -295,6 +309,15 @@
 		"AbilityManaCost"				"75"
 		"AbilityTextureName"			"ck_feral_spirit"
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn_e.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+			"model"	"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -334,6 +357,14 @@
 		"AbilityTextureName"			"ck_inferno"
 		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
 		
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_warlock/golem_spawn.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start_meteor.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -442,6 +473,12 @@
 		"AbilityTextureName"			"sd_frost_nova"
 
 		"AbilityManaCost"				"125"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		}
 
 		"AbilitySpecial"
 		{
@@ -605,6 +642,12 @@
 		"AbilityManaCost"				"250"
 		"AbilityChannelTime"			"35"
 		"AbilityTextureName"			"razor_death_decay"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+		}
 
 		"AbilitySpecial"
 		{

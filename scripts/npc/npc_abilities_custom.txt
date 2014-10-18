@@ -625,7 +625,7 @@
 		{
 			"Random"
 			{
-				"Chance" "30"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -650,7 +650,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -675,7 +675,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -700,7 +700,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -740,7 +740,7 @@
 		{
 			"Random"
 			{
-				"Chance" "30"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -765,7 +765,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -790,7 +790,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -815,7 +815,7 @@
 
 			"Random"
 			{
-				"Chance" "35"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -3368,6 +3368,12 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET	|	DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityChannelTime" "4"
 		"AbilityTextureName"	"sd_animate_dead"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
 	
 		"OnChannelSucceeded"
 			{
@@ -3452,6 +3458,11 @@
 		"AbilityCooldown"				"7 6 5"
 		"AbilityManaCost"				"50"
 		"AbilityTextureName"			"razor_mana_burn"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		}
 				
 		"AbilitySpecial"
 			{
@@ -3538,6 +3549,12 @@
 		"AbilityTextureName"    			"creep_heal"
 		"AbilityCooldown" "1"
 		"AbilityManacost" "5"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification_d_glow.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
 			
 		"OnSpellStart"
 		{
@@ -3573,6 +3590,12 @@
 		"BaseClass"	"night_stalker_void"
 		"AbilityManaCost"				"0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_void.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		}
 		
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3625,6 +3648,14 @@
 		"BaseClass"	"ability_datadriven"
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"night_stalker_crippling_fear"
+
+		"precache"
+		{
+			"particle"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf"
+			"particle" "particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		}
+
 		"Modifiers"
 			{
 			"final_boss_powerup"
@@ -3738,6 +3769,13 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
+			"particle" "particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+		}
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
@@ -3820,6 +3858,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		}
 	
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3872,7 +3916,7 @@
 		}
 	}
 
-	"creep_disease_cloud"
+	"creep_disease_cloud" //unused
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3989,11 +4033,6 @@
 						"Damage" 		"%damage"
 						"Target"		"TARGET"
 					}
-					//"FireSound"
-					//{
-					//	"EffectName"			"Hero_Dazzle.Poison_Tick"
-					//	"Target"				"TARGET"
-					//}
 
 				}
 			}	
@@ -4055,6 +4094,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"MaxLevel"						"1"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+		}
 		
 		"Modifiers"
 		{
@@ -4151,6 +4196,12 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"50"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		}
 
 		"OnSpellStart"
 		{
@@ -4286,6 +4337,12 @@
 		"AbilityCastRange"    "500"
 		"AbilityCooldown"    "5"
 		"AbilityManaCost"    "35"
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/buckler.vpcf"
+			"soundfile" "soundevents/game_sounds_items.vsndevts"
+		}	
 		
 		"AbilitySpecial"
 		{
@@ -4459,6 +4516,11 @@
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
 	
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4520,6 +4582,11 @@
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
 	
+		"precache"
+		{
+			"particle"	"particles/items_fx/aura_assault_ring.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4666,6 +4733,12 @@
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
 		"AbilityManacost" "35"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_ember_spirit"
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
 			
 		"AbilitySpecial"
 		{
@@ -4785,6 +4858,13 @@
 		"AbilityTextureName"    "sd_animate_dead"
 		"AbilityCooldown" "180"
 		"AbilityManacost" "175"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4866,6 +4946,11 @@
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"    "sven_thorns_aura"
 		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_degen_aura_b.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4984,6 +5069,14 @@
 		"AbilityCooldown" "60"
 		"AbilityManacost" "125"
 		"AbilityChannelTime" "30"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_luna/luna_eclipse.vpcf"
+			"particle"				"particles/neutral_fx/troll_heal.vpcf"
+			"particle"				"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -4991,7 +5084,8 @@
 				"var_type"	"FIELD_INTEGER"
 				"duration" "30"
 			}
-		}
+		}		
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -5121,6 +5215,12 @@
 		"AbilityTextureName"    "sven_divine_shield"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityCastPoint"				"0.5"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
 		
 		"AbilitySpecial"
 		{
@@ -5141,7 +5241,7 @@
 			"FireSound"
 			{
 				"Target" "CASTER"
-				"EffectName" "sven_sven_rare_10"
+				"EffectName" "Hero_Omniknight.GuardianAngel.Cast"
 			}
 		}
 		
@@ -5182,6 +5282,13 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"	"125"
 		"AbilityTextureName"    "ck_elemental"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		}
+
 		"AbilitySpecial"
 			{
 			"01"
@@ -5296,6 +5403,14 @@
 		"AbilityManaCost"	"150"
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"    "timber_avatar"
+
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf"
+			"particle"				"particles/items_fx/black_king_bar_avatar.vpcf"
+		}
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -5365,6 +5480,11 @@
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
+
+		"precache"
+		{
+			"particle"				"particles/items_fx/aura_assault.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5425,6 +5545,13 @@
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"	"75"
 		"AbilityTextureName"    "templar_entangle"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
+			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+		}
+
 		"AbilitySpecial"
 			{
 			"01"
@@ -5580,6 +5707,17 @@
 		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+
+		"precache"
+		{
+
+			"particle"	"particles/units/heroes/hero_mirana/mirana_starfall_moonray.vpcf"
+			"particle"	"particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+			"particle" "particles/units/heroes/hero_mirana/mirana_moonlight_owner.vpcf"
+
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -5699,6 +5837,12 @@
 		"AbilityDamage"					"0"
 		"AbilityManaCost"				"10"
 		"MaxLevel"						"3"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+		}
 	
 		// Data-Driven
 		//-------------------------------------------------------------------------------------------------------------
@@ -5987,6 +6131,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHERS"
 		"AbilityTextureName"			"jugg_death_coil"
+
+		"precache"
+		{
+			"particle_folder"				"particles/units/heroes/hero_abaddon"
+		}
 		
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
@@ -6031,6 +6180,13 @@
 		"AbilityCastPoint"    			"0.3"
 		"AbilityTextureName"			"ck_holy_light"
 		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_2"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6069,6 +6225,13 @@
 		"AbilityCastPoint"    			"0.3"
 		"AbilityTextureName"			"ck_holy_light"
 		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_1" //Chaos Bolt Animation
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6108,6 +6271,11 @@
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
 	
+		"precache"
+		{
+			"particle"	"particles/items_fx/aura_endurance.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -6208,6 +6376,11 @@
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/aura_vlads.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6281,6 +6454,12 @@
 		"AbilityManaCost"				"100 75 50"
 		"AbilityTextureName"			"sd_sleep"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		"precache"
+		{
+			"particle"	"particles/newplayer_fx/npx_sleeping.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6312,7 +6491,13 @@
 						"EffectName"		"particles/newplayer_fx/npx_sleeping.vpcf"
 						"EffectAttachType" "follow_overhead"
 						"EffectLifeDurationScale" "1"
-					}				
+					}
+
+					"FireSound"				
+					{
+						"EffectName"	"Hero_Bane.Nightmare" 
+						"Target"	"TARGET"
+					}
 				}
 				"IsDebuff"	"1"
 				"IsPurgable"	"1"
@@ -6355,6 +6540,11 @@
 		"AbilityCastRange"    "900"
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/aura_shivas.vpcf"
+		}
 		
 		"AbilitySpecial"
 		{
@@ -6413,9 +6603,14 @@
 		"AbilityTextureName"			"warchasers_skull_of_guldan"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+		}
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"000"
+		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0.0"
 		"AbilityDamage"					"0"
@@ -6424,30 +6619,38 @@
 		// Data-Driven
 		//-------------------------------------------------------------------------------------------------------------
 		"OnOwnerDied"
-		{
-			//Ability is added OnEntityKilled
-			
-			"FireEffect"
-			{
-				"EffectName"		"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf"
-				"EffectAttachType" "follow_origin"
-				"Target" "CASTER"
-			}
-			"FireEffect"
-			{
-				"TargetPoint" "POINT"
-				"EffectName" "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1_a.vpcf"
-				"EffectAttachType" "world_origin" //?
-				"EffectRadius" "%radius"
-				"EffectColorA" "25 50 200"
-				"EffectColorB" "25 50 200"
-			}
-			"FireSound"
-			{
-				"EffectName"		"Tower.Fire.Attack"
-				"Target" "CASTER"
-				"EffectDurationScale" "1"
-				"EffectLifeDurationScale" "1"
+    	{
+	        "CreateThinker"
+	        {
+	            "ModifierName" "skull_death_fx"
+	            "Target" "CASTER"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	        "skull_death_fx"
+	        {            
+	            "Duration" "2"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+	                {	      
+	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {
+	                    "EffectName" "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                    "ControlPoints"
+	                    {
+	                        "00" "0 0 0"
+	                        "01" "200 5 5"
+	                    }
+	                }
+				}
 			}
 		}
 	}
@@ -6482,6 +6685,11 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"juggernaut_healing_ward"
 		"MaxLevel"						"1"
+
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf"
+		}
 		
 		"OnSpellStart"
 		{

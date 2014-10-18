@@ -18,247 +18,6 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-function Precache( context )
-	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
-	
-	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
-	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
-	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
-	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
-	PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context)
-	PrecacheUnitByNameSync("npc_dota_hero_chaos_knight", context)
-	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
-	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
-	PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
-
-	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
-	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
-	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
-	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
-	PrecacheUnitByNameSync("npc_dota_hero_ember_spirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
-	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
-	PrecacheUnitByNameSync("npc_dota_hero_abyssal_underlord", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lycan", context)
-	--PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
-	--PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lich", context)
-	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
-	PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lone_druid", context)
-	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
-	PrecacheUnitByNameSync("npc_dota_hero_witch_doctor", context)
-	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
-	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
-	PrecacheUnitByNameSync("npc_dota_hero_venomancer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
-	--PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
-	PrecacheUnitByNameSync("npc_dota_hero_enchantress", context)
-	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
-	PrecacheUnitByNameSync("npc_soul_keeper", context)
-	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
-	PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
-	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context)
-	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
-	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
-	PrecacheUnitByNameSync("npc_dota_hero_troll_warlord", context)
-	PrecacheUnitByNameSync("npc_dota_hero_slark", context)
-	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
-	PrecacheUnitByNameSync("npc_dota_hero_keeper_of_the_light", context)
-	PrecacheUnitByNameSync("npc_dota_hero_night_stalker", context)
-	PrecacheUnitByNameSync("npc_dota_hero_furion", context)
-	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
-	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
-	PrecacheUnitByNameSync("npc_skeleton_archer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_broodmother", context)
-	PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
-	PrecacheUnitByNameSync("npc_dota_hero_terrorblade", context)
-	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
-
-	PrecacheUnitByNameSync("npc_timber", context)
-	PrecacheUnitByNameSync("npc_dota_hero_optimus_primo", context)
-	PrecacheUnitByNameSync("npc_jugg", context)
-	PrecacheUnitByNameSync("npc_dota_hero_blade_berserker", context)
-	PrecacheUnitByNameSync("npc_drow", context)
-	PrecacheUnitByNameSync("npc_dota_hero_snake_eyes", context)
-	PrecacheUnitByNameSync("npc_ck", context)
-	PrecacheUnitByNameSync("npc_warchasers_hero_beast_knight", context)
-	PrecacheUnitByNameSync("npc_sd", context)
-	PrecacheUnitByNameSync("npc_dota_hero_mummrah", context)
-	PrecacheUnitByNameSync("npc_templar", context)
-	PrecacheUnitByNameSync("npc_dota_hero_assassin", context)
-	PrecacheUnitByNameSync("npc_sven", context)
-	PrecacheUnitByNameSync("npc_dota_hero_megotron", context)
-	PrecacheUnitByNameSync("npc_razor", context)
-	PrecacheUnitByNameSync("npc_dota_hero_skeletorus", context)
-
-	PrecacheUnitByNameSync("npc_tb_miniboss", context)
-	PrecacheUnitByNameSync("npc_boss", context)
-
-	PrecacheResource( "model", "models/props_structures/sniper_hut.vmdl", context )
-
-	PrecacheResource( "model", "models/heroes/slark/slark.vmdl", context)
-
-  	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
-	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
-	PrecacheResource("model", "models/kappakey.vmdl", context)
-	PrecacheResource("model", "models/chest_worlddrop.vmdl", context)
-	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
-	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
-	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
-	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
-	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
-	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
-	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
-	
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_wisp.vsndevts", context)
-	
-  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
-  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
-  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_chen", context )
-	PrecacheResource( "particle_folder","particles/items_fx", context)
-	PrecacheResource( "particle_folder","particles/items2_fx", context)
-	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
-	PrecacheResource( "particle_folder","particles/econ/items", context)
-	PrecacheResource( "particle_folder","particles/econ/courier", context)
-	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
-	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
-	PrecacheResource( "particle_folder", "particles/neutral_fx", context)
-	
-	--[[--NEED TO PRECACHE ALL HATS
-	print('[Precache] Start')
-	local wearables = LoadKeyValues("scripts/items/items_game.txt")
-
-	local wearablesList = {}
-	local precacheWearables = {}
-	for k, v in pairs(wearables) do
-		if k == 'items' then
-			wearablesList = v
-		end
-	end
-	local hatCounter = 0
-	
-	--check wearablesList for jugg hats
-	for k, v in pairs(wearablesList) do
-	  	if IsForHero("npc_dota_hero_juggernaut", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache jugg hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_shredder", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache timber hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_drow_ranger", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache drow hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_sven", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache sven hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_chaos_knight", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache ck hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_shadow_demon", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache sd hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_razor", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache razor hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-		if IsForHero("npc_dota_hero_templar", k, wearablesList[k]) then
-            for key, value in pairs(wearablesList[k]) do
-				if key == 'model_player' then
-					print("Precache templar hat")
-					hatCounter = hatCounter+1
-					precacheWearables[value] = true
-				end
-			end
-		end
-	end
-
-	for wearable,_ in pairs( precacheWearables ) do
-		print("Precache: " .. wearable)
-		PrecacheResource( "model", wearable, context )
-	end
-	print('[Precache]' .. hatCounter .. " models loaded!")
-	print('[Precache] End')]]
-
-end
-
---thanks Aderum
-function IsForHero(hero, k, wearablesListEntry)
-	for key, value in pairs(wearablesListEntry) do
-		if key == 'used_by_heroes' then
-			print("Precache used_by_heroes Entry")
-			DeepPrintTable(wearablesListEntry)
-			if (wearablesListEntry[key]) ~= nil and (type(wearablesListEntry[key]) == "table") then
-				print("wearablesListEntry[key] is a table")
-				for key_hero,value_bool in pairs (wearablesListEntry[key]) do
-					if key_hero == hero then
-						return true
-					end
-				end
-			end
-		end
-	end
-	return false
-end
-
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
 	  200, -- 2 +200
@@ -356,6 +115,281 @@ function Warchasers:InitGameMode()
 	print( "Done loading gamemode" )
 
 end
+
+function Precache( context )
+	--[[
+		Precache things we know we'll use.  Possible file types include (but not limited to):
+			PrecacheResource( "model", "*.vmdl", context )
+			PrecacheResource( "soundfile", "*.vsndevts", context )
+			PrecacheResource( "particle", "*.vpcf", context )
+			PrecacheResource( "particle_folder", "particles/folder", context )
+	]]
+	
+	print("Starting precache")
+
+	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
+	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
+	PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context)
+	PrecacheUnitByNameSync("npc_dota_hero_chaos_knight", context)
+	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
+	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
+
+	--check carefully if it works on clients. Normal KV precache didn't work for these.
+	PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
+	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
+	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
+	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	--tranquility
+	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
+	PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
+	--avatar
+	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
+
+	PrecacheUnitByNameSync("npc_soul_keeper", context)
+	PrecacheUnitByNameSync("npc_doom_miniboss", context)
+	PrecacheUnitByNameSync("npc_tb_miniboss", context)
+	PrecacheUnitByNameSync("npc_boss", context)
+
+	PrecacheResource("model", "models/kappakey.vmdl", context)
+	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
+	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
+	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
+	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
+
+	PrecacheResource( "particle_folder","particles/items_fx", context)
+	PrecacheResource( "particle_folder","particles/items2_fx", context)
+	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
+	PrecacheResource( "particle_folder","particles/econ/items", context)
+	PrecacheResource( "particle_folder","particles/econ/courier", context)
+	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
+	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
+	PrecacheResource( "particle_folder","particles/neutral_fx", context)	
+
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_necrolyte", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_lich", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_doom_bringer", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_slark", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_troll_warlord", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_legion_commander", context)
+
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
+
+	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
+
+
+	--PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
+
+	--[[PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
+	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
+	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
+	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
+	PrecacheUnitByNameSync("npc_dota_hero_ember_spirit", context)
+	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
+	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
+	--PrecacheUnitByNameSync("npc_dota_hero_abyssal_underlord", context)
+	--PrecacheUnitByNameSync("npc_dota_hero_lycan", context)
+	--PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
+	--PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
+	PrecacheUnitByNameSync("npc_dota_hero_lich", context)
+	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
+	PrecacheUnitByNameSync("npc_dota_hero_lone_druid", context)
+	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
+	PrecacheUnitByNameSync("npc_dota_hero_witch_doctor", context)
+	PrecacheUnitByNameSync("npc_dota_hero_centaur", context)
+	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
+	PrecacheUnitByNameSync("npc_dota_hero_venomancer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
+	--PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
+	PrecacheUnitByNameSync("npc_dota_hero_enchantress", context)
+	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
+	PrecacheUnitByNameSync("npc_soul_keeper", context)
+	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
+	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context)
+	PrecacheUnitByNameSync("npc_dota_hero_axe", context)
+	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
+	PrecacheUnitByNameSync("npc_dota_hero_troll_warlord", context)
+	PrecacheUnitByNameSync("npc_dota_hero_slark", context)
+	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
+	PrecacheUnitByNameSync("npc_dota_hero_keeper_of_the_light", context)
+	PrecacheUnitByNameSync("npc_dota_hero_night_stalker", context)
+	PrecacheUnitByNameSync("npc_dota_hero_furion", context)
+	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
+	PrecacheUnitByNameSync("npc_dota_hero_clinkz", context)
+	PrecacheUnitByNameSync("npc_skeleton_archer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_broodmother", context)
+	PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
+	PrecacheUnitByNameSync("npc_dota_hero_terrorblade", context)
+	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
+
+	PrecacheUnitByNameSync("npc_timber", context)
+	PrecacheUnitByNameSync("npc_dota_hero_optimus_primo", context)
+	PrecacheUnitByNameSync("npc_jugg", context)
+	PrecacheUnitByNameSync("npc_dota_hero_blade_berserker", context)
+	PrecacheUnitByNameSync("npc_drow", context)
+	PrecacheUnitByNameSync("npc_dota_hero_snake_eyes", context)
+	PrecacheUnitByNameSync("npc_ck", context)
+	PrecacheUnitByNameSync("npc_warchasers_hero_beast_knight", context)
+	PrecacheUnitByNameSync("npc_sd", context)
+	PrecacheUnitByNameSync("npc_dota_hero_mummrah", context)
+	PrecacheUnitByNameSync("npc_templar", context)
+	PrecacheUnitByNameSync("npc_dota_hero_assassin", context)
+	PrecacheUnitByNameSync("npc_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_megotron", context)
+	PrecacheUnitByNameSync("npc_razor", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skeletorus", context)
+
+	PrecacheUnitByNameSync("npc_tb_miniboss", context)
+	PrecacheUnitByNameSync("npc_boss", context)
+
+  	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
+	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
+	PrecacheResource("model", "models/chest_worlddrop.vmdl", context)
+	PrecacheResource( "model", "models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl", context )
+	PrecacheResource( "model", "models/npc_minions/draft_siege_good.vmdl", context)
+	PrecacheResource( "model", "models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl", context)
+	
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_wisp.vsndevts", context)
+	
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_juggernaut", context )
+  	PrecacheResource( "particle_folder", "particles/units/heroes/hero_chen", context )
+	]]
+	
+	--[[--NEED TO PRECACHE ALL HATS
+	print('[Precache] Start')
+	local wearables = LoadKeyValues("scripts/items/items_game.txt")
+
+	local wearablesList = {}
+	local precacheWearables = {}
+	for k, v in pairs(wearables) do
+		if k == 'items' then
+			wearablesList = v
+		end
+	end
+	local hatCounter = 0
+	
+	--check wearablesList for jugg hats
+	for k, v in pairs(wearablesList) do
+	  	if IsForHero("npc_dota_hero_juggernaut", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache jugg hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_shredder", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache timber hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_drow_ranger", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache drow hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_sven", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache sven hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_chaos_knight", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache ck hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_shadow_demon", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache sd hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_razor", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache razor hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+		if IsForHero("npc_dota_hero_templar", k, wearablesList[k]) then
+            for key, value in pairs(wearablesList[k]) do
+				if key == 'model_player' then
+					print("Precache templar hat")
+					hatCounter = hatCounter+1
+					precacheWearables[value] = true
+				end
+			end
+		end
+	end
+
+	for wearable,_ in pairs( precacheWearables ) do
+		print("Precache: " .. wearable)
+		PrecacheResource( "model", wearable, context )
+	end
+	print('[Precache]' .. hatCounter .. " models loaded!")]]
+	print('Precache End')
+
+end
+
+--thanks Aderum
+--[[function IsForHero(hero, k, wearablesListEntry)
+	for key, value in pairs(wearablesListEntry) do
+		if key == 'used_by_heroes' then
+			print("Precache used_by_heroes Entry")
+			DeepPrintTable(wearablesListEntry)
+			if (wearablesListEntry[key]) ~= nil and (type(wearablesListEntry[key]) == "table") then
+				print("wearablesListEntry[key] is a table")
+				for key_hero,value_bool in pairs (wearablesListEntry[key]) do
+					if key_hero == hero then
+						return true
+					end
+				end
+			end
+		end
+	end
+	return false
+end]]
 
 
 -- Evaluate the state of the game
@@ -460,9 +494,9 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
+	--PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
 
-	PrecacheUnitByNameAsync("npc_small_murloc_a", function(...) end)
+	--PrecacheUnitByNameAsync("npc_small_murloc_a", function(...) end)
 
   	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
@@ -483,15 +517,16 @@ function Warchasers:OnGameInProgress()
 
 	--EmitGlobalSound("valve_dota_001.music.ui_startup")
 
-	if GameRules.SHOWPOPUP then
-		ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-		GameRules.SHOWPOPUP = false
-	end
 end
 
 
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
+
+		if GameRules.SHOWPOPUP then
+			ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+			GameRules.SHOWPOPUP = false
+		end
 
 		--Create Dummy so we can see the particle glow
 	    position = Vector(-6719,5541,40)

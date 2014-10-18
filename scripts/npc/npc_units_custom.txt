@@ -3527,6 +3527,11 @@
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/slark/slark.vmdl"
+		}
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -3627,6 +3632,11 @@
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/slark/slark.vmdl"
+		}
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -3727,6 +3737,11 @@
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/slark/slark.vmdl"
+		}
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -3829,6 +3844,11 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"2"
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/slark/slark.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3915,6 +3935,11 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"3"
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/slark/slark.vmdl"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4084,6 +4109,12 @@
 		"ModelScale"                            "1.4"
 				
 		"UseNeutralCreepBehavior" 	"0" //Keep following
+
+		"precache"
+		{
+			"model"	"models/heroes/bristleback/bristleback.vmdl"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -4258,6 +4289,12 @@
 		"Level"						"3"
 
 		"UseNeutralCreepBehavior" 	"1"
+
+		"precache"
+		{
+			"model"	"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+			"particle"	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		}
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4305,9 +4342,6 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"265"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-		
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
 
 		// Status
 		//----------------------------------------------------------------
@@ -4372,6 +4406,12 @@
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 		"Level"						"3"
 
+		"precache"
+		{
+			"model"	"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+			"particle"	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		}
+
 		"UseNeutralCreepBehavior" 	"1"
 		
 		// Abilities
@@ -4420,9 +4460,6 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"265"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
-		
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
 
 		// Status
 		//----------------------------------------------------------------
@@ -4507,6 +4544,11 @@
 		"SoundSet"                  "Hero_BroodMother"					
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/items/broodmother/spiderling/spiderling_dlotus_red/spiderling_dlotus_red.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -4584,6 +4626,11 @@
 		"SoundSet"                  "Hero_BroodMother"					
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	"models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -4663,6 +4710,11 @@
 		"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
 		"Level"						"4"
 		"ModelScale" 				".84"
+
+		"precache"
+		{
+			"model"	"models/heroes/morphling/morphling.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 
@@ -4759,6 +4811,11 @@
 		"Level"						"4"
 		"ModelScale" 				".84"
 		"CanBeDominated"			"0"
+
+		"precache"
+		{
+			"model"	"models/heroes/morphling/morphling.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 
@@ -4854,6 +4911,12 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"4"
 		"ModelScale" 				"1.2"
+
+		"precache"
+		{
+			"model"	"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
+			"particle"	"particles/base_attacks/ranged_badguy.vpcf"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -4960,6 +5023,11 @@
 		"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
 		"Level"                                         "1"
 		"ModelScale"                            "0.8"
+
+		"precache"
+		{
+			"model"	 "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -5035,6 +5103,11 @@
 		"SoundSet"                  "Hero_Lifestealer"					
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
 		"Level"						"1"
+
+		"precache"
+		{
+			"model"	 "models/heroes/life_stealer/life_stealer.vmdl"
+		}
 		
 		"UseNeutralCreepBehavior" 	"1"
 		
@@ -6607,6 +6680,10 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/skywrath_mage/skywrath_mage.vmdl"	// Model.
 		"ModelScale"				"1"
+		"SoundSet"                  "Hero_Necrolyte"
+		"IdleSoundLoop"				"Hero_Necrolyte.IdleLoop"				
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
 		"Level"						"1"
 		
 		// Abilities
@@ -6655,9 +6732,6 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"100"									// Speed.
 		"MovementTurnRate"			"0.4"									// Turning rate.
-	
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
 
 		// Status
 		//----------------------------------------------------------------
@@ -10331,6 +10405,9 @@
 		"precache"
 		{
 			"model"	 "models/heroes/lone_druid/true_form.vmdl"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
+			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
 		// Abilities
