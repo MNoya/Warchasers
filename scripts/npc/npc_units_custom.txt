@@ -4835,6 +4835,7 @@
 			"AttachWearables"
 			{
 				"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+				"Wearable2"		{	"ItemDef"		"4260" } //TEST
 			}
 		}
 
@@ -5126,6 +5127,11 @@
 		"SoundSet"					"Hero_DoomBringer"			
 		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+
+		"precache"	
+		{
+			"model" "models/heroes/doom/doom.vmdl"
+		}
 
 		"Level"						"6"
 		"IsAncient"					"1"

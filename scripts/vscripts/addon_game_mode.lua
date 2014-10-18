@@ -99,9 +99,12 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_razor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_skeletorus", context)
 
-	PrecacheUnitByNameSync("npc_doom_miniboss", context)
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
+
+	PrecacheResource( "model", "models/props_structures/sniper_hut.vmdl", context )
+
+	PrecacheResource( "model", "models/heroes/slark/slark.vmdl", context)
 
   	PrecacheResource( "model", "models/props_debris/merchant_debris_key001.vmdl", context )
 	PrecacheResource( "model", "models/props_debris/merchant_debris_chest001.vmdl", context )
@@ -281,7 +284,7 @@ function Warchasers:InitGameMode()
 	--self:ReadDropConfiguration()
 	GameMode = GameRules:GetGameModeEntity()
 
-	GameMode:SetCameraDistanceOverride( 1600 )
+	GameMode:SetCameraDistanceOverride( 1000 )
 	GameMode:SetAnnouncerDisabled(true)
 	GameMode:SetBuybackEnabled(false)
 	GameMode:SetRecommendedItemsDisabled(true) --broken
@@ -457,6 +460,10 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
+	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_small_murloc_a", function(...) end)
+
   	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
@@ -570,7 +577,7 @@ function Warchasers:OnAllPlayersLoaded()
 
 		--Create Hall of Heroes
 		
-		local origin = Vector(-2955,-5280,512)
+		--[[local origin = Vector(-2955,-5280,512)
 		local dummy1 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
 		local origin = Vector(-2955,-6045,512)
 		local dummy2 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -612,7 +619,7 @@ function Warchasers:OnAllPlayersLoaded()
 
 		local origin = Entities:FindByName( nil, "razor_circle" ):GetAbsOrigin()
 		local razor = CreateUnitByName("npc_razor", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		razor:SetForwardVector(rotation)
+		razor:SetForwardVector(rotation)]]
 
 		--Spawning Bosses
 
@@ -660,10 +667,8 @@ function Warchasers:OnNPCSpawned(keys)
 			giveUnitDataDrivenModifier(npc, npc,"modifier_out_of_game",{-1})
 		end
 
-		if heroName == "npc_dota_hero_wisp" then
-			--[[local item = CreateItem("item_talisman_of_the_wild", npc, npc) --testing items
-			npc:AddItem(item)]]
-			giveUnitDataDrivenModifier(npc, npc,"wisp",{-1})
+		--if heroName == "npc_dota_hero_wisp" then
+			--giveUnitDataDrivenModifier(npc, npc,"wisp",{-1})
 			local playercounter = 0
 			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
 				if PlayerResource:IsValidPlayer(nPlayerID) then 
@@ -674,7 +679,7 @@ function Warchasers:OnNPCSpawned(keys)
 			GameRules.PLAYER_COUNT = playercounter
 			print("Total Players: " .. GameRules.PLAYER_COUNT)
 
-		else --if heroName ~= "npc_dota_hero_wisp" then
+		--else --if heroName ~= "npc_dota_hero_wisp" then
 			--GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
 			if npc.bFirstSpawned == nil then
 				npc.bFirstSpawned = true
@@ -692,7 +697,7 @@ function Warchasers:OnNPCSpawned(keys)
 				npc:SetHealth(500) --it's a little more based on the STR
 				print(npc:GetHealth())
 			end
-		end	
+		--end	
 	end
 end
 
@@ -703,6 +708,8 @@ function Warchasers:OnHeroInGame(hero)
 
 	print("Total Players In Game: " .. GameRules.PLAYER_COUNT)
 	print("Players with a hero picked: " .. GameRules.PLAYERS_PICKED_HERO)
+
+	--[[
 	if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) and not GameRules.HALL_CLEARED then --every player selected a hero, no wisps remaining
 		--find and kill the npcs in the hall
 		local hallOrigin = Vector(-2955,-6000,512)
@@ -748,7 +755,7 @@ function Warchasers:OnHeroInGame(hero)
 		print("Hall of Heroes Cleared")
 
 		GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-	end
+	end]]
 
 	Warchasers:ModifyStatBonuses(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
