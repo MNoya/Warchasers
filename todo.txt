@@ -13,7 +13,7 @@ TO DO - PreRelease
 
 [ ][Test] Fix double spawners
 [~][Test] Review drop_levelX to add missing/new items
-[ ][Test] Adjust HealthBarOffsets
+[X][Test] Adjust HealthBarOffsets
 [!] [Test] Heroes and everything properly appearing in clients
 [ ][Test] Difficulty. Damage/Armor Types and Values
 
