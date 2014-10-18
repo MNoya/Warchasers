@@ -425,8 +425,7 @@ function TeleporterTanksStart(trigger)
         tank2:SetRenderColor(93,230,173) --teal
         tank2:SetControllableByPlayer( 1 , true )
         tank2:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank2:SetOwner(hero)
-        
+        tank2:SetOwner(hero)        
     end
 
     if GameRules.PLAYER_COUNT >= 3 then
@@ -437,8 +436,7 @@ function TeleporterTanksStart(trigger)
         tank3:SetRenderColor(173,0,173) --purple
         tank3:SetControllableByPlayer( 2 , true )
         tank3:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank3:SetOwner(hero)
-        
+        tank3:SetOwner(hero)        
     end
 
     if GameRules.PLAYER_COUNT >= 4 then

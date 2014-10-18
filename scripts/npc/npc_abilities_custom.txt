@@ -5981,7 +5981,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"wave_damage"					"25 40 55 70"
+				"wave_damage"					"25 40 55"
 			}
 			"05"
 			{
@@ -5991,7 +5991,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"burn_damage"					"5 10 15 20"
+				"burn_damage"					"5 10 15"
 			}
 			"07"
 			{

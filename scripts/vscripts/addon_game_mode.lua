@@ -1041,9 +1041,12 @@ function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
 
-	--if killedUnit:GetName()=="finalboss" then
+	if killedUnit:GetUnitName() == "npc_boss" then
 		--GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
-	--end
+		ScreenShake(killerEntity:GetAbsOrigin(), 50.0, 50.0, 5.0, 9000, 0, true)
+		PlayerResource:SetCameraTarget(killerEntity:GetPlayerOwnerID(), killedUnit)
+		EmitGlobalSound("diretide_roshdeath_Stinger")
+	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
 

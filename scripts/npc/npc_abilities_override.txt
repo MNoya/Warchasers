@@ -356,10 +356,11 @@
 		"AbilityCastRange"				"900"
 		"AbilityTextureName"			"ck_inferno"
 		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_1"
 		
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_warlock/golem_spawn.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf"
 			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
 			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start_meteor.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"

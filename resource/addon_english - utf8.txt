@@ -373,6 +373,15 @@
 		"DOTA_Tooltip_fx_starfall"	"Starstorm"
 		"DOTA_Tooltip_fx_starfall_Description" "Channeling Starstorm"
 		
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm"					"Firestorm"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Description"		"Calls down waves of fire that damage enemy units in the target area, and continues to burn them for additional damage over time."
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Lore"				""
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_radius"			"RADIUS:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_count"		"WAVE COUNT:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_damage"		"WAVE DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_damage"		"BURN DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_duration"	"BURN DURATION:"
+
 		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows" 						"Cold Arrows"
 		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_Description"			"Adds a cold effect to each attack, slowing a target enemy unit's attacks and movement.\n\nDoes not stack with other Orb Effects."
 		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_RangeDamage"			"BONUS DAMAGE:"
