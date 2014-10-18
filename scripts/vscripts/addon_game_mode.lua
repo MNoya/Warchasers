@@ -137,7 +137,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
 
 	--check carefully if it works on clients. Normal KV precache didn't work for these.
-	PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
+	--[[PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
 	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
@@ -145,7 +145,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
 	PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
 	--avatar
-	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
+	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)--]]
 
 	PrecacheUnitByNameSync("npc_soul_keeper", context)
 	PrecacheUnitByNameSync("npc_doom_miniboss", context)

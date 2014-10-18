@@ -6590,8 +6590,8 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/necrolyte/necrolyte.vmdl"	// Model.	
 		"ModelScale"				"1.2"
-		"SoundSet"                  "Hero_Necrolyte"
-		"IdleSoundLoop"				"Hero_Necrolyte.IdleLoop"				
+		//"SoundSet"                  "Hero_Necrolyte"
+		//"IdleSoundLoop"				"Hero_Necrolyte.IdleLoop"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 		"Level"						"10"
 		"CanBeDominated"			"0"
