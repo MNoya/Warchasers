@@ -9497,6 +9497,11 @@
 		"Level"						"10"
 		"ConsideredHero"			"1"
 		
+		"precache"
+		{
+			"model"		"models/npc_minions/draft_siege_good.vmdl"
+		}
+
 		// Abilities
 		//----------------------------------------------------------------	
 		"Ability1"					"warchasers_steamtank_immolation" // Ability 1. IMMOLATION 10DPS, 35 activation cost, 7 cost to mantain

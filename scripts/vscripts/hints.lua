@@ -134,14 +134,18 @@ end
 function circle_zapsappers(trigger)
 	GameRules:SendCustomMessage("The Magic of the circle destroyed nearby sappers.",0,0)
 	--kill sappers
-	EmitGlobalSound("Axe_axe_death_05")
 	
 	local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", trigger.activator:GetAbsOrigin(), 1500)
 	print("Creeps Found")
+	local sound = false
 	 for i = 1, #allCreepsNear, 1 do
 	 	local creep = allCreepsNear[i]
         local name = creep:GetUnitName()
         if name == "npc_sapper" then
+        	if not sound then 
+        		sound = true
+        		EmitGlobalSound("Axe_axe_death_05") 
+        	end
         	creep:ForceKill(true)
         end
     end

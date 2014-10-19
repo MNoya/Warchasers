@@ -2460,7 +2460,8 @@
 						}
 						
 						"ItemName"					"item_spiked_collar"
-						"ItemCount"					"1" 
+						"ItemCount"					"1"
+						"ItemChargeCount"			"1"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"

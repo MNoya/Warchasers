@@ -167,19 +167,21 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
 	PrecacheResource( "particle_folder","particles/neutral_fx", context)	
 
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_necrolyte", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_lich", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_doom_bringer", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_slark", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_troll_warlord", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_legion_commander", context)
-
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_centaur", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_enigma", context)
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
@@ -513,6 +515,9 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_alchemist", function(...) end)
 	--book of the dead
 	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_rocknroll_steamtank", function(...) end)
+	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
 
 end
 
