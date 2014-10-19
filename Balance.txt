@@ -7,3 +7,5 @@
 4). Balance AoE nukes over single target.
 
 5). Make cloack of shadows less useless.
+
+6). Balance out ultimate. Currently too long cooldown to be useful.
