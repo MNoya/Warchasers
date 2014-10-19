@@ -1,0 +1,35 @@
+A remake of the classic Warcraft 3 Warchasers mod in Dota 2.
+Official Lobby Password: warchasers
+Brave daring souls choose from a gallery of fallen heroes and fight their way through a legendary city against overwhelming masses of monsters!
+
+Few daring souls embody an ancient hero and co-operatively fight their way through a legendary city against overwhelming masses of monsters!
+
+Warchasers is a Co-Op RPG Adventure for 1 up to 5 players. 
+(Map Overview, Images
+Features 8 Heroes, over 80 different enemies, all the original Warcraft 3 items and many different zones with hidden secrets. A vast map
+Zones (1st boss, 2nd level, water level, 2nd boss chamber, pre hall, hall of spiders, frost level, high plateau bridge, circles to open barrier, tanks level, end level) Doors, Circles, Teleports, Secrets
+
+How To Play
+Follow these instructions, or check out the very complete guide made by Wyk here. http://steamcommunity.com/sharedfiles/filedetails/?id=298142924
+•	Subscribe to this mod by pressing the large green button above 
+•	Everyone who wants to play has to install and setup the Dota 2 Workshop Alpha Tools and opt into the latest Steam Client Beta. To opt in to the Steam client beta do the following: Steam -> Settings -> Account 
+•	Then in the Beta Participation area press Change and in the drop down select Steam Beta Update. Then just reset Steam. 
+•	Remove "-override_vpk" from your launch options if you have it or else you won't be able to make a lobby properly. 
+•	All of the clients and host need to open the normal Dota 2 client (Ensure that the tools are closed!). 
+•	The host needs to goto the play tab -> custom games -> browse by subscribed gamemodes -> click on the Reflex gamemode and hit "Create Lobby". 
+•	The rest of the players need to goto the play tab -> custom games -> friend lobbies, where you will see the lobby that your friend has hosted. 
+•	Pick the slots you want to use on both teams (spectators and broadcasters are currently not supported). 
+•	Once the host starts the game he will load into the Workshop Alpha Tool's client on its own and start the game. 
+The clients will need to wait for the host to load first and then their client will also boot into the Workshop Alpha Tools. At first you will think that your game has crashed, don't worry. Don't press anything and you should load into the game.
+
+Special Thanks 
+Blizzard (please, don’t sue me)
+All the modders/developers who helped put together all of the documents/tricks for building custom games. 
+
+Known Bugs
+Source
+Warchasers is open source! Check it out at the repository here[github.com] 
+Latest changelog: 
+
+Please report any bugs found or any feature requests in either the discussions below or at: 
+http://www.reddit.com/r/warchasers
