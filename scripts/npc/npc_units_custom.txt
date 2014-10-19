@@ -6780,6 +6780,16 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
 		"Level"						"6"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile" "soundevents/voscripts/game_sounds_vo_axe.vsndevts"
+			"particle" "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+			"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"	"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+			"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
+		}
 		
 		"UseNeutralCreepBehavior" 	"0"
 		
@@ -7363,6 +7373,12 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
 		"Level"						"6"
 		"IsAncient"					"1"
+
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+			"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+		}
 		
 		"DisableResistance"			"75.0"
 		
@@ -7386,12 +7402,12 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"45"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"2"			// Speed of attack.
-		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"			// Particle system model for projectile.
@@ -8976,6 +8992,13 @@
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 		"Level"                                         "6"
 		"ModelScale"                            "1.2"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_tiny/tiny_death_rocks.vpcf"
+			"particle"	"particles/units/heroes/hero_tiny/tiny_transform.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		}
 		
 		"UseNeutralCreepBehavior" 	"0"
 

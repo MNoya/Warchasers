@@ -390,6 +390,18 @@ function CheckForKey3(trigger)
                 Timers:CreateTimer({ useGameTime = false, endTime = 1,
                     callback = function() EmitGlobalSound("ui.crafting_slotslide") end
                 })
+
+                local dummy = Vector(118, 2185,136)
+                local allCreepsNear = Entities:FindAllByClassnameWithin("npc_dota_creature", dummy, 1000)
+                for i = 1, #allCreepsNear, 1 do
+                    local creep = allCreepsNear[i]
+                    local name = creep:GetUnitName()
+                    if name == "vision_dummy_minor" then
+                        creep:ForceKill(true)
+                        print("Vision dummy killed")
+                    end
+                end
+
             end
         end              
     end
