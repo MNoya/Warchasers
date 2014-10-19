@@ -174,6 +174,9 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_troll_warlord", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_legion_commander", context)
 
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_centaur", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_enigma", context)
+
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
@@ -498,15 +501,18 @@ function Warchasers:PostLoadPrecache()
 
 	--PrecacheUnitByNameAsync("npc_small_murloc_a", function(...) end)
 
-  	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_wisp", function(...) end)
+  	--check carefully if it works on clients. Normal KV precache didn't work for these.
+	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_brewmaster", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_mirana", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_zuus", function(...) end)
+	--tranquility
+	PrecacheUnitByNameAsync("npc_dota_hero_luna", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_huskar", function(...) end)
+	--avatar
+	PrecacheUnitByNameAsync("npc_dota_hero_alchemist", function(...) end)
+	--book of the dead
+	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
 
 end
 

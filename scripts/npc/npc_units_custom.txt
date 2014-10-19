@@ -7068,6 +7068,11 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		"IsAncient"					"1"
 		
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+		}
+
 		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
@@ -7855,7 +7860,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_clinkz.vsndevts"
 		"Level"						"1"
-		
+
 		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
@@ -7936,7 +7941,7 @@
 				"Wearable3" { "ItemDef"	"4972" } //gauntlets
 				"Wearable4" { "ItemDef"	"59" } //quiver
 				"Wearable5" { "ItemDef"	"4742" } //pauldrons
-				"Wearable6" { "ItemDef"	"60" } //horns
+				"Wearable6" { "ItemDef"	"4971" } //horns crypt guardian
 			}
 		}
 	}
