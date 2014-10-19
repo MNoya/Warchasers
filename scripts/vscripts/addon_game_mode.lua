@@ -817,6 +817,9 @@ end
 
 --Item checking
 function Warchasers:OnItemPickedUp( event )
+	local item_handle = EntIndexToHScript(event.ItemEntityIndex)
+	local picker_handle = EntIndexToHScript(event.HeroEntityIndex) 
+	item_handle:SetPurchaser(picker_handle)
 
 end
 
