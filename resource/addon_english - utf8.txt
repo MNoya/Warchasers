@@ -422,8 +422,8 @@
 		"DOTA_Tooltip_ability_drop_frostmourne"											"Imprisoned Frostmourne"
 		"DOTA_Tooltip_ability_drop_frostmourne_Description"								"Whomsoever takes up this blade shall wield power eternal. Just as the blade rends flesh, so must power scar the spirit."
 		
-		"DOTA_Tooltip_modifier_terrorblade_metamorphosis"					"Metamorphosis"
-		"DOTA_Tooltip_modifier_terrorblade_metamorphosis_Description"		"Consumed the powers of the skull of Guldan."
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers"					"Metamorphosis"
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers_Description"		"Consumed the powers of the skull of Guldan. Granted 100%% bonus damage, 10%% lifesteal but taking 10 damage per second."
 
 		//Modifier Buffs _Description
 		"DOTA_Tooltip_modifier_warchasers_stat_rules"			"Legacy Stat Rules"
