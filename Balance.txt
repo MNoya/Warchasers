@@ -9,3 +9,45 @@
 5). Make cloack of shadows less useless.
 
 6). Balance out ultimate. Currently too long cooldown to be useful.
+
+
+
+
+
+Version 0.02
+
+Heroes:
+
+Mumrah: Lifesteal Aura reduced from 15/30/45 to 15/25/35. Sleep mana cost reduced from 100/75/50 to 50.
+
+
+Creeps:
+Small Sludge: damage increased from 10-11 to 14-15
+Kobolt Tunerel: damage increased from 14-15 to 20-21
+Corrupted Treant: health increased from 110 to 160
+Blue Lizard: health increased from 420 to 630
+Red Lizard: health increased from 250 to 350
+Green Lizard: health increased from 350 to 450
+Frost Archer: Health increased from 150 to 250
+Elder Wendigo: damage increased from 18-22 to 48-52. health increased from 550 to 700
+Giant Skeleton Warior: damage increased from 12-20 to 18-26
+
+Brood Mother: health increased from 450 to 1500. Damage increased from 29-34 to 39-44. Mana pool increased from 201 to 800.
+Rock Golem: health increased from 250 to 400 damage from 29-33 to 39-43
+Mud Golem: health increased from 220 to 270
+Sapper: movespeed increased from 275 to 350
+Necromancer: Health increased from 305 to 400. Damage increased from 7-10 to 20-30
+Fell Hound: Health increased from 300 to 450. Damage increased from 14-15 to 35-36
+Sludge Montriusity: Health increased from 400 to 450. Attack range increased from 150 to 500
+Titan Skeleton: Damage increased from 14-15 to 50-55
+Fulborg Elder Shaman: damage increased from 14-15 to 40-43
+Soul Smasher: Cyclone cooldown increased from 5 to 8. Health increased from 1000 to 1200. Damage increased from 40-48 to 60-68. Damage type changed from basic to hero.
+Satyr Shadow Dancer: Health increased from 160 to 450.
+Infernal: damage type changed from basic to hero.
+Final Boss: health increased from 5200 to 12000
+Doom Mini Boss: exp bounty increased from 71 to 400
+Gnoll Poacher: damage reduced from 13-15 to 7-9
+
+
+Items:
+

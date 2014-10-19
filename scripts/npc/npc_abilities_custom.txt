@@ -6339,7 +6339,7 @@
 			"01"
 				{
 				"var_type"	"FIELD_INTEGER"
-				"lifesteal"	"15 30 45"
+				"lifesteal"	"15 25 35"
 				}
 			}
 		"Modifiers"
@@ -6389,7 +6389,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"lifesteal"	"15 30 45"
+				"lifesteal"	"15 25 35"
 			}
 			"02"
 			{
@@ -6453,7 +6453,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
-		"AbilityManaCost"				"100 75 50"
+		"AbilityManaCost"				"50"
 		"AbilityTextureName"			"sd_sleep"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
