@@ -5631,6 +5631,7 @@
 				"States"
 					{
 					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
 					}
 				}
 			"warchasers_assassin_entangle_creep_debuff"
