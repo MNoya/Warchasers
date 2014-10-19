@@ -916,7 +916,7 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		"ItemQuality"					"component"
-		
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
@@ -940,7 +940,7 @@
 		"ItemSellable"                  "1"
 		"ItemDroppable"                 "1"
 		"ItemQuality"					"component"
-		
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
