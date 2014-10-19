@@ -102,6 +102,7 @@ function Warchasers:InitGameMode()
     --ListenToGameEvent('dota_player_killed', Dynamic_Wrap( Warchasers, 'OnPlayerKilled'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( Warchasers, 'OnGameRulesStateChange'), self)
     ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(Warchasers, 'OnItemPickedUp'), self)
+    
 	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 1 )
 	GameRules:GetGameModeEntity():SetThink("AnkhThink", self)
@@ -397,6 +398,24 @@ end
 end]]
 
 
+function set_items_ownership()
+	for player_id = 0, 4 do
+		local hero = PlayerResource:GetSelectedHeroEntity(player_id) 
+		if hero ~= nil then
+			for item_slot = 0, 5 do
+
+				local item = hero:GetItemInSlot(item_slot)
+				if item ~= nil then
+					item:SetPurchaser(hero) 
+				end
+
+			end
+		end
+	end
+end
+
+
+
 -- Evaluate the state of the game
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -404,7 +423,7 @@ function Warchasers:OnThink()
 		Warchasers:CheckForDefeat()
 
 		GameRules:SetTimeOfDay( 0.8 )
-		
+		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -831,8 +850,8 @@ function Warchasers:OnItemPickedUp( event )
 	local item_handle = EntIndexToHScript(event.ItemEntityIndex)
 	local picker_handle = EntIndexToHScript(event.HeroEntityIndex) 
 	item_handle:SetPurchaser(picker_handle)
-
 end
+
 
 
 
