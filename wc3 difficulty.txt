@@ -1,0 +1,35 @@
+warcraft 3 difficulty findings
+
+creep aggro is way more aggresive once they engage.
+much more naixes, less collision/unit size but try to block you and aggro. 
+-I actually died near the first ziggurat (slow poison prevents you from running)
+spawn weavers has ~8 weavers melee, which spawn 240 hp spiderlings (10-11 damage). I died here again (enabled god cheat)
+add more boars
+healing ward heals 30 HP per second
+level 6 and 1450 HP when I use the 2nd key
+hell has many imps more (low collision), doom guards do chaos damage. 
+-I had to use 1 ank and almost die again
+2nd miniboss does pure damage, all trolls focus the player. HP got dangerously low.
+-After the 1st teleport my stats are 1500HP, 68 damage 7 armor ( I skipped some tomes, but Manual of health might have less drop % )
+add more small sludges, more burning archers, fireblast spell on red lizard (high range, high aggro!)
+tunnelers follow forever, high aggro
+2nd house spawns burning archers, not treants, aggro seems to be shared in all the area
+bash does extra damage, 3 kobolds + salamander pack the crap out of me trying to kill the kobold spawner. 1625 HP and 9 armor
+add more spiders
+-took a +12 claws in the secret area, I'm lvl 10 now with 1950 hP ~100dmg and 8 armor
+frost area 2 wendigos engage me at the same time, with 4 frost archers on the back (not particullary hard but)
+red drake stats 950 hp 36-47 dmg 2 armor
+mid sludges engage way earlier
+-game is easy for now
+Tank area has good similarities but its impossible to solo without pausing to fully heal, had to enable whosyourdaddy
+-add more enemy tanks and some green lizards
+Last area
+add way more fellhounds, less size less collision. Chaos damage, took 3/4 of my 2.2k HP very fast
+big sludges cast frenzy on the skeleton
+shadowDancer near harpy nest have 500hp, ~25dmg, many of them
+furbolgs, satyrs, soul smashers, infernals have chaos damage, but not particullary dangerous at this point
+last satyrs just drop 1 tome
+last pack almost kicked my ass, stuns+magic/pure damage and aggro forever, almost die
+necromancers do magic damage
+2 infernals alone were somewhat a challenge to my 2.3k HP, 110 damage, 65% lifesteal Razor
+boss with satyr spawns was relatively easy at the end
