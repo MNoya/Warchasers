@@ -4,11 +4,14 @@
 
 3). Nerf healing ward. Or make it high priority.
 
-4). Balance AoE nukes over single target.
+4). Balance AoE nukes over single target. Make AoE nukes deal more AoE damage but less single targeted. Vice versa for single targeted.
 
 5). Make cloack of shadows less useless.
 
 6). Balance out ultimate. Currently too long cooldown to be useful.
+Buff Tranquility from flat heal to percentage.
+
+7). Nerf amounts of tomes droped.
 
 
 
