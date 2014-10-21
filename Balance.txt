@@ -17,6 +17,51 @@ Buff Tranquility from flat heal to percentage.
 
 
 
+Version 0.03
+
+Heroes:
+Optimus Primo: Base movespeed from 360 to 340.
+	Shockwave: Radius decreased from 250 to 175
+	Thunder Clap: Mana cost increased from 90 to 120. Cooldown from 6 to 12. Radius from 250/300/350 to 350
+
+Snake Eyes:
+	Fire Storm: now an ultimate. (equals level 3 fire storm). Cooldown increased from 8 seconds to 20
+	Fixed Fire Storm toolip displaying wrong number of waves and burn damage.
+
+Blade Berserker:
+	Immolation: manacost per second reduced from 7 to 5
+	Base Attack Time reduced from 1.77 to 1.55
+
+Mumrah:
+	Frost Nova: Cooldown increased from 8 seconds to 12. AoE damage rescaled from 50/100/150 to 80/100/120
+	Sleep: Manacost reduced from 50 to 40
+
+Assassin:
+	Base attribute changed from STR to AGI.
+	INT gain reduced from 2.7 to 1.5
+	AGI gain increased from 1.5 to 2.4
+	Base AGI increased from 18 to 20
+	Base damage increased from 2-10 to 6-12
+	Storm Bolt: damage increased from 100/225/350 to 175/275/375.
+
+Megatron:
+	Tranquility: Changed from flat 20 to 6% heal.
+
+Skeletorus:
+	Chain Lightning: Damage loss reduced from 7% to 4%. Initial damage reduced from 85/125/180 to 90/110/130. Bounce amount increased from 4/6/8 to 5/10/15
+
+Creeps:
+
+Reincarnating Titan: damage increased from 14-15 to 60-65. Health increased from 600 to 2000
+
+Items:
+
+Healing Ward: heal changed from 5% of max health to 20 flat.
+Tomes level 1 drop chance reduced from 25% to 17%
+Health Tome: reduced bonus HP from 50 to 30
+
+
+
 Version 0.02
 
 Heroes:

@@ -85,10 +85,10 @@ function HealthTomeUsed( event )
     --item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
     if picker:HasModifier("tome_health_modifier") == false then
         tome:ApplyDataDrivenModifier( picker, picker, "tome_health_modifier", nil)
-        picker:SetModifierStackCount("tome_health_modifier", picker, 50)
+        picker:SetModifierStackCount("tome_health_modifier", picker, 30)
         picker.HealthTomesStack = 0
     else
-        picker:SetModifierStackCount("tome_health_modifier", picker, (picker:GetModifierStackCount("tome_health_modifier", picker) + 50))
+        picker:SetModifierStackCount("tome_health_modifier", picker, (picker:GetModifierStackCount("tome_health_modifier", picker) + 30))
     end
     --print(event.caster:GetModifierStackCount("tome_health_modifier", nil))
 end

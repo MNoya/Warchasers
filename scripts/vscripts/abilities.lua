@@ -1,7 +1,15 @@
 print("Abilities are loading")
 
+function warchasers_tranquility_heal( event )
+	local heal_percent = (event.ability:GetLevelSpecialValueFor("heal_percent", (event.ability:GetLevel() - 1)) * 0.01 )
+	for key, unit in pairs(event.target_entities)do
+		unit:Heal( unit:GetMaxHealth() * heal_percent, event.caster) 
+	end
+end
+
+
 function warchasers_tb_miniboss_animate_dead_killer( event )
-	event.target:Kill(event.abilty, event.caster)
+	event.target:Kill(event.abilty, event.target)
 end
 
 function warchasers_tb_miniboss_animate_dead( event )
@@ -38,7 +46,7 @@ function firestorm_cast( event )
 	local dummy = CreateUnitByName("dummy_unit", point, false, event.caster, event.caster, event.caster:GetTeam())
 	dummy:AddAbility("abyssal_underlord_firestorm")
 	local ability = dummy:FindAbilityByName("abyssal_underlord_firestorm")
-	ability:SetLevel(event.ability:GetLevel())
+	ability:SetLevel(3)
 	print(ability:GetLevel().. " = " .. event.ability:GetLevel())
 	dummy:CastAbilityOnPosition(point, ability, event.caster:GetPlayerOwnerID())
 	
@@ -123,8 +131,9 @@ end
 
 
 function warchasers_blade_berserker_immolation_function( event )
-	if event.caster:GetMana() >= 7 then
-		event.caster:SpendMana( 7, event.ability)
+	local manacost_per_second = event.ability:GetLevelSpecialValueFor("mana_cost_per_second", (event.ability:GetLevel() - 1))
+	if event.caster:GetMana() >= manacost_per_second then
+		event.caster:SpendMana( manacost_per_second, event.ability)
 		for key, unit in pairs(event.target_entities) do
 			ApplyDamage({
 						victim = unit,

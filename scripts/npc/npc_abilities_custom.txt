@@ -625,7 +625,7 @@
 		{
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -650,7 +650,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -675,7 +675,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -700,7 +700,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -740,7 +740,7 @@
 		{
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -765,7 +765,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -790,7 +790,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -815,7 +815,7 @@
 
 			"Random"
 			{
-				"Chance" "25"
+				"Chance" "17"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -4663,7 +4663,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_cost_per_second"	"7"
+				"mana_cost_per_second"	"5"
 			}
 		}
 		
@@ -5085,6 +5085,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"duration" "30"
 			}
+			"02"
+				{
+				"var_type"	"FIELD_INTEGER"
+				"heal_percent"	"6"
+				}
 		}		
 
 		"OnSpellStart"
@@ -5133,9 +5138,10 @@
 				"ThinkInterval" "1"
 				"OnIntervalThink"
 				{
-					"Heal"
+					"RunScript"
 					{
-						"HealAmount" "20"
+						"ScriptFile"	"abilities.lua"
+						"Function"	"warchasers_tranquility_heal"
 						"Target"
 						{
 							"Center" "CASTER"
@@ -5939,17 +5945,18 @@
 	"warchasers_snake_firestorm"
 	{
 	
-		"MaxLevel"	"3"
+		"MaxLevel"	"1"
 		"BaseClass" "ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 		"drow_firestorm"	
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.6"		
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"85 85 85"
 		"AOERadius"     "%radius"
 
@@ -5983,7 +5990,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"wave_damage"					"25 40 55"
+				"wave_damage"					"35"
 			}
 			"05"
 			{
@@ -5993,7 +6000,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"burn_damage"					"5 10 15"
+				"burn_damage"					"15"
 			}
 			"07"
 			{
@@ -6453,7 +6460,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"6"
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"40"
 		"AbilityTextureName"			"sd_sleep"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
@@ -6753,7 +6760,7 @@
 				"IsHidden"	"0"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"%health_regen_amount"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen_amount"
 				}
 			}
 		}
@@ -6770,7 +6777,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen_amount"		"5"
+				"health_regen_amount"		"20"
 			}
 		}
 	}

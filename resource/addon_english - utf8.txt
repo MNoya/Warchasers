@@ -332,8 +332,9 @@
 		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator_Description"	"This unit is under the effects of Thorns Aura; melee units that attack it will take damage."
 
 		"DOTA_Tooltip_ability_warchasers_megatron_tranquility"					"Tranquility"
-		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_Description"		"Causes rains of healing energy to pour down in a large area, healing friendly allied units for 20 hit points per second."
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_Description"		"Causes rains of healing energy to pour down in a large area, healing friendly allied units for a percent of max health per second."
 		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_heal_percent"	"HEALING PERCENT:"
 		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier"      "Tranquility"
 		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier_Description" "Healing"		
 		
@@ -408,7 +409,7 @@
 		"DOTA_Tooltip_warchasers_endurance_aura_bonus_Description" "This unit is under the effects of Endurance Aura; it has increased movement and attack speed."
 	
 		"DOTA_Tooltip_ability_ward_aura_health_regen"					"Healing Ward"
-		"DOTA_Tooltip_ability_ward_aura_health_regen_Description"		"Heals nearby friendly units"
+		"DOTA_Tooltip_ability_ward_aura_health_regen_Description"		"Heals nearby friendly units for 20 hp per second"
 		
 		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura"					"Brilliance Aura"
 		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura_Description"		"Gives additional mana regeneration to nearby friendly units."

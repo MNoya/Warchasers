@@ -38,7 +38,7 @@
 			"01"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"initial_damage"		"85 125 180"
+				"initial_damage"		"90 110 130"
 				}
 			"02"
 				{
@@ -53,12 +53,12 @@
 			"04"
 				{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent_loss"	"7.0"
+				"damage_percent_loss"	"4.0"
 				}
 			"05"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"max_targets"			"4 6 8"
+				"max_targets"			"5 10 15"
 				}
 			}
 		}
@@ -99,7 +99,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_width"				"250"
+				"shock_width"				"175"
 			}
 			"03"
 			{
@@ -143,8 +143,8 @@
 	"brewmaster_thunder_clap"
 	{
 		"MaxLevel"					"3"
-		"AbilityCooldown"				"6"	
-		"AbilityManaCost"				"90 90 90"	
+		"AbilityCooldown"				"12"	
+		"AbilityManaCost"				"120"	
 		"AbilityTextureName"			"timber_thunderclap"
 
 		"precache"
@@ -159,7 +159,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"250 300 350"
+				"radius"					"350"
 			}
 			"02"
 			{
@@ -540,7 +540,7 @@
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"600"
 		"AbilityCooldown"				"9.0"
-		"AbilityDamage"					"100 225 350"
+		"AbilityDamage"					"175 275 375"
 		"AbilityManaCost"				"75"
 		"AbilityTextureName"			"templar_storm_bolt"
 
