@@ -1,5 +1,6 @@
 Balance Changes 0.04
 
+- Map
 Frost area: 2 wendigos engage at the same time, with 4 frost archers on the back
 Tank area: added 2 more enemy tanks, 1 lizard, 2 skeleton warriors
 Pedestal area: added more ghouls and weavers
@@ -16,7 +17,7 @@ Final Area: Added couple of doom guards
 			Changed harpy spawner to spawn medium_satyr_range
 Final Boss area: Destroyed Bridge on engage
 
-
+- Creeps
 Changed aggro from creep camp to follow-forever for these units:
 
 	Kobold Tunneler
@@ -34,5 +35,7 @@ Fellhound less size (test collision)
 Shadow Dancers drop less tomes now
 Hellspiders now have 50% magic resistance
 
+- Skills
 Doubled Bash and permanent immolation damage
+Reduced Hoof Stomp damage from 250 to 100
 
