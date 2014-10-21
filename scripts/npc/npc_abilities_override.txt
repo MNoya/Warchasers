@@ -763,7 +763,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
+				"bonus_damage"			"50"
 			}
 			"03"
 			{
@@ -792,7 +792,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"10"
+				"damage"					"20"
 			}
 			"02"
 			{
@@ -916,6 +916,39 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"0"
+			}
+		}
+	}
+
+	"centaur_hoof_stomp"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"13.0 13.0 13.0 13.0"
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"315"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_duration"					"2.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stomp_damage"					"100"
 			}
 		}
 	}

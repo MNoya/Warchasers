@@ -482,7 +482,7 @@ end
 function SpawnTreants1(trigger)
         local building = Entities:FindByName(nil, "treant_farm1")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_treant")
+                local ability = building:FindAbilityByName("spawn_burning_archer")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1) 
@@ -653,7 +653,7 @@ end
 function SpawnMediumSatyrs(trigger)
         local building = Entities:FindByName(nil, "harpy_nest")
         if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_satyr")
+                local ability = building:FindAbilityByName("npc_medium_satyr_range")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1) 
@@ -667,6 +667,11 @@ function SpawnLanternWeavers(event)
         local position = Vector(-2435,861,129)
         EmitGlobalSound("DOTAMusic_Stinger.005")
         local rangedweaver = CreateUnitByName("npc_nerubian_webspinner", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local rangedweaver = CreateUnitByName("npc_nerubian_webspinner", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+        local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local meleeweaver1 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         local meleeweaver2 = CreateUnitByName("npc_nerubian_melee", position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
         --[[Returns:handle
@@ -919,6 +924,8 @@ function SpawnSappers(event)
                 position = Vector(7418,6661,640)
                 local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper1:SetForwardVector(rotation)
+                local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper1:SetForwardVector(rotation)
         end
 
 
@@ -927,10 +934,14 @@ function SpawnSappers(event)
                 position = Vector(7397, 6554, 640)
                 local sapper2 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper2:SetForwardVector(rotation)
+                local sapper2 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper2:SetForwardVector(rotation)
         end
 
         if GameRules.PLAYER_COUNT >= 3 then
                 position = Vector(7397, 6762, 640)
+                local sapper3 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper3:SetForwardVector(rotation)
                 local sapper3 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper3:SetForwardVector(rotation)
         end
@@ -939,13 +950,18 @@ function SpawnSappers(event)
                 position = Vector(7535, 6790, 640)
                 local sapper4 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper4:SetForwardVector(rotation)
+                local sapper4 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper4:SetForwardVector(rotation)
         end
 
         if GameRules.PLAYER_COUNT >= 5 then
                 position = Vector(7535, 6500, 640)
                 local sapper5 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
                 sapper5:SetForwardVector(rotation)
+                local sapper5 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                sapper5:SetForwardVector(rotation)
         end
+
 
 
 end
