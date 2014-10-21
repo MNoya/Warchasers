@@ -240,15 +240,15 @@ end
 
 
 function warchasers_assassin_entangle_definator( event )
-	if event.target:IsHero() == true then
-		event.target:RemoveModifierByName("warchasers_assassin_entangle_creep_debuff")
+	if event.target:IsHero() == true or event.target:IsAncient() == true then
+		event.ability:ApplyDataDrivenModifier(event.caster, event.target, "warchasers_assassin_entangle_hero_debuff", nil)
 	else
-		event.target:RemoveModifierByName("warchasers_assassin_entangle_hero_debuff")
+		event.ability:ApplyDataDrivenModifier(event.caster, event.target, "warchasers_assassin_entangle_creep_debuff", nil)
 	end
 end
 
 function warchasers_muhrah_sleep_definator( event )
-	if event.target:IsHero() == true then
+	if event.target:IsHero() == true or event.target:IsAncient() == true then
 		event.target:RemoveModifierByName("warchasers_muhrah_sleep_creep_debuff")
 	else
 		event.target:RemoveModifierByName("warchasers_muhrah_sleep_hero_debuff")

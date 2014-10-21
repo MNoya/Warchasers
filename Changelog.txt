@@ -1,3 +1,22 @@
+
+
+Version 0.041
+
+Heroes:
+	Assassin:
+		Entangle:
+			Recoded.
+			Ancient units now use hero duration.
+			Hero duration increased from 3/4/5 to 3/5/7
+			Damage per second increased from 15/15/25 to 15/20/25
+	Mumrah:
+		Sleep:
+			Ancients now use hero duration.
+
+
+
+
+
 Balance Changes 0.04
 
 - Map
