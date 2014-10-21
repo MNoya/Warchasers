@@ -5564,7 +5564,7 @@
 			"01"
 				{
 				"var_type"	"FIELD_FLOAT"
-				"damage_per_second"	"15 15 25"
+				"damage_per_second"	"15 20 25"
 				}
 			"02"
 				{
@@ -5581,16 +5581,6 @@
 
 		"OnSpellStart"
 			{
-			"ApplyModifier"
-				{
-				"Target"	"TARGET"
-				"ModifierName"	"warchasers_assassin_entangle_hero_debuff"
-				}
-			"ApplyModifier"
-				{
-				"Target"	"TARGET"
-				"ModifierName"	"warchasers_assassin_entangle_creep_debuff"
-				}
 			"RunScript"
 				{
 				"ScriptFile"	"abilities.lua"
