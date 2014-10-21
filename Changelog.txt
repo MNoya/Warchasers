@@ -1,17 +1,43 @@
-1). Increase difficulty of later stages of game. Too easy currently.
+Balance Changes 0.04
 
-2). Rebalance healing heroes other non-healing. Maybe add more poitions drops.
+- Map
+Frost area: 2 wendigos engage at the same time, with 4 frost archers on the back
+Tank area: added 2 more enemy tanks, 1 lizard, 2 skeleton warriors
+Pedestal area: added more ghouls and weavers
+			   weaver spawn on 1st pedestal kill increased
+Water area: added boars+ghosts on the entrance
+Pre-spiderhall area: added 1 more red lizard, added more kobolds, burning archers
+					 changed 2nd house to spawn burning archers instead of treants
+Broodmother chamber: made water elementals able to get out from their water prison
+Bridge area: sapper spawn doubled
+Circle areas: Increased the creep density
+Final Area: Added couple of doom guards
+			Added more Fellhounds and made area bigger, 
+			Added more Big Sludges
+			Changed harpy spawner to spawn medium_satyr_range
+Final Boss area: Destroyed Bridge on engage
 
-3). Nerf healing ward. Or make it high priority.
+- Creeps
+Changed aggro from creep camp to follow-forever for these units:
 
-4). Balance AoE nukes over single target. Make AoE nukes deal more AoE damage but less single targeted. Vice versa for single targeted.
+	Kobold Tunneler
+	Ghoul
+	Frost Archers
+	Dragons
+	Mud Golems
+	Skeleton Warriors
 
-5). Make cloack of shadows less useless.
+Lizards +200 Acq Range
+Mid Sludges +200 Acq Range
 
-6). Balance out ultimate. Currently too long cooldown to be useful.
-Buff Tranquility from flat heal to percentage.
+Red Drake stats nerfed (950 hp 36-47 dmg 2 armor)
+Fellhound less size (test collision)
+Shadow Dancers drop less tomes now
+Hellspiders now have 50% magic resistance
 
-7). Nerf amounts of tomes droped.
+- Skills
+Doubled Bash and permanent immolation damage
+Reduced Hoof Stomp damage from 250 to 100
 
 
 
@@ -98,4 +124,3 @@ Gnoll Poacher: damage reduced from 13-15 to 7-9
 
 
 Items:
-
