@@ -1,4 +1,5 @@
-
+Version 0.043
+	Fixed attack on potions crash then dropped by neutrals
 
 Version 0.042
 	Attacking items will now activate them (in case of potions or tomes) or sell them.
@@ -11,6 +12,7 @@ Heroes:
 		Entangle:
 			Recoded.
 			Ancient units now use hero duration.
+			Fixed hero modifier not disarming.
 			Hero duration increased from 3/4/5 to 3/5/7
 			Damage per second increased from 15/15/25 to 15/20/25
 	Mumrah:
