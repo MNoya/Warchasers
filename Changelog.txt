@@ -1,5 +1,9 @@
 
 
+Version 0.042
+	Attacking items will now activate them (in case of potions or tomes) or sell them.
+
+
 Version 0.041
 
 Heroes:
