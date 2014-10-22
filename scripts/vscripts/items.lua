@@ -14,14 +14,17 @@ function items_attack( event )
     if event.target.GetContainedItem ~= nil then
         local item = event.target:GetContainedItem()
         event.target:RemoveSelf()
+        item:SetPurchaser(event.attacker)
         local type_of_item = consumable_check(item:GetName() )
         if type_of_item == "potion" then
-            event.attacker:CastAbilityImmediately(item, event.attacker:GetPlayerOwnerID())
+            event.attacker:AddItem(item)
+            event.attacker:CastAbilityNoTarget(item, event.attacker:GetPlayerOwnerID())
         elseif type_of_item == "tome" then
             event.attacker:AddItem(item)
         elseif type_of_item == "for_sale" then
             event.attacker:ModifyGold((item:GetCost() * 0.5), false, 0) 
             event.attacker:EmitSound("General.Sell")
+            item:RemoveSelf()
         end
     end
 end
