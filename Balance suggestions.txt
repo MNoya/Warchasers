@@ -1,0 +1,11 @@
+Balance suggestions:
+- Razor D&D non channelling
+- Creep aggro change (based on leash distance instead of time)
+- Reduce Unit Limit on Tunneler & Troll spawns
+- Remove 30AS from solobuff
+- Progressively Harder buildings
+- Tome drop 25% 
+- Drop more potions specially on the first areas
+- Add Some sort of fountain to make the "wait for regen" mechanic less tedious
+- Rework Cloak of Shadows
+- Increase Burning Arrow damage
