@@ -62,6 +62,7 @@
 				"disappear_time" "2147483647" //FLOAT_MAX
 			}
 		}
+
 	}
 
 
@@ -4055,6 +4056,14 @@
 	                    "EffectLifeDurationScale" "1"
 	                }
            		}
+           		"OnAttackStart"
+           			{
+           			"RunScript"
+           				{
+           				"ScriptFile"	"scripts/vscripts/items.lua"
+           				"Function"	"items_attack"
+           				}
+           			}
 			}
 
 			"modifier_warchasers_guldan_powers"

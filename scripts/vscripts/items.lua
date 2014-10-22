@@ -1,3 +1,32 @@
+
+
+function consumable_check( item_name )
+    if string.find(item_name, "tome") ~= nil then
+        return "tome"
+    elseif string.find(item_name, "potion") ~= nil then
+        return "potion"
+    else
+        return "for_sale"
+    end
+end
+
+function items_attack( event )
+    if event.target.GetContainedItem ~= nil then
+        local item = event.target:GetContainedItem()
+        event.target:RemoveSelf()
+        local type_of_item = consumable_check(item:GetName() )
+        if type_of_item == "potion" then
+            event.attacker:CastAbilityImmediately(item, event.attacker:GetPlayerOwnerID())
+        elseif type_of_item == "tome" then
+            event.attacker:AddItem(item)
+        elseif type_of_item == "for_sale" then
+            event.attacker:ModifyGold((item:GetCost() * 0.5), false, 0) 
+            event.attacker:EmitSound("General.Sell")
+        end
+    end
+end
+
+
 function DropItemOnDeath(event) -- event is the information sent by the ability
     print( "DropItemOnDeath Called" )
     local killedUnit = EntIndexToHScript( event.caster_entindex ) -- EntIndexToHScript takes the event.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
