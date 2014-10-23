@@ -188,6 +188,8 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
+	PrecacheResource( "soundfile", "soundevents/blizzard_dont_sue_me.vsndevts", context )
+
 
 	--PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
 
@@ -467,6 +469,35 @@ function Warchasers:AnkhThink()
 	return 1
 end
 
+function Warchasers:SoundThink()
+
+	
+	local soundTrack = RandomInt(1, 6)
+	print("Playing soundtrack number " .. soundTrack)
+
+	if soundTrack == 1 then
+		EmitGlobalSound("valve_dota_001.music.ui_world_map")
+		soundTimer = 170
+	elseif soundTrack == 2 then
+		EmitGlobalSound("Warchasers.Human1")
+		soundTimer = 273
+	elseif soundTrack == 3 then
+		EmitGlobalSound("Warchasers.Human2")
+		soundTimer = 236
+	elseif soundTrack == 4 then
+		EmitGlobalSound("Warchasers.HumanX1")
+		soundTimer = 284
+	elseif soundTrack == 5 then
+		EmitGlobalSound("Warchasers.PowerOfTheHorde")
+		soundTimer = 281
+	elseif soundTrack == 6 then
+		mitGlobalSound("valve_dota_001.music.laning_03_layer_01")
+		soundTimer = 100
+	end
+	
+	return soundTimer
+end
+
 function Warchasers:CheckForDefeat()
 	
 	-- local bAllPlayersDead = true
@@ -545,7 +576,7 @@ function Warchasers:OnGameInProgress()
 	--Start at Night
 	GameRules:SetTimeOfDay( 0.8 )
 
-	--EmitGlobalSound("valve_dota_001.music.ui_startup")
+	GameRules:GetGameModeEntity():SetThink("SoundThink", self)
 
 end
 

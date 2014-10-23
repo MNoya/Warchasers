@@ -6,6 +6,7 @@ TO DO - PreRelease
 [~][Gameplay] Stats collection @ http://getdotastats.com/#d2mods__guide
 
 [~][Sound] Add Music track sets for all zones. Use TI4 sound track
+		   Add more soundtracks, make a new OnEveryonePicked or find a way to disable picking sound.
 
 [~][Map] Finish Wisp area or disable it. 
 [X][Map] Fix Burning Archer spawn, Satyr spawn, Stuck Ghouls
