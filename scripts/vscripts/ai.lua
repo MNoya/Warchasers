@@ -1,5 +1,33 @@
 print("AI is loading")
 
+
+
+function log_npc( event )
+	local index = event.entindex
+	local unit = EntIndexToHScript(index)
+	if Convars:GetBool("developer") == true then
+		print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
+	end
+
+	if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
+		if unit.initial_neutral_position == nil then
+			unit.initial_neutral_position = unit:GetAbsOrigin()
+		end
+		unit:SetContextThink("chase_distance_function", 
+			function ()
+			
+				if (unit.initial_neutral_position - unit:GetAbsOrigin()):Length2D() > 900 then
+					unit:MoveToPosition(unit.initial_neutral_position) 
+
+				end
+				return math.random(2,6)
+			end
+			, 5) 	
+	end
+end
+
+ListenToGameEvent( "npc_spawned", log_npc, nil )
+
 function physical_ehp( unit )
 	return unit:GetHealth() * ((0.06 * unit:GetPhysicalArmorValue()) / (1 + 0.06 * unit:GetPhysicalArmorValue()))
 end

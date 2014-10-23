@@ -3526,7 +3526,7 @@
 		"ModelScale"				"0.7"
 		"Level"						"1"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -3631,7 +3631,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"1"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -3736,7 +3736,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"1"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -3843,7 +3843,7 @@
 		"SoundSet"                  "Hero_Slark"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"2"
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -3934,7 +3934,7 @@
 		"SoundSet"                  "Hero_Slark"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
 		"Level"						"3"
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -4032,7 +4032,7 @@
 			"particle" 				"particles/neutral_fx/gnoll_base_attack.vpcf"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -4204,7 +4204,7 @@
 		"Level"                                         "3"
 		"ModelScale"                            "1"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		"precache"
 		{
@@ -4288,7 +4288,7 @@
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 		"Level"						"3"
 
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"precache"
 		{
@@ -4412,7 +4412,7 @@
 			"particle"	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 		}
 
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4550,7 +4550,7 @@
 			"model"	"models/items/broodmother/spiderling/spiderling_dlotus_red/spiderling_dlotus_red.vmdl"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4632,7 +4632,7 @@
 			"model"	"models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4716,7 +4716,7 @@
 			"model"	"models/heroes/morphling/morphling.vmdl"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -4817,7 +4817,7 @@
 			"model"	"models/heroes/morphling/morphling.vmdl"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -4918,7 +4918,7 @@
 			"particle"	"particles/base_attacks/ranged_badguy.vpcf"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -5029,7 +5029,7 @@
 			"model"	 "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
 		}
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 	    // Abilities
 		//----------------------------------------------------------------
@@ -5109,7 +5109,7 @@
 			"model"	 "models/heroes/life_stealer/life_stealer.vmdl"
 		}
 		
-		//"UseNeutralCreepBehavior" 	"1"
+		//"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -5210,7 +5210,7 @@
 		"IsAncient"					"1"
 		
 		"ConsideredHero"			"1"
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		"DisableResistance"			"75.0"
 		
@@ -5335,7 +5335,7 @@
 		"Level"                                         "1"
 		"ModelScale"                            "0.8"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		"precache"
 		{
@@ -5577,7 +5577,7 @@
 		"Level"                                         "2"
 		"ModelScale"                            "0.7"
 		
-		//"UseNeutralCreepBehavior" 	"1"
+		//"UseNeutralCreepBehavior" 	"0"
 		
 		"precache"
 		{
@@ -5820,7 +5820,7 @@
 		"ModelScale"				"0.8"
 		"Level"						"2"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -5918,7 +5918,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
 		"Level"						"3"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -6014,7 +6014,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
 		"Level"						"3"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -7496,7 +7496,7 @@
 		"Level"						"1"
 		"ModelScale" 				".9"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -7576,7 +7576,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1"
 		
-		//"UseNeutralCreepBehavior" 	"1"
+		//"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -8162,7 +8162,7 @@
 		"Level"						"1"
 		"ModelScale" 				".9"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -8326,7 +8326,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1.6"
 		
-		//"UseNeutralCreepBehavior" 	"1"
+		//"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -8407,7 +8407,7 @@
 		"ModelScale"				"0.8"
 		"Level"						"3"
 		
-		//"UseNeutralCreepBehavior" 	"1"
+		//"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -8879,7 +8879,7 @@
 		"Level"						"2"
 		"ModelScale" 				".8"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -9261,7 +9261,7 @@
 		"Level"						"3"
 		"ModelScale" 				"1.2"
 		
-		"UseNeutralCreepBehavior" 	"1"
+		"UseNeutralCreepBehavior" 	"0"
 
 		// Abilities
 		//----------------------------------------------------------------

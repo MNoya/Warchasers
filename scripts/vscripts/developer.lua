@@ -9,11 +9,7 @@ end
 
 
 
-function log_npc( event )
-	local index = event.entindex
-	local unit = EntIndexToHScript(index)
-	print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
-end
+
 
 function test_maxms_func(player)
 	local hero = player:GetAssignedHero() 
@@ -29,4 +25,4 @@ end
 Convars:RegisterCommand( "test_fly", function( not_needed) local cmdPlayer = Convars:GetCommandClient() test_fly_func(cmdPlayer) end, "Send hero flying for testing", FCVAR_DEVELOPMENTONLY )
 Convars:RegisterCommand( "test_maxms", function( not_needed) local cmdPlayer = Convars:GetCommandClient() test_maxms_func(cmdPlayer) end, "Set hero max ms for testing", FCVAR_DEVELOPMENTONLY )
 
-ListenToGameEvent( "npc_spawned", log_npc, nil )
+

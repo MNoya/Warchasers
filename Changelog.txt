@@ -1,3 +1,11 @@
+Version 0.044
+	Generalь:
+		Removed standart dota 2 neutral behavior from all creeps and gave them 900 chase range.
+
+	Items:
+		Cloak of Shadows:
+			Reworked: now is an instant cast like TA's Meld with 100 bonus damage. 50 mana and 24 cooldown.
+
 Version 0.043
 	Fixed attack on potions crash then dropped by neutrals
 

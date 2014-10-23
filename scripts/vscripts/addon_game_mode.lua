@@ -695,16 +695,20 @@ function Warchasers:OnAllPlayersLoaded()
 		local boss_rotation = Vector(-7872,-5504,265)
 		local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
 		boss1:SetForwardVector(boss_rotation)
+		boss1.initial_neutral_position = boss_location
 
 		local boss_location = Vector(-1408,-7560,137)
 		local boss_rotation = Vector(-1408,6540,256)
 		local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
 		boss2:SetForwardVector(boss_rotation)
+		boss2.initial_neutral_position = boss_location
+
 
 		local boss_location = Vector(2038, -7212, 257)
 		local boss_rotation = Vector(7662, -7152, 113)
 		local final_boss = CreateUnitByName("npc_boss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
 		final_boss:SetForwardVector(boss_rotation)
+		final_boss.initial_neutral_position = boss_location
 
 
 end
