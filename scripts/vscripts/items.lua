@@ -17,7 +17,6 @@ function cloak_of_shadows_cast( event )
 
 end
 
-
 function consumable_check( item_name )
     if string.find(item_name, "tome") ~= nil then
         return "tome"
@@ -40,8 +39,13 @@ function items_attack( event )
         elseif type_of_item == "tome" then
             event.attacker:AddItem(item)
         elseif type_of_item == "for_sale" then
-            event.attacker:ModifyGold((item:GetCost() * 0.5), false, 0) 
+            local itemSellPrice = (item:GetCost() * 0.5)
+            event.attacker:ModifyGold(itemSellPrice, false, 0) 
             event.attacker:EmitSound("General.Sell")
+            
+            local goldPopUp = require("popups")
+            PopupGoldGain(event.attacker, itemSellPrice)
+
             item:RemoveSelf()
         end
     end
@@ -141,6 +145,9 @@ function HealthTomeUsed( event )
         picker:SetModifierStackCount("tome_health_modifier", picker, (picker:GetModifierStackCount("tome_health_modifier", picker) + 30))
     end
     --print(event.caster:GetModifierStackCount("tome_health_modifier", nil))
+
+    local TomePopUp = require("popups")
+    PopupHealthTome(picker, 30)
 end
 
 function StrengthTomeUsed( event )
@@ -158,6 +165,8 @@ function StrengthTomeUsed( event )
     --SetModifierStackCount(string modifierName, handle b, int modifierCount) 
     --GetModifierStackCount(string modifierName, handle b) 
     
+    local TomePopUp = require("popups")
+    PopupStrTome(picker, statBonus)
 end
 
 function AgilityTomeUsed( event )
@@ -172,6 +181,9 @@ function AgilityTomeUsed( event )
     else
         picker:SetModifierStackCount("tome_agility_modifier", picker, (picker:GetModifierStackCount("tome_agility_modifier", picker) + statBonus))
     end
+
+    local TomePopUp = require("popups")
+    PopupAgiTome(picker, statBonus)
 end
 
 function IntellectTomeUsed( event )
@@ -186,14 +198,21 @@ function IntellectTomeUsed( event )
     else
         picker:SetModifierStackCount("tome_intelect_modifier", picker, (picker:GetModifierStackCount("tome_intelect_modifier", picker) + statBonus))
     end
+
+    local TomePopUp = require("popups")
+    PopupIntTome(picker, statBonus)
 end
 
 function Heal(event)
     event.caster:GetPlayerOwner():GetAssignedHero():Heal(event.heal_amount, event.caster)
+    local HealingPopUp = require("popups")
+    PopupHealing(event.caster, event.heal_amount)
 end
 
 function ReplenishMana(event)
     event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
+    local ManaPopUp = require("popups")
+    PopupMana(event.caster, event.mana_amount)
 end
 
 function ReplenishManaAOE(event)

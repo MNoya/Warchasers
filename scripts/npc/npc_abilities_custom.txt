@@ -1993,7 +1993,8 @@
 						}
 						
 						"ItemName"					"item_restoration_scroll"
-						"ItemCount"					"1" 
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
@@ -2151,7 +2152,8 @@
 						}
 						
 						"ItemName"					"item_restoration_scroll"
-						"ItemCount"					"1" 
+						"ItemCount"					"1"
+						"ItemChargeCount"	        "1"						
 						"SpawnRadius"		        "50"
 						"LaunchHeight"		        "100"
 						"LaunchDistance"	        "?50 100"
