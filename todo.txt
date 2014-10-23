@@ -2,8 +2,8 @@ TO DO - PreRelease
 
 [ ][Test 0.045] Single Player run
 
-[ ][Gameplay] Gold popups
-[ ][Gameplay] Stats collection
+[X][Gameplay] Gold popups
+[~][Gameplay] Stats collection @ http://getdotastats.com/#d2mods__guide
 
 [~][Sound] Add Music track sets for all zones. Use TI4 sound track
 
