@@ -761,14 +761,14 @@
 		"Model"	"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
-		"BaseClass" 				"item_shadow_amulet"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-  		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO" //need autoself target
+		"BaseClass" 				"item_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_cloak_of_shadows"
 		"SideShop" "0"
 		"SecretShop" "1"
-		"AbilityCastPoint"				"1"
+
+		"AbilityCooldown"               "24"
+		"AbilityManaCost"               "50"
 
 		"AbilitySpecial"
 		{
@@ -783,6 +783,14 @@
 				"bonus_attack_speed" "0"
 			}
 		}
+		"OnSpellStart"
+			{
+			"RunScript"
+				{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"			"cloak_of_shadows_cast"
+				}
+			}
 	}
 
     "item_cloak_of_flames" //rewrite datadriven for EffectAttachType

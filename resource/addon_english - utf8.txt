@@ -683,7 +683,7 @@
 		
 		//Common Drops
         "DOTA_Tooltip_ability_item_cloak_of_shadows"							"Cloak of Shadows"
-		"DOTA_Tooltip_ability_item_cloak_of_shadows_Description"				"Provides the Hero with invisibility at night when worn. An invisible Hero is untargetable by the enemy unless detected. If the Hero moves, attacks, uses an ability, or casts a spell, the invisibility effect is lost."
+		"DOTA_Tooltip_ability_item_cloak_of_shadows_Description"				"Provides the Hero with invisibility when activated. An invisible Hero will deal bonus 100 damage with -4 armor debuff on first attack from invisibility. If the Hero moves, attacks, uses an ability, or casts a spell, the invisibility effect is lost."
         "DOTA_Tooltip_ability_item_mantle_3"									"Mantle of Intellect +3"
         "DOTA_Tooltip_ability_item_mantle_3_Description"						"Increases the Intelligence of the Hero by 3 when worn."
         "DOTA_Tooltip_ability_item_slippers_3"									"Slippers of Agility +3"	

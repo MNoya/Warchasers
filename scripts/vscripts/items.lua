@@ -1,4 +1,22 @@
 
+function cloak_of_shadows_cast( event )
+    event.caster:AddAbility("templar_assassin_meld")
+
+    event.caster:CastAbilityImmediately(event.caster:FindAbilityByName("templar_assassin_meld"), event.caster:GetPlayerOwnerID())
+    event.caster:Stop()
+    event.caster:SetContextThink("meld_removal", function() 
+                                                if event.caster:HasModifier("modifier_templar_assassin_meld") == false then
+                                                    event.caster:RemoveAbility("templar_assassin_meld")
+                                                    return nil
+                                                else
+                                                    return 0.5
+                                                end 
+                                                end,
+                                                0)
+    
+
+end
+
 
 function consumable_check( item_name )
     if string.find(item_name, "tome") ~= nil then
