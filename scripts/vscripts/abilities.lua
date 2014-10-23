@@ -46,7 +46,7 @@ function firestorm_cast( event )
 	local dummy = CreateUnitByName("dummy_unit", point, false, event.caster, event.caster, event.caster:GetTeam())
 	dummy:AddAbility("abyssal_underlord_firestorm")
 	local ability = dummy:FindAbilityByName("abyssal_underlord_firestorm")
-	ability:SetLevel(3)
+	ability:SetLevel(1)
 	print(ability:GetLevel().. " = " .. event.ability:GetLevel())
 	dummy:CastAbilityOnPosition(point, ability, event.caster:GetPlayerOwnerID())
 	

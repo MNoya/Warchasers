@@ -1,8 +1,6 @@
 TO DO - PreRelease
 
-[ ][Test 0.043] Single Player run
-
-[!][Critical] Check bug when adding extra ability to npc_units_custom
+[ ][Test 0.045] Single Player run
 
 [ ][Gameplay] Gold popups
 [ ][Gameplay] Stats collection
@@ -10,13 +8,13 @@ TO DO - PreRelease
 [~][Sound] Add Music track sets for all zones. Use TI4 sound track
 
 [~][Map] Finish Wisp area or disable it. 
-[ ][Map] Fix Burning Archer spawn, Stuck Ghouls
+[X][Map] Fix Burning Archer spawn, Satyr spawn, Stuck Ghouls
 
 [~][Text] Improve popup or remove it
 [~][Text] Credits, Screenshots, Workshop Text
 
 [ ][Test] Fix double spawners
-[~][Test] Review drop_levelX to add missing/new items
+[X][Test] Review drop_levelX to add missing/new items
 
 
 

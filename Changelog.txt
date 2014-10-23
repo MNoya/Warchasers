@@ -1,3 +1,19 @@
+Version 0.045
+	General:
+		Made later area buildings harder to kill in the later areas
+		Reverted tome drop chance back to 25%
+		Added 4 potion drops to the first area
+		Added Book of the Dead and Scroll of Restoration to the drop table
+	
+	Heroes:
+		Removed channelling from Razor Death and Decay
+	
+	Creeps:
+		Reduced Unit Limit on Tunneller & Troll spawns (from 20 & 40 to 6 & 20 respectively)
+		Big Murloc HP from 160 to 300
+		Medium Murloc HP from 100 to 200
+		
+
 Version 0.044
 	Generalь:
 		Removed standart dota 2 neutral behavior from all creeps and gave them 900 chase range.

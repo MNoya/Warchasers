@@ -625,7 +625,7 @@
 		{
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -650,7 +650,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -675,7 +675,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -700,7 +700,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -740,7 +740,7 @@
 		{
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -765,7 +765,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -790,7 +790,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -815,7 +815,7 @@
 
 			"Random"
 			{
-				"Chance" "17"
+				"Chance" "25"
 				"OnSuccess"
 				{
 					"CreateItem"
@@ -1966,7 +1966,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet (added Tomes+2 Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet, tier 2 Tomes (added Restoration Scroll)
 	//=================================================================================================================
 	"drop_level5"
 	{
@@ -1978,6 +1978,30 @@
 
 		"OnOwnerDied"
 		{
+			
+			"Random" //Restoration Scroll
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_restoration_scroll"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			
 			"Random" //LinkensAmulet
 			{
 				"Chance" "20"
@@ -2100,9 +2124,9 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 5 Item = LinkensAmulet (added Tomes+2 Tome +1All)
+	// Drop Level 5 Item = LinkensAmulet, tier 2 Tomes (added Restoration Scroll)
 	//=================================================================================================================
-	"drop_extra_level5"
+	"drop_level5"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2112,6 +2136,30 @@
 
 		"OnOwnerDied"
 		{
+			
+			"Random" //Restoration Scroll
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_restoration_scroll"
+						"ItemCount"					"1" 
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			
 			"Random" //LinkensAmulet
 			{
 				"Chance" "20"
@@ -2149,8 +2197,10 @@
 						
 						"ItemName"					"item_tome_of_strength_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -2171,8 +2221,10 @@
 						
 						"ItemName"					"item_tome_of_agility_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -2193,8 +2245,10 @@
 						
 						"ItemName"					"item_tome_of_intellect_2"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -2215,8 +2269,10 @@
 						
 						"ItemName"					"item_tome_of_knowledge"
 						"ItemCount"					"1" 
-						"SpawnRadius"		        "50"
-						"LaunchHeight"		        "100"
+						"SpawnRadius"		        "1"
+						"ItemChargeCount"	        "1"
+						"AutoUse"					"0"
+						"LaunchHeight"		        "80"
 						"LaunchDistance"	        "?50 100"
 						"LaunchDuration"	        "0.5"
 					}
@@ -2226,7 +2282,7 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (add Book of the Dead 20s CycloneWand)
+	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (added Book of the Dead)
 	//=================================================================================================================
 	"drop_level6"
 	{
@@ -2238,6 +2294,30 @@
 
 		"OnOwnerDied"
 		{
+			"Random" //Book of the Dead
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_book_of_the_dead"
+						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			
 			"Random" //Ankh
 			{
 				"Chance" "10"
@@ -2362,9 +2442,9 @@
 	}
 
 	//=================================================================================================================
-	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (add Book of the Dead 20s CycloneWand)
+	// Drop Level 6 Item = Anhk Healing Wards Summon Drake Hellhound Golem (added Book of the Dead)
 	//=================================================================================================================
-	"drop_extra_level6"
+	"drop_level6"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2374,6 +2454,30 @@
 
 		"OnOwnerDied"
 		{
+			"Random" //Book of the Dead
+			{
+				"Chance" "20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						
+						"ItemName"					"item_book_of_the_dead"
+						"ItemCount"					"1" 
+						"ItemChargeCount"	        "1"
+						"SpawnRadius"		        "50"
+						"LaunchHeight"		        "100"
+						"LaunchDistance"	        "?50 100"
+						"LaunchDuration"	        "0.5"
+					}
+				}
+			}
+			
 			"Random" //Ankh
 			{
 				"Chance" "20"
@@ -5947,7 +6051,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.6"		
 		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"85 85 85"
+		"AbilityManaCost"				"85"
 		"AOERadius"     "%radius"
 
 		"precache"
@@ -7157,6 +7261,82 @@
 				}
 			}
 	}
+	
+	"spawn_medium_satyr_shadowdancer"
+	{
+		"BaseClass" "ability_datadriven"
+
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastRange" "350"
+		"AbilityManaCost" "0"
+		"AbilityCastPoint" "0"
+		"AOERadius"     "225"
+		"AbilityTextureName"	"spawn_medium_satyr_shadowdancer"
+		
+		"OnSpellStart"
+		{
+		    
+	        "SpawnUnit"
+	        {
+	            "UnitName" "npc_medium_satyr_range"
+	            "UnitCount" "1"
+	            "SpawnRadius" "100"
+	            "Target" "CASTER"
+	            "GrantsGold" "1"
+	            "GrantsXP" "1"
+	            "UnitLimit" "20"
+				"OnSpawn"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						
+						"ControlPoints"
+						{
+							"00"		"0 0 0"
+							"01"		"50 100 0"
+							"02"		"4 10 .5"
+							"03"		"20 200 0" //color
+							"04"		"0 0 0"
+							"05"		"0 0 0"
+						}
+					}
+					"FireSound"
+					{
+						"EffectName" "Hero_Abaddon.DeathCoil.Target"
+						"Target"			"CASTER"
+					}
+				}
+	        }   
+		
+		}
+		"Modifiers"
+			{
+			"attack_agro"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"spawn.lua"
+						"Function"	"attack_agro_func"
+						"Target"
+							{
+							"Center"	"CASTER"
+							"Radius"	"700"
+							"Teams"	"DOTA_TEAM_NEUTRALS"
+							"Types"	"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+					}
+				}
+			}
+	}
+
 
 	"spawn_golem"
 	{
@@ -7406,7 +7586,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
-	            "UnitLimit" "40"
+	            "UnitLimit" "16"
 				"OnSpawn"
 				{
 					"AttachEffect"
@@ -7706,7 +7886,7 @@
 	            "Target" "CASTER"
 	            "GrantsGold" "1"
 	            "GrantsXP" "1"
-	            "UnitLimit" "20"
+	            "UnitLimit" "4"
 				"OnSpawn"
 				{
 					"AttachEffect"

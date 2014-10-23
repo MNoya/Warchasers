@@ -1574,7 +1574,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"spawn_gnoll"			// Ability 1.
-		"Ability2"					""	// Ability 2.
+		"Ability2"					"drop_potion_of_healing"	// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""	// Ability 4.
 		"Ability5"					""						// Ability 5.
@@ -1726,7 +1726,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"spawn_treant"			// Ability 1.
-		"Ability2"					""	// Ability 2.
+		"Ability2"					"spawn_burning_archer"	// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""	// Ability 4.
 		"Ability5"					""						// Ability 5.
@@ -2524,7 +2524,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"3"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -2551,7 +2551,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -2752,7 +2752,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"5"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -2779,7 +2779,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -2829,7 +2829,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"5"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -2856,7 +2856,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -3132,7 +3132,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"10"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -3159,7 +3159,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"250"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -3209,7 +3209,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"10"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -3236,7 +3236,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"250"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -3276,7 +3276,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"spawn_medium_satyr"			// Ability 1.
+		"Ability1"					"spawn_medium_satyr_shadowdancer"			// Ability 1.
 		"Ability2"					""		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -3287,7 +3287,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"		// Physical protection.
+		"ArmorPhysical"				"10"		// Physical protection.
 		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
@@ -3314,7 +3314,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"250"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -3971,7 +3971,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"160"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"1"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -4121,7 +4121,7 @@
 		"Ability1"                                      "creep_command_aura"       // Ability 1
 		"Ability2"                                      "drop_tome"                      // Ability 2
 		"Ability3"                                      "drop_extra_tome"                      // Ability 3
-		"Ability4"                                      ""                      // Ability 4
+		"Ability4"                                      "drop_potion_of_healing"                      // Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4926,6 +4926,7 @@
 		"Ability2"					"creep_heal"			// Ability 2
 		"Ability3"					"drop_tome"			// Ability 3
 		"Ability4"					"drop_extra_tome"			// Ability 4
+		"Ability5"					"drop_potion_of_healing"
 
 		// Armor
 		//----------------------------------------------------------------

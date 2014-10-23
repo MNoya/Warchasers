@@ -653,7 +653,7 @@ end
 function SpawnMediumSatyrs(trigger)
         local building = Entities:FindByName(nil, "harpy_nest")
         if building ~= nil then
-                local ability = building:FindAbilityByName("npc_medium_satyr_range")
+                local ability = building:FindAbilityByName("spawn_medium_satyr_shadowdancer")
                 ability:SetContextThink("SpawnLoop", function() 
                         if ability:IsFullyCastable() then 
                                 building:CastAbilityNoTarget(ability, -1) 
