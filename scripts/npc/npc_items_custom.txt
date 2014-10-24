@@ -2395,7 +2395,7 @@
 		}
 	}
 
-	"item_health_stone"
+	"item_health_stone_potion"
 	{
 		"ID"							"1057"
 
@@ -2501,7 +2501,7 @@
 		}
 	}
 
-	"item_mana_stone"
+	"item_mana_stone_potion"
 	{
 		"ID"							"1058"
 

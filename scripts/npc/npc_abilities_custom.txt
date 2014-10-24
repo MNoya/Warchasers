@@ -1538,7 +1538,7 @@
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
 						}
 						
-						"ItemName"					"item_health_stone"
+						"ItemName"					"item_health_stone_potion"
 						"ItemCount"					"1"
 						"ItemChargeCount"	        "1"						
 						"SpawnRadius"		        "50"
@@ -1767,7 +1767,7 @@
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
 						}
 						
-						"ItemName"					"item_health_stone"
+						"ItemName"					"item_health_stone_potion"
 						"ItemCount"					"1"
 						"ItemChargeCount"	        "1"						
 						"SpawnRadius"		        "50"
@@ -1791,7 +1791,7 @@
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
 						}
 						
-						"ItemName"					"item_mana_stone"
+						"ItemName"					"item_mana_stone_potion"
 						"ItemCount"					"1"
 						"ItemChargeCount"	        "1"
 						"SpawnRadius"		        "50"

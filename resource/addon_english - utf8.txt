@@ -648,11 +648,11 @@
 
 		
 		//HP-Mana Boost & Potions
-        "DOTA_Tooltip_ability_item_health_stone"								"Health Stone"
-		"DOTA_Tooltip_ability_item_health_stone_Description"					"Increases the life regeneration rate of the Hero when worn. Can be consumed for 500 health."
+        "DOTA_Tooltip_ability_item_health_stone_potion"								"Health Stone"
+		"DOTA_Tooltip_ability_item_health_stone_potion_Description"					"Increases the life regeneration rate of the Hero when worn. Can be consumed for 500 health."
 		
-        "DOTA_Tooltip_ability_item_mana_stone"									"Mana Stone"
-		"DOTA_Tooltip_ability_item_mana_stone_Description"						"Increases the mana regeneration rate of the Hero by 25%% when worn. Can be consumed for 300 mana."
+        "DOTA_Tooltip_ability_item_mana_stone_potion"									"Mana Stone"
+		"DOTA_Tooltip_ability_item_mana_stone_potion_Description"						"Increases the mana regeneration rate of the Hero by 25%% when worn. Can be consumed for 300 mana."
 		
         "DOTA_Tooltip_ability_item_mana_pendant"								"Mana Pendant"
 		"DOTA_Tooltip_ability_item_mana_pendant_Description"					"Increases the mana capacity of the Hero by 150 when worn."
