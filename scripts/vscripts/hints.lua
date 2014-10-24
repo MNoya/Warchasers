@@ -46,7 +46,7 @@ end
 function miniboss2_engage(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Ra'ADoom:</font> COME, HEROES!<br>COME AND CLAIM THE REWARD FOR YOUR SO CALLED HONOR!", 0,0)
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
-	EmitGlobalSound("DOTAMusic.Tutorial_Ducker")
+	--EmitGlobalSound("DOTAMusic.Tutorial_Ducker")
 	local statue_origin = Vector(-1408, -5780, 256)
 	local dummy_statue = CreateUnitByName("vision_dummy_hall", statue_origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
 end

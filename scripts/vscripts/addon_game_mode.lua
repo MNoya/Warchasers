@@ -85,6 +85,8 @@ function Warchasers:InitGameMode()
 	GameRules.P3_ANKH_COUNT = 0
 	GameRules.P4_ANKH_COUNT = 0
 
+	GameRules.CURRENT_SOUNDTRACK = 0
+
     -- Remove building invulnerability
     print("Make buildings vulnerable")
     local allBuildings = Entities:FindAllByClassname('npc_dota_building')
@@ -189,6 +191,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
 	PrecacheResource( "soundfile", "soundevents/blizzard_dont_sue_me.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
 
 
 	--PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
@@ -470,31 +473,52 @@ function Warchasers:AnkhThink()
 end
 
 function Warchasers:SoundThink()
-
 	
 	local soundTrack = RandomInt(1, 6)
-	print("Playing soundtrack number " .. soundTrack)
+	local soundString = nil
 
-	if soundTrack == 1 then
-		EmitGlobalSound("valve_dota_001.music.ui_world_map")
+	if GameRules.CURRENT_SOUNDTRACK == 0 then
+		soundTrack = 0
+		soundString = "valve_dota_001.music.ui_world_map" --first track
+		EmitGlobalSound(soundString)
 		soundTimer = 170
-	elseif soundTrack == 2 then
-		EmitGlobalSound("Warchasers.Human1")
-		soundTimer = 273
-	elseif soundTrack == 3 then
-		EmitGlobalSound("Warchasers.Human2")
-		soundTimer = 236
-	elseif soundTrack == 4 then
-		EmitGlobalSound("Warchasers.HumanX1")
-		soundTimer = 284
-	elseif soundTrack == 5 then
-		EmitGlobalSound("Warchasers.PowerOfTheHorde")
-		soundTimer = 281
-	elseif soundTrack == 6 then
-		mitGlobalSound("valve_dota_001.music.laning_03_layer_01")
-		soundTimer = 100
+		GameRules.CURRENT_SOUNDTRACK = 1
+	else
+		if soundTrack == 1 then
+			if RollPercentage(80) then 
+				soundString = "Warchasers.HumanX1"
+				EmitGlobalSound(soundString)
+				soundTimer = 284
+			else --rare
+				soundString = "Warchasers.PowerOfTheHorde"
+				EmitGlobalSound(soundString)
+				soundTimer = 281
+			end
+		elseif soundTrack == 2 then
+			soundString = "valve_dota_001.music.laning_03_layer_01"
+			EmitGlobalSound(soundString)
+			soundTimer = 100
+		elseif soundTrack == 3 then
+			soundString = "Warchasers.ti4_laning_03_layer_01"
+			EmitGlobalSound(soundString)
+			soundTimer = 113
+		elseif soundTrack == 4 then
+			soundString = "valve_dota_001.music.laning_01_layer_01"
+			EmitGlobalSound(soundString)
+			soundTimer = 161
+		elseif soundTrack == 5 then
+			soundString = "valve_dota_001.music.ui_main_01"
+			EmitGlobalSound(soundString)
+			soundTimer = 111
+		elseif soundTrack == 6 then
+			soundString = "valve_dota_001.music.ui_main_02"
+			EmitGlobalSound(soundString)
+			soundTimer = 111
+		end
+		GameRules.CURRENT_SOUNDTRACK = soundTrack
 	end
-	
+
+	print("Playing soundtrack number " .. soundTrack .. " named " .. soundString)
 	return soundTimer
 end
 
@@ -575,8 +599,6 @@ function Warchasers:OnGameInProgress()
 	print("Game started.")
 	--Start at Night
 	GameRules:SetTimeOfDay( 0.8 )
-
-	GameRules:GetGameModeEntity():SetThink("SoundThink", self)
 
 end
 
@@ -878,6 +900,15 @@ function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
     --Warchasers:ModifyStatBonuses(spawnedUnitIndex)
+
+    if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) then
+    	Warchasers:OnEveryonePicked()
+    end
+
+end
+
+function Warchasers:OnEveryonePicked()
+    GameRules:GetGameModeEntity():SetThink("SoundThink", self)
 end
 
 --Item checking
@@ -1133,6 +1164,14 @@ function Warchasers:OnEntityKilled( event )
             
 
 	end
+
+	if killedUnit:GetUnitName() == "npc_archer_gnoll" then
+		EmitGlobalSound("Warchasers.GnollDeath")
+	elseif killedUnit:GetUnitName() == "npc_small_murloc_a" or killedUnit:GetUnitName() == "npc_small_murloc_b" or "npc_small_murloc"
+		or killedUnit:GetUnitName() == "npc_medium_murloc" or killedUnit:GetUnitName() == "npc_big_murloc" then
+		EmitGlobalSound("Warchasers.MurlocDeath")
+	end
+
 
 	if killedUnit:GetUnitName() == "npc_tb_miniboss" then
 
