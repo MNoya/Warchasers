@@ -1,5 +1,4 @@
 Balance suggestions:
-- Remove 30AS from solobuff
 - Add Some sort of fountain to make the "wait for regen" mechanic less tedious
 - Increase Burning Arrow damage
 
@@ -11,3 +10,4 @@ Implemented:
 - Razor D&D non channelling
 - Progressively Harder buildings
 - Drop more potions specially on the first areas
+- Remove 30AS from solobuff

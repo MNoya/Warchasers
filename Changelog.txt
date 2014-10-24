@@ -1,3 +1,7 @@
+Version 0.046
+	General:
+		Removed the 30% AS buff when solo
+
 Version 0.045
 	General:
 		Made later area buildings harder to kill in the later areas

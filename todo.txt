@@ -1,6 +1,6 @@
 TO DO - PreRelease
 
-[ ][Test 0.045] Single Player run
+[X][Test 0.045] Single Player run
 
 [X][Gameplay] Gold popups
 [~][Gameplay] Stats collection @ http://getdotastats.com/#d2mods__guide
