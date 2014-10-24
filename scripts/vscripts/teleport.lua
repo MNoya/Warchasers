@@ -12,7 +12,8 @@ end
 
 function TeleporterHeavenHell(trigger)
     --Randomize teleporting Heaven or Hell
-    if RollPercentage(50) then
+    local chance = RandomInt(1,2)
+    if chance == 1 then
         GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> Have you forgotten your previous deeds among the living?!", 0,0)
         GameRules:SendCustomMessage("Your hearts have been weighed, and only Hell waits for you now!", 0,0)
         TeleporterHell(trigger)
@@ -27,7 +28,7 @@ function TeleporterHeaven(trigger)
     spot_heaven = Vector(-6734, 5082, 40)
     local dummy = CreateUnitByName("vision_dummy", spot_heaven, true, nil, nil, DOTA_TEAM_GOODGUYS)
     print("Entered Heaven")
-    EmitGlobalSound("DOTAMusic_Stinger.003") --EmitGlobalSound("valve_dota_001.stinger.respawn") how to precache?
+    EmitGlobalSound("Warchasers.Heaven") --"DOTAMusic_Stinger.003"
 
     heaven1 = Vector(-6762, 5583, 40)
     local newItem = CreateItem("item_orb_of_fire", nil, nil)

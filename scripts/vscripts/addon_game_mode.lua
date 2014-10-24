@@ -185,12 +185,12 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
 
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
-	PrecacheResource( "soundfile", "soundevents/blizzard_dont_sue_me.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
 
 
@@ -507,11 +507,7 @@ function Warchasers:SoundThink()
 			EmitGlobalSound(soundString)
 			soundTimer = 161
 		elseif soundTrack == 5 then
-			soundString = "valve_dota_001.music.ui_main_01"
-			EmitGlobalSound(soundString)
-			soundTimer = 111
-		elseif soundTrack == 6 then
-			soundString = "valve_dota_001.music.ui_main_02"
+			soundString = "valve_dota_001.music.ui_main"
 			EmitGlobalSound(soundString)
 			soundTimer = 111
 		end
@@ -900,7 +896,6 @@ function Warchasers:OnPlayerPicked( event )
     local spawnedUnitIndex = EntIndexToHScript(event.heroindex)
     -- Apply timer to update stats
     --Warchasers:ModifyStatBonuses(spawnedUnitIndex)
-
     if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) then
     	Warchasers:OnEveryonePicked()
     end
@@ -1149,6 +1144,8 @@ function Warchasers:OnEntityKilled( event )
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
 
+		EmitGlobalSound("n_creep_dragonspawnOverseer.Death")
+
 		local door = Entities:FindByName(nil, "gate_1_a")
         door:Kill()
         local door = Entities:FindByName(nil, "gate_1_b")
@@ -1165,15 +1162,79 @@ function Warchasers:OnEntityKilled( event )
 
 	end
 
+	--creep death sounds
 	if killedUnit:GetUnitName() == "npc_archer_gnoll" then
 		EmitGlobalSound("Warchasers.GnollDeath")
-	elseif killedUnit:GetUnitName() == "npc_small_murloc_a" or killedUnit:GetUnitName() == "npc_small_murloc_b" or "npc_small_murloc"
+	elseif killedUnit:GetUnitName() == "npc_small_murloc_a" or killedUnit:GetUnitName() == "npc_small_murloc_b" or killedUnit:GetUnitName() == "npc_small_murloc"
 		or killedUnit:GetUnitName() == "npc_medium_murloc" or killedUnit:GetUnitName() == "npc_big_murloc" then
 		EmitGlobalSound("Warchasers.MurlocDeath")
+	elseif killedUnit:GetUnitName() == "npc_small_dragon" then
+		EmitGlobalSound("n_creep_blackdrake.Death")
+	elseif killedUnit:GetUnitName() == "npc_blue_drake" then
+		EmitGlobalSound("n_creep_blackdragon.Death")
+	elseif killedUnit:GetUnitName() == "npc_green_lizard" or killedUnit:GetUnitName() == "npc_red_lizard" or killedUnit:GetUnitName() == "npc_blue_lizard" then
+		EmitGlobalSound("n_creep_Thunderlizard_Big.Death")
+	elseif killedUnit:GetUnitName() == "npc_mud_golem" or killedUnit:GetUnitName() == "npc_rock_golem" or killedUnit:GetUnitName() == "npc_rock_golem_spawn" then
+		EmitGlobalSound("n_creep_golemRock.Death")
+	elseif killedUnit:GetUnitName() == "npc_water_elemental" or killedUnit:GetUnitName() == "npc_water_elemental_nonspawned" 
+		or killedUnit:GetUnitName() == "warchasers_beast_knight_water_elemental_3" or killedUnit:GetUnitName() == "warchasers_beast_knight_water_elemental_2"
+		or killedUnit:GetUnitName() == "warchasers_beast_knight_water_elemental_1" then
+		EmitGlobalSound("Hero_Morphling.Death")
+	elseif killedUnit:GetUnitName() ==  "npc_ogre" then
+		EmitGlobalSound("n_creep_ogres.Death")
+	elseif killedUnit:GetUnitName() ==  "npc_wizard" or killedUnit:GetUnitName() == "npc_wizard_nonspawned" or killedUnit:GetUnitName() == "npc_big_wizard" then
+		EmitGlobalSound("Hero_KeeperOfTheLight.Death")
+	elseif killedUnit:GetUnitName() == "npc_doom_guard" or killedUnit:GetUnitName() == "npc_soul_smasher" or killedUnit:GetUnitName() == "npc_doom_guard_spawn"then
+		EmitGlobalSound("Warchasers.DoomGuardDeath")
+	elseif killedUnit:GetUnitName() ==  "npc_wendigo" or killedUnit:GetUnitName() ==  "npc_furbolg" or killedUnit:GetUnitName() == "npc_big_satyr" or killedUnit:GetUnitName() ==  "npc_furbolg_spawn" then
+		EmitGlobalSound("n_creep_centaurKhan.Death")
+	elseif killedUnit:GetUnitName() ==  "npc_infernal" or killedUnit:GetUnitName() ==  "npc_furbolg" or killedUnit:GetUnitName() == "npc_big_satyr" then
+		EmitGlobalSound("Hero_Warlock.Death")
 	end
 
 
+	--[[
+
+	elseif killedUnit:GetUnitName() ==    then
+		EmitGlobalSound()
+
+	]]
+
+	
+--[[
+	"n_creep_furbolgchampion.Death"
+	"n_creep_furbolgUrsa.Death"
+	"n_creep_blackdragon.Death"
+	"n_creep_blackdrake.Death"
+	"n_creep_centaurKhan.Death"
+	"n_creep_centaurOutrunner.Death"
+	"n_creep_dragonspawnSorc.Death"
+	"n_creep_dragonspawnOverseer.Death"
+	"n_creep_trollCommon.Death"
+	"n_creep_trollWarlord.Death"
+	"n_creep_ghost.Death"
+	"n_creep_fellbeast.Death"
+	"n_creep_gnoll.Death"
+	"n_creep_golemRock.Death"
+	"n_creep_harpy.Death"
+	"n_creep_junglestalkerCommon.Death"
+	"n_creep_junglestalkerElder.Death"
+	"n_creep_koboldTaskmaster.Death"
+	"n_creep_kobolds.Death"
+	"n_creep_ogres.Death"
+	"n_creep_SatyrCommon.Death"
+	"n_creep_SatyrSmall.Death"
+	"n_creep_SatyrH.Death"
+	"n_creep_Skeleton.Death"
+	"n_creep_Thunderlizard_Big.Death"
+	"n_creep_Thunderlizard_Small.Death"
+	"n_creep_Wildkin.Death"
+	"n_creep_Worg.Death"]]
+
+
 	if killedUnit:GetUnitName() == "npc_tb_miniboss" then
+
+		EmitGlobalSound("Hero_Terrorblade.Death")
 
 		local obstructions = Entities:FindByName(nil,"obstructions_4_1")
         obstructions:SetEnabled(false,false)

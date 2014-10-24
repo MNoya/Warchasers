@@ -729,7 +729,7 @@ function SpawnLanternTrolls(event)
 		
 
 		Timers:CreateTimer({
-			endTime = 20,
+			endTime = 100,
 			callback = function()
 			  dummy1:ForceKill(true)
 			  dummy2:ForceKill(true)
