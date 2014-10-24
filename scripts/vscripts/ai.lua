@@ -15,12 +15,16 @@ function log_npc( event )
 		end
 		unit:SetContextThink("chase_distance_function", 
 			function ()
-			
-				if (unit.initial_neutral_position - unit:GetAbsOrigin()):Length2D() > 900 then
-					unit:MoveToPosition(unit.initial_neutral_position) 
+				if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
+					if (unit.initial_neutral_position - unit:GetAbsOrigin()):Length2D() > 900 then
+						unit:MoveToPosition(unit.initial_neutral_position) 
 
+					end
+
+					return math.random(2,6)
+				else
+					return nil
 				end
-				return math.random(2,6)
 			end
 			, 5) 	
 	end
