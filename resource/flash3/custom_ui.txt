@@ -10,6 +10,11 @@
         "File"      "CameraLock"
         "Depth"     "51"
     }
+	"3"
+	{
+		"File" "StatsCollection"
+		"Depth" "1"
+	}
 }
 // =============================================
 // Depths of base Dota UI elements

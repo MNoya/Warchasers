@@ -8,6 +8,7 @@ require( 'teleport')
 require( 'ai' )
 require( 'spawn' )
 local hints = require( 'hints' )
+require('lib.statcollection')
 
 
 if Convars:GetBool("developer") == true then
@@ -17,6 +18,12 @@ end
 if Warchasers == nil then
 	Warchasers = class({})
 end
+
+-- Stat collection
+require('lib.statcollection')
+statcollection.addStats({
+	modID = '07dac9699d6c9b7442f8ee7c18c18126' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
+})
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
@@ -427,13 +434,16 @@ end
 -- Evaluate the state of the game
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-	
 		Warchasers:CheckForDefeat()
 
 		GameRules:SetTimeOfDay( 0.8 )
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		return nil
+		-- Send stats
+        statcollection.sendStats()
+
+        -- Delete the thinker
+        return
 	end
 	return 2
 end
