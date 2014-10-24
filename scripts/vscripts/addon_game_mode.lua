@@ -477,7 +477,7 @@ end
 
 function Warchasers:SoundThink()
 	
-	local soundTrack = RandomInt(1, 6)
+	local soundTrack = RandomInt(1, 5)
 	local soundString = nil
 
 	if GameRules.CURRENT_SOUNDTRACK == 0 then
@@ -513,6 +513,8 @@ function Warchasers:SoundThink()
 			soundString = "valve_dota_001.music.ui_main"
 			EmitGlobalSound(soundString)
 			soundTimer = 111
+		else 
+			return 5
 		end
 		GameRules.CURRENT_SOUNDTRACK = soundTrack
 	end
