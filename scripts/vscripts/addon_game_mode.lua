@@ -9,7 +9,7 @@ require( 'ai' )
 require( 'spawn' )
 local hints = require( 'hints' )
 require('lib.statcollection')
-
+local JSON = require('lib.json')
 
 if Convars:GetBool("developer") == true then
 	require( "developer" )
@@ -70,6 +70,9 @@ function Warchasers:InitGameMode()
 	--GameRules:SetHeroSelectionTime(0)
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
+
+	Convars:RegisterCommand( "test", function(...) return Warchasers:SetHeroData( 0 ) end, "Test Command", FCVAR_CHEAT )
+	Convars:RegisterCommand( "data", function(...) return Warchasers:CheckHeroData() end, "Test Command", FCVAR_CHEAT )
 
 	print( "GameRules set" )
 
@@ -894,7 +897,11 @@ function Warchasers:OnHeroInGame(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
 
-	
+
+	Warchasers:ReadHeroData()
+
+
+
 
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	Timers:CreateTimer({
@@ -1433,54 +1440,131 @@ function Warchasers:OnEntityKilled( event )
 		
 end  
 
---RANDOM ITEM DROPS --now done directly through datadriven KV
-
--- Read and assign configurable keyvalues if applicable
---[[function Warchasers:ReadDropConfiguration()
-	local kv = LoadKeyValues( "scripts/maps/" .. GetMapName() .. ".txt" )
+-- READ DATA
+function Warchasers:ReadHeroData( )
+	local kv = LoadKeyValues( "scripts/herodata.txt" )
 	kv = kv or {} -- Handle the case where there is not keyvalues file
 
-	self:ReadLootItemDropsConfiguration( kv["ItemDrops"] )
+	Warchasers:MakeTable( kv["Hero"] )
 
 end
 
--- If random drops are defined read in that data
-function Warchasers:ReadLootItemDropsConfiguration( kvLootDrops )
 
-	self.vLootItemDropsList = {}
-	if type( kvLootDrops ) ~= "table" then
+function Warchasers:MakeTable( kvHero )
+
+	GameRules.vHeroList = {}
+	if type( kvHero ) ~= "table" then
 		return
 	end
-	for key,lootItem in pairs( kvLootDrops ) do
-		table.insert( self.vLootItemDropsList, {
-			szItemName = lootItem.Item or "",
-			nChance = tonumber( lootItem.Chance or 0 )
+	for key,heroValue in pairs( kvHero ) do
+		table.insert( GameRules.vHeroList, {
+			keyValue = heroValue.Value or "",
 		})
 	end
 
-	print("Drop Table:")
-	DeepPrintTable( self.vLootItemDropsList, nil, true )
-	print("------------")
+	--test
 end
 
+function Warchasers:SetHeroData( playerID )
+	print("Loading Hero Data for player: " .. playerID)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
-function Warchasers:CheckForLootItemDrop( killedUnit )
-	for key,itemDropInfo in pairs( self.vLootItemDropsList ) do
-		print("Calculating Drops")
-		print(RollPercentage( itemDropInfo.nChance ) )
+	--DeepPrintTable( GameRules.vHeroList, nil, true )
 
-		if RollPercentage( itemDropInfo.nChance ) then
-			print("Item Dropped")
-			print(itemDropInfo.szItemName)
-			local newItem = CreateItem( itemDropInfo.szItemName, nil, nil )
-			newItem:SetPurchaseTime( 0 )
-			if newItem:IsPermanent() and newItem:GetShareability() == ITEM_FULLY_SHAREABLE then
-				item:SetStacksWithOtherOwners( true )
+	for i,heroInfo in pairs( GameRules.vHeroList ) do
+		--DeepPrintTable( GameRules.vHeroList[i] )
+		print("value number " .. i .. ": " .. GameRules.vHeroList[i].keyValue )
+	end
+	print("------------")
+
+	-- Level
+	local new_hero_level = GameRules.vHeroList[3].keyValue
+	for i=1,new_hero_level do
+		hero:HeroLevelUp(false)
+	end
+
+	-- 1 Item
+	local item = GameRules.vHeroList[2].keyValue
+	local newItem = CreateItem(item, nil, nil)
+	hero:AddItem(newItem)
+
+	-- Experience
+	local experience = GameRules.vHeroList[4].keyValue
+	hero:AddExperience(experience, true)
+
+	-- Tome
+	local tomeCount = GameRules.vHeroList[1].keyValue
+	print(tomeCount)
+
+	for i=1,tomeCount do
+		local newItem = CreateItem("item_tome_of_strength", nil, nil)
+		hero:AddItem(newItem)	
+	end
+
+
+end
+
+function Warchasers:CheckHeroData()
+	print("Checking Data")
+	local path = "C:\\Program Files (x86)\\Steam\\SteamApps\\common\\dota 2 beta\\dota_ugc\\game\\dota_addons\\warchasers\\scripts\\vscripts\\string.txt"
+	local myString = nil
+
+	file = assert(io.open(path, "r"))
+	local line = file:read()
+	if string.sub(line, 1, 1) ~= '#' then
+	  --print(line) -- File doesn't start with a comment, process the first line
+	  myString = line
+	end
+	file:close()
+
+	local result = JSON:decode(line)
+
+	--DECODING
+--
+--   JSON = (loadfile "JSON.lua")() -- one-time load of the routines
+--
+--   local lua_value = JSON:decode(raw_json_text)
+--
+--   If the JSON text is for an object or an array, e.g.
+--     { "what": "books", "count": 3 }
+--   or
+--     [ "Larry", "Curly", "Moe" ]
+--
+--   the result is a Lua table, e.g.
+--     { what = "books", count = 3 }
+--   or
+--     { "Larry", "Curly", "Moe" }
+
+	for k,v in pairs(result) do
+		--print(k,v)
+		--[[
+			rounds	table: 0x03a17818  -- << here is the info
+			modID	07dac9699d6c9b7442f8ee7c18c18126
+			duration	145.9688873291
+			matchID	756e28213df345024dc77c7732226cca
+		]]
+	end
+
+	for k2,v2 in pairs(result.rounds.players) do
+		for k3,v3 in pairs(result.rounds.players[k2]) do
+			print(k3,v3)
+			--[[]
+				items	table: 0x03949570
+				hero	table: 0x039857f0
+				slotID	1
+				teamID	2
+				abilities	table: 0x0391f810
+				steamID32	86718505
+				playerName	Noya
+			]]
+			for k4,v4 in pairs(result.rounds.players[k2].items) do
+				--print(k4,v4)
 			end
-			local drop = CreateItemOnPositionSync( killedUnit:GetAbsOrigin(), newItem )
+
 		end
 	end
-end]]
+
+end
 
 function Warchasers:RemoveWearables(hero) 
 	local wearables = {}
