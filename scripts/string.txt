@@ -9,7 +9,7 @@
 
 ,
 
-"hero":{"assists":0,"deaths":1,"denies":0,"gold":238,"heroID":18,"kills":12,"lastHits":12,"level":1},
+"hero":{"assists":0,"deaths":1,"denies":0,"gold":238,"heroID":18,"kills":12,"lastHits":12,"level":5},
 
 "items":
 
