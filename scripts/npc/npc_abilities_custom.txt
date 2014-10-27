@@ -3296,6 +3296,29 @@
 			}
 		}
 
+	"tank_miniboss_thinker"
+		{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"Modifiers"
+			{
+			"tank_miniboss_think_modifier"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"	
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"ai.lua"
+						"Function"	"tank_miniboss_think"
+						}
+					}
+				}
+			}
+		}
+
 	"final_boss_thinker"
 		{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"

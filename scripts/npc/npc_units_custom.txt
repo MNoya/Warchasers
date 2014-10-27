@@ -9602,6 +9602,11 @@
 		//----------------------------------------------------------------	
 		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
 		"Ability2"					"miniboss_flak"
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					"tank_miniboss_thinker"
 
 		// Armor
 		//----------------------------------------------------------------

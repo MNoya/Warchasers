@@ -48,6 +48,56 @@ function tb_miniboss_think( event )
 	end
 end
 
+function tank_miniboss_think( event )
+	local boss = event.caster
+	local flak_spell = boss:FindAbilityByName("miniboss_flak")
+	local bomb_spell = boss:FindAbilityByName("miniboss_aoe_bomb")
+
+	local boss_current_position = boss:GetAbsOrigin() --needed?
+	boss.currentWaypoint = 0 		--global stored on the caster?
+
+	-- waypoints
+	local waypoint0 = Vector(4488,1188,128) --just in front of the start position
+	local waypoint1 = Vector(5424,-560,224) --first ramp
+	local waypoint2 = Vector(6170,1145,128) --first arc
+	local waypoint3 = Vector(7716,1285,128) --second arc
+	local waypoint4 = Vector(7288,-504,224) --second ramp
+	local waypoint5 = Vector(4766,-2439,128) --final door door
+	local nextWaypoint = 0
+	local givenMoveOrder = false
+
+	if (boss:GetHealth() / boss:GetMaxHealth()) <= 0.20 and not givenMoveOrder then
+		nextWaypoint = 5
+		givenMoveOrder = true
+	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.40 and not givenMoveOrder then
+		nextWaypoint = 4
+		givenMoveOrder = true
+	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.50 and not givenMoveOrder then
+		nextWaypoint = 3
+		givenMoveOrder = true
+	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.60 and not givenMoveOrder then
+		nextWaypoint = 2
+		givenMoveOrder = true
+	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.80 and not givenMoveOrder then
+		nextWaypoint = 1
+		givenMoveOrder = true
+	end
+
+	if givenMoveOrder then
+		if nextWaypoint == 1 then
+			boss:MoveToPosition(waypoint1)
+		elseif nextWaypoint == 2 then
+			boss:MoveToPosition(waypoint2)
+		elseif nextWaypoint == 3 then
+			boss:MoveToPosition(waypoint3)
+		elseif nextWaypoint == 4 then
+			boss:MoveToPosition(waypoint4)
+		elseif nextWaypoint == 5 then
+			boss:MoveToPosition(waypoint5)
+		end
+	end
+end
+
 
 function final_boss_think( event )
 	local boss = event.caster
