@@ -8615,5 +8615,275 @@
 
 // END HIDDEN MODIFIERS------------------------------------------------------------------------------------------------------
 
+	// CUSTOM MINIBOSS SPELLS
+
+
+	"miniboss_aoe_bomb" //play with the timings & speeds, cast on a dummy.
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName" 			""
+				
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_sun_strike_team.vpcf"
+			"particle"		"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"CreateThinker"
+	        {
+	            "ModifierName" "bomb_fx_landing"
+	            "Target" "POINT"
+	        }
+	        "CreateThinker"
+			{
+				"ModifierName"	"bomb_thinker"
+				"Target"		"POINT"
+			}
+
+			"TrackingProjectile"
+            {
+	           "Target"				"TARGET"
+	            "EffectName"			"particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf"
+				"Dodgeable"				"0"
+				"ProvidesVision"		"1"
+				"VisionRadius"			"300"
+				"MoveSpeed"				"1000"
+				//"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+        }
+
+        "Modifiers"
+	    {
+			"bomb_fx_landing"
+	    	{
+	    		"Duration"	"2.5"
+	    		"OnCreated"
+	    		{
+			    	"AttachEffect"
+					{
+						"Target" 				"TARGET"
+						"EffectName"			"particles/units/heroes/hero_invoker/invoker_sun_strike_team.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "200 0 0"
+							"02" "6 0 1" // telegraph
+							"03" "200 0 0"
+							"04" "0 0 0"
+						}
+					}
+				}
+	    	}
+
+	    	"bomb_thinker"
+	    	{
+	    		"Duration"					"2.5"
+				"ThinkInterval"				"2.0"
+				
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"200"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"200"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+					}
+					
+					"Stun"
+					{
+						"Duration"		"2.0"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"200"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+					}
+					
+					"AttachEffect"
+					{
+						"Target" 				"TARGET"
+						"EffectName"			"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}				
+
+					//"FireSound"
+	    		}
+	    	}			
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"1"
+			"Damage"
+			{
+				"Target"				"TARGET"
+				"Damage"				"%damage"
+				"Type"					"DAMAGE_TYPE_PURE"
+			}
+		}
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900 1000 1100 1200"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"100 120 140 160"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"100"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"1000 1030 1065 1100"
+			}
+		}
+	}
+
+	"miniboss_flak"
+	{
+		"BaseClass"			"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			""
+
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityDuration"				"15 15 15 15"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1000"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_attacks"					"3 4 5 6"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"800"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"DelayedAction"
+			{
+				"Delay"	"0.8"
+				"Action"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+				            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				            "Flags"     "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+				            "Center"    "CASTER"
+				            "Radius"    "%radius"
+				        }
+
+				        "Action"
+				        {
+				        	"TrackingProjectile"
+				            {
+				                "Target"			"TARGET"
+				                "EffectName"        "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+				                "Dodgeable"         "0"
+				                "ProvidesVision"    "1"
+				                "VisionRadius"      "300"
+				                "MoveSpeed"         "800"
+				                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				                ///"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_NONE" ?
+				            }
+				        }
+				    }
+				}
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"				"1"
+			"Damage"
+			{
+				"Target"				"TARGET"
+				"Damage"				"10"
+				"Type"					"DAMAGE_TYPE_PURE"
+			}
+		}
+	}	
+
+
+
+
 }
+
+
+
 

@@ -74,6 +74,7 @@ function Warchasers:InitGameMode()
 
 	Convars:RegisterCommand( "test", function(...) return Warchasers:SetHeroData( 0 ) end, "Test Command", FCVAR_CHEAT )
 	Convars:RegisterCommand( "data", function(...) return statcollectionRPG.LoadData() end, "Test Command", FCVAR_CHEAT )
+	Convars:RegisterCommand( "tank", function(...) return Warchasers:TestTank() end, "Test Command", FCVAR_CHEAT )
 
 	print( "GameRules set" )
 
@@ -622,7 +623,7 @@ function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
 
 		if GameRules.SHOWPOPUP then
-			ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+			--ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 			GameRules.SHOWPOPUP = false
 		end
 
@@ -1701,3 +1702,42 @@ function Warchasers:RemoveWearables(hero)
 end]]
 
 
+function Warchasers:TestTank()
+	local hero = PlayerResource:GetSelectedHeroEntity(0)
+	local tank = CreateUnitByName("npc_kitt_steamtank", hero:GetAbsOrigin(), true, hero, hero, 0)
+	tank:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
+	tank:SetControllableByPlayer( 0 , true )
+    tank:SetTeam( DOTA_TEAM_GOODGUYS )
+    tank:SetOwner(hero)
+
+	if GameRules.PLAYER_COUNT >= 1 then
+        local hero = PlayerResource:GetSelectedHeroEntity( 0 )
+        --local position_player1 = Vector(-200,-2000,64)
+        --FindClearSpaceForUnit(hero, position_player1, false)
+    end
+
+    if GameRules.PLAYER_COUNT >= 2 then
+        local hero = PlayerResource:GetSelectedHeroEntity( 1 )     
+        local position_player2 = Vector(4240,-197,146)
+        FindClearSpaceForUnit(hero, position_player2, false)
+    end
+
+    if GameRules.PLAYER_COUNT >= 3 then
+        local hero = PlayerResource:GetSelectedHeroEntity( 2 )
+        local position_player3 = Vector(4512,-213,146)
+        FindClearSpaceForUnit(hero, position_player3, false)
+    end
+
+    if GameRules.PLAYER_COUNT >= 4 then
+        local hero = PlayerResource:GetSelectedHeroEntity( 3 )  
+        local position_player4 = Vector(4752.79,-213,146)
+        FindClearSpaceForUnit(hero, position_player4, false)
+    end
+
+    if GameRules.PLAYER_COUNT >= 5 then
+        local hero = PlayerResource:GetSelectedHeroEntity( 4 )
+        local position_player5 = Vector(4512,26,146)
+        FindClearSpaceForUnit(hero, position_player5, false)       
+    end
+
+end

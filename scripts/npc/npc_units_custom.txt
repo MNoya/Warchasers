@@ -9594,13 +9594,14 @@
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
-		"ModelScale" 					"1"
+		"ModelScale" 					"1.5"
 		"Level"						"5"
 		"ConsideredHero"			"1"
 		
 		// Abilities
 		//----------------------------------------------------------------	
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
+		"Ability2"					"miniboss_flak"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -9628,7 +9629,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"80"
 		"HealthBarOffset"			"160"
 
@@ -9640,7 +9641,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"400"		// Base health.
+		"StatusHealth"				"4000"		// Base health.
 		"StatusHealthRegen"			"0.25"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.

@@ -218,7 +218,7 @@ end
 function ReplenishManaAOE(event)
 
     -- Find units
-    units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+    units = FindUnitsInRadius(event.caster:GetTeamNumber(),
                               event.caster:GetAbsOrigin(),
                               nil,
                               250,
