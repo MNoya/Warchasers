@@ -50,8 +50,10 @@ end
 
 function tank_miniboss_think( event )
 	local boss = event.caster
-	local flak_spell = boss:FindAbilityByName("miniboss_flak")
+	--local flak_spell = boss:FindAbilityByName("miniboss_flak")
 	local bomb_spell = boss:FindAbilityByName("miniboss_aoe_bomb")
+	local calldown_spell = boss:FindAbilityByName("gyrocopter_call_down")
+	local spawn_spell = boss:FindAbilityByName("miniboss_launch_skeletons")
 
 	local boss_current_position = boss:GetAbsOrigin() --needed?
 	boss.currentWaypoint = 0 		--global stored on the caster?
@@ -69,6 +71,7 @@ function tank_miniboss_think( event )
 	if (boss:GetHealth() / boss:GetMaxHealth()) <= 0.20 and not givenMoveOrder then
 		nextWaypoint = 5
 		givenMoveOrder = true
+	end
 	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.40 and not givenMoveOrder then
 		nextWaypoint = 4
 		givenMoveOrder = true
@@ -96,6 +99,30 @@ function tank_miniboss_think( event )
 			boss:MoveToPosition(waypoint5)
 		end
 	end
+
+	--cast spells interrupts the last command?
+	local heroes_around = FindUnitsInRadius( 
+							DOTA_TEAM_NEUTRALS, 
+							boss:GetAbsOrigin(), 
+							nil, 
+							1000, 
+							DOTA_UNIT_TARGET_TEAM_ENEMY, 
+							DOTA_UNIT_TARGET_HERO, 
+							DOTA_UNIT_TARGET_FLAG_NONE, 
+							FIND_FARTHEST, 
+							false)
+
+	if bomb_spell:IsFullyCastable() == true and heroes_around[1] ~= nil then
+		local target = heroes_around[1]
+
+		local dummy = CreateUnitByName("dummy_unit", target:GetAbsOrigin(), false, boss, boss, DOTA_TEAM_NEUTRALS)
+		boss:CastAbilityOnTarget(dummy, bomb_spell, -1) --can I target invulnerable dummy?
+	end
+
+	if calldown_spell:IsFullyCastable() == true and (boss:GetHealth() / boss:GetMaxHealth()) <= 0.2 then
+		
+	end
+
 end
 
 

@@ -9585,6 +9585,7 @@
 		
 	}
 
+	// tank_miniboss
 	"npc_kitt_steamtank"
 	{
 		// General
@@ -9597,15 +9598,17 @@
 		"ModelScale" 					"1.5"
 		"Level"						"5"
 		"ConsideredHero"			"1"
+
+		"DisableResistance"			"100.0"
 		
 		// Abilities
 		//----------------------------------------------------------------	
 		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
 		"Ability2"					"miniboss_flak"
-		"Ability3"					""
+		"Ability3"					"miniboss_launch_skeletons"
 		"Ability4"					""
 		"Ability5"					""
-		"Ability6"					""
+		"Ability6"					"gyrocopter_call_down" //need to override this
 		"Ability7"					"tank_miniboss_thinker"
 
 		// Armor
@@ -9621,8 +9624,8 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"3.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
-		"AttackRange"				"400"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackRange"				"1000"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"600"		// Speed of projectile.
 
@@ -9647,7 +9650,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"4000"		// Base health.
-		"StatusHealthRegen"			"0.25"			// Health regeneration rate.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
