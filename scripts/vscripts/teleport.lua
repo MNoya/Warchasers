@@ -409,64 +409,70 @@ function TeleporterTanksStart(trigger)
     --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
     if GameRules.PLAYER_COUNT >= 1 then
         local hero = PlayerResource:GetSelectedHeroEntity( 0 )
-        giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
+        --giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
         local position_player1 = Vector(4528,-469,146)
-        local tank1 = CreateUnitByName("npc_rocknroll_steamtank", position_player1, true, hero, hero, DOTA_TEAM_GOODGUYS)
+        --[[local tank1 = CreateUnitByName("npc_rocknroll_steamtank", position_player1, true, hero, hero, DOTA_TEAM_GOODGUYS)
         tank1:SetRenderColor(46,106,230) --blue
         tank1:SetControllableByPlayer( 0 , true )
         tank1:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank1:SetOwner(hero)
+        tank1:SetOwner(hero)--]]
+        FindClearSpaceForUnit(hero, point, false)
+        hero:Stop()
     end
 
     if GameRules.PLAYER_COUNT >= 2 then
         local hero = PlayerResource:GetSelectedHeroEntity( 1 )
-        giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
+        --giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
         local position_player2 = Vector(4240,-197,146)
-        local tank2 = CreateUnitByName("npc_rocknroll_steamtank", position_player2, true, hero, hero , DOTA_TEAM_GOODGUYS)
+        --[[local tank2 = CreateUnitByName("npc_rocknroll_steamtank", position_player2, true, hero, hero , DOTA_TEAM_GOODGUYS)
         tank2:SetRenderColor(93,230,173) --teal
         tank2:SetControllableByPlayer( 1 , true )
         tank2:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank2:SetOwner(hero)        
+        tank2:SetOwner(hero)   --]]
+        FindClearSpaceForUnit(hero, point, false)
+        hero:Stop()     
     end
 
     if GameRules.PLAYER_COUNT >= 3 then
         local hero = PlayerResource:GetSelectedHeroEntity( 2 )
-        giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
+        --giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
         local position_player3 = Vector(4512,-213,146)
-        local tank3 = CreateUnitByName("npc_rocknroll_steamtank", position_player3, true, hero, hero , DOTA_TEAM_GOODGUYS)
+        --[[local tank3 = CreateUnitByName("npc_rocknroll_steamtank", position_player3, true, hero, hero , DOTA_TEAM_GOODGUYS)
         tank3:SetRenderColor(173,0,173) --purple
         tank3:SetControllableByPlayer( 2 , true )
         tank3:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank3:SetOwner(hero)        
+        tank3:SetOwner(hero)   --]]
+        FindClearSpaceForUnit(hero, point, false)
+        hero:Stop() 
     end
 
     if GameRules.PLAYER_COUNT >= 4 then
         local hero = PlayerResource:GetSelectedHeroEntity( 3 )
-        giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
+        --giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
         local position_player4 = Vector(4752.79,-213,146)
-        local tank4 = CreateUnitByName("npc_rocknroll_steamtank", position_player4, true, hero, hero , DOTA_TEAM_GOODGUYS)
+        --[[local tank4 = CreateUnitByName("npc_rocknroll_steamtank", position_player4, true, hero, hero , DOTA_TEAM_GOODGUYS)
         tank4:SetRenderColor(220,217,10) --yellow
         tank4:SetControllableByPlayer( 3 , true )
         tank4:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank4:SetOwner(hero)
-        
+        tank4:SetOwner(hero) --]]
+        FindClearSpaceForUnit(hero, point, false)
+        hero:Stop()
     end
 
     if GameRules.PLAYER_COUNT >= 5 then
         local hero = PlayerResource:GetSelectedHeroEntity( 4 )
-        giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
+        --giveUnitDataDrivenModifier(hero,hero,"modifier_out_of_game",-1)
         local position_player5 = Vector(4512,26,146)
-        local tank5 = CreateUnitByName("npc_rocknroll_steamtank", position_player5, true, hero, hero, DOTA_TEAM_GOODGUYS)
+        --[[local tank5 = CreateUnitByName("npc_rocknroll_steamtank", position_player5, true, hero, hero, DOTA_TEAM_GOODGUYS)
         tank5:SetRenderColor(230,98,0) --orange
         tank5:SetControllableByPlayer( 4 , true )
         tank5:SetTeam( DOTA_TEAM_GOODGUYS )
-        tank5:SetOwner(hero)
-        
+        tank5:SetOwner(hero) --]]
     end
 
-    local position = Vector(4553, -418, 135)
-    local player_id = trigger.activator:GetPlayerOwnerID()
+    --local player_id = trigger.activator:GetPlayerOwnerID()
     --PlayerResource:SetCameraTarget( player_id, tank)
+    local position = Vector(4553, -418, 135)
 	local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
 end
 
@@ -477,15 +483,11 @@ function TeleporterFinal(trigger)
     local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
     EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
-    local nPlayerID = trigger.activator:GetPlayerOwnerID()
-    local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+    FindClearSpaceForUnit(trigger.activator, point, false)
+    hero:Stop()
 
     --Remove out of game effect
-    hero:RemoveModifierByName("modifier_out_of_game")
-
-    FindClearSpaceForUnit(hero, point, false)
-    hero:Stop()
-    trigger.activator:Stop()
+    --hero:RemoveModifierByName("modifier_out_of_game")    
   
     GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )
 
@@ -498,6 +500,6 @@ function TeleporterFinal(trigger)
     local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 
 	--Remove Tank from the game
-    trigger.activator:ForceKill(true)
+   --trigger.activator:ForceKill(true)
 
 end
