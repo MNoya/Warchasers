@@ -623,50 +623,6 @@ function Warchasers:OnAllPlayersLoaded()
 			end
 		})
 
-		--Create Hall of Heroes
-		
-		--[[local origin = Vector(-2955,-5280,512)
-		local dummy1 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		local origin = Vector(-2955,-6045,512)
-		local dummy2 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		local origin = Vector(-2955,-6657,512)
-		local dummy3 = CreateUnitByName("vision_dummy_hall", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		--kill after everyone picked their heroes
-
-
-		--left row
-		local origin = Entities:FindByName( nil, "timber_circle" ):GetAbsOrigin()
-		local timbersaw = CreateUnitByName("npc_timber", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		timbersaw:AddNewModifier(nil, nil, "modifier_tutorial_forceanimation", {act=ACT_DOTA_CAST_ABILITY_1, loop=1})
-		print("modifier added")
-
-		local origin = Entities:FindByName( nil, "jugg_circle" ):GetAbsOrigin()
-		local juggernaut = CreateUnitByName("npc_jugg", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-
-		local origin = Entities:FindByName( nil, "drow_circle" ):GetAbsOrigin()
-		local drow = CreateUnitByName("npc_drow", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-
-		local origin = Entities:FindByName( nil, "ck_circle" ):GetAbsOrigin()
-		local ck = CreateUnitByName("npc_ck", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-
-		--right row
-		local origin = Entities:FindByName( nil, "sd_circle" ):GetAbsOrigin()
-		local rotation = Vector(-6912,-5856,500)
-		local sd = CreateUnitByName("npc_sd", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		sd:SetForwardVector(rotation)
-
-		local origin = Entities:FindByName( nil, "templar_circle" ):GetAbsOrigin()
-		local templar = CreateUnitByName("npc_templar", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		templar:SetForwardVector(rotation)
-
-		local origin = Entities:FindByName( nil, "sven_circle" ):GetAbsOrigin()
-		local sven = CreateUnitByName("npc_sven", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		sven:SetForwardVector(rotation)
-
-		local origin = Entities:FindByName( nil, "razor_circle" ):GetAbsOrigin()
-		local razor = CreateUnitByName("npc_razor", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		razor:SetForwardVector(rotation)]]
-
 		--Spawning Bosses
 
 		local owner_location = Vector(-7970,-7767,512)
@@ -706,7 +662,6 @@ function Warchasers:OnNPCSpawned(keys)
     end
 	
 	if npc:IsRealHero() then
-		--Warchasers:RemoveWearables(npc) --doesn't work
 
 		local heroPlayerID = npc:GetPlayerID()
 		print("Player ID: " .. heroPlayerID)
@@ -752,60 +707,12 @@ function Warchasers:OnNPCSpawned(keys)
 end
 
 function Warchasers:OnHeroInGame(hero)
-	print("Hero Spawned") --not a wisp
+	print("Hero Spawned")
 
-	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1 --real players, not wisps
+	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1
 
 	print("Total Players In Game: " .. GameRules.PLAYER_COUNT)
 	print("Players with a hero picked: " .. GameRules.PLAYERS_PICKED_HERO)
-
-	--[[
-	if (GameRules.PLAYERS_PICKED_HERO==GameRules.PLAYER_COUNT) and not GameRules.HALL_CLEARED then --every player selected a hero, no wisps remaining
-		--find and kill the npcs in the hall
-		local hallOrigin = Vector(-2955,-6000,512)
-		local allNPCNear = Entities:FindAllByClassnameWithin("npc_dota_creature", hallOrigin, 2000)
-		for i = 1, #allNPCNear, 1 do
-                local creep = allNPCNear[i]
-                local name = creep:GetUnitName()
-                if 	name == "npc_timber" or 
-                	name == "npc_jugg" or 
-                	name == "npc_drow" or 
-                	name == "npc_ck" or 
-                	name == "npc_sd" or 
-                	name == "npc_templar" or 
-                	name == "npc_sven" or
-                	name == "npc_razor" or
-                	name == "vision_dummy_hall" then
-                        creep:ForceKill(true)
-                        print(name .. " killed")
-                end
-        end
-
-		--disable hero triggers (prevent weird reroll case)
-		local trigger = Entities:FindByName( nil, "circle_timber" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_jugg" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_drow" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_ck" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_sd" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_templar" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_sven" )
-		trigger:Disable()
-		local trigger = Entities:FindByName( nil, "circle_razor" )
-		trigger:Disable()
-
-		
-
-		GameRules.HALL_CLEARED = true
-		print("Hall of Heroes Cleared")
-
-		GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1000 )
-	end]]
 
 	Warchasers:ModifyStatBonuses(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
@@ -813,8 +720,6 @@ function Warchasers:OnHeroInGame(hero)
 
 
 	Warchasers:ReadHeroData()
-
-
 
 
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
@@ -1327,58 +1232,7 @@ function Warchasers:OnEntityKilled( event )
 		
 end  
 
--- READ DATA
-function Warchasers:ReadHeroData( )
-	local kv = LoadKeyValues( "scripts/herodata.txt" )
-	kv = kv or {} -- Handle the case where there is not keyvalues file
-
-	Warchasers:MakeTable( kv["Hero"] )
-
-end
-
-
-function Warchasers:MakeTable( kvHero )
-
-	GameRules.vHeroList = {}
-	if type( kvHero ) ~= "table" then
-		return
-	end
-	for key,heroValue in pairs( kvHero ) do
-		table.insert( GameRules.vHeroList, {
-			keyValue = heroValue.Value or "",
-		})
-	end
-
-	--test
-end
-
 function Warchasers:TestTank()
 	local hero = PlayerResource:GetSelectedHeroEntity(0)
 	TeleporterTanksStart()
 end
-
---[[function Warchasers:RemoveWearables(hero) 
-	local wearables = {}
-	print("Removing Wearables")
-	-- Store all of the wearables into the wearables array
-	local cur = hero:FirstMoveChild()
-	print(cur:GetName())
- 	while cur ~= nil do
-    cur = cur:NextMovePeer()
-    print(cur:GetName())
-    if cur ~= nil and cur:GetClassname() ~= "" and cur:GetClassname() == "dota_item_wearable" then
-      print(cur:GetClassname())  -- also can use cur:GetName()
-      print(cur:GetName())
-      table.insert(wearables, cur)
-    end
-  end
-
-  print("Wearables List")
-  DeepPrintTable(wearables)
-   -- Remove all the wearables
-  for i=1, #wearables do
-  	UTIL_RemoveImmediate(wearables[i])
-	end
-end]]
-
-
