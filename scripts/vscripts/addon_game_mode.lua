@@ -552,20 +552,16 @@ end
 
 function Warchasers:CheckForDefeat()
 	
-	-- local bAllPlayersDead = true
-	-- for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		-- if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-			-- if not PlayerResource:HasSelectedHero( nPlayerID ) then
-				-- bAllPlayersDead = false
-			-- else
-				-- local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-				-- if hero and hero:IsAlive() then
-					-- bAllPlayersDead = false
-				-- end
-			-- end
-		-- end
-	-- end
-
+	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
+        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
+            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
+            if entHero and not entHero:IsAlive()
+            	if entHero:GetRespawnTime() > 500 then
+            		entHero:SetTimeUntilRespawn(999)
+            	end 
+            end
+        end
+    end
 end
 
 function Warchasers:OnGameRulesStateChange(keys)
