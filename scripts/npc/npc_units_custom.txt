@@ -9618,10 +9618,11 @@
 		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
 		"Ability2"					"miniboss_flak"
 		"Ability3"					"miniboss_launch_skeletons"
-		"Ability4"					""
+		"Ability4"					"miniboss_barrage"
 		"Ability5"					""
-		"Ability6"					"miniboss_call_down" //need to override this
+		"Ability6"					"miniboss_call_down"
 		"Ability7"					"tank_miniboss_passives"
+		"Ability8"					"tank_miniboss_death"
 
 		// Armor
 		//----------------------------------------------------------------

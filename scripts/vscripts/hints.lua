@@ -1,7 +1,4 @@
 function hint_test(trigger)
-	print("Start")
-	--GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> Kappa", 0, 0)
-	--EmitGlobalSound("valve_dota_001.stinger.respawn")
 end
 
 function hint_key1(trigger)

@@ -1,12 +1,13 @@
 --[[
-Steamtank MinithisEntity AI
+Steamtank Miniboss AI
 ]]
--- "vscripts"			"ai_tank_minithisEntity.lua"
+-- "vscripts"			"ai_tank_miniboss.lua"
 
 function Spawn( entityKeyValues )
 	ABILILTY_bomb_spell = thisEntity:FindAbilityByName("miniboss_aoe_bomb")
 	ABILITY_calldown_spell = thisEntity:FindAbilityByName("miniboss_call_down")
 	ABILITY_flak_spell = thisEntity:FindAbilityByName("miniboss_flak")
+	ABILILTY_barrage_spell = thisEntity:FindAbilityByName("miniboss_barrage")
 	ABILITY_spawn_spell = thisEntity:FindAbilityByName("miniboss_launch_skeletons")
 
 	thisEntity:SetContextThink( "SteamtankThink", SteamtankThink , 1)
@@ -81,9 +82,6 @@ function SteamtankThink()
 		givenOrder = false --accept a new order
 	end
 
-	print("-------")
-	
-
 
 	--Cast Bomb whenever we're able to do so.
 	if ABILILTY_bomb_spell:IsFullyCastable() then
@@ -121,6 +119,12 @@ function SteamtankThink()
 		end
 	end
 
+	if ABILILTY_barrage_spell:IsFullyCastable() then
+		print("Tank wants to cast Barrage")
+		thisEntity:CastAbilityNoTarget(ABILILTY_barrage_spell, -1)
+		end
+	end
+
 	-- Cast calldown whenever we're able to do so.
 	if ABILITY_calldown_spell:IsFullyCastable() and healthRemaining <= 0.25 then
 		print("Tank can cast Call Down")
@@ -137,17 +141,14 @@ function SteamtankThink()
 			end
 		end
 		--Refresh the cooldown of the other spells
-		--ABILITY_calldown_spell:EndCooldown()
+		if healthRemaining <= 0.05 then -- last stand
+			ABILITY_calldown_spell:EndCooldown()
+		end
+
 		ABILILTY_bomb_spell:EndCooldown()
-		ABILITY_spawn_spell:EndCooldown()		
+		ABILITY_spawn_spell:EndCooldown()
+		ABILILTY_barrage_spell:EndCooldown()		
 	end
-
+	print("-------")
 	return 1
-end
-
-function MoveTocurrentWaypoint( number )
-	print("Tank MOVE AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
-	thisEntity:MoveToPosition(POSITIONS[number+1])
-	currentWaypoint = number+1
-	print("Tank is moving to the waypoint number " .. currentWaypoint .. " on "..POSITIONS[number+1])
 end

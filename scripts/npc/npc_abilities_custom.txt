@@ -3450,6 +3450,48 @@
 	    }
 	}
 
+	"tank_miniboss_death"
+	{
+	    "BaseClass"              "ability_datadriven"
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "OnOwnerDied"
+    	{
+	        "CreateThinker"
+	        {
+	            "ModifierName" "tank_miniboss_death_fx"
+	            "Target" "CASTER"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	        "tank_miniboss_death_fx"
+	        {            
+	            "Duration" "2"
+	            "OnCreated"
+	            {
+	            	"AttachEffect"
+	                {	      
+	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf" //FIREWORKS
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                }
+	                "AttachEffect"
+	                {
+	                    "EffectName" "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+	                    "EffectAttachType" "follow_origin"
+	                    "Target" "TARGET"
+	                    "ControlPoints"
+	                    {
+	                        "00" "0 0 0"
+	                        "01" "200 5 5"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+
+
 	"boss_death"
 	{
 	    "BaseClass"              "ability_datadriven"
@@ -8701,7 +8743,7 @@
 	// CUSTOM MINIBOSS SPELLS
 
 
-	"miniboss_aoe_bomb" //play with the timings & speeds, cast on a dummy.
+	"miniboss_aoe_bomb"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -8750,6 +8792,7 @@
 						"Function"				"MeteorCannon"
 						"Target"				"POINT"
 					}
+					//ADD FIRE SOUND ASSASSINATE
 				}
 			}
 
@@ -8789,6 +8832,11 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"				"0"
+			"FireSound"
+			{
+				"EffectName" "Hero_Abaddon.DeathCoil.Target" //ADD METEOR/SSTRIKE
+				"Target"			"CASTER"
+			}
 			"AttachEffect"
 			{
 				"Target" 				"TARGET"
@@ -8901,11 +8949,6 @@
 				}
 				"OnOrbFire"
 				{
-					//"FireSound"
-					//{
-					//	"EffectName"			"Hero_DrowRanger.FrostArrows"
-					//	"Target"				"TARGET"
-					//}
 					"ActOnTargets"
 					{
 						"Target"
@@ -8942,6 +8985,11 @@
 				"Target"				"TARGET"
 				"Damage"				"10"
 				"Type"					"DAMAGE_TYPE_PURE"
+			}
+			"FireSound"
+			{
+				"EffectName"			"Hero_DrowRanger.FrostArrows" //ADD BOULDER
+				"Target"				"TARGET"
 			}
 		}
 	}	
@@ -9002,6 +9050,11 @@
 		
 		"OnProjectileHitUnit"
 		{
+			"FireSound"
+			{
+				"EffectName" "Hero_Abaddon.DeathCoil.Target" //ADD HELLFIRE BLAST/CONCOTION
+				"Target"			"CASTER"
+			}
 			"AttachEffect"
 			{
 				"EffectName"			"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
@@ -9045,11 +9098,6 @@
 							"04"		"0 0 0"
 							"05"		"0 0 0"
 						}
-					}
-					"FireSound"
-					{
-						"EffectName" "Hero_Abaddon.DeathCoil.Target"
-						"Target"			"CASTER"
 					}
 				}
 			}
@@ -9127,7 +9175,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"knockback"				"200"
+				"knockback"				"100"
 			}
 			
 			"06"
@@ -9146,30 +9194,65 @@
 
 	"miniboss_call_down"
 	{
-		"BaseClass"						"gyrocopter_call_down"
+		"MaxLevel"						"1"
+		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"				"2"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"100"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"	"calldown_cast"
+				"Target"	"POINT"
+			}
+			"CreateThinker"
+	        {
+	            "ModifierName" "calldown_fx_landing"
+	            "Target" "POINT"
+	        }
+	    }
+	    "Modifiers"
+	    {
+	    	"firestorm_fx_landing"
+	    	{
+	    		"Duration"	"2"
+	    		"OnCreated"
+	    		{
+			    	"AttachEffect"
+					{
+						"Target" 		"TARGET"
+						"EffectName"			"particles/units/heroes/hero_gyrocopter/invoker_sun_strike_team.vpcf" //CHANGE TO GYRO MARKER
+						"EffectAttachType" 		"follow_origin"
+					}
+				}
+	    	}
+		}
+	}
+
+	"miniboss_barrage"
+	{
+		"BaseClass"						"gyrocopter_rocket_barrage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"8"
+		"AbilityDuration"				"3"
+		"AbilityDamage"					"15"
+		"AbilityManaCost"				"0"
 
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -9178,50 +9261,15 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_duration_first"		"2"
+				"radius"					"400"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_duration_second"		"3"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_first"				"250 300 350"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"100 150 200"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_first"				"50"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_second"				"20"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"450"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"range_scepter"					"0"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_second_scepter"		"175 225 275"
+				"rockets_per_second"		"10"
 			}
 		}
-	}
+	}	
 
 }
 

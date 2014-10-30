@@ -346,7 +346,86 @@
 			}
 		}
 	}
+
+
+	"gyrocopter_call_down"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
 		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_first"		"2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_second"		"3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_first"				"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second"				"100"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_first"				"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_second"				"20"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"350"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range_scepter"					"0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second_scepter"		"175 225 275"
+			}
+		}
+	}	
 		
 	"lycan_summon_wolves" //default wolves need to be edited on npc_units.txt file
 	{

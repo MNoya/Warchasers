@@ -59,7 +59,23 @@ function firestorm_cast( event )
 						})
 end
 
-
+function calldown_cast( event )
+	local point = event.target_points[1]
+	local dummy = CreateUnitByName("dummy_unit", point, false, event.caster, event.caster, event.caster:GetTeam())
+	dummy:AddAbility("gyrocopter_call_down")
+	local ability = dummy:FindAbilityByName("gyrocopter_call_down")
+	ability:SetLevel(1)
+	print(ability:GetLevel().. " = " .. event.ability:GetLevel())
+	dummy:CastAbilityOnPosition(point, ability, event.caster:GetPlayerOwnerID())
+	
+	Timers:CreateTimer({
+			    			endTime = 5, 
+			    			callback = function()
+								dummy:ForceKill(true)
+								print("Call Down end")
+							end
+						})
+end
 
 
 function holy_light_cast( event )
