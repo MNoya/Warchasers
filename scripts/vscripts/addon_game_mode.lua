@@ -75,6 +75,16 @@ function Warchasers:InitGameMode()
 	Convars:RegisterCommand( "test", function(...) return Warchasers:SetHeroData( 0 ) end, "Test Command", FCVAR_CHEAT )
 	Convars:RegisterCommand( "data", function(...) return statcollectionRPG.LoadData() end, "Test Command", FCVAR_CHEAT )
 	Convars:RegisterCommand( "tank", function(...) return Warchasers:TestTank() end, "Test Command", FCVAR_CHEAT )
+	
+	Convars:RegisterCommand( "tank", function(name, parameter)
+    --Get the player that triggered the command
+    local cmdPlayer = Convars:GetCommandClient()
+	
+    --If the player is valid: call our handler
+    if cmdPlayer then 
+        return Warchasers:TestTank()
+    end
+ 	end, "Test Tank", FCVAR_CHEAT )
 
 	print( "GameRules set" )
 
@@ -194,6 +204,8 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_enigma", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_hero_keeper_of_the_light", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_treant", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_gyrocopter", context)
+	PrecacheResource( "particle_folder", "particles/units/heroes/hero_invoker", context)
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
@@ -758,24 +770,24 @@ function Warchasers:OnAllPlayersLoaded()
 		--Spawning Bosses
 
 		local owner_location = Vector(-7970,-7767,512)
-		local soul_keeper = CreateUnitByName("npc_soul_keeper", owner_location, true, nil, nil, DOTA_TEAM_NEUTRALS)
+		GameRules.soul_keeper = CreateUnitByName("npc_soul_keeper", owner_location, true, nil, nil, DOTA_TEAM_NEUTRALS)
 		
 		local boss_location = Vector(-5512,-5497,-112)
 		local boss_rotation = Vector(-7872,-5504,265)
-		local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
 		boss1:SetForwardVector(boss_rotation)
 		boss1.initial_neutral_position = boss_location
 
 		local boss_location = Vector(-1408,-7560,137)
 		local boss_rotation = Vector(-1408,6540,256)
-		local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
 		boss2:SetForwardVector(boss_rotation)
 		boss2.initial_neutral_position = boss_location
 
 
 		local boss_location = Vector(2038, -7212, 257)
 		local boss_rotation = Vector(7662, -7152, 113)
-		local final_boss = CreateUnitByName("npc_boss", boss_location, true, soul_keeper, soul_keeper, DOTA_TEAM_NEUTRALS)
+		local final_boss = CreateUnitByName("npc_boss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
 		final_boss:SetForwardVector(boss_rotation)
 		final_boss.initial_neutral_position = boss_location
 
@@ -783,7 +795,7 @@ function Warchasers:OnAllPlayersLoaded()
 end
 
 function Warchasers:OnNPCSpawned(keys)
-	print("NPC Spawned")
+	--print("NPC Spawned")
 	local npc = EntIndexToHScript(keys.entindex)
 	
 	if npc:IsHero() then
@@ -1262,13 +1274,10 @@ function Warchasers:OnEntityKilled( event )
 
 		local obstructions = Entities:FindByName(nil,"obstructions_4_1")
         obstructions:SetEnabled(false,false)
-
         local obstructions = Entities:FindByName(nil,"obstructions_4_2")
         obstructions:SetEnabled(false,false)
-
         local obstructions = Entities:FindByName(nil,"obstructions_4_3")
         obstructions:SetEnabled(false,false)
-
         local obstructions = Entities:FindByName(nil,"obstructions_4_4")
         obstructions:SetEnabled(false,false)
         print("Obstructions disabled")
@@ -1279,9 +1288,22 @@ function Warchasers:OnEntityKilled( event )
     	miniboss2_dead(event) 		
 	end
 
-	if killedUnit:GetName() == "tank_boss" then
+	if killedUnit:GetUnitName() == "npc_kitt_steamtank" then
 		print("Tank Area Cleared")
-		GameRules.TANK_BOSS_KILLED=true
+		local door = Entities:FindByName(nil, "gate_tanks")
+        if door ~= nil then
+            print("Door detected")
+            door:Kill()
+        end
+
+        local obstructions = Entities:FindByName(nil, "obstructions_tanks_1")
+        obstructions:SetEnabled(false,false)
+        local obstructions = Entities:FindByName(nil, "obstructions_tanks_2")
+        obstructions:SetEnabled(false,false)
+        local obstructions = Entities:FindByName(nil, "obstructions_tanks_3")
+        obstructions:SetEnabled(false,false)
+		local obstructions = Entities:FindByName(nil, "obstructions_tanks_4")
+        obstructions:SetEnabled(false,false)
 	end
 
 	if killedUnit:GetUnitName() == "npc_rocknroll_steamtank" and GameRules.TANK_BOSS_KILLED == false then
@@ -1704,40 +1726,5 @@ end]]
 
 function Warchasers:TestTank()
 	local hero = PlayerResource:GetSelectedHeroEntity(0)
-	local tank = CreateUnitByName("npc_kitt_steamtank", hero:GetAbsOrigin(), true, hero, hero, 0)
-	tank:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
-	tank:SetControllableByPlayer( 0 , true )
-    tank:SetTeam( DOTA_TEAM_GOODGUYS )
-    tank:SetOwner(hero)
-
-	if GameRules.PLAYER_COUNT >= 1 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 0 )
-        --local position_player1 = Vector(-200,-2000,64)
-        --FindClearSpaceForUnit(hero, position_player1, false)
-    end
-
-    if GameRules.PLAYER_COUNT >= 2 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 1 )     
-        local position_player2 = Vector(4240,-197,146)
-        FindClearSpaceForUnit(hero, position_player2, false)
-    end
-
-    if GameRules.PLAYER_COUNT >= 3 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 2 )
-        local position_player3 = Vector(4512,-213,146)
-        FindClearSpaceForUnit(hero, position_player3, false)
-    end
-
-    if GameRules.PLAYER_COUNT >= 4 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 3 )  
-        local position_player4 = Vector(4752.79,-213,146)
-        FindClearSpaceForUnit(hero, position_player4, false)
-    end
-
-    if GameRules.PLAYER_COUNT >= 5 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 4 )
-        local position_player5 = Vector(4512,26,146)
-        FindClearSpaceForUnit(hero, position_player5, false)       
-    end
-
+	TeleporterTanksStart()
 end

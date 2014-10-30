@@ -6,7 +6,7 @@ function log_npc( event )
 	local index = event.entindex
 	local unit = EntIndexToHScript(index)
 	if Convars:GetBool("developer") == true then
-		print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
+		--print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
 	end
 
 	if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
@@ -71,7 +71,6 @@ function tank_miniboss_think( event )
 	if (boss:GetHealth() / boss:GetMaxHealth()) <= 0.20 and not givenMoveOrder then
 		nextWaypoint = 5
 		givenMoveOrder = true
-	end
 	elseif (boss:GetHealth() / boss:GetMaxHealth()) <= 0.40 and not givenMoveOrder then
 		nextWaypoint = 4
 		givenMoveOrder = true

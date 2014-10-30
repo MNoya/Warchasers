@@ -1088,6 +1088,18 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"dummy_passive"
 		}
+
+	"dummy_unit_spellcast"
+		{
+		"BaseClass"					"npc_dota_creature"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"		"0"	
+		"VisionNighttimeRange"		"0"
+		"UnitRelationshipClass"	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_NONE"
+		"AbilityLayout"				"4"
+		"Ability1"					"dummy_passive_vulnerable"
+		}
 		
 	"vision_dummy"
 	{
@@ -9608,8 +9620,8 @@
 		"Ability3"					"miniboss_launch_skeletons"
 		"Ability4"					""
 		"Ability5"					""
-		"Ability6"					"gyrocopter_call_down" //need to override this
-		"Ability7"					"tank_miniboss_thinker"
+		"Ability6"					"miniboss_call_down" //need to override this
+		"Ability7"					"tank_miniboss_passives"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -9644,14 +9656,14 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"500"		// Speed
-		"MovementTurnRate"			"0.5"		// Turning rate.
+		"MovementSpeed"				"400"		// Speed
+		"MovementTurnRate"			"1"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000"		// Base health.
+		"StatusHealth"				"10000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
+		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
 		// Team
@@ -9666,6 +9678,8 @@
 		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 		
+		"vscripts"		"ai_tank_miniboss.lua"
+
 	}
 	
 	

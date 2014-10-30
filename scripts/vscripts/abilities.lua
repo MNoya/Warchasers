@@ -301,6 +301,38 @@ function warchasers_avatar_scale( event )
 	end
 end
 
+function MeteorCannon( keys )
+	point = keys.target_points[1]
+	caster = keys.caster
+	ability = keys.ability
+    
+  local info = {
+    EffectName = "particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf",
+    Ability = ability,
+    vSpawnOrigin = caster:GetOrigin(),
+    fDistance = 5000,
+    fStartRadius = 125,
+    fEndRadius = 125,
+    Source = caster,
+    bHasFrontalCone = false,
+    iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+    iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_OTHER,
+    --fMaxSpeed = 5200,
+    fExpireTime = GameRules:GetGameTime() + 8.0,
+  }
+
+  local speed = 500
+
+  point.z = 0
+  local pos = caster:GetAbsOrigin()
+  pos.z = 0
+  local diff = point - pos
+  info.vVelocity = diff:Normalized() * speed
+
+  ProjectileManager:CreateLinearProjectile( info )
+end
+
 
 
 --FindByClassnameNearest("npc_dota_hero_sven", target:GetOrigin(), 2000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel()

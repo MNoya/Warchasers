@@ -1,18 +1,16 @@
 --[[
-Steamtank Miniboss AI
+Steamtank MinithisEntity AI
 ]]
--- "vscripts"			"ai_tank_miniboss.lua"
+-- "vscripts"			"ai_tank_minithisEntity.lua"
 
 function Spawn( entityKeyValues )
 	ABILILTY_bomb_spell = thisEntity:FindAbilityByName("miniboss_aoe_bomb")
-	ABILITY_calldown_spell = thisEntity:FindAbilityByName("gyrocopter_call_down")
+	ABILITY_calldown_spell = thisEntity:FindAbilityByName("miniboss_call_down")
 	ABILITY_flak_spell = thisEntity:FindAbilityByName("miniboss_flak")
 	ABILITY_spawn_spell = thisEntity:FindAbilityByName("miniboss_launch_skeletons")
 
-	thisEntity:SetContextThink( "SteamtankThink", SteamtankThink, 0.25 )
-	print("Starting AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex()))
-
-	thisEntity.currentWaypoint = 1
+	thisEntity:SetContextThink( "SteamtankThink", SteamtankThink , 1)
+	print("Starting AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
 
 end
 
@@ -28,13 +26,17 @@ function CollectWaypoints()
 	local waypoints = { waypoint1, waypoint2, waypoint3, waypoint4, waypoint5, waypoint6 }
 	
 	for k,v in pairs(waypoints) do
-		print("Checking waypoint number " .. k .. " value " .. v)
+		print(k,v)
 	end
 
 	return waypoints
 end
 
 POSITIONS = CollectWaypoints()
+
+currentWaypoint = 1
+givenOrder = false
+reachedWaypoint = true
 
 function SteamtankThink()
 	if not thisEntity:IsAlive() then
@@ -43,84 +45,109 @@ function SteamtankThink()
 
 	-- Move to the next waypoint after taking enough damage
 	local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
-	if healthRemaining <= 0.8 and thisEntity.currentWaypoint == 1 then 
-		MoveToNextWaypoint(1) 
-		return 1
-	elseif healthRemaining <= 0.6 and thisEntity.currentWaypoint == 2 then
-		thisEntity:MoveToPosition(POSITIONS[3])
-		thisEntity:currentWaypoint = 3
-		print("Tank is moving to the waypoint number " .. thisEntity:currentWaypoint)
-		return 1
-	elseif healthRemaining <= 0.5 and thisEntity.currentWaypoint == 3 then
-		thisEntity:MoveToPosition(POSITIONS[4])
-		thisEntity:currentWaypoint = 4
-		print("Tank is moving to the waypoint number " .. thisEntity:currentWaypoint)
-		return 1
-	elseif healthRemaining <= 0.4 and thisEntity.currentWaypoint == 4 then
-		thisEntity:MoveToPosition(POSITIONS[5])
-		thisEntity:currentWaypoint = 5
-		print("Tank is moving to the waypoint number " .. thisEntity:currentWaypoint)
-		return 1
-	elseif healthRemaining <= 0.2 and thisEntity.currentWaypoint == 5 then
-		thisEntity:MoveToPosition(POSITIONS[6])
-		thisEntity:currentWaypoint = 6 --final
-		print("Tank is moving to the waypoint number " .. thisEntity:currentWaypoint)
-		--apply Modifier Enrage
-		-- later if the boss is Enraged, everytime it casts a spell the CD will be refreshed, to allow spell spamming
-		return 1
+
+	if not givenOrder then
+		if ( (healthRemaining <= 0.80) and (currentWaypoint == 1) ) then
+			currentWaypoint = 2 --where to go next
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.60) and (currentWaypoint == 2) ) then
+			currentWaypoint = 3
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.50) and (currentWaypoint == 3) ) then
+			currentWaypoint = 4
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.40) and (currentWaypoint == 4) ) then
+			currentWaypoint = 5
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.20) and (currentWaypoint == 5) ) then
+			currentWaypoint = 6
+			givenOrder = true
+		end
+
+		if givenOrder == true then
+			print("Given Order. Tank wants to move to a new waypoint: "..currentWaypoint)
+			thisEntity:MoveToPosition(POSITIONS[currentWaypoint])
+			reachedWaypoint = false
+		end
 	end
 
-	-- Cast Bomb whenever we're able to do so.
-	-- Make abilities INSTANT and not stop movement, so the unit continues moving while casting
+	local distanceToWaypoint = (thisEntity:GetOrigin() - POSITIONS[currentWaypoint]):Length2D()
+	if distanceToWaypoint > 100 and not reachedWaypoint then
+		print( "Current distance to waypoint ".. distanceToWaypoint)
+		thisEntity:MoveToPosition(POSITIONS[currentWaypoint])
+	elseif distanceToWaypoint <=100 and not reachedWaypoint then
+		print("Reached waypoint")
+		reachedWaypoint = true --stop moving to the current waypoint
+		givenOrder = false --accept a new order
+	end
+
+	print("-------")
+	
+
+
+	--Cast Bomb whenever we're able to do so.
 	if ABILILTY_bomb_spell:IsFullyCastable() then
-		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), 
-										thisEntity, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 
-										DOTA_UNIT_TARGET_FLAG_NONE, FIND_FARTHEST, false)
+		print("Tank can cast Meteor Bomb")
+					--FindUnitsInRadius( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )
+		local units = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, 1500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO, FIND_FARTHEST, false )
 
 		if units ~= nil then
-			local target = units[1]
-			local dummy = CreateUnitByName("dummy_unit", target:GetAbsOrigin(), false, thisEntity, thisEntity, DOTA_TEAM_NEUTRALS)
-			thisEntity:CastAbilityOnTarget(dummy, ABILILTY_bomb_spell, -1) 
-		-- ADD "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE" to the spell
+			if #units >= 1 then
+				print("Tank wants to cast Meteor Bomb, ".. #units .." enemy near.")
+				local target = units[1]
+				local dummy = CreateUnitByName("dummy_unit_spellcast", target:GetAbsOrigin(), false, thisEntity, thisEntity, DOTA_TEAM_GOODGUYS)
+				thisEntity:CastAbilityOnTarget(dummy, ABILILTY_bomb_spell, -1) 
+			else 
+				print("No units found to cast the spell on")
+			end
 		end
-		return 1.0
 	end
 
-	-- Cast Spawn whenever we're able to do so.
+	--Cast Spawn whenever we're able to do so.
 	if ABILITY_spawn_spell:IsFullyCastable() then
-		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), 
-										thisEntity, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 
-										DOTA_UNIT_TARGET_FLAG_NONE, FIND_FARTHEST, false)
+		print("Tank can cast Launch Skeletons")
+					--FindUnitsInRadius( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )
+		local units = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO, FIND_FARTHEST, false )
 
 		if units ~= nil then
-			local target = units[1]
-			local dummy = CreateUnitByName("dummy_unit", target:GetAbsOrigin(), false, thisEntity, thisEntity, DOTA_TEAM_NEUTRALS)
-			thisEntity:CastAbilityOnTarget(dummy, ABILILTY_bomb_spell, -1) 
-		-- ADD "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE" to the spell
+			if #units >= 1 then
+				print("Tank wants to cast Launch Skeletons, ".. #units .." enemy near.")
+				local target = units[1]
+				local dummy = CreateUnitByName("dummy_unit_spellcast", target:GetAbsOrigin(), false, thisEntity, thisEntity, DOTA_TEAM_GOODGUYS)
+				thisEntity:CastAbilityOnTarget(dummy, ABILITY_spawn_spell, -1) 
+			else 
+				print("No units found to cast the spell on")
+			end
 		end
-
-	-- Cast Flak whenever we're able to do so.
-	if ABILITY_flak_spell:IsFullyCastable() then
-		thisEntity:CastAbilityImmediately( ABILITY_flak_spell, -1 )
-		return 1.0
-		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), 
-										thisEntity, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 
-										DOTA_UNIT_TARGET_FLAG_NONE, FIND_FARTHEST, false)
-
-		if units ~= nil then
-			local target = units[1]
-			local dummy = CreateUnitByName("dummy_unit", target:GetAbsOrigin(), false, thisEntity, thisEntity, DOTA_TEAM_NEUTRALS)
-			thisEntity:CastAbilityOnTarget(dummy, ABILITY_flak_spell, -1) 
-		-- ADD "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE" to the spell
-		end
-		return 1.0
 	end
 
-	return 0.25 + RandomFloat( 0.25, 0.5 )
+	-- Cast calldown whenever we're able to do so.
+	if ABILITY_calldown_spell:IsFullyCastable() and healthRemaining <= 0.25 then
+		print("Tank can cast Call Down")
+					--FindUnitsInRadius( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )
+		local units = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO, FIND_FARTHEST, false )
+
+		if units ~= nil then
+			if #units >= 1 then
+				print("Tank wants to cast cast Call Down, ".. #units .." enemy near.")
+				local target = units[1]
+				thisEntity:CastAbilityOnPosition(target:GetAbsOrigin(), ABILITY_calldown_spell, -1)
+			else 
+				print("No units found to cast the spell on")
+			end
+		end
+		--Refresh the cooldown of the other spells
+		--ABILITY_calldown_spell:EndCooldown()
+		ABILILTY_bomb_spell:EndCooldown()
+		ABILITY_spawn_spell:EndCooldown()		
+	end
+
+	return 1
 end
 
-function MoveToNextWaypoint( number )
+function MoveTocurrentWaypoint( number )
+	print("Tank MOVE AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
 	thisEntity:MoveToPosition(POSITIONS[number+1])
-	thisEntity:currentWaypoint = number+1
-	print("Tank is moving to the waypoint number " .. thisEntity:currentWaypoint)
+	currentWaypoint = number+1
+	print("Tank is moving to the waypoint number " .. currentWaypoint .. " on "..POSITIONS[number+1])
 end
