@@ -188,7 +188,8 @@ function soulkeeper_warning_tanks(trigger)
 end
 
 function hint_tanks(trigger)
-	EmitGlobalSound("General.PingRune")
+	-- outdated
+	--[[EmitGlobalSound("General.PingRune")
 	GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> - You get no experience for killing monsters while in a tank.", 0, 0) 
 	GameRules:SendCustomMessage("Avoid the monsters you can avoid, and kill the ones you have to.", 0, 0)
 	GameRules:SendCustomMessage("Find and kill the enemy steam tanks to open the end door.", 0, 0)
@@ -198,7 +199,7 @@ function hint_tanks(trigger)
       	EmitGlobalSound("General.PingWarning")
 		GameRules:SendCustomMessage("<font color='#B40404'>BEWARE</font> - Being slain in this mode is permanent, despite whatever items your Hero carries!", 0, 0)
     end
-  	})
+  	})]]
 	
 end
 
