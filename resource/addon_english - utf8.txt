@@ -313,6 +313,18 @@
 		"DOTA_Tooltip_ability_tb_miniboss_animate_dead"				"Animate Dead"
 		"DOTA_Tooltip_Ability_tb_miniboss_animate_dead_Description"	"Raises dead units in a giant area to fight for the Soulless once more."
 		
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb"		"Meteor Launcher"		
+		"DOTA_Tooltip_ability_miniboss_flak"				"Multi Boulder"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons"	"Launch Skeletons"
+		"DOTA_Tooltip_ability_miniboss_barrage"				"Rocket Barrage"
+		"DOTA_Tooltip_ability_miniboss_call_down"			"Apocalypse"
+
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb_Description"			"Dodge the meatball"		
+		"DOTA_Tooltip_ability_miniboss_flak_Description"				"Eat the rocks"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons_Description"	"Spooky Scary Skeletons"
+		"DOTA_Tooltip_ability_miniboss_barrage_Description"				"Boring filler skill because I was too lazy to code a custom one"
+		"DOTA_Tooltip_ability_miniboss_call_down_Description"			"Loud and Loaded!"
+
 		"DOTA_Tooltip_ability_warchasers_sleep"				"Sleep"
 		"DOTA_Tooltip_ability_warchasers_sleep_Description"	"Puts a target enemy unit to sleep. A sleeping unit can be awoken by attacking it."
 		"DOTA_Tooltip_ability_warchasers_sleep_duration"	"DURATION:"
@@ -573,7 +585,7 @@
 		"npc_sapper"							"Sapper"
 		"npc_roadkill_skeleton"					"RoadKill Skeleton"
 		"npc_rocknroll_steamtank"				"Rock n' Roll Steam Tank"
-		"npc_kitt_steamtank"					"KITT Steam Tank"
+		"npc_kitt_steamtank"					"Steam Tank"
 		"npc_health_fountain"					"Health Fountain"
 		"npc_mana_fountain"						"Mana Fountain"
 
