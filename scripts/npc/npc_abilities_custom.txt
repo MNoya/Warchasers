@@ -8605,6 +8605,7 @@
 	      	"modifier_kappuchino"
 	      	{
 		        "Passive" "1"
+		        "IsHidden"	"1"
 		        "States"
 		        {
 			        "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
@@ -8754,7 +8755,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityTextureName" 			""
+		"AbilityTextureName" 			"miniboss_aoe_bomb"
 				
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -8906,7 +8907,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityTextureName" 			""
+		"AbilityTextureName" 			"miniboss_flak"
 
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"0"
@@ -9004,7 +9005,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			""
+		"AbilityTextureName"			"miniboss_launch_skeletons"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -9200,6 +9201,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"miniboss_call_down"
 
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"100"
@@ -9241,6 +9243,7 @@
 		"BaseClass"						"gyrocopter_rocket_barrage"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"miniboss_barrage"
 
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
