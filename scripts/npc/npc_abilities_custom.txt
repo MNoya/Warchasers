@@ -3466,12 +3466,12 @@
 	    {
 	        "tank_miniboss_death_fx"
 	        {            
-	            "Duration" "2"
+	            "Duration" "10"
 	            "OnCreated"
 	            {
 	            	"AttachEffect"
 	                {	      
-	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf" //FIREWORKS
+	                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_a.vpcf"
 	                    "EffectAttachType" "follow_origin"
 	                    "Target" "TARGET"
 	                }
@@ -3486,6 +3486,49 @@
 	                        "01" "200 5 5"
 	                    }
 	                }
+	                "FireSound"
+					{
+						"EffectName"		"Hero_OgreMagi.Fireblast.Cast"
+						"Target"			  "TARGET"
+					}
+	                 "DelayedAction"
+	                {
+	                	"Delay"	"1"
+	                	"Action"
+	                	{
+	                		"AttachEffect"
+			                {
+			                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_b.vpcf"
+			                    "EffectAttachType" "follow_origin"
+			                    "Target" "TARGET"
+			                }
+			                "FireSound"
+							{
+							"EffectName"		"ParticleDriven.Rocket.Launch"
+							"Target"			  "TARGET"
+							}
+	                	}
+
+	                }
+	                "DelayedAction"
+	                {
+	                	"Delay"	"2"
+	                	"Action"
+	                	{
+	                		"AttachEffect"
+			                {
+			                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_c.vpcf"
+			                    "EffectAttachType" "follow_origin"
+			                    "Target" "TARGET"
+			                }
+			                 "FireSound"
+							{
+							"EffectName"		"ParticleDriven.Rocket.Explode"
+							"Target"			  "TARGET"
+							}
+	                	}
+
+	                }
 	            }
 	        }
 	    }
@@ -3496,6 +3539,10 @@
 	{
 	    "BaseClass"              "ability_datadriven"
 	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	    "precache"	{
+	    	"particle"	"particles/frostivus_gameplay/wraith_king_hellfire_eruption_tell.vpcf"
+	    }
 	    "OnOwnerDied"
     	{
 	        "CreateThinker"
@@ -3513,7 +3560,7 @@
 	            {
 	            	"AttachEffect"
 	                {	      
-	                    "EffectName" "particles/neutral_fx/roshan_death.vpcf"
+	                    "EffectName" "particles/frostivus_gameplay/wraith_king_hellfire_eruption_tell.vpcf"
 	                    "EffectAttachType" "follow_origin"
 	                    "Target" "TARGET"
 	                }
@@ -3829,7 +3876,7 @@
 
 		"precache"
 		{
-			"particle"	"particles/frostivus_gameplay/wraith_king_hellfire_eruption_tell.vpcf"
+			"particle"	"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf"
 			"particle" "particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
 		}
@@ -3844,7 +3891,7 @@
 				{
 					"AttachEffect"
 						{
-						"EffectName"			"particles/frostivus_gameplay/wraith_king_hellfire_eruption_tell.vpcf"
+						"EffectName"			"particles/econ/items/legion/legion_weapon_voth_domosh/legion_duel_ring_arcana.vpcf"
 						"EffectAttachType"		"follow_origin"
 						"EffectRadius"			"250"
 						"EffectDurationScale"	"2"
@@ -8773,6 +8820,7 @@
 		"precache"
 		{
 			"particle"		"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
 
 		"OnSpellStart"
@@ -8793,7 +8841,11 @@
 						"Function"				"MeteorCannon"
 						"Target"				"POINT"
 					}
-					//ADD FIRE SOUND ASSASSINATE
+					"FireSound"
+					{
+						"EffectName"			"Ability.Assassinate"
+						"Target"				"CASTER"
+					}
 				}
 			}
 
@@ -8835,7 +8887,7 @@
 			"DeleteOnHit"				"0"
 			"FireSound"
 			{
-				"EffectName" "Hero_Abaddon.DeathCoil.Target" //ADD METEOR/SSTRIKE
+				"EffectName" "Hero_Invoker.ChaosMeteor.Impact"
 				"Target"			"CASTER"
 			}
 			"AttachEffect"
@@ -8989,7 +9041,7 @@
 			}
 			"FireSound"
 			{
-				"EffectName"			"Hero_DrowRanger.FrostArrows" //ADD BOULDER
+				"EffectName"			"Brewmaster_Earth.Boulder.Target"
 				"Target"				"TARGET"
 			}
 		}
@@ -9020,7 +9072,7 @@
 
 		"precache"
 		{
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 			"particle"	"particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf"
 			"particle"	"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
@@ -9053,7 +9105,7 @@
 		{
 			"FireSound"
 			{
-				"EffectName" "Hero_Abaddon.DeathCoil.Target" //ADD HELLFIRE BLAST/CONCOTION
+				"EffectName" "Hero_Alchemist.UnstableConcoction.Stun"
 				"Target"			"CASTER"
 			}
 			"AttachEffect"
@@ -9206,6 +9258,11 @@
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"100"
 
+		"precache"	
+		{
+			"particle"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_marker.vpcf"
+		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -9222,16 +9279,17 @@
 	    }
 	    "Modifiers"
 	    {
-	    	"firestorm_fx_landing"
+	    	"calldown_fx_landing"
 	    	{
 	    		"Duration"	"2"
 	    		"OnCreated"
 	    		{
-			    	"AttachEffect"
+					"AttachEffect"
 					{
-						"Target" 		"TARGET"
-						"EffectName"			"particles/units/heroes/hero_gyrocopter/invoker_sun_strike_team.vpcf" //CHANGE TO GYRO MARKER
+						"Target" 				"TARGET"
+						"EffectName"			"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_marker.vpcf"
 						"EffectAttachType" 		"follow_origin"
+						"EffectRadius"			"350"
 					}
 				}
 	    	}
@@ -9251,11 +9309,6 @@
 		"AbilityDuration"				"3"
 		"AbilityDamage"					"15"
 		"AbilityManaCost"				"0"
-
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
-		}
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

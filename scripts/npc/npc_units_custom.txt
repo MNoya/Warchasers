@@ -9615,6 +9615,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------	
+		"AbilityLayout"				"5"
 		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
 		"Ability2"					"miniboss_flak"
 		"Ability3"					"miniboss_launch_skeletons"

@@ -122,7 +122,6 @@ function SteamtankThink()
 	if ABILILTY_barrage_spell:IsFullyCastable() then
 		print("Tank wants to cast Barrage")
 		thisEntity:CastAbilityNoTarget(ABILILTY_barrage_spell, -1)
-		end
 	end
 
 	-- Cast calldown whenever we're able to do so.
@@ -141,14 +140,16 @@ function SteamtankThink()
 			end
 		end
 		--Refresh the cooldown of the other spells
-		if healthRemaining <= 0.05 then -- last stand
-			ABILITY_calldown_spell:EndCooldown()
-		end
+		--if healthRemaining <= 0.05 then -- last stand
+		--	ABILITY_calldown_spell:EndCooldown()
+		--end
 
 		ABILILTY_bomb_spell:EndCooldown()
 		ABILITY_spawn_spell:EndCooldown()
 		ABILILTY_barrage_spell:EndCooldown()		
 	end
+
 	print("-------")
 	return 1
+
 end

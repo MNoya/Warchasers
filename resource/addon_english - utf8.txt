@@ -7,7 +7,7 @@
 
 		"popup_title"                   "Welcome to Warchasers"
 
-    	"popup_body"                    "These are the Heroes from The Age of Legends. Choose one and fight to redeem their eternal soul."
+    	"popup_body"                    "<i><font size='10' face='Verdana'><b>These are the Heroes from The Age of Legends</b><br><br>Choose one and fight to redeem their eternal soul.</font></i>"
 
     	"camera_lock_on"                    "Camera Lock ON"
     	"camera_lock_off"                    "Camera Lock OFF"

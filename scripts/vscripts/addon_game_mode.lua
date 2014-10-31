@@ -20,7 +20,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = 1.0.0
+WARCHASERS_VERSION = "1.0.0"
 
 -- Stat collection
 require('lib.statcollection')
@@ -106,6 +106,12 @@ function Warchasers:InitGameMode()
 	GameRules.P2_ANKH_COUNT = 0
 	GameRules.P3_ANKH_COUNT = 0
 	GameRules.P4_ANKH_COUNT = 0
+
+	GameRules.Player0DEAD = false
+	GameRules.Player1EAD = false
+	GameRules.Player2DEAD = false
+	GameRules.Player3DEAD = false
+	GameRules.Player4DEAD = false
 
 	GameRules.CURRENT_SOUNDTRACK = 0
 
@@ -213,6 +219,9 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts", context)
 
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
@@ -462,17 +471,17 @@ function Warchasers:SoundThink()
 end
 
 function Warchasers:CheckForDefeat()
-	
-	for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
-        if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
-            local entHero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-            if entHero and not entHero:IsAlive()
-            	if entHero:GetRespawnTime() > 500 then
-            		entHero:SetTimeUntilRespawn(999)
-            	end 
-            end
-        end
-    end
+	if GameRules.Player0DEAD == true then --stay dead
+		PlayerResource:GetSelectedHeroEntity(0):SetTimeUntilRespawn(999)
+	elseif GameRules.Player1DEAD == true then
+		PlayerResource:GetSelectedHeroEntity(1):SetTimeUntilRespawn(999)
+	elseif GameRules.Player2DEAD == true then
+		PlayerResource:GetSelectedHeroEntity(2):SetTimeUntilRespawn(999)
+	elseif GameRules.Player3DEAD == true then
+		PlayerResource:GetSelectedHeroEntity(3):SetTimeUntilRespawn(999)
+	elseif GameRules.Player4DEAD == true then
+		PlayerResource:GetSelectedHeroEntity(4):SetTimeUntilRespawn(999)
+	end	
 end
 
 function Warchasers:OnGameRulesStateChange(keys)
@@ -718,10 +727,6 @@ function Warchasers:OnHeroInGame(hero)
     giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
 
-
-	Warchasers:ReadHeroData()
-
-
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
     	Timers:CreateTimer({
 			endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -746,7 +751,7 @@ end
 function Warchasers:OnEveryonePicked()
     GameRules:GetGameModeEntity():SetThink("SoundThink", self)
     GameRules:SendCustomMessage("Welcome to <font color='#2EFE2E'>Warchasers!</font>", 0, 0) -- ##9A2EFE
-    GameRules:SendCustomMessage("Created by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
+    GameRules:SendCustomMessage("Ported by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
 end
 
@@ -973,8 +978,6 @@ function Warchasers:ModifyStatBonuses(unit)
 
 end
 
-
-
 function Warchasers:OnEntityKilled( event )
 	local killedUnit = EntIndexToHScript( event.entindex_killed )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
@@ -984,6 +987,7 @@ function Warchasers:OnEntityKilled( event )
 		ScreenShake(killerEntity:GetAbsOrigin(), 50.0, 50.0, 5.0, 9000, 0, true)
 		PlayerResource:SetCameraTarget(killerEntity:GetPlayerOwnerID(), killedUnit)
 		EmitGlobalSound("diretide_roshdeath_Stinger")
+		boss_dead()
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
@@ -1133,26 +1137,31 @@ function Warchasers:OnEntityKilled( event )
     	if KilledPlayerID==0 and GameRules.P0_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
+    		GameRules.Player0DEAD = true
     	end
 
     	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
+    		GameRules.Player1DEAD = true
     	end
 	      
 	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
+    		GameRules.Player2DEAD = true
     	end
 
     	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
+    		GameRules.Player3DEAD = true
     	end
 
     	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT == 0 then  
     		GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
+    		GameRules.Player4DEAD = true
     	end 
  		
  		--Check for defeat

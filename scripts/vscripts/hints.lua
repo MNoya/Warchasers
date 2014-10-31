@@ -225,7 +225,7 @@ function boss_engage(trigger)
 end
 
 function boss_dead(trigger)
-	GameRules:SendCustomMessage("BEHOLD WARRIORS!!<br>You have succeeded in defeating the Shadow Lord!!<br>After an eternity, your quest to redeem your lost souls is over.<br>Indeed you truely are Heroes!<br>Your souls might now move on and finally give you peace.",0,0)
+	GameRules:SendCustomMessage("<br>BEHOLD WARRIORS!!<br>You have succeeded in defeating the Shadow Lord!!<br>After an eternity, your quest to redeem your lost souls is over.<br>Indeed you truely are Heroes!<br>Your souls might now move on and finally give you peace.",0,0)
 end
 
 --custom hints for teleporters and spawners
