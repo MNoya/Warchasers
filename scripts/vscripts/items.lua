@@ -137,6 +137,9 @@ function HealthTomeUsed( event )
 
     --local item = CreateItem( "item_tome_of_health_modifier", source, source)
     --item:ApplyDataDrivenModifier(casterUnit, casterUnit, "modifier_tome_of_health_mod_1", {})
+    if picker:IsRealHero() == false then
+    	picker = picker:GetPlayerOwner():GetAssignedHero()
+    end
     if picker:HasModifier("tome_health_modifier") == false then
         tome:ApplyDataDrivenModifier( picker, picker, "tome_health_modifier", nil)
         picker:SetModifierStackCount("tome_health_modifier", picker, 30)
@@ -156,6 +159,11 @@ function StrengthTomeUsed( event )
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseStrength( casterUnit:GetBaseStrenght() + 1 )
     --casterUnit:ModifyStrength(statBonus)
+    if picker:IsRealHero() == false then
+    	picker = picker:GetPlayerOwner():GetAssignedHero()
+    end
+
+
     if picker:HasModifier("tome_strenght_modifier") == false then
         tome:ApplyDataDrivenModifier( picker, picker, "tome_strenght_modifier", nil)
         picker:SetModifierStackCount("tome_strenght_modifier", picker, statBonus)
@@ -175,6 +183,9 @@ function AgilityTomeUsed( event )
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseAgility( casterUnit:GetBaseAgility() + 1 )
     --casterUnit:ModifyAgility(statBonus)
+    if picker:IsRealHero() == false then
+    	picker = picker:GetPlayerOwner():GetAssignedHero()
+    end
     if picker:HasModifier("tome_agility_modifier") == false then
         tome:ApplyDataDrivenModifier( picker, picker, "tome_agility_modifier", nil)
         picker:SetModifierStackCount("tome_agility_modifier", picker, statBonus)
@@ -192,6 +203,9 @@ function IntellectTomeUsed( event )
     local statBonus = event.bonus_stat
     --casterUnit:SetBaseIntellect( casterUnit:GetBaseIntellect() + 1 )
     --casterUnit:ModifyIntellect(statBonus)
+    if picker:IsRealHero() == false then
+    	picker = picker:GetPlayerOwner():GetAssignedHero()
+    end
     if picker:HasModifier("tome_intelect_modifier") == false then
         tome:ApplyDataDrivenModifier( picker, picker, "tome_intelect_modifier", nil)
         picker:SetModifierStackCount("tome_intelect_modifier", picker, statBonus)
