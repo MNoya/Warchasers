@@ -66,3 +66,39 @@ end
 function Ganked()
 	EmitGlobalSound("valve_dota_001.music.ganked_lg")
 end
+
+function AnnouncerChoose()
+	local chooseSound = RandomInt(1,3)
+	if chooseSound == 1 then 
+		EmitGlobalSound("Warchasers.ChooseHero")
+	elseif chooseSound == 2 then 
+		EmitGlobalSound("Warchasers.ChooseAHero")
+	elseif chooseSound == 3 then 
+		EmitGlobalSound("Warchasers.ChooseWisely")
+	end
+end
+
+function AnnouncerBattle()
+	local chooseSound = RandomInt(1,2)
+	if chooseSound == 1 then 
+		EmitGlobalSound("Warchasers.HeroesRodeOut")
+	elseif chooseSound == 2 then 
+		EmitGlobalSound("Warchasers.GloriousBattle")
+	end
+end
+
+function AnnouncerProgress()
+	local chooseSound = RandomInt(1,5)
+	if chooseSound == 1 then 
+		EmitGlobalSound("Warchasers.BravelyDone")
+	elseif chooseSound == 2 then 
+		EmitGlobalSound("Warchasers.Feat")
+	elseif chooseSound == 3 then 
+		EmitGlobalSound("Warchasers.Impressive")
+	elseif chooseSound == 4 then 
+		EmitGlobalSound("Warchasers.PressFurther")
+	elseif chooseSound == 5 then 
+		EmitGlobalSound("Warchasers.TrailOfDestruction")
+	end
+
+end

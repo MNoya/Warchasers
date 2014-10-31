@@ -392,12 +392,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_first"				"250"
+				"damage_first"				"100"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"100"
+				"damage_second"				"50"
 			}
 			"05"
 			{

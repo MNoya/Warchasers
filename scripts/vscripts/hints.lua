@@ -184,6 +184,19 @@ function soulkeeper_warning_tanks(trigger)
 	GameRules:SendCustomMessage("<font color='#DBA901'>Soul Keeper:</font> CURSE YOU!<br>Your determination for redemption grows tiresome...<br> we'll see how you fare in these Dwarven contraptions!<br>Step on the magic circle to begin your journey.",0,0)
 end
 
+function GiveDiretide(trigger)
+	EmitGlobalSound("diretide_select_target_Stinger")
+	GameRules:SendCustomMessage("One more thing: we on the Dota 2 team have a number of updates in the works right now that we’re really excited about, some for the rest of this year, and a big update for early next year. But we’re pretty sure we won’t",0,0)
+	GameRules:SendCustomMessage("be able to make enough progress on the larger update if we put it down to work on Diretide – <font color='#9A2EFE'>so we’ve decided that we’re not going to ship a Diretide event this year.</font>",0,0)
+	GameRules:SendCustomMessage("We know that last year we weren’t clear enough in our communication about this, so this year we wanted to be up front about it early. Next year will bring monumental changes to Dota 2,", 0, 0)
+	GameRules:SendCustomMessage("and we’re confident that when you’ve seen what we’ve been working on, you’ll agree it was worth it.", 0, 0)
+	--Kappa
+	local messageinfo = {
+				        message = "GIFF (~˘ _ ˘)~ ",
+						duration = 10}
+	FireGameEvent("show_center_message",messageinfo)
+end
+
 function hint_tanks(trigger)
 	-- outdated
 	--[[EmitGlobalSound("General.PingRune")

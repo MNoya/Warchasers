@@ -9,6 +9,7 @@ function Spawn( entityKeyValues )
 	ABILITY_flak_spell = thisEntity:FindAbilityByName("miniboss_flak")
 	ABILILTY_barrage_spell = thisEntity:FindAbilityByName("miniboss_barrage")
 	ABILITY_spawn_spell = thisEntity:FindAbilityByName("miniboss_launch_skeletons")
+	ABILITY_immolation = thisEntity:FindAbilityByName("warchasers_steamtank_immolation")
 
 	thisEntity:SetContextThink( "SteamtankThink", SteamtankThink , 1)
 	print("Starting AI for "..thisEntity:GetUnitName().." "..thisEntity:GetEntityIndex())
@@ -17,14 +18,18 @@ end
 
 function CollectWaypoints()
 
-	local waypoint1 = Vector(4488,1188,128) --just in front of the start position
-	local waypoint2 = Vector(5424,-560,224) --first ramp
-	local waypoint3 = Vector(6170,1145,128) --first arc
-	local waypoint4 = Vector(7716,1285,128) --second arc
-	local waypoint5 = Vector(7288,-504,224) --second ramp
-	local waypoint6 = Vector(4766,-2439,128) --final door door
+	local waypoint1 = Vector(4466,1100,128) --just in front of the start position
+	local waypoint2 = Vector(5200, 1420,128) --near the start pos
+	local waypoint3 = Vector(5424,-560,224) --first ramp
+	local waypoint4 = Vector(6545, -767, 128) -- near the first ramp
+	local waypoint5 = Vector(6170,1145,128) --first arc
+	local waypoint6 = Vector(7716,1285,128) --second arc
+	local waypoint7 = Vector(7288,-504,224) --second ramp
+	local waypoint8 = Vector(7553,-2306, 137) -- after the 2nd ramp
+	local waypoint9 = Vector(6512,-2296,136) -- middle of the big hall
+	local waypoint10 = Vector(4766,-2439,128) --final door door
 
-	local waypoints = { waypoint1, waypoint2, waypoint3, waypoint4, waypoint5, waypoint6 }
+	local waypoints = { waypoint1, waypoint2, waypoint3, waypoint4, waypoint5, waypoint6, waypoint7, waypoint8, waypoint9, waypoint10 }
 	
 	for k,v in pairs(waypoints) do
 		print(k,v)
@@ -41,27 +46,56 @@ reachedWaypoint = true
 
 function SteamtankThink()
 	if not thisEntity:IsAlive() then
-		return nil
-	end
+		local units = FindUnitsInRadius(thisEntity:GetTeamNumber(),
+                              thisEntity:GetAbsOrigin(),
+                              nil,
+                              1000,
+                              DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+                              DOTA_UNIT_TARGET_ALL,
+                              DOTA_UNIT_TARGET_FLAG_NONE,
+                              FIND_ANY_ORDER,
+                              false)
+		
+
+		for _,unit in pairs(units) do
+			if unit:GetUnitName() == "npc_roadkill_skeleton" then
+        		unit:ForceKill(true)
+        	end
+    	end
+        return nil
+    end
 
 	-- Move to the next waypoint after taking enough damage
 	local healthRemaining = thisEntity:GetHealth() / thisEntity:GetMaxHealth()
 
 	if not givenOrder then
-		if ( (healthRemaining <= 0.80) and (currentWaypoint == 1) ) then
+		if ( (healthRemaining <= 0.90) and (currentWaypoint == 1) ) then
 			currentWaypoint = 2 --where to go next
 			givenOrder = true
-		elseif ( (healthRemaining <= 0.60) and (currentWaypoint == 2) ) then
+		elseif ( (healthRemaining <= 0.80) and (currentWaypoint == 2) ) then
 			currentWaypoint = 3
 			givenOrder = true
-		elseif ( (healthRemaining <= 0.50) and (currentWaypoint == 3) ) then
+		elseif ( (healthRemaining <= 0.70) and (currentWaypoint == 3) ) then
 			currentWaypoint = 4
 			givenOrder = true
-		elseif ( (healthRemaining <= 0.40) and (currentWaypoint == 4) ) then
+		elseif ( (healthRemaining <= 0.60) and (currentWaypoint == 4) ) then
 			currentWaypoint = 5
 			givenOrder = true
-		elseif ( (healthRemaining <= 0.20) and (currentWaypoint == 5) ) then
+		elseif ( (healthRemaining <= 0.50) and (currentWaypoint == 5) ) then
+			thisEntity:CastAbilityToggle(ABILITY_immolation, -1)
 			currentWaypoint = 6
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.40) and (currentWaypoint == 6) ) then
+			currentWaypoint = 7
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.40) and (currentWaypoint == 7) ) then
+			currentWaypoint = 8
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.20) and (currentWaypoint == 8) ) then
+			currentWaypoint = 9
+			givenOrder = true
+		elseif ( (healthRemaining <= 0.10) and (currentWaypoint == 9) ) then
+			currentWaypoint = 10
 			givenOrder = true
 		end
 

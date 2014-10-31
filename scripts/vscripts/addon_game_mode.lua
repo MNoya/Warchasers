@@ -7,10 +7,11 @@ require( 'timers')
 require( 'teleport')
 require( 'ai' )
 require( 'spawn' )
-local hints = require( 'hints' )
+require( 'hints' )
 require('lib.statcollection')
 require('lib.statcollectionRPG')
 --local JSON = require('lib.json')
+require( 'sounds' )
 
 if Convars:GetBool("developer") == true then
 	require( "developer" )
@@ -209,19 +210,12 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_centaur", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_enigma", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_hero_keeper_of_the_light", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_treant", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_gyrocopter", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_invoker", context)
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts", context)
 
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
@@ -372,7 +366,6 @@ end
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		Warchasers:CheckForDefeat()
-
 		GameRules:SetTimeOfDay( 0.8 )
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -424,7 +417,7 @@ end
 
 function Warchasers:SoundThink()
 	
-	local soundTrack = RandomInt(1, 5)
+	local soundTrack = RandomInt(1, 6)
 	local soundString = nil
 
 	if GameRules.CURRENT_SOUNDTRACK == 0 then
@@ -436,9 +429,9 @@ function Warchasers:SoundThink()
 	else
 		if soundTrack == 1 then
 			if RollPercentage(80) then 
-				soundString = "Warchasers.HumanX1"
+				soundString = "valve_dota_001.music.ui_world_map" --"Warchasers.HumanX1"
 				EmitGlobalSound(soundString)
-				soundTimer = 284
+				soundTimer = 170 --284
 			else --rare
 				soundString = "Warchasers.PowerOfTheHorde"
 				EmitGlobalSound(soundString)
@@ -460,6 +453,10 @@ function Warchasers:SoundThink()
 			soundString = "valve_dota_001.music.ui_main"
 			EmitGlobalSound(soundString)
 			soundTimer = 111
+		elseif soundTrack == 6 then
+			soundString = "valve_dota_001.music.ui_world_map"
+			EmitGlobalSound(soundString)
+			soundTimer = 170
 		else 
 			return 5
 		end
@@ -497,6 +494,9 @@ function Warchasers:OnGameRulesStateChange(keys)
     	if self.bSeenWaitForPlayers then
       		et = .01
     	end
+
+    	AnnouncerChoose()
+
     	Timers:CreateTimer("alljointimer", {
 	      	useGameTime = true,
 	      	endTime = et,
@@ -532,6 +532,13 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_rocknroll_steamtank", function(...) end)
 	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
 
+	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_sniper", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_ogre_magi", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_invoker", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_gyrocopter", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
 end
 
 function Warchasers:OnGameInProgress()
@@ -993,7 +1000,7 @@ function Warchasers:OnEntityKilled( event )
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
-
+		AnnouncerProgress()
 		EmitGlobalSound("n_creep_dragonspawnOverseer.Death")
 
 		local door = Entities:FindByName(nil, "gate_1_a")
@@ -1045,6 +1052,7 @@ function Warchasers:OnEntityKilled( event )
 	if killedUnit:GetUnitName() == "npc_tb_miniboss" then
 
 		EmitGlobalSound("Hero_Terrorblade.Death")
+		AnnouncerProgress()
 
 		local obstructions = Entities:FindByName(nil,"obstructions_4_1")
         obstructions:SetEnabled(false,false)
@@ -1063,7 +1071,7 @@ function Warchasers:OnEntityKilled( event )
 	end
 
 	if killedUnit:GetUnitName() == "npc_kitt_steamtank" then
-		print("Tank Area Cleared")
+		AnnouncerProgress()
 		local door = Entities:FindByName(nil, "gate_tanks")
         if door ~= nil then
             print("Door detected")
@@ -1078,26 +1086,6 @@ function Warchasers:OnEntityKilled( event )
         obstructions:SetEnabled(false,false)
 		local obstructions = Entities:FindByName(nil, "obstructions_tanks_4")
         obstructions:SetEnabled(false,false)
-	end
-
-	if killedUnit:GetUnitName() == "npc_rocknroll_steamtank" and GameRules.TANK_BOSS_KILLED == false then
-		--remove all ankhs if possible, then kill the player
-		local tankHero = killedUnit:GetOwner()
-		for itemSlot = 0, 5, 1 do
-            if tankHero ~= nil then
-                local Item = tankHero:GetItemInSlot( itemSlot )
-                if Item ~= nil and Item:GetName() == "item_ankh" then
-                    tankHero:RemoveItem(Item)
-                end
-            end
-        end
-       --wait time for ankh update thinker
-       Timers:CreateTimer({
-			endTime = 2,
-			callback = function()
-				tankHero:ForceKill(true)
-			end
-		})
 	end
 	
 	if killedUnit:IsRealHero() then 

@@ -405,8 +405,9 @@ function TeleporterTanksStart(trigger)
 
     GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
 
-    local tank_spawn_point = Vector(4488,1188,128)
+    local tank_spawn_point = Vector(4466,1100,128)
     TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
+    TANK:SetRenderColor(150, 150, 150)
      
     --render different color for each player
     --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)

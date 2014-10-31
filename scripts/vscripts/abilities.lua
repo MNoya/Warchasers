@@ -338,7 +338,7 @@ function MeteorCannon( keys )
     fExpireTime = GameRules:GetGameTime() + 8.0,
   }
 
-  local speed = 500
+  local speed = 300
 
   point.z = 0
   local pos = caster:GetAbsOrigin()
@@ -347,6 +347,10 @@ function MeteorCannon( keys )
   info.vVelocity = diff:Normalized() * speed
 
   ProjectileManager:CreateLinearProjectile( info )
+end
+
+function RemoveMeteorModifiers( event )
+	
 end
 
 

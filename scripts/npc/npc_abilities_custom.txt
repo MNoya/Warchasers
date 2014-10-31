@@ -3462,6 +3462,11 @@
 	            "Target" "CASTER"
 	        }
 	    }
+	    "precache"	{
+	    	"particle"	"particles/themed_fx/cny_fireworks_rockets_a.vpcf"
+	    	"particle"	"particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion_fireworks.vpcf"
+	    	"particle"	"particles/themed_fx/cny_fireworks_rockets_c.vpcf"
+	    }
 	    "Modifiers"
 	    {
 	        "tank_miniboss_death_fx"
@@ -3469,12 +3474,11 @@
 	            "Duration" "10"
 	            "OnCreated"
 	            {
-	            	"AttachEffect"
-	                {	      
-	                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_a.vpcf"
-	                    "EffectAttachType" "follow_origin"
-	                    "Target" "TARGET"
-	                }
+	            	"FireSound"
+					{
+						"EffectName"		"Hero_OgreMagi.Fireblast.Cast"
+						"Target"			  "TARGET"
+					}
 	                "AttachEffect"
 	                {
 	                    "EffectName" "particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
@@ -3485,20 +3489,15 @@
 	                        "00" "0 0 0"
 	                        "01" "200 5 5"
 	                    }
-	                }
-	                "FireSound"
-					{
-						"EffectName"		"Hero_OgreMagi.Fireblast.Cast"
-						"Target"			  "TARGET"
-					}
-	                 "DelayedAction"
+	                }	                
+	                "DelayedAction"
 	                {
-	                	"Delay"	"1"
+	                	"Delay"	"1.0"
 	                	"Action"
 	                	{
 	                		"AttachEffect"
 			                {
-			                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_b.vpcf"
+			                    "EffectName" "particles/econ/items/gyrocopter/hero_gyrocopter_gyrotechnics/gyro_calldown_explosion_fireworks.vpcf"
 			                    "EffectAttachType" "follow_origin"
 			                    "Target" "TARGET"
 			                }
@@ -3508,16 +3507,15 @@
 							"Target"			  "TARGET"
 							}
 	                	}
-
 	                }
 	                "DelayedAction"
 	                {
-	                	"Delay"	"2"
+	                	"Delay"	"2.0"
 	                	"Action"
 	                	{
 	                		"AttachEffect"
 			                {
-			                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_c.vpcf"
+			                    "EffectName" "particles/themed_fx/cny_fireworks_rockets_a.vpcf"
 			                    "EffectAttachType" "follow_origin"
 			                    "Target" "TARGET"
 			                }
@@ -3527,7 +3525,6 @@
 							"Target"			  "TARGET"
 							}
 	                	}
-
 	                }
 	            }
 	        }
@@ -4967,7 +4964,7 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"    "ember_spirit_flame_guard"
-		"AbilityManacost" "35"
+		"AbilityManacost" "0"
 
 		"precache"
 		{
@@ -4985,7 +4982,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"mana_cost_per_second"	"7"
+				"mana_cost_per_second"	"0"
 			}
 		}
 		
@@ -8811,7 +8808,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8853,6 +8850,21 @@
 
         "Modifiers"
 	    {
+	    	"meteor_damaged"
+	    	{
+	    		"IsHidden"	"1"
+	    		"Duration"	"5"
+	    		"OnCreated"
+	    		{
+	    			"Damage"
+					{
+						"Target"				"TARGET"
+						"Damage"				"100"
+						"Type"					"DAMAGE_TYPE_MAGICAL"
+					}
+	    		}
+
+	    	}
 			"bomb_fx_landing"
 	    	{
 	    		"Duration"	"2.0"
@@ -8890,24 +8902,17 @@
 				"EffectName" "Hero_Invoker.ChaosMeteor.Impact"
 				"Target"			"CASTER"
 			}
+			"ApplyModifier"
+			{
+				"ModifierName"		"meteor_damaged"
+				"Target"			"TARGET"
+			}
 			"AttachEffect"
 			{
 				"Target" 				"TARGET"
 				"EffectName"			"particles/units/heroes/hero_invoker/invoker_sun_strike.vpcf"
 				"EffectAttachType" 		"follow_origin"
 			}				
-			"Damage"
-			{
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"200"
-				"Target"
-				{
-					"Center"	"TARGET"
-					"Radius"	"200"
-					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
-				}
-			}
 			"Stun"
 			{
 				"Duration"		"0.1"
@@ -8919,6 +8924,20 @@
 					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
 				}
 			}
+			"Knockback"
+			{
+				"Center" 	"PROJECTILE"
+				"Target"
+				{
+					"Center"	"PROJECTILE"
+					"Radius"	"200"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+				"Duration"	"0.2"
+				"Distance"	"100"
+				"Height"	"100"
+        		"ShouldStun" "0"
+			}
 		}
 
 		// Special	
@@ -8928,13 +8947,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"900 1000 1100 1200"
+				"speed"					"1200"
 			}
 			
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"100 120 140 160"
+				"damage"				"100"
 			}
 			
 			"03"
@@ -8946,7 +8965,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"range"					"1000 1030 1065 1100"
+				"range"					"1000"
 			}
 		}
 	}
@@ -8978,11 +8997,6 @@
 				"radius"						"1000"
 			}
 			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_attacks"					"3 4 5 6"
-			}
-			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"projectile_speed"				"800"
@@ -9063,7 +9077,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"5000"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"7"
 		//"AbilityCastAnimation"		"ACT_DOTA_DISABLED"
 
 		// Item Info
@@ -9103,6 +9117,7 @@
 		
 		"OnProjectileHitUnit"
 		{
+			"DeleteOnHit" "1"	
 			"FireSound"
 			{
 				"EffectName" "Hero_Alchemist.UnstableConcoction.Stun"
@@ -9153,9 +9168,7 @@
 						}
 					}
 				}
-			}
-		
-			"DeleteOnHit" "1"			
+			}		
 			"Knockback"
 			{
 				"Center" 	"PROJECTILE"
@@ -9255,7 +9268,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"miniboss_call_down"
 
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"100"
 
 		"precache"	
@@ -9305,9 +9318,9 @@
 
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"12"
 		"AbilityDuration"				"3"
-		"AbilityDamage"					"15"
+		"AbilityDamage"					"10"
 		"AbilityManaCost"				"0"
 		
 		// Special

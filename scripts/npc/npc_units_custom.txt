@@ -6602,10 +6602,9 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/necrolyte/necrolyte.vmdl"	// Model.	
-		"ModelScale"				"1.2"
-		//"SoundSet"                  "Hero_Necrolyte"
-		//"IdleSoundLoop"				"Hero_Necrolyte.IdleLoop"				
+		"ModelScale"				"1.2"			
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_necrolyte.vsndevts"
 		"Level"						"10"
 		"CanBeDominated"			"0"
 		
@@ -8896,7 +8895,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_heal"			// Ability 1
+		"Ability1"					""			// Ability 1
 		"Ability2"					""	//add a frozen debuff		// Ability 2 
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -9603,11 +9602,11 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl" // "models/npc_minions/draft_siege_evil.vmdl"
+		"Model"						"models/npc_minions/draft_siege_good.vmdl"
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
-		"ModelScale" 					"1.5"
+		"ModelScale" 					"5"
 		"Level"						"5"
 		"ConsideredHero"			"1"
 
@@ -9615,26 +9614,26 @@
 		
 		// Abilities
 		//----------------------------------------------------------------	
-		"AbilityLayout"				"5"
+		"AbilityLayout"				"6"
 		"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
 		"Ability2"					"miniboss_flak"
 		"Ability3"					"miniboss_launch_skeletons"
 		"Ability4"					"miniboss_barrage"
-		"Ability5"					""
+		"Ability5"					"warchasers_steamtank_immolation"
 		"Ability6"					"miniboss_call_down"
 		"Ability7"					"tank_miniboss_passives"
 		"Ability8"					"tank_miniboss_death"
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"				"0"			// Magical protection.
+		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"				"25"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"52"		// Damage range min.
-		"AttackDamageMax"			"64"		// Damage range max.
+		"AttackDamageMin"			"50"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"3.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
@@ -9663,7 +9662,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10000"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
