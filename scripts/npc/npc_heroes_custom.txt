@@ -16,10 +16,10 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"magnataur_shockwave"
 		"Ability2"					"brewmaster_thunder_clap"
-		"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs improving and attach particles
+		"Ability3"					"warchasers_optimusprimo_devotion_aura"
 		"Ability4"					"" 
 		"Ability5"				""
-		"Ability6"				"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
+		"Ability6"				"warchasers_optimusprimo_avatar"
     	"Ability7"				""
     	"Ability8"				""
 
@@ -265,7 +265,7 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"lich_frost_nova"
-		"Ability2"					"warchasers_sleep" //"warchasers_sleep"
+		"Ability2"					"warchasers_sleep"
 		"Ability3"					"warchasers_vampiric_aura"
 		"Ability4"					""
 		"Ability5"				""
@@ -326,7 +326,7 @@
 		"override_hero"				"npc_dota_hero_templar_assassin"
 
 		"AbilityLayout"				"4"
-		"Ability1"				"warchasers_assassin_entangle"  //Needs custom -- DONE
+		"Ability1"				"warchasers_assassin_entangle"
 		"Ability2"				"roshan_bash"	
 		"Ability3"				"sven_storm_bolt"	
 		"Ability4"				"" 
@@ -354,7 +354,7 @@
 
 		// Attributes
 		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"16"										// Base strength
 		"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
 		"AttributeBaseIntelligence"	"15"										// Base intelligence
