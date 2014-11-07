@@ -8724,7 +8724,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"250"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
@@ -9280,7 +9280,7 @@
 		"Ability1"					"creep_poison_attack"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					"drop_tome"			// Ability 4
+		"Ability4"					""			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------

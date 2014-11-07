@@ -147,7 +147,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"lifesteal_percent" "50"
+				"lifesteal_percent" "30"
 			}
 		}
 	}

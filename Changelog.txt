@@ -1,3 +1,28 @@
+Version 1.0.2
+	General
+		Players on Dire are now autoassigned to Radiant team in case they missed the slot.
+		Reworked Snake Eyes' double orbs into 2 new spells:
+			An Orb spell that alternates the effects of Searing and Cold Arrows (TEST)
+			An Aura spell that can be switched according to the hero's needs	(TEST)
+
+	Creeps:
+		Removed Tomes of Medium Sludge drop list.
+		Changed Red Drake movement to ground.
+		SteamTank Miniboss now does Pure damage on its dodgeable spells.
+		Mana Burn, Curse and Void now go through magic immunity
+
+	Items:
+		Nerfed Mask of Death lifesteal to 30% (from 50)
+		Amulet of Spell Immunity indirectly nerfed.
+
+
+===============================================================================
+Version 1.0.1
+	Fixed a bug in which killing Doom Guards would result in an unwanted teleport
+
+Version 1.0.0
+	Released
+
 Version 0.046
 	General:
 		Removed the 30% AS buff when solo

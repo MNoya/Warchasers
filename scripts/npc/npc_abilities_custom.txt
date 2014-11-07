@@ -3680,6 +3680,7 @@
 		"AbilityCooldown"				"7 6 5"
 		"AbilityManaCost"				"50"
 		"AbilityTextureName"			"razor_mana_burn"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		"precache"
 		{
@@ -3812,6 +3813,7 @@
 		"BaseClass"	"night_stalker_void"
 		"AbilityManaCost"				"0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		"precache"
 		{
@@ -4629,10 +4631,11 @@
 	"creep_curse"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
+		//------------------"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"-------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityTextureName"			"bane_enfeeble"
 		"BaseClass" 					"ability_datadriven"
 		"MaxLevel"						"1"
@@ -4641,6 +4644,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"40"
+
 		
 		"AbilitySpecial"
 		{
@@ -8797,7 +8801,7 @@
 
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityTextureName" 			"miniboss_aoe_bomb"
 				
@@ -8860,7 +8864,7 @@
 					{
 						"Target"				"TARGET"
 						"Damage"				"100"
-						"Type"					"DAMAGE_TYPE_MAGICAL"
+						"Type"					"DAMAGE_TYPE_PURE"
 					}
 	    		}
 
@@ -9264,7 +9268,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"miniboss_call_down"
 

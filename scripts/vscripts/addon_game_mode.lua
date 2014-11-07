@@ -21,7 +21,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.0.0"
+WARCHASERS_VERSION = "1.0.2"
 
 -- Stat collection
 require('lib.statcollection')
@@ -557,6 +557,13 @@ function Warchasers:OnAllPlayersLoaded()
 			GameRules.SHOWPOPUP = false
 		end
 
+		-- Reassign all the players to the Radiant Team
+		for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
+			if PlayerResource:IsValidPlayer(nPlayerID) and not PlayerResource:IsBroadcaster(nPlayerID) then 
+				PlayerResource:SetCustomTeamAssignment(nPlayerID, DOTA_TEAM_GOODGUYS )
+			end
+		end
+
 		--Create Dummy so we can see the particle glow
 	    position = Vector(-6719,5541,40)
         local dummy1 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -692,7 +699,8 @@ function Warchasers:OnNPCSpawned(keys)
 			--giveUnitDataDrivenModifier(npc, npc,"wisp",{-1})
 			local playercounter = 0
 			for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do
-				if PlayerResource:IsValidPlayer(nPlayerID) then 
+				-- ignore broadcasters to count players for the solo buff
+				if PlayerResource:IsValidPlayer(nPlayerID) and not PlayerResource:IsBroadcaster(nPlayerID) then 
 					playercounter=playercounter+1
 				end
 			end
