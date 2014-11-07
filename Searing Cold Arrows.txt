@@ -1,0 +1,218 @@
+Searing Cold Arrows
+Cold Searing?
+Ice and Fire ARROWS?
+ASOIAF Arrows
+
+"warchasers_snake_cold_arrows" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"drow_cold_arrows"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"AbilityDamage"					"0"
+		"AbilityManaCost"				"10"
+		"MaxLevel"						"3"
+
+		"precache"
+		{
+			"particle"				"particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+			"particle"				"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		}
+	
+		// Data-Driven
+		//-------------------------------------------------------------------------------------------------------------
+		"Modifiers"
+		{ 
+			"modifier_snake_multi_arrow"
+			{
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"	"50"
+						"OnSuccess"
+						{
+							//need to remove the other modifier?
+
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_cold_arrow"
+							}
+						}
+						"OnFailure"
+						{
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_searing_arrow"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_snake_cold_arrow"
+			{
+				"Passive"               "0" //?
+				"IsHidden"				"0" //TEST
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
+					"CastAttack"		"1"
+				}
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_DrowRanger.FrostArrows"
+						"Target"				"CASTER"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"ApplyModifier"
+					{
+						"Target"			"TARGET"
+						"ModifierName"		"modifier_snake_cold_arrow_slow"
+						"Duration"			"%slow_duration"
+					}
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%RangeDamage"
+						"Target"		"TARGET"
+					}
+
+				}
+			}
+
+			"modifier_snake_cold_arrow_slow"
+			{
+				"IsDebuff" "1"
+				"Duration"	"%slow_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_slow_percentage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed_slow_percentage"
+
+				}
+				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+				"EffectAttachType"      "attach_hitloc"
+				"Target"                "TARGET"
+			
+			}
+
+			"modifier_snake_searing_arrow"
+			{
+				"Passive"               "0"
+				"IsHidden"				"0"
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+				}
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_Clinkz.SearingArrows"
+						"Target"				"CASTER"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%RangeDamage"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"						"5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_speed_slow_percentage"	"-30 -50 -70"
+				
+			}
+			"03"
+			{	
+				"var_type"						"FIELD_INTEGER"
+				"attack_speed_slow_percentage"	"-30 -50 -70"	
+			}
+			"04"
+			{
+				"var_type"          			"FIELD_INTEGER"
+				"RangeDamage"       			"10 20 30"
+			}
+			
+		}
+
+	}
+
+
+	"clinkz_searing_arrows"
+	{
+		"MaxLevel"						"3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityTextureName"			"drow_searing_arrows"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"8"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_bonus"					"10 20 30"
+			}
+		}
+	}
