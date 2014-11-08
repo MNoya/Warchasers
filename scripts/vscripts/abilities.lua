@@ -353,6 +353,15 @@ function RemoveMeteorModifiers( event )
 	
 end
 
+function void_damage( event )
+	local target = event.target
+	local void_damage = 400
+	target:ModifyHealth(target:GetHealth()-void_damage, event.caster, false, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
+
+	local popup = require('popups')
+	PopupHPRemovalDamage(target, 400)
+end
+
 
 
 --FindByClassnameNearest("npc_dota_hero_sven", target:GetOrigin(), 2000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel()

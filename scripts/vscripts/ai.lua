@@ -50,8 +50,8 @@ end
 
 function final_boss_think( event )
 	local boss = event.caster
-	local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, boss:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
-	local void_spell = boss:FindAbilityByName("final_boss_void")
+	local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, boss:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+	local void_spell = boss:FindAbilityByName("final_boss_void_new")
 
 	if void_spell:IsFullyCastable() == true and heroes_around[1] ~= nil then
 		local target = heroes_around[1]

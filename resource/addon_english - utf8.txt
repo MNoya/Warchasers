@@ -279,11 +279,12 @@
 		"DOTA_Tooltip_warchasers_steamtank_immolation_buff"	"BurNIng"
 		"DOTA_Tooltip_warchasers_steamtank_immolation_buff_Description"	"Taking damage per second"		
 
-		"DOTA_Tooltip_ability_final_boss_void"					"Great Void"
-		"DOTA_Tooltip_ability_final_boss_void_Description"		"Creates a damaging void that slows an enemy unit and deals damage. Void also mini-stuns, interrupting channeling abilities."
-		"DOTA_Tooltip_ability_final_boss_void_duration_night"						"DURATION:"
-		"DOTA_Tooltip_ability_final_boss_void_movespeed_slow"						"%MOVE SLOW:"
-		"DOTA_Tooltip_ability_final_boss_void_attackspeed_slow"						"ATTACK SLOW:"
+		"DOTA_Tooltip_ability_final_boss_void_new"					"Great Void"
+		"DOTA_Tooltip_ability_final_boss_void_new_Description"		"Creates a damaging void that slows an enemy unit and deals damage. Void also mini-stuns, interrupting channeling abilities."
+		"DOTA_Tooltip_ability_final_boss_void_new_movespeed_slow"						"%MOVE SLOW:"
+		"DOTA_Tooltip_ability_final_boss_void_new_attackspeed_slow"						"ATTACK SLOW:"
+		"DOTA_Tooltip_modifier_void"				"Voided"
+		"DOTA_Tooltip_modifier_void_Description"	"Get Rekt"
 		
 		
 		"DOTA_Tooltip_ability_final_boss_buff"			"Final Redeeming"
@@ -340,6 +341,7 @@
 		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura"					"Thorns Aura"
 		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_Description"		"An aura that gives friendly nearby units a damage shield, which returns a portion of an enemy unit's melee damage attack back to it."
 		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_percentage" "%DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_base" "BASE DAMAGE RETURN:"
 		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator"				"Thorns Aura"
 		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator_Description"	"This unit is under the effects of Thorns Aura; melee units that attack it will take damage."
 
@@ -402,6 +404,20 @@
 		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Lore"		"The morning had dawned clear and cold, with a crispness that hinted at the end of summer..."
 		"DOTA_Tooltip_modifier_snake_cold_arrow_slow"			"Cold Arrow Slow"
 		"DOTA_Tooltip_modifier_snake_cold_arrow_slow_Description" "Slowed"
+
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura"					"Holy Fire/Freeze Aura"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_Description"		"Toggle to swap between a damage per second offensive aura and a slow on attacked defensive stance for all your party."
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_radius"			"RADIUS:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_fire_damage"		"<font color='#B70000'>FIRE</font> DPS:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_cold_slow"		"<font color='#1FBCF0'>COLD</font> SLOW:"
+		"DOTA_Tooltip_holy_fire_aura"					"Holy Fire Aura"
+		"DOTA_Tooltip_holy_fire_aura_Description"		"Periodically does Fire damage to nearby enemies"
+		"DOTA_Tooltip_holy_fire_debuff"					"Burning in Holy Fire"
+		"DOTA_Tooltip_holy_fire_debuff_Description"		"Taking damage per second"
+		"DOTA_Tooltip_holy_freeze_aura"					"Holy Freeze Aura"
+		"DOTA_Tooltip_holy_freeze_aura_Description"	"Periodically slows enemies nearby"
+		"DOTA_Tooltip_holy_freeze_debuff"				"Freezed"
+		"DOTA_Tooltip_holy_freeze_debuff_Description"	"Slowed"
 			
 		"DOTA_Tooltip_ability_warchasers_snake_holy_light"						"Holy Light"
 		"DOTA_Tooltip_ability_warchasers_snake_holy_light_Description"			"A holy light that can heal a friendly living unit or damage an enemy undead unit.\n Can't target self."

@@ -104,6 +104,10 @@ function PopupIntTome(target, amount)
     PopupNumbers(target, "miss", Vector(0, 176, 246), 1.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
+function PopupHPRemovalDamage(target, amount)
+    PopupNumbers(target, "crit", Vector(154, 46, 254), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+end
+
 -- Customizable version.
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
     local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)

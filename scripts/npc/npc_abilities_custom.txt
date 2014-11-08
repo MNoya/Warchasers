@@ -3862,6 +3862,97 @@
 			}
 		}
 
+	"final_boss_void_new"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"night_stalker_void"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_void.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		}
+		
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_HP_REMOVAL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"FightRecapLevel"				"1"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"525"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCooldown"				"8 8 8 8"
+		"AbilityManaCost"				"0"
+		"AbilityDamage"					"400"
+			
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_void"		
+				"Target" //go through magic immunity
+				{
+					"Center" "TARGET"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Nightstalker.Void"
+				"Target" 		"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile" "abilities.lua"
+				"Function"	"void_damage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_void"
+			{
+				"IsDebuff" "1"
+				"Duration" "%duration_night"
+				 
+				 "Properties"
+				 {
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	 "%attackspeed_slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_slow"
+				 }		
+				"EffectName" "particles/units/heroes/hero_night_stalker/nightstalker_void.vpcf"
+				"EffectAttachType" "follow_origin"
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"duration_night"		"4.0 4.0 4.0 4.0"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_slow"		"-80"
+				}
+			"03"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed_slow"		"-35 -35 -35 -35"
+				}
+			}
+		}
+
 	"final_boss_buff"
 		{
 		"BaseClass"	"ability_datadriven"
@@ -5198,6 +5289,11 @@
 				"var_type"	"FIELD_INTEGER"
 				"damage_return_percentage"	"10 20 30"
 			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_return_base"	"2 3 5"
+			}
 		}
 		
 		"Modifiers"
@@ -5264,6 +5360,12 @@
 						{
 						"ScriptFile"	"abilities.lua"
 						"Function"	"megatron_thorns_aura_func"
+						}
+					"Damage"
+						{	
+							"Target"	"ATTACKER"
+							"Type"		"DAMAGE_TYPE_PHYSICAL"
+							"Damage" 	"%damage_return_base"
 						}
 					}
 			}
@@ -6267,7 +6369,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"slow_percentage"	"-30 -50 -70"
+				"slow_percentage"				"-20 -35 -50"
 				
 			}
 			"03"
@@ -6288,9 +6390,20 @@
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 
 		"MaxLevel"			"3"
-		"AbilityTextureName"  "aura1"
+		"AbilityTextureName"  "drow_multi_aura"
 		"AbilityManacost" 	"100"
-		"AbilityCooldown"	"0"
+		"AbilityCooldown"	"1"
+		"AbilityCastPoint"    "0.1"
+		"AbilityCastRange"    "500"
+
+		//AoE is 500 (to prevent aggroing too early)
+		//Freeze "Periodically slows enemies nearby"
+			//slow enemies that attack you/your party
+		//Fireblas "Periodically does Fire damage to nearby enemies"
+			//Does a small burn on all the area
+		//Main idea is to use Fire when not attacked and Freeze to help taking damage
+		//Keep the Fire DPS lower than Shockwave/Thunderclap
+		//Reduced the Cold Slow from Arrows to keep balance
 
 		"precache"
 		{
@@ -6299,9 +6412,13 @@
 			"particle"	"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 			"particle"	"particles/items2_fx/shivas_guard_active.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle" 	"particles/units/heroes/hero_warlock/warlock_base_attack_explosion.vpcf"
+			"particle" 	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_tusk/tusk_frozen_sigil_status.vpcf"
+			"particle"	"particles/econ/events/snowball/snowball_projectile_explosion.vpcf"
 		}
 
-		"OnToggleOn"
+		"OnToggleOn" //Start with Freeze On, Fire needs to be cast.
 		{
 			"FireSound"
 			{
@@ -6311,12 +6428,12 @@
 			"ApplyModifier"
 			{
 				"Target"	"CASTER"
-				"ModifierName"	"aura2_modifier"
+				"ModifierName"	"holy_fire_modifier"
 			}
 			"RemoveModifier"
 			{
 				"Target"	"CASTER"
-				"ModifierName"	"aura1_modifier"
+				"ModifierName"	"holy_freeze_modifier"
 			}
 		}
 		"OnToggleOff"
@@ -6329,18 +6446,18 @@
 			"ApplyModifier"
 			{
 				"Target"	"CASTER"
-				"ModifierName"	"aura1_modifier"
+				"ModifierName"	"holy_freeze_modifier"
 			}
 			"RemoveModifier"
 			{
 				"Target"	"CASTER"
-				"ModifierName"	"aura2_modifier"
+				"ModifierName"	"holy_fire_modifier"
 			}
 		}
 
 		"Modifiers"
 		{
-			"aura1_modifier"
+			"holy_fire_modifier"
 			{
 				"OnCreated"
 				{
@@ -6357,25 +6474,62 @@
 						"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames_flash.vpcf"
 						"EffectAttachType" 	"follow_origin"
 					}
+					"RemoveModifier" //double check
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"holy_freeze_modifier"
+					}
 				}
-				"Passive" 			"1"
+				"Passive" 			"0"
 				"IsHidden" 			"1"
 				"IsBuff"			"1"
-				"Aura" 				"aura1_aura"
-				"Aura_Radius" 		"900"
+				"Aura" 				"holy_fire_aura"
+				"Aura_Radius" 		"500"
 				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
 			}
-			"aura1_aura"
+			"holy_fire_aura"	
 			{	
-				"IsBuff"				"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"10"
-				}
+				"TextureName"		"drow_multi_aura_2"
+				"IsBuff"			"1"
+				"Passive" 			"0"
+				"IsHidden" 			"0"
+				"Aura" 				"holy_fire_debuff"
+				"Aura_Radius" 		"500"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"         
+			}
+			"holy_fire_debuff"
+			{
+				"IsDebuff"	"1"
+				"TextureName"		"drow_multi_aura_2"
+				"Duration"	"1"
+				"ThinkInterval"			"1"
+				"OnIntervalThink"
+	         	{
+	         		"Damage"
+					{
+						"Type" "DAMAGE_TYPE_MAGICAL"
+						"Damage" "%fire_damage"
+						"Target"	"TARGET"
+					}
+					"FireEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_warlock/warlock_base_attack_explosion.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"FireEffect"
+					{
+						"Target"		"TARGET"
+						"EffectName"	"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+	         	}
+
 			}
 
-			"aura2_modifier"
+			"holy_freeze_modifier"
 			{
 				"OnCreated"
 				{
@@ -6384,7 +6538,6 @@
 						"Target" "CASTER"
 						"EffectName"		"particles/test_particle/channel_field_2.vpcf"
 						"EffectAttachType" 	"follow_origin"
-						"EffectLifeDurationScale" "1"
 					}
 					"FireEffect"
 					{
@@ -6392,22 +6545,61 @@
 						"EffectName"		"particles/items2_fx/shivas_guard_active.vpcf"
 						"EffectAttachType" 	"follow_origin"
 					}
+					"RemoveModifier" //double check
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"holy_fire_modifier"
+					}
 				}
-				"Passive" 			"0"
+				"Passive" 			"1" //start with this on
 				"IsHidden" 			"1"
 				"IsBuff"			"1"
-				"Aura" 				"aura2_aura"
-				"Aura_Radius" 		"900"
+				"Aura" 				"holy_freeze_aura"
+				"Aura_Radius" 		"%radius"
 				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
 			}
-			"aura2_aura"
+			"holy_freeze_aura"
 			{	
 				"IsBuff"				"1"
+				"OnAttacked"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"holy_freeze_debuff"
+						"Target"		"ATTACKER"
+					}
+				}
+			}
+			"holy_freeze_debuff"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%cold_slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%cold_slow"
 				}
+				"EffectName"	"particles/units/heroes/hero_tusk/tusk_frozen_sigil_status.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fire_damage"				"3 6 9"	
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER" 
+				"cold_slow"					"-10 -20 -30"
 			}
 		}
 	}
