@@ -140,7 +140,7 @@
 
 		"AbilityLayout"				"4"
 		"Ability1"					"warchasers_snake_holy_light"
-		"Ability2"					"clinkz_searing_arrows"
+		"Ability2"					"warchasers_snake_multi_arrows"
 		"Ability3"					"warchasers_snake_cold_arrows" 
 		"Ability4"					"warchasers_snake_firestorm"
 		"Ability5"				""

@@ -3809,11 +3809,9 @@
 	//"bloodlust" "ogre_magi_bloodlust"
 
 	"final_boss_void"
-		{
-		"BaseClass"	"night_stalker_void"
+	{
+		"BaseClass"						"night_stalker_void"
 		"AbilityManaCost"				"0"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetFlags"	    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 
 		"precache"
 		{
@@ -3825,7 +3823,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"FightRecapLevel"				"1"
 		
 		// Stats
@@ -3836,10 +3835,6 @@
 		"AbilityManaCost"				"0"
 		"AbilityDamage"					"400"
 			
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4671,7 +4666,11 @@
 		{
 			"TrackingProjectile"
 			{
-				"Target"				"TARGET"
+				"Target"
+				{
+					"Center" "TARGET"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
 				"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
 				"MoveSpeed"				"1000"
 				"EffectAttachType"		"follow_origin" //attach_hitloc?
@@ -4682,7 +4681,11 @@
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_creep_curse"		
-				"Target"	"TARGET"
+				"Target" //go through magic immunity
+				{
+					"Center" "TARGET"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
 			}
 		}
 	
@@ -4692,7 +4695,7 @@
 			"modifier_creep_curse"
 			{
 				"IsDebuff" "1"
-				 "Duration" "%duration"
+				"Duration" "%duration"
 				 
 				 "Properties"
 				 {
@@ -5185,6 +5188,7 @@
 		"precache"
 		{
 			"particle"				"particles/units/heroes/hero_omniknight/omniknight_degen_aura_b.vpcf"
+			"particle"				"particles/test_particle/creature_spiked_carapace.vpcf"
 		}
 
 		"AbilitySpecial"
@@ -5213,6 +5217,12 @@
 					{
 						"Target" "CASTER"
 						"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_degen_aura_b.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		"particles/test_particle/creature_spiked_carapace.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
 				}		
@@ -6077,12 +6087,12 @@
 
 
 
-	"warchasers_snake_cold_arrows" 
+	"warchasers_snake_multi_arrows" 
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"drow_cold_arrows"
+		"AbilityTextureName"			"drow_multi_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
@@ -6100,16 +6110,59 @@
 		{
 			"particle"				"particles/econ/items/drow/drow_bow_monarch/drow_frost_arrow_monarch.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+			"particle"				"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+			"soundfile"				"soundevents/voscripts/game_sounds_vo_clinkz.vsndevts"
 		}
 	
 		// Data-Driven
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{ 
+			"modifier_snake_multi_arrow"
+			{
+				"Passive"	"1"
+				"IsHidden"	 "1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"	"50"
+						"OnSuccess"
+						{
+							"RemoveModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_searing_arrow"
+							}
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_cold_arrow"
+							}
+						}
+						"OnFailure"
+						{
+							"RemoveModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_cold_arrow"
+							}
+							"ApplyModifier"
+							{
+								"Target" 			"CASTER"
+								"ModifierName"		"modifier_snake_searing_arrow"
+							}
+						}
+					}
+				}
+			}
+
 			"modifier_snake_cold_arrow"
 			{
-				"Passive"               "1"
+				"Passive"               "0" 
 				"IsHidden"				"1"
+				"TextureName"			"drow_cold_arrows"
 				"Orb"
 				{
 					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
@@ -6151,16 +6204,56 @@
 			{
 				"IsDebuff" "1"
 				"Duration"	"%slow_duration"
+				"TextureName"			"drow_cold_arrows"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_speed_slow_percentage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%attack_speed_slow_percentage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_percentage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%slow_percentage"
 
 				}
 				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"EffectAttachType"      "attach_hitloc"
 				"Target"                "TARGET"
 			
+			}
+
+			"modifier_snake_searing_arrow"
+			{
+				"Passive"               "0"
+				"IsHidden"				"1"
+				"TextureName"			"clinkz_searing_arrows"
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+				}
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_Clinkz.SearingArrows"
+						"Target"				"CASTER"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%RangeDamage"
+						"Target"		"TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_Clinkz.SearingArrows.Impact"
+						"Target"				"CASTER"
+					}
+				}
 			}
 		}
 
@@ -6174,18 +6267,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"move_speed_slow_percentage"	"-30 -50 -70"
+				"slow_percentage"	"-30 -50 -70"
 				
 			}
 			"03"
-			{	
-				"var_type"						"FIELD_INTEGER"
-				"attack_speed_slow_percentage"	"-30 -50 -70"	
-			}
-			"04"
 			{
 				"var_type"          			"FIELD_INTEGER"
-				"RangeDamage"       			"5 10 15"
+				"RangeDamage"       			"10 20 30"
 			}
 			
 		}
@@ -7096,6 +7184,7 @@
 			"attack_agro"
 				{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"IsBuff"	"1"
 				"OnAttacked"
 					{

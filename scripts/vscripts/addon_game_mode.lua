@@ -123,6 +123,7 @@ function Warchasers:InitGameMode()
         local building = allBuildings[i]
         if building:HasModifier('modifier_invulnerable') then
             building:RemoveModifierByName('modifier_invulnerable')
+            building:AddNewModifier(building, nil, "modifier_tower_truesight_aura", {})
         end
     end
     
@@ -495,8 +496,6 @@ function Warchasers:OnGameRulesStateChange(keys)
       		et = .01
     	end
 
-    	AnnouncerChoose()
-
     	Timers:CreateTimer("alljointimer", {
 	      	useGameTime = true,
 	      	endTime = et,
@@ -551,6 +550,7 @@ end
 
 function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
+	AnnouncerChoose()
 
 		if GameRules.SHOWPOPUP then
 			ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )

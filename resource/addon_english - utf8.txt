@@ -395,11 +395,11 @@
 		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_damage"		"BURN DAMAGE:"
 		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_duration"	"BURN DURATION:"
 
-		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows" 						"Cold Arrows"
-		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_Description"			"Adds a cold effect to each attack, slowing a target enemy unit's attacks and movement.\n\nDoes not stack with other Orb Effects."
-		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_RangeDamage"			"BONUS DAMAGE:"
-		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_attack_speed_slow_percentage" "ATTACK SLOW:"		
-		"DOTA_Tooltip_ability_warchasers_snake_cold_arrows_move_speed_slow_percentage" "MOVE SLOW:"	
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows" 						"A Song of Ice and Fire Arrows"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Description"			"Adds an alternating effect which burns or freezes enemies on each attack, dealing extra damage or slowing a target enemy unit's attacks and movement.\n\nDoes not stack with other Orb Effects."
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_RangeDamage"			"<font color='#B70000'>FIRE</font> BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_slow_percentage" "<font color='#1FBCF0'>COLD</font> ATTACK&MOVE SLOW:"		
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Lore"		"The morning had dawned clear and cold, with a crispness that hinted at the end of summer..."
 		"DOTA_Tooltip_modifier_snake_cold_arrow_slow"			"Cold Arrow Slow"
 		"DOTA_Tooltip_modifier_snake_cold_arrow_slow_Description" "Slowed"
 			

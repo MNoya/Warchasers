@@ -2,18 +2,24 @@ Version 1.0.2
 	General
 		Players on Dire are now autoassigned to Radiant team in case they missed the slot.
 		Reworked Snake Eyes' double orbs into 2 new spells:
-			An Orb spell that alternates the effects of Searing and Cold Arrows (TEST)
+			An Orb spell that alternates the effects of Searing and Cold Arrows
 			An Aura spell that can be switched according to the hero's needs	(TEST)
 
-	Creeps:
+	Units:
 		Removed Tomes of Medium Sludge drop list.
 		Changed Red Drake movement to ground.
 		SteamTank Miniboss now does Pure damage on its dodgeable spells.
-		Mana Burn, Curse and Void now go through magic immunity
+		Final Boss Void now does Pure damage.
+		Mana Burn and Curse now go through magic immunity
+		Gave Buildings Truesight (to prevent Cloak of Shadows powerfarming)
 
 	Items:
 		Nerfed Mask of Death lifesteal to 30% (from 50)
 		Amulet of Spell Immunity indirectly nerfed.
+
+	Bug Fixes:
+		Fixed solo buff not applying if someone was in a broadcaster slot
+		Fixed double sound announcer on the host
 
 
 ===============================================================================
