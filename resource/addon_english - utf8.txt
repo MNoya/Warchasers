@@ -839,7 +839,7 @@
 		"DOTA_Tooltip_item_scepter_of_mastery_dominate_modifier"				"Dominated"
         
 		"DOTA_Tooltip_ability_item_mask_of_death"								"Mask of Death"
-		"DOTA_Tooltip_ability_item_mask_of_death_Description"					"While wearing this mask, a Hero will recover hit points equal to 50%% of the attack damage dealt to an enemy unit."
+		"DOTA_Tooltip_ability_item_mask_of_death_Description"					"While wearing this mask, a Hero will recover hit points equal to 30%% of the attack damage dealt to an enemy unit."
 												
 		"DOTA_Tooltip_ability_item_gauntlets_3"									"Gauntlets of Strength +3"
 		"DOTA_Tooltip_ability_item_gauntlets_3_Description"						"Increases the Strength of the Hero by 3 when worn."

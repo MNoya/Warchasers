@@ -1,3 +1,7 @@
+Version 1.1.1
+	Bug Fixes
+		Fixed Snake Eyes Fire component being passive
+
 Version 1.1.0
 	General
 		Players on Dire are now autoassigned to Radiant team in case they missed the slot.
