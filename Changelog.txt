@@ -3,7 +3,7 @@ Version 1.0.2
 		Players on Dire are now autoassigned to Radiant team in case they missed the slot.
 		Reworked Snake Eyes' double orbs into 2 new spells:
 			An Orb spell that alternates the effects of Searing and Cold Arrows
-			An Aura spell that can be switched according to the hero's needs	(TEST)
+			A Toggable Aura spell that can be switched according to the hero's needs	FINISH ART & CONCEPT
 
 	Units:
 		Removed Tomes of Medium Sludge drop list.
