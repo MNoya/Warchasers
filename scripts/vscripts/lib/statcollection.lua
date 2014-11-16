@@ -16,7 +16,13 @@ You can call statcollection.addStats() with a table at any stage to add new stat
 old stats will still remain, if you provide new values, the new values will override
 the old values.
 
-When you're ready to store the stats (only call this once!)
+Note: Stats will be automatically sent to the server when the game is detected as completed!
+
+You can turn the auto sending off by calling
+
+statcollection.disableAutoSend()
+
+Then when you're ready to store the stats (only call this once!)
 
 statcollection.sendStats({
     anyExtraStats = 'WhatEver'
@@ -32,6 +38,9 @@ Readers beware: You are REQUIRED to set AT LEAST modID to your mods unique ID
 -- Begin statcollection module
 module('statcollection', package.seeall)
 
+-- This is the version of stat collection (it's the build date)
+local STAT_COLLECTION_VERSION = '2014.11.16.23.44'
+
 -- Require libs
 local JSON = require('lib.json')
 local md5 = require('lib.md5')
@@ -45,23 +54,55 @@ local collectedStats = {}
 -- Makes sure we don't call the stat collection multiple times
 local alreadySubmitted = false
 
+-- Should we auto send stats?
+local autoSendStats = true
+
+-- For the following functions, setting safe to true will STOP the function from override old stats
+-- If you leave safe out, or set it to false, it will override old stats (if any exist)
+
 -- This function should be called with a table of stats to add
-function addStats(toSearch)
+function addStats(stats, safe)
     -- Ensure args were passed
-    toSearch = toSearch or {}
+    local toAdd = stats or {}
 
     -- Store the fields
-    for k, v in pairs(toSearch) do
-        collectedStats[k] = v
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats[k] == nil then
+            collectedStats[k] = v
+        end
     end
 end
 
--- This function adds a single stat, but wont override existing stats
-function addStatsSafe(name, value)
-    -- Ensure the stat doesn't exist
-    if collectedStats[name] == nil then
-        -- Store the new value
-        collectedStats[name] = value
+-- This function should be called with a table of flags to add
+function addFlags(flags, safe)
+    -- Ensure args were passed
+    local toAdd = flags or {}
+
+    -- Ensure flags exist
+    collectedStats.flags = collectedStats.flags or {}
+
+    -- Store the fields
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats.flags[k] == nil then
+            collectedStats.flags[k] = v
+        end
+    end
+end
+
+-- This function sets the stats adds the stats for a given module
+function addModuleStats(module, stats, safe)
+    -- Ensure args were passed
+    local toAdd = stats or {}
+
+    -- Ensure flags exist
+    collectedStats.modules = collectedStats.modules or {}
+    collectedStats.modules[module] = collectedStats.modules[module] or {}
+
+    -- Store the fields
+    for k, v in pairs(toAdd) do
+        if not safe or collectedStats.modules[module][k] == nil then
+            collectedStats.modules[module][k] = v
+        end
     end
 end
 
@@ -145,7 +186,20 @@ function getPlayerSnapshot(playerID)
                 denies = PlayerResource:GetDenies(playerID),
 
                 -- The total last hits this player has
-                lastHits = PlayerResource:GetLastHits(playerID)
+                lastHits = PlayerResource:GetLastHits(playerID),
+
+
+
+				stunAmount = PlayerResource:GetStuns(playerID),
+
+				goldSpentBuyBack = PlayerResource:GetGoldSpentOnBuybacks(playerID),
+				goldSpentConsumables = PlayerResource:GetGoldSpentOnConsumables(playerID),
+				goldSpentItems = PlayerResource:GetGoldSpentOnItems(playerID),
+				goldSpentSupport = PlayerResource:GetGoldSpentOnSupport(playerID),
+				numPurchasedConsumables = PlayerResource:GetNumConsumablesPurchased(playerID),
+				numPurchasedItems = PlayerResource:GetNumItemsPurchased(playerID),
+				totalEarnedGold = PlayerResource:GetTotalEarnedGold(playerID),
+				totalEarnedXP = PlayerResource:GetTotalEarnedXP(playerID)
             }
         end
 
@@ -154,7 +208,7 @@ function getPlayerSnapshot(playerID)
 
         -- Attempt to find their slotID
         local slotID
-        for i = 0, maxPlayers do
+        for i = 0, maxPlayers-1 do
             if PlayerResource:GetNthPlayerIDOnTeam(teamID, i) == playerID then
                 slotID = i
                 break
@@ -169,7 +223,8 @@ function getPlayerSnapshot(playerID)
             steamID32 = PlayerResource:GetSteamAccountID(playerID),
             hero = heroData,
             items = itemData,
-            abilities = abilityData
+            abilities = abilityData,
+            connectionStatus = PlayerResource:GetConnectionState(playerID),
         }
     end
 
@@ -202,9 +257,6 @@ function sendStats(extraFields)
         return
     end
 
-    -- Build common stats
-    addStatsSafe('duration', GameRules:GetGameTime())
-
     -- Build player array
     local playersData = {}
     for i = 0, maxPlayers - 1 do
@@ -216,11 +268,6 @@ function sendStats(extraFields)
         end
     end
 
-    -- Add round data
-    addStatsSafe('rounds', {
-        players = playersData
-    })
-
     -- Tell the user the stats are being sent
     print('Sending stats...')
 
@@ -229,9 +276,38 @@ function sendStats(extraFields)
 
     -- Grab useful info to make a 'unique' hash
     local currentTime = GetSystemTime()
-    local ip = Convars:GetStr('hostip')
+    local ip = intToIP(Convars:GetStr('hostip'))
     local port = Convars:GetStr('hostport')
     local randomness = RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1) .. '/' .. RandomFloat(0, 1)
+
+    -- Add common stats if they aren't already added
+    addStats({
+        -- The version of the module
+        version = STAT_COLLECTION_VERSION,
+
+        -- The local address of this server
+        serverAddress = ip..':'..port,
+
+        -- The round data
+        rounds = {
+            players = playersData
+        },
+
+        -- The current map
+        map = GetMapName(),
+
+        -- The winner (if they are using forts)
+        winner = findWinnerUsingForts(),
+
+        -- The duration of the match
+        duration = GameRules:GetGameTime()
+    }, true)
+
+    -- Add flags if they aren't already added
+    addFlags({
+        -- Is this a dedi server or not?
+        dedicated = IsDedicatedServer()
+    }, true)
 
     -- Setup the string to be hashed
     local toHash = ip .. ':' .. port .. ' @ ' .. currentTime .. ' + ' .. randomness .. ' + '
@@ -263,4 +339,107 @@ function sendStats(extraFields)
 
     -- Tell the client the message is over
     FireGameEvent("stat_collection_send", {})
+end
+
+-- Sexy function to convert an integer to an IP
+function intToIP(int)
+    local ip
+
+    for j=0,3 do
+        local useful = bit.rshift(int, j*8)
+
+        local ipPart = 0
+        for i=0,7 do
+            ipPart = ipPart + bit.band(useful, bit.lshift(1, i))
+        end
+
+        if not ip then
+            ip = ipPart
+        else
+            ip = ipPart..'.'..ip
+        end
+    end
+
+    return ip
+end
+
+-- This function is called to prevent stats from being auto sent
+function disableAutoSend()
+    autoSendStats = false
+end
+
+-- Returns the current version of stat collection
+function getVersion()
+    return STAT_COLLECTION_VERSION
+end
+
+-- This function attempts to detect the winner based on the status for forts
+-- If no forts are found, 0 is returned, if more than one fort is found, -1 is returned
+function findWinnerUsingForts()
+    local winners = 0
+
+    local forts = Entities:FindAllByClassname('npc_dota_fort')
+    for k,v in pairs(forts) do
+        -- Check it's HP level
+        if v:GetHealth() > 0 then
+            local team = v:GetTeam()
+
+            if winners == 0 then
+                winners = team
+            else
+                winners = -1
+            end
+        end
+    end
+
+    -- Return our estimate
+    return winners
+end
+
+-- Auto hook sending stats
+local states = {}
+local autoSent = false
+ListenToGameEvent('game_rules_state_change', function(keys)
+    local state = GameRules:State_Get()
+
+    -- Add to our states
+    table.insert(states, {
+        state = state,
+        time = Time()
+    })
+
+    -- Update our stats
+    addStats({
+        states = states
+    })
+
+    -- Check if the game is over
+    if autoSendStats and state >= DOTA_GAMERULES_STATE_POST_GAME and not autoSent then
+        -- We have now auto sent stats
+        autoSent = true
+
+        -- Send the stats
+        sendStats()
+    end
+end, nil)
+
+-- Hook winner function
+local oldSetGameWinner = GameRules.SetGameWinner
+GameRules.SetGameWinner = function(gameRules, team)
+    -- Store the stats
+    addStats({
+        winner = team
+    }, true)
+
+    -- Run the rael setGameWinner function
+    oldSetGameWinner(gameRules, team)
+
+    -- Report stats if the user wants us to
+    if autoSendStats and not autoSent then
+        -- We have now auto sent stats
+        autoSent = true
+
+        -- Send the stats
+        sendStats()
+    end
 end

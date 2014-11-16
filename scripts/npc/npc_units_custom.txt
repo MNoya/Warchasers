@@ -1574,12 +1574,12 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
-		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
-		"ModelScale"				"0.5"
+		"Model"						"models/elven_farm.vmdl"	// Model.
+		"ModelScale"				"1"
 
 		"precache"
 		{
-			"model"	"models/props_structures/cathedral001.vmdl"
+			"model"	"models/elven_farm.vmdl"
 		}
 		
 		// Abilities
@@ -1651,12 +1651,12 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
-		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
-		"ModelScale"				"0.5"
+		"Model"						"models/elven_farm.vmdl"	// Model.
+		"ModelScale"				"1"
 
 		"precache"
 		{
-			"model"	"models/props_structures/cathedral001.vmdl"
+			"model"	"models/elven_farm.vmdl"
 		}
 		
 		// Abilities
@@ -1726,12 +1726,12 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
-		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
-		"ModelScale"				"0.5"
+		"Model"						"models/elven_farm.vmdl"	// Model.
+		"ModelScale"				"1"
 
 		"precache"
 		{
-			"model"	"models/props_structures/cathedral001.vmdl"
+			"model"	"models/elven_farm.vmdl"
 		}
 		
 		// Abilities
@@ -1801,12 +1801,12 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
-		"Model"						"models/props_structures/cathedral001.vmdl"	// Model.
-		"ModelScale"				"0.5"
+		"Model"						"models/elven_farm.vmdl"	// Model.
+		"ModelScale"				"1"
 		
 		"precache"
 		{
-			"model"	"models/props_structures/cathedral001.vmdl"
+			"model"	"models/elven_farm.vmdl"
 		}
 
 		// Abilities
