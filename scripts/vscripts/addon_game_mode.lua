@@ -21,7 +21,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.1.2"
+WARCHASERS_VERSION = "1.1.3"
 
 -- Stat collection
 require('lib.statcollection')
