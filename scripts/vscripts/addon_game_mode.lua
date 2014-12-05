@@ -12,6 +12,7 @@ require('lib.statcollection')
 require('lib.statcollectionRPG')
 --local JSON = require('lib.json')
 require( 'sounds' )
+require( 'popups' )
 
 if Convars:GetBool("developer") == true then
 	require( "developer" )
@@ -200,6 +201,7 @@ function Precache( context )
 	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
 	PrecacheResource( "particle_folder","particles/neutral_fx", context)
 	PrecacheResource( "particle_folder","particles/sweep_generic", context)
+	PrecacheResource( "particle_folder","particles/warchasers", context)
 
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_necrolyte", context)
@@ -538,6 +540,11 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_gyrocopter", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
+	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
+	
+
 end
 
 function Warchasers:OnGameInProgress()
@@ -1192,9 +1199,11 @@ function Warchasers:OnEntityKilled( event )
 	    --update personal score
 		if killerEntity:GetOwner() ~= nil and not killerEntity:IsRealHero() and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then 
 				--it's a friendly summon killing something, credit to the owner
-				killerEntity:GetOwner():IncrementKills(1)
+				if killerEntity:GetOwner() ~= nil and killerEntity:GetOwner():IsRealHero() then
+					killerEntity:GetOwner():IncrementKills(1)
+				end
 		elseif killerEntity:IsRealHero() then
-			killerEntity:IncrementKills(1) 
+				killerEntity:IncrementKills(1) 
 		end
 	end
 

@@ -363,5 +363,195 @@ function void_damage( event )
 end
 
 
+function HealingWave( event )
+	local hero = event.caster
+	local target = event.target
+	local bounces = event.ability:GetLevelSpecialValueFor("max_bounces", (event.ability:GetLevel()-1))
+	local healing = event.ability:GetSpecialValueFor("healing")
+	local decay = event.ability:GetSpecialValueFor("wave_decay_percent")  * 0.01
+	local radius = event.ability:GetSpecialValueFor("bounce_range")
 
---FindByClassnameNearest("npc_dota_hero_sven", target:GetOrigin(), 2000):FindAbilityByName("warchasers_megatron_thorns_aura"):GetLevel()
+	-- main target first
+	local particle = ParticleManager:CreateParticle("particles/warchasers/dazzle_shadow_wave.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin()) --origin
+	ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin()) --destination
+
+	local particle = ParticleManager:CreateParticle("particles/warchasers/dazzle_shadow_wave_copy.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin()) --origin
+	ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin()) --destination
+
+	EmitSoundOn("Hero_Dazzle.Shadow_Wave",target)
+	if target:GetHealth() ~= target:GetMaxHealth()  then 
+		target:Heal(healing, target) 
+		PopupHealing(target,math.floor(healing))
+	end
+
+	local targetsHealed = {}
+	target.healedByWave = true
+	table.insert(targetsHealed,target)
+
+	local dummy = nil
+	local units = nil
+	local jump_interval = 0.3
+
+	bounces = bounces -1
+
+	-- do bounces from target to new targets
+	Timers:CreateTimer(DoUniqueString("HealingWave"), {
+		endTime = jump_interval,
+		callback = function()
+	
+			-- unit selection and counting
+			local allies = FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 
+												DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, 0, false)
+
+			-- particle
+			targetVec = target:GetAbsOrigin()
+			targetVec.z = target:GetAbsOrigin().z + target:GetBoundingMaxs().z
+			if dummy ~= nil then
+				dummy:RemoveSelf()
+			end
+			dummy = CreateUnitByName("dummy_unit", targetVec, false, hero, hero, hero:GetTeam())
+
+			-- select a target randomly from the table and heal. while loop makes sure the target doesn't select itself.			
+			local possibleTargetsBounce = {}
+			-- Add the 
+			for _,v in pairs(allies) do
+				-- if not healed and not on full health
+				if not v.healedByWave and v:GetHealth() ~= v:GetMaxHealth() then
+					table.insert(possibleTargetsBounce,v)
+				end
+			end
+
+			target = possibleTargetsBounce[math.random(1,#possibleTargetsBounce)]
+			if target then
+				target.healedByWave = true
+				table.insert(targetsHealed,target)		
+			else
+				-- clear the struck table and end
+				for _,v in pairs(targetsHealed) do
+			    	v.healedByWave = false
+			    	v = nil
+			    end
+				return
+			end
+
+			local particle = ParticleManager:CreateParticle("particles/warchasers/dazzle_shadow_wave.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+			ParticleManager:SetParticleControl(particle,0,dummy:GetAbsOrigin()) --Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	-- origin
+			local particle2 = ParticleManager:CreateParticle("particles/warchasers/dazzle_shadow_wave_copy.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+			ParticleManager:SetParticleControl(particle2,0,dummy:GetAbsOrigin()) --Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	-- origin
+
+			-- heal and decay
+			healing = healing - (healing*decay)
+			target:Heal(healing, target) 
+			PopupHealing(target,math.floor(healing))
+
+			-- make the particle shoot to the target
+			ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin()) --destination
+			ParticleManager:SetParticleControl(particle2, 1, target:GetAbsOrigin()) --destination
+
+			-- sound
+
+			-- decrement remaining spell bounces
+			bounces = bounces - 1
+
+			-- fire the timer again if spell bounces remain
+			if bounces > 0 then
+				return jump_interval
+			end
+		end
+	})
+	
+	Timers:CreateTimer(5,function() 
+		-- double check
+		for _,v in pairs(targetsHealed) do
+		   	v.healedByWave = false
+		   	v = nil
+		end
+	end)
+end
+
+
+function ForkedLightning( event )
+	local hero = event.caster
+	local target = event.target
+	local max_units = event.ability:GetSpecialValueFor("max_units")
+
+	-- get units near the target to select some in the cone (just 300 radius from the main target because I'm lazy to do many finds)
+	local units = FindUnitsInRadius(hero:GetTeamNumber(), target:GetOrigin(), target, 300, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+						DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+	-- hit the main target
+	local lightningBolt = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, hero)
+	ParticleManager:SetParticleControl(lightningBolt,0,Vector(hero:GetAbsOrigin().x,hero:GetAbsOrigin().y,hero:GetAbsOrigin().z + hero:GetBoundingMaxs().z ))	
+	ParticleManager:SetParticleControl(lightningBolt,1,Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
+	ApplyDamage({ victim = target,	attacker = hero, damage = event.ability:GetAbilityDamage(),	damage_type = event.ability:GetAbilityDamageType() })
+	EmitSoundOn("Hero_Zuus.ArcLightning.Target", target)
+
+	local units_hit = 1
+	for _,v in pairs(units) do
+		if units_hit <= max_units and v ~= target then
+			local lightningBolt2 = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, hero)
+			ParticleManager:SetParticleControl(lightningBolt2,0,Vector(hero:GetAbsOrigin().x,hero:GetAbsOrigin().y,hero:GetAbsOrigin().z + hero:GetBoundingMaxs().z ))	
+			ParticleManager:SetParticleControl(lightningBolt2,1,Vector(v:GetAbsOrigin().x,v:GetAbsOrigin().y,v:GetAbsOrigin().z + v:GetBoundingMaxs().z ))	
+			ApplyDamage({ victim = v,	attacker = hero, damage = event.ability:GetAbilityDamage(),	damage_type = event.ability:GetAbilityDamageType() })
+			units_hit = units_hit + 1
+		else
+			return
+		end
+	end
+
+
+end
+
+
+-- Not used, spawned with datadriven SpawnUnit
+function SpawnDarkMinion( event )
+	local hero = event.caster
+	local minion = CreateUnitByName("npc_skeleton_archer", event.unit:GetOrigin(), false, hero, hero, hero:GetTeam())
+	minion:SetTeam( DOTA_TEAM_GOODGUYS )
+    minion:SetOwner(hero)
+    minion:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
+end
+
+
+function Spin(keys)
+    local target = keys.target
+    local total_degrees = keys.Angle
+    target:SetForwardVector(RotatePosition(Vector(0,0,0), QAngle(0,total_degrees,0), target:GetForwardVector()))
+end
+
+function TornadoParticle(event)
+	local target = event.target
+	target.tornado = ParticleManager:CreateParticle("particles/neutral_fx/tornado_ambient.vpcf", PATTACH_WORLDORIGIN, event.caster)
+	ParticleManager:SetParticleControl(target.tornado, 0, Vector(target:GetAbsOrigin().x,target:GetAbsOrigin().y,target:GetAbsOrigin().z - 50 ))
+end
+
+function EndTornadoParticle(event)
+	local target = event.target
+	ParticleManager:DestroyParticle(target.tornado,false)
+end
+
+function GiveCrit(event)
+
+	print("giff crit")
+	if event.target == event.caster then
+		event.ability:ApplyDataDrivenModifier( event.caster, event.target, "modifier_warden_crit", nil)
+	end
+
+end
+
+function KillVengeanceSpirits(event)
+	local avatar = event.caster
+
+	local units = FindUnitsInRadius(avatar:GetTeamNumber(), avatar:GetOrigin(), avatar, 3000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+						DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+	for _,v in pairs(units) do
+		if v:GetUnitName() == "npc_spirit_of_vengeance" then
+			v:ForceKill(false)
+		end
+	end
+
+
+end

@@ -13,4 +13,6 @@
 	"npc_dota_hero_shadow_demon"		"1"
 	"npc_dota_hero_templar_assassin"	"1"
 	"npc_dota_hero_drow_ranger"			"1"
+	"npc_dota_hero_medusa"				"1"
+	"npc_dota_hero_phantom_assassin"	"1"
 }

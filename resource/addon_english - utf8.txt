@@ -23,6 +23,8 @@
 		"npc_dota_hero_shadow_demon"			"Mumm'Rah"
 		"npc_dota_hero_templar_assassin"		"Assassin"
 		"npc_dota_hero_drow_ranger"			"Snake Ayes"
+		"npc_dota_hero_medusa"				"Lady Darkscale" //Naga Sea Witch
+		"npc_dota_hero_phantom_assassin"	"Iron Raven" //Warden
 
 		"npc_dota_hero_wisp"			"Wisp"
 
@@ -185,6 +187,96 @@
 		//==============================================================
 		//	Data Driven Skills
 		//==============================================================
+		
+		// ******************** ABILITIES ********************
+		
+		"DOTA_Tooltip_modifier_shadow_strike"                                             "Shadow Strike"
+		"DOTA_Tooltip_modifier_shadow_strike_Description"                                 "Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_modifier_warden_crit"                                               "Critical Strike"
+		"DOTA_Tooltip_modifier_warden_crit_Description"                                   "Granted a Crit on the next attack"
+
+		"DOTA_Tooltip_ability_warden_fan_of_knives"                                       "Fan of Knives"
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Description"                           "The Warden flings a flurry of knives at multiple enemy targets around her."
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_radius"                                "RADIUS:"
+
+		"DOTA_Tooltip_ability_warden_shadow_strike"                                       "Shadow Strike"
+		"DOTA_Tooltip_ability_warden_shadow_strike_Description"                           "Hurls a poisoned dagger which deals large initial damage, and then deals damage over time. The poisoned unit has its movement rate slowed for the duration."
+		"DOTA_Tooltip_ability_warden_shadow_strike_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_duration"							  "DURATION:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_initial_damage"                        "STRIKE DAMAGE:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_damage_every_3sec"                     "DAMAGE OVER TIME:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_move_speed_slow"                       "%SLOW:"
+
+		"DOTA_Tooltip_ability_warden_evasion"                                             "Counter Strike"
+		"DOTA_Tooltip_ability_warden_evasion_Description"                                 "Gives the hero a chance to evade an attack. After evading, the hero will be granted a critical strike on its next attack."
+		"DOTA_Tooltip_ability_warden_evasion_Note0"                                       ""
+		"DOTA_Tooltip_ability_warden_evasion_Lore"                                        ""
+		"DOTA_Tooltip_ability_warden_evasion_dodge_chance"                                "%EVASION:"
+		"DOTA_Tooltip_ability_warden_evasion_crit_bonus"                                  "%CRITICAL DAMAGE:"
+
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance"                                  "Avatar of Vengeance"
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Description"                      "Creates a powerful avatar that summons invulnerable spirits from friendly corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish."
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Note0"                            ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Lore"                             ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_duration"                         "DURATION:"
+
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn"                           "Spirit of Vengeance"
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Description"               "Raises an invulnerable feral spirit from the corpses of fallen units. Lasts 50 seconds or until the avatar dies."
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Note0"                     ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Lore"                      ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_spirit_limit"              "SPIRIT LIMIT:"
+		
+		"DOTA_Tooltip_ability_naga_healing_wave"                                          "Healing Wave"
+		"DOTA_Tooltip_ability_naga_healing_wave_Description"                              "Calls forth a wave of energy that heals a target and bounces to nearby friendlies. Each bounce heals less damage."
+		"DOTA_Tooltip_ability_naga_healing_wave_Note0"                                    ""
+		"DOTA_Tooltip_ability_naga_healing_wave_Lore"                                     ""
+		"DOTA_Tooltip_ability_naga_healing_wave_healing"                                  "HEAL:"
+		"DOTA_Tooltip_ability_naga_healing_wave_max_bounces"                              "MAX BOUNCES:"
+		"DOTA_Tooltip_ability_naga_healing_wave_bounce_range"                             "BOUNCE RANGE:"
+		"DOTA_Tooltip_ability_naga_healing_wave_wave_decay_percent"                       "HEAL DECAY:"
+
+		"DOTA_Tooltip_ability_naga_forked_lightning"                                      "Forked Lightning"
+		"DOTA_Tooltip_ability_naga_forked_lightning_Description"                          "Calls forth a cone of lightning to damage enemies. Hits a maximum of 3 units."
+		"DOTA_Tooltip_ability_naga_forked_lightning_Note0"                                ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_Lore"                                 ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_max_units"                            "MAX UNITS:"
+
+		"DOTA_Tooltip_ability_naga_black_arrow"                                           "Black Arrow"
+		"DOTA_Tooltip_ability_naga_black_arrow_Description"                               "Adds extra damage to attacks. Units killed while under the effect of Black Arrow will turn into Dark Minions."
+		"DOTA_Tooltip_ability_naga_black_arrow_Note0"                                     ""
+		"DOTA_Tooltip_ability_naga_black_arrow_Lore"                                      ""
+		"DOTA_Tooltip_ability_naga_black_arrow_bonus_damage"                              "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_health"                        "MINION HEALTH:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_damage"                        "MINION DAMAGE:"
+
+		"DOTA_Tooltip_ability_naga_tornado"                                               "Windfury"
+		"DOTA_Tooltip_ability_naga_tornado_Description"                                   "Summons a fierce controllable Tornado that slows enemy units' movement and attack speed, randomly tosses enemy ground units into the air and damages enemy buildings. While in the air, units can't attack or move but can still be damaged."
+		"DOTA_Tooltip_ability_naga_tornado_Note0"                                         ""
+		"DOTA_Tooltip_ability_naga_tornado_Lore"                                          ""
+		"DOTA_Tooltip_ability_naga_tornado_duration"                                      "DURATION:"
+		"DOTA_Tooltip_ability_naga_tornado_radius"                                        "RADIUS:"
+		"DOTA_Tooltip_ability_naga_tornado_dps_to_buildings"                              "DPS TO BUILDINGS:"
+		"DOTA_Tooltip_ability_naga_tornado_air_duration"                                  "AIR DURATION:"
+		"DOTA_Tooltip_ability_naga_tornado_attack_speed_slow"                             "ATTACK SPEED SLOW:"
+		"DOTA_Tooltip_ability_naga_tornado_move_speed_slow"                               "MOVE SPEED SLOW:"
+
+		"DOTA_Tooltip_ability_tornado_passive"                                            "Tempest"
+		"DOTA_Tooltip_ability_tornado_passive_Description"                                "The Eye of the Tornado"
+		"DOTA_Tooltip_ability_tornado_passive_Note0"                                      ""
+		"DOTA_Tooltip_ability_tornado_passive_Lore"                                       ""
+		"DOTA_Tooltip_ability_tornado_passive_attack_speed_slow"                          "ATTACK SPEED SLOW:"
+		"DOTA_Tooltip_ability_tornado_passive_move_speed_slow"                            "MOVE SPEED SLOW %%:"
+		"DOTA_Tooltip_ability_tornado_passive_radius"                                     "RADIUS:"
+		"DOTA_Tooltip_ability_tornado_passive_air_duration"                               "AIR DURATION:"
+		"DOTA_Tooltip_ability_tornado_passive_dps_to_buildings"                           "DPS TO BUILDINGS:"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_tornado_debuff"                                            "Tornado"
+		"DOTA_Tooltip_tornado_debuff_Description"                                "Decreased attack and movement speed"
 		
 		//To Do: Normalize item names - creep_ and warchasers_hero
 		
@@ -529,8 +621,13 @@
 		"npc_skull"								"Skull of Guldan"
 		"npc_casket"							"Frostmourne Casket"
 		
-		
-		
+		"npc_black_arrow_minion_1"               "Lesser Dark Minion"
+		"npc_black_arrow_minion_2"               "Dark Minion"
+		"npc_black_arrow_minion_3"               "Greater Dark Minion"
+		"npc_naga_tornado"                       "Tornado"
+		"npc_avatar_of_vengeance"                "Avatar of Vengeance"
+		"npc_spirit_of_vengeance"                "Spirit of Vengeance"
+
 		
 		"npc_small_murloc"						"Murloc Tiderunner"
 		"npc_small_murloc_a"						"Murloc Tiderunner"

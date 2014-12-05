@@ -3,7 +3,1032 @@
 {
 	"Version"		"1"
 
+	"warden_fan_of_knives"
+	//The Warden flings a flurry of knives at multiple enemy targets around her.
+
+	//Level	Duration	Cooldown	Mana Cost	Range	Area of Effect
+	//1	N/A	9 sec.	100	N/A	40	75 damage per target, 300 max damage
+	//2	N/A	9 sec.	100	N/A	50	125 damage per target, 625 max damage
+	//3	N/A	9 sec.	100	N/A	60	190 damage per target, 950 max damage
+	{
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"3"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"    		"warden_fan_of_knives"
+		"AbilityManacost" 				"100"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"9"
+		"AbilityCastRange"				"400 500 600"
+		"AbilityDamage"					"75 125 190"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400 500 600"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"AttachEffect"
+			{
+				"EffectName"		"particles/warchasers/bristleback_quill_spray.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+			}
+			"FireSound"
+			{	
+				"EffectName"		"Hero_PhantomAssassin.Dagger.Target"
+				"Target"			"CASTER"
+			}
+			"Damage"
+			{
+				"Type"          "DAMAGE_TYPE_MAGICAL"
+				"Damage"        "%AbilityDamage"
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"%radius"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+			}
+		}		
+	}
+
+	"warden_shadow_strike"
+	//Level	Duration	Cooldown	Mana Cost	Range	Area of Effect	Allowed Targets	Effect	Hero Level Req
+//1	15 sec.	8 sec.	75	30	N/A	Air, Ground, Enemy, Neutral	75 strike damage, 10 damage every 3 sec., Movement Slowed 50%	1
+//2	15 sec.	8 sec.	75	30	N/A	Air, Ground, Enemy, Neutral	150 strike damage, 30 damage every 3 sec., Movement Slowed 50%	3
+//3	15 sec.	8 sec.	75	30	N/A	Air, Ground, Enemy, Neutral	225 strike damage, 45 damage every 3 sec., Movement Slowed 50%	5
+	{
+		"BaseClass"	 "ability_datadriven"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"600"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"75"
+		"AbilityCastPoint"				"0.3"
+		"AbilityTextureName"			"warden_shadow_strike"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_viper/viper_viper_strike_impact.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"15"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"initial_damage"	"75 150 225"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"damage_every_3sec"	"10 30 45"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"move_speed_slow"	"-50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"hero_viper.viperStrike"
+				"Target"			"TARGET"
+			}
+			"TrackingProjectile"
+            {
+                "Target"			"TARGET"
+                "EffectName"        "particles/warchasers/queen_shadow_strike.vpcf"
+                "Dodgeable"         "0"
+                "ProvidesVision"    "1"
+                "VisionRadius"      "300"
+                "MoveSpeed"         "800"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+        }
+
+        "OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Type"          "DAMAGE_TYPE_MAGICAL"
+				"Damage"        "%initial_damage"
+				"Target"		"TARGET"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike"		
+				"Target"	"TARGET"
+			}
+			"DeleteOnHit"				"0"
+		}
+
+		"Modifiers"
+		{
+			"modifier_shadow_strike"	
+			{	
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"hero_viper.viperStrikeImpact"
+						"Target"			"TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"		"TARGET"
+					}
+				}
+				"Duration"	"%duration"
+				"IsDebuff"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_slow"
+				}
+				"ThinkInterval"	"3"
+				"OnThinkInterval"
+				{
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_MAGICAL"
+						"Damage"        "%damage_every_3sec"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+	}
+
+	"warden_evasion"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"MaxLevel"						"3"
+		"AbilityTextureName"    		"warden_evasion"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"dodge_chance"	"10 15 20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_bonus"				"200"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_warden_evasion"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"  "%dodge_chance"
+				}
+				"Aura"					"warden_give_crit_helper"
+				"Aura_Radius"			"1000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Aura_ApplyToCaster"	"0"
+			}
+
+			"warden_give_crit_helper"
+			{
+				"IsHidden"	"1"
+				"OnAttackFailed"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"GiveCrit"
+					}
+				}
+			}
+			"modifier_warden_crit"
+			{
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+				"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_blur.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"   "%crit_bonus"
+				}	
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_PhantomAssassin.CoupDeGrace"
+						"Target"			"TARGET"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName"		"modifier_warden_crit"
+						"Target"			"ATTACKER"
+					}
+				}
+			}
+		}
+	}
 	
+	"warden_avatar_of_vengance"
+	//Creates a powerful avatar that summons invulnerable spirits from friendly corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType" 		"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"			"1"
+		"AbilityTextureName"    "warden_avatar_of_vengance"
+		"AbilityCooldown" 	"180"
+		"AbilityManacost" 	"200"
+		"AbilityCastPoint"		"0.3"
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"180"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"UnitName"		"npc_avatar_of_vengeance"
+				"UnitCount"		"1"
+				"SpawnRadius"	"100"
+				"Duration"		"%duration"
+				"Target"		"CASTER"
+				"OnSpawn"
+				{
+					"FireSound"
+					{
+						"EffectName" "Hero_Spectre.Haunt"
+						"Target"	 "CASTER"
+					}
+				}
+			}
+		}
+	}
+
+	"avatar_of_vengeance_passive"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE	| DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+			"particle"	"particles/units/heroes/hero_spectre/spectre_spectral_dagger_tracking.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"vengeance_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"States"
+				{	
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SPECIALLY_DENIABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_spectre/spectre_spectral_dagger_tracking.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"KillVengeanceSpirits"
+					}
+				}
+			}
+		}
+	}
+
+	"spirit_of_vengeance_passive"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE	| DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_vengeful/vengeful_ambient.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"vengeance_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+				}
+			}
+		}
+	}
+
+	"avatar_of_vengeance_spirit_spawn"
+	{
+
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityType" 		"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"			"1"
+		"AbilityTextureName" "warden_spirit_spawn"
+		"AbilityCooldown" 	"2"
+		"AbilityManacost" 	"25"
+		"AbilityCastRange"	"600"
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirit_limit"			"6"
+			}		
+		}
+
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"UnitName"	"npc_spirit_of_vengeance"
+				"UnitCount"	"1"
+				"UnitLimit"	"%spirit_limit"
+				"SpawnRadius"	"1"
+				"Duration"		"50"
+				"Target"
+				{
+					"Center" "CASTER"
+					"Radius" "900"
+					"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					"MaxTargets"			"1"
+					"Random"				"1"
+				}	
+				"OnSpawn"
+				{
+					"FireSound"
+					{
+						"EffectName" "Hero_Spectre.DaggerCast"
+						"Target"	 "CASTER"
+					}
+				}
+			}
+		}		
+	}
+
+
+	"naga_healing_wave"
+	//Healing Wave
+	//Calls forth a wave of energy that heals a target and bounces to nearby friendlies. Each bounce heals less damage.
+
+	//1 9 sec.	90	700	500	Heals 130 damage, jumps 3 times
+	//2	9 sec.	90	700	500	Heals 215 damage, jumps 4 times
+	//3	9 sec.	90	700	500	Heals 300 damage, jumps 5 times
+	{
+		"BaseClass"	 "ability_datadriven"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"700"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"90"
+		"AbilityCastPoint"				"0.4"
+		"AbilityTextureName"			"naga_healing_wave"
+		"AbilityUnitTargetFlags"	  	  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing"				"160 215 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bounces"			"2 3 4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_range"			"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wave_decay_percent"	"20"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+			"particle"	"particles/warchasers/dazzle_shadow_wave.vpcf"
+			"particle"	"particles/warchasers/dazzle_shadow_wave_copy.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"		"HealingWave"
+			}
+		}
+
+	}
+
+	"naga_forked_lightning"
+	//Forked Lightning
+	//Calls forth a cone of lightning to damage enemies. Hits a maximum of 3 units.
+	//1	11 sec.	110	60	85 damage per unit.
+	//2	11 sec.	110	60	160 damage per unit.
+	//3	11 sec.	110	60	250 damage per unit.
+	{
+		"BaseClass"	 					"ability_datadriven"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"700"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"110"
+		"AbilityTextureName"			"naga_forked_lightning"
+		"AbilityDamage"					"75 150 225"
+		"AbilityCastPoint"				"0.4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_units"				"3"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/chain_lightning.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"		"ForkedLightning"
+			}
+		}
+	}
+
+
+	"naga_black_arrow"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"naga_black_arrow"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"10"
+		"MaxLevel"						"3"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+	
+		"Modifiers"
+		{ 
+			"modifier_naga_black_arrow"
+			{
+				"Passive"	"1"
+				"IsHidden"	 "1"
+				"Orb"
+				{
+					"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+					"ProjectileName"    "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+					"CastAttack"		"1"
+				}
+
+				"OnOrbFire"
+				{
+					"SpendMana"
+					{
+						"Mana"    "%AbilityManaCost"
+					}
+				}
+				
+				"OnOrbImpact"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_black_arrow_spawn"
+						"Target"			"TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"			"Hero_Medusa.MysticSnake.Target"
+						"Target"				"CASTER"
+					}
+					"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_PHYSICAL"
+						"Damage"        "%bonus_damage"
+						"Target"		"TARGET"
+					}
+				}
+			}
+			"modifier_black_arrow_spawn"
+			{
+				"IsHidden"	"1"
+				"Duration"	"0.1"
+				"OnDeath"
+				{
+					//"RunScript"
+					//{
+					//	"ScriptFile"	"abilities.lua"
+					//	"Function"		"SpawnDarkMinion"
+					//}
+					"SpawnUnit"
+					{
+						"UnitName"	"npc_black_arrow_minion_1"
+						"UnitCount"	"%dark_minion_1_count"
+						"SpawnRadius"	"1"
+						"Duration"	"80"
+						"Target"
+						{
+							"Center" "UNIT"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}	
+						"OnSpawn"
+						{
+							"FireSound"
+							{
+								"EffectName" "Hero_Medusa.MysticSnake.Return"
+								"Target"			"CASTER"
+							}
+						}
+					}
+					"SpawnUnit"
+					{
+						"UnitName"	"npc_black_arrow_minion_2"
+						"UnitCount"	"%dark_minion_2_count"
+						"SpawnRadius"	"1"
+						"Duration"	"80"
+						"Target"
+						{
+							"Center" "UNIT"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}	
+						"OnSpawn"
+						{
+							"FireSound"
+							{
+								"EffectName" "Hero_Medusa.MysticSnake.Target"
+								"Target"			"CASTER"
+							}
+						}
+					}
+					"SpawnUnit"
+					{
+						"UnitName"	"npc_black_arrow_minion_3"
+						"UnitCount"	"%dark_minion_3_count"
+						"SpawnRadius"	"1"
+						"Duration"	"80"
+						"Target"
+						{
+							"Center" "UNIT"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}	
+						"OnSpawn"
+						{
+							"FireSound"
+							{
+								"EffectName" "Hero_Medusa.MysticSnake.Target"
+								"Target"			"CASTER"
+							}
+						}
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_damage"					"2 10 20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dark_minion_health"			"100 200 300"		
+			}
+			"03"
+			{
+				"var_type"          			"FIELD_INTEGER"
+				"dark_minion_damage"       		"10 15 20"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dark_minion_1_count"	"1 0 0"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dark_minion_2_count"	"0 1 0"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dark_minion_3_count"	"0 0 1"
+			}
+			
+		}
+	}
+
+	"dark_minion_passive"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE	| DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"Modifiers"
+		{
+			"dark_minion_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/courier/courier_greevil_purple/courier_greevil_purple_ambient_3.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+				}
+			}
+		}
+	}
+
+	"naga_tornado"
+	//Summons a fierce controllable Tornado that slows enemy units' movement speed, randomly tosses enemy ground units into the air and damages enemy buildings. 
+	//The Tornado does 50 damage per second to buildings under it. Lasts 40 seconds.
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType" 		"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"			"1"
+		"AbilityTextureName"    "naga_tornado"
+		"AbilityCooldown" "120"
+		"AbilityManacost" "200"
+		"AbilityCastRange"	"900"
+		"AoERadius"		"275"
+		"AbilityCastPoint"		"0.4"
+
+		"precache"
+		{
+			"particle"				"particles/warchasers/tornado_ambient.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
+		"AbilitySpecial"	//most of these are just to show them in the spell, not actually used directly.
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"duration"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"275"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"air_duration"	"6"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"move_speed_slow"	"-25"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attack_speed_slow"	"-25"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"dps_to_buildings"	"25"
+			}
+			
+
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{			
+				"EffectName"    "Hero_Invoker.Tornado.Cast"
+				"Target"		"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Hero_Invoker.Tornado"
+				"Target"		"CASTER"
+			}
+			"SpawnUnit"
+			{
+				"UnitName"	"npc_naga_tornado"
+				"UnitCount"	"1"
+				"SpawnRadius"	"1"
+				"Duration"	"%duration"
+				"Target"	"POINT"
+				"OnSpawn"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/warchasers/tornado_ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+					}
+				}
+			}
+		}
+	}
+
+	"tornado_passive"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName"	"naga_tornado"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+
+		"precache"
+		{
+			"particle"				"particles/neutral_fx/tornado_ambient.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
+		"AbilitySpecial"	//copied values from the main spell
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"275"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"air_duration"	"6"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"move_speed_slow"	"-25"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attack_speed_slow"	"-25"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"dps_to_buildings"	"25"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"tornado_building_damage"
+			{
+				"ThinkInterval"		"1"
+		        "OnIntervalThink"
+		        {
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  				"CASTER"
+							"Radius" 				"%radius"
+							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 				"DOTA_UNIT_TARGET_BUILDING"
+						}
+						"Type"			 "DAMAGE_TYPE_MAGICAL"
+						"Damage"		 "%dps_to_buildings"
+					}
+				}
+				"IsHidden"			"1"
+				"Passive"				"1"
+			}
+
+
+			"tornado_effect"
+			{
+				"States"
+		        {         
+		          "MODIFIER_STATE_NOT_ON_MINIMAP"         "MODIFIER_STATE_VALUE_ENABLED"
+				  "MODIFIER_STATE_PROVIDES_VISION"         "MODIFIER_STATE_VALUE_DISABLED"
+				  "MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+				  "MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				  "MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"	
+		        }
+		        "ThinkInterval"		"3"
+		        "OnIntervalThink"
+		        {
+		        	"FireSound"
+					{
+						"EffectName"    "Hero_Invoker.Tornado"
+						"Target"		"CASTER"
+					}
+				}
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"tornado_debuff"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Aura_ApplyToCaster"	"0"
+				
+			}
+			"tornado_debuff"
+			{
+				"IsDebuff"			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_slow"
+				}
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"	
+					{
+						"ModifierName"	"tornado_flying_debuff"
+						"Target"
+						{
+							"Center"  				"CASTER"
+							"Radius" 				"275"
+							"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+							"MaxTargets"			"1"
+							"Random"				"1"
+						}
+					}
+				}
+			}
+
+			"tornado_flying_debuff"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+				"Duration"	"%air_duration"
+				"OnCreated"
+				{
+					"RunScript"
+			        {
+			        	"ScriptFile" 	   	"abilities.lua"
+			            "Function" 			"TornadoParticle"
+			        }
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+			        {
+			        	"ScriptFile" 	   	"abilities.lua"
+			            "Function" 			"EndTornadoParticle"
+			        }
+				}
+				"ThinkInterval"		"0.02"
+				"OnIntervalThink"
+	            {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "abilities.lua"
+                        "Function"      "Spin"
+                        "Angle"         "20"
+                    }
+				}
+				"States"
+		        {   
+		        	"MODIFIER_STATE_FLYING"		"MODIFIER_STATE_VALUE_ENABLED"
+		        	"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"
+		        }
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	"warchasers_precache"
 	{
