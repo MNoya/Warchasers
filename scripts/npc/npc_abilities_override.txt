@@ -2183,7 +2183,7 @@
 
 	"item_cloak_of_shadows"
 	{
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemDroppable"					"1"
 	}
 	

@@ -26,12 +26,12 @@
     "attributes"
     {
         //Common Drops
-        "item" "item_cloak_of_shadows"
-        "item" "item_mantle_3"
-        "item" "item_slippers_3"
-        "item" "item_botas"
-        "item" "item_rop_2"
-        "item" "item_sobi"
+        //"item" "item_cloak_of_shadows"
+        //"item" "item_mantle_3"
+        //"item" "item_slippers_3"
+        //"item" "item_botas"
+        //"item" "item_rop_2"
+        //"item" "item_sobi"
     }
 
     "weapons_armor"
