@@ -38,12 +38,13 @@ Readers beware: You are REQUIRED to set AT LEAST modID to your mods unique ID
 -- Begin statcollection module
 module('statcollection', package.seeall)
 
--- This is the version of stat collection (it's the build date)
-local STAT_COLLECTION_VERSION = '2014.11.16.23.44'
+-- This is the version of stat collection -- do not touch!
+local STAT_COLLECTION_VERSION = '4'
 
 -- Require libs
-local JSON = require('lib.json')
-local md5 = require('lib.md5')
+local libpath = (...):match('(.-)[^%.]+$')
+local JSON = require(libpath .. 'json')
+local md5 = require(libpath .. 'md5')
 
 -- Max number of players
 local maxPlayers = 10
@@ -190,16 +191,16 @@ function getPlayerSnapshot(playerID)
 
 
 
-				stunAmount = PlayerResource:GetStuns(playerID),
+                stunAmount = PlayerResource:GetStuns(playerID),
 
-				goldSpentBuyBack = PlayerResource:GetGoldSpentOnBuybacks(playerID),
-				goldSpentConsumables = PlayerResource:GetGoldSpentOnConsumables(playerID),
-				goldSpentItems = PlayerResource:GetGoldSpentOnItems(playerID),
-				goldSpentSupport = PlayerResource:GetGoldSpentOnSupport(playerID),
-				numPurchasedConsumables = PlayerResource:GetNumConsumablesPurchased(playerID),
-				numPurchasedItems = PlayerResource:GetNumItemsPurchased(playerID),
-				totalEarnedGold = PlayerResource:GetTotalEarnedGold(playerID),
-				totalEarnedXP = PlayerResource:GetTotalEarnedXP(playerID)
+                goldSpentBuyBack = PlayerResource:GetGoldSpentOnBuybacks(playerID),
+                goldSpentConsumables = PlayerResource:GetGoldSpentOnConsumables(playerID),
+                goldSpentItems = PlayerResource:GetGoldSpentOnItems(playerID),
+                goldSpentSupport = PlayerResource:GetGoldSpentOnSupport(playerID),
+                numPurchasedConsumables = PlayerResource:GetNumConsumablesPurchased(playerID),
+                numPurchasedItems = PlayerResource:GetNumItemsPurchased(playerID),
+                totalEarnedGold = PlayerResource:GetTotalEarnedGold(playerID),
+                totalEarnedXP = PlayerResource:GetTotalEarnedXP(playerID)
             }
         end
 
