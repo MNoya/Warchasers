@@ -571,8 +571,11 @@ function AvengeDeath(event)
 			else
 				v:SetModifierStackCount("modifier_avenge_me", event.ability, (v:GetModifierStackCount("modifier_avenge_me", v) + 1))
 			end
-			-- Replace the first 1 for a lookup in the units table later.
-			v:SetModelScale(1 + v:GetModifierStackCount("modifier_avenge_me", v)*0.1)
+			-- Lookup in the parsed units KV later to get the size...
+			local unitName = v:GetUnitName()
+			local baseModelScale = GameRules.UnitsCustomKV[unitName].ModelScale
+			print("Base Model Scale :"..baseModelScale)
+			v:SetModelScale(baseModelScale + v:GetModifierStackCount("modifier_avenge_me", v)*0.1)
 		end
 	end
 

@@ -146,6 +146,9 @@ function Warchasers:InitGameMode()
 
   	self.bSeenWaitForPlayers = false
 
+  	-- Full units file to get the model scales (Valve please add GetModelScale function back)
+  	GameRules.UnitsCustomKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+
 	print( "Done loading gamemode" )
 
 end
@@ -727,9 +730,9 @@ function Warchasers:OnNPCSpawned(keys)
 					npc:AddItem(item)
 
 					-- Test Unit
-					local dummy1 = CreateUnitByName("npc_small_murloc", hero:GetAbsOrigin()+Vector(200, 200, 0), true, nil, nil, DOTA_TEAM_GOODGUYS)			
+					local dummy1 = CreateUnitByName("npc_small_murloc", npc:GetAbsOrigin()+Vector(200, 200, 0), true, nil, nil, DOTA_TEAM_GOODGUYS)			
 					Timers:CreateTimer(0.1, function() 
-						FindClearSpaceForUnit(dummy1, hero:GetAbsOrigin(), true) 
+						FindClearSpaceForUnit(dummy1, npc:GetAbsOrigin(), true) 
 						dummy1:SetControllableByPlayer(0, true)
 						dummy1:Stop() 
 					end)
