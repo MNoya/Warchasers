@@ -69,6 +69,105 @@
 		}
 	}
 
+	//Extra Health: Extra Health grants a 50% hit point bonus to Champions, as well as Bosses and their minions. This property is dangerous when it extends fights, and players used to killing monsters quickly enough to avoid real trouble from their damaging properties such as Plagued or Arcane Enchanted may need to retreat or take a different tactic when dealing with Extra Health enemies.
+	//Implementation: Spawn with a modifier that does SetMaxHealth and SetHealth	
+
+	"creep_extra_health"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_extra_health"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_bonus_percentage"	"50"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_extra_health"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				//unnecessary effect, might remove later
+				"EffectName"		"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf" //"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnCreated"
+				{
+					"RunScript"		
+					{	
+						"ScriptFile"	"abilities.lua"
+						"Function"		"ExtraHealth"
+					}
+				}
+			}
+		}
+	}
+
+	//Fast: Fast monsters get a 40% bonus to their movement speed, as well as a 20% bonus to attack speed and a 10% bonus to casting speed
+	//Implementation: Remove casting speed. Apply a simple MS and AS modifier	
+
+	"creep_fast"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_fast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_bonus"	"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed_bonus"		"40"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/rune_haste_owner.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_fast"
+			{
+				"IsHidden"	"0"
+				"Passive"	"1"
+
+				"EffectName"		"particles/generic_gameplay/rune_haste_owner.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	    "%attack_speed_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	    "%attack_speed_bonus"
+				}	
+			}
+		}
+	}
+
+
+
+
+
+	// Active Modifiers
+
 	//Desecrator: Desecrators create an orange-colored "glowing void zone" beneath the feet of a character. These function like small Firewalls, dealing damage to any character who stands in them.
 	//The void zones take a second or so to come into effect, giving a visual warning so players have time to move, assuming they are not blocked in by modifiers like Waller or Jailer.
 	//The Desecrated pools remain in place for 12 seconds, and during battles with minions all casting Desecration, entire screens can be come virtually impassable due to the pits of damage.
@@ -177,7 +276,6 @@
 	    	}
 		}
 	}
-
 
 
 

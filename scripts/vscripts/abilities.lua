@@ -590,3 +590,21 @@ function DesecrationParticles(event)
 	ParticleManager:SetParticleControl(particle, 1, target) -- origin
     ParticleManager:SetParticleControl(particle, 2, Vector(12,0,0)) -- duration
 end
+
+function ExtraHealth(event)
+	local health_multiplier = event.ability:GetLevelSpecialValueFor("health_bonus_percentage", (event.ability:GetLevel() - 1))
+	local unit = event.caster
+
+	local unitHP = unit:GetMaxHealth()
+	local newHP = unitHP * (1+health_multiplier*0.01)
+	unit:SetMaxHealth(newHP)
+	unit:SetHealth(newHP)
+	
+	Timers:CreateTimer(0.5,function()
+		-- scale up a bit
+		local unitName = unit:GetUnitName()
+		print(unitName)
+		local baseModelScale = GameRules.UnitsCustomKV[unitName].ModelScale
+		unit:SetModelScale(baseModelScale + 0.1)
+	end)
+end

@@ -3959,6 +3959,10 @@
 		//----------------------------------------------------------------
 		"Ability1"					"creep_avenger"			// Ability 1.
 		"Ability2"					"creep_desecrator"
+		"Ability3"					"creep_extra_health"
+		"Ability4"					"creep_fast"
+		"Ability5"					""
+		"Ability6"					""
 
 		// Armor
 		//----------------------------------------------------------------
