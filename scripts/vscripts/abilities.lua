@@ -283,7 +283,7 @@ function star_fall_thinker( event )
 end
 
 function star_fall_ini( event )
-	local dummy = CreateUnitByName("dummy_unit", event.caster:GetOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
+	local dummy = CreateUnitByName("dummy_unit", event.caster:GetAbsOrigin(), false, event.caster, event.caster, event.caster:GetTeam())
 	--dummy:SetControllableByPlayer( event.caster:GetPlayerOwnerID(), true)
 	dummy:AddAbility("warchasers_starfall_dummy_helper")
 	dummy:AddAbility("mirana_starfall")
@@ -325,7 +325,7 @@ function MeteorCannon( keys )
   local info = {
     EffectName = "particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf",
     Ability = ability,
-    vSpawnOrigin = caster:GetOrigin(),
+    vSpawnOrigin = caster:GetAbsOrigin(),
     fDistance = 5000,
     fStartRadius = 125,
     fEndRadius = 125,
@@ -475,10 +475,10 @@ end
 function ForkedLightning( event )
 	local hero = event.caster
 	local target = event.target
-	local max_units = event.ability:GetSpecialValueFor("max_units")
+	local max_units = event.ability:GetLevelSpecialValueFor("max_units", (event.ability:GetLevel() - 1))
 
 	-- get units near the target to select some in the cone (just 300 radius from the main target because I'm lazy to do many finds)
-	local units = FindUnitsInRadius(hero:GetTeamNumber(), target:GetOrigin(), target, 300, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+	local units = FindUnitsInRadius(hero:GetTeamNumber(), target:GetAbsOrigin(), target, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, 
 						DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
 
 	-- hit the main target
@@ -490,25 +490,21 @@ function ForkedLightning( event )
 
 	local units_hit = 1
 	for _,v in pairs(units) do
-		if units_hit <= max_units and v ~= target then
+		if units_hit < max_units and v ~= target then
 			local lightningBolt2 = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, hero)
 			ParticleManager:SetParticleControl(lightningBolt2,0,Vector(hero:GetAbsOrigin().x,hero:GetAbsOrigin().y,hero:GetAbsOrigin().z + hero:GetBoundingMaxs().z ))	
 			ParticleManager:SetParticleControl(lightningBolt2,1,Vector(v:GetAbsOrigin().x,v:GetAbsOrigin().y,v:GetAbsOrigin().z + v:GetBoundingMaxs().z ))	
 			ApplyDamage({ victim = v,	attacker = hero, damage = event.ability:GetAbilityDamage(),	damage_type = event.ability:GetAbilityDamageType() })
 			units_hit = units_hit + 1
-		else
-			return
 		end
 	end
-
-
 end
 
 
 -- Not used, spawned with datadriven SpawnUnit
 function SpawnDarkMinion( event )
 	local hero = event.caster
-	local minion = CreateUnitByName("npc_skeleton_archer", event.unit:GetOrigin(), false, hero, hero, hero:GetTeam())
+	local minion = CreateUnitByName("npc_skeleton_archer", event.unit:GetAbsOrigin(), false, hero, hero, hero:GetTeam())
 	minion:SetTeam( DOTA_TEAM_GOODGUYS )
     minion:SetOwner(hero)
     minion:SetControllableByPlayer( hero:GetPlayerOwnerID(), true )
@@ -544,7 +540,7 @@ end
 function KillVengeanceSpirits(event)
 	local avatar = event.caster
 
-	local units = FindUnitsInRadius(avatar:GetTeamNumber(), avatar:GetOrigin(), avatar, 3000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+	local units = FindUnitsInRadius(avatar:GetTeamNumber(), avatar:GetAbsOrigin(), avatar, 3000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
 						DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
 
 	for _,v in pairs(units) do
@@ -552,6 +548,42 @@ function KillVengeanceSpirits(event)
 			v:ForceKill(false)
 		end
 	end
+end
 
+--- NEW CREEP MODIFIERS WOHOOO ---
 
+function AvengeDeath(event)
+	local unit = event.caster
+
+	print("AVENGE ME BROTHERS")
+
+	-- find nearby allies
+	local units = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), unit, 3000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+						DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+	-- make them grow, hit harder and faster
+	for _,v in pairs(units) do
+		if v:GetUnitName() == unit:GetUnitName() then
+			if not v:HasModifier("modifier_avenge_me") then
+				event.ability:ApplyDataDrivenModifier(v, v, "modifier_avenge_me", nil)
+				v:SetModifierStackCount("modifier_avenge_me", event.ability, 1)
+				print(v:GetModifierStackCount("modifier_avenge_me", v))
+			else
+				v:SetModifierStackCount("modifier_avenge_me", event.ability, (v:GetModifierStackCount("modifier_avenge_me", v) + 1))
+			end
+			-- Replace the first 1 for a lookup in the units table later.
+			v:SetModelScale(1 + v:GetModifierStackCount("modifier_avenge_me", v)*0.1)
+		end
+	end
+
+end
+
+function DesecrationParticles(event)
+	local duration = event.ability:GetSpecialValueFor("duration")
+
+	local target = event.target:GetAbsOrigin()
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle, 0, target) -- origin
+	ParticleManager:SetParticleControl(particle, 1, target) -- origin
+    ParticleManager:SetParticleControl(particle, 2, Vector(12,0,0)) -- duration
 end

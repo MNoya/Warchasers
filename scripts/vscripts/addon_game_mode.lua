@@ -725,6 +725,15 @@ function Warchasers:OnNPCSpawned(keys)
 				if Convars:GetBool("developer") then
 					local item = CreateItem("item_ublink", npc, npc) --testing items
 					npc:AddItem(item)
+
+					-- Test Unit
+					local dummy1 = CreateUnitByName("npc_small_murloc", hero:GetAbsOrigin()+Vector(200, 200, 0), true, nil, nil, DOTA_TEAM_GOODGUYS)			
+					Timers:CreateTimer(0.1, function() 
+						FindClearSpaceForUnit(dummy1, hero:GetAbsOrigin(), true) 
+						dummy1:SetControllableByPlayer(0, true)
+						dummy1:Stop() 
+					end)
+
 				end
 				Warchasers:OnHeroInGame(npc)
 			elseif npc.bFirstSpawned == true then --respawn through Ankh
