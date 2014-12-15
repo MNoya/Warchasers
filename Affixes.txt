@@ -1,0 +1,102 @@
+Clasic Heroic Legendary
+
+- Elite Affixes
+Taken from : http://www.diablowiki.net/Boss_Modifiers
+
+D3:	by difficulty level, 1 on Normal, 2 on Nightmare, 3 on Hell, and 4 on Inferno
+
+Easy to implement:
+
+//Passives//
+Avenger: Avenger is one of the highest level modifiers, appearing only on Hell and Inferno. It spawns only with Champions (not bosses) and links the champions together, so that when one dies, those that remain alive gain bonuses to their visual size, damage, and movement/attack speed.
+The bonuses are cumulative, and thus if there are four Champions, the remaining three will be larger and faster. Then when another dies the last two will be larger and faster and stronger still, until the last of the whole bunch is huge and especially deadly.
+	Implementation: OnEntityKilled find units in radius of the same unit name and apply scale and mofifier.
+
+Extra Health: Extra Health grants a 50% hit point bonus to Champions, as well as Bosses and their minions. This property is dangerous when it extends fights, and players used to killing monsters quickly enough to avoid real trouble from their damaging properties such as Plagued or Arcane Enchanted may need to retreat or take a different tactic when dealing with Extra Health enemies.
+	Implementation: Spawn with a modifier that does SetMaxHealth and SetHealth	
+	
+Fast: Fast monsters get a 40% bonus to their movement speed, as well as a 20% bonus to attack speed and a 10% bonus to casting speed. The modifier is especially dangerous for glass cannon type characters, who survive by running and staying out of reach of the monsters. Ironically, this ability can be most annoying when it spawns on wandering, shaman type enemies such as Fallen Shaman and Zombie Pukers, as they amble around in random directions and may move quite far during the course of a battle.
+	Implementation: Remove casting speed. Apply a simple MS and AS modifier	
+
+Electrified: Electrified enemies function much like a lightning-based form of Reflects Damage, dealing lightning damage back to attackers. This Affix was visually nerfed shortly after release, likely for frame rate/performance reasons. Prior to the visual nerf, monsters with Electrified sent out sparks in all directions when they were hit by ranged or melee attacks. Afterwards they still emit sparks, but in much smaller quantities.
+	Implementation: OnAttacked do lightning particle and launch lightning projectiles
+
+Frozen: Frozen spawns on Champions, Bosses, and Boss minions and causes those enemies to regularly create a scattered few blueish-white orbs that hang in space, growing rapidly in size before detonating in short range Frost Novas. These are damaging to any player, pet, or follower this hit and more dangerous still is their freezing effect, which leaves the frozen target helpless and motionless for a short duration.
+	Implementation: OnOwnerDied CreateThinker OnCreated DelayedAction Explosion+Damage
+	
+Knockback: This modifier grants the boss or champion a knockback attack which will send a character, pet or follower flying away from the monster that hits them. This is not a slight stumbling bump backwards, as many normal monsters can land; it's a special hit and knocks the target back a considerable distance, often half the screen or further. The real danger comes in the debuff, since knocked back characters and pets are confused, slowing their movement speed for a second after the impact. Characters can be knocked back into other dangerous effects such as Molten or Arcane and die while still badly slowed.
+	Implementation: Knockback	
+
+Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line (if possible) directly away from the champion, boss, or boss' minion that caused the effect. While running, players have no control over their character. If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
+	Implementation: Passive OnAttackLanded apply TBR Warlord disorient	
+	
+Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
+	Implementation: Thorns...
+	
+Vampiric: Vampiric is a sort of monster life leech, enabling them to heal as they deal damage. The amount of healing is fairly minor, making this one of the less-difficult or noticeable boss modifiers. In practice it just makes the enemy feel as though they have slightly higher than normal hit points, and gives some utility to stun or freeze effects, since monsters not dealing damage will not heal Vampire style.
+	Implementation: OnAttackLanded Lifesteal
+	
+//Actives//	
+Desecrator: Desecrators create an orange-colored "glowing void zone" beneath the feet of a character. These function like small Firewalls, dealing damage to any character who stands in them. The void zones take a second or so to come into effect, giving a visual warning so players have time to move, assuming they are not blocked in by modifiers like Waller or Jailer.
+The Desecrated pools remain in place for 12 seconds, and during long battles with a boss and minions all casting Desecration, entire screens can be come virtually impassable due to the pits of damage.
+	Implementation: CreateThinker with jakiro lava that does damage OnThinkInterval
+
+Frozen Pulse: Frozen Pulse creates a small blue orbs that homes in on a character target, dealing cold damage and causing a chilling/slowing debuff to targets within its small radius of effect. The Pulse looks like a spiky blue ball, a bit like a Frozen just before it explodes.
+	Implementation: OnThinkInterval launch blue projectiles	
+
+Horde: Horde is a Rare-only property that causes more minions to spawn at the start of the battle. The number of additional enemies increases with the difficulty level, with just a few extra on Normal, and up to 8 or 10 minions at the highest levels. This property does not alter the boss' stats or behavior, and the minions aren't any different either; there are just more of them.
+	Implementation: Spawn more
+
+Illusionist: Illusionist Bosses and Champions are able to create duplicates of themselves during the battle, adding 4-6 more enemies in the blink of an eye. Fortunately, these duplicates are harmless; unable to deal any damage with their attacks and blessed with very few hit points. They work mostly as a distraction, since they are indistinguishable from the other monsters. This property is akin to the Wizard's Mirror Image skill, in that both create a lot of visual flash and action, but no real damage. As Illusions have very minimal hit points they will die very quickly to any sort of AoE attack, and as they count as targets
+	Implementation: Override some illusion spell
+
+Jailer: This modifier grants the boss or champion the ability to briefly cage players and their minions. A purple circle (it was reddish-orange pre-D3v2) appears on the ground around each target (characters, pets, and minions), locking them into place for a short duration. While jailed characters can attack normally, they just can not move.
+	Implementation: Root	
+	
+Plagued: Plagued enemies create green pools of damage beneath their feet and in the immediate vicinity. These pools are not targeted at the player the way Desecrater is, but they are larger and can cover quite a bit of the screen during a long battle. All plagued pools created during a battle remain until all monsters that can cast them have been killed. This may result in a screen full of green death, all lasting until one last Minion is tracked down and killed.
+	Implementation: Same as Desecretor but bigger area, permanent, and a needs to have a trigger to FindUnitsInRadius Thinker ForceKill
+
+Shielding: Shielding is a modifier that creates a transparent bubble around a boss or champion, rendering them temporarily immune to all forms of damage. Shielded monsters can still be affected by some debuffs to their movement speed, but while shielded they are immune to most CC effects and all damage. The shields lasts for several seconds, and may not be active on more than one or two enemies in a pack at the same time.
+	Implementation: Modifier with Block and Magic Resistance, Medusa particles
+	
+Thunderstorm: The Thunderstorm effect calls down a lightning strike, dealing a repeated nova-effect over a 12 yard radius. Thunderstorm pulses five times in the same location, and characters who keep on their toes can see it starting and move as soon as it appears, limiting the damage they take. It's much harder to avoid during an intense battle, especially for melee characters who are locked in place during the fight.
+	Implementation: TBR Druid Call Storm
+
+	
+/////////////////////	
+Hard Affixes:
+
+Arcane Enchanted: Arcane does not add a purple glow + Arcane damage to the monster's regular attacks. There are no visual cues at all, until the monsters cast one of their "Arcane turret" attack modules. These rotate slowly and deal heavy damage to any player they strike.
+
+Fire Chains: Fire Chains are glowing, fiery chains that form between 2 or more Champions with this property. The chains deal heavy damage to any player or pet they touch. Fire Chains have a maximum range of about 80 yards, and if one of the Champions moves too far from the others, the chain connecting them will wink out of existence, though it will return once the Champions move into closer proximity.
+
+Health Link: Health Linked champions share a single common health pool, as if all 3 or 4 enemies had their life shared in the same bulb. This makes the individual champions seem very robust, since the damage they take is shared between the entire group, effectively tripling or quadrupling the hit points of any single monster. The effect has a fun side effect though, since when the shared health pool is emptied, all of the Champions will die in rapid succession, sometimes almost simultaneously. (Often the last one to die takes an overflow of damage and dies out of sight of your character, requiring some searching to find the loot.
+Health Link has a maximum range, and if one of the Champions is more than a screen away from the others, it will lose health normally, without sharing with the others. This property is shown visually by splashes of blood that flash between the Champions as one takes damage and the others lose health to compensate.
+
+Missile Dampening: Missile Dampening is a seldom-seen modifier that looks a bit like a Slow Time bubble around the Rare. The bubble moves as the boss does, and functions much the same as the Slow Time Wizard skill. It reduces the speed of all incoming projectiles to a crawl, though it does not affect the movement speed of characters within the bubble.
+	Implementation: Remove the spell reducing component. Aura that slows projectile speeds?
+
+Molten: Molten creates a trail of flame behind the feet of the monster, leaving a damaging trail of fire that takes several seconds to fade away. The most dangerous part of the Affix comes when the boss, minion, or champion dies, as a glowing fiery core is left behind. It expands for a few seconds before detonating, dealing huge damage to any character in the radius of effect.
+	Implementation: Firefly without flying?
+
+Mortar: Mortar is a property that causes a constant stream of fiery projectiles to shoot out from the Rare or Champion, in all directions. The mortars do not land within 10 yards of the boss, creating a safe zone that allows melee characters to largely ignore the property, though when multiple champions are spewing our Mortars at once, much of the screen can be covered by their explosions.
+	Implementation: Launch some slow batrider flamebreaks?
+	
+Orbiter: The Orbiter effect creates a large ball of lightning in some random spot near the Elite or Unique that spawns it. The initial lightning ball becomes the sun, sitting stationary while a dozen or more smaller lightning orbs rotate (orbit) around it in a slow circular motion. Damage comes from the central Sentry, but mostly from the orbiting lighting balls. They are more dangerous near the center of the "solar system" as they move more slowly and will tick more times on a stationary target.
+	Implementation: CreateUnit Invulnerable Orbiter, unit has a passive to create linear projectiles to random places
+
+Poison Enchanted: Poison Enchanted is a modifier that enables a boss to shoot out glowing spots which explode in an X-shaped blast of poison damage along the ground
+	Implementation: Line Thinkers?
+
+Teleporter: Teleporter allows bosses, or individual champions, to teleport to a random location, generally appearing directly on top of a character they are battling. This gives the ability an interesting effect; many melee characters quite like it since it brings the enemy right to them, while ranged attackers, especially of the Glass Cannon variety, find it very dangerous.
+	Implementation: Blink? Needs AI...
+
+Vortex: Vortex is a Boss Modifier in Diablo III that can be found on Champions and Bosses, but not boss minions. It enables the boss or champions to yank your hero right up to them, which can be very dangerous against hard-hitting melee attackers.
+	Implementation: Blink strike
+
+Waller: Waller grants monsters the ability to raise stone walls that block player movement and most projectile attacks for several seconds, before crumbling back into nothing. Walls limit player movement (though some skills such as Leap and Teleport can move over them), as well as blocking most player projectiles. Most melee attacks will work right past walls, providing the target is directly on the other side and within reach.
+Champions can only create short, straight walls, while Rares create larger, three-sided rectangles that box fleeing players in, forcing them to run back past the boss and other monsters to escape.
+	Implementation: recode Fissure
+
+Wormhole: Wormhole creates two pink circles which are linked like Portals. Any character who moves over one will instantly appear at the other, at which point the Wormholes will both vanish. Players have a second to move off of a Wormhole when it first appears without being transported, but once the initial second has passed, transportation happens instantly if a player moves over any part of the circle.
+	Implementation: TBR Portal

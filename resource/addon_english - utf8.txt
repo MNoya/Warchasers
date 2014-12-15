@@ -1,4 +1,4 @@
-"lang"
+﻿"lang"
 {
 	"Language"		"English"
 	"Tokens"
@@ -240,7 +240,7 @@
 		"DOTA_Tooltip_ability_naga_healing_wave_wave_decay_percent"                       "HEAL DECAY:"
 
 		"DOTA_Tooltip_ability_naga_forked_lightning"                                      "Forked Lightning"
-		"DOTA_Tooltip_ability_naga_forked_lightning_Description"                          "Calls forth a cone of lightning to damage enemies. Hits a maximum of 3 units."
+		"DOTA_Tooltip_ability_naga_forked_lightning_Description"                          "Calls forth a cone of lightning to damage enemies."
 		"DOTA_Tooltip_ability_naga_forked_lightning_Note0"                                ""
 		"DOTA_Tooltip_ability_naga_forked_lightning_Lore"                                 ""
 		"DOTA_Tooltip_ability_naga_forked_lightning_max_units"                            "MAX UNITS:"
