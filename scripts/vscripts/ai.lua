@@ -1,12 +1,54 @@
 print("AI is loading")
 
+affix_table = {}
+
+function affix_selector()
+	local rng = math.random(4)
+	local affix_name = nil
+	if rng == 1 then
+		affix_name = "creep_avenger"
+	elseif rng == 2 then
+		affix_name = "creep_extra_health"
+	elseif rng == 3 then
+		affix_name = "creep_fast"
+	elseif rng == 4 then
+		affix_name = "creep_electrified"
+	end
+	return affix_name
+end
+
+
+function affix( unit)
+	
+	local affix_to_set = nil
+
+	local unit_name = unit:GetUnitName() 
+
+	for key, value in pairs(affix_table) do
+		if unti_name == key then
+
+			affix_to_set = value
+
+		end
+	end
+
+	if affix_to_set == nil then
+		affix_to_set = affix_selector()
+		affix_table[unit_name] = affix_to_set
+	end
+
+	unit:AddAbility(affix_to_set)
+	unit:FindAbilityByName(affix_to_set):SetLevel(1)
+
+
+end
 
 
 function log_npc( event )
 	local index = event.entindex
 	local unit = EntIndexToHScript(index)
 	if Convars:GetBool("developer") == true then
-		--print("Index: "..index.." Name: "..unit:GetName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
+		print("Index: "..index.." Name: "..unit:GetUnitName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
 	end
 
 	if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
@@ -26,7 +68,14 @@ function log_npc( event )
 					return nil
 				end
 			end
-			, 5) 	
+			, 5) 
+
+
+		affix(unit)
+
+	else
+		
+
 	end
 end
 

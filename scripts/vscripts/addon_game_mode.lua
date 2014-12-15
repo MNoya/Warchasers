@@ -1,5 +1,11 @@
 --dota_launch_custom_game warchasers warchasers
 
+
+ -- Change random seed
+local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
+math.randomseed(tonumber(timeTxt))
+
+
 --require( 'util' )
 require( 'camera' )
 require( 'abilities' )
