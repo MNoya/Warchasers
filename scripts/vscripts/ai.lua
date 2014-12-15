@@ -2,19 +2,21 @@ print("AI is loading")
 
 affix_table = {}
 
-function affix_selector()
-	local rng = math.random(4)
-	local affix_name = nil
-	if rng == 1 then
-		affix_name = "creep_avenger"
-	elseif rng == 2 then
-		affix_name = "creep_extra_health"
-	elseif rng == 3 then
-		affix_name = "creep_fast"
-	elseif rng == 4 then
-		affix_name = "creep_electrified"
+
+affix_names = LoadKeyValues("scripts/affix_list.txt")
+
+affix_count = 0
+
+for key, value in pairs(affix_names) do
+	if affix_count < tonumber(key) then
+		affix_count = tonumber(key)
 	end
-	return affix_name
+end
+
+
+
+function affix_selector()
+	return affix_names[tostring(math.random(affix_count))]
 end
 
 
@@ -74,7 +76,7 @@ function log_npc( event )
 		affix(unit)
 
 	else
-		
+
 
 	end
 end

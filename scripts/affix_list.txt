@@ -1,0 +1,10 @@
+
+"Affixes"
+{
+"1"	"creep_avenger"
+"2"	"creep_extra_health"
+"3"	"creep_fast"
+"4"	"creep_electrified"
+
+	
+}
