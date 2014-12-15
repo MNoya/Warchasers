@@ -608,3 +608,48 @@ function ExtraHealth(event)
 		unit:SetModelScale(baseModelScale + 0.1)
 	end)
 end
+
+function ElectrifiedSparks(event)
+	local min = event.ability:GetLevelSpecialValueFor("min_bolts_per_attack", (event.ability:GetLevel() - 1))
+	local max = event.ability:GetLevelSpecialValueFor("max_bolts_per_attack", (event.ability:GetLevel() - 1))
+	local spark_count = RandomInt( min , max )
+	local caster = event.caster
+	local ability = event.ability
+
+	for i=1,spark_count do
+		point = (caster:GetAbsOrigin()+Vector(RandomInt(-1000,1000),RandomInt(-1000,1000),RandomInt(-1000,1000)))
+			    
+	  local info = {
+	  	-- FIX PARTICLE GOING TO THE ROOF
+	    EffectName = "particles/warchasers/test_particles/puck_electrified.vpcf",
+	    Ability = ability,
+	    vSpawnOrigin = caster:GetAbsOrigin(),
+	    fDistance = 1000,
+	    fStartRadius = 125,
+	    fEndRadius = 125,
+	    Source = caster,
+	    bHasFrontalCone = false,
+	    bReplaceExisting = false,
+	    iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+	    iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+	    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_OTHER,
+	    --fMaxSpeed = 5200,
+	    fExpireTime = GameRules:GetGameTime() + 5,
+	  }
+
+	  local speed = 300
+
+	  point.z = 0
+	  local pos = caster:GetAbsOrigin()
+	  pos.z = 0
+	  local diff = point - pos
+	  info.vVelocity = diff:Normalized() * speed
+
+	  ProjectileManager:CreateLinearProjectile( info )
+	end
+
+end
+
+function FrozenExplosion( event )
+	
+end

@@ -163,6 +163,83 @@
 	}
 
 
+	// Electrified: Electrified enemies function much like a lightning-based form of Reflects Damage, dealing lightning damage back to attackers. 
+	// Implementation: OnAttacked do lightning particle and launch lightning projectiles
+
+	"creep_electrified"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_electrified"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityDamage"					"10 20 30"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_bolts_per_attack"		"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bolts_per_attack"		"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/warchasers/test_particles/puck_electrified.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_electrified"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"ElectrifiedSparks"
+					}
+				}
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"		"0"
+			"Damage"
+			{
+				"Type"          "DAMAGE_TYPE_MAGICAL"
+				"Damage"        "%AbilityDamage"
+				"Target"		"TARGET"
+			}
+
+			//"FireEffect"
+			//{
+				//Lightning
+			//}
+		}
+	}
+
+	// Knockback: This modifier grants the boss or champion a knockback attack which will send a character, pet or follower flying away from the monster that hits them. This is not a slight stumbling bump backwards, as many normal monsters can land; it's a special hit and knocks the target back a considerable distance, often half the screen or further. The real danger comes in the debuff, since knocked back characters and pets are confused, slowing their movement speed for a second after the impact. Characters can be knocked back into other dangerous effects such as Molten or Arcane and die while still badly slowed.
+	// Implementation: Knockback	
+
+	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line (if possible) directly away from the champion, boss, or boss' minion that caused the effect. While running, players have no control over their character. If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
+	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient	
+	
+	// Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
+	// Implementation: Thorns...
+	
+	// Vampiric: Vampiric is a sort of monster life leech, enabling them to heal as they deal damage. The amount of healing is fairly minor, making this one of the less-difficult or noticeable boss modifiers. In practice it just makes the enemy feel as though they have slightly higher than normal hit points, and gives some utility to stun or freeze effects, since monsters not dealing damage will not heal Vampire style.
+	// Implementation: OnAttackLanded Lifesteal
+
 
 
 
@@ -276,6 +353,55 @@
 	    	}
 		}
 	}
+
+	// Frozen: Frozen spawns on Champions, Bosses, and Boss minions and causes those enemies to regularly create a scattered few blueish-white orbs that hang in space, growing rapidly in size before detonating in short range Frost Novas.
+	// These are damaging to any player, pet, or follower this hit and more dangerous still is their freezing effect, which leaves the frozen target helpless and motionless for a short duration.
+	// Implementation: OnOwnerDied CreateThinker OnCreated DelayedAction Explosion+Damage
+
+	"creep_frozen"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_frozen"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"0"
+		"AbilityDamage"					"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_delay"		"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed_bonus"		"25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"		
+			{	
+				"ScriptFile"	"abilities.lua"
+				"Function"		"FrozenExplosion"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_frozen"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"IsBuff"	"1"	
+			}
+		}
+	}
+
 
 
 
