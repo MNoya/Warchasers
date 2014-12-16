@@ -2,21 +2,30 @@ print("AI is loading")
 
 affix_table = {}
 
-
-affix_names = LoadKeyValues("scripts/affix_list.txt")
+affix_names = {}
 
 affix_count = 0
 
-for key, value in pairs(affix_names) do
-	if affix_count < tonumber(key) then
-		affix_count = tonumber(key)
+function affix_list()
+	local affix_txt = LoadKeyValues("scripts/affix_list.txt")
+	for key, value in pairs(affix_txt) do
+		table.insert( affix_names, key)
+		affix_count = affix_count + 1
 	end
+
 end
+
+affix_list()
+
+
+
+
+
 
 
 
 function affix_selector()
-	return affix_names[tostring(math.random(affix_count))]
+	return affix_names[math.random(affix_count)]
 end
 
 

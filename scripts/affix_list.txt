@@ -1,10 +1,16 @@
 
 "Affixes"
 {
-"1"	"creep_avenger"
-"2"	"creep_extra_health"
-"3"	"creep_fast"
-"4"	"creep_electrified"
 
+//disable - strong stuns only can spawn several times to prevent perma stun
+//defense - strong defensive abilities only one per group
+//aggresive - no limit
+
+
+"creep_avenger"	"defense"
+"creep_extra_health"	"aggresive"
+"creep_fast"	"aggresive"
+"creep_electrified"	"aggresive"
+	
 	
 }
