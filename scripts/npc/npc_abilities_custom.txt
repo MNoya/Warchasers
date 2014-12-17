@@ -317,8 +317,93 @@
 		}
 	}
 
-	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line (if possible) directly away from the champion, boss, or boss' minion that caused the effect. While running, players have no control over their character. If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
-	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient	
+	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line 
+	//(if possible) directly away from the champion, boss, or boss' minion that caused the effect.  While running, players have no control over their character.
+	// If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
+	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient with a common restricted
+	"creep_nightmarish"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_nightmarish"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"100" // Change to 10 later
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fear_duration"			"4"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
+			"particle"	"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+			"particle"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_nightmarish"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"StatusEffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
+				"StatusEffectPriority"	"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"	"%chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"abilities.lua"
+								"Function"		"Disorient"
+							}
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_disoriented"
+								"Target"	"TARGET"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_disoriented"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%fear_duration"
+				"StatusEffectName"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
+				"StatusEffectPriority"	"10"
+
+				"EffectName"		"particles/warchasers/nightmarish.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"		"2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"Disorient"
+					}
+				}
+			}
+		}
+	}
 	
 	// Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
 	// Implementation: Thorns...
