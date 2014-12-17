@@ -8,15 +8,26 @@ affix_count = 0
 
 function affix_list()
 	local affix_txt = LoadKeyValues("scripts/affix_list.txt")
-	for key, value in pairs(affix_txt) do
+	--defense affixes
+	for key, value in pairs(affix_txt.defense) do
 		table.insert( affix_names, key)
 		affix_count = affix_count + 1
 	end
-
+	--aggresive affixes
+	for key, value in pairs(affix_txt.aggresive) do
+		table.insert( affix_names, key)
+		affix_count = affix_count + 1
+	end
+	--disable affixes
+	for key, value in pairs(affix_txt.disable) do
+		table.insert( affix_names, key)
+		affix_count = affix_count + 1
+	end
+	print("Affixes generated")
 end
 
-affix_list()
 
+affix_list()
 
 
 
@@ -36,8 +47,7 @@ function affix( unit)
 	local unit_name = unit:GetUnitName() 
 
 	for key, value in pairs(affix_table) do
-		if unti_name == key then
-
+		if unit_name == key then
 			affix_to_set = value
 
 		end
@@ -83,6 +93,7 @@ function log_npc( event )
 
 
 		affix(unit)
+
 
 	else
 
