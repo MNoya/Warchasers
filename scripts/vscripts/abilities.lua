@@ -653,3 +653,8 @@ end
 function FrozenExplosion( event )
 	
 end
+
+function Disorient( event )
+	local vector = event.target:GetAbsOrigin() + RandomVector(600)
+	event.target:MoveToPosition(vector)
+end
