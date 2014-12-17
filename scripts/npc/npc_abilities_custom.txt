@@ -406,10 +406,96 @@
 	}
 	
 	// Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
-	// Implementation: Thorns...
+	// Implementation: OnTakeDamage RunScript with a percentage
+	"creep_reflect_damage"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_reflect_damage"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent"		"100" // Change to something else later
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/blademail.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_reflect_damage"
+			{
+				"Passive"			"1"
+				"EffectName"		"particles/items_fx/blademail.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"DamageAmount"		"%attack_damage"
+						"ReflectAmount"		"%damage_percent"
+						"ScriptFile"		"abilities.lua"
+						"Function"			"ReflectDamage"
+					}
+				}
+			}
+		}
+	}
 	
 	// Vampiric: Vampiric is a sort of monster life leech, enabling them to heal as they deal damage. The amount of healing is fairly minor, making this one of the less-difficult or noticeable boss modifiers. In practice it just makes the enemy feel as though they have slightly higher than normal hit points, and gives some utility to stun or freeze effects, since monsters not dealing damage will not heal Vampire style.
 	// Implementation: OnAttackLanded Lifesteal
+	"creep_vampiric"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_vampiric"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal"				"100"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_vampiric"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{	
+						"Target" 				"ATTACKER"
+						"LifestealPercent"		"%lifesteal"
+					}
+					"FireEffect"
+					{
+						"EffectName"			"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+						"EffectAttachType"		"attach_hitloc"
+						"Target"				"TARGET"
+					}
+				}
+			}
+		}
+	}
+
 
 
 

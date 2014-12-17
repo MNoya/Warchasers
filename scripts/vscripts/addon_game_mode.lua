@@ -28,7 +28,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.1.3"
+WARCHASERS_VERSION = "1.2.0"
 
 -- Stat collection
 require('lib.statcollection')
@@ -569,7 +569,7 @@ function Warchasers:OnAllPlayersLoaded()
 	AnnouncerChoose()
 
 		if GameRules.SHOWPOPUP then
-			ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+			--ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 			GameRules.SHOWPOPUP = false
 		end
 

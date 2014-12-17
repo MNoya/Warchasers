@@ -658,3 +658,15 @@ function Disorient( event )
 	local vector = event.target:GetAbsOrigin() + RandomVector(600)
 	event.target:MoveToPosition(vector)
 end
+
+function ReflectDamage( event )
+	local target = event.attacker
+	local damage_taken = event.DamageAmount
+	local reflect_percent = event.ReflectAmount * 0.01
+	local damage_returned = damage_taken*reflect_percent 
+
+	ApplyDamage({ victim = target,	attacker = event.caster, damage = damage_returned, damage_type = event.ability:GetAbilityDamageType() })
+
+	print("Damaged by" .. damage_returned)
+
+end

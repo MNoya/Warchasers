@@ -4067,7 +4067,7 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_nightmarish"			// Ability 1
+		"Ability1"					"creep_reflect_damage"			// Ability 1
 
 		// Armor
 		//----------------------------------------------------------------
