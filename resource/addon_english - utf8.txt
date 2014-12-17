@@ -1,4 +1,4 @@
-﻿"lang"
+"lang"
 {
 	"Language"		"English"
 	"Tokens"
@@ -956,9 +956,9 @@
 		"DOTA_Tooltip_ability_item_battle_drums"								"Warsong Battle Drums"
         "DOTA_Tooltip_ability_item_battle_drums_Description"					"Increases the attack damage of nearby friendly units by 10%% when worn."
 			//Aura from drums, rewrite this later
-		"DOTA_Tooltip_modifier_item_ancient_janggo_aura"						"Command Aura"
-		"DOTA_Tooltip_modifier_item_ancient_janggo_aura_effect"					"Command  Aura"
-		"DOTA_Tooltip_modifier_item_ancient_janggo_aura_effect_Description"	"This unit is under the effects of Command Aura; it has increased damage."
+		"DOTA_Tooltip_modifier_battle_drums_aura"						"Command Aura"
+		"DOTA_Tooltip_modifier_battle_drums_aura"					"Command  Aura"
+		"DOTA_Tooltip_modifier_battle_drums_aura"	"This unit is under the effects of Command Aura; it has increased damage."
 		
 		"DOTA_Tooltip_ability_item_restoration_scroll"							"Scroll of Restoration"
         "DOTA_Tooltip_ability_item_restoration_scroll_Description"				"Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero."

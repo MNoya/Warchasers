@@ -683,7 +683,7 @@
 
 	}
 
-    "item_battle_drums" //rewrite datadriven for no charge/no stats
+    "item_battle_drums"
     {
     	"ID" 							"1031"
 		"ItemCost"						"1800"
@@ -693,12 +693,12 @@
 		"ItemDroppable"                 "1"
 		"ItemQuality"					"artifact"
 		
-		"Model"	"models/chest_worlddrop.vmdl"
+		"Model"	"models/items/witchdoctor/tale_tellers_drum.vmdl" //"models/chest_worlddrop.vmdl"
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
     	"AbilityTextureName" "item_battle_drums"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    	"BaseClass" "item_ancient_janggo"
+    	"BaseClass" "item_datadriven"
     	"SideShop" "0"
 		"SecretShop" "1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -708,47 +708,39 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_stats" "0"
+				"bonus_aura_damage_pct" "10"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "0"
+				"radius" "900"
 			}
-			"03"
+		}
+
+		"Modifiers"
+		{
+			"modifier_drums"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_aura_attack_speed_pct" "10"
+				"Passive"	  "1"
+				"IsHidden"	  "1"
+
+				"Aura"       "battle_drums_aura"
+        		"Aura_Radius" "%radius"
+		        "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		        "Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 			}
-			"04"
+
+			"battle_drums_aura"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_aura_movement_speed_pct" "10"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_attack_speed_pct" "0"
-			}
-			"06"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_movement_speed_pct" "0"
-			}
-			"07"
-			{
-				"var_type" "FIELD_FLOAT"
-				"duration" "0"
-			}
-			"08"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius" "1800"
+				"Properties" 
+		        {
+		            "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_aura_damage_pct"
+		        }
 			}
 		}
     }
 
-    "item_cloak_of_shadows" //rewrite datadriven
+    "item_cloak_of_shadows"
 	{
 		"ID"							"1032"
 		"ItemCost"						"100"
