@@ -3715,8 +3715,8 @@
 				"Duration"	"3"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"50"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"25"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-50"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-25"
 				}
 				"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"EffectAttachType"      "attach_hitloc"

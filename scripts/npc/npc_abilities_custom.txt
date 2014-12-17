@@ -191,6 +191,7 @@
 		"precache"
 		{
 			"particle"	"particles/warchasers/test_particles/puck_electrified.vpcf"
+			"particles"	"particles/status_fx/status_effect_electrical.vpcf"
 		}
 		
 		"Modifiers"	
@@ -199,6 +200,8 @@
 			{
 				"IsHidden"	"1"
 				"Passive"	"1"
+				"StatusEffectName"	"particles/status_fx/status_effect_electrical.vpcf"
+				"StatusEffectPriority" "2"
 
 				"OnAttacked"
 				{
@@ -228,8 +231,91 @@
 		}
 	}
 
-	// Knockback: This modifier grants the boss or champion a knockback attack which will send a character, pet or follower flying away from the monster that hits them. This is not a slight stumbling bump backwards, as many normal monsters can land; it's a special hit and knocks the target back a considerable distance, often half the screen or further. The real danger comes in the debuff, since knocked back characters and pets are confused, slowing their movement speed for a second after the impact. Characters can be knocked back into other dangerous effects such as Molten or Arcane and die while still badly slowed.
-	// Implementation: Knockback	
+	// Knockback: This modifier grants the boss or champion a knockback attack which will send a character, pet or follower flying away from the monster that hits them. 
+	//This is not a slight stumbling bump backwards, as many normal monsters can land; it's a special hit and knocks the target back a considerable distance, often half the screen or further.
+	// The real danger comes in the debuff, since knocked back characters and pets are confused, slowing their movement speed for a second after the impact. 
+	// Characters can be knocked back into other dangerous effects such as Molten or Arcane and die while still badly slowed.
+	// Implementation: Knockback
+
+	"creep_knockback"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_knockback"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"100" // Change to 10 later
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_percentage"		"-50"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/status_fx/status_effect_legion_commander_duel.vpcf"
+			"particle"	"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_knockback"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"StatusEffectName"	"particles/status_fx/status_effect_legion_commander_duel.vpcf"
+				"StatusEffectPriority"	"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"	"%chance"
+						"OnSuccess"
+						{
+							"Knockback"
+							{
+								"Target"	"TARGET"
+								"Duration"	"0.5"
+								"Distance"	"250"
+								"IsFixedDistance" "0"
+								"Height"	"50"
+				        		"ShouldStun" "0"
+							}
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_knockback_slow"
+								"Target"	"TARGET"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_knockback_slow"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%slow_duration"
+				"EffectName"	"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_percentage"
+				}
+			}
+		}
+	}
 
 	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line (if possible) directly away from the champion, boss, or boss' minion that caused the effect. While running, players have no control over their character. If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
 	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient	
