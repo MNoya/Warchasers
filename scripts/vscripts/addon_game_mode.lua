@@ -539,7 +539,7 @@ function Warchasers:PostLoadPrecache()
 	--book of the dead
 	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
 
-	PrecacheUnitByNameAsync("npc_rocknroll_steamtank", function(...) end)
+	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
 	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
@@ -554,6 +554,11 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_tiny", function(...) end)
 	
 
 end
