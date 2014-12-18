@@ -121,5 +121,5 @@ Assaulter - then units gets order to attack instanly blinks to target. (maybe wi
 Armorer - bonus armor in AoE
 Sheild Bearer - reduced or no damage from front. Slow turn rate.
 Ghosted - no damage from attacks
-
+Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
 
