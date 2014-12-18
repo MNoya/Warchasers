@@ -122,4 +122,4 @@ Armorer - bonus armor in AoE
 Sheild Bearer - reduced or no damage from front. Slow turn rate.
 Ghosted - no damage from attacks. opposite of magic immunity
 Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
-
+Poisioned soul - lifesteal against this creep will only deal damage
