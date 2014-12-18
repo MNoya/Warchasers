@@ -122,10 +122,11 @@ Berserker - less HP more damage and attack speed
 Sniper - Only ranged units. bonus attack range and vision. Maybe add Sniper's Headshot
 Corrosive Skin - from Viper
 Assaulter - then units gets order to attack instanly blinks to target. (maybe with bonus attack speed or stun, slow)
-Armorer - bonus armor in AoE
+Armorer - bonus armor in AoE (too boring)
 Sheild Bearer - reduced or no damage from front. Slow turn rate.
 Ghosted - no damage from attacks. opposite of magic immunity
 	Amplifies magic damage
 Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
+	Alternative name: Huricaner - eye of huricane is area without miss chance
 Poisioned soul - lifesteal against this creep will only deal damage
 Sticky Bomber - attaches a bomb to your hero. It is an item in your inventory.  It will explode after certain time dealing AoE damage. You can reattach it to any unit using this item.
