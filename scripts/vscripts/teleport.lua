@@ -469,3 +469,16 @@ function TeleporterFinal(trigger)
     local dummy = CreateUnitByName("vision_dummy_minor", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
 
 end
+
+
+function TeleporterDesert(trigger)
+    local position =  Vector(-6769,-128,263)
+    FindClearSpaceForUnit(trigger.activator, position, false)
+    trigger.activator:Stop()
+end
+
+function TeleporterDesertBack(trigger)
+    local position =  Vector(-4954,-126,263)
+    FindClearSpaceForUnit(trigger.activator, position, false)
+    trigger.activator:Stop()
+end
