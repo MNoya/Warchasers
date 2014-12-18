@@ -650,8 +650,44 @@ function ElectrifiedSparks(event)
 
 end
 
-function FrozenExplosion( event )
+function FrozenStart( event )
+	local duration = event.ability:GetSpecialValueFor("explosion_delay")
+	local radius = event.ability:GetSpecialValueFor("explosion_radius")
+
+	print("Let it go")
+
+	local dummy = CreateUnitByName("dummy_unit", event.target:GetAbsOrigin(), false, event.target, event.target, event.target:GetTeam())
+	local target = dummy:GetAbsOrigin()
+	local particle = ParticleManager:CreateParticle("particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf", PATTACH_OVERHEAD_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle, 0, target)
+	ParticleManager:SetParticleControl(particle, 1, target)
+  
+	local particle2 = ParticleManager:CreateParticle("particles/warchasers/frozen/tusk_frozen_sigil.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle2, 0, target)
+	ParticleManager:SetParticleControl(particle2, 2, target)
+
+	local particle3 = ParticleManager:CreateParticle("particles/warchasers/frozen/tusk_ice_shards_projectile.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	ParticleManager:SetParticleControl(particle3, 0, target)
 	
+	Timers:CreateTimer(duration, function()
+
+		print("Can't take it anymore")
+
+		ParticleManager:DestroyParticle(particle,false)
+		ParticleManager:DestroyParticle(particle2,false)
+		ParticleManager:DestroyParticle(particle3,false)
+
+		local particle4 = ParticleManager:CreateParticle("particles/warchasers/frozen/maiden_crystal_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+		ParticleManager:SetParticleControl(particle4, 0, target)
+		ParticleManager:SetParticleControl(particle4, 1, Vector(radius*2,1,radius*2))
+
+		local particle5 = ParticleManager:CreateParticle("particles/warchasers/frozen/ancient_apparition_ice_blast_explode.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+		ParticleManager:SetParticleControl(particle5, 0, target)
+		ParticleManager:SetParticleControl(particle5, 1, target)
+		ParticleManager:SetParticleControl(particle5, 2, target)
+		ParticleManager:SetParticleControl(particle5, 3, target)
+	end)
+
 end
 
 function Disorient( event )
@@ -663,10 +699,10 @@ function ReflectDamage( event )
 	local target = event.attacker
 	local damage_taken = event.DamageAmount
 	local reflect_percent = event.ReflectAmount * 0.01
-	local damage_returned = damage_taken*reflect_percent 
+	local damage_returned = damage_taken*reflect_percent
 
 	ApplyDamage({ victim = target,	attacker = event.caster, damage = damage_returned, damage_type = event.ability:GetAbilityDamageType() })
 
-	print("Damaged by" .. damage_returned)
+	print("Damaged by ".. damage_returned)
 
 end

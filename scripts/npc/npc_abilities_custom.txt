@@ -191,7 +191,7 @@
 		"precache"
 		{
 			"particle"	"particles/warchasers/test_particles/puck_electrified.vpcf"
-			"particles"	"particles/status_fx/status_effect_electrical.vpcf"
+			"particle"	"particles/status_fx/status_effect_electrical.vpcf"
 		}
 		
 		"Modifiers"	
@@ -630,31 +630,101 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"explosion_delay"		"2"
+				"explosion_delay"		"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_bonus"		"25"
+				"explosion_radius"		"150"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_duration"		"3"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf"
+			"particle"	"particles/warchasers/frozen/ancient_apparition_ice_blast_explode.vpcf"
+			"particle"	"particles/warchasers/frozen/tusk_ice_shards_projectile.vpcf"
+			"particle"	"particles/warchasers/frozen/maiden_crystal_nova.vpcf"
 		}
 
 		"OnSpellStart"
 		{
-			"RunScript"		
-			{	
-				"ScriptFile"	"abilities.lua"
-				"Function"		"FrozenExplosion"
-			}
+			"CreateThinker"
+	        {
+	            "ModifierName"  "frozen_thinker"
+	            "Target" 		"POINT"
+	        }
 		}
 
 		"Modifiers"
 		{
-			"modifier_frozen"
+			"frozen_thinker"
 			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"IsBuff"	"1"	
+				"OnCreated"
+				{
+					// Attach the particles, also manages the explosion a bit after the explosion delay
+					"RunScript"		
+					{	
+						"ScriptFile"	"abilities.lua"
+						"Function"		"FrozenStart"
+					}
+
+					// We could do this in lua but I'm feeling elegant.
+					"DelayedAction"
+					{
+						"Delay"		"%explosion_delay"
+						"Action"
+						{
+							// Do the damage and apply modifier_frozen
+							"ActOnTargets"
+							{
+							 	"Target"
+							 	{
+						            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						            "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+						            "Center"    "TARGET" //in this scope, this means the Thinker.
+						            "Radius"    "%explosion_radius"
+						        }
+						        
+						        "Action"
+				         		{
+						         	"Damage"
+					         		{
+					         			"Target"	"TARGET"
+					         			"Type"		"DAMAGE_TYPE_MAGICAL"
+					         			"Damage"	"%AbilityDamage"
+					         		}
+						         	
+						         	"ApplyModifier"
+						         	{
+							 			"ModifierName"		"modifier_stunned"
+							 			"Target"			"TARGET"
+						         	}
+						     	}
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_stunned"
+			{
+				"IsHidden"	        "0"
+				"IsDebuff"	        "1"
+				"Duration"	        "%stun_duration"
+				"StatusEffectName"	"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"15"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}
