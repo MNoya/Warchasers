@@ -128,3 +128,4 @@ Ghosted - no damage from attacks. opposite of magic immunity
 	Amplifies magic damage
 Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
 Poisioned soul - lifesteal against this creep will only deal damage
+Sticky Bomber - attaches a bomb to your hero. It is an item in your inventory.  It will explode after certain time dealing AoE damage. You can reattach it to any unit using this item.
