@@ -114,6 +114,7 @@ Spell Stealer - if a no-targeted spell was casted in the area, steals it and sta
 Experience Stealer - steals EXP on attacks
 Fury Swipes - maybe only for bosses
 Magic Immune - single target. Probabaly needs to be limited
+	New name: Petrified - gives magic immunity in the area but amplifies physical damage
 Berserker - less HP more damage and attack speed
 Sniper - Only ranged units. bonus attack range and vision. Maybe add Sniper's Headshot
 Corrosive Skin - from Viper
@@ -121,5 +122,6 @@ Assaulter - then units gets order to attack instanly blinks to target. (maybe wi
 Armorer - bonus armor in AoE
 Sheild Bearer - reduced or no damage from front. Slow turn rate.
 Ghosted - no damage from attacks. opposite of magic immunity
+	Amplifies magic damage
 Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
 Poisioned soul - lifesteal against this creep will only deal damage
