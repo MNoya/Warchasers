@@ -119,5 +119,7 @@ Sniper - Only ranged units. bonus attack range and vision. Maybe add Sniper's He
 Corrosive Skin - from Viper
 Assaulter - then units gets order to attack instanly blinks to target. (maybe with bonus attack speed or stun, slow)
 Armorer - bonus armor in AoE
+Sheild Bearer - reduced or no damage from front. Slow turn rate.
+Ghosted - no damage from attacks
 
 
