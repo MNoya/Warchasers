@@ -108,10 +108,13 @@ Wormhole: Wormhole creates two pink circles which are linked like Portals. Any c
 New ideas:
 Ignited - deals damage over time in AoE. Does not stack
 Enrager - you can only attack the unit with this affix. Until he is killed you cant attack other units around him
+	New name Provocator
 Deep Freezer - prevents heals
+	Possible name: Frostbiter, Chill Bringer, Blood Freezer, Soul Freezer
 Spell Reflector - Reflects a spell casted on this unit.
 Spell Stealer - if a no-targeted spell was casted in the area, steals it and starts casting
 Experience Stealer - steals EXP on attacks
+	Maybe gold. Name it thief's hands
 Fury Swipes - maybe only for bosses
 Magic Immune - single target. Probabaly needs to be limited
 	New name: Petrified - gives magic immunity in the area but amplifies physical damage
