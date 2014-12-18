@@ -7195,15 +7195,14 @@
 		}
 	}
 	
-	
 	"npc_sapper"
 	{
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	
-		"Model"						"models/heroes/axe/axe.vmdl"	// Replace by Techies
-		"ModelScale"				"1"
-		"SoundSet"                  "Hero_Axe"				
+		"Model"						"models/heroes/techies/techies.vmdl"
+		"ModelScale"				"0.5"
+		"SoundSet"                  "Hero_Techies"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
 		"Level"						"6"
@@ -7223,7 +7222,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"axe_culling_blade" //Kaboom! in WC3
+		"Ability1"					"creep_kaboom"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7285,8 +7284,12 @@
 
 			"AttachWearables"
 			{
-				"Wearable1"	{ "ItemDef" "5675" } //	 "5675"=Phractos "5819"=Mountain Splitter
-				"Wearable2"	{ "ItemDef"	"5640" } //ES Impasse Head
+				"Wearable1"	{ "ItemDef" "487" } //	 "Spoon Costume"
+				"Wearable2"	{ "ItemDef"	"489" } // "Slingshot"
+				"Wearable3"	{ "ItemDef"	"490" } // "Cart"
+				"Wearable4"	{ "ItemDef"	"491" } // "Squee Costume"
+				"Wearable5"	{ "ItemDef"	"492" } // "Slingshot"
+
 			}
 
 			"DefaultState"			"Invade"
@@ -7305,7 +7308,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"axe_culling_blade"
+					"Name"				"creep_kaboom"
 					"Damage"			"1"
 				}
 			}

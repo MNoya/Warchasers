@@ -73,7 +73,7 @@ function Warchasers:InitGameMode()
 	GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	GameMode:SetUseCustomHeroLevels ( true )
 
-	--GameRules:SetCustomGameEndDelay(0.1)
+	--GameRules:SetCustomGameEndDelay(1)
 	--GameRules:SetCustomVictoryMessageDuration(0.1)
 
 	--GameRules:SetPreGameTime(0)
@@ -552,6 +552,8 @@ function Warchasers:PostLoadPrecache()
 
 	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
 	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
 	
 
 end
