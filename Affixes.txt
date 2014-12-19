@@ -100,3 +100,33 @@ Champions can only create short, straight walls, while Rares create larger, thre
 
 Wormhole: Wormhole creates two pink circles which are linked like Portals. Any character who moves over one will instantly appear at the other, at which point the Wormholes will both vanish. Players have a second to move off of a Wormhole when it first appears without being transported, but once the initial second has passed, transportation happens instantly if a player moves over any part of the circle.
 	Implementation: TBR Portal
+	
+	
+	
+	
+	
+New ideas:
+Ignited - deals damage over time in AoE. Does not stack
+Enrager - you can only attack the unit with this affix. Until he is killed you cant attack other units around him
+	New name Provocator
+Deep Freezer - prevents heals
+	Possible name: Frostbiter, Chill Bringer, Blood Freezer, Soul Freezer
+Spell Reflector - Reflects a spell casted on this unit.
+Spell Stealer - if a no-targeted spell was casted in the area, steals it and starts casting
+Experience Stealer - steals EXP on attacks
+	Maybe gold. Name it thief's hands
+Fury Swipes - maybe only for bosses
+Magic Immune - single target. Probabaly needs to be limited
+	New name: Petrified - gives magic immunity in the area but amplifies physical damage
+Berserker - less HP more damage and attack speed
+Sniper - Only ranged units. bonus attack range and vision. Maybe add Sniper's Headshot
+Corrosive Skin - from Viper
+Assaulter - then units gets order to attack instanly blinks to target. (maybe with bonus attack speed or stun, slow)
+Armorer - bonus armor in AoE (too boring)
+Sheild Bearer - reduced or no damage from front. Slow turn rate.
+Ghosted - no damage from attacks. opposite of magic immunity
+	Amplifies magic damage
+Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
+	Alternative name: Huricaner - eye of huricane is area without miss chance
+Poisioned soul - lifesteal against this creep will only deal damage
+Sticky Bomber - attaches a bomb to your hero. It is an item in your inventory.  It will explode after certain time dealing AoE damage. You can reattach it to any unit using this item.

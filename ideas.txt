@@ -1,0 +1,28 @@
+- More stats. Item useage. Deaths. Damage. Maybe Leader Boards?
+
+- Add more secrets that are randomized between the games.
+
+
+6:36 PM - igo95862: how example one of the secret would be collecting some amountof tokens aroudn the map
+6:36 PM - igo95862: there are a lot of predetemined points but every game a few tokens spawns
+6:36 PM - igo95862: you need to find them and collect
+6:37 PM - igo95862: thats what I think is a good secret mini game
+6:39 PM - Noya: hmm
+6:39 PM - Noya: I think about "secret areas"
+6:39 PM - Noya: maybe this minigame could send you to a secret area to beat something?
+6:40 PM - igo95862: yeah
+6:40 PM - igo95862: good idea
+6:40 PM - igo95862: you defeat some boss and get frost mourne
+6:40 PM - igo95862: in the begining of the game there would one obvious token
+6:41 PM - igo95862: that people will collect
+6:41 PM - igo95862: it will give a message
+6:41 PM - igo95862: how many left to collect
+6:41 PM - Noya: It can just be an item
+6:41 PM - Noya: what has stacks
+6:41 PM - Noya: at 5 stacks it combines
+6:41 PM - Noya: 5 or any
+6:41 PM - igo95862: yes like that
+
+
+
+- PvP? My idea is that there is a Dire team that also has heroes. They are invulnerable and invisible, flying. Can't directly attack players. Instead they have abilities that they can use agaisnt Radiant team. Abilities have low duration.

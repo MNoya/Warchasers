@@ -9991,9 +9991,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creep"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.mdl"	// Model.
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion.vmdl"	// Model.
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
-		"ModelScale"				"1.1"
+		"ModelScale"				"1"
 		"Level"						"1"
 		"IsSummoned"				"1"
 				
@@ -13257,13 +13257,18 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
+		"Model"						"models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"1"
 		"IsSummoned"				"1"
-		"ModelScale" 					"0.85"
+		"ModelScale" 					"0.70"
 		"UnitLabel"			"lycan_wolf"
+
+		"precache"
+		{
+			"model"	"models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl"
+		}
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -13330,12 +13335,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
+		"Model"						"models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"2"
 		"IsSummoned"				"1"
-		"ModelScale" 					"0.95"
+		"ModelScale" 					"0.80"
 		"UnitLabel"			"lycan_wolf"
 
 		// Abilities
@@ -13404,12 +13409,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl" //"models/heroes/lycan/summon_wolves.mdl"	// Model.
+		"Model"						"models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creep_neutral"
 		"SoundSet"					"Lycan_Wolf"
 		"Level"						"3"
 		"IsSummoned"				"1"
-		"ModelScale" 					"1.05"
+		"ModelScale" 					"0.90"
 		"UnitLabel"			"lycan_wolf"
 
 		// Abilities

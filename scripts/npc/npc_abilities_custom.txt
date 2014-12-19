@@ -3,6 +3,111 @@
 {
 	"Version"		"1"
 
+	"creep_kaboom"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_kaboom"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"180.0 170.0 160.0 150.0"
+		"AbilityManaCost"				"100 125 150 175"
+
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_techies/techies_suicide.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"small_radius"				"200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"big_radius"				"500"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"partial_damage"			"200"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"Target"	"CASTER"
+				"EffectName" "particles/units/heroes/hero_techies/techies_suicide.vpcf"
+				"EffectAttachType" "follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Techies.Suicide"
+				"Target"		"CASTER"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"%small_radius"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%damage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"%big_radius"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+				}
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%partial_damage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+			// Finally kill the caster
+			"Damage"
+			{
+				"Target"	"CASTER"
+				"Damage"	"9999"
+				"Type"		"DAMAGE_TYPE_PURE"
+			}
+		}
+	}
+
 
 
 	// Creature Modifiers
@@ -191,7 +296,7 @@
 		"precache"
 		{
 			"particle"	"particles/warchasers/test_particles/puck_electrified.vpcf"
-			"particles"	"particles/status_fx/status_effect_electrical.vpcf"
+			"particle"	"particles/status_fx/status_effect_electrical.vpcf"
 		}
 		
 		"Modifiers"	
@@ -317,14 +422,185 @@
 		}
 	}
 
-	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line (if possible) directly away from the champion, boss, or boss' minion that caused the effect. While running, players have no control over their character. If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
-	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient	
+	// Nightmarish: When Nightmarish bosses hit a target with a melee or ranged attack, they have a chance to inflict Fear, Characters or minions so affected will run for a second in a straight line 
+	//(if possible) directly away from the champion, boss, or boss' minion that caused the effect.  While running, players have no control over their character.
+	// If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
+	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient with a common restricted
+	"creep_nightmarish"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_nightmarish"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"100" // Change to 10 later
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fear_duration"			"4"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
+			"particle"	"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+			"particle"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_nightmarish"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"StatusEffectName"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
+				"StatusEffectPriority"	"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"	"%chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"abilities.lua"
+								"Function"		"Disorient"
+							}
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_disoriented"
+								"Target"	"TARGET"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_disoriented"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%fear_duration"
+				"StatusEffectName"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
+				"StatusEffectPriority"	"10"
+
+				"EffectName"		"particles/warchasers/nightmarish.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"		"2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"Disorient"
+					}
+				}
+			}
+		}
+	}
 	
 	// Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
-	// Implementation: Thorns...
+	// Implementation: OnTakeDamage RunScript with a percentage
+	"creep_reflect_damage"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_reflect_damage"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent"		"100" // Change to something else later
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/items_fx/blademail.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_reflect_damage"
+			{
+				"Passive"			"1"
+				"EffectName"		"particles/items_fx/blademail.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"DamageAmount"		"%attack_damage"
+						"ReflectAmount"		"%damage_percent"
+						"ScriptFile"		"abilities.lua"
+						"Function"			"ReflectDamage"
+					}
+				}
+			}
+		}
+	}
 	
 	// Vampiric: Vampiric is a sort of monster life leech, enabling them to heal as they deal damage. The amount of healing is fairly minor, making this one of the less-difficult or noticeable boss modifiers. In practice it just makes the enemy feel as though they have slightly higher than normal hit points, and gives some utility to stun or freeze effects, since monsters not dealing damage will not heal Vampire style.
 	// Implementation: OnAttackLanded Lifesteal
+	"creep_vampiric"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"creep_vampiric"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal"				"100"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+		}
+		
+		"Modifiers"	
+		{
+			"modifier_vampiric"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{	
+						"Target" 				"ATTACKER"
+						"LifestealPercent"		"%lifesteal"
+					}
+					"FireEffect"
+					{
+						"EffectName"			"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+						"EffectAttachType"		"attach_hitloc"
+						"Target"				"TARGET"
+					}
+				}
+			}
+		}
+	}
+
 
 
 
@@ -459,31 +735,101 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"explosion_delay"		"2"
+				"explosion_delay"		"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_bonus"		"25"
+				"explosion_radius"		"150"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_duration"		"3"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf"
+			"particle"	"particles/warchasers/frozen/ancient_apparition_ice_blast_explode.vpcf"
+			"particle"	"particles/warchasers/frozen/tusk_ice_shards_projectile.vpcf"
+			"particle"	"particles/warchasers/frozen/maiden_crystal_nova.vpcf"
 		}
 
 		"OnSpellStart"
 		{
-			"RunScript"		
-			{	
-				"ScriptFile"	"abilities.lua"
-				"Function"		"FrozenExplosion"
-			}
+			"CreateThinker"
+	        {
+	            "ModifierName"  "frozen_thinker"
+	            "Target" 		"POINT"
+	        }
 		}
 
 		"Modifiers"
 		{
-			"modifier_frozen"
+			"frozen_thinker"
 			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"IsBuff"	"1"	
+				"OnCreated"
+				{
+					// Attach the particles, also manages the explosion a bit after the explosion delay
+					"RunScript"		
+					{	
+						"ScriptFile"	"abilities.lua"
+						"Function"		"FrozenStart"
+					}
+
+					// We could do this in lua but I'm feeling elegant.
+					"DelayedAction"
+					{
+						"Delay"		"%explosion_delay"
+						"Action"
+						{
+							// Do the damage and apply modifier_frozen
+							"ActOnTargets"
+							{
+							 	"Target"
+							 	{
+						            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						            "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+						            "Center"    "TARGET" //in this scope, this means the Thinker.
+						            "Radius"    "%explosion_radius"
+						        }
+						        
+						        "Action"
+				         		{
+						         	"Damage"
+					         		{
+					         			"Target"	"TARGET"
+					         			"Type"		"DAMAGE_TYPE_MAGICAL"
+					         			"Damage"	"%AbilityDamage"
+					         		}
+						         	
+						         	"ApplyModifier"
+						         	{
+							 			"ModifierName"		"modifier_stunned"
+							 			"Target"			"TARGET"
+						         	}
+						     	}
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_stunned"
+			{
+				"IsHidden"	        "0"
+				"IsDebuff"	        "1"
+				"Duration"	        "%stun_duration"
+				"StatusEffectName"	"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"15"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}

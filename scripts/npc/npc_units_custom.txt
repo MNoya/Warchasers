@@ -10,7 +10,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"	// Model.
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -72,7 +72,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"	// Model.
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -134,7 +134,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"	// Model.
+		"Model"						"models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -2137,7 +2137,7 @@
 		//
 		"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 		"Model"						"models/elven_farm.vmdl"	// Model.
-		"ModelScale"				"1"
+		"ModelScale"				"1.4"
 
 		"precache"
 		{
@@ -3957,7 +3957,7 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_avenger"			// Ability 1.
+		"Ability1"					"creep_frozen"			// Ability 1.
 		"Ability2"					"creep_desecrator"
 		"Ability3"					"creep_extra_health"
 		"Ability4"					"creep_fast"
@@ -4067,7 +4067,7 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_electrified"			// Ability 1
+		"Ability1"					"creep_reflect_damage"			// Ability 1
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4430,7 +4430,7 @@
 		{
 			"AttachWearables"
 			{
-				"Wearable1"		{	"ItemDef"		"4804" 		}	//silent ripper, 	 //Skadi = "6871" not available in source2 yet
+				"Wearable1"		{	"ItemDef"		"6871" 		}	//Skadi
 				"Wearable2"		{	"ItemDef"		"6406" 		}
 				"Wearable3" 	{	"ItemDef"		"4882" 		} //naked head	
 				"Wearable4"		{	"ItemDef"		"6392"		}
@@ -7195,15 +7195,14 @@
 		}
 	}
 	
-	
 	"npc_sapper"
 	{
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	
-		"Model"						"models/heroes/axe/axe.vmdl"	// Replace by Techies
-		"ModelScale"				"1"
-		"SoundSet"                  "Hero_Axe"				
+		"Model"						"models/heroes/techies/techies.vmdl"
+		"ModelScale"				"0.5"
+		"SoundSet"                  "Hero_Techies"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
 		"Level"						"6"
@@ -7223,7 +7222,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"axe_culling_blade" //Kaboom! in WC3
+		"Ability1"					"creep_kaboom"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7285,8 +7284,12 @@
 
 			"AttachWearables"
 			{
-				"Wearable1"	{ "ItemDef" "5675" } //	 "5675"=Phractos "5819"=Mountain Splitter
-				"Wearable2"	{ "ItemDef"	"5640" } //ES Impasse Head
+				"Wearable1"	{ "ItemDef" "487" } //	 "Spoon Costume"
+				"Wearable2"	{ "ItemDef"	"489" } // "Slingshot"
+				"Wearable3"	{ "ItemDef"	"490" } // "Cart"
+				"Wearable4"	{ "ItemDef"	"491" } // "Squee Costume"
+				"Wearable5"	{ "ItemDef"	"492" } // "Slingshot"
+
 			}
 
 			"DefaultState"			"Invade"
@@ -7305,7 +7308,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"axe_culling_blade"
+					"Name"				"creep_kaboom"
 					"Damage"			"1"
 				}
 			}
@@ -7411,7 +7414,7 @@
 		// General
 		//----------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/courier/defense3_sheep/defense3_sheep.vmdl"	// Model.
+		"Model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"	// Model.
 		"ModelScale"				"1"
 		"Level"						"1"
 		
@@ -7718,8 +7721,8 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/courier/imp/imp.vmdl"	// Model.	
-		"ModelScale"				"1"
+		"Model"						"models/courier/doom_demihero_courier/doom_demihero_courier.vmdl"	// Model.	
+		"ModelScale"				"1.2"
 		"Level"						"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -7793,7 +7796,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/terrorblade/demon.vmdl"	// Model.	
+		"Model"						"models/items/terrorblade/marauders_demon/marauders_demon.vmdl"	// Model.	
 		"ModelScale"				"1.5"
 		"SoundSet"                  "Hero_Terrorblade"				
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
@@ -8582,12 +8585,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/items/furion/treant/fungal_lord_shroomthing/fungal_lord_shroomthing.vmdl"	// Model.
+		"Model"						"models/items/furion/treant/eternalseasons_treant/eternalseasons_treant.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Furion_Treant"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".9"
+		"ModelScale" 				"1.2"
 		
 		"UseNeutralCreepBehavior" 	"0"
 
@@ -9407,13 +9410,13 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"                                         "models/heroes/tiny_03/tiny_03.vmdl"   // Model.
+		"Model"                                         "models/heroes/tiny_01/tiny_01.vmdl"   // Model.
 		"BaseClass"                                     "npc_dota_creature"
 		"SoundSet"					"Hero_Tiny"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 		"Level"                                         "6"
-		"ModelScale"                            "1.2"
+		"ModelScale"                            "2.5"
 
 		"precache"
 		{
@@ -9488,6 +9491,14 @@
 		
 		"Creature"
 		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "493" } //Head
+				"Wearable2"	{ "ItemDef"	"494" } //Body
+				"Wearable3" { "ItemDef"	"495" } //Left Arm
+				"Wearable4" { "ItemDef"	"496" } //Right Arm				
+			}
+
 			"DefaultState"			"Invade"
 			"States"	
 			{
@@ -9519,13 +9530,13 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"                                         "models/heroes/tiny_03/tiny_03.vmdl"   // Model.
+		"Model"                                         "models/heroes/tiny_01/tiny_01.vmdl"   // Model.
 		"BaseClass"                                     "npc_dota_creature"
 		"SoundSet"					"Hero_Tiny"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 		"Level"                                         "6"
-		"ModelScale"                            "1.2"
+		"ModelScale"                            "2.5"
 		
 		"UseNeutralCreepBehavior" 	"0"
 
@@ -9590,6 +9601,17 @@
 		"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"	{ "ItemDef" "493" } //Head
+				"Wearable2"	{ "ItemDef"	"494" } //Body
+				"Wearable3" { "ItemDef"	"495" } //Left Arm
+				"Wearable4" { "ItemDef"	"496" } //Right Arm				
+			}
+		}
 		
 	}
 	
@@ -10017,7 +10039,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/npc_minions/draft_siege_good.vmdl"
+		"Model"						"models/items/courier/carty/carty.vmdl"
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
