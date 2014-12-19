@@ -905,15 +905,21 @@ jailer_anti_stack = 0
 function jailer_think( event )
 	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > jailer_anti_stack then
 		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-
 		if heroes_around[1] ~= nil then
-			
-			
-			
 			event.caster:CastAbilityOnTarget(heroes_around[1], event.ability, event.caster:GetPlayerOwnerID() )
 			assaulter_anti_stack = GameRules:GetGameTime() + 6
 		end
 		
 		
+	end
+end
+
+
+function hurricaner_think( event )
+	local distance = (event.caster:GetAbsOrigin() - event.target:GetAbsOrigin() ):Length2D() 
+	if distance > 350 then 
+		event.target:SetModifierStackCount("affix_hurricaner_debuff", event.ability, 80) 
+	else
+		event.target:SetModifierStackCount("affix_hurricaner_debuff", event.ability, 0)
 	end
 end

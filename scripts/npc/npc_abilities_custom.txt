@@ -891,6 +891,42 @@
 			}
 		}
 
+	"affix_hurricaner"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+			{
+			"affix_hurricaner_aura"
+				{
+				"Passive"	"1"
+				"Aura"        "affix_hurricaner_debuff"
+        		"Aura_Radius" "900"
+        		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			"affix_hurricaner_debuff"
+				{
+				"IsDebuff"	"1"
+				"ThinkInterval"	"0.3"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities.lua"
+						"Function"			"hurricaner_think"
+						}
+					}
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"1"
+					}
+				}
+			}
+		}
+
 
 
 	// Active Modifiers
