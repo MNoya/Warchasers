@@ -877,14 +877,7 @@ end
 
 
 function illusionist_think( event )
-	--[[local ability
-	if event.caster:HasAbility("affix_illusionist_subability") == false then
-		event.caster:AddAbility("affix_illusionist_subability")
-		ability = event.caster:FindAbilityByName("affix_illusionist_subability")
-		ability:SetLevel(1)
-	else
-		ability = event.caster:FindAbilityByName("affix_illusionist_subability")
-	end]]
+	
 
 
 	if event.caster:GetAttackTarget() ~= nil and event.ability:IsCooldownReady() == true and event.caster:IsHero() == false and event.caster:IsIllusion() == false then 
@@ -905,4 +898,22 @@ end
 
 function illusionist_illusion_kill( event )
 	event.target:Kill(event.ability, event.caster)
+end
+
+jailer_anti_stack = 0
+
+function jailer_think( event )
+	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > jailer_anti_stack then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+
+		if heroes_around[1] ~= nil then
+			
+			
+			
+			event.caster:CastAbilityOnTarget(heroes_around[1], event.ability, event.caster:GetPlayerOwnerID() )
+			assaulter_anti_stack = GameRules:GetGameTime() + 6
+		end
+		
+		
+	end
 end
