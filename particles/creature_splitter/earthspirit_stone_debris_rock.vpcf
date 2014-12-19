@@ -1,0 +1,172 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CParticleSystemDefinition CParticleSystemDefinition_0
+{
+	bool m_bPreventNameBasedLookup = false
+	int m_nMaxParticles = 60
+	string m_pszSnapshotName = ""
+	string m_hLowViolenceDef = ""
+	string m_hReferenceReplacement = ""
+	string m_hFallback = ""
+	CParticleOperator*[] m_Renderers = 
+	[
+		&C_OP_RenderModels_0
+	]
+	CParticleOperator*[] m_Operators = 
+	[
+		&C_OP_BasicMovement_0,
+		&C_OP_Decay_0,
+		&C_OP_RemapSpeed_0,
+		&C_OP_RampScalarLinear_0,
+		&C_OP_RampScalarLinear_2
+	]
+	CParticleOperator*[] m_Initializers = 
+	[
+		&C_INIT_RandomRadius_0,
+		&C_INIT_RingWave_0,
+		&C_INIT_RandomAlpha_0,
+		&C_INIT_RandomRotation_0,
+		&C_INIT_RandomYaw_0,
+		&C_INIT_RandomColor_0,
+		&C_INIT_PositionOffset_0,
+		&C_INIT_RemapScalar_0,
+		&C_INIT_PositionWarp_0
+	]
+	CParticleOperator*[] m_Emitters = 
+	[
+		&C_OP_ContinuousEmitter_0
+	]
+	CParticleOperator*[] m_ForceGenerators = 
+	[
+		
+	]
+	CParticleOperator*[] m_Constraints = 
+	[
+		
+	]
+	ParticleChildrenInfo_t[] m_Children = 
+	[
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/creature_splitter/earthspirit_stone_debris_rockrop.vpcf"
+		}
+	]
+}
+
+C_OP_RenderModels C_OP_RenderModels_0
+{
+	string m_hOverrideMaterial = ""
+	string m_EconSlotName = ""
+	string m_Notes = ""
+	string m_ActivityName = ""
+	bool m_bOrientZ = true
+	ModelReference_t[] m_ModelList = 
+	[
+		ModelReference_t
+		{
+			string m_model = "models/particle/tiny_simrocks.vmdl"
+		}
+	]
+	bool m_bAnimated = true
+}
+
+C_OP_BasicMovement C_OP_BasicMovement_0
+{
+	string m_Notes = ""
+	float m_fDrag = 0.075000
+}
+
+C_OP_Decay C_OP_Decay_0
+{
+	string m_Notes = ""
+}
+
+C_OP_RemapSpeed C_OP_RemapSpeed_0
+{
+	string m_Notes = ""
+	bool m_bScaleInitialRange = true
+	int m_nFieldOutput = 5
+	float m_flInputMax = 120.000000
+	float m_flOutputMax = 4.000000
+}
+
+C_OP_RampScalarLinear C_OP_RampScalarLinear_0
+{
+	string m_Notes = ""
+	float m_RateMax = 4.000000
+	float m_RateMin = -4.000000
+	int m_nField = 4
+}
+
+C_OP_RampScalarLinear C_OP_RampScalarLinear_2
+{
+	string m_Notes = ""
+	float m_RateMax = 4.000000
+	float m_RateMin = -4.000000
+	int m_nField = 4
+}
+
+C_INIT_RandomRadius C_INIT_RandomRadius_0
+{
+	string m_Notes = ""
+	float m_flRadiusMin = 0.500000
+	float m_flRadiusRandExponent = 2.000000
+	float m_flRadiusMax = 2.000000
+}
+
+C_INIT_RingWave C_INIT_RingWave_0
+{
+	string m_Notes = ""
+	float m_flInitialRadius = 16.000000
+	float m_flThickness = 20.000000
+	bool m_bXYVelocityOnly = false
+}
+
+C_INIT_RandomAlpha C_INIT_RandomAlpha_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_RandomRotation C_INIT_RandomRotation_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_RandomYaw C_INIT_RandomYaw_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_RandomColor C_INIT_RandomColor_0
+{
+	string m_Notes = ""
+	int(4) m_ColorMax = ( 170, 158, 133, 255 )
+	int(4) m_ColorMin = ( 245, 237, 218, 255 )
+}
+
+C_INIT_PositionOffset C_INIT_PositionOffset_0
+{
+	string m_Notes = ""
+	float(3) m_OffsetMax = ( 0.000000, 0.000000, 180.000000 )
+	float(3) m_OffsetMin = ( 0.000000, 0.000000, 180.000000 )
+}
+
+C_INIT_RemapScalar C_INIT_RemapScalar_0
+{
+	float m_flOutputMax = 0.500000
+	int m_nFieldOutput = 1
+	string m_Notes = ""
+}
+
+C_INIT_PositionWarp C_INIT_PositionWarp_0
+{
+	bool m_bUseCount = true
+	float(3) m_vecWarpMax = ( 0.000000, 0.000000, 0.000000 )
+	string m_Notes = ""
+}
+
+C_OP_ContinuousEmitter C_OP_ContinuousEmitter_0
+{
+	float m_flEmitRate = 150.000000
+	string m_Notes = ""
+	float m_flEmissionDuration = 0.250000
+}
