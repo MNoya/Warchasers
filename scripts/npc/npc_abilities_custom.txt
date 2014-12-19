@@ -601,9 +601,191 @@
 		}
 	}
 
+	"affix_assaulter"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		
+		"AbilityCooldown"	"8"
 
+		"OnSpellStart"
+			{
+			"Blink"
+				{
+				"Target"	"TARGET"
+				}
+			"Stun"
+				{
+				"Target"	"TARGET"
+				"Duration"	"1.4"
+				}
+			"RunScript"
+				{
+				"ScriptFile"		"abilities.lua"
+				"Function"			"assaulter_cast"
+				}
+			}
 
+		"Modifiers"	
+			{
+			"affix_assaulter_modifier"
+				{
+				"Passive"	"1"
+				"ThinkInterval"	"0.8"
+				
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities.lua"
+						"Function"			"assaulter_think"
+						}
+					}
+				}
+			}
+		}
 
+	"affix_blood_freezer"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+			{
+			"affix_blood_freezer_aura"
+				{
+				"Passive"	"1"
+				"Aura"        "affix_blood_freezer_debuff"
+        		"Aura_Radius" "900"
+        		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			"affix_blood_freezer_debuff"
+				{
+				"IsDebuff"	"1"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
+					}
+				}
+			}
+		}
+	"affix_berserker"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+			{
+			"affix_berserker_modifier"
+				{
+				"Passive"	"1"
+				"IsBuff"	"1"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"1"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"2"
+					}
+				"OnHealthGained"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"affix_berserker_ondamage"
+						}
+					}
+
+				"OnTakeDamage"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"affix_berserker_ondamage"
+						}
+					}
+				}
+			}
+		}
+
+	"affix_provoker"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+			{
+			"affix_provoker_aura"
+				{
+				"Passive"	"1"
+				"Aura"        "affix_provoker_buff"
+        		"Aura_Radius" "900"
+        		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				}
+			"affix_provoker_buff"
+				{
+				"IsDebuff"	"1"
+				"OnAttackStart"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"affix_provoker_func"
+						}
+					}
+				}
+			}
+		}
+
+	"affix_shield_bearer"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+			{
+			"affix_shield_bearer_modifier"
+				{
+				"Passive"	"1"
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"	"-200"
+					
+					}
+				"OnAttacked"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"	"affix_shield_bearer_func"
+						}
+					}
+				}
+			"affix_shield_bearer_damage_reduction"
+				{
+				"Duration"	"1"
+
+				"OnOrder"
+					{
+					"RemoveModifier"
+						{
+						"Target"	"CASTER"
+						"ModifierName"	"affix_shield_bearer_damage_reduction"
+						}
+					}
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"85"
+					}
+
+				}
+			}
+		}
 
 	// Active Modifiers
 

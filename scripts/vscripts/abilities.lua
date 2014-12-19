@@ -791,3 +791,58 @@ function ReflectDamage( event )
 
 
 end
+
+
+assaulter_anti_stack = 0
+
+function assaulter_think( event )
+	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > assaulter_anti_stack then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+
+		if heroes_around[1] ~= nil then
+			local target = heroes_around[1]
+			print(target:GetUnitName() )
+			local target_ehp = physical_ehp(target)
+			for key, hero in pairs(heroes_around) do 
+				local filtered_ehp = physical_ehp(hero)
+				if filtered_ehp < target_ehp then
+					target = hero
+					target_ehp = filtered_ehp
+				end 
+			end
+			event.caster:CastAbilityOnTarget(target, event.ability, event.caster:GetPlayerOwnerID() )
+			assaulter_anti_stack = GameRules:GetGameTime() + 2
+		end
+		
+		
+	end
+end
+
+function assaulter_cast( event )
+	event.caster:MoveToTargetToAttack(event.target)
+end
+
+function affix_berserker_ondamage( event )
+	event.caster:SetModifierStackCount("affix_berserker_modifier", event.ability, (100 - event.caster:GetHealthPercent())) 
+end
+
+function affix_provoker_func( event )
+	if event.attacker:GetAttackTarget() ~= event.caster then
+		event.attacker:MoveToTargetToAttack(event.caster)
+	end
+end
+
+function affix_shield_bearer_func( event )
+	local vector_sub_nor = (event.attacker:GetAbsOrigin() - event.caster:GetAbsOrigin()):Normalized()
+	local dot = event.caster:GetForwardVector():Dot(vector_sub_nor)
+	local angle = math.deg(math.acos(dot))
+	
+
+	if angle < 90 then
+		event.caster:SetPhysicalArmorBaseValue(300) 
+		--event.ability:ApplyDataDrivenModifier(event.caster, event.caster, "affix_shield_bearer_damage_reduction", nil)
+	else
+		event.caster:SetPhysicalArmorBaseValue(0)
+	end
+
+end
