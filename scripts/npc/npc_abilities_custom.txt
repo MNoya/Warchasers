@@ -1044,6 +1044,7 @@
 		{
 			"particle" "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
 		//	"particle" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+			"particle"	"particles/warchasers/molten/batrider_firefly.vpcf"
 		}
 
 
@@ -1054,9 +1055,8 @@
 			"affix_molten_modifier"
 				{
 				"Passive"	"1"
-				
 
-				"ThinkInterval"	"0.5"
+				"ThinkInterval"	"0.1"
 				"OnIntervalThink"
 					{
 					"RunScript"
@@ -1083,12 +1083,6 @@
 						"Function"		"molten_explode"
 						}
 					}
-				}
-			"affix_molten_thinker"
-				{
-				"Duration"	"5"
-				"EffectName"            "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
-    			"EffectAttachType"      "follow_origin"
 				}
 			}
 		}
