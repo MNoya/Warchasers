@@ -736,9 +736,9 @@ function molten_interval( event )
 		if #dummies<1 then
 			local dummy = CreateUnitByName("dummy_unit", next_thinker_pos, false, event.caster, event.caster, event.caster:GetTeam())
 			--table.insert(event.ability.molten_dummy_table, dummy:GetEntityIndex() )
-			local particle = ParticleManager:CreateParticle("particles/warchasers/molten/batrider_firefly.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+			--[[local particle = ParticleManager:CreateParticle("particles/warchasers/molten/batrider_firefly.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
 			ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin())
-			ParticleManager:SetParticleControl(particle, 11, Vector(1,1,0)) -- dummy:GetAbsOrigin()) --emit continuously
+			ParticleManager:SetParticleControl(particle, 11, Vector(1,1,0)) -- dummy:GetAbsOrigin()) --emit continuously]]
 
 			--local particle = ParticleManager:CreateParticle("particles/warchasers/molten/dropped_item_rapier.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
 			--ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin())
@@ -770,19 +770,32 @@ function molten_explode( event )
 	local damage = event.ability:GetSpecialValueFor("explosion_damage") 
 	local team_number = event.caster:GetTeamNumber()
 	local damaged_group = {}
-	local radius = 100 --make an ability special
+	local radius = 200 --make another ability special
 
-	for key1, vector in pairs(event.ability.molten_points_table) do
-		local group = FindUnitsInRadius( team_number, vector, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+	local particle = ParticleManager:CreateParticle("particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+	ParticleManager:SetParticleControl(particle, 0, event.caster:GetAbsOrigin())
 
-		for key2, unit in pairs(group) do
 
-			if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
-				ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
-				table.insert(damaged_group , unit:GetEntityIndex())
+	-- Note: It's not the trail that explodes, is the center of the unit!
+	Timers:CreateTimer(3,function()
+		local particle2 = ParticleManager:CreateParticle("particles/warchasers/molten/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+		ParticleManager:SetParticleControl(particle2, 0, event.caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle2, 3, event.caster:GetAbsOrigin())
+		ParticleManager:DestroyParticle(particle,false)
+
+		for key1, vector in pairs(event.ability.molten_points_table) do
+			local group = FindUnitsInRadius( team_number, vector, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+			for key2, unit in pairs(group) do
+
+				if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
+					ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+					table.insert(damaged_group , unit:GetEntityIndex())
+				end
 			end
-		end
-	end
+		end	
+	end)
+
 	--[[for key, value in pairs(event.ability.molten_dummy_table) do
 		EntIndexToHScript(value):ForceKill(true)
 	end]]
@@ -833,7 +846,7 @@ function assaulter_think( event )
 	end
 end
 
-function assaulter_cast( event )
+function assaulter_cast( event )	
 	event.caster:MoveToTargetToAttack(event.target)
 end
 
