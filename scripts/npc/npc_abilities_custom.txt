@@ -491,6 +491,80 @@
 
 
 
+	"affix_molten"
+		{
+		"BaseClass"						"ability_datadriven"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_damage"		"200"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"overtime_damage"		"30"
+				}
+			}
+
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+		//	"particle" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		}
+
+
+
+
+		"Modifiers"
+			{
+			"affix_molten_modifier"
+				{
+				"Passive"	"1"
+				
+
+				"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"molten_interval"
+						}
+					
+					
+					}
+				"OnCreated"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"molten_start"
+						}
+					}
+				"OnDeath"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"molten_explode"
+						}
+					}
+				}
+			"affix_molten_thinker"
+				{
+				"Duration"	"5"
+				"EffectName"            "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+    			"EffectAttachType"      "follow_origin"
+				}
+			}
+		}
+
 
 
 

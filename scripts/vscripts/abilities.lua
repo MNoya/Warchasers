@@ -653,3 +653,85 @@ end
 function FrozenExplosion( event )
 	
 end
+
+function is_in_group( group, index )
+	local bool = false
+	for key, value in pairs(group) do
+		if value == index then
+			bool = true
+		end
+	end
+	return bool
+end
+
+function molten_start( event )
+	--event.ability.molten_position = event.caster:GetAbsOrigin()
+	event.ability.molten_mod = 0
+	event.ability.molten_points_table = {}
+	--event.ability.molten_dummy_table = {}
+end
+
+function molten_interval( event )
+
+	local current_position = event.caster:GetAbsOrigin()
+	if event.ability.molten_position == nil then
+		event.ability.molten_position = current_position
+	end
+	local vector_traveled = (event.ability.molten_position - current_position)
+	local distance_traveled = vector_traveled:Length2D() + event.ability.molten_mod
+	local direction = vector_traveled:Normalized() 
+		if distance_traveled > 100 then 
+		local next_thinker_pos = event.ability.molten_position
+		repeat
+		next_thinker_pos = direction * 100 + next_thinker_pos
+
+		table.insert(event.ability.molten_points_table, next_thinker_pos)
+		--[[local dummy = CreateUnitByName("dummy_unit", next_thinker_pos, false, event.caster, event.caster, event.caster:GetTeam())
+		table.insert(event.ability.molten_dummy_table, dummy:GetEntityIndex() )
+		ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)]]
+		
+
+		distance_traveled = distance_traveled - 100
+		until distance_traveled < 100
+	end
+
+	local damage = event.ability:GetSpecialValueFor("overtime_damage") / 2
+	local team_number = event.caster:GetTeamNumber()
+	local damaged_group = {}
+
+	for key1, vector in pairs(event.ability.molten_points_table) do
+		local group = FindUnitsInRadius( team_number, vector, nil, 400, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+		for key2, unit in pairs(group) do
+
+			if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
+				ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+				table.insert(damaged_group , unit:GetEntityIndex())
+			end
+		end
+	end
+	event.ability.molten_mod = distance_traveled
+	event.ability.molten_position = current_position
+end
+
+function molten_explode( event )
+	
+	local damage = event.ability:GetSpecialValueFor("explosion_damage") 
+	local team_number = event.caster:GetTeamNumber()
+	local damaged_group = {}
+
+	for key1, vector in pairs(event.ability.molten_points_table) do
+		local group = FindUnitsInRadius( team_number, vector, nil, 400, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+
+		for key2, unit in pairs(group) do
+
+			if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
+				ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+				table.insert(damaged_group , unit:GetEntityIndex())
+			end
+		end
+	end
+	--[[for key, value in pairs(event.ability.molten_dummy_table) do
+		EntIndexToHScript(value):ForceKill(true)
+	end]]
+end
