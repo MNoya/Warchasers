@@ -35,6 +35,10 @@ affix_list()
 
 
 
+
+
+
+
 function affix_selector()
 	return affix_names[math.random(affix_count)]
 end

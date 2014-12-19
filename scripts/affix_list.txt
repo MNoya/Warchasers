@@ -8,13 +8,13 @@
 
 "defense"
     {
-    "creep_avenger" "1"
+    "affix_avenger" "1"
     }
 "aggresive"
     {
-    "creep_extra_health" "1"
-    "creep_fast"         "1"
-    "creep_electrified"  "1"
+    "affix_extra_health" "1"
+    "affix_fast"         "1"
+    "affix_electrified"  "1"
     }
  "disable"
     {

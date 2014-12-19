@@ -118,7 +118,7 @@
 	//	Implementation: OnDeath find units in radius of the same unit name and apply scale and mofifier.
 	// TODO: Proper scale with LoadFromKeyValues (as there is no GetModelScale method in Source 2 for some reason)
 
-	"creep_avenger"
+	"affix_avenger"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_avenger"
@@ -177,7 +177,7 @@
 	//Extra Health: Extra Health grants a 50% hit point bonus to Champions, as well as Bosses and their minions. This property is dangerous when it extends fights, and players used to killing monsters quickly enough to avoid real trouble from their damaging properties such as Plagued or Arcane Enchanted may need to retreat or take a different tactic when dealing with Extra Health enemies.
 	//Implementation: Spawn with a modifier that does SetMaxHealth and SetHealth	
 
-	"creep_extra_health"
+	"affix_extra_health"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_extra_health"
@@ -223,7 +223,7 @@
 	//Fast: Fast monsters get a 40% bonus to their movement speed, as well as a 20% bonus to attack speed and a 10% bonus to casting speed
 	//Implementation: Remove casting speed. Apply a simple MS and AS modifier	
 
-	"creep_fast"
+	"affix_fast"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_fast"
@@ -271,7 +271,7 @@
 	// Electrified: Electrified enemies function much like a lightning-based form of Reflects Damage, dealing lightning damage back to attackers. 
 	// Implementation: OnAttacked do lightning particle and launch lightning projectiles
 
-	"creep_electrified"
+	"affix_electrified"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_electrified"
@@ -342,7 +342,7 @@
 	// Characters can be knocked back into other dangerous effects such as Molten or Arcane and die while still badly slowed.
 	// Implementation: Knockback
 
-	"creep_knockback"
+	"affix_knockback"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_knockback"
@@ -426,7 +426,7 @@
 	//(if possible) directly away from the champion, boss, or boss' minion that caused the effect.  While running, players have no control over their character.
 	// If the running direction is blocked by a wall or other monsters, characters may simply stand still, a complete sitting duck to all enemy attacks.
 	// Implementation: Passive OnAttackLanded apply TBR Warlord disorient with a common restricted
-	"creep_nightmarish"
+	"affix_nightmarish"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_nightmarish"
@@ -512,7 +512,7 @@
 	
 	// Reflects Damage: Reflects Damage, is a higher level boss and champion modifier that causes players to take some damage for every point of damage they deal to enemies. Unlike Thorns, this damage hurts ranged attackers and even spell users.
 	// Implementation: OnTakeDamage RunScript with a percentage
-	"creep_reflect_damage"
+	"affix_reflect_damage"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_reflect_damage"
@@ -556,7 +556,7 @@
 	
 	// Vampiric: Vampiric is a sort of monster life leech, enabling them to heal as they deal damage. The amount of healing is fairly minor, making this one of the less-difficult or noticeable boss modifiers. In practice it just makes the enemy feel as though they have slightly higher than normal hit points, and gives some utility to stun or freeze effects, since monsters not dealing damage will not heal Vampire style.
 	// Implementation: OnAttackLanded Lifesteal
-	"creep_vampiric"
+	"affix_vampiric"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"creep_vampiric"
@@ -786,6 +786,51 @@
 				}
 			}
 		}
+
+	"affix_illusionist"
+		{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"	
+			{
+			"affix_illusionist_modifier"
+				{
+				"Passive"	"1"
+				"ThinkInterval"	"0.8"
+				
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities.lua"
+						"Function"			"illusionist_think"
+						}
+					}
+				}
+			"affix_illusionist_illusion"
+				{
+
+				"Properties"
+					{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION"	"-50"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"300"
+					}
+
+				"ThinkInterval"	"8"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"		"abilities.lua"
+						"Function"			"illusionist_illusion_kill"
+						}
+					}
+				}
+			}
+		}
+
+
 
 	// Active Modifiers
 

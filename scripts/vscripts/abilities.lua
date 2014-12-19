@@ -874,3 +874,35 @@ function affix_shield_bearer_func( event )
 	end
 
 end
+
+
+function illusionist_think( event )
+	--[[local ability
+	if event.caster:HasAbility("affix_illusionist_subability") == false then
+		event.caster:AddAbility("affix_illusionist_subability")
+		ability = event.caster:FindAbilityByName("affix_illusionist_subability")
+		ability:SetLevel(1)
+	else
+		ability = event.caster:FindAbilityByName("affix_illusionist_subability")
+	end]]
+
+
+	if event.caster:GetAttackTarget() ~= nil and event.ability:IsCooldownReady() == true and event.caster:IsHero() == false and event.caster:IsIllusion() == false then 
+		local unit_name = event.caster:GetUnitName() 
+		local origin = event.caster:GetAbsOrigin() 
+		
+			local illusion = CreateUnitByName(unit_name, origin, true, event.caster, event.caster, event.caster:GetTeamNumber() ) 
+			illusion:MakeIllusion() 
+			illusion:AddNewModifier(event.caster, nil, "modifier_illusion", nil)
+			event.ability:ApplyDataDrivenModifier(event.caster, illusion, "affix_illusionist_illusion", nil)
+			illusion.initial_neutral_position = origin
+		
+		event.ability:StartCooldown(4)
+
+
+	end
+end
+
+function illusionist_illusion_kill( event )
+	event.target:Kill(event.ability, event.caster)
+end
