@@ -124,6 +124,7 @@ Corrosive Skin - from Viper
 Assaulter - then units gets order to attack instanly blinks to target. (maybe with bonus attack speed or stun, slow)
 Armorer - bonus armor in AoE (too boring)
 Sheild Bearer - reduced or no damage from front. Slow turn rate.
+	Rework: Reduced damage from all sides but attacking in the back reduces this mitigation
 Ghosted - no damage from attacks. opposite of magic immunity
 	Amplifies magic damage
 Wind Caller - creates a ring of wind around affix carrier. Enemies outside ring get strong miss chance. If you enter the ring miss chance is removed.
