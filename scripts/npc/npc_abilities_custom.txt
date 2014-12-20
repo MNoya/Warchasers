@@ -1180,13 +1180,22 @@
 				"var_type"				"FIELD_INTEGER"
 				"overtime_damage"		"30"
 				}
+			"03"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"trail_aoe"				"100"
+				}
+
+			"03"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_radius"		"200"
+				}
 			}
 
 		"precache"
 		{
-			"particle" "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
-		//	"particle" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
-			"particle"	"particles/warchasers/molten/batrider_firefly.vpcf"
+			"particle" "particles/warchasers/molten/trail/courier_trail_lava.vpcf"
 		}
 
 
@@ -1197,6 +1206,9 @@
 			"affix_molten_modifier"
 				{
 				"Passive"	"1"
+
+				"EffectName"	"particles/warchasers/molten/trail/courier_trail_lava.vpcf"
+				"EffectAttachType"	"follow_origin"
 
 				"ThinkInterval"	"0.1"
 				"OnIntervalThink"
