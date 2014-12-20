@@ -524,7 +524,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_percent"		"100" // Change to something else later
+				"damage_percent"		"60" // Change to something else later
 			}
 		}
 
@@ -722,7 +722,7 @@
 				{
 				"Passive"	"1"
 				"Aura"        "affix_provoker_buff"
-        		"Aura_Radius" "900"
+        		"Aura_Radius" "400"
         		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
         		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"

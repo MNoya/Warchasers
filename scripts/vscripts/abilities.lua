@@ -16,7 +16,7 @@ function warchasers_tb_miniboss_animate_dead( event )
 	local owner = event.caster
 	local team_id = event.caster:GetTeamNumber()
 	for number, unit in pairs(event.target_entities) do
-		if unit:IsAlive() == false then
+		if unit:IsAlive() == false and unit.no_resurrect ~= true then
 			unit:SetOwner(owner)
 			unit:SetTeam(team_id)
 			unit:RespawnUnit()
@@ -192,7 +192,7 @@ function warchasers_muhrah_animate_dead_ini( event )
 	local number_of_resurrections = 0
 	local resurrections_limit = event.ability:GetLevelSpecialValueFor( "resurrections_limit", (event.ability:GetLevel() - 1))
 	for number, unit in pairs(event.target_entities) do
-		if unit:IsAlive() == false and number_of_resurrections < resurrections_limit then
+		if unit:IsAlive() == false and number_of_resurrections < resurrections_limit and unit.no_resurrect ~= true then
 			unit:SetOwner(owner)
 			unit:SetTeam(team_id)
 			unit:RespawnUnit()
@@ -855,8 +855,12 @@ function affix_berserker_ondamage( event )
 end
 
 function affix_provoker_func( event )
-	if event.attacker:GetAttackTarget() ~= event.caster then
-		event.attacker:MoveToTargetToAttack(event.caster)
+	if event.caster:IsAlive() == true then
+		if event.attacker:GetAttackTarget() ~= event.caster then
+			event.attacker:MoveToTargetToAttack(event.caster)
+		end
+	else
+		event.target:RemoveModifierByNameAndCaster("affix_provoker_buff", event.caster)
 	end
 end
 
@@ -877,9 +881,6 @@ end
 
 
 function illusionist_think( event )
-	
-
-
 	if event.caster:GetAttackTarget() ~= nil and event.ability:IsCooldownReady() == true and event.caster:IsHero() == false and event.caster:IsIllusion() == false then 
 		local unit_name = event.caster:GetUnitName() 
 		local origin = event.caster:GetAbsOrigin() 
@@ -889,7 +890,19 @@ function illusionist_think( event )
 			illusion:AddNewModifier(event.caster, nil, "modifier_illusion", nil)
 			event.ability:ApplyDataDrivenModifier(event.caster, illusion, "affix_illusionist_illusion", nil)
 			illusion.initial_neutral_position = origin
-		
+			illusion.no_resurrect = true
+			
+
+			local i = 0
+			local ability_name
+			if illusion:GetAbilityByIndex(0) ~= nil then
+				repeat
+					ability_name = illusion:GetAbilityByIndex(i):GetAbilityName() 
+					illusion:RemoveAbility(ability_name)
+					i = i + 1
+				until illusion:GetAbilityByIndex(i) == nil
+			end
+
 		event.ability:StartCooldown(4)
 
 

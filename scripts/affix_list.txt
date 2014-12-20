@@ -36,6 +36,36 @@
     "level_limit"   "3"
     "range_melee_type"    "melee"
     }
+"affix_blood_freezer"
+    {
+    "level_limit"   "4"
+    "range_melee_type"    "any"
+    }
+"affix_berserker"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+"affix_provoker"
+    {
+    "level_limit"   "5"
+    "range_melee_type"    "any"
+    }
+"affix_illusionist"
+    {
+    "level_limit"   "2"
+    "range_melee_type"    "any"
+    }
+"affix_jailer"
+    {
+    "level_limit"   "5"
+    "range_melee_type"    "any"
+    }
+"affix_reflect_damage"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
 
 
 	
