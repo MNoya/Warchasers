@@ -121,7 +121,7 @@
 	"affix_avenger"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_avenger"
+		"AbilityTextureName"			"affix_avenger"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -180,7 +180,7 @@
 	"affix_extra_health"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_extra_health"
+		"AbilityTextureName"			"affix_extra_health"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -226,7 +226,7 @@
 	"affix_fast"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_fast"
+		"AbilityTextureName"			"affix_fast"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -274,7 +274,7 @@
 	"affix_electrified"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_electrified"
+		"AbilityTextureName"			"affix_electrified"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilityDamage"					"10 20 30"
@@ -345,7 +345,7 @@
 	"affix_knockback"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_knockback"
+		"AbilityTextureName"			"affix_knockback"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -429,7 +429,7 @@
 	"affix_nightmarish"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_nightmarish"
+		"AbilityTextureName"			"affix_nightmarish"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -515,7 +515,7 @@
 	"affix_reflect_damage"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_reflect_damage"
+		"AbilityTextureName"			"affix_reflect_damage"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -559,7 +559,7 @@
 	"affix_vampiric"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_vampiric"
+		"AbilityTextureName"			"affix_vampiric"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -937,10 +937,10 @@
 	//Implementation: CreateThinker with jakiro lava that does damage OnThinkInterval
 	// TODO: AI
 
-	"creep_desecrator"
+	"affix_desecrator"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_desecrator"
+		"AbilityTextureName"			"affix_desecrator"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
 		"AbilityCastRange"				"800"
@@ -1044,10 +1044,10 @@
 	// These are damaging to any player, pet, or follower this hit and more dangerous still is their freezing effect, which leaves the frozen target helpless and motionless for a short duration.
 	// Implementation: OnOwnerDied CreateThinker OnCreated DelayedAction Explosion+Damage
 
-	"creep_frozen"
+	"affix_frozen"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"creep_frozen"
+		"AbilityTextureName"			"affix_frozen"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
 		"AbilityCastRange"				"800"
@@ -1164,7 +1164,7 @@
 	"affix_molten"
 		{
 		"BaseClass"						"ability_datadriven"
-
+		"AbilityTextureName"			"affix_molten"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 
