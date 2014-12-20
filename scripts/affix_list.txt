@@ -5,21 +5,37 @@
 //disable - strong stuns only can spawn several times to prevent perma stun
 //defense - strong defensive abilities only one per group
 //aggresive - no limit
+//level_limit - no unit bellow this level cant get this affix
+//range_melee_type - any, melee, range
 
-"defense"
+"affix_avenger"
     {
-    "affix_avenger" "1"
+    "level_limit"   "6"
+    "range_melee_type"    "any"
     }
-"aggresive"
-    {
-    "affix_extra_health" "1"
-    "affix_fast"         "1"
-    "affix_electrified"  "1"
-    }
- "disable"
-    {
 
-    }   
+"affix_extra_health"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+
+"affix_fast"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+
+"affix_electrified"
+    {
+    "level_limit"   "5"
+    "range_melee_type"    "melee"
+    }
+"affix_assaulter"
+    {
+    "level_limit"   "3"
+    "range_melee_type"    "melee"
+    }
 
 
 	

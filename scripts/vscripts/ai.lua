@@ -1,41 +1,32 @@
 print("AI is loading")
 
 affix_table = {}
-
+affix_keyvalues = LoadKeyValues("scripts/affix_list.txt")
 affix_names = {}
 
-affix_count = 0
 
-function affix_list()
-	local affix_txt = LoadKeyValues("scripts/affix_list.txt")
-	--defense affixes
-	for key, value in pairs(affix_txt.defense) do
-		table.insert( affix_names, key)
-		affix_count = affix_count + 1
+
+function affix_list(unit)
+	local unit_level = unit:GetLevel() 
+	local affix_count = 0 
+	local random_table = {}
+	local range_type
+	if unit:IsRangedAttacker() == true then
+		range_type = "ranged"
+	else
+		range_type = "melee"
 	end
-	--aggresive affixes
-	for key, value in pairs(affix_txt.aggresive) do
-		table.insert( affix_names, key)
-		affix_count = affix_count + 1
+
+	for key, value in pairs(affix_keyvalues) do
+		
+		if value.level_limit <= unit_level and (value.range_melee_type == "any" or value.range_melee_type == range_type) then
+			table.insert( random_table, key)
+			affix_count = affix_count + 1
+		end
 	end
-	--disable affixes
-	for key, value in pairs(affix_txt.disable) do
-		table.insert( affix_names, key)
-		affix_count = affix_count + 1
-	end
-	print("Affixes generated")
+	
+	return random_table[math.random(affix_count)]
 end
-
-
-affix_list()
-
-
-
-
-
-
-
-
 
 
 
@@ -58,7 +49,7 @@ function affix( unit)
 	end
 
 	if affix_to_set == nil then
-		affix_to_set = affix_selector()
+		affix_to_set = affix_list(unit)
 		affix_table[unit_name] = affix_to_set
 	end
 
@@ -105,7 +96,10 @@ function log_npc( event )
 	end
 end
 
-ListenToGameEvent( "npc_spawned", log_npc, nil )
+if log_npc_loaded == nil then
+	ListenToGameEvent( "npc_spawned", log_npc, nil )
+	log_npc_loaded = true
+end
 
 function physical_ehp( unit )
 	return unit:GetHealth() * ((0.06 * unit:GetPhysicalArmorValue()) / (1 + 0.06 * unit:GetPhysicalArmorValue()))
