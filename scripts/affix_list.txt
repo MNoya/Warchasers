@@ -51,11 +51,11 @@
     "level_limit"   "5"
     "range_melee_type"    "any"
     }
-"affix_illusionist"
-    {
-    "level_limit"   "2"
-    "range_melee_type"    "any"
-    }
+//"affix_illusionist"
+//    {
+//    "level_limit"   "2"
+//    "range_melee_type"    "any"
+//    }
 "affix_jailer"
     {
     "level_limit"   "5"

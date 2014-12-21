@@ -3,14 +3,23 @@ print("AI is loading")
 affix_table = {}
 affix_keyvalues = LoadKeyValues("scripts/affix_list.txt")
 affix_names = {}
+pre_dificulty_creeps = {}
 
+
+function add_affixes_to_pre_dificulty_creeps()
+	for key, value in pairs(pre_dificulty_creeps) do
+		affix(EntIndexToHScript(value))
+	end
+end
 
 
 function affix_list(unit)
 	local unit_level = unit:GetLevel() 
+	local unit_name = unit:GetUnitName()
 	local affix_count = 0 
 	local random_table = {}
 	local range_type
+	local number_of_affixes = tonumber(GameRules.DIFFICULTY)
 	if unit:IsRangedAttacker() == true then
 		range_type = "ranged"
 	else
@@ -18,45 +27,45 @@ function affix_list(unit)
 	end
 
 	for key, value in pairs(affix_keyvalues) do
-		
 		if value.level_limit <= unit_level and (value.range_melee_type == "any" or value.range_melee_type == range_type) then
 			table.insert( random_table, key)
 			affix_count = affix_count + 1
 		end
 	end
 	
-	return random_table[math.random(affix_count)]
+
+	for i = 1, number_of_affixes do
+		local random = math.random(affix_count)
+		local ability_name = random_table[random]
+
+		unit:AddAbility(ability_name)
+		unit:FindAbilityByName(ability_name):SetLevel(1)
+
+		table.remove(random_table , random)
+
+		affix_count = affix_count - 1
+		if affix_table[unit_name] == nil then
+			affix_table[unit_name] = {}
+		end
+		table.insert(affix_table[unit_name], ability_name)
+	end
 end
 
-
-
-function affix_selector()
-	return affix_names[math.random(affix_count)]
-end
 
 
 function affix( unit)
-	
-	local affix_to_set = nil
-
-	local unit_name = unit:GetUnitName() 
-
-	for key, value in pairs(affix_table) do
-		if unit_name == key then
-			affix_to_set = value
-
+	if GameRules.DIFFICULTY >= 1 then
+		local affix_to_set = nil
+		local unit_name = unit:GetUnitName() 
+		if affix_table[unit_name] == nil then
+			affix_list(unit)
+		else
+			for key, value in pairs(affix_table[unit_name]) do
+				unit:AddAbility(value)
+				unit:FindAbilityByName(value):SetLevel(1)
+			end
 		end
 	end
-
-	if affix_to_set == nil then
-		affix_to_set = affix_list(unit)
-		affix_table[unit_name] = affix_to_set
-	end
-
-	unit:AddAbility(affix_to_set)
-	unit:FindAbilityByName(affix_to_set):SetLevel(1)
-
-
 end
 
 
@@ -67,7 +76,7 @@ function log_npc( event )
 		print("Index: "..index.." Name: "..unit:GetUnitName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
 	end
 
-	if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
+	if unit:GetTeam() == DOTA_TEAM_NEUTRALS and unit.AddAbility ~= nil and unit.GetInvulnCount == nil then
 		if unit.initial_neutral_position == nil then
 			unit.initial_neutral_position = unit:GetAbsOrigin()
 		end
@@ -87,9 +96,11 @@ function log_npc( event )
 			, 5) 
 
 
-		affix(unit)
-
-
+		if difficulty_selected == true then
+			affix(unit)
+		else
+			table.insert(pre_dificulty_creeps, unit:GetEntityIndex() )
+		end
 	else
 
 

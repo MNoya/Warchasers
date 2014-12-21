@@ -1329,8 +1329,10 @@ function Warchasers:OnEveryoneVoted(difficulty_level)
     GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 
     -- Set the difficulty here.
-    GameRules.DIFFICULTY = difficulty_level
 
+    GameRules.DIFFICULTY = difficulty_level
+    difficulty_selected = true
+    add_affixes_to_pre_dificulty_creeps()
     -- Change this to the proper strings later
     if difficulty_level == 0 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>Classic</font>", 0, 0)
