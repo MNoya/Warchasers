@@ -31,6 +31,7 @@
     "level_limit"   "5"
     "range_melee_type"    "melee"
     }
+
 "affix_assaulter"
     {
     "level_limit"   "3"
@@ -68,6 +69,72 @@
     }
 
 
-	
+////
+
+"affix_knockback"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_nightmarish"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_vampiric"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_shield_bearer"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_hurricaner"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_desecrator"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_frozen"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_molten"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_plagued"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+affix_shielding
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+affix_thunderstorm
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
 	
 }

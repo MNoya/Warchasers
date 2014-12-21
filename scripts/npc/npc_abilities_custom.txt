@@ -239,7 +239,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_speed_bonus"		"40"
+				"move_speed_bonus"		"200"
 			}
 		}
 
@@ -277,7 +277,7 @@
 		"AbilityTextureName"			"affix_electrified"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"AbilityDamage"					"10 20 30"
+		"AbilityDamage"					"10"
 
 		"AbilitySpecial"
 		{
@@ -353,7 +353,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"100" // Change to 10 later
+				"chance"				"10"
 			}
 			"02"
 			{
@@ -437,7 +437,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"100" // Change to 10 later
+				"chance"				"10"
 			}
 			"02"
 			{
@@ -524,7 +524,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_percent"		"60" // Change to something else later
+				"damage_percent"		"10"
 			}
 		}
 
