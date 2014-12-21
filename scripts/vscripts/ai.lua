@@ -4,6 +4,7 @@ affix_table = {}
 affix_keyvalues = LoadKeyValues("scripts/affix_list.txt")
 affix_names = {}
 pre_dificulty_creeps = {}
+affix_creeps_keyvalue = LoadKeyValues("scripts/creep_list.txt")
 
 
 function add_affixes_to_pre_dificulty_creeps()
@@ -95,11 +96,12 @@ function log_npc( event )
 			end
 			, 5) 
 
-
-		if difficulty_selected == true then
-			affix(unit)
-		else
-			table.insert(pre_dificulty_creeps, unit:GetEntityIndex() )
+		if affix_creeps_keyvalue[unit:GetUnitName()] == 1 then
+			if GameRules.difficulty_selected == true then
+				affix(unit)
+			else
+				table.insert(pre_dificulty_creeps, unit:GetEntityIndex() )
+			end
 		end
 	else
 

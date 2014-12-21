@@ -1331,7 +1331,7 @@ function Warchasers:OnEveryoneVoted(difficulty_level)
     -- Set the difficulty here.
 
     GameRules.DIFFICULTY = difficulty_level
-    difficulty_selected = true
+    GameRules.difficulty_selected = true
     add_affixes_to_pre_dificulty_creeps()
     -- Change this to the proper strings later
     if difficulty_level == 0 then
