@@ -652,6 +652,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_blood_freezer"
 
 		"Modifiers"
 			{
@@ -678,6 +679,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_berserker"
 
 		"Modifiers"
 			{
@@ -715,6 +717,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_provoker"
 
 		"Modifiers"
 			{
@@ -746,6 +749,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_shield_bearer"
 
 		"Modifiers"
 			{
@@ -791,6 +795,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_illusionist"
 
 		"Modifiers"	
 			{
@@ -837,6 +842,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"affix_jailer"
 		
 		"AbilityCooldown"	"14"
 
@@ -895,6 +901,7 @@
 		{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"affix_hurricaner"
 
 		"Modifiers"
 			{
