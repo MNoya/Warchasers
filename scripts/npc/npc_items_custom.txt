@@ -4008,6 +4008,51 @@
 		}		
 	}
 
+	"item_hammer_of_might"
+	{
+		"ID"							"1135"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_hammer_of_might"
+
+		"Model"							"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+		"Effect" 						"particles/econ/items/faceless_void/faceless_void_weapon_voidhammer/faceless_void_weapon_voidhammer.vpcf"
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"DropItemOnDeath"
+			}
+		}
+	}
+
+	"item_machinegun" //find a name
+	{
+		"ID"							"1136"
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_machinegun"
+
+		"Model"							"models/items/sniper/machine_gun_charlie/machine_gun_charlie.vmdl"
+		"Effect" 						"particles/units/heroes/hero_sniper/sniper_shrapnel.vpcf"
+		
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items.lua"
+				"Function"				"DropItemOnDeath"
+			}
+		}
+	}
 
 
 

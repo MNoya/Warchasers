@@ -120,7 +120,9 @@
     {
         //Shop 2
         "item" "item_inferno_stone"
-        "item" "item_spell_immunity"
+        //"item" "item_spell_immunity"  //REMOVED
+        "item" "item_hammer_of_might"   //NEW
+        "item" "item_machinegun"        //NEW
         "item" "item_battle_drums"
         "item" "item_restoration_scroll"
         "item" "item_claws_9"
