@@ -941,7 +941,7 @@
 	//Desecrator: Desecrators create an orange-colored "glowing void zone" beneath the feet of a character. These function like small Firewalls, dealing damage to any character who stands in them.
 	//The void zones take a second or so to come into effect, giving a visual warning so players have time to move, assuming they are not blocked in by modifiers like Waller or Jailer.
 	//The Desecrated pools remain in place for 12 seconds, and during battles with minions all casting Desecration, entire screens can be come virtually impassable due to the pits of damage.
-	//Implementation: CreateThinker with jakiro lava that does damage OnThinkInterval
+	//Implementation: CreateThinker with jakiro lava that does damage OnIntervalThink
 	// TODO: AI
 
 	"affix_desecrator"
@@ -1212,6 +1212,7 @@
 			"particle" "particles/warchasers/molten/trail/courier_trail_lava.vpcf"
 			"particle"	"particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf"
 			"particle"	"particles/warchasers/molten/batrider_flamebreak_explosion.vpcf"
+			"soundfile"	"medusa"
 		}
 
 
@@ -1257,8 +1258,232 @@
 			}
 		}
 
+	"affix_plagued"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"affix_plagued"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"0"
+		"AoERadius"						"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"		"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"100"
+			}
+		}
+
+		"precache"
+		{
+			"particle" "particles/warchasers/plagued/venomancer_poison_nova.vpcf"
+			"particle" "particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities.lua"
+				"Function"			"PlaguedPool"
+				"Target"			"POINT"
+			}
+		}
+
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities.lua"
+				"Function"			"RemovePlaguedPools"
+			}
+		}
+
+		"Modifiers"
+		{
+			"plagued_dummy_aura"
+			{
+				"Aura"					"plagued_pool"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Aura_ApplyToCaster"	"0"
+			}
+
+			"plagued_pool"
+			{
+				"IsHidden"				"0"
+				"IsDebuff"				"1"
+				"ThinkInterval"			"1"
+				"OnIntervalThink"
+		    	{
+		        	"Damage"
+					{
+						"Type"          "DAMAGE_TYPE_MAGICAL"
+						"Damage"        "%damage_per_second"
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						}
+					}
+		    	}
+			}
+		}
+	}
 
 
+	"affix_shielding"
+	{
+		"BaseClass" 					"ability_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"    		"affix_shielding"
+
+		"AbilityCooldown"				"10"
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"				"particles/warchasers/shielding/medusa_mana_shield.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"absorb"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{	
+				"EffectName"		"Hero_Medusa.ManaShield.On"
+				"Target"			"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" "modifier_shielding"
+				"Target"		"CASTER"
+			}
+		}		
+
+		"Modifiers"
+		{
+			"modifier_shielding"
+			{
+				"Duration"			"%duration"
+				"EffectName"		"particles/warchasers/shielding/medusa_mana_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"		"%absorb"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%absorb"
+				}
+			}
+		}
+	}
+
+	"affix_thunderstorm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"affix_thunderstorm"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AOERadius"						"400"		
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+    	"AbilityDamage"                 "100"
+
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+
+    		"particle"  "particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+       		"particle"	"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+    		"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
+    		"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+    		"particle"	"particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf"
+    		"soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+    	}
+
+    	"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"100"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Zuus.StaticField"
+				"Target" 			"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities.lua"
+				"Function"		"Thunderstorm"
+				"Target"		"POINT"
+			}
+			"CreateThinker"
+			{
+				"ModifierName"	"storm_thinker"
+				"Target" 		"POINT"
+			}
+		}
+		"Modifiers"
+		{
+			"storm_thinker"
+			{
+				"IsHidden"		"1"
+				"Duration"		"4"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"Target" 			"TARGET"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+				}
+			}
+		}
+	}
 
 
 
@@ -1459,7 +1684,7 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%move_speed_slow"
 				}
 				"ThinkInterval"	"3"
-				"OnThinkInterval"
+				"OnIntervalThink"
 				{
 					"Damage"
 					{

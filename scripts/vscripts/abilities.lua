@@ -933,3 +933,84 @@ function hurricaner_think( event )
 		event.target:SetModifierStackCount("affix_hurricaner_debuff", event.ability, 0)
 	end
 end
+
+function PlaguedPool( event )
+	local point = event.target_points[1]
+	local caster = event.caster
+	local radius = event.ability:GetSpecialValueFor("radius")
+
+	print("Creating Plagued Pool")
+
+	local dummy = CreateUnitByName("dummy_unit", point, false, caster, caster, caster:GetTeam())
+	local target = dummy:GetAbsOrigin()
+
+	local particle = ParticleManager:CreateParticle("particles/warchasers/plagued/venomancer_poison_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+	ParticleManager:SetParticleControl(particle, 0, target)
+	ParticleManager:SetParticleControl(particle, 1, Vector(radius/2,1,radius/2))
+
+	local particle1 = ParticleManager:CreateParticle("particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+	ParticleManager:SetParticleControl(particle1, 0, target)
+	ParticleManager:SetParticleControl(particle1, 1, Vector(radius/2,1,1))
+	ParticleManager:SetParticleControl(particle1, 15, Vector(100,255,0)) --color
+	ParticleManager:SetParticleControl(particle1, 16, Vector(100,255,0))
+
+	event.ability:ApplyDataDrivenModifier(event.caster, dummy, "plagued_dummy_aura", nil)
+  
+	if caster.pools == nil then
+		caster.pools = {}
+		table.insert(caster.pools,dummy)
+	else
+		table.insert(caster.pools,dummy)
+	end
+
+end
+
+function RemovePlaguedPools( event )
+	if event.caster.pools ~= nil then
+		for _,v in pairs(event.caster.pools) do
+			v:RemoveSelf()
+			-- this should also kill the particles
+		end
+	end
+
+end
+
+function Thunderstorm( event )
+	local target = event.target_points[1]
+    local radius = event.ability:GetSpecialValueFor("radius")
+   	local damage = event.ability:GetAbilityDamage()
+
+    local dummy = CreateUnitByName("dummy_unit", target, false, event.caster, event.caster, event.caster:GetTeam())
+
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
+    ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle, 2, dummy:GetAbsOrigin())
+
+    for i=1,4 do
+    	Timers:CreateTimer(i, function() 
+
+		     	local lightning_type = RandomInt(1,3)
+                local particle
+                if lightning_type == 1 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, dummy)
+                elseif lightning_type == 2 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
+                elseif lightning_type == 3 then
+                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf", PATTACH_WORLDORIGIN, dummy)
+                end
+                --shared control points for all the different lightnings
+                ParticleManager:SetParticleControl(particle, 0, Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,1000)) -- height of the bolt
+                ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin()) -- point landing
+                ParticleManager:SetParticleControl(particle, 2, dummy:GetAbsOrigin()) -- point origin  
+
+		    enemies = FindUnitsInRadius(event.caster:GetTeamNumber(), target,  nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+
+		    for _,enemy in pairs(enemies) do
+		    	ApplyDamage({ victim = enemy, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })    
+		    end
+    	end)
+    end
+    --[[local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", PATTACH_OVERHEAD_FOLLOW, dummy)
+    ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin())]]
+end
