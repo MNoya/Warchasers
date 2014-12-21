@@ -12,6 +12,21 @@
     	"camera_lock_on"                    "Camera Lock ON"
     	"camera_lock_off"                    "Camera Lock OFF"
 
+		"select_difficulty"				"Select Difficulty"
+		"difficulty0"                    "Classic"
+		"difficulty1"                    "Hard"
+		"difficulty2"                    "Heavy"
+		"difficulty3"                    "Metal"
+		"difficulty4"                    "Crazy"
+		
+		"difficulty0_text"				"The Classic Difficulty"
+		"difficulty1_text"				"1 Affix"
+		"difficulty2_text"				"2 Affix"
+		"difficulty3_text"				"3 Affix"
+		"difficulty4_text"				"4 Affix"
+		
+		"vote_difficulty"				"VOTE DIFFICULTY"
+		
 		"HeavenQuestTimer"					"Rest your weary vessels"
 		"HellQuestTimer"					"Survive for %quest_current_value% seconds"
 		

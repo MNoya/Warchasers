@@ -123,6 +123,10 @@ function Warchasers:InitGameMode()
 
 	GameRules.CURRENT_SOUNDTRACK = 0
 
+	GameRules.PLAYER_VOTES = {}
+	GameRules.DIFFICULTY = 0
+
+
     -- Remove building invulnerability
     print("Make buildings vulnerable")
     local allBuildings = Entities:FindAllByClassname('npc_dota_building')
@@ -1276,4 +1280,67 @@ end
 function Warchasers:TestTank()
 	local hero = PlayerResource:GetSelectedHeroEntity(0)
 	TeleporterTanksStart()
+end
+
+
+
+
+
+
+-- register the 'PlayerVotedDifficulty' command in our console
+Convars:RegisterCommand( "PlayerVotedDifficulty", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, register the vote
+        return Warchasers:UpdateVotes( cmdPlayer , p)
+    end
+end, "A player voted a difficulty", 0 )
+
+function Warchasers:UpdateVotes( player, difficulty )
+    
+    --get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local hero = player:GetAssignedHero()
+
+	table.insert(GameRules.PLAYER_VOTES,difficulty)
+	print("========VOTE TABLE========")
+	DeepPrintTable(GameRules.PLAYER_VOTES)
+	print("==========================")
+
+  	local difficulty_level = 0
+    for k,v in pairs(GameRules.PLAYER_VOTES) do
+    	difficulty_level = difficulty_level + v
+    end
+
+    difficulty_level = difficulty_level / #GameRules.PLAYER_VOTES
+    print("Average: " ..difficulty_level)
+    difficulty_level = math.floor(difficulty_level+0.5)
+    print("Rounded difficulty: ".. difficulty_level)
+
+    if (#GameRules.PLAYER_VOTES==GameRules.PLAYER_COUNT) then
+    	Warchasers:OnEveryoneVoted(difficulty_level)
+    end
+end
+
+function Warchasers:OnEveryoneVoted(difficulty_level)
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+
+    -- Set the difficulty here.
+    GameRules.DIFFICULTY = difficulty_level
+
+    -- Change this to the proper strings later
+    if difficulty_level == 0 then
+    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>Classic</font>", 0, 0)
+    elseif difficulty_level == 1 then
+    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>1</font>", 0, 0)
+    elseif difficulty_level == 2 then
+    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>2</font>", 0, 0)
+    elseif difficulty_level == 3 then
+    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>3</font>", 0, 0)
+    elseif difficulty_level == 4 then
+    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>4</font>", 0, 0)
+    end
 end
