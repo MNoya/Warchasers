@@ -195,7 +195,6 @@
 		"precache"
 		{
 			"particle"	"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
-			"particle"	"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf"
 		}
 
 		"Modifiers"
@@ -206,7 +205,7 @@
 				"IsHidden"	"1"
 
 				//unnecessary effect, might remove later
-				"EffectName"		"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf" //"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+				"EffectName"		"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"OnCreated"
 				{
@@ -223,6 +222,7 @@
 	//Fast: Fast monsters get a 40% bonus to their movement speed, as well as a 20% bonus to attack speed and a 10% bonus to casting speed
 	//Implementation: Remove casting speed. Apply a simple MS and AS modifier	
 
+	// TODO: Make it 650 MS
 	"affix_fast"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -295,7 +295,7 @@
 
 		"precache"
 		{
-			"particle"	"particles/warchasers/test_particles/puck_electrified.vpcf"
+			"particle"	"particles/warchasers/electrified/electrified.vpcf"
 			"particle"	"particles/status_fx/status_effect_electrical.vpcf"
 		}
 		
@@ -329,10 +329,10 @@
 				"Target"		"TARGET"
 			}
 
-			//"FireEffect"
-			//{
-				//Lightning
-			//}
+			"FireEffect"
+			{
+				
+			}
 		}
 	}
 
@@ -449,7 +449,7 @@
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
-			"particle"	"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+			"particle"	"particles/warchasers/nightmarish/axe_battle_hunger.vpcf"
 			"particle"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
 		}
 		
@@ -491,7 +491,7 @@
 				"StatusEffectName"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
 				"StatusEffectPriority"	"10"
 
-				"EffectName"		"particles/warchasers/nightmarish.vpcf"
+				"EffectName"		"particles/warchasers/nightmarish/axe_battle_hunger.vpcf"
 				"EffectAttachType"	"follow_overhead"
 				"States"
 				{
@@ -948,6 +948,7 @@
 		"AbilityCooldown"				"0"
 		"AbilityDuration"               "12"
 		"AbilityDamage"					"50"
+		"AoERadius"						"150"
 
 		"AbilitySpecial"
 		{
@@ -959,13 +960,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"200"
+				"radius"			"150"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"delay"				"1"
 			}
 		}
 
 		"precache"
 		{
-			"particle" "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+			"particle" "particles/warchasers/desecrator/jakiro_macropyre.vpcf"
 			"particle" "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
 		}
 
@@ -991,32 +997,10 @@
 						"Target" 			"TARGET"
 					}
 
-					"AttachEffect"
+					"RunScript"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						"ControlPoints"
-						{
-							"00" "0 0 0"
-							"01" "200 0 0"
-							"02" "8 0 1" // telegraph
-							"03" "200 0 0"
-							"04" "0 0 0"
-						}
-					}
-
-					"DelayedAction"
-					{
-						"Delay"	"1"
-						"Action"
-						{
-							"RunScript"
-							{
-								"ScriptFile"		"abilities.lua"
-								"Function"			"DesecrationParticles"
-							}
-						}
+						"ScriptFile"		"abilities.lua"
+						"Function"			"DesecrationParticles"
 					}	
 				}
 
@@ -1141,6 +1125,30 @@
 				}
 			}
 
+			"frozen_dummy_aura"
+			{
+				"Aura"					"frozen_aura_debuff"
+				"Aura_Radius"			"%explosion_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Aura_ApplyToCaster"	"0"
+			}
+
+			//Slows a bit while in the radius
+			"frozen_aura_debuff"
+			{
+				"IsHidden"	        "0"
+				"IsDebuff"	        "1"
+				"EffectName"		"particles/units/heroes/hero_invoker/invoker_cold_snap_status.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	    "-25"
+				}
+
+			}
+
 			"modifier_stunned"
 			{
 				"IsHidden"	        "0"
@@ -1183,10 +1191,9 @@
 			"03"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"trail_aoe"				"100"
+				"trail_aoe"				"40"
 				}
-
-			"03"
+			"04"
 				{
 				"var_type"				"FIELD_INTEGER"
 				"explosion_radius"		"200"
@@ -1196,6 +1203,8 @@
 		"precache"
 		{
 			"particle" "particles/warchasers/molten/trail/courier_trail_lava.vpcf"
+			"particle"	"particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf"
+			"particle"	"particles/warchasers/molten/batrider_flamebreak_explosion.vpcf"
 		}
 
 

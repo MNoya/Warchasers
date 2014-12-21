@@ -583,12 +583,18 @@ end
 
 function DesecrationParticles(event)
 	local duration = event.ability:GetSpecialValueFor("duration")
-
+	local delay = event.ability:GetSpecialValueFor("delay") 
 	local target = event.target:GetAbsOrigin()
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+
+	local particle = ParticleManager:CreateParticle("particles/econ/items/warlock/warlock_staff_hellborn/warlock_upheaval_hellborn_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 	ParticleManager:SetParticleControl(particle, 0, target) -- origin
-	ParticleManager:SetParticleControl(particle, 1, target) -- origin
-    ParticleManager:SetParticleControl(particle, 2, Vector(12,0,0)) -- duration
+
+	Timers:CreateTimer(delay,function() 
+		local particle2 = ParticleManager:CreateParticle("particles/warchasers/desecrator/jakiro_macropyre.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+		ParticleManager:SetParticleControl(particle2, 0, target) -- origin
+		ParticleManager:SetParticleControl(particle2, 1, target) -- origin
+	    ParticleManager:SetParticleControl(particle2, 2, Vector(12,0,0)) -- duration
+	end)
 end
 
 function ExtraHealth(event)
@@ -620,8 +626,7 @@ function ElectrifiedSparks(event)
 		point = (caster:GetAbsOrigin()+Vector(RandomInt(-1000,1000),RandomInt(-1000,1000),RandomInt(-1000,1000)))
 			    
 	  local info = {
-	  	-- FIX PARTICLE GOING TO THE ROOF
-	    EffectName = "particles/warchasers/test_particles/puck_electrified.vpcf",
+	    EffectName = "particles/warchasers/electrified/electrified.vpcf",
 	    Ability = ability,
 	    vSpawnOrigin = caster:GetAbsOrigin(),
 	    fDistance = 1000,
@@ -659,6 +664,9 @@ function FrozenStart( event )
 	local dummy = CreateUnitByName("dummy_unit", event.target:GetAbsOrigin(), false, event.target, event.target, event.target:GetTeam())
 	local target = dummy:GetAbsOrigin()
 	local particle = ParticleManager:CreateParticle("particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf", PATTACH_OVERHEAD_FOLLOW, event.target)
+
+	event.ability:ApplyDataDrivenModifier(event.caster, dummy, "frozen_dummy_aura", nil)
+
 	ParticleManager:SetParticleControl(particle, 0, target)
 	ParticleManager:SetParticleControl(particle, 1, target)
   
@@ -688,6 +696,7 @@ function FrozenStart( event )
 		ParticleManager:SetParticleControl(particle5, 1, target)
 		ParticleManager:SetParticleControl(particle5, 2, target)
 		ParticleManager:SetParticleControl(particle5, 3, target)
+		dummy:RemoveSelf()
 	end)
 end
 
