@@ -289,8 +289,171 @@
 		"DOTA_Tooltip_ability_tornado_passive_radius"                                     "RADIUS:"
 		"DOTA_Tooltip_ability_tornado_passive_air_duration"                               "AIR DURATION:"
 		"DOTA_Tooltip_ability_tornado_passive_dps_to_buildings"                           "DPS TO BUILDINGS:"
+		
+		"DOTA_Tooltip_ability_creep_kaboom"                                               "Kaboom"
+		"DOTA_Tooltip_ability_creep_kaboom_Description"                                   ""
+		"DOTA_Tooltip_ability_creep_kaboom_Note0"                                         ""
+		"DOTA_Tooltip_ability_creep_kaboom_Lore"                                          ""
+		"DOTA_Tooltip_ability_creep_kaboom_small_radius"                                  "SMALL RADIUS:"
+		"DOTA_Tooltip_ability_creep_kaboom_big_radius"                                    "BIG RADIUS:"
+		"DOTA_Tooltip_ability_creep_kaboom_damage"                                        "DAMAGE:"
+		"DOTA_Tooltip_ability_creep_kaboom_partial_damage"                                "PARTIAL DAMAGE:"		
+		
+		// AFFIXES	
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_affix_avenger"                                              "Avenger"
+		"DOTA_Tooltip_ability_affix_avenger_Description"                                  ""
+		"DOTA_Tooltip_ability_affix_avenger_Note0"                                        ""
+		"DOTA_Tooltip_ability_affix_avenger_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_avenger_attack_speed_bonus"                           "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_affix_avenger_move_speed_bonus"                             "MOVE SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_affix_extra_health"                                         "Extra Health"
+		"DOTA_Tooltip_ability_affix_extra_health_Description"                             ""
+		"DOTA_Tooltip_ability_affix_extra_health_Note0"                                   ""
+		"DOTA_Tooltip_ability_affix_extra_health_Lore"                                    ""
+		"DOTA_Tooltip_ability_affix_extra_health_health_bonus_percentage"                 "HEALTH BONUS PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_affix_fast"                                                 "Fast"
+		"DOTA_Tooltip_ability_affix_fast_Description"                                     ""
+		"DOTA_Tooltip_ability_affix_fast_Note0"                                           ""
+		"DOTA_Tooltip_ability_affix_fast_Lore"                                            ""
+		"DOTA_Tooltip_ability_affix_fast_attack_speed_bonus"                              "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_affix_fast_move_speed_bonus"                                "MOVE SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_affix_electrified"                                          "Electrified"
+		"DOTA_Tooltip_ability_affix_electrified_Description"                              ""
+		"DOTA_Tooltip_ability_affix_electrified_Note0"                                    ""
+		"DOTA_Tooltip_ability_affix_electrified_Lore"                                     ""
+		"DOTA_Tooltip_ability_affix_electrified_min_bolts_per_attack"                     "MIN BOLTS PER ATTACK:"
+		"DOTA_Tooltip_ability_affix_electrified_max_bolts_per_attack"                     "MAX BOLTS PER ATTACK:"
+
+		"DOTA_Tooltip_ability_affix_knockback"                                            "Knockback"
+		"DOTA_Tooltip_ability_affix_knockback_Description"                                ""
+		"DOTA_Tooltip_ability_affix_knockback_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_knockback_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_knockback_chance"                                     "CHANCE:"
+		"DOTA_Tooltip_ability_affix_knockback_slow_duration"                              "SLOW DURATION:"
+		"DOTA_Tooltip_ability_affix_knockback_slow_percentage"                            "SLOW PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_affix_nightmarish"                                          "Nightmarish"
+		"DOTA_Tooltip_ability_affix_nightmarish_Description"                              ""
+		"DOTA_Tooltip_ability_affix_nightmarish_Note0"                                    ""
+		"DOTA_Tooltip_ability_affix_nightmarish_Lore"                                     ""
+		"DOTA_Tooltip_ability_affix_nightmarish_chance"                                   "CHANCE:"
+		"DOTA_Tooltip_ability_affix_nightmarish_fear_duration"                            "FEAR DURATION:"
+
+		"DOTA_Tooltip_ability_affix_reflect_damage"                                       "Reflect Damage"
+		"DOTA_Tooltip_ability_affix_reflect_damage_Description"                           ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_Note0"                                 ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_Lore"                                  ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_damage_percent"                        "DAMAGE PERCENT:"
+
+		"DOTA_Tooltip_ability_affix_vampiric"                                             "Vampiric"
+		"DOTA_Tooltip_ability_affix_vampiric_Description"                                 ""
+		"DOTA_Tooltip_ability_affix_vampiric_Note0"                                       ""
+		"DOTA_Tooltip_ability_affix_vampiric_Lore"                                        ""
+		"DOTA_Tooltip_ability_affix_vampiric_lifesteal"                                   "LIFESTEAL:"
+
+		"DOTA_Tooltip_ability_affix_desecrator"                                           "Desecrator"
+		"DOTA_Tooltip_ability_affix_desecrator_Description"                               ""
+		"DOTA_Tooltip_ability_affix_desecrator_Note0"                                     ""
+		"DOTA_Tooltip_ability_affix_desecrator_Lore"                                      ""
+		"DOTA_Tooltip_ability_affix_desecrator_duration"                                  "DURATION:"
+		"DOTA_Tooltip_ability_affix_desecrator_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_affix_desecrator_delay"                                     "DELAY:"
+
+		"DOTA_Tooltip_ability_affix_frozen"                                               "Frozen"
+		"DOTA_Tooltip_ability_affix_frozen_Description"                                   ""
+		"DOTA_Tooltip_ability_affix_frozen_Note0"                                         ""
+		"DOTA_Tooltip_ability_affix_frozen_Lore"                                          ""
+		"DOTA_Tooltip_ability_affix_frozen_explosion_delay"                               "EXPLOSION DELAY:"
+		"DOTA_Tooltip_ability_affix_frozen_explosion_radius"                              "EXPLOSION RADIUS:"
+		"DOTA_Tooltip_ability_affix_frozen_stun_duration"                                 "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_affix_molten"                                               "Molten"
+		"DOTA_Tooltip_ability_affix_molten_Description"                                   ""
+		"DOTA_Tooltip_ability_affix_molten_Note0"                                         ""
+		"DOTA_Tooltip_ability_affix_molten_Lore"                                          ""
+		"DOTA_Tooltip_ability_affix_molten_explosion_damage"                              "EXPLOSION DAMAGE:"
+		"DOTA_Tooltip_ability_affix_molten_overtime_damage"                               "OVERTIME DAMAGE:"
+		"DOTA_Tooltip_ability_affix_molten_trail_aoe"                                     "TRAIL AOE:"
+		"DOTA_Tooltip_ability_affix_molten_explosion_radius"                              "EXPLOSION RADIUS:"
+		
+		
+		
+		
 
 		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_avenge_me"                                                 "Avenge Me"
+		"DOTA_Tooltip_modifier_avenge_me_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_fast"                                                      "Fast"
+		"DOTA_Tooltip_modifier_fast_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_knockback_slow"                                            "Knockback Slow"
+		"DOTA_Tooltip_modifier_knockback_slow_Description"                                ""
+
+		"DOTA_Tooltip_modifier_disoriented"                                               "Disoriented"
+		"DOTA_Tooltip_modifier_disoriented_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_reflect_damage"                                            "Reflect Damage"
+		"DOTA_Tooltip_modifier_reflect_damage_Description"                                ""
+
+		"DOTA_Tooltip_modifier_affix_assaulter_modifier"                                  "Assaulter Modifier"
+		"DOTA_Tooltip_modifier_affix_assaulter_modifier_Description"                      ""
+
+		"DOTA_Tooltip_modifier_affix_blood_freezer_aura"                                  "Blood Freezer Aura"
+		"DOTA_Tooltip_modifier_affix_blood_freezer_aura_Description"                      ""
+
+		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff"                                "Blood Freezer Debuff"
+		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff_Description"                    ""
+
+		"DOTA_Tooltip_modifier_affix_berserker_modifier"                                  "Berserker Modifier"
+		"DOTA_Tooltip_modifier_affix_berserker_modifier_Description"                      ""
+
+		"DOTA_Tooltip_modifier_affix_provoker_aura"                                       "Provoker Aura"
+		"DOTA_Tooltip_modifier_affix_provoker_aura_Description"                           ""
+
+		"DOTA_Tooltip_modifier_affix_provoker_buff"                                       "Provoker Buff"
+		"DOTA_Tooltip_modifier_affix_provoker_buff_Description"                           ""
+
+		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier"                              "Shield Bearer Modifier"
+		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier_Description"                  ""
+
+		"DOTA_Tooltip_modifier_affix_shield_bearer_damage_reduction"                      "Shield Bearer Damage Reduction"
+		"DOTA_Tooltip_modifier_affix_shield_bearer_damage_reduction_Description"          ""
+
+		"DOTA_Tooltip_modifier_affix_illusionist_modifier"                                "Illusionist Modifier"
+		"DOTA_Tooltip_modifier_affix_illusionist_modifier_Description"                    ""
+
+		"DOTA_Tooltip_modifier_affix_illusionist_illusion"                                "Illusionist Illusion"
+		"DOTA_Tooltip_modifier_affix_illusionist_illusion_Description"                    ""
+
+		"DOTA_Tooltip_modifier_affix_jailer_modifier"                                     "Jailer Modifier"
+		"DOTA_Tooltip_modifier_affix_jailer_modifier_Description"                         ""
+
+		"DOTA_Tooltip_modifier_affix_jailer_debuff"                                       "Jailer Debuff"
+		"DOTA_Tooltip_modifier_affix_jailer_debuff_Description"                           ""
+
+		"DOTA_Tooltip_modifier_affix_hurricaner_aura"                                     "Hurricaner Aura"
+		"DOTA_Tooltip_modifier_affix_hurricaner_aura_Description"                         ""
+
+		"DOTA_Tooltip_modifier_affix_hurricaner_debuff"                                   "Hurricaner Debuff"
+		"DOTA_Tooltip_modifier_affix_hurricaner_debuff_Description"                       ""
+
+		"DOTA_Tooltip_modifier_frozen_aura_debuff"                                        "Frozen Aura Debuff"
+		"DOTA_Tooltip_modifier_frozen_aura_debuff_Description"                            ""
+
+		"DOTA_Tooltip_modifier_stunned"                                                   "Stunned"
+		"DOTA_Tooltip_modifier_stunned_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_affix_molten_modifier"                                     "Molten"
+		"DOTA_Tooltip_modifier_affix_molten_modifier_Description"                         ""
+
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		"DOTA_Tooltip_tornado_debuff"                                            "Tornado"
 		"DOTA_Tooltip_tornado_debuff_Description"                                "Decreased attack and movement speed"
 		
@@ -707,6 +870,7 @@
 		"npc_brood"								"Brood Mother"
 		"npc_ice_troll_priest"					"Ice Troll High Priest"
 		"npc_rock_golem"   						"Rock Golem"
+		"npc_small_wildkin"						"Small Wildkin"
 		"npc_wildkin"							"Wildkin"
 		"npc_medium_sludge"						"Sludge Flinger"
 		"npc_green_lizard"						"Thunder Lizard"
