@@ -46,8 +46,10 @@ package  {
 			//AcceptButton.width = 220;
 			//AcceptButton.height = 45;
 			
-			// Select Difficulty Text
+			// Text
 			this.SelectDifficultyText.text = Globals.instance.GameInterface.Translate("#select_difficulty");
+			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty_text");
+			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty_0");
 			
 			trace("##Module Setup!");
 		}
@@ -56,6 +58,20 @@ package  {
 			trace("Button 0");
 			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty0");
 			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty0_text");
+			selected0.visible=true;
+			selected0.enabled=true;
+			
+			selected1.visible=false;
+			selected1.enabled=false;
+			
+			selected2.visible=false;
+			selected2.enabled=false;
+			
+			selected3.visible=false;
+			selected3.enabled=false;
+			
+			selected4.visible=false;
+			selected4.enabled=false;
 			difficulty_selected = 0;
 		}
 		
@@ -63,6 +79,20 @@ package  {
 			trace("Button 1");
 			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty1");
 			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty1_text");
+			selected0.visible=true;
+			selected0.enabled=false;
+			
+			selected1.visible=true;
+			selected1.enabled=true;
+			
+			selected2.visible=false;
+			selected2.enabled=false;
+			
+			selected3.visible=false;
+			selected3.enabled=false;
+			
+			selected4.visible=false;
+			selected4.enabled=false;
 			difficulty_selected = 1;
 		}
 		
@@ -70,6 +100,20 @@ package  {
 			trace("Button 2");
 			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty2");
 			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty2_text");
+			selected0.visible=true;
+			selected0.enabled=false;
+			
+			selected1.visible=true;
+			selected1.enabled=false;
+			
+			selected2.visible=true;
+			selected2.enabled=true;
+			
+			selected3.visible=false;
+			selected3.enabled=false;
+			
+			selected4.visible=false;
+			selected4.enabled=false;
 			difficulty_selected = 2;
 		}
 		
@@ -77,6 +121,20 @@ package  {
 			trace("Button 3");
 			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty3");
 			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty3_text");
+			selected0.visible=true;
+			selected0.enabled=false;
+			
+			selected1.visible=true;
+			selected1.enabled=false;
+			
+			selected2.visible=true;
+			selected2.enabled=false;
+			
+			selected3.visible=true;
+			selected3.enabled=false;
+			
+			selected4.visible=false;
+			selected4.enabled=false;
 			difficulty_selected = 3;
 		}
 		
@@ -84,6 +142,20 @@ package  {
 			trace("Button 4");
 			this.difficultyLevel.text = Globals.instance.GameInterface.Translate("#difficulty4");
 			this.difficultyDescriptionText.text = Globals.instance.GameInterface.Translate("#difficulty4_text");
+			selected0.visible=true;
+			selected0.enabled=false;
+			
+			selected1.visible=true;
+			selected1.enabled=false;
+			
+			selected2.visible=true;
+			selected2.enabled=false;
+			
+			selected3.visible=true;
+			selected3.enabled=false;
+			
+			selected4.visible=true;
+			selected4.enabled=true;
 			difficulty_selected = 4;
 		}
 		
