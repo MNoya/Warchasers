@@ -89,11 +89,11 @@
     "range_melee_type"    "any"
 }
 
-"affix_shield_bearer"
-{
-    "level_limit"   "0"
-    "range_melee_type"    "any"
-}
+//"affix_shield_bearer"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
 
 "affix_hurricaner"
 {

@@ -40,7 +40,7 @@
 	"npc_pig"				"1"							
 	"npc_ghost"				"1"							
 	"npc_small_dragon"		"1"					
-	"npc_soul_keeper"		"1"						
+	//"npc_soul_keeper"		"1"						
 	"npc_cherub"			"1"							
 	"npc_doom_guard"		"1"							
 	"npc_imp"				"1"		//Might be too hard

@@ -174,7 +174,7 @@ function Precache( context )
 	
 	print("Starting precache")
 
-	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+--[[	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
 	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
 	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
 	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
@@ -183,21 +183,10 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)
 
-	--check carefully if it works on clients. Normal KV precache didn't work for these.
-	--[[PrecacheUnitByNameSync("npc_dota_hero_warlock", context)
-	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
-	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
-	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
-	--tranquility
-	PrecacheUnitByNameSync("npc_dota_hero_luna", context)
-	PrecacheUnitByNameSync("npc_dota_hero_huskar", context)
-	--avatar
-	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)--]]
-
 	PrecacheUnitByNameSync("npc_soul_keeper", context)
 	PrecacheUnitByNameSync("npc_doom_miniboss", context)
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
-	PrecacheUnitByNameSync("npc_boss", context)
+	PrecacheUnitByNameSync("npc_boss", context)]]
 
 	PrecacheResource("model", "models/kappakey.vmdl", context)
 	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
@@ -530,6 +519,20 @@ end
 
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
+
+	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_soul_keeper", function(...) end)
+	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
+	PrecacheUnitByNameAsync("npc_tb_miniboss", function(...) end)
+	PrecacheUnitByNameAsync("npc_boss", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_brewmaster", function(...) end)
