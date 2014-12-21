@@ -3957,10 +3957,10 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_frozen"			// Ability 1.
-		"Ability2"					"creep_desecrator"
-		"Ability3"					"creep_extra_health"
-		"Ability4"					"creep_fast"
+		"Ability1"					""			// Ability 1.
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
 		"Ability5"					""
 		"Ability6"					""
 
@@ -4067,7 +4067,7 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"creep_reflect_damage"			// Ability 1
+		"Ability1"					""			// Ability 1
 
 		// Armor
 		//----------------------------------------------------------------
@@ -4368,6 +4368,7 @@
 			"model"	"models/heroes/slark/slark.vmdl"
 		}
 		
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_poison_attack"			// Ability 1.
@@ -4543,6 +4544,7 @@
 			"particle"	"particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
 		}
 
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"                                      "creep_command_aura"       // Ability 1
@@ -4843,7 +4845,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"6"
 		"Ability1"					""			// Ability 1.
 		"Ability2"					"warchasers_wizard_purge"		// Ability 2.
 		"Ability3"					"lich_frost_armor"			// Ability 3.
@@ -5151,7 +5153,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -5252,7 +5254,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -5347,6 +5349,7 @@
 		
 		"UseNeutralCreepBehavior" 	"0"
 		
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_inner_fire"			// Ability 1
@@ -5539,6 +5542,7 @@
 		
 		//"UseNeutralCreepBehavior" 	"0"
 		
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_poison_attack"			// Ability 1.
@@ -5642,6 +5646,7 @@
 
 		"DisableResistance"			"75.0"
 		
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"drop_key1"			// Ability 1.
@@ -5869,10 +5874,10 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"6"
 		"Ability1"					"creep_heal"			// Ability 1. 
-		"Ability2"					"creep_inner_fire"			// Ability 2. ADD INNER FIRE
-		"Ability3"					"brewmaster_storm_dispel_magic"			// Ability 3. 
+		"Ability2"					"creep_inner_fire"			// Ability 2.
+		"Ability3"					""			// Ability 3. 
 		"Ability4"					"drop_potion_of_healing"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -5949,19 +5954,6 @@
 					"Aggression"		"100.0" //cast offensive spells whenever
 					"Avoidance"			"0.0" //dont flee
 					"Support"			"50.0" //start buffing
-				}
-			}
-			
-			"OffensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"brewmaster_storm_dispel_magic"
-					"AOE"				"1" //if the skill should look for aoe
-					"Radius"			"275" //search range
-					"MinimumTargets"	"2" //cast trigger
-					//"Damage"			"1" //damage skill
-					//"Stun"				"1" //stun skill
 				}
 			}
 			
@@ -6121,7 +6113,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"6"
 		"Ability1"					"crystal_maiden_freezing_field"			// Ability 1. Blizzard?
 		"Ability2"					"warchasers_wizard_purge"			// Ability 2.
 		"Ability3"					""			// Ability 3. ADD LIGHTNING SHIELD BUFF
@@ -6446,7 +6438,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -6644,7 +6636,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"creep_heal"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					"drop_tome"			// Ability 3.
@@ -6844,7 +6836,7 @@
 		"ModelScale" 				".9"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_slow"			// Ability 1
@@ -6946,6 +6938,7 @@
 		
 		"UseNeutralCreepBehavior" 	"0"
 
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_frost_breath"			// Ability 1
@@ -7610,7 +7603,7 @@
 		"IsAncient"					"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-		
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_storm_dispel_magic"			// Ability 1.
@@ -8007,7 +8000,7 @@
 		"ModelScale" 				"1"
 		
 		//"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"slardar_bash"			// Ability 1
@@ -8094,7 +8087,7 @@
 		"ModelScale" 				"0.9"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_bloodlust"			// Ability 1
@@ -8203,6 +8196,7 @@
 		
 		"UseNeutralCreepBehavior" 	"0"
 
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warchasers_mana_burn"			// Ability 1
@@ -8411,7 +8405,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"creep_searing_arrow"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -8841,7 +8835,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"creep_cold_arrow"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -8929,7 +8923,7 @@
 		"ModelScale" 				"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"slardar_bash"			// Ability 1
@@ -9012,7 +9006,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"6"
 		"Ability1"					"creep_frost_breath"			// Ability 1. 
 		"Ability2"					"neutral_spell_immunity"			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -9194,7 +9188,7 @@
 		"ModelScale" 				"1.4"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"dark_troll_warlord_ensnare"			// Ability 1
@@ -9385,16 +9379,6 @@
 					"Support"			"50.0" //start buffing
 				}
 			}
-			"DefensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"creep_heal"
-					//"Buff"			"1" //dont buff twice
-					"Heal"				"1"
-					
-				}
-			}
 		}
 		
 		
@@ -9426,7 +9410,7 @@
 		}
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"                                      "brewmaster_earth_hurl_boulder"   // Ability 1
@@ -9711,7 +9695,7 @@
 		"ModelScale" 				"1.2"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_poison_attack"			// Ability 1
@@ -9795,7 +9779,7 @@
 		"ModelScale" 				"1.1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"big_thunder_lizard_slam"			// Ability 1
@@ -10146,7 +10130,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -10266,7 +10250,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"		"5"
 		"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -10385,7 +10369,7 @@
 		"ModelScale" 				"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_poison_attack"			// Ability 1
@@ -10490,7 +10474,7 @@
 		"ModelScale" 				"0.8"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warchasers_mana_burn"			// Ability 1
@@ -10594,7 +10578,7 @@
 		"ModelScale" 				"1.4"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"slardar_bash"			// Ability 1
@@ -10693,7 +10677,7 @@
 		"ConsideredHero"			"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"slardar_bash"			// Ability 1
@@ -10787,7 +10771,7 @@
 		"ModelScale" 				"1.5"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"5"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_curse"			// Ability 1
@@ -10900,6 +10884,7 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_shadow_word"			// Ability 1
@@ -11128,7 +11113,7 @@
 		"ModelScale" 				"1.4"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creep_bloodlust"			// Ability 1
@@ -11234,7 +11219,7 @@
 		"IsAncient"					"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
-		
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1.
@@ -11363,7 +11348,7 @@
 		"ModelScale" 				"1.5"
 		
 		"UseNeutralCreepBehavior" 	"0"
-
+		"AbilityLayout"		"6"
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_golem_permanent_immolation"			// Ability 1.
