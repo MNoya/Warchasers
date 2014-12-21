@@ -10021,22 +10021,22 @@
 	            "UnitLimit" "8"  //max possible of this unit in the entire map at the same time
 				"OnSpawn"
 				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
+					// "AttachEffect"
+					// {
+					// 	"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+					// 	"EffectAttachType"	"follow_origin"
+					// 	"Target"			"TARGET"
 						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
-					}
+					// 	"ControlPoints"
+					// 	{
+					// 		"00"		"0 0 0"
+					// 		"01"		"50 100 0"
+					// 		"02"		"4 10 .5"
+					// 		"03"		"20 200 0" //color
+					// 		"04"		"0 0 0"
+					// 		"05"		"0 0 0"
+					// 	}
+					// }
 					"FireSound"
 					{
 						"EffectName" "Hero_Abaddon.DeathCoil.Target"
@@ -10098,22 +10098,22 @@
 	            "UnitLimit" "8"
 				"OnSpawn"
 				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
+					// "AttachEffect"
+					// {
+					// 	"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+					// 	"EffectAttachType"	"follow_origin"
+					// 	"Target"			"TARGET"
 						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
-					}
+					// 	"ControlPoints"
+					// 	{
+					// 		"00"		"0 0 0"
+					// 		"01"		"50 100 0"
+					// 		"02"		"4 10 .5"
+					// 		"03"		"20 200 0" //color
+					// 		"04"		"0 0 0"
+					// 		"05"		"0 0 0"
+					// 	}
+					// }
 					"FireSound"
 					{
 						"EffectName" "Hero_Abaddon.DeathCoil.Target"

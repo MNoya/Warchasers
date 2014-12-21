@@ -520,14 +520,14 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-	PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
+	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)]]
 
 	PrecacheUnitByNameAsync("npc_soul_keeper", function(...) end)
 	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
