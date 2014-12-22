@@ -7,9 +7,9 @@ Venomancer shit acid
 Warlock hands
 Molten explosion
 Red crosses on Frozen
-Healing Ward (fixes itself after a while?)
+Healing Ward (only if it didn't drop before)
 Warlock golem
-Chest model created in lua (fixes itself after a while?)
+Chest model created in lua (only if it didn't drop)
 Some cosmetic glows on units
 Red crosses on techies spawn
 Red crosses on first seeing many units (ambients?)
@@ -19,6 +19,8 @@ Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg
 No particles on most of its spells (just sunstrike, immolation and the death lina particle)
 No frostivus ring at boss death (might be related having deleted the compiled particle in the commit)
 
+Thunderstorm Disruptor shock
+Error model under skeleton archers spawned with the book
 
 GAMEPLAY ISSUES:
 =Broken shit=
@@ -32,3 +34,4 @@ Nightmarish stacking might be a problem, reduce
 Custom sounds are gone
 Battledrums no aura indicator
 DeathTimers are decreasing
+Cyclone is a hideous spell, should remove it
