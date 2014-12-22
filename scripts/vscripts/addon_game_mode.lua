@@ -194,7 +194,7 @@ function Precache( context )
 	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
 	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
 
-	PrecacheResource( "particle_folder","particles/items_fx", context)
+	PrecacheResource( "particle_folder","particles/items_fx", conztext)
 	PrecacheResource( "particle_folder","particles/items2_fx", context)
 	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
 	PrecacheResource( "particle_folder","particles/econ/items", context)
@@ -226,7 +226,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
-	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
 
 
 	--PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
@@ -527,7 +527,7 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)]]
+	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_soul_keeper", function(...) end)
 	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
@@ -565,7 +565,7 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
 
-	PrecacheUnitByNameAsync("npc_dota_hero_tiny", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_tiny", function(...) end)]]
 	
 
 end
