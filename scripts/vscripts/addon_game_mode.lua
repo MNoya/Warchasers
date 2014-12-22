@@ -188,26 +188,10 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
 
-	PrecacheUnitByNameSync("npc_small_murloc", context)
-	PrecacheUnitByNameSync("npc_small_murloc_a", context)
-	PrecacheUnitByNameSync("npc_small_murloc_b", context)
-
-	--[[PrecacheResource("model", "models/kappakey.vmdl", context)
-	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
+	--[[PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
 	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
 	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
 	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
-
-	PrecacheResource( "particle_folder","particles/items_fx", context)
-	PrecacheResource( "particle_folder","particles/items2_fx", context)
-	PrecacheResource( "particle_folder","particles/newplayer_fx", context)
-	PrecacheResource( "particle_folder","particles/econ/items", context)
-	PrecacheResource( "particle_folder","particles/econ/courier", context)
-	PrecacheResource( "particle_folder","particles/econ/events/ti4", context)
-	PrecacheResource( "particle_folder","particles/generic_gameplay", context)
-	PrecacheResource( "particle_folder","particles/neutral_fx", context)
-	PrecacheResource( "particle_folder","particles/sweep_generic", context)
-	PrecacheResource( "particle_folder","particles/warchasers", context)
 
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context)
 	PrecacheResource( "particle_folder", "particles/units/heroes/hero_necrolyte", context)
@@ -407,6 +391,8 @@ end
 
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
+
+	PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)

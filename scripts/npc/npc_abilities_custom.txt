@@ -3,6 +3,28 @@
 {
 	"Version"		"1"
 
+	"npc_precache_everything"
+	{
+		"BaseClass"					"npc_dota_creep"
+
+		"precache"
+		{
+			"model" "models/kappakey.vmdl"
+ 			
+ 			"particle_folder" "particles/items_fx"
+			"particle_folder" "particles/items2_fx"
+			"particle_folder" "particles/newplayer_fx"
+			"particle_folder" "particles/econ/items"
+			"particle_folder" "particles/econ/courier"
+			"particle_folder" "particles/econ/events/ti4"
+			"particle_folder" "particles/generic_gameplay"
+			"particle_folder" "particles/neutral_fx"
+			"particle_folder" "particles/sweep_generic"
+			"particle_folder" "particles/warchasers"
+		}
+
+	}
+
 	"creep_kaboom"
 	{
 		"BaseClass"						"ability_datadriven"
