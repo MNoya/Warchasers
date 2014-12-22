@@ -1120,7 +1120,7 @@
 							 	"Target"
 							 	{
 						            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-						            "Teams"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+						            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 						            "Center"    "TARGET" //in this scope, this means the Thinker.
 						            "Radius"    "%explosion_radius"
 						        }

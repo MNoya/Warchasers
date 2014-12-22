@@ -663,16 +663,16 @@ function FrozenStart( event )
 
 	local dummy = CreateUnitByName("dummy_unit", event.target:GetAbsOrigin(), false, event.target, event.target, event.target:GetTeam())
 	local target = dummy:GetAbsOrigin()
-	local particle = ParticleManager:CreateParticle("particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf", PATTACH_OVERHEAD_FOLLOW, event.target)
+	--local particle = ParticleManager:CreateParticle("particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf", PATTACH_OVERHEAD_FOLLOW, event.target)
 
 	event.ability:ApplyDataDrivenModifier(event.caster, dummy, "frozen_dummy_aura", nil)
 
-	ParticleManager:SetParticleControl(particle, 0, target)
-	ParticleManager:SetParticleControl(particle, 1, target)
+	--ParticleManager:SetParticleControl(particle, 0, target)
+	--ParticleManager:SetParticleControl(particle, 1, target)
   
-	local particle2 = ParticleManager:CreateParticle("particles/warchasers/frozen/tusk_frozen_sigil.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	--[[local particle2 = ParticleManager:CreateParticle("particles/warchasers/frozen/tusk_frozen_sigil.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 	ParticleManager:SetParticleControl(particle2, 0, target)
-	ParticleManager:SetParticleControl(particle2, 2, target)
+	ParticleManager:SetParticleControl(particle2, 2, target)]]
 
 	local particle3 = ParticleManager:CreateParticle("particles/warchasers/frozen/tusk_ice_shards_projectile.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 	ParticleManager:SetParticleControl(particle3, 0, target)
@@ -683,8 +683,8 @@ function FrozenStart( event )
 
 		print("Can't take it anymore")
 
-		ParticleManager:DestroyParticle(particle,false)
-		ParticleManager:DestroyParticle(particle2,false)
+		--ParticleManager:DestroyParticle(particle,false)
+		--ParticleManager:DestroyParticle(particle2,false)
 		ParticleManager:DestroyParticle(particle3,false)
 
 		local particle4 = ParticleManager:CreateParticle("particles/warchasers/frozen/maiden_crystal_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
@@ -770,7 +770,7 @@ function molten_explode( event )
 
 	-- Note: It's not the trail that explodes, is the center of the unit!
 	Timers:CreateTimer(3,function()
-		local particle2 = ParticleManager:CreateParticle("particles/warchasers/molten/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
+		local particle2 = ParticleManager:CreateParticle("particles/warchasers/molten/explosion/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 		ParticleManager:SetParticleControl(particle2, 0, event.caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle2, 3, event.caster:GetAbsOrigin())
 		ParticleManager:DestroyParticle(particle,false)

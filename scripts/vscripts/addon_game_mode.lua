@@ -183,6 +183,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_razor", context)
 	PrecacheUnitByNameSync("npc_dota_hero_drow_ranger", context)]]
 
+	-- These units could be on Async if we just waited a bit more to spawn them
 	PrecacheUnitByNameSync("npc_soul_keeper", context)
 	PrecacheUnitByNameSync("npc_doom_miniboss", context)
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
@@ -204,6 +205,11 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
 
 	PrecacheResource( "particle_folder", "particles/warchasers", context )
+	PrecacheResource( "particle_folder", "particles/econ/items", context )	--might fail!
+
+	PrecacheResource( "particle", "particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_invoker/invoker_cold_snap_status.vpcf", context )
+	PrecacheResource( "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf", context )
 
 	PrecacheResource( "model", "models/kappakey.vmdl", context )
 	PrecacheResource( "model", "models/props_items/monkey_king_bar01.vmdl", context )
@@ -213,6 +219,59 @@ function Precache( context )
 
 
 	print('Precache End')
+
+end
+
+function Warchasers:PostLoadPrecache()
+	print("Performing Post-Load precache")
+
+	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
+
+	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_soul_keeper", function(...) end)
+	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
+	PrecacheUnitByNameAsync("npc_tb_miniboss", function(...) end)
+	PrecacheUnitByNameAsync("npc_boss", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_brewmaster", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_mirana", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_zuus", function(...) end)
+	--tranquility
+	PrecacheUnitByNameAsync("npc_dota_hero_luna", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_huskar", function(...) end)
+	--avatar
+	PrecacheUnitByNameAsync("npc_dota_hero_alchemist", function(...) end)
+	--book of the dead
+	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
+	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_sniper", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_ogre_magi", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_invoker", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_gyrocopter", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
+
+	--PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)]]
+
+	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
+	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
+	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
+	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
+	
 
 end
 
@@ -382,59 +441,6 @@ function Warchasers:OnGameRulesStateChange(keys)
   	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
     	Warchasers:OnGameInProgress()
   	end
-end
-
-function Warchasers:PostLoadPrecache()
-	print("Performing Post-Load precache")
-
-	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
-
-	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_shredder", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_juggernaut", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_shadow_demon", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_chaos_knight", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_razor", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_drow_ranger", function(...) end)
-
-	PrecacheUnitByNameAsync("npc_soul_keeper", function(...) end)
-	PrecacheUnitByNameAsync("npc_doom_miniboss", function(...) end)
-	PrecacheUnitByNameAsync("npc_tb_miniboss", function(...) end)
-	PrecacheUnitByNameAsync("npc_boss", function(...) end)
-
-	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_brewmaster", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_mirana", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_zuus", function(...) end)
-	--tranquility
-	PrecacheUnitByNameAsync("npc_dota_hero_luna", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_huskar", function(...) end)
-	--avatar
-	PrecacheUnitByNameAsync("npc_dota_hero_alchemist", function(...) end)
-	--book of the dead
-	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
-
-	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
-	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
-
-	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_sniper", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_ogre_magi", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_invoker", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_gyrocopter", function(...) end)
-
-	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
-
-	--PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)]]
-
-	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
-	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
-	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
-	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
-	
-
 end
 
 function Warchasers:OnGameInProgress()
