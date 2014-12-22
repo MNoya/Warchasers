@@ -1524,6 +1524,19 @@
 					}
 				}
 			}
+		"thunderstorm_ai"
+	    	{
+	    	"Passive"	"1"
+	    	"ThinkInterval"		"1"
+		    "OnIntervalThink"
+		    	{
+		    	"RunScript"
+		    		{
+		    		"ScriptFile"		"abilities.lua"
+					"Function"			"thunderstorm_ai"
+		    		}
+		    	}
+	    	}
 		}
 	}
 

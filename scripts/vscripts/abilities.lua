@@ -1079,3 +1079,24 @@ function plagued_ai( event )
 		end
 	end
 end
+
+function thunderstorm_ai( event )
+	if event.ability:IsFullyCastable() == true then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		if heroes_around[1] ~= nil then
+			local target = nil
+			for key,value in pairs(heroes_around) do 
+				if value.thunderstorm_delay == nil then
+					value.thunderstorm_delay = 0
+				end
+				if target == nil and value.thunderstorm_delay < GameRules:GetGameTime() then
+					target = value
+					target.thunderstorm_delay = GameRules:GetGameTime() + 7
+				end
+			end
+			if target ~= nil then
+				event.caster:CastAbilityOnPosition(target:GetAbsOrigin(), event.ability, event.caster:GetPlayerOwnerID() )
+			end
+		end
+	end
+end
