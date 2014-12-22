@@ -14,16 +14,16 @@ Chest model created in lua (only if it didn't drop) - Fixed
 Some cosmetic glows on units - Fixed? Nope...
 Red crosses on techies spawn
 Red crosses on first seeing many units (ambients?)
-Necro glow on spawn
-Drow aura toggle red crosses
+Necro glow on spawn - Fixed?
+Drow aura toggle red crosses - Fixed?
 Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg - Fixed?
 No particles on most of its spells (just sunstrike, immolation and the death lina particle) - Fixed?
 No frostivus ring at boss death - Fixed?
 No level up sound
-Picking up tomes lack particicles
+Picking up tomes lack particicles - Fixed ?
 Ice Armor misses particiles and produces red crosses
 
-Thunderstorm Disruptor shock
+Thunderstorm Disruptor shock - Fixed?
 Error model under skeleton archers spawned with the book - Fixed?
 
 =Missing just on clients=

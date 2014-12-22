@@ -992,15 +992,8 @@ function Thunderstorm( event )
     for i=1,4 do
     	Timers:CreateTimer(i, function() 
 
-		     	local lightning_type = RandomInt(1,3)
-                local particle
-                if lightning_type == 1 then
-                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, dummy)
-                elseif lightning_type == 2 then
-                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
-                elseif lightning_type == 3 then
-                    particle = ParticleManager:CreateParticle("particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf", PATTACH_WORLDORIGIN, dummy)
-                end
+                particle = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, dummy)
+
                 --shared control points for all the different lightnings
                 ParticleManager:SetParticleControl(particle, 0, Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,1000)) -- height of the bolt
                 ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin()) -- point landing
