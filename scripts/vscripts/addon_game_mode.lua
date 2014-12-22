@@ -203,7 +203,7 @@ function Precache( context )
 
 	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
 
-	PrecacheResource( "particle_folder", "particles/warchasers", context )
+	--PrecacheResource( "particle_folder", "particles/warchasers", context )
 
 
 	print('Precache End')
