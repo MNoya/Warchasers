@@ -188,21 +188,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
 
-	--[[PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
-	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
-	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
-	PrecacheResource("model", "models/props_items/necronomicon.vmdl", context)
-
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_dragon_knight", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_necrolyte", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_lich", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_doom_bringer", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_slark", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_troll_warlord", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_legion_commander", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_centaur", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_enigma", context)
-	PrecacheResource( "particle_folder", "particles/units/heroes/hero_hero_keeper_of_the_light", context)
+	PrecacheUnitByNameSync("npc_precache_everything", context)
+	--[[
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
@@ -392,7 +379,7 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-	PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
+	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)

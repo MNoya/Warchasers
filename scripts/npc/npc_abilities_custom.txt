@@ -10,6 +10,10 @@
 		"precache"
 		{
 			"model" "models/kappakey.vmdl"
+			"model" "models/props_items/monkey_king_bar01.vmdl"
+			"model" "models/props_items/blinkdagger.vmdl" 
+			"model" "models/props_items/assault_cuirass.vmdl"  
+			"model" "models/props_items/necronomicon.vmdl"
  			
  			"particle_folder" "particles/items_fx"
 			"particle_folder" "particles/items2_fx"
@@ -21,6 +25,16 @@
 			"particle_folder" "particles/neutral_fx"
 			"particle_folder" "particles/sweep_generic"
 			"particle_folder" "particles/warchasers"
+			"particle_folder" "particles/units/heroes/hero_dragon_knight"
+			"particle_folder" "particles/units/heroes/hero_necrolyte"
+			"particle_folder" "particles/units/heroes/hero_lich"
+			"particle_folder" "particles/units/heroes/hero_doom_bringer"
+			"particle_folder" "particles/units/heroes/hero_slark"
+			"particle_folder" "particles/units/heroes/hero_troll_warlord"
+			"particle_folder" "particles/units/heroes/hero_legion_commander"
+			"particle_folder" "particles/units/heroes/hero_centaur"
+			"particle_folder" "particles/units/heroes/hero_enigma"
+			"particle_folder" "particles/units/heroes/hero_hero_keeper_of_the_light"
 		}
 
 	}
