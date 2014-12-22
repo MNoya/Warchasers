@@ -30,7 +30,7 @@ end
 
 function override_affix_func(affix_name)
 	for key, value in pairs(affix_table) do
-		affix_table[key] = affix_name
+		value[1] = affix_name
 	end
 end
 

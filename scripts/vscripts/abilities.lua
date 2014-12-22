@@ -733,13 +733,13 @@ function molten_interval( event )
 	local direction = vector_traveled:Normalized() 
 		if distance_traveled > 50 then 
 		local next_thinker_pos = event.ability.molten_position
-		--repeat //DONT USE THIS, IT CRASHES GAMES
+		repeat --//DONT USE THIS, IT CRASHES GAMES
 		next_thinker_pos = direction * 50 + next_thinker_pos
 
 		table.insert(event.ability.molten_points_table, next_thinker_pos)
 
 		distance_traveled = distance_traveled - 50
-		--until distance_traveled < 50
+		until distance_traveled < 50
 	end
 
 	for key1, vector in pairs(event.ability.molten_points_table) do
@@ -825,18 +825,20 @@ function assaulter_think( event )
 		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
 
 		if heroes_around[1] ~= nil then
-			local target = heroes_around[1]
-			print(target:GetUnitName() )
-			local target_ehp = physical_ehp(target)
-			for key, hero in pairs(heroes_around) do 
-				local filtered_ehp = physical_ehp(hero)
-				if filtered_ehp < target_ehp then
-					target = hero
-					target_ehp = filtered_ehp
-				end 
+			if heroes_around[1]:CanEntityBeSeenByMyTeam(event.caster) == true then
+				local target = heroes_around[1]
+				print(target:GetUnitName() )
+				local target_ehp = physical_ehp(target)
+				for key, hero in pairs(heroes_around) do 
+					local filtered_ehp = physical_ehp(hero)
+					if filtered_ehp < target_ehp then
+						target = hero
+						target_ehp = filtered_ehp
+					end 
+				end
+				event.caster:CastAbilityOnTarget(target, event.ability, event.caster:GetPlayerOwnerID() )
+				assaulter_anti_stack = GameRules:GetGameTime() + 3
 			end
-			event.caster:CastAbilityOnTarget(target, event.ability, event.caster:GetPlayerOwnerID() )
-			assaulter_anti_stack = GameRules:GetGameTime() + 2
 		end
 		
 		
@@ -914,10 +916,10 @@ jailer_anti_stack = 0
 
 function jailer_think( event )
 	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > jailer_anti_stack then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			event.caster:CastAbilityOnTarget(heroes_around[1], event.ability, event.caster:GetPlayerOwnerID() )
-			assaulter_anti_stack = GameRules:GetGameTime() + 6
+			jailer_anti_stack = GameRules:GetGameTime() + 6
 		end
 		
 		
@@ -1013,4 +1015,67 @@ function Thunderstorm( event )
     end
     --[[local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf", PATTACH_OVERHEAD_FOLLOW, dummy)
     ParticleManager:SetParticleControl(particle, 1, dummy:GetAbsOrigin())]]
+end
+
+function desecration_ai( event )
+	if event.ability:IsFullyCastable() == true then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		if heroes_around[1] ~= nil then
+			local target = nil
+			for key,value in pairs(heroes_around) do 
+				if value.desecration_delay == nil then
+					value.desecration_delay = 0
+				end
+				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
+					target = value
+					target.desecration_delay = GameRules:GetGameTime() + 7
+				end
+			end
+			if target ~= nil then
+				event.caster:CastAbilityOnPosition(target:GetAbsOrigin(), event.ability, event.caster:GetPlayerOwnerID() )
+			end
+		end
+	end
+end
+
+function frozen_ai( event )
+	if event.ability:IsFullyCastable() == true then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		if heroes_around[1] ~= nil then
+			local target = nil
+			for key,value in pairs(heroes_around) do 
+				if value.frozen_delay == nil then
+					value.frozen_delay = 0
+				end
+				if target == nil and value.frozen_delay < GameRules:GetGameTime() then
+					target = value
+					target.frozen_delay = GameRules:GetGameTime() + 7
+				end
+			end
+			if target ~= nil then
+				event.caster:CastAbilityOnPosition(target:GetAbsOrigin(), event.ability, event.caster:GetPlayerOwnerID() )
+			end
+		end
+	end
+end
+
+function plagued_ai( event )
+	if event.ability:IsFullyCastable() == true then
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		if heroes_around[1] ~= nil then
+			local target = nil
+			for key,value in pairs(heroes_around) do 
+				if value.plagued_delay == nil then
+					value.plagued_delay = 0
+				end
+				if target == nil and value.plagued_delay < GameRules:GetGameTime() then
+					target = value
+					target.plagued_delay = GameRules:GetGameTime() + 7
+				end
+			end
+			if target ~= nil then
+				event.caster:CastAbilityOnPosition(target:GetAbsOrigin(), event.ability, event.caster:GetPlayerOwnerID() )
+			end
+		end
+	end
 end

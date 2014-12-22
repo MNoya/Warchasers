@@ -567,7 +567,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal"				"100"
+				"lifesteal"				"30"
 			}
 		}
 
@@ -952,7 +952,7 @@
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.4"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityDuration"               "12"
 		"AbilityDamage"					"50"
 		"AoERadius"						"150"
@@ -1028,6 +1028,20 @@
 					}
 		    	}
 	    	}
+	    "desecration_ai"
+	    	{
+	    	"Passive"	"1"
+
+	    	"ThinkInterval"		"1"
+		    "OnIntervalThink"
+		    	{
+		    	"RunScript"
+		    		{
+		    		"ScriptFile"		"abilities.lua"
+					"Function"			"desecration_ai"
+		    		}
+		    	}
+	    	}
 		}
 	}
 
@@ -1042,7 +1056,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 
 		"AbilityCastRange"				"800"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"15"
 		"AbilityDamage"					"100"
 
 		"AbilitySpecial"
@@ -1170,6 +1184,20 @@
 					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
+			"frozen_ai"
+	    	{
+	    	"Passive"	"1"
+
+	    	"ThinkInterval"		"1"
+		    "OnIntervalThink"
+		    	{
+		    	"RunScript"
+		    		{
+		    		"ScriptFile"		"abilities.lua"
+					"Function"			"frozen_ai"
+		    		}
+		    	}
+	    	}
 		}
 	}
 
@@ -1266,7 +1294,7 @@
 
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.4"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"15"
 		"AoERadius"						"100"
 
 		"AbilitySpecial"
@@ -1341,6 +1369,20 @@
 					}
 		    	}
 			}
+			"plagued_ai"
+	    	{
+	    	"Passive"	"1"
+
+	    	"ThinkInterval"		"1"
+		    "OnIntervalThink"
+		    	{
+		    	"RunScript"
+		    		{
+		    		"ScriptFile"		"abilities.lua"
+					"Function"			"plagued_ai"
+		    		}
+		    	}
+	    	}
 		}
 	}
 
