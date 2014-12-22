@@ -413,7 +413,7 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_sniper", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_ogre_magi", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_hero_invoker", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_invoker", function(...) end)]]
 	PrecacheUnitByNameAsync("npc_dota_hero_gyrocopter", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
@@ -422,7 +422,7 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
-]]
+
 	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
 
