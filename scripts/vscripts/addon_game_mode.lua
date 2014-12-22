@@ -381,7 +381,7 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-	PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
+	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
