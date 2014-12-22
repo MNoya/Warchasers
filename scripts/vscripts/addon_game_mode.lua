@@ -271,6 +271,8 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
 	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
 	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
+	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
+	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
 	
 
 end

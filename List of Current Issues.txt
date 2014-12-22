@@ -10,17 +10,18 @@ Red crosses on Frozen - Fixed
 Healing Ward (only if it didn't drop before) - Model Fixed, missing particle
 Warlock golem - Fixed, missing particle
 Chest model created in lua (only if it didn't drop) - Fixed
+
 Some cosmetic glows on units - Fixed? Nope...
 Red crosses on techies spawn
 Red crosses on first seeing many units (ambients?)
 Necro glow on spawn
 Drow aura toggle red crosses
-Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg
-No particles on most of its spells (just sunstrike, immolation and the death lina particle)
-No frostivus ring at boss death (might be related having deleted the compiled particle in the commit)
+Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg - Fixed?
+No particles on most of its spells (just sunstrike, immolation and the death lina particle) - Fixed?
+No frostivus ring at boss death - Fixed?
 
 Thunderstorm Disruptor shock
-Error model under skeleton archers spawned with the book
+Error model under skeleton archers spawned with the book - Fixed?
 
 =Missing just on clients=
 Nothing? I don't seem to notice a difference now
@@ -40,3 +41,4 @@ Battledrums no aura indicator
 DeathTimers are decreasing
 Cyclone is a hideous spell, should remove it
 Sun Key is not very noticeable
+Delay on endgame being instant
