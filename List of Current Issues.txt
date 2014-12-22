@@ -2,15 +2,15 @@ List of Current Issues
 
 PRECACHE ISSUES:
 =Missing on both client and server=
-DK Fire - Fixed?
-Venomancer shit acid - Fixed?
-Warlock hands - Fixed?
-Molten explosion - Fixed?
-Red crosses on Frozen - Fixed?
-Healing Ward (only if it didn't drop before) - Fixed?
-Warlock golem - Fixed?
-Chest model created in lua (only if it didn't drop) - Fixed?
-Some cosmetic glows on units - Fixed?
+DK Fire - Fixed
+Venomancer shit acid - Fixed
+Warlock hands - Fixed
+Molten explosion - Fixed
+Red crosses on Frozen - Fixed
+Healing Ward (only if it didn't drop before) - Model Fixed, missing particle
+Warlock golem - Fixed, missing particle
+Chest model created in lua (only if it didn't drop) - Fixed
+Some cosmetic glows on units - Fixed? Nope...
 Red crosses on techies spawn
 Red crosses on first seeing many units (ambients?)
 Necro glow on spawn
@@ -33,8 +33,10 @@ Assaulter is still too high range
 Hurricaner the same, probably need removing as its too hard to understand where the area is and interacts badly with many units
 Flash self-target error is not showing up
 Knockback can push over the water and some cliffs, probably removing or reworking it - Improved the map skip blocks a bit, check if fixed on the water areas
+	Still has problems.
 Nightmarish stacking might be a problem, reduce
 Custom sounds are gone
 Battledrums no aura indicator
 DeathTimers are decreasing
 Cyclone is a hideous spell, should remove it
+Sun Key is not very noticeable

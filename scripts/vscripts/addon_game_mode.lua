@@ -209,7 +209,7 @@ function Precache( context )
 
 	PrecacheResource( "particle", "particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_invoker/invoker_cold_snap_status.vpcf", context )
-	PrecacheResource( "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf", context )
 
 	PrecacheResource( "model", "models/kappakey.vmdl", context )
 	PrecacheResource( "model", "models/props_items/monkey_king_bar01.vmdl", context )
