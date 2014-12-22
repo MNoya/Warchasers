@@ -1,0 +1,34 @@
+List of Current Issues
+
+PRECACHE ISSUES:
+=Missing on both client and server=
+DK Fire
+Venomancer shit acid
+Warlock hands
+Molten explosion
+Red crosses on Frozen
+Healing Ward (fixes itself after a while?)
+Warlock golem
+Chest model created in lua (fixes itself after a while?)
+Some cosmetic glows on units
+Red crosses on techies spawn
+Red crosses on first seeing many units (ambients?)
+Necro glow on spawn
+Drow aura toggle red crosses
+Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg
+No particles on most of its spells (just sunstrike, immolation and the death lina particle)
+No frostivus ring at boss death (might be related having deleted the compiled particle in the commit)
+
+
+GAMEPLAY ISSUES:
+=Broken shit=
+Spawn particle for spawners
+Frozen explosion hits both
+Assaulter is still too high range
+Hurricaner the same, probably need removing as its too hard to understand where the area is and interacts badly with many units
+Flash self-target error is not showing up
+Knockback can push over the water and some cliffs, probably removing or reworking it
+Nightmarish stacking might be a problem, reduce
+Custom sounds are gone
+Battledrums no aura indicator
+DeathTimers are decreasing
