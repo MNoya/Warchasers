@@ -203,7 +203,13 @@ function Precache( context )
 
 	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
 
-	--PrecacheResource( "particle_folder", "particles/warchasers", context )
+	PrecacheResource( "particle_folder", "particles/warchasers", context )
+
+	PrecacheResource( "model", "models/kappakey.vmdl", context )
+	PrecacheResource( "model", "models/props_items/monkey_king_bar01.vmdl", context )
+	PrecacheResource( "model", "models/props_items/blinkdagger.vmdl" , context )
+	PrecacheResource( "model", "models/props_items/assault_cuirass.vmdl", context )  
+	PrecacheResource( "model", "models/props_items/necronomicon.vmdl", context )
 
 
 	print('Precache End')

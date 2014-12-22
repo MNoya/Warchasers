@@ -9,13 +9,7 @@
 		"BaseClass"					"npc_dota_creep"
 
 		"precache"
-		{
-			"model" "models/kappakey.vmdl"
-			"model" "models/props_items/monkey_king_bar01.vmdl"
-			"model" "models/props_items/blinkdagger.vmdl" 
-			"model" "models/props_items/assault_cuirass.vmdl"  
-			"model" "models/props_items/necronomicon.vmdl"
- 			
+		{ 			
  			//"particle_folder" "particles/items_fx"
 			//"particle_folder" "particles/items2_fx"
 			//"particle_folder" "particles/newplayer_fx"

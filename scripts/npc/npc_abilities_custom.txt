@@ -3,45 +3,6 @@
 {
 	"Version"		"1"
 
-
-	"warchasers_precache"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel"						"0"
-		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "rubick_empty1"
-
-		"precache"
-		{
-			"model" "models/kappakey.vmdl"
-			"model" "models/props_items/monkey_king_bar01.vmdl"
-			"model" "models/props_items/blinkdagger.vmdl" 
-			"model" "models/props_items/assault_cuirass.vmdl"  
-			"model" "models/props_items/necronomicon.vmdl"
- 			
- 			"particle_folder" "particles/items_fx"
-			"particle_folder" "particles/items2_fx"
-			"particle_folder" "particles/newplayer_fx"
-			"particle_folder" "particles/econ/items"
-			"particle_folder" "particles/econ/courier"
-			"particle_folder" "particles/econ/events/ti4"
-			"particle_folder" "particles/generic_gameplay"
-			"particle_folder" "particles/neutral_fx"
-			"particle_folder" "particles/sweep_generic"
-			"particle_folder" "particles/warchasers"
-			"particle_folder" "particles/units/heroes/hero_dragon_knight"
-			"particle_folder" "particles/units/heroes/hero_necrolyte"
-			"particle_folder" "particles/units/heroes/hero_lich"
-			"particle_folder" "particles/units/heroes/hero_doom_bringer"
-			"particle_folder" "particles/units/heroes/hero_slark"
-			"particle_folder" "particles/units/heroes/hero_troll_warlord"
-			"particle_folder" "particles/units/heroes/hero_legion_commander"
-			"particle_folder" "particles/units/heroes/hero_centaur"
-			"particle_folder" "particles/units/heroes/hero_enigma"
-			"particle_folder" "particles/units/heroes/hero_hero_keeper_of_the_light"
-		}
-	}
-
 	"creep_kaboom"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -1279,11 +1240,7 @@
 			"particle" "particles/warchasers/molten/trail/courier_trail_lava.vpcf"
 			"particle"	"particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf"
 			"particle"	"particles/warchasers/molten/batrider_flamebreak_explosion.vpcf"
-			"soundfile"	"medusa"
 		}
-
-
-
 
 		"Modifiers"
 			{
