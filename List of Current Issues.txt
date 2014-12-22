@@ -22,6 +22,9 @@ No frostivus ring at boss death (might be related having deleted the compiled pa
 Thunderstorm Disruptor shock
 Error model under skeleton archers spawned with the book
 
+=Missing just on clients=
+Nothing? I don't seem to notice a difference now
+
 GAMEPLAY ISSUES:
 =Broken shit=
 Spawn particle for spawners
