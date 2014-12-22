@@ -188,11 +188,11 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
 
-	PrecacheUnitByNameSync("npc_small_murloc")
-	PrecacheUnitByNameSync("npc_small_murloc_a")
-	PrecacheUnitByNameSync("npc_murloc_hut_a")
+	PrecacheUnitByNameSync("npc_small_murloc", context)
+	PrecacheUnitByNameSync("npc_small_murloc_a", context)
+	PrecacheUnitByNameSync("npc_small_murloc_b", context)
 
-	PrecacheResource("model", "models/kappakey.vmdl", context)
+	--[[PrecacheResource("model", "models/kappakey.vmdl", context)
 	PrecacheResource("model", "models/props_items/monkey_king_bar01.vmdl", context)
 	PrecacheResource("model", "models/props_items/blinkdagger.vmdl", context)
 	PrecacheResource("model", "models/props_items/assault_cuirass.vmdl" , context)
@@ -230,7 +230,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
-	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
 
 
 	print('Precache End')
@@ -1236,4 +1236,15 @@ function Warchasers:OnEveryoneVoted(difficulty_level)
     elseif difficulty_level == 4 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>4</font>", 0, 0)
     end
+
+    -- Find the barrier_voting and obstructions_voting entities in the map and disable them
+    local barrier = Entities:FindByName(nil,"barrier_voting")
+	barrier:RemoveSelf()
+
+	local obstructions = Entities:FindAllByName("obstructions_voting")
+	for _,v in pairs(obstructions) do
+		v:SetEnabled(false,false)
+		print("Obstructions disabled")
+	end
+	
 end
