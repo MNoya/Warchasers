@@ -188,7 +188,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_tb_miniboss", context)
 	PrecacheUnitByNameSync("npc_boss", context)
 
-	PrecacheUnitByNameSync("npc_precache_everything", context)
+	--PrecacheUnitByNameSync("npc_precache_everything", context)
 	--[[
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
@@ -379,7 +379,7 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
-	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
+	PrecacheUnitByNameAsync("npc_precache_everything", function(...) end)
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_templar_assassin", function(...) end)
