@@ -268,6 +268,13 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_lich", function(...) end)
 
+	PrecacheUnitByNameAsync("npc_dota_hero_slark", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_doom_bringer", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_zuus", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_sniper", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_ogre_magi", function(...) end)
+
 	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
