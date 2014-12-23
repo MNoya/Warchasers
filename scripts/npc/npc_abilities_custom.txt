@@ -526,7 +526,7 @@
 
 		"precache"
 		{
-			"particle"	"particles/items_fx/blademail.vpcf"
+			"particle"	"particles/warchasers/return/blademail.vpcf"
 		}
 		
 		"Modifiers"	
@@ -534,7 +534,7 @@
 			"modifier_reflect_damage"
 			{
 				"Passive"			"1"
-				"EffectName"		"particles/items_fx/blademail.vpcf"
+				"EffectName"		"particles/warchasers/return/blademail.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"OnTakeDamage"
 				{
@@ -607,6 +607,15 @@
 		
 		"AbilityCooldown"	"8"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"700"
+			}
+		}
+
 		"OnSpellStart"
 			{
 			"Blink"
@@ -650,13 +659,22 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"affix_blood_freezer"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+		}
+
 		"Modifiers"
 			{
 			"affix_blood_freezer_aura"
 				{
 				"Passive"	"1"
 				"Aura"        "affix_blood_freezer_debuff"
-        		"Aura_Radius" "900"
+        		"Aura_Radius" "%radius"
         		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
         		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -686,7 +704,7 @@
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"1"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"2"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"1"
 					}
 				"OnHealthGained"
 					{
@@ -715,13 +733,22 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"affix_provoker"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+		}
+
 		"Modifiers"
 			{
 			"affix_provoker_aura"
 				{
 				"Passive"	"1"
 				"Aura"        "affix_provoker_buff"
-        		"Aura_Radius" "400"
+        		"Aura_Radius" "%radius"
         		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
         		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -884,6 +911,8 @@
 				{
 				"IsDebuff"	"1"
 				"Duration"	"2.5"
+				"EffectName"	"particles/warchasers/jailer/bane_nightmare.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"States"
 					{
 					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
