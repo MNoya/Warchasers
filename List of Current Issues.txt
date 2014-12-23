@@ -19,14 +19,20 @@ Error model under skeleton archers spawned with the book - Fixed
 Summon Water elemental lacks particicles morphling_replicate_finish - Fixed
 Missing Gyrocopter particles on steam tank - Fixed
 No frostivus ring at boss death - Fixed
+Inferno lacks all particicles - Fixed
+Red crosses on techies spawn - Fixed
+No level up sound - Fixed
 
 =Test=
 Some cosmetic glows on units - Fixed? Nope -> Red crosses on first seeing many units (ambients?)
-Inferno lacks all particicles - Fixed?
-Red crosses on techies spawn - Fixed?
+Storm Hammer lacks all particiles and sounds - Fixed?
+Attacks lack sounds - Fixed?
+Tranquility misses all particiles and sounds - Fixed?
+Death and Decay lacks particicles and sounds - Fixed?
+Whip is broken and does not alling with attacks - Fixed?
+Avatar particles - Fixed?
 
 =To Fix=
-No level up sound
 Ice Armor misses particiles and produces red crosses
 
 =Missing just on clients=
@@ -36,17 +42,14 @@ Heroes borken precache:
 	Beast Knight:		
 		
 	Assassin:
-		Storm Hammer lacks all particiles and sounds
+		
 	Blade Berserker:
 		Blade Storm is black
 	Megatron:
-		Attacks lack sounds
-		Tranquility misses all particiles and sounds
+		
 	Skeletrous:
-		Whip is broken and does not alling with attacks
-		Death and Decay lacks particicles and sounds
+		
 	Optimus Primo
-		Avatar particles
 
 
 GAMEPLAY ISSUES:
@@ -65,3 +68,4 @@ DeathTimers are decreasing
 Cyclone is a hideous spell, should remove it
 Sun Key is not very noticeable
 Delay on endgame being instant
+Nerf Techies PLEASE

@@ -190,19 +190,20 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_boss", context)
 
 	--PrecacheUnitByNameSync("npc_precache_everything", context)
-	--[[
+	
 
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
+	--PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
+	--PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	--PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 
 	PrecacheResource( "soundfile", "soundevents/music/valve_dota_001/stingers/game_sounds_stingers.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
-	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )]]
+	--PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
 
 	PrecacheResource( "particle_folder", "particles/warchasers", context )
 	PrecacheResource( "particle_folder", "particles/econ/items", context )	--might fail!
@@ -226,6 +227,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -253,6 +255,9 @@ function Warchasers:PostLoadPrecache()
 
 	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
+	--tranquility
+	PrecacheUnitByNameAsync("npc_dota_hero_luna", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_huskar", function(...) end)
 
 	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 

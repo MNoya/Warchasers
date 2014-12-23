@@ -205,8 +205,8 @@
 				"IsHidden"	"1"
 
 				//unnecessary effect, might remove later
-				"EffectName"		"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
-				"EffectAttachType"	"follow_origin"
+				//"EffectName"		"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+				//"EffectAttachType"	"follow_origin"
 				"OnCreated"
 				{
 					"RunScript"		
