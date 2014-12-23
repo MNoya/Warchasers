@@ -380,7 +380,44 @@
 		"DOTA_Tooltip_ability_affix_molten_trail_aoe"                                     "TRAIL AOE:"
 		"DOTA_Tooltip_ability_affix_molten_explosion_radius"                              "EXPLOSION RADIUS:"
 		
-		
+		"DOTA_Tooltip_ability_affix_assaulter"                                            "Affix Assaulter"
+		"DOTA_Tooltip_ability_affix_assaulter_Description"                                ""
+		"DOTA_Tooltip_ability_affix_assaulter_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_assaulter_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_assaulter_range"                                      "RANGE:"
+
+		"DOTA_Tooltip_ability_affix_blood_freezer"                                        "Affix Blood Freezer"
+		"DOTA_Tooltip_ability_affix_blood_freezer_Description"                            ""
+		"DOTA_Tooltip_ability_affix_blood_freezer_Note0"                                  ""
+		"DOTA_Tooltip_ability_affix_blood_freezer_Lore"                                   ""
+		"DOTA_Tooltip_ability_affix_blood_freezer_radius"                                 "RADIUS:"
+
+		"DOTA_Tooltip_ability_affix_provoker"                                             "Affix Provoker"
+		"DOTA_Tooltip_ability_affix_provoker_Description"                                 ""
+		"DOTA_Tooltip_ability_affix_provoker_Note0"                                       ""
+		"DOTA_Tooltip_ability_affix_provoker_Lore"                                        ""
+		"DOTA_Tooltip_ability_affix_provoker_radius"                                      "RADIUS:"
+
+		"DOTA_Tooltip_ability_affix_plagued"                                              "Affix Plagued"
+		"DOTA_Tooltip_ability_affix_plagued_Description"                                  ""
+		"DOTA_Tooltip_ability_affix_plagued_Note0"                                        ""
+		"DOTA_Tooltip_ability_affix_plagued_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_plagued_damage_per_second"                            "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_affix_plagued_radius"                                       "RADIUS:"
+
+		"DOTA_Tooltip_ability_affix_shielding"                                            "Affix Shielding"
+		"DOTA_Tooltip_ability_affix_shielding_Description"                                ""
+		"DOTA_Tooltip_ability_affix_shielding_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_shielding_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_shielding_absorb"                                     "ABSORB:"
+		"DOTA_Tooltip_ability_affix_shielding_duration"                                   "DURATION:"
+
+		"DOTA_Tooltip_ability_affix_thunderstorm"                                         "Affix Thunderstorm"
+		"DOTA_Tooltip_ability_affix_thunderstorm_Description"                             ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_Note0"                                   ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_Lore"                                    ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_radius"                                  "RADIUS:"
+
 		
 		
 
@@ -445,6 +482,9 @@
 		"DOTA_Tooltip_modifier_frozen_aura_debuff"                                        "Frozen Aura Debuff"
 		"DOTA_Tooltip_modifier_frozen_aura_debuff_Description"                            ""
 
+		"DOTA_Tooltip_modifier_plagued_pool"                                              "Plagued Pool"
+		"DOTA_Tooltip_modifier_plagued_pool_Description"                                  ""
+		
 		"DOTA_Tooltip_modifier_stunned"                                                   "Stunned"
 		"DOTA_Tooltip_modifier_stunned_Description"                                       ""
 
