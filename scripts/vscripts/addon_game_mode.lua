@@ -243,6 +243,17 @@ end
 function Warchasers:PostLoadPrecache()
 	print("Performing Post-Load precache")
 
+	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
+	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
+	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
+	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
+	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
+	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
+
 	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 
 	--[[PrecacheUnitByNameAsync("npc_dota_hero_sven", function(...) end)
@@ -282,16 +293,7 @@ function Warchasers:PostLoadPrecache()
 
 	PrecacheUnitByNameAsync("npc_dota_hero_necrolyte", function(...) end)
 
-	--PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)]]
-
-	PrecacheUnitByNameAsync("npc_dota_lycan_wolf1", function(...) end)
-	PrecacheUnitByNameAsync("npc_dota_dark_troll_warlord_skeleton_warrior", function(...) end)
-	PrecacheUnitByNameAsync("npc_avatar_of_vengeance", function(...) end)
-	PrecacheUnitByNameAsync("npc_spirit_of_vengeance", function(...) end)
-	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
-	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
-	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
-	
+	--PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)]]	
 
 end
 

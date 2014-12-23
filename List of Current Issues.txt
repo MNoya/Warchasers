@@ -15,16 +15,17 @@ Drow aura toggle red crosses - Fixed
 Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg - Fixed
 Picking up tomes lack particicles - Fixed
 Thunderstorm Disruptor shock - Fixed
+Error model under skeleton archers spawned with the book - Fixed
+Summon Water elemental lacks particicles morphling_replicate_finish - Fixed
+Missing Gyrocopter particles on steam tank - Fixed
+No frostivus ring at boss death - Fixed
 
 =Test=
 Some cosmetic glows on units - Fixed? Nope -> Red crosses on first seeing many units (ambients?)
-No frostivus ring at boss death - Fixed?
-Error model under skeleton archers spawned with the book - Fixed?
-Summon Water elemental lacks particicles morphling_replicate_finish - Fixed?
-Missing Gyrocopter particles on steam tank - Fixed?
+Inferno lacks all particicles - Fixed?
+Red crosses on techies spawn - Fixed?
 
 =To Fix=
-Red crosses on techies spawn
 No level up sound
 Ice Armor misses particiles and produces red crosses
 
@@ -33,7 +34,7 @@ Nothing? I don't seem to notice a difference now
 
 Heroes borken precache:
 	Beast Knight:		
-		Inferno lacks all particicles
+		
 	Assassin:
 		Storm Hammer lacks all particiles and sounds
 	Blade Berserker:
