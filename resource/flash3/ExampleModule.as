@@ -32,6 +32,7 @@ package  {
 			
 			//Event Listeners
 			this.gameAPI.SubscribeToGameEvent("hero_picker_hidden", this.OnHeroPicked);
+			this.gameAPI.SubscribeToGameEvent("warchasers_finished_voting", this.FinishVoting);
 	
 			//Button Listeners
 			this.lvl0Button.addEventListener(MouseEvent.CLICK, onButton0Clicked);
@@ -186,6 +187,11 @@ package  {
 			
 		}
 		
+		//Fires if they haven't selected a difficulty after the time for voting has ended
+		public function FinishVoting(args:Object) : void {
+			trace("##Event Firing Detected")
+			this.visible = false
+		}
 		
 		public function OnHeroPicked(args:Object) : void {
 			//get the ID of the player this UI belongs to, here we use a scaleform function from globals

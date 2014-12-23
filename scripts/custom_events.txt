@@ -1,5 +1,9 @@
 "CustomEvents"
 {
+	"warchasers_finished_voting"
+	{
+	}
+
 	"custom_error_show"
 	{
 		"player_ID"		"short"

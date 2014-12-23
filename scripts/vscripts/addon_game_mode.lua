@@ -125,6 +125,7 @@ function Warchasers:InitGameMode()
 
 	GameRules.PLAYER_VOTES = {}
 	GameRules.DIFFICULTY = 0
+	GameRules.difficulty_selected = false
 
 
     -- Remove building invulnerability
@@ -723,6 +724,10 @@ function Warchasers:OnEveryonePicked()
     GameRules:SendCustomMessage("Welcome to <font color='#2EFE2E'>Warchasers!</font>", 0, 0) -- ##9A2EFE
     GameRules:SendCustomMessage("Ported by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
+    GameRules:SendCustomMessage("<br>1 minute to select a difficulty",0,0)
+    Timers:CreateTimer(30,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
+    Timers:CreateTimer(50,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
+    Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then Warchasers:OnEveryoneVoted() end end)
 end
 
 --Item checking
@@ -1224,44 +1229,49 @@ function Warchasers:UpdateVotes( player, difficulty )
     --get the hero handle
     local hero = player:GetAssignedHero()
 
-	table.insert(GameRules.PLAYER_VOTES,difficulty)
-	print("========VOTE TABLE========")
-	DeepPrintTable(GameRules.PLAYER_VOTES)
-	print("==========================")
+    if not GameRules.difficulty_selected then
+		table.insert(GameRules.PLAYER_VOTES,difficulty)
+		print("========VOTE TABLE========")
+		DeepPrintTable(GameRules.PLAYER_VOTES)
+		print("==========================")
 
-  	local difficulty_level = 0
-    for k,v in pairs(GameRules.PLAYER_VOTES) do
-    	difficulty_level = difficulty_level + v
-    end
+	  	local difficulty_level = 0
+	    for k,v in pairs(GameRules.PLAYER_VOTES) do
+	    	difficulty_level = difficulty_level + v
+	    end
 
-    difficulty_level = difficulty_level / #GameRules.PLAYER_VOTES
-    print("Average: " ..difficulty_level)
-    difficulty_level = math.floor(difficulty_level+0.5)
-    print("Rounded difficulty: ".. difficulty_level)
+	    difficulty_level = difficulty_level / #GameRules.PLAYER_VOTES
+	    print("Average: " ..difficulty_level)
+	    difficulty_level = math.floor(difficulty_level+0.5)
+	    print("Rounded difficulty: ".. difficulty_level)
+	    GameRules.DIFFICULTY = difficulty_level
 
-    if (#GameRules.PLAYER_VOTES==GameRules.PLAYER_COUNT) then
-    	Warchasers:OnEveryoneVoted(difficulty_level)
-    end
+	    if (#GameRules.PLAYER_VOTES==GameRules.PLAYER_COUNT) then
+	    	Warchasers:OnEveryoneVoted()
+	    end
+	end
 end
 
-function Warchasers:OnEveryoneVoted(difficulty_level)
+function Warchasers:OnEveryoneVoted()
+	
+	--Fire Game Event to our UI
+	FireGameEvent('warchasers_finished_voting', {})
+
     GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 
     -- Set the difficulty here.
-
-    GameRules.DIFFICULTY = difficulty_level
     GameRules.difficulty_selected = true
     add_affixes_to_pre_dificulty_creeps()
     -- Change this to the proper strings later
-    if difficulty_level == 0 then
+    if GameRules.DIFFICULTY == 0 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>Classic</font>", 0, 0)
-    elseif difficulty_level == 1 then
+    elseif GameRules.DIFFICULTY == 1 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>1</font>", 0, 0)
-    elseif difficulty_level == 2 then
+    elseif GameRules.DIFFICULTY == 2 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>2</font>", 0, 0)
-    elseif difficulty_level == 3 then
+    elseif GameRules.DIFFICULTY == 3 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>3</font>", 0, 0)
-    elseif difficulty_level == 4 then
+    elseif GameRules.DIFFICULTY == 4 then
     	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>4</font>", 0, 0)
     end
 
