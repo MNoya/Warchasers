@@ -1,0 +1,11 @@
+0: Normal, The Classic difficulty baseline
+1: (Hard) Advanced, Elite
+2: (Expert, Nightmare) Epic
+3: (Master, Hell) Heroic
+4: (Torment, Inferno) Legendary, The Ultimate difficulty
+
+Others: Brutal, Hurt me Plenty, Insane.
+Dota 2 Cosmetic Rarities: Common, Uncommon, Rare, Mythical, Legendary, Ancient, Immortal, Arcana.
+	Others: Elder, Ascendant, Legacy, Exalted.
+
+Chose: 1. Ascendant 2. Elder 3. Mythical 4. Legendary.

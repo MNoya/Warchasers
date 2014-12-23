@@ -14,17 +14,17 @@
 
 		"select_difficulty"				 "SELECT DIFFICULTY"
 		"difficulty0"                    "Normal"
-		"difficulty1"                    "Hard"
-		"difficulty2"                    "Expert"
-		"difficulty3"                    "Master"
-		"difficulty4"                    "Torment"
+		"difficulty1"                    "Ascendant"
+		"difficulty2"                    "Elder"
+		"difficulty3"                    "Mythical"
+		"difficulty4"                    "Legendary"
 		
-		"difficulty_text"				""
-		"difficulty0_text"				"This is the classic difficulty baseline"
-		"difficulty1_text"				"Creeps gain 1 ability affix\nfrom a pool of XYZ\nMore Description needed"
-		"difficulty2_text"				"2 Affixes"
-		"difficulty3_text"				"3 Affixes"
-		"difficulty4_text"				"4 Affixes"
+		"difficulty_text"				"Each additional level of difficulty will add one affix to each creature, from a pool of over 20 abilities\nAll modifiers are sorted into three classes: Disable, Defensive and Aggressive\nAny creature pack can only have at most 1 Disabling and 1 Defensive affixes."
+		"difficulty0_text"				"This is the Classic difficulty baseline\n"
+		"difficulty1_text"				"An Advanced Challenge\nWatch your step!"
+		"difficulty2_text"				"An Heroic Challenge\nDon't try this alone or without experience"
+		"difficulty3_text"				"A Brutal Quest\nYou asked for it"
+		"difficulty4_text"				"The Ultimate Difficulty\nIf you are truly Insane\nOnly recommended for full teams of tryhards"
 		
 		"vote_difficulty"				"VOTE DIFFICULTY"
 		
