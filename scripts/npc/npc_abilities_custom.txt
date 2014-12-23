@@ -442,7 +442,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fear_duration"			"4"
+				"fear_duration"			"3"
 			}
 		}
 
@@ -474,11 +474,7 @@
 								"ScriptFile"	"abilities.lua"
 								"Function"		"Disorient"
 							}
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_disoriented"
-								"Target"	"TARGET"
-							}
+							
 						}
 					}
 				}

@@ -800,8 +800,15 @@ function molten_explode( event )
 end
 
 function Disorient( event )
-	local vector = event.target:GetAbsOrigin() + RandomVector(600)
-	event.target:MoveToPosition(vector)
+	if event.target.nightmare_delay == nil then
+		event.target.nightmare_delay = 0
+	end
+	if event.target.nightmare_delay < GameRules:GetGameTime() then
+		local vector = event.target:GetAbsOrigin() + RandomVector(600)
+		event.target:MoveToPosition(vector)
+		event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_disoriented", nil) 
+		event.target.nightmare_delay = GameRules:GetGameTime() + 12
+	end
 end
 
 function ReflectDamage( event )
@@ -1021,7 +1028,7 @@ function desecration_ai( event )
 				end
 				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 7
+					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
 				end
 			end
 			if target ~= nil then
@@ -1037,12 +1044,12 @@ function frozen_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.frozen_delay == nil then
-					value.frozen_delay = 0
+				if value.desecration_delay == nil then
+					value.desecration_delay = 0
 				end
-				if target == nil and value.frozen_delay < GameRules:GetGameTime() then
+				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.frozen_delay = GameRules:GetGameTime() + 7
+					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
 				end
 			end
 			if target ~= nil then
@@ -1058,12 +1065,12 @@ function plagued_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.plagued_delay == nil then
-					value.plagued_delay = 0
+				if value.desecration_delay == nil then
+					value.desecration_delay = 0
 				end
-				if target == nil and value.plagued_delay < GameRules:GetGameTime() then
+				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.plagued_delay = GameRules:GetGameTime() + 7
+					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
 				end
 			end
 			if target ~= nil then
@@ -1079,12 +1086,12 @@ function thunderstorm_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.thunderstorm_delay == nil then
-					value.thunderstorm_delay = 0
+				if value.desecration_delay == nil then
+					value.desecration_delay = 0
 				end
-				if target == nil and value.thunderstorm_delay < GameRules:GetGameTime() then
+				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.thunderstorm_delay = GameRules:GetGameTime() + 7
+					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
 				end
 			end
 			if target ~= nil then
