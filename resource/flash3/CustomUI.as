@@ -16,6 +16,8 @@ package {
 		public var globals:Object;
 		public var elementName:String;
 		
+		public var screenWidth:int;
+		
 		//constructor, you usually will use onLoaded() instead
 		public function CustomUI() : void {
 
@@ -38,33 +40,20 @@ package {
 			trace("Custom UI loaded!");
 		}
 		
-		//this handles the resizes - credits to Nullscope
+		//this handles the resizes - credits to Nullscope & Perry
 		public function onResize(re:ResizeManager) : * {
-			var rm = Globals.instance.resizeManager;
-			var currentRatio:Number =  re.ScreenWidth / re.ScreenHeight;
-			var divided:Number;
-		
-			// Set this to your stage height, however, if your assets are too big/small for 1024x768, you can change it
-			// This is just your original stage height
-			var originalHeight:Number = 900;
-					
-			if(currentRatio < 1.5)
-			{
-				// 4:3
-				divided = currentRatio / 1.333;
-			}
-			else if(re.Is16by9()){
-				// 16:9
-				divided = currentRatio / 1.7778;
-			} else {
-				// 16:10
-				divided = currentRatio / 1.6;
-			}
-							
-			 var correctedRatio:Number =  re.ScreenHeight / originalHeight * divided;
 			
-			//pass the resize event to our module, we pass the width and height of the screen, as well as the correctedRatio.
-			//this.myModule.screenResize(re.ScreenWidth, re.ScreenHeight, correctedRatio);
+			// calculate by what ratio the stage is scaling
+			var scaleRatioY:Number = re.ScreenHeight/900;
+					
+			if (re.ScreenHeight > 900){
+				scaleRatioY = 1;
+			}
+					
+			screenWidth = re.ScreenWidth;
+					
+			//pass the resize event to our module, we pass the width and height of the screen, as well as the INVERSE of the stage scaling ratios.
+			this.myModule.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 		}
 	}
 }

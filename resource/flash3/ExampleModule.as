@@ -194,9 +194,13 @@ package  {
 			trace("##Difficulty Selection Module should be visible now")
 		}
     		
-		public function screenResize(stageX:int, stageY:int, scaleRatio:Number){
-			this.x = stageX/2
-			this.y = stageY/2;
+		public function screenResize(stageW:int, stageH:int, xScale:Number, yScale:Number, wide:Boolean){
+			this.x = stageW/2;
+			this.y = stageH/2-100*yScale; //A bit on top of the middle to show the chat
+					 
+			//Now we just set the scale of this element, because these parameters are already the inverse ratios
+			this.scaleX = xScale;
+			this.scaleY = yScale;
 		}
 		
 		//Parameters: 
