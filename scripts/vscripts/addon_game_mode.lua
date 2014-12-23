@@ -230,6 +230,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_frost_armor.vpcf" , context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_broodmother/broodmother_portrait_spiderling.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -265,6 +266,7 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_dota_hero_mirana", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_enigma", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_lich", function(...) end)
 
 	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 

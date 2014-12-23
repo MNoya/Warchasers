@@ -4056,7 +4056,7 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4532" //Weapon		
+					"ItemDef"			"5795" // Tidal Blade //Weapon		
 				}
 				"Wearable2"
 				{
@@ -4161,7 +4161,7 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4532" //Weapon		
+					"ItemDef"			"5795" // Tidal Blade //Weapon		
 				}
 				"Wearable2"
 				{
@@ -4266,7 +4266,7 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"			"4532" //Weapon		
+					"ItemDef"			"5795" // Tidal Blade //Weapon		
 				}
 				"Wearable2"
 				{
