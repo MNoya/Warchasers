@@ -1464,6 +1464,19 @@
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%absorb"
 				}
 			}
+			"shielding_ai"
+	    		{
+	    		"Passive"	"1"
+	    		"ThinkInterval"		"3"
+		    	"OnIntervalThink"
+		    		{
+		    		"RunScript"
+		    			{
+		    			"ScriptFile"		"abilities.lua"
+						"Function"			"shielding_ai"
+		    			}
+		    		}
+	    		}
 		}
 	}
 

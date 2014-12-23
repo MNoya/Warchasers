@@ -731,15 +731,20 @@ function molten_interval( event )
 	local vector_traveled = (event.ability.molten_position - current_position)
 	local distance_traveled = vector_traveled:Length2D() + event.ability.molten_mod
 	local direction = vector_traveled:Normalized() 
-		if distance_traveled > 50 then 
-		local next_thinker_pos = event.ability.molten_position
-		repeat --//DONT USE THIS, IT CRASHES GAMES
-		next_thinker_pos = direction * 50 + next_thinker_pos
+	if distance_traveled > 50 then 
+		if distance_traveled < 500 then
+			event.caster:MakeVisibleToTeam(DOTA_TEAM_GOODGUYS, 30)
+			local next_thinker_pos = event.ability.molten_position
+			repeat --//DONT USE THIS, IT CRASHES GAMES
+			next_thinker_pos = direction * 50 + next_thinker_pos
 
-		table.insert(event.ability.molten_points_table, next_thinker_pos)
+			table.insert(event.ability.molten_points_table, next_thinker_pos)
 
-		distance_traveled = distance_traveled - 50
-		until distance_traveled < 50
+			distance_traveled = distance_traveled - 50
+			until distance_traveled < 50
+		else
+			distance_traveled = 0
+		end
 	end
 
 	for key1, vector in pairs(event.ability.molten_points_table) do
