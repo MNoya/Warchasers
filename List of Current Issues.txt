@@ -22,18 +22,19 @@ No frostivus ring at boss death - Fixed
 Inferno lacks all particicles - Fixed
 Red crosses on techies spawn - Fixed
 No level up sound - Fixed
+Storm Hammer lacks all particiles and sounds - Fixed
+Attacks lack sounds - Fixed
+Tranquility misses all particiles and sounds - Fixed
+Avatar particles - Fixed
+Entangling Roots sound added
+Starstorm particles and sound - Fixed
 
 =Test=
-Some cosmetic glows on units - Fixed? Nope -> Red crosses on first seeing many units (ambients?)
-Storm Hammer lacks all particiles and sounds - Fixed?
-Attacks lack sounds - Fixed?
-Tranquility misses all particiles and sounds - Fixed?
+Some cosmetic glows on units - Fixed? Nope -> Red crosses on first seeing many units (ambients?) Seems fixed for the most part
+Blade Storm is black - This is also probably cosmetic related. Mine is ok
 Death and Decay lacks particicles and sounds - Fixed?
-Whip is broken and does not alling with attacks - Fixed?
-Avatar particles - Fixed?
-
-=To Fix=
-Ice Armor misses particiles and produces red crosses
+Whip is broken and does not alling with attacks - Fixed? Probably cosmetic related
+Ice Armor misses particiles and produces red crosses - Fixed?
 
 =Missing just on clients=
 Nothing? I don't seem to notice a difference now
@@ -44,7 +45,7 @@ Heroes borken precache:
 	Assassin:
 		
 	Blade Berserker:
-		Blade Storm is black
+		
 	Megatron:
 		
 	Skeletrous:
@@ -69,3 +70,4 @@ Cyclone is a hideous spell, should remove it
 Sun Key is not very noticeable
 Delay on endgame being instant
 Nerf Techies PLEASE
+Ults being channeled is kinda bad for higher difficulties as standing still is impossible

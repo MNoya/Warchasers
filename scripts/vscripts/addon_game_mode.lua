@@ -228,6 +228,8 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_lich/lich_frost_armor.vpcf" , context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -252,12 +254,17 @@ function Warchasers:PostLoadPrecache()
 	PrecacheUnitByNameAsync("npc_rock_golem", function(...) end)
 	PrecacheUnitByNameAsync("npc_skeleton_archer", function(...) end)
 	PrecacheUnitByNameAsync("npc_kitt_steamtank", function(...) end)
+	PrecacheUnitByNameAsync("npc_red_drake", function(...) end)
 
 	PrecacheUnitByNameAsync("npc_dota_hero_warlock", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_techies", function(...) end)
 	--tranquility
 	PrecacheUnitByNameAsync("npc_dota_hero_luna", function(...) end)
 	PrecacheUnitByNameAsync("npc_dota_hero_huskar", function(...) end)
+
+	PrecacheUnitByNameAsync("npc_dota_hero_mirana", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_enigma", function(...) end)
+	PrecacheUnitByNameAsync("npc_dota_hero_treant", function(...) end)
 
 	--PrecacheUnitByNameAsync("npc_precache_everything", function(...) end) --CRASHES THE GAME, NEEDS TO BE IN Sync...
 

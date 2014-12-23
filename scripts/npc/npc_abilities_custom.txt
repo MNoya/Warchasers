@@ -8491,6 +8491,7 @@
 		{
 			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_body_cauldron.vpcf"
 			"particle"				"particles/econ/items/lone_druid/lone_druid_cauldron/lone_druid_bear_entangle_cauldron.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
 		}
 
 		"AbilitySpecial"
@@ -8515,6 +8516,11 @@
 
 		"OnSpellStart"
 			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Treant.Overgrowth.Cast"
+					"Target"		"TARGET"
+				}
 			"RunScript"
 				{
 				"ScriptFile"	"abilities.lua"
