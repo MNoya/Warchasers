@@ -1,7 +1,7 @@
 List of Current Issues
 
 PRECACHE ISSUES:
-=Missing on both client and server=
+=Fixed=
 DK Fire - Fixed
 Venomancer shit acid - Fixed
 Warlock hands - Fixed
@@ -10,28 +10,29 @@ Red crosses on Frozen - Fixed
 Healing Ward (only if it didn't drop before) - Model Fixed, missing particle
 Warlock golem - Fixed, missing particle
 Chest model created in lua (only if it didn't drop) - Fixed
-
-Some cosmetic glows on units - Fixed? Nope...
-Red crosses on techies spawn
-Red crosses on first seeing many units (ambients?)
 Necro glow on spawn - Fixed
 Drow aura toggle red crosses - Fixed
 Steam Tank boss is a big giant error http://puu.sh/dFa0v/b3f11458b2.jpg - Fixed
-No particles on most of its spells (just sunstrike, immolation and the death lina particle) - Fixed? Missing Gyrocopter particles
-No frostivus ring at boss death - Fixed?
-No level up sound
 Picking up tomes lack particicles - Fixed
-Ice Armor misses particiles and produces red crosses
-
 Thunderstorm Disruptor shock - Fixed
+
+=Test=
+Some cosmetic glows on units - Fixed? Nope -> Red crosses on first seeing many units (ambients?)
+No frostivus ring at boss death - Fixed?
 Error model under skeleton archers spawned with the book - Fixed?
+Summon Water elemental lacks particicles morphling_replicate_finish - Fixed?
+Missing Gyrocopter particles on steam tank - Fixed?
+
+=To Fix=
+Red crosses on techies spawn
+No level up sound
+Ice Armor misses particiles and produces red crosses
 
 =Missing just on clients=
 Nothing? I don't seem to notice a difference now
 
 Heroes borken precache:
-	Beast Knight:
-		Summon Water elemental lacks particicles morphling_replicate_finish
+	Beast Knight:		
 		Inferno lacks all particicles
 	Assassin:
 		Storm Hammer lacks all particiles and sounds

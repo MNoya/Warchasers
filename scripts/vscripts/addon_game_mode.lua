@@ -224,6 +224,9 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_rain_storm.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_morphling/morphling_replicate_finish.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf", context)
+
 	--PrecacheResource( "particle", , context)
 
 	PrecacheResource( "model", "models/kappakey.vmdl", context )

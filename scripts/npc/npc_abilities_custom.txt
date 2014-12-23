@@ -12100,6 +12100,8 @@
 			"particle"	"particles/test_particle/channel_field_2.vpcf"
 			"particle"	"particles/units/heroes/hero_invoker/invoker_chaos_meteor.vpcf"
 			"particle"	"particles/units/heroes/hero_alchemist/alchemist_unstable_concoction_projectile.vpcf"
+			"particle"	"particles/units/heroes/hero_gyrocopter/gyro_calldown_explosion_second.vpcf"
+			"particle"	"particles/units/heroes/hero_gyrocopter/gyro_rocket_barrage.vpcf"
 		}
 
 		"OnSpellStart"
