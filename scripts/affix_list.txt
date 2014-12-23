@@ -28,7 +28,7 @@
 
 "affix_electrified"
     {
-    "level_limit"   "5"
+    "level_limit"   "3"
     "range_melee_type"    "melee"
     }
 
@@ -71,11 +71,11 @@
 
 ////
 
-"affix_knockback"
-{
-    "level_limit"   "0"
-    "range_melee_type"    "any"
-}
+//"affix_knockback"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
 
 "affix_nightmarish"
 {
@@ -95,11 +95,11 @@
 //    "range_melee_type"    "any"
 //}
 
-"affix_hurricaner"
-{
-    "level_limit"   "0"
-    "range_melee_type"    "any"
-}
+//"affix_hurricaner"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
 
 "affix_desecrator"
 {

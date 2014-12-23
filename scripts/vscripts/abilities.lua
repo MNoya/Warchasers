@@ -829,7 +829,7 @@ assaulter_anti_stack = 0
 
 function assaulter_think( event )
 	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > assaulter_anti_stack then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 700, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
 
 		if heroes_around[1] ~= nil then
 			if heroes_around[1]:CanEntityBeSeenByMyTeam(event.caster) == true then
@@ -1098,5 +1098,11 @@ function thunderstorm_ai( event )
 				event.caster:CastAbilityOnPosition(target:GetAbsOrigin(), event.ability, event.caster:GetPlayerOwnerID() )
 			end
 		end
+	end
+end
+
+function shielding_ai( event )
+	if event.ability:IsFullyCastable() == true then
+		event.caster:CastAbilityNoTarget(event.ability, event.caster:GetPlayerOwnerID()) 
 	end
 end
