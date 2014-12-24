@@ -719,7 +719,7 @@ function molten_start( event )
 end
 
 function molten_interval( event )
-	local damage = event.ability:GetSpecialValueFor("overtime_damage") / 10
+	local damage = (event.ability:GetSpecialValueFor("overtime_damage") + event.ability:GetSpecialValueFor("overtime_bonus_per_level") * event.caster:GetLevel()  ) / 10
 	local team_number = event.caster:GetTeamNumber()
 	local damaged_group = {}
 	local radius = event.ability:GetSpecialValueFor("trail_aoe")
@@ -764,7 +764,7 @@ end
 
 function molten_explode( event )
 	
-	local damage = event.ability:GetSpecialValueFor("explosion_damage") 
+	local damage = event.ability:GetSpecialValueFor("explosion_damage") + event.ability:GetSpecialValueFor("explosion_bonus_per_level") * event.caster:GetLevel()
 	local team_number = event.caster:GetTeamNumber()
 	local damaged_group = {}
 	local radius = event.ability:GetSpecialValueFor("explosion_radius") 
@@ -954,7 +954,7 @@ function PlaguedPool( event )
 	local point = event.target_points[1]
 	local caster = event.caster
 	local radius = event.ability:GetSpecialValueFor("radius")
-	local amount_of_damage_mod = math.ceil(event.caster:GetLevel() / 2)
+	
 
 	print("Creating Plagued Pool")
 
@@ -1119,5 +1119,12 @@ end
 function shielding_ai( event )
 	if event.ability:IsFullyCastable() == true then
 		event.caster:CastAbilityNoTarget(event.ability, event.caster:GetPlayerOwnerID()) 
+	end
+end
+
+function desecrator_damage( event )
+	local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
+	for key, unit in pairs(event.target_entities)do
+		ApplyDamage({ victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
 	end
 end

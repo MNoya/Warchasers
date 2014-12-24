@@ -979,7 +979,7 @@
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"15"
 		"AbilityDuration"               "12"
-		"AbilityDamage"					"50"
+		"AbilityDamage"					"25"
 		"AoERadius"						"150"
 
 		"AbilitySpecial"
@@ -998,6 +998,11 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"delay"				"1"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_per_level"				"10"
 			}
 		}
 
@@ -1039,10 +1044,10 @@
 				"ThinkInterval"		"1"
 		    	"OnIntervalThink"
 		    	{
-		        	"Damage"
-					{
-						"Type"          "DAMAGE_TYPE_MAGICAL"
-						"Damage"        "%AbilityDamage"
+		        	"RunScript"
+		    			{
+		    			"ScriptFile"		"abilities.lua"
+						"Function"			"desecrator_damage"
 						"Target"
 						{
 							"Center"  	"TARGET"
@@ -1082,7 +1087,7 @@
 
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"15"
-		"AbilityDamage"					"100"
+		"AbilityDamage"					"50"
 
 		"AbilitySpecial"
 		{
@@ -1241,12 +1246,12 @@
 			"01"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"explosion_damage"		"200"
+				"explosion_damage"		"90"
 				}
 			"02"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"overtime_damage"		"30"
+				"overtime_damage"		"8"
 				}
 			"03"
 				{
@@ -1257,6 +1262,16 @@
 				{
 				"var_type"				"FIELD_INTEGER"
 				"explosion_radius"		"200"
+				}
+			"05"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_bonus_per_level"		"45"
+				}
+			"06"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"overtime_bonus_per_level"		"4"
 				}
 			}
 
