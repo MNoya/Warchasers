@@ -6405,7 +6405,7 @@
 			"01"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"burn_amount"			"50 100 150"
+				"burn_amount"			"15"
 				}
 			}
 		"OnSpellStart"
@@ -7197,12 +7197,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"-50"
+				"attack_speed"				"-30"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed"				"-50"
+				"move_speed"				"-30"
 			}
 			"04"
 			{
@@ -7295,7 +7295,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed"				"-60"
+				"move_speed"				"-20"
 			}
 		}		
 
@@ -10183,7 +10183,7 @@
 		"AbilityManaCost" "0"
 		//"AbilityChannelTime" "4.0" //spawn rate is controlled through LUA
 		"AbilityCastPoint" "0"
-		"AbilityCooldown"        "0"
+		"AbilityCooldown"        "8"
 		"AOERadius"     "225"
 		"AbilityTextureName"	"spawn_murloc"
 		
@@ -10256,7 +10256,7 @@
 		"AbilityManaCost" "0"
 		//"AbilityChannelTime" "4.0" //spawn rate is controlled through LUA
 		"AbilityCastPoint" "0"
-		"AbilityCooldown"        "0"
+		"AbilityCooldown"        "8"
 		"AOERadius"     "225"
 		"AbilityTextureName"	"spawn_murloc"
 		
@@ -10330,6 +10330,7 @@
 		"AbilityCastPoint" "0"
 		"AOERadius"     "225"
 		"AbilityTextureName"	"spawn_gnoll"
+		"AbilityCooldown"        "8"
 		
 		"OnSpellStart"
 		{

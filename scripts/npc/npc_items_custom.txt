@@ -155,7 +155,7 @@
     "item_gauntlets_3"
 	{
 		"ID"							"1013"
-		"ItemCost"						"900"
+		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -271,7 +271,7 @@
 	"item_claws_9"
 	{
 		"ID"							"1017"
-		"ItemCost"						"2100"
+		"ItemCost"						"400"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -330,7 +330,7 @@
 	"item_robe_6"
 	{
 		"ID"							"1019"
-		"ItemCost"						"3000"
+		"ItemCost"						"1000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -359,7 +359,7 @@
     "item_ror_2"
     {
     	"ID"							"1020"
-		"ItemCost"						"3000"
+		"ItemCost"						"1000"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -388,7 +388,7 @@
 	"item_mantle_3"
 	{
 		"ID"							"1021"
-		"ItemCost"						"900"
+		"ItemCost"						"100"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"
@@ -540,7 +540,7 @@
     "item_rop_4"
     {
     	"ID"							"1026"
-		"ItemCost"						"2200"
+		"ItemCost"						"500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"                  "1"
 		"ItemSellable"                  "1"

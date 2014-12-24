@@ -4746,7 +4746,7 @@
 		"SoundSet"                  "Hero_KeeperOfTheLight"					
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
-		"Level"						"3"
+		"Level"						"4"
 
 		"UseNeutralCreepBehavior" 	"0"
 
@@ -6964,7 +6964,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"4"
 		"ModelScale" 				".6"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -7011,7 +7011,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"160"		// Base health.
+		"StatusHealth"				"240"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -7626,7 +7626,7 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
 		"ModelScale"				"1.2"
-		"Level"						"6"
+		"Level"						"8"
 		"Portrait"					"vgui/hud/heroportraits/portrait_doom_bringer"
 		"SoundSet"					"Hero_DoomBringer"			
 		"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
@@ -7668,7 +7668,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"500"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"0.2"		// Health regeneration rate.
 		"StatusMana"				"500"			// Base mana.
 		"StatusManaRegen"			"0.6"			// Mana regeneration rate.
@@ -8165,7 +8165,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"350"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"400"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -8430,7 +8430,7 @@
 		"SoundSet"                  "Hero_Lina"			
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
-		"Level"						"2"
+		"Level"						"3"
 		
 		"UseNeutralCreepBehavior" 	"0"
 		
@@ -8486,7 +8486,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"160"			// Base health.
+		"StatusHealth"				"200"			// Base health.
 		"StatusHealthRegen"			"0.5"			// Health regeneration rate.
 		"StatusMana"				"300"			// Base mana.
 		"StatusManaRegen"			"0.75"			// Mana regeneration rate.
@@ -8614,7 +8614,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Furion_Treant"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"2"
 		"ModelScale" 				"1.2"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -8660,7 +8660,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"160"		// Base health.
+		"StatusHealth"				"180"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -8778,7 +8778,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"3"
 		"ModelScale" 				"1.6"
 		
 		//"UseNeutralCreepBehavior" 	"0"
@@ -8797,8 +8797,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"18"		// Damage range min.
-		"AttackDamageMax"			"26"		// Damage range max.	
+		"AttackDamageMin"			"20"		// Damage range min.
+		"AttackDamageMax"			"28"		// Damage range max.	
 		"AttackRate"				"2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -8824,7 +8824,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"260"		// Base health.
+		"StatusHealth"				"320"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -8950,7 +8950,7 @@
 		"SoundSet"                  "LoneDruid_SpiritBear"					
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lone_druid.vsndevts"
-		"Level"						"5"
+		"Level"						"6"
 		"ModelScale" 				"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -8996,7 +8996,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"700"		// Base health.
+		"StatusHealth"				"850"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -9030,7 +9030,7 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	// Model.
 		"ModelScale"				"1"
-		"Level"						"6"
+		"Level"						"7"
 		"IsAncient"					"1"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -9055,8 +9055,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"31"								// Damage range min.
-		"AttackDamageMax"			"42"								// Damage range max.
+		"AttackDamageMin"			"35"								// Damage range min.
+		"AttackDamageMax"			"45"								// Damage range max.
 		"AttackRate"				"1.8"								// Speed of attack.
 		"AttackAnimationPoint"		"0.5"								// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
@@ -9214,7 +9214,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Broodmother"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
-		"Level"						"6"
+		"Level"						"9"
 		"IsAncient"					"1"
 		"ModelScale" 				"1.4"
 		
@@ -9240,7 +9240,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"39"		// Damage range min.
 		"AttackDamageMax"			"44"		// Damage range max.	
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -10155,7 +10155,7 @@
 		"SoundSet"					"Hero_Warlock"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
 		"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_warlock.vsndevts"
-		"Level"						"2"
+		"Level"						"4"
 		
 		"UseNeutralCreepBehavior" 	"0"
 		
@@ -10798,7 +10798,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"3"
+		"Level"						"5"
 		"ModelScale" 				"1.5"
 		
 		"UseNeutralCreepBehavior" 	"0"
@@ -10844,7 +10844,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"420"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"300"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -11188,7 +11188,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"400"		// Base health.
+		"StatusHealth"				"800"		// Base health.
 		"StatusHealthRegen"			"1"		// Health regeneration rate.
 		"StatusMana"				"500"			// Base mana.
 		"StatusManaRegen"			"1.25"		// Mana regeneration rate.		 

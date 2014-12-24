@@ -933,7 +933,7 @@ end
 
 
 function jailer_think( event )
-	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > jailer_anti_stack then
+	if event.ability:IsFullyCastable() == true then
 		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			if heroes_around[1].nightmare_delay == nil then
