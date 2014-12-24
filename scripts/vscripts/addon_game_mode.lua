@@ -729,6 +729,7 @@ function Warchasers:OnEveryonePicked()
     GameRules:SendCustomMessage("Welcome to <font color='#2EFE2E'>Warchasers!</font>", 0, 0) -- ##9A2EFE
     GameRules:SendCustomMessage("Ported by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
+    GameRules:SendCustomMessage("Please report bugs and leave feedback in our workshop page", 0, 0)
     GameRules:SendCustomMessage("<br>1 minute to select a difficulty",0,0)
     Timers:CreateTimer(30,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
     Timers:CreateTimer(50,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
@@ -1269,15 +1270,20 @@ function Warchasers:OnEveryoneVoted()
     add_affixes_to_pre_dificulty_creeps()
     -- Change this to the proper strings later
     if GameRules.DIFFICULTY == 0 then
-    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>Classic</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>Classic</font>", 0, 0)
+    	GameRules:SendCustomMessage("Hey, Not Too Rough", 0, 0)
     elseif GameRules.DIFFICULTY == 1 then
-    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>1</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>1 - Ascendant</font>", 0, 0)
+    	GameRules:SendCustomMessage("Bring it on!", 0, 0)
     elseif GameRules.DIFFICULTY == 2 then
-    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>2</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>2 - Elder</font>", 0, 0)
+    	GameRules:SendCustomMessage("Hurt Me Plenty", 0, 0)
     elseif GameRules.DIFFICULTY == 3 then
-    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>3</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>3 - Mythical</font>", 0, 0)
+    	GameRules:SendCustomMessage("Ultra-Violence" , 0, 0)
     elseif GameRules.DIFFICULTY == 4 then
-    	GameRules:SendCustomMessage("Difficulty: <font color='#9A2EFE'>4</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>4 - Legendary</font>", 0, 0)
+    	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
 
     -- Find the barrier_voting and obstructions_voting entities in the map and disable them
