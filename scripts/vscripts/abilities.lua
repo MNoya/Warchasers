@@ -856,7 +856,7 @@ function assaulter_think( event )
 					end 
 				end
 				event.caster:CastAbilityOnTarget(target, event.ability, event.caster:GetPlayerOwnerID() )
-				assaulter_anti_stack = GameRules:GetGameTime() + 5
+				assaulter_anti_stack = GameRules:GetGameTime() + 12 - GameRules.DIFFICULTY * 2
 			end
 		end
 		
@@ -931,14 +931,16 @@ function illusionist_illusion_kill( event )
 	event.target:Kill(event.ability, event.caster)
 end
 
-jailer_anti_stack = 0
 
 function jailer_think( event )
 	if event.ability:IsFullyCastable() == true and GameRules:GetGameTime() > jailer_anti_stack then
 		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
+			if heroes_around[1].nightmare_delay == nil then
+				heroes_around[1].nightmare_delay = 0
+			end
 			event.caster:CastAbilityOnTarget(heroes_around[1], event.ability, event.caster:GetPlayerOwnerID() )
-			jailer_anti_stack = GameRules:GetGameTime() + 6
+			heroes_around[1].nightmare_delay = GameRules:GetGameTime() + 12
 		end
 		
 		
@@ -1048,7 +1050,7 @@ function desecration_ai( event )
 				end
 				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
+					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1069,7 +1071,7 @@ function frozen_ai( event )
 				end
 				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
+					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1090,7 +1092,7 @@ function plagued_ai( event )
 				end
 				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
+					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1111,7 +1113,7 @@ function thunderstorm_ai( event )
 				end
 				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 5 - (GameRules.DIFFICULTY/2)
+					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
