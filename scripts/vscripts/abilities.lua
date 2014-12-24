@@ -655,6 +655,11 @@ function ElectrifiedSparks(event)
 
 end
 
+function electrified_damage( event )
+	local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
+	ApplyDamage({ victim = event.target, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+end
+
 function FrozenStart( event )
 	local duration = event.ability:GetSpecialValueFor("explosion_delay")
 	local radius = event.ability:GetSpecialValueFor("explosion_radius")
@@ -1127,4 +1132,9 @@ function desecrator_damage( event )
 	for key, unit in pairs(event.target_entities)do
 		ApplyDamage({ victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
 	end
+end
+
+function frozen_damage( event )
+	local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
+	ApplyDamage({ victim = event.target, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 end

@@ -28,7 +28,7 @@
 
 "affix_electrified"
     {
-    "level_limit"   "3"
+    "level_limit"   "0"
     "range_melee_type"    "melee"
     }
 

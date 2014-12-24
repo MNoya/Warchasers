@@ -277,7 +277,7 @@
 		"AbilityTextureName"			"affix_electrified"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"AbilityDamage"					"10"
+		"AbilityDamage"					"4"
 
 		"AbilitySpecial"
 		{
@@ -290,6 +290,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"max_bolts_per_attack"		"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_per_level"		"3"
 			}
 		}
 
@@ -322,12 +327,11 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"		"0"
-			"Damage"
-			{
-				"Type"          "DAMAGE_TYPE_MAGICAL"
-				"Damage"        "%AbilityDamage"
-				"Target"		"TARGET"
-			}
+			"RunScript"
+				{
+				"ScriptFile"	"abilities.lua"
+				"Function"		"electrified_damage"
+				}
 
 			"FireEffect"
 			{
@@ -1106,6 +1110,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"stun_duration"		"3"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_per_level"		"45"
+			}
 		}
 
 		"precache"
@@ -1157,12 +1166,12 @@
 						        
 						        "Action"
 				         		{
-						         	"Damage"
-					         		{
-					         			"Target"	"TARGET"
-					         			"Type"		"DAMAGE_TYPE_MAGICAL"
-					         			"Damage"	"%AbilityDamage"
-					         		}
+						         	"RunScript"
+		    							{
+		    							"ScriptFile"		"abilities.lua"
+										"Function"			"frozen_damage"
+										"Target"	"TARGET"
+		    							}
 						         	
 						         	"ApplyModifier"
 						         	{
