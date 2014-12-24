@@ -856,7 +856,7 @@ function assaulter_think( event )
 					end 
 				end
 				event.caster:CastAbilityOnTarget(target, event.ability, event.caster:GetPlayerOwnerID() )
-				assaulter_anti_stack = GameRules:GetGameTime() + 3
+				assaulter_anti_stack = GameRules:GetGameTime() + 5
 			end
 		end
 		

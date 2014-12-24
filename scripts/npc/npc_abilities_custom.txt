@@ -252,7 +252,7 @@
 		{
 			"modifier_fast"
 			{
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"Passive"	"1"
 
 				"EffectName"		"particles/generic_gameplay/rune_haste_owner.vpcf"
@@ -261,7 +261,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	    "%attack_speed_bonus"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	    "%attack_speed_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	    "%move_speed_bonus"
 				}	
 			}
 		}
@@ -533,6 +533,7 @@
 			"modifier_reflect_damage"
 			{
 				"Passive"			"1"
+				"IsHidden"			"1"
 				"EffectName"		"particles/warchasers/return/blademail.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"OnTakeDamage"
@@ -603,6 +604,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"		"affix_assaulter"
 		
 		"AbilityCooldown"	"8"
 
@@ -616,7 +618,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0"
+				"stun_duration"			"0.5"
 			}
 		}
 
@@ -643,6 +645,7 @@
 			"affix_assaulter_modifier"
 				{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"ThinkInterval"	"0.8"
 				
 				"OnIntervalThink"
@@ -677,13 +680,14 @@
 			"affix_blood_freezer_aura"
 				{
 				"Passive"	"1"
-				"Aura"        "affix_blood_freezer_debuff"
+				"IsHidden"	"1"
+				"Aura"        "modifier_blood_freezer"
         		"Aura_Radius" "%radius"
         		"Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
         		"Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         		"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
-			"affix_blood_freezer_debuff"
+			"modifier_blood_freezer"
 				{
 				"IsDebuff"	"1"
 				"Properties"
@@ -914,6 +918,7 @@
 			"affix_jailer_modifier"
 				{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"ThinkInterval"	"2"
 				
 				"OnIntervalThink"
@@ -1079,6 +1084,7 @@
 	    "desecration_ai"
 	    	{
 	    	"Passive"	"1"
+	    	"IsHidden"	"1"
 
 	    	"ThinkInterval"		"1"
 		    "OnIntervalThink"
@@ -1240,6 +1246,7 @@
 			"frozen_ai"
 	    	{
 	    	"Passive"	"1"
+	    	"IsHidden"	"1"
 
 	    	"ThinkInterval"		"1"
 		    "OnIntervalThink"
@@ -1310,6 +1317,7 @@
 			"affix_molten_modifier"
 				{
 				"Passive"	"1"
+				"IsHidden"	"1"
 
 				"EffectName"	"particles/warchasers/molten/trail/courier_trail_lava.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -1439,6 +1447,7 @@
 			"plagued_ai"
 	    	{
 	    	"Passive"	"1"
+	    	"IsHidden"	"1"
 
 	    	"ThinkInterval"		"1"
 		    "OnIntervalThink"
@@ -1513,6 +1522,7 @@
 			"shielding_ai"
 	    		{
 	    		"Passive"	"1"
+	    		"IsHidden"	"1"
 	    		"ThinkInterval"		"3"
 		    	"OnIntervalThink"
 		    		{
@@ -1612,6 +1622,7 @@
 		"thunderstorm_ai"
 	    	{
 	    	"Passive"	"1"
+	    	"IsHidden"	"1"
 	    	"ThinkInterval"		"1"
 		    "OnIntervalThink"
 		    	{
