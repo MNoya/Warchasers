@@ -690,6 +690,8 @@
 			"modifier_blood_freezer"
 				{
 				"IsDebuff"	"1"
+				"EffectName"	"particles/warchasers/bloodfreezer/ancient_apparition_ice_blast_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Properties"
 					{
 					"MODIFIER_PROPERTY_DISABLE_HEALING"	"1"
@@ -773,6 +775,24 @@
 						}
 					}
 				}
+			"provoker_particle"
+			{
+				"Passive"	"1"
+				"IsHidden" "1"
+				"ThinkInterval"	"2"
+				"OnIntervalThink"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"		"TARGET"
+					}
+
+				}
+
+			}
+
 			}
 		}
 
