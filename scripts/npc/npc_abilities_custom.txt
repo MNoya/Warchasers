@@ -33,17 +33,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"big_radius"				"500"
+				"big_radius"				"400"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"300"
+				"damage"					"200"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"partial_damage"			"200"
+				"partial_damage"			"100"
 			}
 		}
 
@@ -10214,22 +10214,18 @@
 	            "UnitLimit" "8"  //max possible of this unit in the entire map at the same time
 				"OnSpawn"
 				{
-					// "AttachEffect"
-					// {
-					// 	"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-					// 	"EffectAttachType"	"follow_origin"
-					// 	"Target"			"TARGET"
-						
-					// 	"ControlPoints"
-					// 	{
-					// 		"00"		"0 0 0"
-					// 		"01"		"50 100 0"
-					// 		"02"		"4 10 .5"
-					// 		"03"		"20 200 0" //color
-					// 		"04"		"0 0 0"
-					// 		"05"		"0 0 0"
-					// 	}
-					// }
+					"AttachEffect"
+					{
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
+					}
 					"FireSound"
 					{
 						"EffectName" "Hero_Abaddon.DeathCoil.Target"
@@ -10291,22 +10287,18 @@
 	            "UnitLimit" "8"
 				"OnSpawn"
 				{
-					// "AttachEffect"
-					// {
-					// 	"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-					// 	"EffectAttachType"	"follow_origin"
-					// 	"Target"			"TARGET"
-						
-					// 	"ControlPoints"
-					// 	{
-					// 		"00"		"0 0 0"
-					// 		"01"		"50 100 0"
-					// 		"02"		"4 10 .5"
-					// 		"03"		"20 200 0" //color
-					// 		"04"		"0 0 0"
-					// 		"05"		"0 0 0"
-					// 	}
-					// }
+					"AttachEffect"
+					{
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
+					}
 					"FireSound"
 					{
 						"EffectName" "Hero_Abaddon.DeathCoil.Target"
@@ -10369,19 +10361,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10444,19 +10432,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10519,19 +10503,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10594,19 +10574,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10670,19 +10646,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10745,19 +10717,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10820,19 +10788,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10896,19 +10860,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -10971,19 +10931,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11046,19 +11002,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11121,19 +11073,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11196,19 +11144,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11273,19 +11217,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11349,19 +11289,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11424,19 +11360,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11499,19 +11431,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11574,19 +11502,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{
@@ -11649,19 +11573,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 					"FireSound"
 					{

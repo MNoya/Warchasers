@@ -237,6 +237,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -1270,19 +1271,19 @@ function Warchasers:OnEveryoneVoted()
     add_affixes_to_pre_dificulty_creeps()
     -- Change this to the proper strings later
     if GameRules.DIFFICULTY == 0 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>Classic</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Classic</font>", 0, 0)
     	GameRules:SendCustomMessage("Hey, Not Too Rough", 0, 0)
     elseif GameRules.DIFFICULTY == 1 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>1 - Ascendant</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>1 - Ascendant</font>", 0, 0)
     	GameRules:SendCustomMessage("Bring it on!", 0, 0)
     elseif GameRules.DIFFICULTY == 2 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>2 - Elder</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>2 - Elder</font>", 0, 0)
     	GameRules:SendCustomMessage("Hurt Me Plenty", 0, 0)
     elseif GameRules.DIFFICULTY == 3 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>3 - Mythical</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>3 - Mythical</font>", 0, 0)
     	GameRules:SendCustomMessage("Ultra-Violence" , 0, 0)
     elseif GameRules.DIFFICULTY == 4 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#9A2EFE'>4 - Legendary</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>4 - Legendary</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
 

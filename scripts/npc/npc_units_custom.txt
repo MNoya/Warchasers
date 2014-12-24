@@ -7278,7 +7278,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			
-		"MovementSpeed"				"350"									
+		"MovementSpeed"				"250"									
 		"MovementTurnRate"			"0.4"									
 	
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
@@ -11254,7 +11254,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1.
-		"Ability2"					"brewmaster_storm_cyclone"						// Ability 2.
+		"Ability2"					""						// Ability 2.
 		"Ability3"					"creep_unholy_aura"					// Ability 3.
 		"Ability4"					""				// Ability 4.
 		"Ability5"					"drop_level3"		// Ability 5.
@@ -11337,16 +11337,7 @@
 					"Name"	"satyr_hellcaller_shockwave"
 					"Damage"	"1"
 				}
-			}
-			
-			"DefensiveAbilities"
-			{
-				"Ability1"
-				{
-					"Name"				"brewmaster_storm_cyclone"
-					"Debuff"				"1"
-				}
-			}			
+			}	
 			
 			"AttachWearables"
 			{

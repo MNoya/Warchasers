@@ -724,6 +724,9 @@
 				"Passive"	  "1"
 				"IsHidden"	  "1"
 
+				"EffectName"		"particles/items_fx/aura_assault_ring.vpcf"
+				"EffectAttachType"   "follow_origin"
+
 				"Aura"       "battle_drums_aura"
         		"Aura_Radius" "%radius"
 		        "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_FRIENDLY"

@@ -1,15 +1,15 @@
 List of Current Issues
 
 GAMEPLAY ISSUES:
-Spawn particle for spawners
+Spawn particle for spawners - DONE
 Flash self-target error is not showing up
 Custom sounds are gone
-Battledrums no aura indicator
+Battledrums no aura indicator - DONE
 DeathTimers are decreasing, should we just let people respawn?
-Cyclone is a hideous spell, should remove it
+Cyclone is a hideous spell, should remove it - DONE
 Sun Key is not very noticeable
 Delay on endgame being instant
-Nerf Techies PLEASE
+Nerf Techies PLEASE - DONE
 Ults being channeled is kinda bad for higher difficulties as standing still is impossible
 
 TO ADD:
