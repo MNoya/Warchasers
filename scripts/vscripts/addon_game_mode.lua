@@ -77,7 +77,7 @@ function Warchasers:InitGameMode()
 	--GameRules:SetCustomVictoryMessageDuration(0.1)
 
 	--GameRules:SetPreGameTime(0)
-	--GameRules:SetPostGameTime(0)
+	GameRules:SetPostGameTime(60)
 	--GameRules:SetHeroSelectionTime(0)
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
@@ -204,7 +204,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_stingers_diretide.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_creeps.vsndevts", context )
 
-	--PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/warchasers_sounds_custom.vsndevts", context )
 
 	PrecacheResource( "particle_folder", "particles/warchasers", context )
 	PrecacheResource( "particle_folder", "particles/econ/items", context )	--might fail!
@@ -238,6 +238,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf", context)
+	PrecacheResource( "particle", "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -967,11 +968,11 @@ function Warchasers:OnEntityKilled( event )
 	local killerEntity = EntIndexToHScript( event.entindex_attacker )
 
 	if killedUnit:GetUnitName() == "npc_boss" then
-		--GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
 		ScreenShake(killerEntity:GetAbsOrigin(), 50.0, 50.0, 5.0, 9000, 0, true)
 		PlayerResource:SetCameraTarget(killerEntity:GetPlayerOwnerID(), killedUnit)
 		EmitGlobalSound("diretide_roshdeath_Stinger")
-		boss_dead()
+		boss_dead() --endgame message
+		Timers:CreateTimer(5, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
@@ -1274,16 +1275,16 @@ function Warchasers:OnEveryoneVoted()
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Classic</font>", 0, 0)
     	GameRules:SendCustomMessage("Hey, Not Too Rough", 0, 0)
     elseif GameRules.DIFFICULTY == 1 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>1 - Ascendant</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Ascendant</font>", 0, 0)
     	GameRules:SendCustomMessage("Bring it on!", 0, 0)
     elseif GameRules.DIFFICULTY == 2 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>2 - Elder</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Elder</font>", 0, 0)
     	GameRules:SendCustomMessage("Hurt Me Plenty", 0, 0)
     elseif GameRules.DIFFICULTY == 3 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>3 - Mythical</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Mythical</font>", 0, 0)
     	GameRules:SendCustomMessage("Ultra-Violence" , 0, 0)
     elseif GameRules.DIFFICULTY == 4 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>4 - Legendary</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
 

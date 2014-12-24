@@ -79,6 +79,7 @@ function AnnouncerChoose()
 end
 
 function AnnouncerBattle()
+	print("To Battle")
 	local chooseSound = RandomInt(1,2)
 	if chooseSound == 1 then 
 		EmitGlobalSound("Warchasers.HeroesRodeOut")

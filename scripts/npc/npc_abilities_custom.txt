@@ -6066,20 +6066,6 @@
 						}
 					}
 				}
-
-			"defeat_modifier"
-				{
-				"IsHidden"	"1"
-				"Passive"	"1"
-				"OnDestroy"
-					{
-					"RunScript"
-						{
-						"ScriptFile"	"ai.lua"
-						"Function"	"final_boss_defeat"
-						}
-					}
-				}
 			}
 		}
 

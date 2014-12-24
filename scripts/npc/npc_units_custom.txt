@@ -11475,7 +11475,6 @@
 		"Ability2"					"neutral_spell_immunity"			// Ability 2
 		"Ability3"					"final_boss_thinker"			// Ability 3
 		"Ability4"					"night_stalker_hunter_in_the_night"			// Ability 4
-		"Ability5"					"boss_death"
 
 		// Armor
 		//----------------------------------------------------------------

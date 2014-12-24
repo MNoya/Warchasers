@@ -169,13 +169,3 @@ function final_boss_think( event )
 		end
 	end
 end
-
-function final_boss_defeat( event )
- 	Timers:CreateTimer({
-    endTime = 4,
-    callback = function()
-     	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-    end
-  	})
-	
-end
