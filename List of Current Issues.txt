@@ -1,5 +1,25 @@
 List of Current Issues
 
+GAMEPLAY ISSUES:
+Spawn particle for spawners
+Flash self-target error is not showing up
+Custom sounds are gone
+Battledrums no aura indicator
+DeathTimers are decreasing, should we just let people respawn?
+Cyclone is a hideous spell, should remove it
+Sun Key is not very noticeable
+Delay on endgame being instant
+Nerf Techies PLEASE
+Ults being channeled is kinda bad for higher difficulties as standing still is impossible
+
+TO ADD:
+Some fountains or alternative healing methods (shrines, rest button, something)
+Need to finish the 2~3 new items (Hammer, Scythe, Machinegun)
+Play Again, possibly some save points, not sure if we'll have time for this.
+	Either way, something should be done about game ending when everyone dies
+Update Stats Collection library to send the difficulty!
+	
+
 PRECACHE ISSUES:
 =Fixed=
 DK Fire - Fixed
@@ -52,23 +72,3 @@ Heroes borken precache:
 	Skeletrous:
 		
 	Optimus Primo
-
-
-GAMEPLAY ISSUES:
-=Broken shit=
-Spawn particle for spawners
-Frozen explosion hits both - Fixed
-Assaulter is still too high range
-Hurricaner the same, probably need removing as its too hard to understand where the area is and interacts badly with many units
-Flash self-target error is not showing up
-Knockback can push over the water and some cliffs, probably removing or reworking it - Improved the map skip blocks a bit, check if fixed on the water areas
-	Still has problems.
-Nightmarish stacking might be a problem, reduce - Fixed
-Custom sounds are gone
-Battledrums no aura indicator
-DeathTimers are decreasing
-Cyclone is a hideous spell, should remove it
-Sun Key is not very noticeable
-Delay on endgame being instant
-Nerf Techies PLEASE
-Ults being channeled is kinda bad for higher difficulties as standing still is impossible
