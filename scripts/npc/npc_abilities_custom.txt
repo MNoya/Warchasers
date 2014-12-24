@@ -332,11 +332,6 @@
 				"ScriptFile"	"abilities.lua"
 				"Function"		"electrified_damage"
 				}
-
-			"FireEffect"
-			{
-				
-			}
 		}
 	}
 
@@ -616,7 +611,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range"					"700"
+				"range"					"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
 			}
 		}
 
@@ -629,7 +629,7 @@
 			"Stun"
 				{
 				"Target"	"TARGET"
-				"Duration"	"1.4"
+				"Duration"	"%stun_duration"
 				}
 			"RunScript"
 				{
@@ -873,6 +873,20 @@
 		
 		"AbilityCooldown"	"14"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}
+		}
+
 		"OnSpellStart"
 			{
 			"ActOnTargets"
@@ -880,7 +894,7 @@
 				"Target"
 					{
 					"Center"  				"TARGET"
-					"Radius" 				"300"
+					"Radius" 				"%radius"
 					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 					}
@@ -914,7 +928,7 @@
 			"affix_jailer_debuff"
 				{
 				"IsDebuff"	"1"
-				"Duration"	"2.5"
+				"Duration"	"%duration"
 				"EffectName"	"particles/warchasers/jailer/bane_nightmare.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"States"

@@ -302,34 +302,35 @@
 		// AFFIXES	
 		// ******************** ABILITIES ********************
 		"DOTA_Tooltip_ability_affix_avenger"                                              "Avenger"
-		"DOTA_Tooltip_ability_affix_avenger_Description"                                  ""
+		"DOTA_Tooltip_ability_affix_avenger_Description"                                  "When this unit dies, those of the same type that remain alive will grow and get increased movement and attack speed."
 		"DOTA_Tooltip_ability_affix_avenger_Note0"                                        ""
 		"DOTA_Tooltip_ability_affix_avenger_Lore"                                         ""
 		"DOTA_Tooltip_ability_affix_avenger_attack_speed_bonus"                           "ATTACK SPEED BONUS:"
 		"DOTA_Tooltip_ability_affix_avenger_move_speed_bonus"                             "MOVE SPEED BONUS:"
 
 		"DOTA_Tooltip_ability_affix_extra_health"                                         "Extra Health"
-		"DOTA_Tooltip_ability_affix_extra_health_Description"                             ""
+		"DOTA_Tooltip_ability_affix_extra_health_Description"                             "Increased Hit Points"
 		"DOTA_Tooltip_ability_affix_extra_health_Note0"                                   ""
 		"DOTA_Tooltip_ability_affix_extra_health_Lore"                                    ""
 		"DOTA_Tooltip_ability_affix_extra_health_health_bonus_percentage"                 "HEALTH BONUS PERCENTAGE:"
 
 		"DOTA_Tooltip_ability_affix_fast"                                                 "Fast"
-		"DOTA_Tooltip_ability_affix_fast_Description"                                     ""
+		"DOTA_Tooltip_ability_affix_fast_Description"                                     "Increased movement and attack speed"
 		"DOTA_Tooltip_ability_affix_fast_Note0"                                           ""
 		"DOTA_Tooltip_ability_affix_fast_Lore"                                            ""
 		"DOTA_Tooltip_ability_affix_fast_attack_speed_bonus"                              "ATTACK SPEED BONUS:"
 		"DOTA_Tooltip_ability_affix_fast_move_speed_bonus"                                "MOVE SPEED BONUS:"
 
 		"DOTA_Tooltip_ability_affix_electrified"                                          "Electrified"
-		"DOTA_Tooltip_ability_affix_electrified_Description"                              ""
+		"DOTA_Tooltip_ability_affix_electrified_Description"                              "This creature will sent out sparks in all directions when hit by ranged or melee attacks"
 		"DOTA_Tooltip_ability_affix_electrified_Note0"                                    ""
 		"DOTA_Tooltip_ability_affix_electrified_Lore"                                     ""
 		"DOTA_Tooltip_ability_affix_electrified_min_bolts_per_attack"                     "MIN BOLTS PER ATTACK:"
 		"DOTA_Tooltip_ability_affix_electrified_max_bolts_per_attack"                     "MAX BOLTS PER ATTACK:"
-
+		"DOTA_Tooltip_ability_affix_electrified_bonus_damage_per_level"					  "BONUS DMG PER LEVEL:"
+		
 		"DOTA_Tooltip_ability_affix_knockback"                                            "Knockback"
-		"DOTA_Tooltip_ability_affix_knockback_Description"                                ""
+		"DOTA_Tooltip_ability_affix_knockback_Description"                                "Has a chance to knockback on each attack and slow afterwards."
 		"DOTA_Tooltip_ability_affix_knockback_Note0"                                      ""
 		"DOTA_Tooltip_ability_affix_knockback_Lore"                                       ""
 		"DOTA_Tooltip_ability_affix_knockback_chance"                                     "CHANCE:"
@@ -337,93 +338,105 @@
 		"DOTA_Tooltip_ability_affix_knockback_slow_percentage"                            "SLOW PERCENTAGE:"
 
 		"DOTA_Tooltip_ability_affix_nightmarish"                                          "Nightmarish"
-		"DOTA_Tooltip_ability_affix_nightmarish_Description"                              ""
+		"DOTA_Tooltip_ability_affix_nightmarish_Description"                              "Has a chance to chance to inflict Fear on attack, which will disorient the hero for a duration"
 		"DOTA_Tooltip_ability_affix_nightmarish_Note0"                                    ""
 		"DOTA_Tooltip_ability_affix_nightmarish_Lore"                                     ""
 		"DOTA_Tooltip_ability_affix_nightmarish_chance"                                   "CHANCE:"
 		"DOTA_Tooltip_ability_affix_nightmarish_fear_duration"                            "FEAR DURATION:"
 
 		"DOTA_Tooltip_ability_affix_reflect_damage"                                       "Reflect Damage"
-		"DOTA_Tooltip_ability_affix_reflect_damage_Description"                           ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_Description"                           "Return a percentage of all damage taken back to the attackers, including magic damage"
 		"DOTA_Tooltip_ability_affix_reflect_damage_Note0"                                 ""
 		"DOTA_Tooltip_ability_affix_reflect_damage_Lore"                                  ""
 		"DOTA_Tooltip_ability_affix_reflect_damage_damage_percent"                        "DAMAGE PERCENT:"
 
 		"DOTA_Tooltip_ability_affix_vampiric"                                             "Vampiric"
-		"DOTA_Tooltip_ability_affix_vampiric_Description"                                 ""
+		"DOTA_Tooltip_ability_affix_vampiric_Description"                                 "Heals a percentage of the damage done on each attack"
 		"DOTA_Tooltip_ability_affix_vampiric_Note0"                                       ""
 		"DOTA_Tooltip_ability_affix_vampiric_Lore"                                        ""
 		"DOTA_Tooltip_ability_affix_vampiric_lifesteal"                                   "LIFESTEAL:"
 
 		"DOTA_Tooltip_ability_affix_desecrator"                                           "Desecrator"
-		"DOTA_Tooltip_ability_affix_desecrator_Description"                               ""
+		"DOTA_Tooltip_ability_affix_desecrator_Description"                               "Creates a hellish ground beneath the feet of a hero, which deals damage over time while standing in it. The void zones take a second or so to come into effect. Desecrator pools disappear after a duration."
 		"DOTA_Tooltip_ability_affix_desecrator_Note0"                                     ""
 		"DOTA_Tooltip_ability_affix_desecrator_Lore"                                      ""
 		"DOTA_Tooltip_ability_affix_desecrator_duration"                                  "DURATION:"
 		"DOTA_Tooltip_ability_affix_desecrator_radius"                                    "RADIUS:"
 		"DOTA_Tooltip_ability_affix_desecrator_delay"                                     "DELAY:"
-
+		"DOTA_Tooltip_ability_affix_desecrator_bonus_damage_per_level"					  "+DMG PER LEVEL:"
+		
 		"DOTA_Tooltip_ability_affix_frozen"                                               "Frozen"
-		"DOTA_Tooltip_ability_affix_frozen_Description"                                   ""
+		"DOTA_Tooltip_ability_affix_frozen_Description"                                   "Create a frozen casket on the ground, which slows and will explode after a delay, dealing damage and freezing the targets in place for a duration"
 		"DOTA_Tooltip_ability_affix_frozen_Note0"                                         ""
 		"DOTA_Tooltip_ability_affix_frozen_Lore"                                          ""
 		"DOTA_Tooltip_ability_affix_frozen_explosion_delay"                               "EXPLOSION DELAY:"
 		"DOTA_Tooltip_ability_affix_frozen_explosion_radius"                              "EXPLOSION RADIUS:"
 		"DOTA_Tooltip_ability_affix_frozen_stun_duration"                                 "STUN DURATION:"
-
+		"DOTA_Tooltip_ability_affix_frozen_bonus_damage_per_level"						  "+DMG PER LEVEL:"
+		
 		"DOTA_Tooltip_ability_affix_molten"                                               "Molten"
-		"DOTA_Tooltip_ability_affix_molten_Description"                                   ""
+		"DOTA_Tooltip_ability_affix_molten_Description"                                   "Leaves a trail of flame behind the feet of the creature, which damages whoever standing on it until the unit is killed.<br>When this unit dies, a glowing fiery core is left behind. It expands for a few seconds before exploding, dealing damage to all enemies in the explosion radius."
 		"DOTA_Tooltip_ability_affix_molten_Note0"                                         ""
 		"DOTA_Tooltip_ability_affix_molten_Lore"                                          ""
 		"DOTA_Tooltip_ability_affix_molten_explosion_damage"                              "EXPLOSION DAMAGE:"
 		"DOTA_Tooltip_ability_affix_molten_overtime_damage"                               "OVERTIME DAMAGE:"
 		"DOTA_Tooltip_ability_affix_molten_trail_aoe"                                     "TRAIL AOE:"
 		"DOTA_Tooltip_ability_affix_molten_explosion_radius"                              "EXPLOSION RADIUS:"
+		"DOTA_Tooltip_ability_affix_molten_explosion_bonus_per_level"			 		  "EXPLOSION +DMG PER LEVEL:"
+		"DOTA_Tooltip_ability_affix_molten_overtime_bonus_per_level"					  "OVERTIME +DMG PER LEVEL:"
 		
-		"DOTA_Tooltip_ability_affix_assaulter"                                            "Affix Assaulter"
-		"DOTA_Tooltip_ability_affix_assaulter_Description"                                ""
+		"DOTA_Tooltip_ability_affix_assaulter"                                            "Assaulter"
+		"DOTA_Tooltip_ability_affix_assaulter_Description"                                "Instantly blinks to target in range, stunning for a short duration"
 		"DOTA_Tooltip_ability_affix_assaulter_Note0"                                      ""
 		"DOTA_Tooltip_ability_affix_assaulter_Lore"                                       ""
 		"DOTA_Tooltip_ability_affix_assaulter_range"                                      "RANGE:"
 
-		"DOTA_Tooltip_ability_affix_blood_freezer"                                        "Affix Blood Freezer"
-		"DOTA_Tooltip_ability_affix_blood_freezer_Description"                            ""
+		"DOTA_Tooltip_ability_affix_blood_freezer"                                        "Blood Freezer"
+		"DOTA_Tooltip_ability_affix_blood_freezer_Description"                            "Prevents healing effects near this unit"
 		"DOTA_Tooltip_ability_affix_blood_freezer_Note0"                                  ""
 		"DOTA_Tooltip_ability_affix_blood_freezer_Lore"                                   ""
 		"DOTA_Tooltip_ability_affix_blood_freezer_radius"                                 "RADIUS:"
-
+		
 		"DOTA_Tooltip_ability_affix_provoker"                                             "Affix Provoker"
-		"DOTA_Tooltip_ability_affix_provoker_Description"                                 ""
+		"DOTA_Tooltip_ability_affix_provoker_Description"                                 "You can only attack the unit with this affix. Until it's killed you cant attack other units around him"
 		"DOTA_Tooltip_ability_affix_provoker_Note0"                                       ""
 		"DOTA_Tooltip_ability_affix_provoker_Lore"                                        ""
 		"DOTA_Tooltip_ability_affix_provoker_radius"                                      "RADIUS:"
+		
+		"DOTA_Tooltip_ability_affix_jailer"                                            	 "Jailer"
+		"DOTA_Tooltip_ability_affix_jailer_Description"                                  "Traps all enemies in a radius for a duration"
+		"DOTA_Tooltip_ability_affix_jailer_Note0"                                      	 ""
+		"DOTA_Tooltip_ability_affix_jailer_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_jailer_radius"                                       "RADIUS:"
+		"DOTA_Tooltip_ability_affix_jailer_duration"                                     "DURATION:"
 
 		"DOTA_Tooltip_ability_affix_plagued"                                              "Affix Plagued"
-		"DOTA_Tooltip_ability_affix_plagued_Description"                                  ""
+		"DOTA_Tooltip_ability_affix_plagued_Description"                                  "Creates green pool of damage on the ground, which deals damage per second.<br>All plagued pools created during a battle remain until the creature that created them is killed."
 		"DOTA_Tooltip_ability_affix_plagued_Note0"                                        ""
 		"DOTA_Tooltip_ability_affix_plagued_Lore"                                         ""
 		"DOTA_Tooltip_ability_affix_plagued_damage_per_second"                            "DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_affix_plagued_radius"                                       "RADIUS:"
-
+		"DOTA_Tooltip_ability_affix_plagued_damage_per_level"							  "+DMG PER LEVEL:"
+		
 		"DOTA_Tooltip_ability_affix_shielding"                                            "Affix Shielding"
-		"DOTA_Tooltip_ability_affix_shielding_Description"                                ""
+		"DOTA_Tooltip_ability_affix_shielding_Description"                                "Absorbs all damage for the duration of the shield"
 		"DOTA_Tooltip_ability_affix_shielding_Note0"                                      ""
 		"DOTA_Tooltip_ability_affix_shielding_Lore"                                       ""
 		"DOTA_Tooltip_ability_affix_shielding_absorb"                                     "ABSORB:"
 		"DOTA_Tooltip_ability_affix_shielding_duration"                                   "DURATION:"
 
 		"DOTA_Tooltip_ability_affix_thunderstorm"                                         "Affix Thunderstorm"
-		"DOTA_Tooltip_ability_affix_thunderstorm_Description"                             ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_Description"                             "Calls down a lightning storm, dealing repeated strikes in the radius. Thunderstorm pulses five times in the same location"
 		"DOTA_Tooltip_ability_affix_thunderstorm_Note0"                                   ""
 		"DOTA_Tooltip_ability_affix_thunderstorm_Lore"                                    ""
 		"DOTA_Tooltip_ability_affix_thunderstorm_radius"                                  "RADIUS:"
-
+		"DOTA_Tooltip_ability_affix_thunderstorm_damage_per_level"						  "+DMG PER LEVEL:"
 		
 		
 
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_avenge_me"                                                 "Avenge Me"
-		"DOTA_Tooltip_modifier_avenge_me_Description"                                     ""
+		"DOTA_Tooltip_modifier_avenge_me_Description"                                     "Empowered by the deaths of nearby allies"
 
 		"DOTA_Tooltip_modifier_fast"                                                      "Fast"
 		"DOTA_Tooltip_modifier_fast_Description"                                          ""
@@ -434,28 +447,28 @@
 		"DOTA_Tooltip_modifier_disoriented"                                               "Disoriented"
 		"DOTA_Tooltip_modifier_disoriented_Description"                                   ""
 
-		"DOTA_Tooltip_modifier_reflect_damage"                                            "Reflect Damage"
+		"DOTA_Tooltip_modifier_reflect_damage"                                            "Reflects Damage"
 		"DOTA_Tooltip_modifier_reflect_damage_Description"                                ""
 
-		"DOTA_Tooltip_modifier_affix_assaulter_modifier"                                  "Assaulter Modifier"
+		"DOTA_Tooltip_modifier_affix_assaulter_modifier"                                  "Assaulted"
 		"DOTA_Tooltip_modifier_affix_assaulter_modifier_Description"                      ""
 
-		"DOTA_Tooltip_modifier_affix_blood_freezer_aura"                                  "Blood Freezer Aura"
-		"DOTA_Tooltip_modifier_affix_blood_freezer_aura_Description"                      ""
+		"DOTA_Tooltip_modifier_affix_blood_freezer_aura"                                  "Blood Freezed"
+		"DOTA_Tooltip_modifier_affix_blood_freezer_aura_Description"                      "Can't regenerate"
 
-		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff"                                "Blood Freezer Debuff"
-		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff_Description"                    ""
+		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff"                                "Blood Freezed"
+		"DOTA_Tooltip_modifier_affix_blood_freezer_debuff_Description"                    "Can't regenerate"
 
-		"DOTA_Tooltip_modifier_affix_berserker_modifier"                                  "Berserker Modifier"
-		"DOTA_Tooltip_modifier_affix_berserker_modifier_Description"                      ""
+		"DOTA_Tooltip_modifier_affix_berserker_modifier"                                  "Berserker"
+		"DOTA_Tooltip_modifier_affix_berserker_modifier_Description"                      "Extra attack speed and damage for life missing"
 
-		"DOTA_Tooltip_modifier_affix_provoker_aura"                                       "Provoker Aura"
-		"DOTA_Tooltip_modifier_affix_provoker_aura_Description"                           ""
+		"DOTA_Tooltip_modifier_affix_provoker_aura"                                       "Provoker"
+		"DOTA_Tooltip_modifier_affix_provoker_aura_Description"                           "Must attack this unit"
 
-		"DOTA_Tooltip_modifier_affix_provoker_buff"                                       "Provoker Buff"
-		"DOTA_Tooltip_modifier_affix_provoker_buff_Description"                           ""
+		"DOTA_Tooltip_modifier_affix_provoker_buff"                                       "Provoker"
+		"DOTA_Tooltip_modifier_affix_provoker_buff_Description"                           "Must attack this unit"
 
-		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier"                              "Shield Bearer Modifier"
+		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier"                              "Shield Bearer"
 		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier_Description"                  ""
 
 		"DOTA_Tooltip_modifier_affix_shield_bearer_damage_reduction"                      "Shield Bearer Damage Reduction"
@@ -468,10 +481,10 @@
 		"DOTA_Tooltip_modifier_affix_illusionist_illusion_Description"                    ""
 
 		"DOTA_Tooltip_modifier_affix_jailer_modifier"                                     "Jailer Modifier"
-		"DOTA_Tooltip_modifier_affix_jailer_modifier_Description"                         ""
+		"DOTA_Tooltip_modifier_affix_jailer_modifier_Description"                         "Can't move"
 
-		"DOTA_Tooltip_modifier_affix_jailer_debuff"                                       "Jailer Debuff"
-		"DOTA_Tooltip_modifier_affix_jailer_debuff_Description"                           ""
+		"DOTA_Tooltip_modifier_affix_jailer_debuff"                                       "Jailed"
+		"DOTA_Tooltip_modifier_affix_jailer_debuff_Description"                           "Can't move"
 
 		"DOTA_Tooltip_modifier_affix_hurricaner_aura"                                     "Hurricaner Aura"
 		"DOTA_Tooltip_modifier_affix_hurricaner_aura_Description"                         ""
@@ -480,16 +493,19 @@
 		"DOTA_Tooltip_modifier_affix_hurricaner_debuff_Description"                       ""
 
 		"DOTA_Tooltip_modifier_frozen_aura_debuff"                                        "Frozen Aura Debuff"
-		"DOTA_Tooltip_modifier_frozen_aura_debuff_Description"                            ""
+		"DOTA_Tooltip_modifier_frozen_aura_debuff_Description"                            "Slowed while standing on the frozen casket"
 
 		"DOTA_Tooltip_modifier_plagued_pool"                                              "Plagued Pool"
-		"DOTA_Tooltip_modifier_plagued_pool_Description"                                  ""
+		"DOTA_Tooltip_modifier_plagued_pool_Description"                                  "Taking damage while standing on a plagued pool"
 		
 		"DOTA_Tooltip_modifier_stunned"                                                   "Stunned"
 		"DOTA_Tooltip_modifier_stunned_Description"                                       ""
+		
+		"DOTA_Tooltip_modifier_shielding"                                                 "Shielding"
+		"DOTA_Tooltip_modifier_shielding_Description"                                     "Absorbing all damage"
 
 		"DOTA_Tooltip_modifier_affix_molten_modifier"                                     "Molten"
-		"DOTA_Tooltip_modifier_affix_molten_modifier_Description"                         ""
+		"DOTA_Tooltip_modifier_affix_molten_modifier_Description"                         "Taking damage while standing on a molten trail"
 
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
