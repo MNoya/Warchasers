@@ -236,6 +236,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 

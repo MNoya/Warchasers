@@ -398,9 +398,11 @@
 		"DOTA_Tooltip_ability_affix_blood_freezer_radius"                                 "RADIUS:"
 		
 		"DOTA_Tooltip_ability_affix_berserker"                                        "Berserker"
-		"DOTA_Tooltip_ability_affix_berserker_Description"                            "Gets 1 extra attack and damage percentage for each fraction of health missing"
-		"DOTA_Tooltip_ability_affix_berserker_Note0"                                  "Kill this fast or don't "
+		"DOTA_Tooltip_ability_affix_berserker_Description"                            "Gets extra attack and damage percentage for each fraction of health missing"
+		"DOTA_Tooltip_ability_affix_berserker_Note0"                                  "Kill this fast, don't leave it half HP"
 		"DOTA_Tooltip_ability_affix_berserker_Lore"                                   ""
+		"DOTA_Tooltip_ability_affix_berserker_damage_percent_per_health_missing"	  "%%DAMAGE PER %%HEALTH MISSING"
+		"DOTA_Tooltip_ability_affix_berserker_attack_speed_per_health_missing"		  "%%ATTACK SPEED PER %%HEALTH MISSING"
 		
 		"DOTA_Tooltip_ability_affix_provoker"                                             "Provoker"
 		"DOTA_Tooltip_ability_affix_provoker_Description"                                 "You can only attack the unit with this affix. Until it's killed you cant attack other units around him"

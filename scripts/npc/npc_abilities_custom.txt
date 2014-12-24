@@ -705,16 +705,32 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"affix_berserker"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"damage_percent_per_health_missing"					"0.5"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTGER"
+				"attack_speed_per_health_missing"					"1"
+			}
+		}
+
 		"Modifiers"
 			{
 			"affix_berserker_modifier"
 				{
 				"Passive"	"1"
 				"IsBuff"	"1"
+				"EffectName"		"particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Properties"
 					{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"1"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"1"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%damage_percent_per_health_missing"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_per_health_missing"
 					}
 				"OnHealthGained"
 					{
