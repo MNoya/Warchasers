@@ -954,6 +954,7 @@ function PlaguedPool( event )
 	local point = event.target_points[1]
 	local caster = event.caster
 	local radius = event.ability:GetSpecialValueFor("radius")
+	local amount_of_damage_mod = math.ceil(event.caster:GetLevel() / 2)
 
 	print("Creating Plagued Pool")
 
@@ -969,9 +970,9 @@ function PlaguedPool( event )
 	ParticleManager:SetParticleControl(particle1, 1, Vector(radius/2,1,1))
 	ParticleManager:SetParticleControl(particle1, 15, Vector(100,255,0)) --color
 	ParticleManager:SetParticleControl(particle1, 16, Vector(100,255,0))
-
 	event.ability:ApplyDataDrivenModifier(event.caster, dummy, "plagued_dummy_aura", nil)
-  
+
+  	
 	if caster.pools == nil then
 		caster.pools = {}
 		table.insert(caster.pools,dummy)
@@ -979,6 +980,13 @@ function PlaguedPool( event )
 		table.insert(caster.pools,dummy)
 	end
 
+end
+
+function plagued_damage( event )
+	local damage = event.ability:GetSpecialValueFor("damage_per_second") + event.caster:GetLevel() * event.ability:GetSpecialValueFor("damage_per_level") 
+	for key, unit in pairs(event.target_entities)do
+		ApplyDamage({ victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
+	end
 end
 
 function RemovePlaguedPools( event )
@@ -994,7 +1002,7 @@ end
 function Thunderstorm( event )
 	local target = event.target_points[1]
     local radius = event.ability:GetSpecialValueFor("radius")
-   	local damage = event.ability:GetAbilityDamage()
+   	local damage = event.ability:GetAbilityDamage() + event.ability:GetSpecialValueFor("damage_per_level") * event.caster:GetLevel()
 
     local dummy = CreateUnitByName("dummy_unit", target, false, event.caster, event.caster, event.caster:GetTeam())
 

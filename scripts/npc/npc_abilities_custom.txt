@@ -1330,6 +1330,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"100"
 			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_level"		"5"
+			}
 		}
 
 		"precache"
@@ -1367,19 +1372,14 @@
 				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 				"Aura_ApplyToCaster"	"0"
-			}
 
-			"plagued_pool"
-			{
-				"IsHidden"				"0"
-				"IsDebuff"				"1"
 				"ThinkInterval"			"1"
 				"OnIntervalThink"
 		    	{
-		        	"Damage"
+		        	"RunScript"
 					{
-						"Type"          "DAMAGE_TYPE_MAGICAL"
-						"Damage"        "%damage_per_second"
+						"ScriptFile"		"abilities.lua"
+						"Function"			"plagued_damage"
 						"Target"
 						{
 							"Center"  	"TARGET"
@@ -1390,6 +1390,14 @@
 					}
 		    	}
 			}
+
+			
+			
+			"plagued_pool"
+				{
+				"IsHidden"				"0"
+				"IsDebuff"				"1"
+				}
 			"plagued_ai"
 	    	{
 	    	"Passive"	"1"
@@ -1494,7 +1502,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"20"
-    	"AbilityDamage"                 "100"
+    	"AbilityDamage"                 "60"
 
     	"precache"
     	{
@@ -1517,6 +1525,11 @@
 				"var_type"		"FIELD_INTEGER"
 				"radius"		"100"
 			}
+			"02"
+				{
+				"var_type"		"FIELD_INTEGER"
+				"damage_per_level"		"15"
+				}
 		}
 
 		"OnSpellStart"
