@@ -395,6 +395,7 @@
 		"DOTA_Tooltip_ability_affix_assaulter_Note0"                                      ""
 		"DOTA_Tooltip_ability_affix_assaulter_Lore"                                       ""
 		"DOTA_Tooltip_ability_affix_assaulter_range"                                      "RANGE:"
+		"DOTA_Tooltip_ability_affix_assaulter_stun_duration"                              "STUN DURATION:"
 
 		"DOTA_Tooltip_ability_affix_blood_freezer"                                        "Blood Freezer"
 		"DOTA_Tooltip_ability_affix_blood_freezer_Description"                            "Prevents healing effects near this unit"

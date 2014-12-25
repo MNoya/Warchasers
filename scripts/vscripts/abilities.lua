@@ -1041,7 +1041,7 @@ end
 
 function desecration_ai( event )
 	if event.ability:IsFullyCastable() == true then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		local heroes_around = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
@@ -1062,7 +1062,7 @@ end
 
 function frozen_ai( event )
 	if event.ability:IsFullyCastable() == true then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		local heroes_around = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
@@ -1083,7 +1083,7 @@ end
 
 function plagued_ai( event )
 	if event.ability:IsFullyCastable() == true then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		local heroes_around = FindUnitsInRadius( event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
@@ -1104,7 +1104,7 @@ end
 
 function thunderstorm_ai( event )
 	if event.ability:IsFullyCastable() == true then
-		local heroes_around = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		local heroes_around = FindUnitsInRadius(event.caster:GetTeamNumber(), event.caster:GetAbsOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
@@ -1130,9 +1130,11 @@ function shielding_ai( event )
 end
 
 function desecrator_damage( event )
-	local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
-	for key, unit in pairs(event.target_entities)do
-		ApplyDamage({ victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
+	if event.ability ~= nil then
+		local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
+		for key, unit in pairs(event.target_entities)do
+			ApplyDamage({ victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL }) 
+		end
 	end
 end
 
