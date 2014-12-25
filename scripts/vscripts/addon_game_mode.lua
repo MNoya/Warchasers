@@ -15,7 +15,7 @@ require( 'ai' )
 require( 'spawn' )
 require( 'hints' )
 require('lib.statcollection')
-require('lib.statcollectionRPG')
+--require('lib.statcollectionRPG')
 --local JSON = require('lib.json')
 require( 'sounds' )
 require( 'popups' )
@@ -28,7 +28,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.2.0"
+WARCHASERS_VERSION = "1.2.2"
 
 -- Stat collection
 require('lib.statcollection')
@@ -250,6 +250,8 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_huskar/huskar_berserker_blood_hero_effect.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf", context)
 	PrecacheResource( "particle", "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_templar_assassin/templar_assassin_meld.vpcf", context)
+	PrecacheResource( "particle", "particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf", context)
 
 	--PrecacheResource( "particle", , context)
 
@@ -358,17 +360,16 @@ end
 -- Evaluate the state of the game
 function Warchasers:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		Warchasers:CheckForDefeat()
 		GameRules:SetTimeOfDay( 0.8 )
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		-- Send stats
-        statcollection.sendStats()
-
+		statcollection.sendStats()  
+    		
         -- Delete the thinker
         return
 	end
-	return 2
+	return 1
 end
 
 -- Evaluate Ankh counters
@@ -742,7 +743,7 @@ function Warchasers:OnPlayerPicked( event )
 end
 
 function Warchasers:OnEveryonePicked()
-    GameRules:GetGameModeEntity():SetThink("SoundThink", self)
+    --GameRules:GetGameModeEntity():SetThink("SoundThink", self) --DISABLED FOR NOW
     GameRules:SendCustomMessage("Welcome to <font color='#2EFE2E'>Warchasers!</font>", 0, 0) -- ##9A2EFE
     GameRules:SendCustomMessage("Ported by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
@@ -1383,7 +1384,7 @@ function Warchasers:GG( player )
 	end
 end
 
-function Warchasers:PrintEndgameMessage()
+function Warchasers:PrintEndgameMessage()  
 	Timers:CreateTimer(5, function() GameRules:SendCustomMessage("<font color='#DBA901'><br>Game will end in 10 seconds</font>",0,0) end)
 	Timers:CreateTimer(10, function() GameRules:SendCustomMessage("<font color='#DBA901'>Please leave your feedback at our workshop page</font>",0,0) end)
 	Timers:CreateTimer(12, function() GameRules:SendCustomMessage("<font color='#DBA901'>3</font>",0,0) end)
