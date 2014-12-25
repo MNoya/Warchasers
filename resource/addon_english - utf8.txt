@@ -21,7 +21,7 @@
 		"difficulty3"                    "Mythical"
 		"difficulty4"                    "Legendary"
 		
-		"difficulty_text"				"Each additional level of difficulty will add one affix to each different creature, from a pool of over 20 abilities\n."
+		"difficulty_text"				"Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities\n."
 		"difficulty0_text"				"This is the Classic difficulty baseline\n"
 		"difficulty1_text"				"An Advanced Challenge\nWatch your step!"
 		"difficulty2_text"				"An Heroic Challenge\nDon't try this alone or without experience"
