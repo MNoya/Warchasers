@@ -363,7 +363,7 @@ function Warchasers:OnThink()
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		-- Send stats
-        statcollection.sendStats(GameRules.DIFFICULTY)
+        statcollection.sendStats()
 
         -- Delete the thinker
         return
@@ -1288,6 +1288,13 @@ function Warchasers:OnEveryoneVoted()
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
+
+    -- Add settings to our stat collector
+    statcollection.addStats({
+        modes = {
+            difficulty = GameRules.DIFFICULTY
+        }
+    })
 
     -- Find the barrier_voting and obstructions_voting entities in the map and disable them
     local barrier = Entities:FindByName(nil,"barrier_voting")
