@@ -800,7 +800,8 @@
 	
 		
 		//Spawners
-		"DOTA_Tooltip_ability_spawn_murloc"			"Spawn Murloc Tiderunner"	
+		"DOTA_Tooltip_ability_spawn_murloc_a"			"Spawn Murloc Tiderunner"	
+		"DOTA_Tooltip_ability_spawn_murloc_b"			"Spawn Murloc Tiderunner"	
 		"DOTA_Tooltip_ability_spawn_gnoll"			"Spawn Gnoll Poacher"
 		"DOTA_Tooltip_ability_spawn_ghoul"			"Spawn Ghoul"
 		"DOTA_Tooltip_ability_spawn_medium_satyr" 	"Spawn Satyr"

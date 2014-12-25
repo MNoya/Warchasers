@@ -1164,7 +1164,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stun_duration"		"3"
+				"stun_duration"		"2"
 			}
 			"04"
 			{
@@ -12186,22 +12186,18 @@
 				"EffectName" "Hero_Alchemist.UnstableConcoction.Stun"
 				"Target"			"CASTER"
 			}
+			
 			"AttachEffect"
 			{
-				"EffectName"			"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-				"EffectAttachType"		"follow_origin"
-				"EffectRadius"			"250"//"%radius"
-				"EffectDurationScale"	"2"
-				"EffectLifeDurationScale" "2"
-				"EffectColorA"			"20 200 0"
-				"EffectColorB"			"20 200 0"
-				"Target"
-				{
-					"Center"			"PROJECTILE"
-					"Radius"			"%radius"
-					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
+			 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+			 	"EffectAttachType"	"follow_origin"
+			 	"Target"			"TARGET"
+
+			 	"ControlPointEntities"
+	            {
+	                "TARGET"    "attach_origin" // Control Point 0
+	                "TARGET"    "attach_origin" // Control Point 1
+	            }
 			}
 
 			"SpawnUnit"
@@ -12216,19 +12212,15 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"TARGET"
-						
-						"ControlPoints"
-						{
-							"00"		"0 0 0"
-							"01"		"50 100 0"
-							"02"		"4 10 .5"
-							"03"		"20 200 0" //color
-							"04"		"0 0 0"
-							"05"		"0 0 0"
-						}
+					 	"EffectName"		"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+					 	"EffectAttachType"	"follow_origin"
+					 	"Target"			"TARGET"
+
+					 	"ControlPointEntities"
+			            {
+			                "TARGET"    "attach_origin" // Control Point 0
+			                "TARGET"    "attach_origin" // Control Point 1
+			            }
 					}
 				}
 			}		
