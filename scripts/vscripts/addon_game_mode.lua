@@ -987,7 +987,7 @@ function Warchasers:OnEntityKilled( event )
 		PlayerResource:SetCameraTarget(killerEntity:GetPlayerOwnerID(), killedUnit)
 		EmitGlobalSound("diretide_roshdeath_Stinger")
 		boss_dead() --endgame message
-		Timers:CreateTimer(5, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
+		Timers:CreateTimer(10, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
@@ -1352,35 +1352,35 @@ function Warchasers:GG( player )
 	 --get the player's ID
     local pID = player:GetPlayerID()
 
-    GameRules:SendCustomMessage(PlayerResource:GetPlayerName(pID).." has lost its soul forever...", 0, 0)
-    GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
+    --PlayerResource:GetPlayerName(pID)..
+    --GameRules:SendCustomMessage(" has lost its soul forever...", 0, 0)
+    --GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
 
     --this should keep the respawn at 999 forever if they GG out.
-    if pID == 0 then
+    --[[if pID == 0 then
     	GameRules.Player0DEAD = true
     elseif pID == 1 then
     	GameRules.Player1DEAD = true
     elseif pID == 2 then
-    	GameRules.Player1DEAD = true
+    	GameRules.Player2DEAD = true
     elseif pID == 3 then
-    	GameRules.Player1DEAD = true
+    	GameRules.Player3DEAD = true
     elseif pID == 4 then
     	GameRules.Player4DEAD = true
-    end
+    end]]
+
+    print("PLEASE NO CRASHERINO")
+    GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
 
     --Check for defeat
- 	print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
+ 	--[[print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
  	print("Total Players: " .. GameRules.PLAYER_COUNT)
 	if GameRules.DEAD_PLAYER_COUNT == GameRules.PLAYER_COUNT then
 		print("THEY'RE ALL DEAD BibleThump")
-		local messageinfo = { message = "RIP IN PIECES", duration = 5}
-				
-		Timers:CreateTimer({1,	 function()	
-				FireGameEvent("show_center_message",messageinfo)
-				GameMode:SetFogOfWarDisabled(true)
-				--GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-				--GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-			end
-		})
-	end
+		--local messageinfo = { message = "RIP IN PIECES", duration = 5}
+		--FireGameEvent("show_center_message",messageinfo)
+		--GameMode:SetFogOfWarDisabled(true)
+		GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+		
+	end]]
 end

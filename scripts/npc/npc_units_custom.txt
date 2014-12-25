@@ -10054,7 +10054,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/items/courier/carty/carty.vmdl"
+		"Model"						"models/npc_minions/draft_siege_good.vmdl"
 		"SoundSet"					"Creep_Good_Engine"		
 		"MinimapIcon"					"minimap_siege"
 		"MinimapIconSize"				"350"
