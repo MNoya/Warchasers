@@ -11,7 +11,7 @@ Nerf Techies PLEASE - DONE
 
 DeathTimers are decreasing, should we just let people respawn? - Yeah, DONE
 Ults being channeled is kinda bad for higher difficulties as standing still is impossible
-Delay on endgame being instant
+Delay on endgame being instant - ??????????????????????????????????????????? WHATS HAPPENING?
 
 TO ADD:
 Some fountains or alternative healing methods (shrines, rest button, something) - Irrelevant after the save point feature
