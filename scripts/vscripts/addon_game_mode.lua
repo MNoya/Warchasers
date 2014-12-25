@@ -363,7 +363,7 @@ function Warchasers:OnThink()
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		-- Send stats
-        statcollection.sendStats()
+        statcollection.sendStats(GameRules.DIFFICULTY)
 
         -- Delete the thinker
         return
