@@ -10,7 +10,7 @@
 
 "affix_avenger"
     {
-    "level_limit"   "6"
+    "level_limit"   "2"
     "range_melee_type"    "any"
     }
 
@@ -59,7 +59,7 @@
 //    }
 "affix_jailer"
     {
-    "level_limit"   "5"
+    "level_limit"   "4"
     "range_melee_type"    "any"
     }
 "affix_reflect_damage"
