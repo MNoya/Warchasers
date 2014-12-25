@@ -1279,16 +1279,16 @@ function Warchasers:OnEveryoneVoted()
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Classic</font>", 0, 0)
     	GameRules:SendCustomMessage("Hey, Not Too Rough", 0, 0)
     elseif GameRules.DIFFICULTY == 1 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Ascendant</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Ascendant (1)</font>", 0, 0)
     	GameRules:SendCustomMessage("Bring it on!", 0, 0)
     elseif GameRules.DIFFICULTY == 2 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Elder</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Elder (2)</font>", 0, 0)
     	GameRules:SendCustomMessage("Hurt Me Plenty", 0, 0)
     elseif GameRules.DIFFICULTY == 3 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Mythical</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Mythical (3)</font>", 0, 0)
     	GameRules:SendCustomMessage("Ultra-Violence" , 0, 0)
     elseif GameRules.DIFFICULTY == 4 then
-    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary</font>", 0, 0)
+    	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary (4)</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
 

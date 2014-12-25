@@ -21,7 +21,7 @@
 		"difficulty3"                    "Mythical"
 		"difficulty4"                    "Legendary"
 		
-		"difficulty_text"				"Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities\n."
+		"difficulty_text"				"Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities\n"
 		"difficulty0_text"				"This is the Classic difficulty baseline\n"
 		"difficulty1_text"				"An Advanced Challenge\nWatch your step!"
 		"difficulty2_text"				"An Heroic Challenge\nDon't try this alone or without experience"
@@ -406,8 +406,8 @@
 		"DOTA_Tooltip_ability_affix_berserker_Description"                            "Gets extra attack and damage percentage for each fraction of health missing"
 		"DOTA_Tooltip_ability_affix_berserker_Note0"                                  "Kill this fast, don't leave it half HP"
 		"DOTA_Tooltip_ability_affix_berserker_Lore"                                   ""
-		"DOTA_Tooltip_ability_affix_berserker_damage_percent_per_health_missing"	  "%%DAMAGE PER %%HEALTH MISSING"
-		"DOTA_Tooltip_ability_affix_berserker_attack_speed_per_health_missing"		  "%%ATTACK SPEED PER %%HEALTH MISSING"
+		"DOTA_Tooltip_ability_affix_berserker_damage_percent_per_health_missing"	  "DAMAGE% PER HEALTH% MISSING"
+		"DOTA_Tooltip_ability_affix_berserker_attack_speed_per_health_missing"		  "ATTACK SPEED PER HEALTH% MISSING"
 		
 		"DOTA_Tooltip_ability_affix_provoker"                                             "Provoker"
 		"DOTA_Tooltip_ability_affix_provoker_Description"                                 "You can only attack the unit with this affix. Until it's killed you cant attack other units around him"
@@ -473,6 +473,9 @@
 
 		"DOTA_Tooltip_affix_provoker_buff"                                       "Provoker"
 		"DOTA_Tooltip_affix_provoker_buff_Description"                           "Must attack the units with this affix"
+		
+		"DOTA_Tooltip_affix_provoker_aura"                                       "Provoker"
+		"DOTA_Tooltip_affix_provoker_aura_Description"                           "Must attack the units with this affix"
 
 		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier"                              "Shield Bearer"
 		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier_Description"                  ""

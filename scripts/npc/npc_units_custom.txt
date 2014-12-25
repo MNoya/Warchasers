@@ -6037,6 +6037,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"	"6"
 		"Ability1"                                      "neutral_spell_immunity"                      // Ability 1
 		"Ability2"                                      "creep_slow"                      // Ability 2
 		"Ability3"                                      ""                      // Ability 3

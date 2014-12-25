@@ -26,7 +26,7 @@
 	"npc_medium_satyr"		"1"						
 	"npc_priest"			"1"							
 	"npc_mud_golem"  		"1"							
-	//"npc_big_wizard"	
+	"npc_big_wizard"		"1"
 	"npc_dark_troll_archer"	"1"						
 	"npc_forest_troll"		"1"						
 	"npc_nerubian_melee"	"1"						
@@ -60,9 +60,9 @@
 	//"npc_sheep"							
 
 	"npc_wendigo"			"1"							
-	//"npc_blue_drake"						
+	"npc_blue_drake"		"1"						
 
-	//"npc_brood"								
+	"npc_brood"				"1"
 	"npc_ice_troll_priest"	"1"						
 	"npc_rock_golem" 		"1"	  						
 	"npc_wildkin"			"1"
@@ -78,7 +78,7 @@
 	//"npc_mana_fountain"						
 
 	"npc_necromancer"		"1"							
-	//"npc_big_necromancer"					
+	"npc_big_necromancer"	"1"					
 	"npc_big_sludge"		"1"							
 	"npc_fellhound"			"1"								
 	//"npc_titan"								
