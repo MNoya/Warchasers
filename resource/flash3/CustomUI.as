@@ -33,6 +33,7 @@ package {
 			
 			//pass the gameAPI on to the modules
 			this.myModule.setup(this.gameAPI, this.globals);
+			this.playAgain.setup(this.gameAPI, this.globals);
 			
 			this.myModule.visible = false
 			
@@ -54,6 +55,7 @@ package {
 					
 			//pass the resize event to our module, we pass the width and height of the screen, as well as the INVERSE of the stage scaling ratios.
 			this.myModule.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
+			this.playAgain.screenResize(re.ScreenWidth, re.ScreenHeight, scaleRatioY, scaleRatioY, re.IsWidescreen());
 		}
 	}
 }

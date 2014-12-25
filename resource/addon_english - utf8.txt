@@ -12,6 +12,8 @@
     	"camera_lock_on"                    "Camera Lock ON"
     	"camera_lock_off"                    "Camera Lock OFF"
 
+		"warchasers_play_again"			"Resurrect at latest save point?"
+		
 		"select_difficulty"				 "SELECT DIFFICULTY"
 		"difficulty0"                    "Normal"
 		"difficulty1"                    "Ascendant"
@@ -65,7 +67,7 @@
 		"DOTA_StatTooltip_PrimaryBonus"	"- Each point increases damage by 1\n"
 		
 		// Chat
-		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> is dead! Your soul is lost forever..."
+		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> is dead!"
 		"DOTA_Chat_PickedUpAegis"		""
 
 		"DOTA_MiniKillcam_KilledByNeutral"	"KILLED BY\n THE SOULLESS"

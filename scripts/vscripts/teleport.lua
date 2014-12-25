@@ -8,6 +8,10 @@ function Teleporter(trigger)
         -- Refocus the camera of said player to the position of the teleported hero.
         --SendToConsole("dota_camera_center") --done through flash for all clients
         EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
+
+        GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "teleport_spot_1" )
+        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+        FireGameEvent("show_center_message",messageinfo)
 end
 
 function TeleporterHeavenHell(trigger)
@@ -273,6 +277,7 @@ function TeleporterHell(trigger)
 end
 
 function TeleporterBack(trigger)
+
     --single player
     local point =  Entities:FindByName( nil, "teleport_spot_back" ):GetAbsOrigin()
     FindClearSpaceForUnit(trigger.activator, point, false)
@@ -409,7 +414,10 @@ function TeleporterTanksStart(trigger)
     TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
     TANK:SetRenderColor(150, 150, 150)
      
-    --render different color for each player
+     GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
+    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+     FireGameEvent("show_center_message",messageinfo)
+
     --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
     if GameRules.PLAYER_COUNT >= 1 then
         local hero = PlayerResource:GetSelectedHeroEntity( 0 )
@@ -452,10 +460,14 @@ end
 function TeleporterFinal(trigger)
 
 	--Teleport the real hero who owns the tank
-    local point =  Entities:FindByName( nil, "teleport_spot_final" ):GetAbsOrigin()
+    local point =  Entities:FindByName( nil, "teleport_spot_final" )
     EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
-    FindClearSpaceForUnit(trigger.activator, point, false)
+    GameRules.CURRENT_SAVEPOINT = point
+    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+     FireGameEvent("show_center_message",messageinfo)
+
+    FindClearSpaceForUnit(trigger.activator, point:GetAbsOrigin(), false)
     trigger.activator:Stop()
 
     GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )

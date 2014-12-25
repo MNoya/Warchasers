@@ -127,6 +127,17 @@ function Warchasers:InitGameMode()
 	GameRules.DIFFICULTY = 0
 	GameRules.difficulty_selected = false
 
+	GameRules.savepoint1 = Entities:FindByName(nil, "savepoint1") --start
+	GameRules.savepoint2 = Entities:FindByName(nil, "savepoint2") --1st key door
+	GameRules.savepoint3 = Entities:FindByName(nil, "savepoint3") --2nd key door
+				--1st teleport: teleport_spot_1 save point
+	GameRules.savepoint4 = Entities:FindByName(nil, "savepoint4") --3rd key door
+	GameRules.savepoint5 = Entities:FindByName(nil, "savepoint5") --necro after bridge
+				--tank zone has its own save point used for teleporting, tank_spawn_point
+				--hall of heroes, last savepoint, also has its own teleport_spot_final point
+
+	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint1
+
 
     -- Remove building invulnerability
     print("Make buildings vulnerable")
@@ -450,17 +461,21 @@ function Warchasers:SoundThink()
 end
 
 function Warchasers:CheckForDefeat()
-	if GameRules.Player0DEAD == true then --stay dead
+	--[[if GameRules.Player0DEAD == true then --stay dead
 		PlayerResource:GetSelectedHeroEntity(0):SetTimeUntilRespawn(999)
-	elseif GameRules.Player1DEAD == true then
+	end
+	if GameRules.Player1DEAD == true then
 		PlayerResource:GetSelectedHeroEntity(1):SetTimeUntilRespawn(999)
-	elseif GameRules.Player2DEAD == true then
+	end
+	if GameRules.Player2DEAD == true then
 		PlayerResource:GetSelectedHeroEntity(2):SetTimeUntilRespawn(999)
-	elseif GameRules.Player3DEAD == true then
+	end
+	if GameRules.Player3DEAD == true then
 		PlayerResource:GetSelectedHeroEntity(3):SetTimeUntilRespawn(999)
-	elseif GameRules.Player4DEAD == true then
+	end
+	if GameRules.Player4DEAD == true then
 		PlayerResource:GetSelectedHeroEntity(4):SetTimeUntilRespawn(999)
-	end	
+	end	]]
 end
 
 function Warchasers:OnGameRulesStateChange(keys)
@@ -1100,57 +1115,43 @@ function Warchasers:OnEntityKilled( event )
     		GameRules:SendCustomMessage("<font color='#9A2EFE'>The Ankh of Reincarnation glows brightly...</font>",0,0)
     	end   
 
-    	if KilledPlayerID==0 and GameRules.P0_ANKH_COUNT == 0 then  
-    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
+    	if KilledPlayerID==0 and GameRules.P0_ANKH_COUNT <= 0 then  
+    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
-    		GameRules.Player0DEAD = true
+    		GameRules.Player0DEAD = true]]
+
+    		--Fire the event. The second parameter is an object with all the event's parameters as properties
+   			FireGameEvent('warchasers_player_died', { player_ID = 0 })
     	end
 
-    	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT == 0 then  
-    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
+    	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT <= 0 then  
+    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
-    		GameRules.Player1DEAD = true
+    		GameRules.Player1DEAD = true]]
+    		FireGameEvent('warchasers_player_died', { player_ID = 1 })
     	end
 	      
-	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT == 0 then  
-    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
+	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT <= 0 then  
+    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
-    		GameRules.Player2DEAD = true
+    		GameRules.Player2DEAD = true]]
+    		FireGameEvent('warchasers_player_died', { player_ID = 2 })
     	end
 
-    	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT == 0 then  
-    		GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
+    	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT <= 0 then  
+    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
-    		GameRules.Player3DEAD = true
+    		GameRules.Player3DEAD = true]]
+    		FireGameEvent('warchasers_player_died', { player_ID = 3 })
     	end
 
-    	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT == 0 then  
-    		GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
+    	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT <= 0 then  
+    		--[[GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
     		respawning=false
-    		GameRules.Player4DEAD = true
+    		GameRules.Player4DEAD = true]]
+    		FireGameEvent('warchasers_player_died', { player_ID = 4 })
     	end 
- 		
- 		--Check for defeat
- 		print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
- 		print("Total Players: " .. GameRules.PLAYER_COUNT)
- 		if not respawning then
-		    if GameRules.DEAD_PLAYER_COUNT == GameRules.PLAYER_COUNT then
-		    	print("THEY'RE ALL DEAD BibleThump")
-				local messageinfo = {
-				        message = "RIP IN PIECES",
-						duration = 2}
-				
-				Timers:CreateTimer({
-		    			endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-		    			callback = function()
-							FireGameEvent("show_center_message",messageinfo)
-							GameMode:SetFogOfWarDisabled(true)
-							--GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-							GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-						end
-					})
-			end
-		end
+ 	
 	end
 
 	--Count Creep kills as scoreboard kills
@@ -1298,4 +1299,81 @@ function Warchasers:OnEveryoneVoted()
 		print("Obstructions disabled")
 	end
 	
+end
+
+-- register the 'RespawnAsGhost' command in our console
+Convars:RegisterCommand( "RespawnAsGhost", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, register the vote
+        return Warchasers:RespawnAsGhost( cmdPlayer )
+    end
+end, "A player wants to keep playing", 0 )
+
+function Warchasers:RespawnAsGhost( player )
+	 --get the player's ID
+    local pID = player:GetPlayerID()
+
+    --get the hero handle
+    local hero = player:GetAssignedHero()
+
+    if hero:UnitCanRespawn() then
+    	hero:SetTimeUntilRespawn(1)
+    	location = GameRules.CURRENT_SAVEPOINT:GetAbsOrigin()
+
+		--need to wait a bit for the hero to respawn	
+		Timers:CreateTimer(1.1, function()	
+			FindClearSpaceForUnit(hero, location, true) 
+			hero:SetTimeUntilRespawn(999) --for next loop
+		end)
+
+	end
+end
+
+-- register the 'GG' command in our console
+Convars:RegisterCommand( "GG", function(name, p)
+    --get the player that sent the command
+    local cmdPlayer = Convars:GetCommandClient()
+    if cmdPlayer then 
+        --if the player is valid, register the vote
+        return Warchasers:GG( cmdPlayer )
+    end
+end, "A player gives up", 0 )
+
+function Warchasers:GG( player )
+	 --get the player's ID
+    local pID = player:GetPlayerID()
+
+    GameRules:SendCustomMessage(PlayerResource:GetPlayerName(pID).." has lost its soul forever...", 0, 0)
+    GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
+
+    --this should keep the respawn at 999 forever if they GG out.
+    if pID == 0 then
+    	GameRules.Player0DEAD = true
+    elseif pID == 1 then
+    	GameRules.Player1DEAD = true
+    elseif pID == 2 then
+    	GameRules.Player1DEAD = true
+    elseif pID == 3 then
+    	GameRules.Player1DEAD = true
+    elseif pID == 4 then
+    	GameRules.Player4DEAD = true
+    end
+
+    --Check for defeat
+ 	print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
+ 	print("Total Players: " .. GameRules.PLAYER_COUNT)
+	if GameRules.DEAD_PLAYER_COUNT == GameRules.PLAYER_COUNT then
+		print("THEY'RE ALL DEAD BibleThump")
+		local messageinfo = { message = "RIP IN PIECES", duration = 5}
+				
+		Timers:CreateTimer({1,	 function()	
+				FireGameEvent("show_center_message",messageinfo)
+				GameMode:SetFogOfWarDisabled(true)
+				--GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+				--GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+			end
+		})
+	end
 end

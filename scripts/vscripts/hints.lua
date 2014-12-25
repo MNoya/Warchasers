@@ -38,6 +38,27 @@ end
 function announce_level2(trigger) 
 	GameRules:SendCustomMessage("Level <font color='#2E64FE'>2</font> has been opened. Fools enter at its own peril.", 0, 0) 
 	EmitGlobalSound("DOTAMusic_Stinger.007")
+
+	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint2
+
+	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	FireGameEvent("show_center_message",messageinfo)
+end
+
+function announce_level3(trigger) 
+	EmitGlobalSound("DOTAMusic_Stinger.007")
+
+	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint3
+	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	FireGameEvent("show_center_message",messageinfo)
+end
+
+function announce_level6(trigger) 
+	EmitGlobalSound("DOTAMusic_Stinger.007")
+
+	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint4
+	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	FireGameEvent("show_center_message",messageinfo)
 end
 
 function miniboss2_engage(trigger)
@@ -141,7 +162,7 @@ function circle_zapsappers(trigger)
         if name == "npc_sapper" then
         	if not sound then 
         		sound = true
-        		EmitGlobalSound("Axe_axe_death_05") 
+        		EmitGlobalSound("Axe_axe_death_05") --Giff Techies
         	end
         	creep:ForceKill(true)
         end
@@ -155,6 +176,11 @@ function circle_zapsappers(trigger)
     Timers:CreateTimer({ useGameTime = false, endTime = 3,
         callback = function() EmitGlobalSound("ui.crafting_slotslide") end
     })
+
+    local point = Entities:FindByName(nil,"teleport_circles_down")
+    GameRules.CURRENT_SAVEPOINT = point
+    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    FireGameEvent("show_center_message",messageinfo)
 end 
 
 function soulkeeper_warning3(trigger)

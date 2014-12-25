@@ -4,6 +4,11 @@
 	{
 	}
 
+	"warchasers_player_died"
+	{
+		"player_ID"		"short"
+	}
+
 	"custom_error_show"
 	{
 		"player_ID"		"short"
