@@ -9,14 +9,14 @@ Cyclone is a hideous spell, should remove it - DONE
 Sun Key is not very noticeable - DONE
 Nerf Techies PLEASE - DONE
 
-DeathTimers are decreasing, should we just let people respawn?
+DeathTimers are decreasing, should we just let people respawn? - Yeah, DONE
 Ults being channeled is kinda bad for higher difficulties as standing still is impossible
 Delay on endgame being instant
 
 TO ADD:
-Some fountains or alternative healing methods (shrines, rest button, something)
+Some fountains or alternative healing methods (shrines, rest button, something) - Irrelevant after the save point feature
 Need to finish the 2~3 new items (Hammer, Scythe, Machinegun)
-Play Again, possibly some save points, not sure if we'll have time for this.
+Play Again, possibly some save points, not sure if we'll have time for this. - DONE!
 	Either way, something should be done about game ending when everyone dies
 Update Stats Collection library to send the difficulty!
 	
