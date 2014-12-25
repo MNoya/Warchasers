@@ -987,7 +987,10 @@ function Warchasers:OnEntityKilled( event )
 		PlayerResource:SetCameraTarget(killerEntity:GetPlayerOwnerID(), killedUnit)
 		EmitGlobalSound("diretide_roshdeath_Stinger")
 		boss_dead() --endgame message
-		Timers:CreateTimer(10, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
+		local messageinfo = { message = "YOU DEFEATED", duration = 5}
+		FireGameEvent("show_center_message",messageinfo)
+		Warchasers:PrintEndgameMessage()
+		Timers:CreateTimer(15, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
@@ -1352,9 +1355,8 @@ function Warchasers:GG( player )
 	 --get the player's ID
     local pID = player:GetPlayerID()
 
-    --PlayerResource:GetPlayerName(pID)..
-    --GameRules:SendCustomMessage(" has lost its soul forever...", 0, 0)
-    --GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
+    GameRules:SendCustomMessage(PlayerResource:GetPlayerName(pID).." has lost its soul forever...", 0, 0)
+    GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
 
     --this should keep the respawn at 999 forever if they GG out.
     --[[if pID == 0 then
@@ -1369,18 +1371,22 @@ function Warchasers:GG( player )
     	GameRules.Player4DEAD = true
     end]]
 
-    print("PLEASE NO CRASHERINO")
-    GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-
     --Check for defeat
- 	--[[print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
+ 	print("Dead Players: " .. GameRules.DEAD_PLAYER_COUNT)
  	print("Total Players: " .. GameRules.PLAYER_COUNT)
 	if GameRules.DEAD_PLAYER_COUNT == GameRules.PLAYER_COUNT then
 		print("THEY'RE ALL DEAD BibleThump")
-		--local messageinfo = { message = "RIP IN PIECES", duration = 5}
-		--FireGameEvent("show_center_message",messageinfo)
-		--GameMode:SetFogOfWarDisabled(true)
-		GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-		
-	end]]
+		local messageinfo = { message = "RIP IN PIECES", duration = 5}
+		FireGameEvent("show_center_message",messageinfo)
+		Warchasers:PrintEndgameMessage()
+		Timers:CreateTimer(15, function() GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS) end)		
+	end
+end
+
+function Warchasers:PrintEndgameMessage()
+	Timers:CreateTimer(5, function() GameRules:SendCustomMessage("<font color='#DBA901'><br>Game will end in 10 seconds</font>",0,0) end)
+	Timers:CreateTimer(10, function() GameRules:SendCustomMessage("<font color='#DBA901'>Please leave your feedback at our workshop page</font>",0,0) end)
+	Timers:CreateTimer(12, function() GameRules:SendCustomMessage("<font color='#DBA901'>3</font>",0,0) end)
+	Timers:CreateTimer(13, function() GameRules:SendCustomMessage("<font color='#DBA901'>2</font>",0,0) end)
+	Timers:CreateTimer(14, function() GameRules:SendCustomMessage("<font color='#DBA901'>1...</font>",0,0) end)
 end

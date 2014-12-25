@@ -10,8 +10,8 @@ Sun Key is not very noticeable - DONE
 Nerf Techies PLEASE - DONE
 
 DeathTimers are decreasing, should we just let people respawn? - Yeah, DONE
-Ults being channeled is kinda bad for higher difficulties as standing still is impossible
-Delay on endgame being instant - ??????????????????????????????????????????? WHATS HAPPENING?
+Ults being channeled is kinda bad for higher difficulties as standing still is impossible - Postponed for next balance patch
+Delay on endgame being instant - ? Workaround for crash DONE
 
 TO ADD:
 Some fountains or alternative healing methods (shrines, rest button, something) - Irrelevant after the save point feature
