@@ -748,10 +748,11 @@ function Warchasers:OnEveryonePicked()
     GameRules:SendCustomMessage("Ported by <font color='#2EFE2E'>Noya</font> & <font color='#2EFE2E'>igo</font>", 0, 0)
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
     GameRules:SendCustomMessage("Please report bugs and leave feedback in our workshop page", 0, 0)
-    GameRules:SendCustomMessage("<br>1 minute to select a difficulty",0,0)
-    Timers:CreateTimer(30,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
-    Timers:CreateTimer(50,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
-    Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then Warchasers:OnEveryoneVoted() end end)
+    GameRules:SendCustomMessage("<br>2 minutes to select a difficulty",0,0)
+    Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("60 seconds remaining",0,0) end end)
+    Timers:CreateTimer(90,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
+    Timers:CreateTimer(110,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
+    Timers:CreateTimer(120,function() if not GameRules.difficulty_selected then Warchasers:OnEveryoneVoted() end end)
 end
 
 --Item checking

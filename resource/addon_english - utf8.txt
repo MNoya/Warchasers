@@ -26,7 +26,7 @@
 		"difficulty1_text"				"An Advanced Challenge\nWatch your step!"
 		"difficulty2_text"				"An Heroic Challenge\nDon't try this alone or without experience"
 		"difficulty3_text"				"A Brutal Quest\nYou asked for it"
-		"difficulty4_text"				"The Ultimate Difficulty\nIf you are truly Insane\nOnly recommended for full teams of tryhards"
+		"difficulty4_text"				"The Ultimate Difficulty\nOnly recommended for players with previous experience"
 		
 		"vote_difficulty"				"VOTE DIFFICULTY"
 		
