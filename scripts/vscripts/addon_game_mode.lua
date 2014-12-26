@@ -365,9 +365,7 @@ function Warchasers:OnThink()
 		GameRules:SetTimeOfDay( 0.8 )
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		-- Send stats
-		statcollection.sendStats()  
-    		
+		    		
         -- Delete the thinker
         return
 	end
@@ -1379,7 +1377,10 @@ function Warchasers:GG( player )
 	end
 end
 
-function Warchasers:PrintEndgameMessage()  
+function Warchasers:PrintEndgameMessage()
+	-- Send stats
+	statcollection.sendStats()
+
 	Timers:CreateTimer(5, function() GameRules:SendCustomMessage("<font color='#DBA901'><br>Game will end in 10 seconds</font>",0,0) end)
 	Timers:CreateTimer(10, function() GameRules:SendCustomMessage("<font color='#DBA901'>Please leave your feedback at our workshop page</font>",0,0) end)
 	Timers:CreateTimer(12, function() GameRules:SendCustomMessage("<font color='#DBA901'>3</font>",0,0) end)

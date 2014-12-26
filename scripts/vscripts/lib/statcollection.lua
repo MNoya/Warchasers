@@ -56,7 +56,7 @@ local collectedStats = {}
 local alreadySubmitted = false
 
 -- Should we auto send stats?
-local autoSendStats = true
+local autoSendStats = false --fuck this
 
 -- For the following functions, setting safe to true will STOP the function from override old stats
 -- If you leave safe out, or set it to false, it will override old stats (if any exist)
@@ -407,11 +407,11 @@ function findWarchasersWinner()
         winners = DOTA_TEAM_BADGUYS
     end
 
-    DeepPrintTable(boss)
+    return winners
 end
 
 -- Auto hook sending stats
-local states = {}
+--[[local states = {}
 local autoSent = false
 ListenToGameEvent('game_rules_state_change', function(keys)
     local state = GameRules:State_Get()
@@ -435,7 +435,7 @@ ListenToGameEvent('game_rules_state_change', function(keys)
         -- Send the stats
         sendStats()
     end
-end, nil)
+end, nil)]]
 
 -- Hook winner function
 local oldSetGameWinner = GameRules.SetGameWinner
