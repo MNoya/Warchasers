@@ -114,6 +114,13 @@ function spiderhall_kill(trigger)
     end
 end
 
+function save_frost( event )
+	local point = Entities:FindByName(nil,"savepoint_frost")
+    GameRules.CURRENT_SAVEPOINT = point
+    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    FireGameEvent("show_center_message",messageinfo)	
+end
+
 
 function soulkeeper_warning0(trigger) 
 	local position = Vector(-1625,-3072,129)
