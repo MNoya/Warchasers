@@ -366,7 +366,7 @@ end
 function HealingWave( event )
 	local hero = event.caster
 	local target = event.target
-	local bounces = event.ability:GetLevelSpecialValueFor("max_bounces", (event.ability:GetLevel()-1))
+	local bounces = event.ability:GetLevelSpecialValueFor("healing", (event.ability:GetLevel()-1))
 	local healing = event.ability:GetSpecialValueFor("healing")
 	local decay = event.ability:GetSpecialValueFor("wave_decay_percent")  * 0.01
 	local radius = event.ability:GetSpecialValueFor("bounce_range")
@@ -558,7 +558,7 @@ function AvengeDeath(event)
 	print("AVENGE ME BROTHERS")
 
 	-- find nearby allies
-	local units = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), unit, 3000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+	local units = FindUnitsInRadius(unit:GetTeamNumber(), unit:GetAbsOrigin(), unit, 2000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
 						DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
 
 	-- make them grow, hit harder and faster
@@ -971,10 +971,6 @@ function PlaguedPool( event )
 
 	local dummy = CreateUnitByName("dummy_unit", point, false, caster, caster, caster:GetTeam())
 	local target = dummy:GetAbsOrigin()
-
-	local particle = ParticleManager:CreateParticle("particles/warchasers/plagued/venomancer_poison_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
-	ParticleManager:SetParticleControl(particle, 0, target)
-	ParticleManager:SetParticleControl(particle, 1, Vector(radius/2,1,radius/2))
 
 	local particle1 = ParticleManager:CreateParticle("particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf", PATTACH_ABSORIGIN_FOLLOW, dummy)
 	ParticleManager:SetParticleControl(particle1, 0, target)

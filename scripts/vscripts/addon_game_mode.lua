@@ -28,7 +28,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.2.4"
+WARCHASERS_VERSION = "1.2.5"
 
 -- Stat collection
 require('lib.statcollection')
@@ -210,6 +210,7 @@ function Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts", context)
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context)
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts", context )
 	--PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts", context )
 	--PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
 

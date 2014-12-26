@@ -930,6 +930,11 @@
 
 		"OnSpellStart"
 			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_ObsidianDestroyer.AstralImprisonment.Cast"
+					"Target"		"TARGET"
+				}
 			"ActOnTargets"
 				{
 				"Target"
@@ -2332,17 +2337,12 @@
 				"Duration"	"0.1"
 				"OnDeath"
 				{
-					//"RunScript"
-					//{
-					//	"ScriptFile"	"abilities.lua"
-					//	"Function"		"SpawnDarkMinion"
-					//}
 					"SpawnUnit"
 					{
 						"UnitName"	"npc_black_arrow_minion_1"
 						"UnitCount"	"%dark_minion_1_count"
 						"SpawnRadius"	"1"
-						"Duration"	"80"
+						"Duration"	"%duration"
 						"Target"
 						{
 							"Center" "UNIT"
@@ -2362,7 +2362,7 @@
 						"UnitName"	"npc_black_arrow_minion_2"
 						"UnitCount"	"%dark_minion_2_count"
 						"SpawnRadius"	"1"
-						"Duration"	"80"
+						"Duration"	"%duration"
 						"Target"
 						{
 							"Center" "UNIT"
@@ -2382,7 +2382,7 @@
 						"UnitName"	"npc_black_arrow_minion_3"
 						"UnitCount"	"%dark_minion_3_count"
 						"SpawnRadius"	"1"
-						"Duration"	"80"
+						"Duration"	"%duration"
 						"Target"
 						{
 							"Center" "UNIT"
@@ -2433,6 +2433,11 @@
 				"var_type"	"FIELD_FLOAT"
 				"dark_minion_3_count"	"0 0 1"
 			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"80"
+			}
 			
 		}
 	}
@@ -2449,6 +2454,10 @@
 			{
 				"IsHidden"	"1"
 				"Passive"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
 				"OnCreated"
 				{
 					"AttachEffect"
