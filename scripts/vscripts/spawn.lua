@@ -752,62 +752,20 @@ end
 
 function SpawnSappers(event)
         print("Don not run, we are your friends!")
+        EmitGlobalSound("Warchasers.DoNotRun")
 
         rotation = Vector(-3958, 6636,416) --west of the bridge
 
-        EmitGlobalSound("Axe_axe_ability_berserk_03") --Come to Axe!
-        if GameRules.PLAYER_COUNT >= 1 then
-                position = Vector(7418,6661,640)
-                local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper1:SetForwardVector(rotation)
-                sapper1.initial_neutral_position = position
-                local sapper1 = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper1:SetForwardVector(rotation)
-                sapper1.initial_neutral_position = position
+        for i=1,10 do
+                Timers:CreateTimer(i,function()
+                        for k=1,GameRules.PLAYER_COUNT*2 do
+                                position = Vector(7418,6661,640)+RandomVector(200) --[[Returns:Vector
+                                Get a random 2D ''vector''. Argument (''float'') is the minimum length of the returned vector.
+                                ]]
+                                local sapperino = CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
+                                sapper1:SetForwardVector(rotation)         
+                        end
+                end)
         end
-
-
-
-        if GameRules.PLAYER_COUNT >= 2 then
-                position = Vector(7397, 6554, 640)
-                local sapper2 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper2:SetForwardVector(rotation)
-                sapper2.initial_neutral_position = position
-                local sapper2 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper2:SetForwardVector(rotation)
-                sapper2.initial_neutral_position = position
-        end
-
-        if GameRules.PLAYER_COUNT >= 3 then
-                position = Vector(7397, 6762, 640)
-                local sapper3 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper3:SetForwardVector(rotation)
-                sapper3.initial_neutral_position = position
-                local sapper3 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper3:SetForwardVector(rotation)
-                sapper3.initial_neutral_position = position
-        end
-
-        if GameRules.PLAYER_COUNT >= 4 then
-                position = Vector(7535, 6790, 640)
-                local sapper4 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper4:SetForwardVector(rotation)
-                sapper4.initial_neutral_position = position
-                local sapper4 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper4:SetForwardVector(rotation)
-                sapper4.initial_neutral_position = position
-        end
-
-        if GameRules.PLAYER_COUNT >= 5 then
-                position = Vector(7535, 6500, 640)
-                local sapper5 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper5:SetForwardVector(rotation)
-                sapper5.initial_neutral_position = position
-                local sapper5 =  CreateUnitByName("npc_sapper" , position, true, event.caster, event.caster, DOTA_TEAM_NEUTRALS)
-                sapper5:SetForwardVector(rotation)
-                sapper5.initial_neutral_position = position
-        end
-
-
 
 end

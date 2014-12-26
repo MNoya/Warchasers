@@ -622,6 +622,8 @@ function ElectrifiedSparks(event)
 	local caster = event.caster
 	local ability = event.ability
 
+	caster:EmitSound("Hero_Zuus.StaticField")
+
 	for i=1,spark_count do
 		point = (caster:GetAbsOrigin()+Vector(RandomInt(-1000,1000),RandomInt(-1000,1000),RandomInt(-1000,1000)))
 			    
@@ -780,6 +782,8 @@ function molten_explode( event )
 
 	-- Note: It's not the trail that explodes, is the center of the unit!
 	Timers:CreateTimer(3,function()
+		event.caster:EmitSound("Hero_Techies.RemoteMine.Detonate")
+
 		local particle2 = ParticleManager:CreateParticle("particles/warchasers/molten/explosion/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 		ParticleManager:SetParticleControl(particle2, 0, event.caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle2, 3, event.caster:GetAbsOrigin())

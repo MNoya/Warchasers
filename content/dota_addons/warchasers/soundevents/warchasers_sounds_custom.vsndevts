@@ -1,10 +1,638 @@
+"Warchasers.BravelyDone"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/BravelyDone.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.ChooseAHero"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/ChooseAHero.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.ChooseHero"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/ChooseHero.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.ChooseWisely"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/ChooseWisely.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.Feat"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/Feat.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.GloriousBattle"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/GloriousBattle.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.HeroesRodeOut"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/HeroesRodeOut.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.Impressive"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/Impressive.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.LikeLions"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/LikeLions.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.PressFurther"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/PressFurther.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+"Warchasers.TrailOfDestruction"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/trine/TrailOfDestruction.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
+
 "Warchasers.ti4_laning_03_layer_01" //
 {
         "operator_stacks"
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -62,7 +690,7 @@
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -101,11 +729,11 @@
                                         }
                                         "soundlevel_min"
                                         {
-                                                "value"         "110.000000"
+                                                "value"         "40.000000"
                                         }
                                         "soundlevel_max"
                                         {
-                                                "value"         "110.000000"
+                                                "value"         "50.000000"
                                         }
                                         "distance_max"
                                         {
@@ -117,13 +745,13 @@
         }
 }
 
-"Warchasers.MurlocDeath"
+"Warchasers.MurlocDeath" //
 {
         "operator_stacks"
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -162,11 +790,11 @@
                                         }
                                         "soundlevel_min"
                                         {
-                                                "value"         "110.000000"
+                                                "value"         "40.000000"
                                         }
                                         "soundlevel_max"
                                         {
-                                                "value"         "110.000000"
+                                                "value"         "50.000000"
                                         }
                                         "distance_max"
                                         {
@@ -184,7 +812,7 @@
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -245,7 +873,7 @@
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -302,7 +930,7 @@
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"
@@ -353,13 +981,70 @@
         }
 }
 
+"Warchasers.DoNotRun"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {
+                                                "value"
+                                                {
+                                                        "value0"                "sounds/wc3sounds/DoNotRun.vsnd"
+                                                }
+                                        }
+                                        "volume_min"
+                                        {
+                                                "value"         "1.000000"
+                                        }
+                                        "volume_max"
+                                        {
+                                                "value"         "1.500000"
+                                        }
+                                        "pitch_min"
+                                        {
+                                                "value"         "0.950000"
+                                        }
+                                        "pitch_max"
+                                        {
+                                                "value"         "1.050000"
+                                        }
+                                        "chan_type"
+                                        {
+                                                "value"         "6"
+                                        }
+                                        "memory_type"
+                                        {
+                                                "value"         "0"
+                                        }
+                                        "soundlevel_min"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                        "soundlevel_max"
+                                        {
+                                                "value"         "100.000000"
+                                        }
+                                }
+                        }
+                }
+        }
+}
+
 "Warchasers.Heaven"
 {
         "operator_stacks"
         {
                 "update_stack"
                 {
-                        "update_operator"
+                        "reference_operator"
                         {
                                 "operator"              "sos_reference_stack"
                                 "reference_stack"               "src1_3d"

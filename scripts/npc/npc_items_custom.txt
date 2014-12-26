@@ -3416,7 +3416,7 @@
 			
 			"warchasers_vampiric_aura_bonus"
 			{
-				"IsHidden"				"0"
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"IsBuff"				"1"
 				"OnAttackLanded"
 				{
@@ -4116,7 +4116,7 @@
 			{
 				"IsBuff"				"1"
 				"Passive"           	"1"
-				"IsHidden"				"0"
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"OnCreated"
            		{
 	                "AttachEffect"

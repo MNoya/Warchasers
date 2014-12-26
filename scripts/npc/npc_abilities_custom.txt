@@ -1237,6 +1237,11 @@
 						         	}
 						     	}
 							}
+							"FireSound"
+							{
+								"EffectName"	"Hero_Ancient_Apparition.IceVortexCast"
+								"Target"		"TARGET"
+							}
 						}
 					}
 				}
@@ -1286,7 +1291,7 @@
 	    	"IsHidden"	"1"
 
 	    	"ThinkInterval"		"1"
-		    "OnIntervalThink"
+		    "OnIntervalThink"	
 		    	{
 		    	"RunScript"
 		    		{
@@ -8591,7 +8596,7 @@
 			}
 			"warchasers_optimusprimo_devotion_aura_armor_bonus"
 			{
-				
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"IsBuff"				"1"
 				"Properties"
 				{
@@ -9712,7 +9717,7 @@
 			}
 			"warchasers_endurance_aura_bonus"
 			{
-				"IsHidden"				"0"
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"IsBuff"				"1"
 				"Properties"
 				{
@@ -9815,7 +9820,7 @@
 			
 			"warchasers_vampiric_aura_bonus"
 			{
-				"IsHidden"				"0"
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"IsBuff"				"1"
 				"OnAttackLanded"
 					{
@@ -9979,6 +9984,7 @@
 			
 			"warchasers_skeletorus_brilliance_aura_mana_regen"
 			{
+				"IsHidden"				"1" //Waiting for a bigger buff bar
 				"IsBuff"				"1"
 				"Properties"
 				{

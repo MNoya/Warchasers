@@ -297,8 +297,8 @@ function sendStats(extraFields)
         -- The current map
         map = GetMapName(),
 
-        -- The winner (if they are using forts)
-        winner = findWinnerUsingForts(),
+        -- The winner
+        winner = findWarchasersWinner(),
 
         -- The duration of the match
         duration = GameRules:GetGameTime()
@@ -395,6 +395,19 @@ function findWinnerUsingForts()
 
     -- Return our estimate
     return winners
+end
+
+-- Custom Win Detection
+function findWarchasersWinner()
+    local boss = Entities:FindAllByModel("models/heroes/nightstalker/nightstalker_night.vmdl")
+
+    if #boss == 0 then
+        winners = DOTA_TEAM_GOODGUYS
+    else
+        winners = DOTA_TEAM_BADGUYS
+    end
+
+    DeepPrintTable(boss)
 end
 
 -- Auto hook sending stats

@@ -3,7 +3,7 @@
 	"Language"		"English"
 	"Tokens"
 	{		
-		"addon_game_name"			"WARCHASERS"
+		"addon_game_name"			"Warchasers"
 
 		"popup_title"                   "Welcome to Warchasers"
 
