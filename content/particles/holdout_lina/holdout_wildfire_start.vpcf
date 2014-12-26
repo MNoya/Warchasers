@@ -1,0 +1,218 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CParticleSystemDefinition CParticleSystemDefinition_0
+{
+	bool m_bPreventNameBasedLookup = false
+	int m_nMaxParticles = 128
+	string m_pszSnapshotName = ""
+	string m_hLowViolenceDef = ""
+	string m_hReferenceReplacement = ""
+	string m_hFallback = ""
+	int(4) m_ConstantColor = ( 255, 255, 255, 155 )
+	float m_flNoDrawTimeToGoToSleep = 0.100000
+	bool m_bShouldSort = false
+	CParticleOperator*[] m_Renderers = 
+	[
+		&C_OP_RenderSprites_0
+	]
+	CParticleOperator*[] m_Operators = 
+	[
+		&C_OP_FadeOutSimple_0,
+		&C_OP_FadeInSimple_0,
+		&C_OP_InterpolateRadius_0,
+		&C_OP_Decay_0,
+		&C_OP_BasicMovement_0,
+		&C_OP_VectorNoise_0,
+		&C_OP_ColorInterpolate_0
+	]
+	CParticleOperator*[] m_Initializers = 
+	[
+		&C_INIT_InitialVelocityNoise_0,
+		&C_INIT_RandomSequence_0,
+		&C_INIT_RandomAlpha_0,
+		&C_INIT_RandomRadius_0,
+		&C_INIT_RingWave_0,
+		&C_INIT_RandomRotation_0,
+		&C_INIT_RandomColor_0,
+		&C_INIT_RandomLifeTime_0,
+		&C_INIT_VelocityRandom_0,
+		&C_INIT_RandomRotationSpeed_0,
+		&C_INIT_InheritVelocity_0
+	]
+	CParticleOperator*[] m_Emitters = 
+	[
+		&C_OP_InstantaneousEmitter_0
+	]
+	CParticleOperator*[] m_ForceGenerators = 
+	[
+		&C_OP_AttractToControlPoint_0
+	]
+	CParticleOperator*[] m_Constraints = 
+	[
+		
+	]
+	ParticleChildrenInfo_t[] m_Children = 
+	[
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/holdout_lina/holdout_wildfire_start_start_smoke.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/holdout_lina/holdout_wildfire_start_ember.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/holdout_lina/holdout_wildfire_start_ember_follow.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/holdout_lina/holdout_wildfire_start_flare.vpcf"
+		}
+	]
+}
+
+C_OP_RenderSprites C_OP_RenderSprites_0
+{
+	float m_flSelfIllumAmount = 2.500000
+	float m_flStartFadeSize = 0.575000
+	float m_flEndFadeSize = 0.650000
+	float m_flMaxSize = 0.750000
+	string m_hTexture = "materials\\particle\\fire_particle_10\\fire_particle_10_low.vtex"
+	string m_Notes = ""
+	float m_flAnimationRate = 30.000000
+	bool m_bAnimateInFPS = true
+}
+
+C_OP_FadeOutSimple C_OP_FadeOutSimple_0
+{
+	string m_Notes = ""
+	float m_flFadeOutTime = 0.700000
+}
+
+C_OP_FadeInSimple C_OP_FadeInSimple_0
+{
+	string m_Notes = ""
+}
+
+C_OP_InterpolateRadius C_OP_InterpolateRadius_0
+{
+	string m_Notes = ""
+	float m_flEndScale = 2.000000
+	float m_flBias = 0.600000
+	bool m_bEaseInAndOut = true
+}
+
+C_OP_Decay C_OP_Decay_0
+{
+	string m_Notes = ""
+}
+
+C_OP_BasicMovement C_OP_BasicMovement_0
+{
+	string m_Notes = ""
+	float m_fDrag = 0.080000
+}
+
+C_OP_VectorNoise C_OP_VectorNoise_0
+{
+	string m_Notes = ""
+	bool m_bAdditive = true
+	float(3) m_vecOutputMax = ( 0.000000, 0.000000, 10.000000 )
+	float(3) m_vecOutputMin = ( 0.000000, 0.000000, 3.000000 )
+	int m_nFieldOutput = 0
+	float m_fl4NoiseScale = 2.000000
+}
+
+C_OP_ColorInterpolate C_OP_ColorInterpolate_0
+{
+	string m_Notes = ""
+	int(4) m_ColorFade = ( 115, 64, 42, 255 )
+}
+
+C_INIT_InitialVelocityNoise C_INIT_InitialVelocityNoise_0
+{
+	string m_Notes = ""
+	float m_flNoiseScale = 0.100000
+	float m_flNoiseScaleLoc = 0.050000
+	float(3) m_vecOutputMin = ( -50.000000, -50.000000, 100.000000 )
+	float(3) m_vecOutputMax = ( 50.000000, 50.000000, 700.000000 )
+}
+
+C_INIT_RandomSequence C_INIT_RandomSequence_0
+{
+	string m_Notes = ""
+	int m_nSequenceMax = 10
+}
+
+C_INIT_RandomAlpha C_INIT_RandomAlpha_0
+{
+	string m_Notes = ""
+	int m_nAlphaMax = 160
+	int m_nAlphaMin = 150
+}
+
+C_INIT_RandomRadius C_INIT_RandomRadius_0
+{
+	string m_Notes = ""
+	float m_flRadiusMax = 60.000000
+	float m_flRadiusMin = 22.000000
+}
+
+C_INIT_RingWave C_INIT_RingWave_0
+{
+	string m_Notes = ""
+	float m_flInitialSpeedMin = -75.000000
+	float m_flInitialRadius = 50.000000
+	float m_flInitialSpeedMax = 75.000000
+}
+
+C_INIT_RandomRotation C_INIT_RandomRotation_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_RandomColor C_INIT_RandomColor_0
+{
+	string m_Notes = ""
+	int(4) m_ColorMax = ( 255, 133, 67, 255 )
+	int(4) m_ColorMin = ( 255, 210, 123, 255 )
+}
+
+C_INIT_RandomLifeTime C_INIT_RandomLifeTime_0
+{
+	string m_Notes = ""
+	float m_fLifetimeMin = 0.500000
+	float m_fLifetimeMax = 1.300000
+}
+
+C_INIT_VelocityRandom C_INIT_VelocityRandom_0
+{
+	string m_Notes = ""
+	float m_fSpeedMax = 100.000000
+}
+
+C_INIT_RandomRotationSpeed C_INIT_RandomRotationSpeed_0
+{
+	string m_Notes = ""
+	float m_flDegreesMax = 60.000000
+	float m_flDegreesMin = 30.000000
+}
+
+C_INIT_InheritVelocity C_INIT_InheritVelocity_0
+{
+	string m_Notes = ""
+	float m_flVelocityScale = 0.500000
+}
+
+C_OP_InstantaneousEmitter C_OP_InstantaneousEmitter_0
+{
+	string m_Notes = ""
+	int m_nParticlesToEmit = 20
+}
+
+C_OP_AttractToControlPoint C_OP_AttractToControlPoint_0
+{
+	string m_Notes = ""
+	float m_fForceAmount = 250.000000
+	float m_fFalloffPower = 0.000000
+}

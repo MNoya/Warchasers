@@ -1,0 +1,190 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CParticleSystemDefinition CParticleSystemDefinition_0
+{
+	bool m_bPreventNameBasedLookup = false
+	int m_nMaxParticles = 128
+	string m_pszSnapshotName = ""
+	string m_hLowViolenceDef = ""
+	string m_hReferenceReplacement = ""
+	string m_hFallback = ""
+	float m_flNoDrawTimeToGoToSleep = 0.100000
+	bool m_bShouldSort = false
+	CParticleOperator*[] m_Renderers = 
+	[
+		&C_OP_RenderSprites_0
+	]
+	CParticleOperator*[] m_Operators = 
+	[
+		&C_OP_BasicMovement_0,
+		&C_OP_Decay_0,
+		&C_OP_InterpolateRadius_0,
+		&C_OP_ColorInterpolate_0,
+		&C_OP_FadeInSimple_0,
+		&C_OP_FadeOutSimple_0,
+		&C_OP_LockToBone_0
+	]
+	CParticleOperator*[] m_Initializers = 
+	[
+		&C_INIT_RandomRadius_0,
+		&C_INIT_RandomAlpha_0,
+		&C_INIT_RandomColor_0,
+		&C_INIT_SequenceLifeTime_0,
+		&C_INIT_RandomSequence_0,
+		&C_INIT_RandomRotation_0,
+		&C_INIT_RandomYawFlip_0,
+		&C_INIT_InitialVelocityNoise_0,
+		&C_INIT_CreateOnModel_0
+	]
+	CParticleOperator*[] m_Emitters = 
+	[
+		&C_OP_ContinuousEmitter_0
+	]
+	CParticleOperator*[] m_ForceGenerators = 
+	[
+		
+	]
+	CParticleOperator*[] m_Constraints = 
+	[
+		
+	]
+	ParticleChildrenInfo_t[] m_Children = 
+	[
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/generic_aoe_persistent_circle_1/doom_bringer_scorched_earth_buff_light.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/generic_aoe_persistent_circle_1/doom_bringer_doom_b.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/generic_aoe_persistent_circle_1/doom_bringer_doom_c.vpcf"
+		},
+		ParticleChildrenInfo_t
+		{
+			string m_ChildRef = "particles/generic_aoe_persistent_circle_1/doom_bringer_doom_ring.vpcf"
+		}
+	]
+}
+
+C_OP_RenderSprites C_OP_RenderSprites_0
+{
+	float m_flSelfIllumAmount = 1.500000
+	float m_flStartFadeSize = 0.575000
+	float m_flEndFadeSize = 0.650000
+	float m_flMaxSize = 0.750000
+	string m_hTexture = "materials\\particle\\fire_particle_8\\fire_particle_8_low.vtex"
+	string m_Notes = ""
+	float m_flAnimationRate = 17.000000
+	bool m_bAnimateInFPS = true
+}
+
+C_OP_BasicMovement C_OP_BasicMovement_0
+{
+	string m_Notes = ""
+	float m_fDrag = 0.025000
+	float(3) m_Gravity = ( 0.000000, 0.000000, 80.000000 )
+}
+
+C_OP_Decay C_OP_Decay_0
+{
+	string m_Notes = ""
+}
+
+C_OP_InterpolateRadius C_OP_InterpolateRadius_0
+{
+	string m_Notes = ""
+	float m_flBias = 0.600000
+	bool m_bEaseInAndOut = true
+	float m_flStartScale = 0.400000
+}
+
+C_OP_ColorInterpolate C_OP_ColorInterpolate_0
+{
+	string m_Notes = ""
+	int(4) m_ColorFade = ( 49, 59, 26, 255 )
+}
+
+C_OP_FadeInSimple C_OP_FadeInSimple_0
+{
+	string m_Notes = ""
+}
+
+C_OP_FadeOutSimple C_OP_FadeOutSimple_0
+{
+	string m_Notes = ""
+	float m_flFadeOutTime = 0.750000
+}
+
+C_OP_LockToBone C_OP_LockToBone_0
+{
+	string m_Notes = ""
+	float m_flLifeTimeFadeStart = 0.250000
+	float m_flLifeTimeFadeEnd = 1.000000
+}
+
+C_INIT_RandomRadius C_INIT_RandomRadius_0
+{
+	string m_Notes = ""
+	float m_flRadiusMax = 90.000000
+	float m_flRadiusMin = 52.000000
+}
+
+C_INIT_RandomAlpha C_INIT_RandomAlpha_0
+{
+	string m_Notes = ""
+	int m_nAlphaMax = 80
+	int m_nAlphaMin = 30
+}
+
+C_INIT_RandomColor C_INIT_RandomColor_0
+{
+	string m_Notes = ""
+	int(4) m_ColorMin = ( 147, 207, 76, 255 )
+	int(4) m_ColorMax = ( 175, 232, 102, 255 )
+}
+
+C_INIT_SequenceLifeTime C_INIT_SequenceLifeTime_0
+{
+	string m_Notes = ""
+	float m_flFramerate = 17.000000
+}
+
+C_INIT_RandomSequence C_INIT_RandomSequence_0
+{
+	string m_Notes = ""
+	int m_nSequenceMax = 4
+}
+
+C_INIT_RandomRotation C_INIT_RandomRotation_0
+{
+	string m_Notes = ""
+	float m_flDegreesMax = 32.000000
+	float m_flDegreesMin = -32.000000
+}
+
+C_INIT_RandomYawFlip C_INIT_RandomYawFlip_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_InitialVelocityNoise C_INIT_InitialVelocityNoise_0
+{
+	string m_Notes = ""
+	float m_flNoiseScale = 0.100000
+	float m_flNoiseScaleLoc = 0.050000
+	float(3) m_vecOutputMin = ( -26.000000, -26.000000, 32.000000 )
+	float(3) m_vecOutputMax = ( 26.000000, 26.000000, 52.000000 )
+}
+
+C_INIT_CreateOnModel C_INIT_CreateOnModel_0
+{
+	string m_Notes = ""
+}
+
+C_OP_ContinuousEmitter C_OP_ContinuousEmitter_0
+{
+	string m_Notes = ""
+	float m_flEmitRate = 80.000000
+}

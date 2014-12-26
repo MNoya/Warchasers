@@ -1,0 +1,140 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CParticleSystemDefinition CParticleSystemDefinition_0
+{
+	bool m_bPreventNameBasedLookup = false
+	int m_nMaxParticles = 1
+	string m_pszSnapshotName = ""
+	string m_hLowViolenceDef = ""
+	string m_hReferenceReplacement = ""
+	string m_hFallback = ""
+	float m_flConstantRadius = 80.000000
+	int(4) m_ConstantColor = ( 143, 166, 87, 255 )
+	CParticleOperator*[] m_Renderers = 
+	[
+		&C_OP_RenderDeferredLight_0,
+		&C_OP_RenderSprites_0
+	]
+	CParticleOperator*[] m_Operators = 
+	[
+		&C_OP_SetToCP_0,
+		&C_OP_EndCapTimedDecay_0,
+		&C_OP_LerpEndCapScalar_0,
+		&C_OP_OscillateScalarSimple_0,
+		&C_OP_ClampScalar_0,
+		&C_OP_FadeInSimple_0,
+		&C_OP_RampScalarLinearSimple_0
+	]
+	CParticleOperator*[] m_Initializers = 
+	[
+		&C_INIT_CreateWithinSphere_0,
+		&C_INIT_RandomScalar_0,
+		&C_INIT_RandomRotation_0
+	]
+	CParticleOperator*[] m_Emitters = 
+	[
+		&C_OP_InstantaneousEmitter_0
+	]
+	CParticleOperator*[] m_ForceGenerators = 
+	[
+		
+	]
+	CParticleOperator*[] m_Constraints = 
+	[
+		
+	]
+	ParticleChildrenInfo_t[] m_Children = 
+	[
+		
+	]
+}
+
+C_OP_RenderDeferredLight C_OP_RenderDeferredLight_0
+{
+	string m_Notes = ""
+	float m_flStartFalloff = 0.100000
+	float m_flAlphaScale = 7.000000
+	float m_flRadiusScale = 4.000000
+	string m_hTexture = "materials\\models\\heroes\\pugna\\pugna_ward_runes.vtex"
+}
+
+C_OP_RenderSprites C_OP_RenderSprites_0
+{
+	int m_bAdditive = 1
+	int m_nOrientationType = 3
+	string m_hTexture = "materials\\models\\heroes\\pugna\\pugna_ward_runes.vtex"
+	string m_Notes = ""
+}
+
+C_OP_SetToCP C_OP_SetToCP_0
+{
+	string m_Notes = ""
+	float(3) m_vecOffset = ( 0.000000, 0.000000, 22.000000 )
+}
+
+C_OP_EndCapTimedDecay C_OP_EndCapTimedDecay_0
+{
+	string m_Notes = ""
+	float m_flDecayTime = 0.200000
+}
+
+C_OP_LerpEndCapScalar C_OP_LerpEndCapScalar_0
+{
+	string m_Notes = ""
+	float m_flLerpTime = 0.200000
+	int m_nFieldOutput = 16
+	float m_flOutput = 0.000000
+}
+
+C_OP_OscillateScalarSimple C_OP_OscillateScalarSimple_0
+{
+	string m_Notes = ""
+	float m_Rate = -1.000000
+}
+
+C_OP_ClampScalar C_OP_ClampScalar_0
+{
+	string m_Notes = ""
+	int m_nFieldOutput = 13
+	float m_flOutputMin = 0.500000
+}
+
+C_OP_FadeInSimple C_OP_FadeInSimple_0
+{
+	string m_Notes = ""
+	float m_flFadeInTime = 1.000000
+}
+
+C_OP_RampScalarLinearSimple C_OP_RampScalarLinearSimple_0
+{
+	string m_Notes = ""
+	float m_flEndTime = 999999984306749440.000000
+	float m_Rate = -0.100000
+	int m_nField = 4
+}
+
+C_INIT_CreateWithinSphere C_INIT_CreateWithinSphere_0
+{
+	string m_Notes = ""
+}
+
+C_INIT_RandomScalar C_INIT_RandomScalar_0
+{
+	string m_Notes = ""
+	float m_flMin = 0.750000
+	float m_flMax = 0.750000
+	int m_nFieldOutput = 13
+}
+
+C_INIT_RandomRotation C_INIT_RandomRotation_0
+{
+	string m_Notes = ""
+	float m_flDegreesMax = 0.000000
+	float m_flDegrees = 180.000000
+}
+
+C_OP_InstantaneousEmitter C_OP_InstantaneousEmitter_0
+{
+	string m_Notes = ""
+	int m_nParticlesToEmit = 1
+	float m_flStartTime = 0.500000
+}
