@@ -28,7 +28,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.2.2"
+WARCHASERS_VERSION = "1.2.3"
 
 -- Stat collection
 require('lib.statcollection')
@@ -1330,15 +1330,8 @@ function Warchasers:RespawnAsGhost( player )
     local hero = player:GetAssignedHero()
 
     if hero:UnitCanRespawn() then
-    	hero:SetTimeUntilRespawn(1)
-    	location = GameRules.CURRENT_SAVEPOINT:GetAbsOrigin()
-
-		--need to wait a bit for the hero to respawn	
-		Timers:CreateTimer(1.1, function()	
-			FindClearSpaceForUnit(hero, location, true) 
-			hero:SetTimeUntilRespawn(999) --for next loop
-		end)
-
+    	hero:SetRespawnPosition(GameRules.CURRENT_SAVEPOINT:GetAbsOrigin())
+    	hero:RespawnHero(false, false, false)
 	end
 end
 
