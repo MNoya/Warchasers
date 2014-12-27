@@ -1333,7 +1333,7 @@
 			"03"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"trail_aoe"				"40"
+				"trail_aoe"				"150"
 				}
 			"04"
 				{
@@ -1359,6 +1359,15 @@
 			"particle"	"particles/warchasers/molten/batrider_flamebreak_explosion.vpcf"
 		}
 
+		"OnSpellStart"
+			{
+			"CreateThinker"
+				{
+				"ModifierName"	"molten_thinker"
+				"Target" 		"CASTER"
+				}
+			}
+
 		"Modifiers"
 			{
 			"affix_molten_modifier"
@@ -1369,7 +1378,7 @@
 				"EffectName"	"particles/warchasers/molten/trail/courier_trail_lava.vpcf"
 				"EffectAttachType"	"follow_origin"
 
-				"ThinkInterval"	"0.1"
+				"ThinkInterval"	"1"
 				"OnIntervalThink"
 					{
 					"RunScript"
@@ -1397,8 +1406,39 @@
 						}
 					}
 				}
+			
+			"molten_thinker"
+				{
+				"Aura"					"molten_damage"
+				"Aura_Radius"			"%trail_aoe"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"OnCreated"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"molten_thinker_start"
+						}
+					}
+				}
+			"molten_damage"
+				{
+				"IsDebuff"	"1"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+					{
+					"RunScript"
+						{
+						"ScriptFile"	"abilities.lua"
+						"Function"		"molten_damage"
+						}
+					}
+				}
 			}
 		}
+	
 
 	"affix_plagued"
 	{

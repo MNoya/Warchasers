@@ -718,99 +718,54 @@ function is_in_group( group, index )
 end
 
 function molten_start( event )
-	--event.ability.molten_position = event.caster:GetAbsOrigin()
-	event.ability.molten_mod = 0
-	event.ability.molten_points_table = {}
-	--event.ability.molten_dummy_table = {}
-
+	event.ability.molten_thinkers_table = {}
+	event.ability.memory_safe_check = 0
 end
 
 function molten_interval( event )
-	local damage = (event.ability:GetSpecialValueFor("overtime_damage") + event.ability:GetSpecialValueFor("overtime_bonus_per_level") * event.caster:GetLevel()  ) / 10
-	local team_number = event.caster:GetTeamNumber()
-	local damaged_group = {}
-	local radius = event.ability:GetSpecialValueFor("trail_aoe")
-
 	local current_position = event.caster:GetAbsOrigin()
 	if event.ability.molten_position == nil then
 		event.ability.molten_position = current_position
 	end
 	local vector_traveled = (event.ability.molten_position - current_position)
-	local distance_traveled = vector_traveled:Length2D() + event.ability.molten_mod
-	local direction = vector_traveled:Normalized() 
-	if distance_traveled > 50 then 
-		if distance_traveled < 500 then
-			event.caster:MakeVisibleToTeam(DOTA_TEAM_GOODGUYS, 30)
-			local next_thinker_pos = event.ability.molten_position
-			repeat --//DONT USE THIS, IT CRASHES GAMES
-			next_thinker_pos = direction * 50 + next_thinker_pos
-
-			table.insert(event.ability.molten_points_table, next_thinker_pos)
-
-			distance_traveled = distance_traveled - 50
-			until distance_traveled < 50
-		else
-			distance_traveled = 0
-		end
+	local distance_traveled = vector_traveled:Length2D()
+	if distance_traveled > 100 and event.ability.memory_safe_check < 30 then
+		event.ability:CastAbility()
+		event.ability.molten_position = current_position
+		event.ability.memory_safe_check = event.ability.memory_safe_check + 1
 	end
+end
 
-	for key1, vector in pairs(event.ability.molten_points_table) do
-		local group = FindUnitsInRadius( team_number, vector, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
+function molten_thinker_start( event )
+	table.insert(event.ability.molten_thinkers_table, event.target:GetEntityIndex() )
+end
 
-		for key2, unit in pairs(group) do
-
-			if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
-				ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
-				table.insert(damaged_group , unit:GetEntityIndex())
-			end
-		end
-	end
-	event.ability.molten_mod = distance_traveled
-	event.ability.molten_position = current_position
+function molten_damage( event )
+	local damage = (event.ability:GetSpecialValueFor("overtime_damage") + event.ability:GetSpecialValueFor("overtime_bonus_per_level") * event.caster:GetLevel())
+	ApplyDamage({victim = event.target, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 end
 
 function molten_explode( event )
-	
+	for key, value in pairs(event.ability.molten_thinkers_table) do
+		EntIndexToHScript(value):ForceKill(true)
+	end
+	event.ability.molten_thinkers_table = nil
 	local damage = event.ability:GetSpecialValueFor("explosion_damage") + event.ability:GetSpecialValueFor("explosion_bonus_per_level") * event.caster:GetLevel()
 	local team_number = event.caster:GetTeamNumber()
-	local damaged_group = {}
 	local radius = event.ability:GetSpecialValueFor("explosion_radius") 
-
 	local particle = ParticleManager:CreateParticle("particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 	ParticleManager:SetParticleControl(particle, 0, event.caster:GetAbsOrigin())
-
-
-	-- Note: It's not the trail that explodes, is the center of the unit!
 	Timers:CreateTimer(3,function()
 		event.caster:EmitSound("Hero_Techies.RemoteMine.Detonate")
-
 		local particle2 = ParticleManager:CreateParticle("particles/warchasers/molten/explosion/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.caster)
 		ParticleManager:SetParticleControl(particle2, 0, event.caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle2, 3, event.caster:GetAbsOrigin())
 		ParticleManager:DestroyParticle(particle,false)
-
-		--[[for key1, vector in pairs(event.ability.molten_points_table) do
-			local group = FindUnitsInRadius( team_number, vector, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
-
-			for key2, unit in pairs(group) do
-
-				if is_in_group(damaged_group, unit:GetEntityIndex()) == false then
-					ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
-					table.insert(damaged_group , unit:GetEntityIndex())
-				end
-			end
-		end]]
-
 		local group = FindUnitsInRadius( team_number, event.caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, true)
 		for _,unit in pairs(group) do
 			ApplyDamage({victim = unit, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
 		end
 	end)
-
-	--[[for key, value in pairs(event.ability.molten_dummy_table) do
-		EntIndexToHScript(value):ForceKill(true)
-	end]]
-
 end
 
 function Disorient( event )
