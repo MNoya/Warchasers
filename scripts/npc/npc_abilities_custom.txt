@@ -1328,12 +1328,12 @@
 			"02"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"overtime_damage"		"8"
+				"overtime_damage"		"10"
 				}
 			"03"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"trail_aoe"				"150"
+				"trail_aoe"				"100"
 				}
 			"04"
 				{
@@ -1348,7 +1348,7 @@
 			"06"
 				{
 				"var_type"				"FIELD_INTEGER"
-				"overtime_bonus_per_level"		"4"
+				"overtime_bonus_per_level"		"5"
 				}
 			}
 
