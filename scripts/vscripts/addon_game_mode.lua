@@ -28,7 +28,7 @@ if Warchasers == nil then
 	Warchasers = class({})
 end
 
-WARCHASERS_VERSION = "1.2.5"
+WARCHASERS_VERSION = "1.2.6"
 
 -- Stat collection
 require('lib.statcollection')
@@ -263,6 +263,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/props_items/blinkdagger.vmdl" , context )
 	PrecacheResource( "model", "models/props_items/assault_cuirass.vmdl", context )  
 	PrecacheResource( "model", "models/props_items/necronomicon.vmdl", context )
+	PrecacheResource( "model", "models/items/necrolyte/heretic_weapon/heretic_weapon.vmdl", context )
 
 
 	print('Precache End')
@@ -687,7 +688,7 @@ function Warchasers:OnNPCSpawned(keys)
 				local item = CreateItem("item_ankh", npc, npc)
 				npc:AddItem(item)
 				if Convars:GetBool("developer") then
-					local item = CreateItem("item_ublink", npc, npc) --testing items
+					local item = CreateItem("item_cosmetic_scythe", npc, npc) --testing items
 					npc:AddItem(item)
 
 					-- Test Unit
