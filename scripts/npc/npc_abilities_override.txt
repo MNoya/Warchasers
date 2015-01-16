@@ -2151,6 +2151,30 @@
 		"ItemDroppable"					"1"
 	}
 
+	"item_tome_of_knowledge"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_strength_2"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	 "item_tome_of_agility"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_intellect_2"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
     "item_health_stone"
     {
 		"ItemPurchasable"				"0"
