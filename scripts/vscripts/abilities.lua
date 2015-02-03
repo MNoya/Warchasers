@@ -366,7 +366,7 @@ end
 function HealingWave( event )
 	local hero = event.caster
 	local target = event.target
-	local bounces = event.ability:GetLevelSpecialValueFor("bounces", (event.ability:GetLevel()-1))
+	local bounces = event.ability:GetLevelSpecialValueFor("max_bounces", (event.ability:GetLevel()-1))
 	local healing = event.ability:GetLevelSpecialValueFor("healing", (event.ability:GetLevel()-1))
 	local decay = event.ability:GetSpecialValueFor("wave_decay_percent")  * 0.01
 	local radius = event.ability:GetSpecialValueFor("bounce_range")
