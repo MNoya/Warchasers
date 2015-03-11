@@ -1,0 +1,45 @@
+    "item_cloak_of_shadows"
+{
+	"ID"							"1032"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" 				"item_datadriven"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"item_cloak_of_shadows"
+	"SideShop" "0"
+	"SecretShop" "1"
+
+	"AbilityCooldown"               "24"
+	"AbilityManaCost"               "50"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_FLOAT"
+			"fade_time" "1"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_attack_speed" "0"
+		}
+	}
+	"OnSpellStart"
+		{
+		"RunScript"
+			{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"cloak_of_shadows_cast"
+			}
+		}
+}
+

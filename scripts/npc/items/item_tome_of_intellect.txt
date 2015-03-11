@@ -1,0 +1,79 @@
+"item_tome_of_intellect"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"1054"	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_tome_of_intellect"
+	
+	"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+	"Effect"						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	//"ItemCost"						"0"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemKillable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"SideShop"						"0"
+	"SecretShop" "1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"bonus_stat"	"1"
+		}
+	}
+	
+	"ItemCastOnPickup"				"1"
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"				"IntellectTomeUsed"
+			"bonus_stat"	"%bonus_stat"
+		}
+		"FireSound"
+		{
+			"EffectName"			"DOTA_Item.Refresher.Activate"
+			"Target"				"CASTER"
+		}
+		"FireEffect"
+		{
+			"Target" "CASTER"
+			"EffectName"		"particles/items2_fx/shivas_guard_impact.vpcf"
+			"EffectAttachType" 	"follow_overhead"
+		}
+		"FireEffect"
+		{
+			"Target" "CASTER"
+			"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+			"EffectAttachType" 	"follow_origin"
+		}	
+	}
+	"Modifiers"
+		{
+		"tome_intelect_modifier"
+			{
+			"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+			"IsBuff"	"1"
+			"TextureName"	"item_tome_of_intellect"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+				}
+			}
+		}
+}
+

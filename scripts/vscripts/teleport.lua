@@ -411,49 +411,52 @@ function TeleporterTanksStart(trigger)
     GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )
 
     local tank_spawn_point = Vector(4466,1100,128)
-    TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
-    TANK:SetRenderColor(150, 150, 150)
-     
-     GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
-    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
-     FireGameEvent("show_center_message",messageinfo)
+    if not GameRules.TankStarted then
+        GameRules.TankStarted = true
+        TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
+        TANK:SetRenderColor(150, 150, 150)
+         
+         GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
+        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+         FireGameEvent("show_center_message",messageinfo)
 
-    --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
-    if GameRules.PLAYER_COUNT >= 1 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 0 )
-        local point = Vector(4528,-469,146)
-        FindClearSpaceForUnit(hero, point, false)
-        hero:Stop()
+        --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
+        if GameRules.PLAYER_COUNT >= 1 then
+            local hero = PlayerResource:GetSelectedHeroEntity( 0 )
+            local point = Vector(4528,-469,146)
+            FindClearSpaceForUnit(hero, point, false)
+            hero:Stop()
+        end
+
+        if GameRules.PLAYER_COUNT >= 2 then
+            local hero = PlayerResource:GetSelectedHeroEntity( 1 )
+            local point = Vector(4240,-197,146)
+            FindClearSpaceForUnit(hero, point, false)
+            hero:Stop()     
+        end
+
+        if GameRules.PLAYER_COUNT >= 3 then
+            local hero = PlayerResource:GetSelectedHeroEntity( 2 )
+            local point = Vector(4512,-213,146)
+            FindClearSpaceForUnit(hero, point, false)
+            hero:Stop() 
+        end
+
+        if GameRules.PLAYER_COUNT >= 4 then
+            local hero = PlayerResource:GetSelectedHeroEntity( 3 )
+            local point = Vector(4752.79,-213,146)
+            FindClearSpaceForUnit(hero, point, false)
+            hero:Stop()
+        end
+
+        if GameRules.PLAYER_COUNT >= 5 then
+            local hero = PlayerResource:GetSelectedHeroEntity( 4 )
+            local point = Vector(4512,26,146)
+        end
+
+        local position = Vector(4553, -418, 135)
+    	local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
     end
-
-    if GameRules.PLAYER_COUNT >= 2 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 1 )
-        local point = Vector(4240,-197,146)
-        FindClearSpaceForUnit(hero, point, false)
-        hero:Stop()     
-    end
-
-    if GameRules.PLAYER_COUNT >= 3 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 2 )
-        local point = Vector(4512,-213,146)
-        FindClearSpaceForUnit(hero, point, false)
-        hero:Stop() 
-    end
-
-    if GameRules.PLAYER_COUNT >= 4 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 3 )
-        local point = Vector(4752.79,-213,146)
-        FindClearSpaceForUnit(hero, point, false)
-        hero:Stop()
-    end
-
-    if GameRules.PLAYER_COUNT >= 5 then
-        local hero = PlayerResource:GetSelectedHeroEntity( 4 )
-        local point = Vector(4512,26,146)
-    end
-
-    local position = Vector(4553, -418, 135)
-	local dummy = CreateUnitByName("vision_dummy_point", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
 end
 
 

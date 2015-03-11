@@ -1,0 +1,50 @@
+"item_ublink"
+{
+
+	"ID"		"1127"
+	"ItemCost"						"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"artifact"
+	"AbilityTextureName"			"item_ublink"
+	
+	"Model"	"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
+	"Effect" "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
+
+	"OnEquip" //rewrite datadriven
+  	{
+  		"FireSound"
+		{
+			"EffectName"	"Hero_Abaddon.BorrowedTime"	
+			"Target" 		"UNIT"
+		}
+  	}
+	
+	"BaseClass" "item_blink"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_range"			"99999"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_damage_cooldown"	"0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_range_clamp"	"99999"
+		}
+	}		
+}
+

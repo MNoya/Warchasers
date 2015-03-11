@@ -1,0 +1,50 @@
+"item_cosmetic_scythe"
+{
+    "ID"                    "1666"
+    "BaseClass"             "item_datadriven"
+    "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"    "item_scythe"
+
+    "Model"					"models/items/necrolyte/heretic_weapon/heretic_weapon.vmdl"
+
+    "Modifiers"
+    {
+        "modifier_cosmetic"
+        {
+            "Passive"   "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "wearables.lua"
+                    "Function"          "EquipWeapon"
+                }
+            }
+            
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "wearables.lua"
+                    "Function"          "UnequipWeapon"
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

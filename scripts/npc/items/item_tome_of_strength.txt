@@ -1,0 +1,80 @@
+"item_tome_of_strength"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"1052"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_tome_of_strength"
+	
+	"Model"							"models/props_debris/merchant_debris_book001.vmdl"
+	"Effect"						"particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	//"ItemCost"						"0"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemKillable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"SideShop"						"0"
+	"SecretShop" "1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"bonus_stat"	"1"
+		}
+	}
+	
+	"ItemCastOnPickup"				"1"
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"				"StrengthTomeUsed"
+			"bonus_stat"	"%bonus_stat"
+		}
+		"FireSound"
+		{
+			"EffectName"			"DOTA_Item.Refresher.Activate"
+			"Target"				"CASTER"
+		}
+		"FireEffect"
+		{
+			"Target" "CASTER"
+			"EffectName"		"particles/sweep_generic/sweep_2.vpcf"
+			"EffectAttachType" 	"follow_origin"
+		}
+		"FireEffect"
+		{
+			"Target" "CASTER"
+			"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+			"EffectAttachType" 	"follow_origin"
+		}			
+	}
+
+	"Modifiers"
+		{
+		"tome_strenght_modifier"
+			{
+			"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+			"IsBuff"	"1"
+			"TextureName"	"item_tome_of_strength"
+			"Properties"
+				{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+				}
+			}
+		}
+}
+

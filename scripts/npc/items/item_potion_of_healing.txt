@@ -1,0 +1,87 @@
+"item_potion_of_healing"
+{
+	"ID"							"1055"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	
+	"Model"							"models/props_gameplay/salve.vmdl" //Green
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+	
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_potion_of_healing"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0.0"
+
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"600"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"SideShop"						"0"
+	"SecretShop" "1"
+
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"RunScript"
+		{
+			"ScriptFile"		"items.lua"
+			"Function"			"Heal"
+			"Target"			"UNIT"
+			"heal_amount"		"%heal_amount"
+
+		}
+		"AttachEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_corerope.vpcf"
+			"EffectAttachType"			"follow_origin"
+		}
+		"FireSound"
+		{
+			"Target" 		"UNIT"
+			"EffectName" 	"DOTA_Item.HealingSalve.Activate"
+		}
+		
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_amount"				"250"
+		}
+	}
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+

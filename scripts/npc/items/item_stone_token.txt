@@ -1,0 +1,62 @@
+"item_stone_token"  //rock golem
+{
+	"ID"                            "1068"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"            "item_stone_token"
+	
+	"Model"							"models/chest_worlddrop.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+	"ItemCost"                      "450"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemShopTags"					"epic"
+	"ItemQuality"					"epic"
+	"ItemPermanent"					"0"
+	"AbilityCastRange"              "400"
+	"AbilityCooldown"               "20"
+	"AbilityManaCost"               "0"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemInitialCharges"            "1"
+	"SideShop"	"0"
+	"SecretShop" "1"
+
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"SpawnUnit"
+		{
+			"Target"            "POINT"
+			"UnitName"              "npc_rock_golem_spawn" 
+			"UnitCount"             "1"
+			"Duration"				"180"
+			"SpawnRadius"			"100"
+			"OnSpawn"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/items.lua"
+					"Function"			"SummonTony"
+					"Target"			"POINT"
+				}
+			}
+		}
+		"FireSound"
+		{
+			"EffectName"	"Tiny.Grow"
+			"Target" "CASTER"
+		}
+	}
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+

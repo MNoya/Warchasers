@@ -1,0 +1,30 @@
+    "item_vitality_pendant"
+    {
+    	"ID"							"1011"
+	"ItemCost"						"350"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"common"
+
+	"Model"	"models/props_items/ring_health.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_vitality_booster"
+	"AbilityTextureName" "item_vitality_pendant"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemQuality"					"consumables"
+	"SideShop" "0"
+	"SecretShop" "1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_health" "150"
+		}
+	}
+}
+

@@ -1,0 +1,24 @@
+"item_gloves_15"
+{	
+	"ID"							"1036"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_gloves"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_attack_speed" "15"
+		}
+	}
+}
+

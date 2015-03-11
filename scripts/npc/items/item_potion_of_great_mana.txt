@@ -1,0 +1,87 @@
+"item_potion_of_great_mana"
+{
+	"ID"							"1156"
+
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	
+	"Model"							"models/props_gameplay/salve_blue.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+	
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_potion_of_great_mana"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"100"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"8.0"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"800"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"SideShop"						"1"
+	"SecretShop" "1"
+
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"RunScript"
+		{
+			"ScriptFile"		"items.lua"
+			"Function"			"ReplenishMana"
+			"Target"			"UNIT"
+			"mana_amount"		"%mana_amount"
+		}
+		"AttachEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/units/heroes/hero_keeper_of_the_light/keeper_mana_leak_cast.vpcf"
+			"EffectAttachType"			"follow_origin"
+		}
+		"FireSound"
+		{
+			"Target" 		"UNIT"
+			"EffectName" 	"DOTA_Item.ClarityPotion.Activate"
+		}
+	
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_amount"				"300"
+		}
+	}
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+
+//new potions

@@ -1,0 +1,29 @@
+"item_mana_gem" //pendant of mana
+    {
+	"ID"							"1029"
+	"ItemCost"						"1200"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"rare"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_energy_booster"
+    	"AbilityTextureName" "item_mana_gem"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_mana" "300"
+		}
+	}
+}
+

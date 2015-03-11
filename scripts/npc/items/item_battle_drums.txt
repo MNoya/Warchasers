@@ -1,0 +1,60 @@
+    "item_battle_drums"
+    {
+    	"ID" 							"1031"
+	"ItemCost"						"1800"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+    	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"artifact"
+	
+	"Model"	"models/items/witchdoctor/tale_tellers_drum.vmdl" //"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"AbilityTextureName" "item_battle_drums"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"BaseClass" "item_datadriven"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_aura_damage_pct" "10"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"radius" "900"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_drums"
+		{
+			"Passive"	  "1"
+			"IsHidden"	  "1"
+
+			"EffectName"		"particles/items_fx/aura_assault_ring.vpcf"
+			"EffectAttachType"   "follow_origin"
+
+			"Aura"       "battle_drums_aura"
+        		"Aura_Radius" "%radius"
+	        "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	        "Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		}
+
+		"battle_drums_aura"
+		{
+			"Properties" 
+	        {
+	            "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_aura_damage_pct"
+	        }
+		}
+	}
+    }
+

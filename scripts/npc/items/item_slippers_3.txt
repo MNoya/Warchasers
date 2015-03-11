@@ -1,0 +1,30 @@
+    "item_slippers_3"
+    {
+    	"ID"							"1022"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_slippers"
+	"AbilityTextureName" "item_slippers_3"
+	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"ItemQuality"					"attributes"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_agility" "3"
+		}
+	}
+}
+
