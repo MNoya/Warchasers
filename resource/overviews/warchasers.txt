@@ -1,8 +1,0 @@
-warchasers
-{
-	material materials/overviews/warchasers.vmat
-	pos_x -8106
-	pos_y 8090
-	scale 15.846
-}
-
