@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+	"TeamCount" "1"
+	maps			"warchasers"
+	"IsPlayable"	"1"
+	"warchasers"
+	{
+		"MaxPlayers" "5"
+	}
+}

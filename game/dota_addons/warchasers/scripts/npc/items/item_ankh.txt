@@ -1,0 +1,36 @@
+"item_ankh"  //rewrite datadriven
+{
+	"ID"							"1000"
+	"ItemCost"						"3000"
+	//"AbilityTextureName"			"item_ankh"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SideShop"						"1"
+	"SecretShop"					"1"
+	"Model"							"models/props_gameplay/aegis.vmdl"
+
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemDeclarations"				"REMOVE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"artifact"
+	"ItemInitialCharges"            "1"
+
+	"BaseClass" "item_aegis"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_FLOAT"
+			"reincarnate_time" "3.0"
+		}
+		"02"
+		{
+			"var_type" "FIELD_FLOAT"
+			"disappear_time" "2147483647" //FLOAT_MAX
+		}
+	}
+
+}
+
+

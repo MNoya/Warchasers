@@ -1,0 +1,140 @@
+
+"Affixes"
+{
+
+//disable - strong stuns only can spawn several times to prevent perma stun
+//defense - strong defensive abilities only one per group
+//aggresive - no limit
+//level_limit - no unit bellow this level cant get this affix
+//range_melee_type - any, melee, range
+
+"affix_avenger"
+    {
+    "level_limit"   "2"
+    "range_melee_type"    "any"
+    }
+
+"affix_extra_health"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+
+"affix_fast"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+
+"affix_electrified"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "melee"
+    }
+
+"affix_assaulter"
+    {
+    "level_limit"   "3"
+    "range_melee_type"    "melee"
+    }
+"affix_blood_freezer"
+    {
+    "level_limit"   "4"
+    "range_melee_type"    "any"
+    }
+"affix_berserker"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+"affix_provoker"
+    {
+    "level_limit"   "5"
+    "range_melee_type"    "any"
+    }
+//"affix_illusionist"
+//    {
+//    "level_limit"   "2"
+//    "range_melee_type"    "any"
+//    }
+"affix_jailer"
+    {
+    "level_limit"   "4"
+    "range_melee_type"    "any"
+    }
+"affix_reflect_damage"
+    {
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+    }
+
+
+////
+
+//"affix_knockback"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
+
+"affix_nightmarish"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_vampiric"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+//"affix_shield_bearer"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
+
+//"affix_hurricaner"
+//{
+//    "level_limit"   "0"
+//    "range_melee_type"    "any"
+//}
+
+"affix_desecrator"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_frozen"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_molten"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+"affix_plagued"
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+affix_shielding
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+
+affix_thunderstorm
+{
+    "level_limit"   "0"
+    "range_melee_type"    "any"
+}
+	
+}

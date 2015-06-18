@@ -1,0 +1,28 @@
+"item_belt_6"
+{
+	"ID"							"1014"
+	"ItemCost"						"500"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"common"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"AbilityTextureName"			"item_belt_6"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass" "item_gauntlets"
+	"SideShop" "1"
+	"SecretShop" "1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_strength" "6"
+		}
+	}
+}
+

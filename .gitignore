@@ -1,0 +1,17 @@
+# Cache crap that Valve autogenerates
+*.bin
+
+# Ignore map overviews
+content/dota_addons/warchasers/materials/overviews/*
+game/dota_addons/warchasers/materials/overviews/*
+game/dota_addons/warchasers/resource/overviews/*
+
+
+# Ignore all compiled resources
+*.vpcf_c
+*.vtex_c
+*.vmat_c
+*.vsndevts_c
+
+# Map Files
+*.vpk

@@ -1,0 +1,9 @@
+Warchasers 1.3
+
+Nerf Magic Immune golem spawn
+Change buff indicators for tomes
+Fix Some potions not healing on attack
+Probably remove sell on attack
+Revive on full health
+
+Investigate Can't buy bug and crashes

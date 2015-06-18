@@ -1,0 +1,104 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 32
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.100000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.250000
+			m_flEndScale = 0.000000
+			m_flBias = 0.760000
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "2"
+			m_flAddSelfAmount = 1.000000
+			m_nRefractBlurType = "2"
+			m_hTexture = resource:"materials/particle/crystal/crystal.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.200000
+			m_fLifetimeMax = 0.400000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 26.000000
+			m_flRadiusMax = 80.000000
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax =
+			[
+				180,
+				208,
+				241,
+				255,
+			]
+			m_nTintBlendMode = "2"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_vecDistanceBiasAbs =
+			[
+				0.000000,
+				0.000000,
+				1.000000,
+			]
+			m_fSpeedMin = 1640.000000
+			m_fSpeedMax = 2640.000000
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 12
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				46.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				46.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 32
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/warchasers/frozen/maiden_crystal_nova_shard_trails.vpcf"
+		},
+	]
+}

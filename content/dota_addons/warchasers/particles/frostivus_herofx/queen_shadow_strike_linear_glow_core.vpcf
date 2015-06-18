@@ -1,0 +1,118 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 4
+	m_flConstantRadius = 1.650000
+	m_bShouldSort = false
+	m_flMaxRecreationTime = -1.000000
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/models/heroes/queenofpain/queenofpain_weapon.vtex"
+			m_flAnimationRate = 0.750000
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 2.000000
+			m_flStartScale = 0.500000
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_nFirstControlPoint = 3
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_CPOffsetToPercentageBetweenCPs"
+			m_flInputMin = 1.000000
+			m_flInputMax = 0.000000
+			m_nOffsetCP = 1
+			m_vecOffset =
+			[
+				0.000000,
+				0.000000,
+				0.150000,
+			]
+			m_flInputBias = 0.125000
+			m_bScaleOffset = true
+		},
+		{
+			_class = "C_OP_RampScalarLinear"
+			m_nField = 12
+			m_RateMin = 30.000000
+			m_RateMax = 30.000000
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMax = 85.000000
+			m_vecDistanceBias =
+			[
+				0.050000,
+				1.000000,
+				0.000000,
+			]
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.100000
+			m_fLifetimeMin = 0.100000
+		},
+		{
+			_class = "C_INIT_RandomSecondSequence"
+			m_nSequenceMin = 1
+			m_nSequenceMax = 1
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+			m_bDisableOperator = true
+			m_flPercent = 1.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegrees = 90.000000
+			m_flDegreesMax = 0.000000
+		},
+		{
+			_class = "C_INIT_VelocityFromCP"
+			m_nControlPoint = 1
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/frostivus_herofx/queen_shadow_strike_explosion_linear.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/frostivus_herofx/queen_shadow_strike_trail_linear.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/frostivus_herofx/queen_shadow_strike_trail_c_linear.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/frostivus_herofx/queen_shadow_strike_glow_linear.vpcf"
+		},
+	]
+}

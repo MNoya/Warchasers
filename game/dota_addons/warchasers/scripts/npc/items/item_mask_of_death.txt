@@ -1,0 +1,29 @@
+"item_mask_of_death"
+{
+	"ID"							"1012"
+	"ItemCost"						"2000"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"artifact"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" 	"item_lifesteal"
+	"AbilityTextureName"			"item_mask_of_death"
+	"SideShop" "1"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"lifesteal_percent" "30"
+		}
+	}
+}
+    

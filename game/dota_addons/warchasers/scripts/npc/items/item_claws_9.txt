@@ -1,0 +1,29 @@
+"item_claws_9"
+{
+	"ID"							"1017"
+	"ItemCost"						"400"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"rare"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_blades_of_attack"
+	"AbilityTextureName"			"item_claws_9"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SideShop" "0"
+	"SecretShop" "1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_damage" "9"
+		}
+	}
+}
+

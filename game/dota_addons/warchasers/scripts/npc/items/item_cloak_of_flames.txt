@@ -1,0 +1,39 @@
+    "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
+    {
+    	"ID"							"1033"
+	"ItemCost"						"2000"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"epic"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"AbilityTextureName"			"item_cloak_of_flames"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SideShop" "1"
+	"SecretShop" "1"
+
+    	"BaseClass" "item_radiance"
+		"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_damage" "0"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"aura_radius" "200"
+		}
+		"03"
+		{
+			"var_type" "FIELD_INTEGER"
+			"aura_damage" "10"
+		}
+	}
+    }
+

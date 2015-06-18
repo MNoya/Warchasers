@@ -1,0 +1,73 @@
+"item_restoration_scroll"
+//Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.
+{
+	"ID"                            "1061"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP" //DOTA_UNIT_TARGET_BASIC? DOTA_UNIT_TARGET_CUSTOM?
+	"AbilityTextureName"            "item_restoration_scroll"
+	"AbilityCooldown"               "60" //??
+	"AbilityManaCost"               "0" //??
+	
+	
+	"Model"							"models/props_gameplay/tpscroll01.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+	"ItemCost"                      "1900"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+	"ItemShopTags"					"rare"
+	"ItemQuality"					"rare"
+	"ItemPermanent"					"0"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemInitialCharges"            "1"
+
+	"SideShop"						"1"
+	"SecretShop"					"1"
+	
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"FireEffect"
+		{
+			"Target" "CASTER"
+			"EffectName"	"particles/items2_fx/mekanism.vpcf"
+			"EffectAttachType" 	"follow_origin"
+		}
+		"Heal"
+		{
+			"Target" //AOE
+			{
+				"Center" "CASTER"
+				"Radius" "250"
+				"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+			"HealAmount"	"300"
+		}
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"				"ReplenishManaAOE"
+			"mana_amount"		"150"
+		}
+		"FireSound"
+		{
+			"EffectName"	"DOTA_Item.Mekansm.Activate"
+			"Target" "CASTER"
+		}
+	}
+
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+

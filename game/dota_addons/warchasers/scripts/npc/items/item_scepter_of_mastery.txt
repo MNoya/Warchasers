@@ -1,0 +1,80 @@
+"item_scepter_of_mastery"
+//Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. Charges
+{
+	"ID"                            "1061"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityTextureName"            "item_scepter_of_mastery"
+	"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"AbilityCastRange"              "400" //??
+	"AbilityCooldown"               "120" //??
+	"AbilityManaCost"               "0" //??
+	
+	"Model"							"models/props_items/staff_wizardry01.vmdl"
+	"Effect" 						"particles/econ/items/faceless_void/faceless_void_weapon_viridus/faceless_void_weapon_glow_viridus.vpcf" //GLOW
+
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+
+	"ItemCost"                      "1100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+	"ItemShopTags"					"epic"
+	"ItemQuality"					"epic"
+	"ItemPermanent"					"0"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemInitialCharges"            "3"
+
+	"SideShop"						"1"
+	"SecretShop"					"1"
+	
+
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/items.lua"
+			"Function"			"Dominate"
+		}
+		"AttachEffect"
+		{
+			"Target"					"TARGET"
+			"EffectName"				"particles/units/heroes/hero_chen/chen_test_of_faith.vpcf"
+			"EffectAttachType"			"follow_origin"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Chen.HolyPersuasionCast"
+			"Target" "CASTER"
+		}
+	}
+
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+	"Modifiers"
+		{
+		"item_scepter_of_mastery_dominate_modifier"
+			{
+			"IsBuff"	"1"
+			"TextureName"	"modifier_dominated"
+			"IsPurgable"	"0"
+			"States"
+				{
+				"MODIFIER_STATE_DOMINATED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+}
+

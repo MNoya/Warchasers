@@ -1,0 +1,37 @@
+    "item_botas"
+    {
+    	"ID"							"1024"
+	"ItemCost"						"150"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	
+	"Model"			"models/props_gameplay/boots_of_speed.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+
+    	"BaseClass" "item_boots"
+    	"AbilityTextureName" "item_botas"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_movement_speed" "50"
+		}
+	}
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+

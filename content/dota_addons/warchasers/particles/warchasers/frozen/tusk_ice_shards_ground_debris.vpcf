@@ -1,0 +1,98 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 8
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_flOpStartFadeInTime = 1.000000
+			m_flOpEndFadeInTime = 1.000000
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_Rate = -0.200000
+			m_flStartTime = 0.250000
+			m_nField = 10
+		},
+		{
+			_class = "C_OP_MovementPlaceOnGround"
+			m_flOpStartFadeOutTime = 0.100000
+			m_flOpEndFadeOutTime = 0.100000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList =
+			[
+				{
+					m_model = resource:"models/particle/eruptionrocks_v1.vmdl"
+				},
+			]
+			m_bOrientZ = true
+			m_bScaleAnimationRate = true
+			m_bAnimated = true
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomSecondSequence"
+			m_nSequenceMin = 4
+			m_nSequenceMax = 1
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 3.000000
+			m_fLifetimeMax = 3.000000
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 15.000000
+			m_flRadiusMax = 20.000000
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 1.000000
+			m_flMaxLength = 1.000000
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flInitialRadius = 40.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = 12
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				-30.000000,
+				-30.000000,
+				0.000000,
+			]
+			m_OffsetMax =
+			[
+				30.000000,
+				30.000000,
+				2.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+}

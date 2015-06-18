@@ -1,0 +1,171 @@
+"item_frostmourne" //totally not Blade of the Ruined King
+{	
+	"ID"		"1134"
+	"ItemCost"						"644"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "0"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "0"
+	"AbilityCastRange"              "200"
+	"AbilityCooldown"               "60"
+	"ItemQuality"					"artifact"
+	"BaseClass" 					"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+	"AbilityTextureName"			"item_frostmourne"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_lifesteal"			"15"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"25"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"			"40"
+		}	
+	}
+			
+	"Model"		"models/items/abaddon/alliance_abba_weapon/alliance_abba_weapon.vmdl"
+	"Effect" 	"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
+
+	"OnEquip"
+  	{
+  		"FireSound"
+		{
+			"EffectName"	"Hero_Abaddon.BorrowedTime"	
+			"Target" 		"CASTER"
+		}
+		"AttachEffect"
+		{
+			"EffectName" "particles/units/heroes/hero_abaddon/abaddon_spawn.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Target"		"CASTER"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName" 			"modifier_frostmourne"
+			"Target" 	"CASTER"
+		}
+  	}
+  	"OnSpellStart"
+  	{
+  		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/items.lua"
+			"Function"			"FrostmourneRuin"
+			//sunder~abyssal effect
+    			//go through magic immunity
+		}
+		"AttachEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Target"	"CASTER"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Terrorblade.Sunder.Target"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName" 			"modifier_frostmourne_hungers_debuff"
+			"Target" 	"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName" 			"modifier_frostmourne_hungers_buff"
+			"Target" 	"CASTER"
+		}	
+  	}
+
+  	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/items.lua"
+			"Function"			"DropFrostmourne"
+		}
+	}
+	
+	"Modifiers"    				
+	{  							
+		"modifier_frostmourne"  
+		{
+			"IsDebuff"					"0"
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+			"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"TextureName"				"frostmourne_holder"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "%bonus_damage"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+			}
+			"OnAttackLanded"
+			{
+				"Lifesteal"
+				{
+					"Target"	"ATTACKER"
+					"LifestealPercent" "%bonus_lifesteal"
+				}
+				"FireSound"
+				{
+					"EffectName"	"Hero_Abaddon.Attack"
+					"Target"	"CASTER"
+				}
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/items.lua"
+					"Function"			"FrostmourneAttack"
+				}
+			}		
+		}
+		"modifier_frostmourne_hungers_debuff"
+		{
+			"IsDebuff"					"1"
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+			"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"      			"3"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-30"
+			}
+		}	
+		"modifier_frostmourne_hungers_buff"
+		{
+			"IsDebuff"					"0"
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+			"EffectName"				"particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+			"EffectAttachType"			"follow_origin"
+			"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"      			"3"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+			}
+		}		
+
+	}		
+}
+

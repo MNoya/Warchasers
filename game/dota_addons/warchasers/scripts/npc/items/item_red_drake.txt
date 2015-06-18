@@ -1,0 +1,65 @@
+"item_red_drake"        //dragon
+{
+	"ID"                            "1066"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"            "item_red_drake"
+	
+	"Model"							"models/chest_worlddrop.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
+	
+	"ItemCost"                      "450"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"		
+	"ItemShopTags"					"epic"
+	"ItemQuality"					"epic"
+	"ItemPermanent"					"0"
+	"AbilityCastRange"              "400"
+	"AbilityCooldown"               "20"
+	"AbilityManaCost"               "0"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemInitialCharges"            "1"
+	"SideShop"	"0"
+	"SecretShop" "1"
+
+	"OnSpellStart"
+	{	
+		"SpendCharge"
+		{}			
+		"SpawnUnit"
+		{
+			"Target"            "POINT"
+			"UnitName"              "npc_red_drake"
+			"UnitCount"             "1"
+			"Duration"				"180"
+			"OnSpawn"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/items.lua"
+					"Function"			"SummonRedDrake"
+					"Target"			"POINT"
+				}
+			}
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Lina.DragonSlave"
+			"Target" "CASTER"
+		}
+		
+	}
+	
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
+
+
+

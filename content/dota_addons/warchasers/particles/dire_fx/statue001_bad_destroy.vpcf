@@ -1,0 +1,80 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flNoDrawTimeToGoToSleep = 18.000000
+	m_nMaxParticles = 1
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity =
+			[
+				0.000000,
+				0.000000,
+				-100.000000,
+			]
+			m_fDrag = 0.050000
+			m_flOpStartFadeInTime = 5.000000
+			m_flOpEndFadeInTime = 7.000000
+		},
+		{
+			_class = "C_OP_RemapScalarOnceTimed"
+			m_nFieldInput = 9
+			m_nFieldOutput = 9
+			m_flInputMin = 1.000000
+			m_flOutputMin = 2.000000
+			m_flOutputMax = 2.000000
+			m_flRemapTime = 4.900000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList =
+			[
+				{
+					m_model = resource:"models/props_structures/bad_statue001_destruction.vmdl"
+				},
+			]
+			m_bOrientZ = true
+			m_nBodyGroupField = 13
+			m_nAnimationField = 9
+			m_bAnimated = true
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 9.000000
+			m_fLifetimeMax = 9.000000
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 1
+			m_nSequenceMax = 1
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RemapInitialCPDirectionToRotation"
+			m_nFieldOutput = 12
+			m_flOffsetRot = 90.000000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+}

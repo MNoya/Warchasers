@@ -1,0 +1,2037 @@
+
+
+// Dota Abilities Override File
+"DOTAAbilities"
+{	
+
+
+	"templar_assassin_meld"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5195"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityDuration"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"-4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_reduction_duration_tooltip"				"10"
+			}
+		}
+	}
+
+//HERO SKILLS -----------------------------------------------------------------
+	"juggernaut_blade_fury"
+		{
+		"MaxLevel"						"1"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"200"
+		"AbilityDamage"					"110"
+		"AbilityTextureName"			"jugg_bladestorm"
+
+		}
+
+
+	"harpy_storm_chain_lightning" //seletrous chain lightning
+		{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"120"
+		"AbilityTextureName"			"razor_chain"
+
+		"precache"
+			{
+				"particle"	"particles/neutral_fx/harpy_chain_lightning.vpcf"
+			}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+			{
+			"01"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"initial_damage"		"90 110 130"
+				}
+			"02"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"jump_range"			"500"
+				}
+			"03"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0.25"
+				}
+			"04"
+				{
+				"var_type"				"FIELD_FLOAT"
+				"damage_percent_loss"	"4.0"
+				}
+			"05"
+				{
+				"var_type"				"FIELD_INTEGER"
+				"max_targets"			"5 10 15"
+				}
+			}
+		}
+
+	"mirana_starfall"
+		{
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityDamage"					"50"
+		"AbilityManaCost"	"0"
+		}
+
+
+
+
+
+	"magnataur_shockwave"		//damages buildings
+	{
+		"MaxLevel"					"3"					
+		"AbilityCooldown"			"8"
+		"AbilityManaCost"			"100"
+		"AbilityTextureName"			"timber_shockwave"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_speed"				"900"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_width"				"175"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_distance"			"700"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_damage"				"75 130 200"
+			}
+		}								
+	}
+	
+	"lycan_summon_wolves_critical_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5399"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_damage"					"200"
+			}
+		}
+	}
+
+
+	"brewmaster_thunder_clap"
+	{
+		"MaxLevel"					"3"
+		"AbilityCooldown"				"12"	
+		"AbilityManaCost"				"120"	
+		"AbilityTextureName"			"timber_thunderclap"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"350"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"5.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"60 100 140"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"50"
+			}
+		}				
+	}
+
+	"clinkz_searing_arrows"
+	{
+		"MaxLevel"						"3"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityTextureName"			"drow_searing_arrows"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"8"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_bonus"					"10 20 30"
+			}
+		}
+	}
+
+	//"abyssal_underlord_firestorm" //no particles, probably need datadriven, damages buildings
+	//Rain Of Fire
+		//Channeling
+		//Rain of Fire has a damage cap that is invoked when it hits more than 5 targets per wave.
+		//Similar to Blizzard, except it also ignites affected units, causing moderate damage over time to them. 
+		//Rain of Fire is an area effect spell. This spell will damage all units including friendly units.
+		//Rain of Fire does 50% damage to buildings. Rain of Fire is not that effective against buildings but it can work.
+		//Rain of Fire will not hurt enemy units with Spell Immunity 
+	"abyssal_underlord_firestorm"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"	"3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName" 		"drow_firestorm"	
+		
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		//L		Duration	Cooldown   Mana Range	AoE					Effect											Hero Level Req
+		//1		3 sec.		8 sec.		85	80		20		25 wave damage, 6 waves, 5 damage/sec., 125 max damage		1
+		//2		3 sec.		8 sec.		85	80		20		30 wave damage, 8 waves, 10 damage/sec., 150 max damage		3
+		//3		3 sec.		8 sec.		85	80		20		35 wave damage, 10 waves, 15 damage/sec., 175 max damage	5
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"wave_duration"					"7.0"
+			}		
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wave_count"					"6 8 10"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wave_damage"					"25 30 35"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"wave_interval"					"1.0"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"burn_damage"					"5 10 15"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_interval"					"1.0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_duration"					"3.0"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"first_wave_delay"				"0.9"
+			}
+		}
+	}
+
+
+	"gyrocopter_call_down"
+	{
+		"MaxLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_first"		"2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_duration_second"		"3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_first"				"100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second"				"50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_first"				"50"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_second"				"20"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"350"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range_scepter"					"0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_second_scepter"		"175 225 275"
+			}
+		}
+	}	
+		
+	"lycan_summon_wolves" //default wolves need to be edited on npc_units.txt file
+	{
+		"MaxLevel"						"3"
+		"AbilityCooldown"				"30.0 25.0 25.0"
+		"AbilityManaCost"				"75"
+		"AbilityTextureName"			"ck_feral_spirit"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_cast.vpcf"
+			"particle"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn_e.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+			"model"	"models/items/lycan/wolves/icewrack_pack/icewrack_pack.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_index"				"1 2 3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_duration"				"60.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wolf_bat"					"1.25 1.2 1.15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_damage"				"11 16 21"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"wolf_hp"					"200 300 500"
+			}
+		}
+	}
+
+	"warlock_rain_of_chaos" //default golem need to be edited on npc_units.txt file
+	{
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"175"		
+		"AbilityCastRange"				"900"
+		"AbilityTextureName"			"ck_inferno"
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_1"
+		
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start.vpcf"
+			"particle"	"particles/units/heroes/hero_warlock/warlock_rain_of_chaos_start_meteor.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"golem_duration"			"180"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"4.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aoe"						"250"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_hp_tooltip"			"1500"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_dmg_tooltip"			"55"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_armor_tooltip"		"6"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"number_of_golems_scepter"	"1"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_dmg_reduction_scepter"	"0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bounty_reduction_scepter"	"0"
+			}
+		}
+	}
+
+	"warlock_golem_flaming_fists"
+	{
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"300"
+			}
+		}
+	}
+	
+	"warlock_golem_permanent_immolation"
+	{
+		"MaxLevel"						"1"
+		"AbilityTextureName"	"infernal_permanent_immolation"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"220"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"10"
+			}
+		}
+	}
+
+	"lich_frost_nova"
+	{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"8.0"
+		"AbilityDuration"				"4.0 6.0 8.0"
+		"AbilityDamage"					"100"
+		"AbilityTextureName"			"sd_frost_nova"
+
+		"AbilityManaCost"				"125"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_damage"			"50 100 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200 200 200 200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_movement_speed"	"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed"		"-20"
+			}
+		}
+	}
+
+	"roshan_bash" //try void bash instead
+	{
+		"MaxLevel"						"3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"templar_bash" 
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"		"20 30 40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2"
+			}
+		}
+	}	
+
+	"sven_storm_bolt"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"9.0"
+		"AbilityDamage"					"175 275 375"
+		"AbilityManaCost"				"75"
+		"AbilityTextureName"			"templar_storm_bolt"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bolt_speed"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bolt_stun_duration"	"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bolt_aoe"			"0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"vision_radius"		"225"
+			}
+		}
+	}
+
+	"brewmaster_storm_wind_walk"
+	{
+		"MaxLevel"						"3"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"75 75 75"		
+		"AbilityTextureName"			"sven_windwalk"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"40 70 100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speeed"		"10 40 100" // CHECK Hero walk speed is capped at 400. !!!?!?!?!?!?!
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0 35.0 50.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.6 0.6 0.6 0.6"
+			}
+		}
+	}
+
+	"necronomicon_archer_mana_burn"
+	{
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"9001" //was 300 but it's awkward 
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"		
+		"AbilityTextureName"			"razor_mana_burn"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET	|	DOTA_ABILITY_BEHAVIOR_IMMEDIATE"		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_amount"			"50 100 150"
+			}
+		}
+	}
+
+	"crystal_maiden_brilliance_aura" //need datadriven to disable self bonus, non global
+	{
+		"MaxLevel"					"3"
+		"AbilityTextureName"			"razor_brilliance_aura"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen"		"0.75 1.5 2.25"
+			}
+		}
+	}	
+
+	"enigma_midnight_pulse"	 //need datadriven, damages buildings, channeling
+	{
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType" 					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"150"
+		"AbilityManaCost"				"250"
+		"AbilityChannelTime"			"35"
+		"AbilityTextureName"			"razor_death_decay"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_percent"			"4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"35"
+			}
+		}
+
+	}
+
+	"terrorblade_metamorphosis"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"140.0"
+		"AbilityManaCost"				"0"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2147483647" //FLOAT_MAX
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"transformation_time"	"0.35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_attack_time"		"1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"422"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_attack_range"			"550"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"20"
+			}
+		}
+	}
+
+//END HERO SKILLS -----------------------------------------------------------------
+
+//CREEP SKILLS -----------------------------------------------------------------
+
+	"neutral_spell_immunity"
+	{
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"creep_spell_immunity"
+
+	}
+
+	"alpha_wolf_command_aura"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"creep_command_aura"
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+		}
+	}
+
+	"slardar_bash"
+	{
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"2.0"
+			}
+		}
+	}
+	
+	"brewmaster_fire_permanent_immolation"
+	{
+		"MaxLevel"							"1"
+
+		"precache"
+		{
+			"precache" "particles/units/heroes/hero_brewmaster/brewmaster_fire_immolation_child.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"20"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"150"
+			}
+		}
+	}
+	
+	"brewmaster_storm_cyclone"
+	{
+		"MaxLevel"	"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_cyclone.vpcf"
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8"
+		"AbilityCastPoint"				"0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_hero"				"6.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_unit"				"20.0"
+			}
+		}
+	}
+	
+	"brewmaster_earth_hurl_boulder"
+	{
+		"MaxLevel"	"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" "ACT_DOTA_CAST_ABILITY_2"
+
+		"AbilityCastRange"				"800"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8"
+		"AbilityCastPoint"				"0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"800"
+			}
+		}
+	}
+	
+	"skeleton_king_reincarnation"
+	{
+		"MaxLevel"		"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"100"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reincarnate_time"		"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_radius"			"900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"				"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackslow_tooltip"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0"
+			}
+		}
+	}
+
+	"centaur_hoof_stomp"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"	"1"
+
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"13.0 13.0 13.0 13.0"
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"315"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_duration"					"2.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stomp_damage"					"100"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Satyr Trickster: Purge
+	//=================================================================================================================
+	"satyr_trickster_purge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET	|	DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900001"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"purge_rate"		"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"summon_damage"			"400"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Satyr Soulstealer: Mana Burn
+	//=================================================================================================================
+	"satyr_soulstealer_mana_burn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"Modelscale" 					".85"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"75"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_amount"			"100"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ogre Magi: Frost Armor
+	//=================================================================================================================
+	"ogre_magi_frost_armor"
+	{
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.56"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"45.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_slow"		"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed_slow"		"-20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"5.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Lich: Frost Armor
+	//=================================================================================================================
+	"lich_frost_armor"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"	"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.56"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"40"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_bonus"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"5.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_movement_speed"	"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed"		"-20"
+			}
+		}
+	}
+
+	"crystal_maiden_freezing_field"
+	{
+		"MaxLevel"						"1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityChannelTime"			"7.0 7.0 7.0"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCooldown"				"6"
+		"AbilityDuration"				"6.0"
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"685"
+			}
+		
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"explosion_radius"	"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"explosion_interval"	"0.1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_slow"	"-30"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_slow"	"-30"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"1.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_min_dist"	"195"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_max_dist"	"635"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"20"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_scepter"	"170 250 310"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_slow_scepter" "-50"
+			}
+			"13"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_slow_scepter"	"-50"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Doom Bringer: Scorched Earth    //Doesn't work for some reason, replaced
+	//=================================================================================================================
+	"doom_bringer_scorched_earth"
+	{
+	
+		"precache"
+		{
+			"particle_folder"	"particles/econ/items/doom"
+			"particle_folder"	"particles/units/heroes/hero_doom_bringer"
+		}
+		
+		"MaxLevel"	"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"60"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600 600 600 600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed_pct"	"16 16 16 16"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60"
+			}
+		}
+	}
+
+//END CREEP SKILLS -----------------------------------------------------------------
+
+// ITEM SHOPS---------------------------------------------------
+	
+		"item_blades_of_attack"			"REMOVE"
+	"item_broadsword"			"REMOVE"
+	"item_chainmail"			"REMOVE"
+	"item_claymore"			"REMOVE"
+	"item_helm_of_iron_will"			"REMOVE"
+	"item_javelin"			"REMOVE"
+	"item_mithril_hammer"			"REMOVE"
+	"item_platemail"			"REMOVE"
+	"item_quarterstaff"			"REMOVE"
+	"item_quelling_blade"			"REMOVE"
+	"item_ring_of_protection"			"REMOVE"
+	"item_stout_shield"			"REMOVE"
+	"item_gauntlets"			"REMOVE"
+	"item_slippers"			"REMOVE"
+	"item_mantle"			"REMOVE"
+	"item_branches"			"REMOVE"
+	"item_belt_of_strength"			"REMOVE"
+	"item_boots_of_elves"			"REMOVE"
+	"item_robe"			"REMOVE"
+	"item_circlet"			"REMOVE"
+	"item_ogre_axe"			"REMOVE"
+	"item_blade_of_alacrity"			"REMOVE"
+	"item_staff_of_wizardry"			"REMOVE"
+	"item_ultimate_orb"			"REMOVE"
+	"item_gloves"			"REMOVE"
+	"item_lifesteal"			"REMOVE"
+	"item_ring_of_regen"			"REMOVE"
+	"item_sobi_mask"			"REMOVE"
+	"item_boots"			"REMOVE"
+	"item_gem"			"REMOVE"
+	"item_cloak"			"REMOVE"
+	"item_talisman_of_evasion"			"REMOVE"
+	"item_cheese"			"REMOVE"
+	"item_magic_stick"			"REMOVE"
+	"item_recipe_magic_wand"			"REMOVE"
+	"item_magic_wand"			"REMOVE"
+	"item_ghost"			"REMOVE"
+	"item_clarity"			"REMOVE"
+	"item_flask"			"REMOVE"
+	"item_dust"			"REMOVE"
+	"item_bottle"			"REMOVE"
+	"item_ward_observer"			"REMOVE"
+	"item_ward_sentry"			"REMOVE"
+	"item_tango"			"REMOVE"
+	"item_tango_single"			"REMOVE"
+	"item_courier"			"REMOVE"
+	"item_tpscroll"			"REMOVE"
+	"item_recipe_travel_boots"			"REMOVE"
+	"item_travel_boots"			"REMOVE"
+	"item_recipe_phase_boots"			"REMOVE"
+	"item_phase_boots"			"REMOVE"
+	"item_demon_edge"			"REMOVE"
+	"item_eagle"			"REMOVE"
+	"item_reaver"			"REMOVE"
+	"item_relic"			"REMOVE"
+	"item_hyperstone"			"REMOVE"
+	"item_ring_of_health"			"REMOVE"
+	"item_void_stone"			"REMOVE"
+	"item_mystic_staff"			"REMOVE"
+	"item_energy_booster"			"REMOVE"
+	"item_point_booster"			"REMOVE"
+	"item_vitality_booster"			"REMOVE"
+	"item_recipe_power_treads"			"REMOVE"
+	"item_power_treads"			"REMOVE"
+	"item_recipe_hand_of_midas"			"REMOVE"
+	"item_hand_of_midas"			"REMOVE"
+	"item_recipe_oblivion_staff"			"REMOVE"
+	"item_oblivion_staff"			"REMOVE"
+	"item_recipe_pers"			"REMOVE"
+	"item_pers"			"REMOVE"
+	"item_recipe_poor_mans_shield"			"REMOVE"
+	"item_poor_mans_shield"			"REMOVE"
+	"item_recipe_bracer"			"REMOVE"
+	"item_bracer"			"REMOVE"
+	"item_recipe_wraith_band"			"REMOVE"
+	"item_wraith_band"			"REMOVE"
+	"item_recipe_null_talisman"			"REMOVE"
+	"item_null_talisman"			"REMOVE"
+	"item_recipe_mekansm"			"REMOVE"
+	"item_mekansm"			"REMOVE"
+	"item_recipe_vladmir"			"REMOVE"
+	"item_vladmir"			"REMOVE"
+	"item_flying_courier"			"REMOVE"
+	"item_recipe_buckler"			"REMOVE"
+	"item_buckler"			"REMOVE"
+	"item_recipe_ring_of_basilius"			"REMOVE"
+	"item_ring_of_basilius"			"REMOVE"
+	"item_recipe_pipe"			"REMOVE"
+	"item_pipe"			"REMOVE"
+	"item_recipe_urn_of_shadows"			"REMOVE"
+	"item_urn_of_shadows"			"REMOVE"
+	"item_recipe_headdress"			"REMOVE"
+	"item_headdress"			"REMOVE"
+	"item_recipe_sheepstick"			"REMOVE"
+	"item_sheepstick"			"REMOVE"
+	"item_recipe_orchid"			"REMOVE"
+	"item_orchid"			"REMOVE"
+	"item_recipe_cyclone"			"REMOVE"
+	"item_cyclone"			"REMOVE"
+	"item_recipe_force_staff"			"REMOVE"
+	"item_force_staff"			"REMOVE"
+	"item_recipe_dagon"			"REMOVE"
+	"item_recipe_dagon_2"			"REMOVE"
+	"item_recipe_dagon_3"			"REMOVE"
+	"item_recipe_dagon_4"			"REMOVE"
+	"item_recipe_dagon_5"			"REMOVE"
+	"item_dagon"			"REMOVE"
+	"item_dagon_2"			"REMOVE"
+	"item_dagon_3"			"REMOVE"
+	"item_dagon_4"			"REMOVE"
+	"item_dagon_5"			"REMOVE"
+	"item_recipe_necronomicon"			"REMOVE"
+	"item_recipe_necronomicon_2"			"REMOVE"
+	"item_recipe_necronomicon_3"			"REMOVE"
+	"item_necronomicon"			"REMOVE"
+	"item_necronomicon_2"			"REMOVE"
+	"item_necronomicon_3"			"REMOVE"
+	"item_recipe_ultimate_scepter"			"REMOVE"
+	"item_ultimate_scepter"			"REMOVE"
+	"item_recipe_refresher"			"REMOVE"
+	"item_refresher"			"REMOVE"
+	"item_recipe_assault"			"REMOVE"
+	"item_assault"			"REMOVE"
+	"item_recipe_heart"			"REMOVE"
+	"item_heart"			"REMOVE"
+	"item_recipe_black_king_bar"			"REMOVE"
+	"item_black_king_bar"			"REMOVE"
+	"item_aegis"			"REMOVE"
+	"item_recipe_shivas_guard"			"REMOVE"
+	"item_shivas_guard"			"REMOVE"
+	"item_recipe_bloodstone"			"REMOVE"
+	"item_bloodstone"			"REMOVE"
+	"item_recipe_sphere"			"REMOVE"
+	"item_sphere"			"REMOVE"
+	"item_recipe_reflex_energy_regen_booster"			"REMOVE"
+	"item_vanguard"			"REMOVE"
+	"item_recipe_blade_mail"			"REMOVE"
+	"item_blade_mail"			"REMOVE"
+	"item_recipe_soul_booster"			"REMOVE"
+	"item_soul_booster"			"REMOVE"
+	"item_recipe_hood_of_defiance"			"REMOVE"
+	"item_hood_of_defiance"			"REMOVE"
+	"item_recipe_rapier"			"REMOVE"
+	"item_rapier"			"REMOVE"
+	"item_recipe_monkey_king_bar"			"REMOVE"
+	"item_monkey_king_bar"			"REMOVE"
+	"item_recipe_radiance"			"REMOVE"
+	"item_radiance"			"REMOVE"
+	"item_recipe_butterfly"			"REMOVE"
+	"item_butterfly"			"REMOVE"
+	"item_recipe_greater_crit"			"REMOVE"
+	"item_greater_crit"			"REMOVE"
+	"item_recipe_basher"			"REMOVE"
+	"item_basher"			"REMOVE"
+	"item_recipe_bfury"			"REMOVE"
+	"item_bfury"			"REMOVE"
+	"item_recipe_manta"			"REMOVE"
+	"item_manta"			"REMOVE"
+	"item_recipe_lesser_crit"			"REMOVE"
+	"item_lesser_crit"			"REMOVE"
+	"item_recipe_armlet"			"REMOVE"
+	"item_armlet"			"REMOVE"
+	"item_recipe_invis_sword"			"REMOVE"
+	"item_invis_sword"			"REMOVE"
+	"item_recipe_sange_and_yasha"			"REMOVE"
+	"item_sange_and_yasha"			"REMOVE"
+	"item_recipe_satanic"			"REMOVE"
+	"item_satanic"			"REMOVE"
+	"item_recipe_mjollnir"			"REMOVE"
+	"item_mjollnir"			"REMOVE"
+	"item_recipe_skadi"			"REMOVE"
+	"item_skadi"			"REMOVE"
+	"item_recipe_sange"			"REMOVE"
+	"item_sange"			"REMOVE"
+	"item_recipe_helm_of_the_dominator"			"REMOVE"
+	"item_helm_of_the_dominator"			"REMOVE"
+	"item_recipe_maelstrom"			"REMOVE"
+	"item_maelstrom"			"REMOVE"
+	"item_recipe_desolator"			"REMOVE"
+	"item_desolator"			"REMOVE"
+	"item_recipe_yasha"			"REMOVE"
+	"item_yasha"			"REMOVE"
+	"item_recipe_mask_of_madness"			"REMOVE"
+	"item_mask_of_madness"			"REMOVE"
+	"item_recipe_diffusal_blade"			"REMOVE"
+	"item_recipe_diffusal_blade_2"			"REMOVE"
+	"item_diffusal_blade"			"REMOVE"
+	"item_diffusal_blade_2"			"REMOVE"
+	"item_recipe_ethereal_blade"			"REMOVE"
+	"item_ethereal_blade"			"REMOVE"
+	"item_recipe_soul_ring"			"REMOVE"
+	"item_soul_ring"			"REMOVE"
+	"item_recipe_arcane_boots"			"REMOVE"
+	"item_arcane_boots"			"REMOVE"
+	"item_orb_of_venom"			"REMOVE"
+	"item_recipe_ancient_janggo"			"REMOVE"
+	"item_ancient_janggo"			"REMOVE"
+	"item_recipe_medallion_of_courage"			"REMOVE"
+	"item_medallion_of_courage"			"REMOVE"
+	"item_smoke_of_deceit"			"REMOVE"
+	"item_recipe_veil_of_discord"			"REMOVE"
+	"item_veil_of_discord"			"REMOVE"
+	"item_recipe_rod_of_atos"			"REMOVE"
+	"item_rod_of_atos"			"REMOVE"
+	"item_recipe_abyssal_blade"			"REMOVE"
+	"item_abyssal_blade"			"REMOVE"
+	"item_recipe_heavens_halberd"			"REMOVE"
+	"item_heavens_halberd"			"REMOVE"
+	"item_recipe_ring_of_aquila"			"REMOVE"
+	"item_ring_of_aquila"			"REMOVE"
+	"item_recipe_tranquil_boots"			"REMOVE"
+	"item_tranquil_boots"			"REMOVE"
+	"item_shadow_amulet"			"REMOVE"
+	
+  	"item_halloween_candy_corn"			"REMOVE"
+	"item_mystery_hook"			"REMOVE"
+	"item_mystery_arrow"			"REMOVE"
+	"item_mystery_missile"			"REMOVE"
+	"item_mystery_toss"			"REMOVE"
+	"item_mystery_vacuum"			"REMOVE"
+	"item_halloween_rapier"			"REMOVE"
+	"item_greevil_whistle"			"REMOVE"
+	"item_greevil_whistle_toggle"			"REMOVE"
+	"item_present"			"REMOVE"
+	"item_winter_stocking"			"REMOVE"
+	"item_winter_skates"			"REMOVE"
+	"item_winter_cake"			"REMOVE"
+	"item_winter_cookie"			"REMOVE"
+	"item_winter_coco"			"REMOVE"
+	"item_winter_ham"			"REMOVE"
+	"item_winter_kringle"			"REMOVE"
+	"item_winter_mushroom"			"REMOVE"
+	"item_winter_greevil_treat"			"REMOVE"
+	"item_winter_greevil_garbage"			"REMOVE"
+	"item_winter_greevil_chewy"			"REMOVE"
+	
+
+
+	//NEW ITEMS
+	"item_recipe_moon_shard"            "REMOVE"
+    "item_moon_shard"           "REMOVE"    
+    "item_enchanted_mango"          "REMOVE"    
+    "item_recipe_travel_boots_2"            "REMOVE"    
+    "item_travel_boots_2"           "REMOVE"    
+    "item_recipe_lotus_orb"         "REMOVE"    
+    "item_lotus_orb"            "REMOVE"    
+    "item_recipe_crimson_guard"         "REMOVE"    
+    "item_crimson_guard"            "REMOVE"    
+    "item_recipe_silver_edge"           "REMOVE"    
+    "item_silver_edge"          "REMOVE"    
+    "item_recipe_octarine_core"         "REMOVE"    
+    "item_octarine_core"            "REMOVE"    
+    "item_recipe_solar_crest"           "REMOVE"    
+    "item_solar_crest"          "REMOVE"    
+    "item_recipe_guardian_greaves"          "REMOVE"    
+    "item_guardian_greaves"         "REMOVE"    
+    "item_recipe_glimmer_cape"          "REMOVE"    
+    "item_glimmer_cape"         "REMOVE"
+
+
+
+
+
+
+
+
+
+	//====================================================================
+	//CUSTOM ITEMS
+	//====================================================================
+
+	"item_tome_of_health"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_strength"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_agility"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_intellect"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_tome_of_knowledge"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_strength_2"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	 "item_tome_of_agility"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_tome_of_intellect_2"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_health_stone"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_mana_stone"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_mana_pendant"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_vitality_pendant"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_potion_of_healing"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_cloak_of_shadows"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_mantle_3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_slippers_3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_botas"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_rop_2"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_sobi"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_book_of_the_dead" //skeleton warriors+archers
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_demonic_figurine" //doom guard
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_wand_of_illusion" //hero ilu
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_red_drake"        //dragon
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_spiked_collar" //hellhound
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_stone_token"  //rock golem
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_talisman_of_the_wild"  //fulborg
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_allerias_flute"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_khadgars_gem"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_stormwind_horn"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	"item_evasion"   
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_orb_of_frost"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_orb_of_fire"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+	//SHOP 1
+
+    "item_ankh"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_potion_of_great_healing"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+	
+    "item_healing_wards"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+	
+    "item_cloak_of_flames"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+	
+    "item_scepter_of_mastery"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}	
+
+    "item_mask_of_death"
+        {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_gauntlets_3"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_claws_3"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+	//SHOP 2
+ 
+    "item_inferno_stone"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_spell_immunity"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_battle_drums"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_restoration_scroll"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_claws_9"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_robe_6"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+
+    "item_ror_2"
+    {
+		"ItemPurchasable"				"1"
+		"ItemDroppable"					"1"
+	}
+	
+	//Keys
+
+	"item_key1"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+	"item_key2"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+
+	"item_key3"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	//Add tooltips
+	"item_shield_amulet"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_runed_bracers"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+
+    "item_bone_chimes"
+    {
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+
+	}
+	
+	"item_belt_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_claws_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_claws_12"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_boots_6"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_rop_4"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_mana_gem"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_gloves_15"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+	}
+	
+	"item_frostmourne"
+	{
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+	}
+
+
+// END ITEM SHOPS ----------------------------------------
+
+}

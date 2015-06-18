@@ -1,0 +1,28 @@
+"CustomEvents"
+{
+	"warchasers_finished_voting"
+	{
+	}
+
+	"warchasers_player_died"
+	{
+		"player_ID"		"short"
+	}
+
+	"custom_error_show"
+	{
+		"player_ID"		"short"
+		"_error"		"string"
+	}
+	
+	// Stat collection
+	"stat_collection_part"
+	{
+		"data"          "string"
+	}
+
+	"stat_collection_send"
+	{
+	}
+	
+}

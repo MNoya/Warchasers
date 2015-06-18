@@ -1,0 +1,77 @@
+"item_orb_of_frost"
+    {
+    	"ID" "1125"
+
+    	"BaseClass" 					"item_datadriven"
+    	"AbilityTextureName" 			"item_orb_of_frost"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	"Model"							"models/chest_worlddrop.vmdl"
+	"Effect"						"particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_3.vpcf"
+
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"1000"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemQuality"					"artifact"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	
+	"SideShop" 		"0"
+	"SecretShop" 	"1"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	// Adds 6 bonus cold damage to the attacks of a Hero when carried. 
+	// The Hero's attacks also slow the movement speed and attack rate of the enemy for 3 seconds.
+	"Modifiers"
+	{
+		"modifier_orb_of_frost"
+		{
+			"Passive"               "1"
+			"IsHidden"				"1"
+			"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "6"
+			}
+
+			"Orb"
+			{
+				"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+				"ProjectileName"    "particles\items2_fx\skadi_projectile.vpcf"
+			}
+			"OnOrbImpact"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"TARGET"
+					"ModifierName"		"modifier_orb_of_frost_slow"
+					"Duration"			"%slow_duration"
+				}		
+			}
+		}
+
+		"modifier_orb_of_frost_slow"
+		{
+			"IsDebuff" "1"
+			"Duration"	"3"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-50"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-25"
+			}
+			"EffectName"		"particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"EffectAttachType"      "attach_hitloc"
+			"Target"                "TARGET"
+
+		}
+	}
+}
+
+
