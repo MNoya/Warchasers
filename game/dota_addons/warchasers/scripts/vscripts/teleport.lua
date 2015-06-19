@@ -413,7 +413,7 @@ function TeleporterTanksStart(trigger)
     local tank_spawn_point = Vector(4466,1100,128)
     if not GameRules.TankStarted then
         GameRules.TankStarted = true
-        TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
+        TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
         TANK:SetRenderColor(150, 150, 150)
          
          GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
