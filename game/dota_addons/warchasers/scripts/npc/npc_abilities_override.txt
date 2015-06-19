@@ -204,33 +204,33 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"350"
+				"radius"					"400"
 			}
 			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"5.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_creeps"			"5.0"
-			}
-			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage"					"60 100 140"
 			}
-			"05"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"movement_slow"				"50"
 			}
-			"06"
+			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"attack_speed_slow"			"50"
+			}		
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
 			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"5.0"
+			}			
 		}				
 	}
 
@@ -526,18 +526,33 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"number_of_golems_scepter"	"1"
+				"golem_regen_tooltip"		"25 50 75"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_dmg_reduction_scepter"	"0"
+				"number_of_golems_scepter"	"1"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounty_reduction_scepter"	"0"
+				"golem_hp_tooltip_scepter"			"675 900 1125"
 			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_dmg_tooltip_scepter"	"56 75 94"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_dmg_reduction_scepter"	"0"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bounty_reduction_scepter"	"0"
+			}			
 		}
 	}
 
@@ -611,23 +626,23 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_damage"			"50 100 150"
+				"radius"				"200 200 200 200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"200 200 200 200"
+				"slow_movement_speed"	"-30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-30"
+				"slow_attack_speed"		"-20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-20"
-			}
+				"aoe_damage"			"50 100 150"
+			}			
 		}
 	}
 
