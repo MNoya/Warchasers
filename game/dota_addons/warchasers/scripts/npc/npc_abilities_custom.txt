@@ -4414,31 +4414,6 @@
 							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
 						}
 	
-						"ItemName"	"item_shield_amulet"
-						"ItemCount"	"1"
-						"SpawnRadius"	"50"
-						"LaunchHeight"	"100"
-						"LaunchDistance"	"?50 100"
-						"LaunchDuration"	"0.5"
-					}
-	
-				}
-	
-			}
-	
-				"Random"
-			{
-				"Chance"	"20"
-						"OnSuccess"
-				{
-								"CreateItem"
-					{
-										"Target"
-						{
-							"Center"	"CASTER"
-							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-	
 						"ItemName"	"item_tome_of_strength_2"
 						"ItemCount"	"1"
 						"SpawnRadius"	"1"

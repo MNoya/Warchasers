@@ -1122,7 +1122,7 @@ function Warchasers:OnEveryoneVoted()
     elseif GameRules.DIFFICULTY == 4 then
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary (4)</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
-    end]]
+    end
 
     -- Add settings to our stat collector
     --[[statcollection.addStats({
