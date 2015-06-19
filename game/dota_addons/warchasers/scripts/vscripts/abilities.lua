@@ -586,7 +586,7 @@ function DesecrationParticles(event)
 	local delay = event.ability:GetSpecialValueFor("delay") 
 	local target = event.target:GetAbsOrigin()
 
-	local particle = ParticleManager:CreateParticle("particles/econ/items/warlock/warlock_staff_hellborn/warlock_upheaval_hellborn_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+	local particle = ParticleManager:CreateParticle("particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
 	ParticleManager:SetParticleControl(particle, 0, target) -- origin
 
 	Timers:CreateTimer(delay,function() 

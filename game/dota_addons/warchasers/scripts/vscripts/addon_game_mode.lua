@@ -81,6 +81,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/econ/courier/courier_roshan_lava/courier_roshan_lava.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_templar_assassin/templar_assassin_meld.vpcf", context)
 	PrecacheResource( "particle", "particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf", context)
+	PrecacheResource( "particle", "particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_hellborn_debuff.vpcf", context)
 
 	-- Cosmetic item particles, should precache them individually
 	--PrecacheResource( "particle_folder", "particles/econ/items", context )
