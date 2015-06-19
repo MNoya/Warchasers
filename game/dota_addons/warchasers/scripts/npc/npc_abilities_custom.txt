@@ -268,12 +268,6 @@
 	
 		}
 	
-		"precache"
-		{
-			"particle"	"particles/warchasers/desecrator/jakiro_macropyre.vpcf"
-			"particle"	"particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
-		}
-	
 		"OnSpellStart"
 		{
 				"CreateThinker"
@@ -291,11 +285,11 @@
 				"Duration"	"%duration"
 						"OnCreated"
 				{
-								"FireSound"
-					{
-						"EffectName"	"Hero_EmberSpirit.FlameGuard.Cast"
-						"Target"	"TARGET"
-					}
+					//"FireSound"
+					//{
+					//	"EffectName"	"Hero_EmberSpirit.FlameGuard.Cast"
+					//	"Target"	"TARGET"
+					//}
 	
 								"RunScript"
 					{
@@ -374,12 +368,6 @@
 	
 		}
 	
-		"precache"
-		{
-			"particle"	"particles/warchasers/electrified/electrified.vpcf"
-			"particle"	"particles/status_fx/status_effect_electrical.vpcf"
-		}
-	
 		"Modifiers"
 		{
 				"modifier_electrified"
@@ -429,11 +417,6 @@
 	
 		}
 	
-		"precache"
-		{
-			"particle"	"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
-		}
-	
 		"Modifiers"
 		{
 				"modifier_extra_health"
@@ -474,11 +457,6 @@
 				"move_speed_bonus"	"200"
 			}
 	
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/generic_gameplay/rune_haste_owner.vpcf"
 		}
 	
 		"Modifiers"
@@ -535,15 +513,7 @@
 			}
 	
 		}
-	
-		"precache"
-		{
-			"particle"	"particles/warchasers/frozen/ancient_apparition_cold_feet.vpcf"
-			"particle"	"particles/warchasers/frozen/ancient_apparition_ice_blast_explode.vpcf"
-			"particle"	"particles/warchasers/frozen/tusk_ice_shards_projectile.vpcf"
-			"particle"	"particles/warchasers/frozen/maiden_crystal_nova.vpcf"
-		}
-	
+		
 		"OnSpellStart"
 		{
 				"CreateThinker"
@@ -600,11 +570,11 @@
 	
 							}
 	
-												"FireSound"
-							{
-								"EffectName"	"Hero_Ancient_Apparition.IceVortexCast"
-								"Target"	"TARGET"
-							}
+							//"FireSound"
+							//{
+							//	"EffectName"	"Hero_Ancient_Apparition.IceVortexCast"
+							//	"Target"	"TARGET"
+							//}
 	
 						}
 	
@@ -788,11 +758,11 @@
 	
 		"OnSpellStart"
 		{
-				"FireSound"
-			{
-				"EffectName"	"Hero_ObsidianDestroyer.AstralImprisonment.Cast"
-				"Target"	"TARGET"
-			}
+			//"FireSound"
+			//{
+			//	"EffectName"	"Hero_ObsidianDestroyer.AstralImprisonment.Cast"
+			//	"Target"	"TARGET"
+			//}
 	
 				"ActOnTargets"
 			{
@@ -879,12 +849,6 @@
 				"slow_percentage"	"-50"
 			}
 	
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/status_fx/status_effect_legion_commander_duel.vpcf"
-			"particle"	"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
 		}
 	
 		"Modifiers"
@@ -985,13 +949,6 @@
 				"overtime_bonus_per_level"	"5"
 			}
 	
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/warchasers/molten/trail/courier_trail_lava.vpcf"
-			"particle"	"particles/warchasers/molten/explosion/terrorblade_arcana_enemy_death.vpcf"
-			"particle"	"particles/warchasers/molten/batrider_flamebreak_explosion.vpcf"
 		}
 	
 		"OnSpellStart"
@@ -1103,14 +1060,7 @@
 			}
 	
 		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear.vpcf"
-			"particle"	"particles/warchasers/nightmarish/axe_battle_hunger.vpcf"
-			"particle"	"particles/status_fx/status_effect_fiendsgrip.vpcf"
-		}
-	
+		
 		"Modifiers"
 		{
 				"modifier_nightmarish"
@@ -1198,12 +1148,6 @@
 				"damage_per_level"	"5"
 			}
 	
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/warchasers/plagued/venomancer_poison_nova.vpcf"
-			"particle"	"particles/units/heroes/hero_alchemist/alchemist_acid_spray.vpcf"
 		}
 	
 		"OnSpellStart"
@@ -1363,11 +1307,6 @@
 	
 		}
 	
-		"precache"
-		{
-			"particle"	"particles/warchasers/return/blademail.vpcf"
-		}
-	
 		"Modifiers"
 		{
 				"modifier_reflect_damage"
@@ -1399,11 +1338,6 @@
 		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"	"affix_shielding"
 		"AbilityCooldown"	"10"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"	"particles/warchasers/shielding/medusa_mana_shield.vpcf"
-		}
 	
 		"AbilitySpecial"
 		{
@@ -1423,11 +1357,11 @@
 	
 		"OnSpellStart"
 		{
-				"FireSound"
-			{
-				"EffectName"	"Hero_Medusa.ManaShield.On"
-				"Target"	"CASTER"
-			}
+			//"FireSound"
+			//{
+			//	"EffectName"	"Hero_Medusa.ManaShield.On"
+			//	"Target"	"CASTER"
+			//}
 	
 				"ApplyModifier"
 			{
@@ -1534,18 +1468,6 @@
 		"AbilityCastPoint"	"0.5"
 		"AbilityCooldown"	"20"
 		"AbilityDamage"	"60"
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-			"particle"	"particles/units/heroes/hero_ursa/ursa_earthshock_soil1.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
-			"particle"	"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
-			"particle"	"particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
-			"particle"	"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
-			"particle"	"particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
-			"particle"	"particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
-		}
 	
 		"AbilitySpecial"
 		{
@@ -1565,11 +1487,11 @@
 	
 		"OnSpellStart"
 		{
-				"FireSound"
-			{
-				"EffectName"	"Hero_Zuus.StaticField"
-				"Target"	"CASTER"
-			}
+			//"FireSound"
+			//{
+			//	"EffectName"	"Hero_Zuus.StaticField"
+			//	"Target"	"CASTER"
+			//}
 	
 				"RunScript"
 			{
@@ -1643,11 +1565,6 @@
 				"lifesteal"	"30"
 			}
 	
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
 		}
 	
 		"Modifiers"
