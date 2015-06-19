@@ -6,7 +6,7 @@
 	// General
 	//
 	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-	"Model"						"models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"	// Model.
+	"Model"						"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	// Model.
 	"ModelScale"				"1"
 	"SoundSet"					"Tower.Fire"
 	"Level"						"6"

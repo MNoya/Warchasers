@@ -41,7 +41,7 @@ function announce_level2(trigger)
 
 	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint2
 
-	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
 	FireGameEvent("show_center_message",messageinfo)
 end
 
@@ -49,7 +49,7 @@ function announce_level3(trigger)
 	EmitGlobalSound("DOTAMusic_Stinger.007")
 
 	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint3
-	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
 	FireGameEvent("show_center_message",messageinfo)
 end
 
@@ -57,7 +57,7 @@ function announce_level6(trigger)
 	EmitGlobalSound("DOTAMusic_Stinger.007")
 
 	GameRules.CURRENT_SAVEPOINT = GameRules.savepoint4
-	local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+	local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
 	FireGameEvent("show_center_message",messageinfo)
 end
 
@@ -117,7 +117,7 @@ end
 function save_frost( event )
 	local point = Entities:FindByName(nil,"savepoint_frost")
     GameRules.CURRENT_SAVEPOINT = point
-    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
     FireGameEvent("show_center_message",messageinfo)	
 end
 
@@ -186,7 +186,7 @@ function circle_zapsappers(trigger)
 
     local point = Entities:FindByName(nil,"teleport_circles_down")
     GameRules.CURRENT_SAVEPOINT = point
-    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
     FireGameEvent("show_center_message",messageinfo)
 end 
 

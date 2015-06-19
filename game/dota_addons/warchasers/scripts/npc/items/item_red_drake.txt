@@ -39,7 +39,6 @@
 				{
 					"ScriptFile"			"scripts/vscripts/items.lua"
 					"Function"			"SummonRedDrake"
-					"Target"			"POINT"
 				}
 			}
 		}

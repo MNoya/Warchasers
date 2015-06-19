@@ -1,0 +1,1011 @@
+﻿"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+		"addon_game_name"			"WARCHASERS"
+
+		"popup_title"                   "欢迎来到Warchasers"
+
+    	"popup_body"                    "<i><font size='10' face='Verdana'><b>来自传奇岁月的英雄们齐聚于此</b><br><br>选择一位来战斗以救赎他不朽的灵魂</font></i>"
+
+    	"camera_lock_on"                    "镜头锁定开启"
+    	"camera_lock_off"                    "镜头锁定关闭"
+
+		"HeavenQuestTimer"					"恢复疲劳"
+		"HellQuestTimer"					"生存%quest_current_value%秒"
+		
+		"npc_dota_hero_juggernaut"			"刀锋战狂"
+		"npc_dota_hero_chaos_knight"			"野兽骑士"
+		"npc_dota_hero_shredder"			"擎天柱"
+		"npc_dota_hero_sven"				"威震天"
+		"npc_dota_hero_razor"				"闪电幽魂"
+		"npc_dota_hero_shadow_demon"			"巫毒祭祀"
+		"npc_dota_hero_templar_assassin"		"刺客"
+		"npc_dota_hero_drow_ranger"			"蛇眼"
+		"npc_dota_hero_medusa"				"暗鳞女士" //Naga Sea Witch
+		"npc_dota_hero_phantom_assassin"	"铁鸦守卫" //Warden
+
+		"npc_dota_hero_wisp"			"Wisp"
+
+		"npc_jugg"			"刀锋战狂"
+		"npc_ck"			"野兽骑士"
+		"npc_timber"			"擎天柱"
+		"npc_sven"				"威震天"
+		"npc_razor"				"闪电幽魂"
+		"npc_sd"			"巫毒祭祀"
+		"npc_templar"		"刺客"
+		"npc_drow"			"蛇眼"
+
+		"game_mode_15_desc" 	""
+		
+		// Stat Tooltip
+
+		"DOTA_StatTooltip_StrengthBonus"	"- 每点增加生命值25\n- 每点增加生命回复0.03\n"
+		"DOTA_StatTooltip_AgilityBonus"		"- 每3点增加护甲1\n- 每点增加攻击速度2\n"
+		"DOTA_StatTooltip_IntelligenceBonus"	"- 每点增加魔法值15\n- 每点增加魔法回复0.04\n"
+		"DOTA_StatTooltip_TotalAttributesSkilled"	"属性附加: "
+		"DOTA_StatTooltip_GainPerLevel"		"- 每级获得点数: %s1\n"
+		"DOTA_StatTooltip_PrimaryBonus"	"- 每点增加伤害值1\n"
+		
+		// Chat
+		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> 阵亡了!你的灵魂已经湮灭..."
+		"DOTA_Chat_PickedUpAegis"		""
+
+		"DOTA_MiniKillcam_KilledByNeutral"	"被\n 无魂者杀死了"
+		
+		//Team strings
+		"DOTA_GoodGuys"			"英雄"
+		"DOTA_BadGuys"			"无魂者"
+		"DOTA_GoodGuysCaps"			"英雄"
+		"DOTA_BadGuysCaps"			"无魂者"
+
+		//Winner strings
+		"DOTA_Winner_GoodGuys"			"英雄胜利"
+		"DOTA_Winner_BadGuys"			"无魂者胜利"
+		"DOTA_Winner_Teamname"			"%s1胜利"
+		
+		"DOTA_Shop_Category_10"		"页 1"
+		"DOTA_Shop_Category_11"		"页 2"
+		"DOTA_Shop_Category_12"		"秘密商店"
+		
+		"DOTA_SHOP_NAME_SECRET"				"艾米的魔法商店"
+		"DOTA_SHOP_NAME_SIDE"				"大埃的店"
+		
+		"DOTA_SUBSHOP_SECRET"				"秘密商店"
+		"DOTA_SUBSHOP_SIDE_PAGE_1"			""
+		"DOTA_SUBSHOP_SIDE_PAGE_2"			""
+		
+		"DOTA_Shop_Item_Error_Need_SecretShop"	"需要秘密商店"
+		"DOTA_Shop_Item_Error_Need_SideShop"	"需要边路商店"
+		"DOTA_Shop_Item_Error_Out_of_Stock"		"道具已满"
+		"DOTA_Shop_Item_Error_Disallowed"		"该英雄不允许使用"
+		"DOTA_Shop_Item_Error_Cant_Afford"		"没有足够金币"
+		"DOTA_Shop_Item_Already_Owned"			"已经拥有"
+		"DOTA_Shop_Item_Error_Disallowed_Hero"	"该英雄不允许使用"
+
+		
+		"dota_hud_error_secret_shop_not_in_range"		"商店不在范围内"
+		"dota_hud_error_side_shop_not_in_range"			"商店不在范围内"
+		
+		"DOTA_Inventory_KDA"					"K / D / A"     // 击杀 / 死亡 / 助攻
+		"DOTA_Inventory_LHD"					"LH / D"        // 补刀 / 反补
+		
+		"Inventory_Default_Courier"				"默认信使"
+		"DOTA_Inventory_Courier_Purchaser"		"拥有者: %s1"		
+		"DOTA_Inventory_Courier_Delivery"		"信使运送道具"		
+		
+		// Scoreboard
+		"DOTA_Scoreboard_GoodGuys"				"天辉"
+		"DOTA_Scoreboard_BadGuys"				"夜魇"
+		"DOTA_Scoreboard_Header_PLAYER"			"玩家"
+		"DOTA_Scoreboard_Header_KDA"			"K / D / A"
+		"DOTA_Scoreboard_Header_Level"			"等级"
+		"DOTA_Scoreboard_Header_Gold"			"金币"
+		"DOTA_Scoreboard_Header_Battle_Level"	"等级"
+	
+		
+		// Overriden Units		
+		"npc_dota_warlock_golem_1"						"地狱火"
+		"npc_dota_warlock_golem_2"						"地狱火"
+		"npc_dota_warlock_golem_3"						"地狱火"
+		
+		"npc_dota_lycan_wolf1"							"幽灵狼"
+		"npc_dota_lycan_wolf2"							"恐怖狼"
+		"npc_dota_lycan_wolf3"							"阴影狼"
+		
+		"warchasers_beast_knight_water_elemental_1"		"水元素"
+		"warchasers_beast_knight_water_elemental_2"		"水元素"
+		"warchasers_beast_knight_water_elemental_3"		"高等水元素"
+		
+		
+		//==============================================================
+		//	Overriden Spells
+		//==============================================================
+		
+		"DOTA_Tooltip_ability_juggernaut_blade_fury"									"剑刃风暴"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_Description"						"舞起具有毁灭性力量的剑刃风暴，进入魔法免疫状态并每秒对周围地面敌人造成110伤害，持续7秒"
+
+		"DOTA_Tooltip_ability_mirana_starfall"											"星云风暴"
+		"DOTA_Tooltip_ability_mirana_starfall_Description"								"召唤多波落星伤害附近敌人，每波造成50伤害。每波间隔1.5秒"
+
+		"DOTA_Tooltip_ability_magnataur_shockwave"								"震荡波"
+		"DOTA_Tooltip_ability_magnataur_shockwave_Description"					"发出一道强力冲击波，对直线上敌人造成伤害"
+
+		"DOTA_Tooltip_ability_lycan_summon_wolves"									"野性之灵"
+		"DOTA_Tooltip_ability_lycan_summon_wolves_Description"						"召唤持续一段时间的幽灵狼与敌人战斗"
+		
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap"								"雷霆震击"
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap_Description"					"重击地面，对周围敌人造成伤害并减缓移动速度"
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap_Lore"							""
+		
+		"DOTA_Tooltip_ability_clinkz_searing_arrows"									"灼热之箭"
+		"DOTA_Tooltip_ability_clinkz_searing_arrows_Description"						"为单位的箭矢附加火焰效果带来额外伤害.\n\n不与其他法球效果叠加"
+		"DOTA_Tooltip_ability_clinkz_searing_arrows_Lore"								""
+
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos"									"地狱火"
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"从天空呼唤一个地狱火，造成地面敌人50点伤害和4秒眩晕，地狱火持续180秒"
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos_Lore"								""
+		
+		"DOTA_Tooltip_ability_lich_frost_nova"											"霜冻新星"
+		"DOTA_Tooltip_ability_lich_frost_nova_Description"								"用伤害性的寒霜爆发打击敌人，造成范围伤害并减缓速度4秒，主目标受到额外伤害。"
+		"DOTA_Tooltip_ability_lich_frost_nova_Lore"										"冰霜法师艾斯瑞恩从没忘记哪怕最简单的冰系操控咒"
+		
+		"DOTA_Tooltip_Ability_roshan_bash"					"重击"
+		"DOTA_Tooltip_Ability_roshan_bash_Description"		"英雄的攻击有概率造成25点额外伤害并眩晕对手2秒"
+		
+		"DOTA_Tooltip_ability_sven_storm_bolt"											"风暴之锤"
+		"DOTA_Tooltip_ability_sven_storm_bolt_Description"								"丢出一个魔法锤，造成伤害并眩晕目标"
+		"DOTA_Tooltip_ability_sven_storm_bolt_Lore"										""
+		
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk"							"疾风步"
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk_Lore"						""
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk_Description"				"暂时隐身，期间增加移动速度和破隐一击伤害"
+
+		"DOTA_Tooltip_ability_necronomicon_archer_mana_burn"							"法力燃烧"
+		"DOTA_Tooltip_ability_necronomicon_archer_mana_burn_Description"				"发射一束负面能量燃烧目标的魔法值，造成与燃烧魔法值等量的伤害"
+		
+		"DOTA_Tooltip_ability_harpy_storm_chain_lightning"									"连锁闪电"
+		"DOTA_Tooltip_ability_harpy_storm_chain_lightning_Description"						"召唤一束跳跃的闪电链打击敌人，伤害逐渐衰减"
+		
+		"DOTA_Tooltip_ability_enigma_midnight_pulse"									"死亡凋零"
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_Description"						"对目标范围内敌人造成每秒其最大生命值 %% 的伤害，\m也会摧毁树木"
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_Lore"								"世界的一角缓缓堕入虚空"
+		
+		//Creep skills override
+		"DOTA_Tooltip_ability_neutral_spell_immunity"										"魔法免疫"
+		"DOTA_Tooltip_ability_neutral_spell_immunity_Description"							"这个生物不受大多数魔法效果影响"
+
+		"DOTA_Tooltip_ability_slardar_bash"												"重击"
+		"DOTA_Tooltip_ability_slardar_bash_Description"									"攻击有概率造成伤害和眩晕，普通单位持续时间加倍"
+		"DOTA_Tooltip_ability_slardar_bash_Lore"										""
+						
+		"DOTA_Tooltip_ability_creep_bloodlust"				"嗜血术"
+		"DOTA_Tooltip_ability_creep_bloodlust_Description"	"增加友军的那位的攻击速度40%% 移动速度 25%%."
+					
+						
+		//==============================================================
+		//	Data Driven Skills
+		//==============================================================
+		
+		// ******************** ABILITIES ********************
+		
+		"DOTA_Tooltip_modifier_shadow_strike"                                             "暗影突袭"
+		"DOTA_Tooltip_modifier_shadow_strike_Description"                                 "减速 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_modifier_warden_crit"                                               "致命突袭"
+		"DOTA_Tooltip_modifier_warden_crit_Description"                                   "下一击造成暴击"
+
+		"DOTA_Tooltip_ability_warden_fan_of_knives"                                       "刀阵旋风"
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Description"                           "发射匕首攻击周围敌人"
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_radius"                                "范围:"
+
+		"DOTA_Tooltip_ability_warden_shadow_strike"                                       "暗影突袭"
+		"DOTA_Tooltip_ability_warden_shadow_strike_Description"                           "投掷淬毒匕首造成巨大初始伤害和持续伤害，持续时间内敌人被减速"
+		"DOTA_Tooltip_ability_warden_shadow_strike_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_duration"							  "持续时间:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_initial_damage"                        "初始伤害:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_damage_every_3sec"                     "持续伤害:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_move_speed_slow"                       "%减速:"
+
+		"DOTA_Tooltip_ability_warden_evasion"                                             "反击"
+		"DOTA_Tooltip_ability_warden_evasion_Description"                                 "英雄有机会闪躲攻击，闪避后，自身下一击可造成暴击"
+		"DOTA_Tooltip_ability_warden_evasion_Note0"                                       ""
+		"DOTA_Tooltip_ability_warden_evasion_Lore"                                        ""
+		"DOTA_Tooltip_ability_warden_evasion_dodge_chance"                                "%闪避概率:"
+		"DOTA_Tooltip_ability_warden_evasion_crit_bonus"                                  "%暴击伤害:"
+
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance"                                  "复仇天神"
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Description"                      "创造一个强大的复仇天神，可以从友军尸体召唤无敌的幽灵攻击敌人。复仇天神死亡时幽灵将会一同消失"
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Note0"                            ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Lore"                             ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_duration"                         "持续时间:"
+
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn"                           "复仇之灵"
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Description"               "从阵亡单位尸体中召唤无敌的复仇之灵，持续50秒或直到复仇天神死亡"
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Note0"                     ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Lore"                      ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_spirit_limit"              "灵魂数量限制:"
+		
+		"DOTA_Tooltip_ability_naga_healing_wave"                                          "治疗波"
+		"DOTA_Tooltip_ability_naga_healing_wave_Description"                              "发出治疗波治疗友军单位并弹射到其他友军单位，每次弹射治疗量减少"
+		"DOTA_Tooltip_ability_naga_healing_wave_Note0"                                    ""
+		"DOTA_Tooltip_ability_naga_healing_wave_Lore"                                     ""
+		"DOTA_Tooltip_ability_naga_healing_wave_healing"                                  "治疗量:"
+		"DOTA_Tooltip_ability_naga_healing_wave_max_bounces"                              "最大弹射:"
+		"DOTA_Tooltip_ability_naga_healing_wave_bounce_range"                             "弹射范围:"
+		"DOTA_Tooltip_ability_naga_healing_wave_wave_decay_percent"                       "治疗量衰减:"
+
+		"DOTA_Tooltip_ability_naga_forked_lightning"                                      "叉状闪电"
+		"DOTA_Tooltip_ability_naga_forked_lightning_Description"                          "释放锥形闪电攻击面前敌人，最多攻击3个单位"
+		"DOTA_Tooltip_ability_naga_forked_lightning_Note0"                                ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_Lore"                                 ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_max_units"                            "最大单位:"
+
+		"DOTA_Tooltip_ability_naga_black_arrow"                                           "黑暗箭"
+		"DOTA_Tooltip_ability_naga_black_arrow_Description"                               "攻击中附加额外伤害，带有黑暗箭效果的单位死亡后会变成黑暗之奴"
+		"DOTA_Tooltip_ability_naga_black_arrow_Note0"                                     ""
+		"DOTA_Tooltip_ability_naga_black_arrow_Lore"                                      ""
+		"DOTA_Tooltip_ability_naga_black_arrow_bonus_damage"                              "额外伤害:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_health"                        "奴仆生命值:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_damage"                        "奴仆攻击力:"
+
+		"DOTA_Tooltip_ability_naga_tornado"                                               "风之怒"
+		"DOTA_Tooltip_ability_naga_tornado_Description"                                   "召唤一个可控制的强烈龙卷风，减缓敌人的移动和攻击速度，随机将他们抛向空中，并伤害敌人建筑物。被抛向空中的单位无法行动但是依然能受到伤害"
+		"DOTA_Tooltip_ability_naga_tornado_Note0"                                         ""
+		"DOTA_Tooltip_ability_naga_tornado_Lore"                                          ""
+		"DOTA_Tooltip_ability_naga_tornado_duration"                                      "持续时间:"
+		"DOTA_Tooltip_ability_naga_tornado_radius"                                        "范围:"
+		"DOTA_Tooltip_ability_naga_tornado_dps_to_buildings"                              "对建筑每秒伤害:"
+		"DOTA_Tooltip_ability_naga_tornado_air_duration"                                  "飞空时间:"
+		"DOTA_Tooltip_ability_naga_tornado_attack_speed_slow"                             "攻击速度减缓:"
+		"DOTA_Tooltip_ability_naga_tornado_move_speed_slow"                               "移动速度减缓:"
+
+		"DOTA_Tooltip_ability_tornado_passive"                                            "暴风"
+		"DOTA_Tooltip_ability_tornado_passive_Description"                                "龙卷风之眼"
+		"DOTA_Tooltip_ability_tornado_passive_Note0"                                      ""
+		"DOTA_Tooltip_ability_tornado_passive_Lore"                                       ""
+		"DOTA_Tooltip_ability_tornado_passive_attack_speed_slow"                          "攻击速度减缓:"
+		"DOTA_Tooltip_ability_tornado_passive_move_speed_slow"                            "移动速度减缓 %%:"
+		"DOTA_Tooltip_ability_tornado_passive_radius"                                     "范围:"
+		"DOTA_Tooltip_ability_tornado_passive_air_duration"                               "飞空时间:"
+		"DOTA_Tooltip_ability_tornado_passive_dps_to_buildings"                           "对建筑每秒伤害:"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_tornado_debuff"                                            "龙卷风"
+		"DOTA_Tooltip_tornado_debuff_Description"                                "减少攻击和移动速度"
+		
+		//To Do: Normalize item names - creep_ and warchasers_hero
+		
+		//Creep skills	
+		"DOTA_Tooltip_ability_creep_cold_arrow"				"寒冰箭"
+		"DOTA_Tooltip_ability_creep_cold_arrow_Description"  ""
+		"DOTA_Tooltip_modifier_creep_cold_arrow_slow"			"寒冰箭减速"
+		"DOTA_Tooltip_modifier_creep_cold_arrow_slow_Description" "被减速"
+		
+		"DOTA_Tooltip_ability_creep_searing_arrow"			"灼热之箭"
+		"DOTA_Tooltip_ability_creep_searing_arrow_Description" "增加攻击伤害"
+		
+		"DOTA_Tooltip_ability_creep_inner_fire"					"心灵之火"
+		"DOTA_Tooltip_ability_creep_inner_fire_Description"		"增加友军的攻击力 10%% 和护甲 5."
+		"DOTA_Tooltip_creep_inner_fire_buff"						"心灵之火"
+		"DOTA_Tooltip_creep_inner_fire_buff_Description"			"攻击力 +10%%, 护甲 +5"
+		
+		"DOTA_Tooltip_ability_creep_curse"					"诅咒"
+		"DOTA_Tooltip_ability_creep_curse_Description"		"诅咒目标敌人，造成其33%%攻击丢失"			
+		"DOTA_Tooltip_modifier_creep_curse"						"被诅咒"
+		"DOTA_Tooltip_modifier_creep_curse_Description"			"33%% 攻击丢失"
+	
+		"DOTA_Tooltip_ability_creep_unholy_aura"				"不洁光环"
+		"DOTA_Tooltip_ability_creep_unholy_aura_Description"	"增加附近友军移动和生命恢复速度"
+		"DOTA_Tooltip_creep_unholy_aura_bonus"			"不洁光环"
+		"DOTA_Tooltip_creep_unholy_aura_bonus_Description" "增加移动和生命恢复速度"
+		
+		"DOTA_Tooltip_ability_creep_command_aura"										"命令光环"
+		"DOTA_Tooltip_ability_creep_command_aura_Description"							"增加附近友军攻击力 10%%."
+		"DOTA_Tooltip_creep_command_aura_bonus"					"命令光环"
+		"DOTA_Tooltip_creep_command_aura_bonus_Description" "增加攻击力"
+					
+		"DOTA_Tooltip_modifier_ward_health_regen"			"回复守卫"
+		"DOTA_Tooltip_modifier_ward_health_regen_Description"	"增加生命回复速度"
+		
+		//"health_fountain_aura"
+		"DOTA_Tooltip_modifier_fountain_health_regen"			"生命之泉"
+		"DOTA_Tooltip_modifier_fountain_health_regen_Description" "增加生命回复速度"
+		
+		//"mana_fountain_aura"
+		"DOTA_Tooltip_modifier_fountain_mana_regen"			"魔法之泉"
+		"DOTA_Tooltip_modifier_fountain_mana_regen_Description" "增加魔法回复速度"
+		
+		
+		"DOTA_Tooltip_ability_creep_heal"		"治疗"
+		"DOTA_Tooltip_ability_creep_heal_Description"		"治疗友军非机械单位25点生命值"		
+				
+		"DOTA_Tooltip_ability_creep_poison_attack"		"毒素攻击"
+		"DOTA_Tooltip_ability_creep_poison_attack_Description"	"造成敌人每秒4点伤害并降低其移动速度 50%% ,攻击速度 25%% ，持续5秒(英雄1秒)"
+		"DOTA_Tooltip_modifier_poison_attack_slow"		"减速"
+		"DOTA_Tooltip_modifier_poison_attack_slow_Description"		"降低 50%% 移动速度, 25% 攻击速度%"
+		
+		"DOTA_Tooltip_ability_creep_frost_breath"											"霜冻打击"
+		"DOTA_Tooltip_ability_creep_frost_breath_Description"								"巨龙可怕的吐息让敌人冷彻骨髓，附近其他敌人也不能幸免"
+		"DOTA_Tooltip_ability_creep_frost_breath_move_speed"							"%移动减速:"
+		"DOTA_Tooltip_ability_creep_frost_breath_attack_speed"							"攻击减速:"
+		"DOTA_Tooltip_ability_creep_frost_breath_duration"									"持续时间:"
+		"DOTA_Tooltip_ability_creep_frost_breath_cleave_radius"									"溅射范围:"
+
+		"DOTA_Tooltip_modifier_creep_frost_breath_slow"										"霜冻打击"
+		"DOTA_Tooltip_modifier_creep_frost_breath_slow_Description"							"移动速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% ，攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+
+		"DOTA_Tooltip_ability_warchasers_titan_reincarnation" "重生"
+		"DOTA_Tooltip_ability_warchasers_titan_reincarnation_Description"	"泰坦在死后会重生"
+		
+		"DOTA_Tooltip_ability_creep_slow"				"减速"	
+		"DOTA_Tooltip_ability_creep_slow_Description"		"减缓目标敌人攻击速度 25%% 、移动速度 60%%"
+		"DOTA_Tooltip_modifier_creep_slow"			"被减速"
+		"DOTA_Tooltip_modifier_creep_slow_Description"	"攻击速度降低 25%%, 移动速度降低 60%%"
+		
+		"DOTA_Tooltip_ability_warchasers_wizard_purge"										"净化"
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_Description"							"移除魔法效果，减缓敌人的移动速度，如果敌人是一个召唤单位或者幻象，还会受到伤害"
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_duration"								"持续时间:"
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_summon_damage"							"伤害:"
+		
+		"DOTA_Tooltip_modifier_satyr_trickster_purge"										"净化"
+		"DOTA_Tooltip_modifier_satyr_trickster_purge_Description"							"移动速度降低 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+		"DOTA_Tooltip_modifier_hell_burn"										"燃烧"
+		"DOTA_Tooltip_modifier_hell_burn_Description"							"每秒受到25伤害"
+
+
+		"DOTA_Tooltip_ability_warchasers_mana_burn"										"法力燃烧"
+		"DOTA_Tooltip_ability_warchasers_mana_burn_Description"							"发射一束负面能量燃烧目标的魔法值，造成与燃烧魔法值等量的伤害"
+		"DOTA_Tooltip_ability_warchasers_mana_burn_burn_amount"							"燃烧法力:"
+	
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation"		"献祭"
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_Description"	"英雄被火焰包围，对周围敌人造成伤害，持续消耗魔法值直到关闭技能"
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_damage_per_second"	"每秒伤害:"
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_mana_cost_per_second" "每秒耗魔:"
+		"DOTA_Tooltip_warchasers_steamtank_immolation_buff"	"燃烧"
+		"DOTA_Tooltip_warchasers_steamtank_immolation_buff_Description"	"每秒受到伤害"		
+
+		"DOTA_Tooltip_ability_final_boss_void_new"					"虚空"
+		"DOTA_Tooltip_ability_final_boss_void_new_Description"		"创造伤害性的虚空减缓敌人并造成伤害，也会打断持续施法"
+		"DOTA_Tooltip_ability_final_boss_void_new_movespeed_slow"						"%移动减速:"
+		"DOTA_Tooltip_ability_final_boss_void_new_attackspeed_slow"						"攻击减缓:"
+		"DOTA_Tooltip_modifier_void"				"虚空"
+		"DOTA_Tooltip_modifier_void_Description"	"被毁灭"
+		
+		
+		"DOTA_Tooltip_ability_final_boss_buff"			"最终救赎"
+		"DOTA_Tooltip_ability_final_boss_buff_Description" "Boss狂暴"
+		"DOTA_Tooltip_final_boss_powerup"			"最终救赎"
+		"DOTA_Tooltip_final_boss_powerup_Description" "完结它!"
+		
+		//Hero Skills
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil"				"死亡缠绕"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_Description"	"死亡缠绕可以伤害敌人有生单位或者治疗友军不死单位"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_target_damage"  "伤害:"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_heal_amount"	"治疗:"
+		
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation"				"献祭"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_Description"	"英雄被火焰包围，对周围敌人造成伤害，持续消耗魔法值直到关闭技能"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_damage_per_second"	"每秒伤害:"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_mana_cost_per_second" "每秒魔法消耗:"
+		"DOTA_Tooltip_warchasers_blade_berserker_immolation_buff"	"燃烧"
+		"DOTA_Tooltip_warchasers_blade_berserker_immolation_buff_Description" "每秒受到伤害"		
+		
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead"					"唤起死者"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_Description"		"复活区域内死亡单位为自己作战，复苏的死者是无敌的"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_duration"	"持续时间:"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_Radius"	"范围:"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_resurrections_limit"	"数量:"
+		
+		"DOTA_Tooltip_ability_tb_miniboss_animate_dead"				"唤起死者"
+		"DOTA_Tooltip_Ability_tb_miniboss_animate_dead_Description"	"唤起区域内的死者再次为无魂者而战"
+		
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb"		"流星飞射"		
+		"DOTA_Tooltip_ability_miniboss_flak"				"多重巨石"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons"	"发射骨髅"
+		"DOTA_Tooltip_ability_miniboss_barrage"				"岩石路障"
+		"DOTA_Tooltip_ability_miniboss_call_down"			"天启"
+
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb_Description"			"躲避肉球"		
+		"DOTA_Tooltip_ability_miniboss_flak_Description"				"收集岩石"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons_Description"	"阴森可怕的骷髅"
+		"DOTA_Tooltip_ability_miniboss_barrage_Description"				"凑数技能，因为我懒得再去写个自定义的了"
+		"DOTA_Tooltip_ability_miniboss_call_down_Description"			"高声呐喊，重装上阵!"
+
+		"DOTA_Tooltip_ability_warchasers_sleep"				"睡眠"
+		"DOTA_Tooltip_ability_warchasers_sleep_Description"	"让敌人睡眠，睡着的单位在被攻击后会醒来"
+		"DOTA_Tooltip_ability_warchasers_sleep_duration"	"持续时间:"
+		"DOTA_Tooltip_modifier_warchasers_sleep_debuff"		"睡眠"
+		"DOTA_Tooltip_modifier_warchasers_sleep_debuff"		"睡眠"		
+		
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura"				"吸血光环"
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura_Description"	"附近友军单位攻击时获得生命值"
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura_lifesteal"		"生命偷取:"
+		"DOTA_Tooltip_modifier_warchasers_vampiric_aura_bonus"				"吸血光环"
+		"DOTA_Tooltip_modifier_warchasers_vampiric_aura_bonus_Description"	"这个单位攻击时偷取生命值"
+		
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura"					"荆棘光环"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_Description"		"给予附近友军伤害性的护盾，反弹一部分近战伤害"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_percentage" "%伤害返还:"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_base" "基础伤害返还:"
+		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator"				"荆棘光环"
+		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator_Description"	"反弹一部分近战伤害"
+
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility"					"宁静"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_Description"		"召唤大范围的治疗之雨，每秒按照百分比治疗友军"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_duration"	"持续时间:"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_heal_percent"	"治疗百分比:"
+		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier"      "宁静"
+		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier_Description" "痊愈中"		
+		
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield"					"神圣之盾"
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield_Description"		"坚不可破的护盾，免疫一切伤害和技能，持续 %duration 秒."
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield_shield_duration"		"持续时间:"
+		"DOTA_Tooltip_warchasers_megatron_divine_shield_modifier"		"神圣之盾"
+		"DOTA_Tooltip_warchasers_megatron_divine_shield_modifier_Description" "无敌"
+				
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental"	"召唤水元素"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_Description" "召唤水元素与敌人战斗"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_duration"	"持续时间:"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_damage" "攻击力:" 
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_hit_points" "生命值:"
+					
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_avatar"					"天神下凡"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_avatar_Description"		"激活天神下凡，获得5额外护甲，500额外生命值，20额外攻击力并魔法免疫"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura"			"专注光环"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura_Description"	"给予附近友军额外护甲"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura_armor_bonus"	"护甲:"
+		"DOTA_Tooltip_warchasers_optimusprimo_avatar_modifier"		"天神下凡"
+		"DOTA_Tooltip_warchasers_optimusprimo_avatar_modifier_Description"	"改良的战斗姿态"
+		"DOTA_Tooltip_warchasers_optimusprimo_devotion_aura_armor_bonus"	"专注光环"
+		"DOTA_Tooltip_warchasers_optimusprimo_devotion_aura_armor_bonus_Description" "获得额外护甲"
+		
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle"						"根须缠绕"
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_Description"			"从地面长出根须，抓住并伤害敌人"
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_damage_per_second"	"每秒伤害:"
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_creep_duration"		"持续时间:"
+		"DOTA_Tooltip_warchasers_assassin_entangle_hero_debuff"		"缠绕"
+		"DOTA_Tooltip_warchasers_assassin_entangle_hero_debuff_Description" "无法移动，持续受到伤害"
+		"DOTA_Tooltip_warchasers_assassin_entangle_creep_debuff"		"缠绕"
+		"DOTA_Tooltip_warchasers_assassin_entangle_creep_debuff_Description" "无法移动，持续受到伤害"
+		
+		"DOTA_Tooltip_ability_warchasers_starfall"								"星云风暴"
+		"DOTA_Tooltip_ability_warchasers_starfall_Description"					"召唤多波落星伤害附近敌人，每波造成50伤害。每波间隔1.5秒"
+		"DOTA_Tooltip_fx_starfall"	"星云风暴"
+		"DOTA_Tooltip_fx_starfall_Description" "持续释放星云风暴"
+		
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm"					"火焰风暴m"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Description"		"召唤多波火焰之雨打击区域内单位，随后造成持续燃烧伤害"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Lore"				""
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_radius"			"范围:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_count"		"波数:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_damage"		"波伤害:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_damage"		"燃烧伤害:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_duration"	"燃烧时间:"
+
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows" 						"冰与火（箭）之歌"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Description"			"每次攻击燃烧或冰冻敌人，造成额外伤害或减速目标敌人的攻击和移动速度\n\n不与其他法球效果叠加"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_RangeDamage"			"<font color='#B70000'>火焰</font>额外伤害:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_slow_percentage" "<font color='#1FBCF0'>冰冻</font>攻击&移动减速:"		
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Lore"		"晨曦清冷，夏日将逝..."
+		"DOTA_Tooltip_modifier_snake_cold_arrow_slow"			"冰箭减速"
+		"DOTA_Tooltip_modifier_snake_cold_arrow_slow_Description" "减速"
+
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura"					"神圣炎霜光环"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_Description"		"切换技能，获得持续伤害敌人的攻击性光环或者使得友军在近身距离上减少敌人的攻击移动速度"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_radius"			"范围:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_fire_damage"		"<font color='#B70000'>FIRE</font> 每秒伤害:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_cold_slow"		"<font color='#1FBCF0'>COLD</font> 减速:"
+		"DOTA_Tooltip_holy_fire_aura"					"圣火光环"
+		"DOTA_Tooltip_holy_fire_aura_Description"		"持续对周围敌人造成持续伤害"
+		"DOTA_Tooltip_holy_fire_debuff"					"圣火燃烧"
+		"DOTA_Tooltip_holy_fire_debuff_Description"		"持续受到伤害"
+		"DOTA_Tooltip_holy_freeze_aura"					"圣冰光环"
+		"DOTA_Tooltip_holy_freeze_aura_Description"	"持续减速敌人"
+		"DOTA_Tooltip_holy_freeze_debuff"				"霜冻"
+		"DOTA_Tooltip_holy_freeze_debuff_Description"	"减速"
+			
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light"						"圣光"
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_Description"			"圣光治疗友军有生单位或者伤害敌军不死族\n 不能对自身释放"
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_target_damage"  "伤害:"
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_heal_amount"	"治疗:"
+
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light"						"圣光"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_Description"			"圣光治疗友军有生单位或者伤害敌军不死族\n 不能对自身释放"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_target_damage"  "伤害:"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_heal_amount"	"治疗:"
+
+		"DOTA_Tooltip_ability_warchasers_endurance_aura"				"耐久光环"
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_Description"				"增加附近友军攻击和移动速度"
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_move_speed_bonus"	"移动速度:"
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_attack_speed_bonus" "攻击速度:"
+		"DOTA_Tooltip_warchasers_endurance_aura_bonus"			"耐久光环"
+		"DOTA_Tooltip_warchasers_endurance_aura_bonus_Description" "增加攻击和移动速度"
+	
+		"DOTA_Tooltip_ability_ward_aura_health_regen"					"治疗守卫"
+		"DOTA_Tooltip_ability_ward_aura_health_regen_Description"		"治疗附近友军每秒20生命值"
+		
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura"					"辉煌光环"
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura_Description"		"给予附近友军额外魔法值回复"
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura_mana_regen"			"魔法回复奖励:"
+		"DOTA_Tooltip_warchasers_skeletorus_brilliance_aura_mana_regen"					"辉煌光环"
+		"DOTA_Tooltip_warchasers_skeletorus_brilliance_aura_mana_regen_Description"		"魔法恢复加快"
+		
+		"DOTA_Tooltip_ability_warchasers_skull_of_guldan"								"古尔丹之颅"
+		"DOTA_Tooltip_ability_warchasers_skull_of_guldan_Description"					"摧毁这个头颅给予摧毁者恶魔之力"
+		
+		"DOTA_Tooltip_ability_drop_frostmourne"											"被封印的霜之哀伤"
+		"DOTA_Tooltip_ability_drop_frostmourne_Description"								"持刃者可获永恒之力。刃光闪烁划过灵魂"
+		
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers"					"变形"
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers_Description"		"消耗古尔丹之颅的力量，获得 100%% 奖励攻击, 10%% 生命吸取但是受到每秒10伤害"
+
+		//Modifier Buffs _Description
+		"DOTA_Tooltip_modifier_warchasers_stat_rules"			"传统属性规则"
+		"DOTA_Tooltip_modifier_warchasers_stat_rules_Description" "每点力量25生命值, 每点智力15点魔法值, 每点敏捷2 AS and a 1/3 Armor per AGI"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff"				"单人增益"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_Description"	"战斗外额外回复"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_combat"				"战斗中"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_combat_Description"	"战斗中，额外回复被暂时禁止"
+		
+		// substitution for modifier tooltips
+		// %MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% - 'd' prints the value returned by the function as an integer
+		// 'd' for integer
+		// 'f' for float
+		// optional '-' to not abs() the values
+		// optional number to specify the number of decimals to print after a float
+		// eg: %-2fMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE% 
+		// use %% to draw a percentage sign
+	
+		
+		//Spawners
+		"DOTA_Tooltip_ability_spawn_murloc"			"产生鱼人追踪者"	
+		"DOTA_Tooltip_ability_spawn_gnoll"			"产生豺狼偷猎者"
+		"DOTA_Tooltip_ability_spawn_ghoul"			"产生食尸鬼"
+		"DOTA_Tooltip_ability_spawn_medium_satyr" 	"产生赛特斯"
+		"DOTA_Tooltip_ability_spawn_golem"			"产生泥潭傀儡"
+		"DOTA_Tooltip_ability_spawn_medium_murloc"	"产生鱼人猎手"
+		"DOTA_Tooltip_ability_spawn_water_elemental"	"产生水元素"
+		"DOTA_Tooltip_ability_spawn_ranged_troll"	"产生黑魔射手"
+		"DOTA_Tooltip_ability_spawn_small_sludge"	"产生淤泥战士"
+		"DOTA_Tooltip_ability_spawn_treant"			"产生堕落树人"
+		"DOTA_Tooltip_ability_spawn_burning_archer"	"产生燃烧弓箭手"
+		"DOTA_Tooltip_ability_spawn_kobold_tunneler"	"产生地穴狗头人"
+		"DOTA_Tooltip_ability_spawn_medium_sludge"	"产生淤泥投手"
+		"DOTA_Tooltip_ability_spawn_frost_archer"	"产生骷髅射手" 
+		"DOTA_Tooltip_ability_spawn_ice_priest"		"产生冰巨魔牧师"
+		"DOTA_Tooltip_ability_spawn_wizard"			"产生巫师"
+		"DOTA_Tooltip_ability_spawn_fellhound"		"产生地狱犬"
+		"DOTA_Tooltip_ability_spawn_big_sludge"		"产生淤泥怪物"
+		"DOTA_Tooltip_ability_spawn_imp"				"产生小恶魔"
+		
+		
+		
+		//==============================================================	
+		// Unit Names
+		//==============================================================
+
+		"npc_murloc_hut_a"						"豺狼人小屋"
+		"npc_murloc_hut_b"						"豺狼人小屋"
+		"npc_murloc_hut_ghouls"					"豺狼人小屋"
+		"npc_farm"								"高等精灵农场"
+		"npc_farm_smallsludges"					"高等精灵农场"
+		"npc_farm_treants"						"高等精灵农场"
+		"npc_farm_kobolds"						"高等精灵农场"
+		"npc_satyr_hut"							"冰巨魔小屋"
+		"npc_satyr_hut_golems"					"冰巨魔小屋"		
+		"npc_ziggurat"							"蛛网怪塔"
+		"npc_darktrollarcher_hut"				"黑魔小屋"
+		"npc_ziggurat_sludges"					"蛛网怪塔"
+		"npc_pedestal"							"召唤之书基座"
+		"npc_pedestal2"							"召唤之书基座"
+		"npc_barricade"							"路障"
+		"npc_murloc_elemental_hut"				"鱼人小屋"
+		"npc_murloc_elemental_hut_elem"			"鱼人小屋"
+		"npc_ice_troll_hut"						"冰巨魔小屋"
+		"npc_ice_troll_hut_priests"				"冰巨魔小屋"
+		"npc_ice_troll_hut_wizards"				"冰巨魔小屋"
+		"npc_dragon_roost"						"蓝龙巢穴"
+		"npc_magic_box"							"魔法秘藏"
+		"npc_centaur_tent"						"人马帐篷"
+		"npc_centaur_tent_sludges"				"人马帐篷"
+		"npc_harpy_nest"						"鸟人巢穴"
+		"npc_juggernaut_tower"					"破坏者"
+		"npc_elven_tower"						"高等精灵守卫塔"
+		"npc_skull"								"古尔丹之颅"
+		"npc_casket"							"霜之哀伤之匣"
+		
+		"npc_black_arrow_minion_1"               "次级黑暗之奴"
+		"npc_black_arrow_minion_2"               "黑暗之奴"
+		"npc_black_arrow_minion_3"               "高级黑暗之奴"
+		"npc_naga_tornado"                       "龙卷风"
+		"npc_avatar_of_vengeance"                "复仇天神"
+		"npc_spirit_of_vengeance"                "复仇之灵"
+
+		
+		"npc_small_murloc"						"鱼人追踪者"
+		"npc_small_murloc_a"						"鱼人追踪者"
+		"npc_small_murloc_b"						"鱼人追踪者"
+		"npc_medium_murloc"						"鱼人猎手"
+		"npc_big_murloc"						"鱼人夜行者"
+		"npc_archer_gnoll"						"豺狼偷猎者"
+		"npc_big_gnoll" 						"豺狼人先知"
+		"npc_ogre"								"食人魔战士"
+		"npc_wizard"							"流浪巫师"
+		"npc_wizard_nonspawned"					"流浪巫师"
+		"npc_small_spider"						"霜寒蜘蛛"
+		"npc_medium_spider"						"黑蜘蛛"
+		"npc_troll_priest"						"森林巨魔高等牧师"
+		"npc_water_elemental"					"狂怒元素"
+		"npc_water_elemental_nonspawned"		"狂怒元素"
+		"npc_gnoll"								"豺狼人"
+		"npc_ghoul"								"食尸鬼"
+		"npc_doom_miniboss"						"卡苏隆"
+
+		"npc_shadow_priest"						"黑魔阴影牧师"
+		"npc_medium_satyr"						"赛特斯"
+		"npc_priest"							"牧师"
+		"npc_mud_golem"  						"泥潭傀儡"
+		"npc_big_wizard"						"巫师变节者"
+		"npc_dark_troll_archer"					"黑魔"
+		"npc_forest_troll"						"森林巨魔"
+		"npc_nerubian_melee"					"蛛网怪战士"
+		"npc_nerubian_webspinner"				"蛛网怪织网者"
+
+		"npc_red_drake"							"红亚龙"
+		"npc_doom_guard_spawn"					"毁灭守卫"	
+		"npc_rock_golem_spawn"					"岩石傀儡"
+		"npc_furbolg_spawn"						"熊怪萨满长者"
+
+		"npc_pig"								"灵魂之猪"
+		"npc_ghost"								"女妖"
+		"npc_small_dragon"						"蓝幼龙"
+		"npc_soul_keeper"						"灵魂守卫"
+		"npc_cherub"							"小天使"
+		"npc_doom_guard"						"毁灭守卫"
+		"npc_imp"								"地狱恶魔"					
+		"npc_tb_miniboss"						"拉多姆"
+
+		"npc_small_sludge"						"淤泥战士"
+		"npc_kobold_tunneler"					"地穴狗头人"
+		"npc_red_lizard"						"小蜥蜴"
+		"npc_blue_lizard"						"蜥蜴长老"
+		"npc_big_wildkin"						"暴怒枭兽"
+		"npc_treant"							"堕落树人"
+		"npc_hell_spider"						"地狱蜘蛛"
+		"npc_skeleton_warrior"					"巨型骷髅战士"
+		"npc_burning_skeleton_archer"			"燃烧弓箭手"
+		"npc_skeleton_archer"					"骷髅弓箭手"
+		"npc_frost_skeleton_archer"				"骷髅射手"
+		"npc_sheep"								"羊"
+
+		"npc_wendigo"							"长者雪怪"
+		"npc_blue_drake"						"蓝亚龙"
+
+		"npc_brood"								"育母蜘蛛"
+		"npc_ice_troll_priest"					"冰魔高等牧师"
+		"npc_rock_golem"   						"岩石傀儡"
+		"npc_wildkin"							"枭兽"
+		"npc_medium_sludge"						"淤泥投手"
+		"npc_green_lizard"						"雷霆蜥蜴"
+		
+		"npc_sapper"							"晚饭"
+		"npc_roadkill_skeleton"					"路死骷髅"
+		"npc_rocknroll_steamtank"				"摇滚蒸汽坦克"
+		"npc_kitt_steamtank"					"蒸汽坦克"
+		"npc_health_fountain"					"生命之泉"
+		"npc_mana_fountain"						"魔法之泉"
+
+		"npc_necromancer"						"死灵法师"
+		"npc_big_necromancer"					"死灵法师"
+		"npc_big_sludge"						"淤泥怪物"
+		"npc_fellhound"							"地狱犬"
+		"npc_titan"								"泰坦骷髅"
+		"npc_titan_reincarnate"								"泰坦骷髅"
+		"npc_medium_satyr_range"				"赛特斯黑暗舞者"
+		"npc_furbolg"							"熊怪萨满长者"
+		"npc_big_satyr"							"赛特斯地狱使者"
+		"npc_soul_smasher"						"灵魂重击者"
+		"npc_infernal"							"地狱火"
+		"npc_boss"								"夏克幸 德雷克姆"
+
+
+		// Creature Ability Names
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					"治疗光环"
+
+		// Hero Abilities
+		
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					""			
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Description"		""
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Note0"			  	"等级 1 -.\n等级 2 - .\n等级 3 - ."
+		
+		//==============================================================
+		//	Items
+		//==============================================================
+		
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)"                 	  	""
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Description"         	""
+		
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Lore"                	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Note0"               	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_(AbilitySpecial field_name)"        ":"
+		
+		//书
+		"DOTA_Tooltip_ability_item_tome_of_health"                 	  			"生命之书"
+		"DOTA_Tooltip_ability_item_tome_of_health_Description"         			"使用后永久增加英雄50点生命值"
+		"DOTA_Tooltip_tome_health_modifier"	"额外生命值"
+		"DOTA_Tooltip_tome_health_modifier_Description"	"从书中额外获得的 %dMODIFIER_PROPERTY_HEALTH_BONUS% 点生命值"
+
+		
+		"DOTA_Tooltip_ability_item_tome_of_strength"                 			"力量之书"
+		"DOTA_Tooltip_ability_item_tome_of_strength_Description"        		"使用后永久增加英雄1点力量"
+		"DOTA_Tooltip_tome_strenght_modifier"	"额外力量"
+		"DOTA_Tooltip_tome_strenght_modifier_Description"	"从书中额外获得的 %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% 点力量"
+
+		"DOTA_Tooltip_ability_item_tome_of_agility"                 			"敏捷之书"
+		"DOTA_Tooltip_ability_item_tome_of_agility_Description"         		"使用后永久增加英雄1点敏捷"
+		"DOTA_Tooltip_tome_agility_modifier"	"额外敏捷"
+		"DOTA_Tooltip_tome_agility_modifier_Description"	"从书中额外获得的 %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% 点敏捷"
+
+
+		"DOTA_Tooltip_ability_item_tome_of_intellect"                 	  		"智力之书"
+		"DOTA_Tooltip_ability_item_tome_of_intellect_Description"         		"使用后永久增加英雄1点智力"
+		"DOTA_Tooltip_tome_intelect_modifier"	"额外智力"
+		"DOTA_Tooltip_tome_intelect_modifier_Description"	"从书中额外获得的 %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% 点智力"
+
+		"DOTA_Tooltip_ability_item_tome_of_knowledge"                 	  			"知识之书"
+		"DOTA_Tooltip_ability_item_tome_of_knowledge_Description"         			"使用后永久增加英雄1点全属性"
+		
+		"DOTA_Tooltip_ability_item_tome_of_strength_2"                 			"力量之书+2"
+		"DOTA_Tooltip_ability_item_tome_of_strength_2_Description"        		"使用后永久增加英雄2点力量"
+	
+		"DOTA_Tooltip_ability_item_tome_of_agility_2"                 			"敏捷之书+2"
+		"DOTA_Tooltip_ability_item_tome_of_agility_2_Description"         		"使用后永久增加英雄2点敏捷"
+		
+		"DOTA_Tooltip_ability_item_tome_of_intellect_2"                 	  		"智力之书+2"
+		"DOTA_Tooltip_ability_item_tome_of_intellect_2_Description"         		"使用后永久增加英雄2点智力"
+
+		
+		//血蓝上限牌 & 药水
+        "DOTA_Tooltip_ability_item_health_stone_potion"								"生命之石"
+		"DOTA_Tooltip_ability_item_health_stone_potion_Description"					"装备后增加英雄生命回复速率,也可以一次性使用来回复英雄500点生命值"
+		
+        "DOTA_Tooltip_ability_item_mana_stone_potion"									"魔法之石"
+		"DOTA_Tooltip_ability_item_mana_stone_potion_Description"						"装备后增加英雄魔法回复速率,也可以一次性使用来回复英雄300点魔法值"
+		
+        "DOTA_Tooltip_ability_item_mana_pendant"								"法力垂饰"
+		"DOTA_Tooltip_ability_item_mana_pendant_Description"					"装备后增加英雄150点魔法值"
+		
+        "DOTA_Tooltip_ability_item_vitality_pendant"							"活力垂饰"
+		"DOTA_Tooltip_ability_item_vitality_pendant_Description"				"装备后增加英雄150点生命值"
+		
+        "DOTA_Tooltip_ability_item_potion_of_healing"							"治疗药剂"
+		"DOTA_Tooltip_ability_item_potion_of_healing_Description"				"使用后回复英雄250点生命值"
+		
+		"DOTA_Tooltip_ability_item_potion_of_great_healing"						"大型治疗药剂"
+		"DOTA_Tooltip_ability_item_potion_of_great_healing_Description"			"使用后回复英雄500点生命值"
+        
+		"DOTA_Tooltip_ability_item_potion_of_mana"							"法力药剂"
+		"DOTA_Tooltip_ability_item_potion_of_mana_Description"				"使用后回复英雄150点魔法值."
+		
+		"DOTA_Tooltip_ability_item_potion_of_great_mana"						"大型法力药剂"
+		"DOTA_Tooltip_ability_item_potion_of_great_mana_Description"			"使用后回复英雄300点魔法值"
+		
+		"DOTA_Tooltip_ability_item_potion_of_restoration"						"回复药剂"
+		"DOTA_Tooltip_ability_item_potion_of_restoration_Description"			"使用后回复英雄500点生命值以及200点法力值"
+		
+		"DOTA_Tooltip_ability_item_potion_of_invulnerability"					"无敌药剂"
+		"DOTA_Tooltip_ability_item_potion_of_invulnerability_Description"			"使用后让你的英雄进入无敌状态,持续7秒"
+				//自身BUFF型
+		"DOTA_Tooltip_item_divine_shield_modifier"					"圣盾"
+		"DOTA_Tooltip_item_divine_shield_modifier_Description"		"无敌"
+		
+		//普通掉落
+        "DOTA_Tooltip_ability_item_cloak_of_shadows"							"影子风衣"
+		"DOTA_Tooltip_ability_item_cloak_of_shadows_Description"				"使英雄具有隐形的能力,破隐一击会额外造成100点伤害以及4点减甲效果.英雄移动,攻击,使用技能或施法均会打破隐身效果."
+        "DOTA_Tooltip_ability_item_mantle_3"									"智力斗篷 +3"
+        "DOTA_Tooltip_ability_item_mantle_3_Description"						"装备后增加英雄3点智力
+        "DOTA_Tooltip_ability_item_slippers_3"									"敏捷便鞋 +3"	
+        "DOTA_Tooltip_ability_item_slippers_3_Description"						"装备后增加英雄3点敏捷"	
+        "DOTA_Tooltip_ability_item_botas"										"速度之靴"
+		"DOTA_Tooltip_ability_item_botas_Description"							"装备后增加英雄移动速度"
+        "DOTA_Tooltip_ability_item_rop_2"										"守护指环 +2"
+        "DOTA_Tooltip_ability_item_rop_2_Description"							"装备后增加英雄2点护甲"
+        "DOTA_Tooltip_ability_item_sobi"										"贤者面具"
+		"DOTA_Tooltip_ability_item_sobi_Description"							"装备后增加英雄魔法回复速率"
+		"DOTA_Tooltip_ability_item_circlet_2"									"贵族圆环"	
+        "DOTA_Tooltip_ability_item_circlet_2_Description"						"装备后增加英雄2点全属性"	
+				
+		//钥匙
+        "DOTA_Tooltip_ability_item_key1"										"月之匙"
+		"DOTA_Tooltip_ability_item_key1_Description"							"这个钥匙闪烁着微弱的光辉"
+        "DOTA_Tooltip_ability_item_key2"										"月之匙"
+		"DOTA_Tooltip_ability_item_key2_Description"							"这个钥匙闪烁着微弱的光辉"
+		"DOTA_Tooltip_ability_item_key3"										"日之匙"
+		"DOTA_Tooltip_ability_item_key3_Description"							"这个钥匙闪耀着强烈的光芒"
+				
+		//召唤物
+        "DOTA_Tooltip_ability_item_book_of_the_dead" 							"死亡之书"
+		"DOTA_Tooltip_ability_item_book_of_the_dead_Description"				"召唤4个骷髅战士和4个骷髅射手为你战斗,持续120秒."
+		
+        "DOTA_Tooltip_ability_item_demonic_figurine" 							"恶魔雕像"
+		"DOTA_Tooltip_ability_item_demonic_figurine_Description"				"召唤1个末日守卫为你战斗,持续180秒"
+        
+		"DOTA_Tooltip_ability_item_wand_of_illusion"							"幻象权杖"
+		"DOTA_Tooltip_ability_item_wand_of_illusion_Description" 				"使用后创造目标的2个幻象,幻象不会造成伤害,且受到双倍伤害.当生命值为0或持续60秒之后,幻象会消失.你不能创造敌方单位的幻象."
+        
+		"DOTA_Tooltip_ability_item_red_drake"       							"红龙之卵"
+		"DOTA_Tooltip_ability_item_red_drake_Description"  						"召唤一个红龙为你战斗,持续180秒"
+        
+		"DOTA_Tooltip_ability_item_spiked_collar" 								"长钉衣领"
+		"DOTA_Tooltip_ability_item_spiked_collar_Description"					"召唤一个邪恶漫步者为你战斗,持续180秒"
+        
+		"DOTA_Tooltip_ability_item_stone_token"  								"岩石印记"
+		"DOTA_Tooltip_ability_item_stone_token_Description"						"召唤一个岩石傀儡为你战斗,持续180秒"
+        
+		"DOTA_Tooltip_ability_item_talisman_of_the_wild" 						"野性挂件"
+		"DOTA_Tooltip_ability_item_talisman_of_the_wild_Description"			"这块神秘的石头会召唤一个熊战士为你战斗,持续180秒"
+		
+		//神秘
+
+		"DOTA_Tooltip_ability_item_khadgars_gem"								"生命宝石"
+		"DOTA_Tooltip_ability_item_khadgars_gem_Description"					"装备后增加英雄300点生命值"		
+		
+		"DOTA_Tooltip_ability_item_bone_chimes"								"天灾骨钟"
+		"DOTA_Tooltip_ability_item_bone_chimes_Description"					"使英雄以及其附近的单位在造成伤害的同时,将自己15%的普通攻击伤害转化为自己的生命值\n不与吸血光环叠加"
+			//光环
+		"DOTA_Tooltip_warchasers_vampiric_aura_bonus"						"吸血光环"
+		"DOTA_Tooltip_warchasers_vampiric_aura_bonus_Description"			"这个单位受到吸血光环的影响,将在攻击时回复自身的生命值"
+		
+		"DOTA_Tooltip_ability_item_allerias_flute"								"精准之笛"
+		"DOTA_Tooltip_ability_item_allerias_flute_Description"					"增加附近单位 10%% 的攻击力"
+			//光环
+		"DOTA_Tooltip_flute_aura"										"精准光环"
+		"DOTA_Tooltip_flute_aura_Description"							"这个单位受到精准光环的影响,攻击力得到了提升"
+					
+		"DOTA_Tooltip_ability_item_stormwind_horn"								"风暴之角"
+		"DOTA_Tooltip_ability_item_stormwind_horn_Description"					"增加英雄以及其附近单位1点的护甲"
+			//光环
+		"DOTA_Tooltip_horn_aura_armor"											"专注光环"
+		"DOTA_Tooltip_horn_aura_armor_Description"								"这个单位受到专注光环的影响,护甲得到了提升"
+		
+		
+		"DOTA_Tooltip_ability_item_evasion"										"闪避护符"
+		"DOTA_Tooltip_ability_item_evasion_Description" 						"给予英雄15%的几率闪避敌人的攻击"
+		
+		//法球
+        "DOTA_Tooltip_ability_item_orb_of_frost"								"霜冻之球"
+		"DOTA_Tooltip_ability_item_orb_of_frost_Description"					"装备后增加英雄6点的攻击力.普通攻击还会在3秒之内降低敌人的攻击速度和移动速度."
+        
+		"DOTA_Tooltip_ability_item_orb_of_fire"									"火焰之球"
+		"DOTA_Tooltip_ability_item_orb_of_fire_Description"						"装备后增加英雄5点的攻击力.普通攻击还会对其周围单位造成溅射伤害."
+		
+		"DOTA_Tooltip_ability_item_ublink"									"绝闪-千考"
+		"DOTA_Tooltip_ability_item_ublink_Description"						"眨眼之间 你已不见"
+
+		"DOTA_Tooltip_ability_item_frostmourne"									"霜之哀伤"
+		"DOTA_Tooltip_ability_item_frostmourne_Description"						"主动: 霜之饥渴 - 汲取目标单位,对其造成相当于其最大生命值15%%的伤害,并回复自身等量生命值.此外,你还会在3秒之内偷取目标30%移动速度.\n被动: 普通攻击额外造成造成目标当前生命值5%%的伤害."
+		"DOTA_Tooltip_ability_item_frostmourne_Lore"							"向新王致敬，宝贝!"
+		"DOTA_Tooltip_ability_item_frostmourne_Note0"								"手持霜之哀伤的人,将会成为新的巫妖王."
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_lifesteal"							"%吸血:"	
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"						"+$攻击力"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_attack_speed"					"+$攻击速度"		
+		"DOTA_Tooltip_modifier_frostmourne"										"持有霜之哀伤"
+		"DOTA_Tooltip_modifier_frostmourne_Description"										"新的巫妖王"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff"						"霜之饥渴"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff_Description"					"移动速度提升 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff"						"霜之饥渴"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff_Description"					"减速 30%%"
+		
+		// 添加条目来创建新的变量属性(例如生命值
+		"dota_ability_variable_health"			"生命值"					// $生命值
+		"dota_ability_variable_mana"			"魔法值"						// $魔法值
+		"dota_ability_variable_armor"			"护甲"						// $护甲
+		"dota_ability_variable_damage"			"攻击"					// $攻击
+		"dota_ability_variable_str"				"力量"					// $力
+		"dota_ability_variable_int"				"智力"					// $智
+		"dota_ability_variable_agi"				"敏捷"					// $敏
+		"dota_ability_variable_all"				"全属性"			// $全
+		"dota_ability_variable_attack"			"攻击速度"				// $攻速
+		"dota_ability_variable_hp_regen"		"生命回复速率"			// $回血
+		"dota_ability_variable_mana_regen"		"魔法回复速率"			// $回蓝
+		"dota_ability_variable_move_speed"		"移动速度"			// $移速	
+		"dota_ability_variable_evasion"			"闪避"					// $闪避
+		"dota_ability_variable_spell_resist"	"法术抗性"			// $魔抗
+		"dota_ability_variable_selected_attrib"	"选定属性"		// $选定属性
+		
+		//商店1号
+        "DOTA_Tooltip_ability_item_ankh"										"重生十字章"
+		"DOTA_Tooltip_ability_item_ankh_Description"							"自动复活死去的英雄,复活后的英雄将具有500点生命值"
+        
+		"DOTA_Tooltip_ability_item_healing_wards"								"治疗守卫"
+		"DOTA_Tooltip_ability_item_healing_wards_Description"					"放置一个守卫来治疗附近友方单位,持续20秒"
+        
+		"DOTA_Tooltip_ability_item_cloak_of_flames"								"火焰风衣"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_Description"					"使英雄包裹在火焰之中,对周围的敌人每秒造成10点伤害"
+			//Self buff, check if it's working else rewrite datadriven
+		
+		"DOTA_Tooltip_ability_item_scepter_of_mastery"							"神圣权杖"
+		"DOTA_Tooltip_ability_item_scepter_of_mastery_Description"				"对目标单位使用,将其控制权永久转移至此权杖拥有者.不能转化英雄单位以及5级以上的生物."
+		"DOTA_Tooltip_item_scepter_of_mastery_dominate_modifier"				"支配"
+        
+		"DOTA_Tooltip_ability_item_mask_of_death"								"死亡面具"
+		"DOTA_Tooltip_ability_item_mask_of_death_Description"					"装备后使英雄的普通攻击附加30%%的吸血."
+												
+		"DOTA_Tooltip_ability_item_gauntlets_3"									"力量拳套 +3"
+		"DOTA_Tooltip_ability_item_gauntlets_3_Description"						"装备后增加3英雄3点力量"
+        
+		"DOTA_Tooltip_ability_item_claws_3"										"攻击之爪 +3"
+		"DOTA_Tooltip_ability_item_claws_3_Description"							"装备后增加英雄3点攻击"
+		
+		//商店2号
+        
+		"DOTA_Tooltip_ability_item_inferno_stone"								"地狱火岩"
+        "DOTA_Tooltip_ability_item_inferno_stone_Description"					"呼唤一个从天而降的地狱火,落地时对区域内敌方单位造成50点伤害以及4秒眩晕.地狱火持续180秒."
+			
+		"DOTA_Tooltip_ability_item_spell_immunity"								"魔免项链"
+        "DOTA_Tooltip_ability_item_spell_immunity_Description"					"使你的英雄对魔法免疫"
+			//自身隐藏buff
+		
+		"DOTA_Tooltip_ability_item_battle_drums"								"鼓舞战鼓"
+        "DOTA_Tooltip_ability_item_battle_drums_Description"					"增加附近友方单位10%%的攻击力"
+			//Aura from drums, rewrite this later
+		"DOTA_Tooltip_modifier_item_ancient_janggo_aura"						"命令光环"
+		"DOTA_Tooltip_modifier_item_ancient_janggo_aura_effect"					"命令光环"
+		"DOTA_Tooltip_modifier_item_ancient_janggo_aura_effect_Description"	"这个单位受到命令光环的影响,攻击力得到了提升"
+		
+		"DOTA_Tooltip_ability_item_restoration_scroll"							"回复卷轴"
+        "DOTA_Tooltip_ability_item_restoration_scroll_Description"				"使用后回复英雄及附近友方非机械单300点生命值以及150点魔法值."
+        
+		"DOTA_Tooltip_ability_item_claws_9"										"攻击之爪 +9"
+        "DOTA_Tooltip_ability_item_claws_9_Description"							"装备后增加英雄9点攻击"
+        
+		"DOTA_Tooltip_ability_item_robe_6"										"法师长袍 +6"
+        "DOTA_Tooltip_ability_item_robe_6_Description"							"装备后增加英雄6点智力"
+        
+		"DOTA_Tooltip_ability_item_ror_2"										"回复指环 +2"
+		"DOTA_Tooltip_ability_item_ror_2_Description"							"装备后增加英雄生命回复速率"
+
+		"DOTA_Tooltip_ability_item_shield_amulet"							"法术护符"
+		"DOTA_Tooltip_ability_item_shield_amulet_Description"				"每隔40秒就能阻挡一次由敌方单位所释放的技能"
+		
+		"DOTA_Tooltip_ability_item_runed_bracers"							"符文护腕"	
+		"DOTA_Tooltip_ability_item_runed_bracers_Description"				"减少33%%英雄收到的魔法伤害."
+			
+		"DOTA_Tooltip_ability_item_belt_6"									"巨人力量腰带 +6"
+		"DOTA_Tooltip_ability_item_belt_6_Description"						"装备后增加英雄6点力量"
+	
+		"DOTA_Tooltip_ability_item_claws_6"									"攻击之爪 +6"					
+		"DOTA_Tooltip_ability_item_claws_6_Description"						"装备后增加英雄6点攻击"
+		
+		"DOTA_Tooltip_ability_item_claws_12"								"攻击之爪 +12"
+		"DOTA_Tooltip_ability_item_claws_12_Description"					"装备后增加英雄12点攻击"
+		
+		"DOTA_Tooltip_ability_item_boots_6"									"奎尔萨拉斯之靴 +6"
+		"DOTA_Tooltip_ability_item_boots_6_Description"						"装备后增加英雄6点敏捷"
+		
+		"DOTA_Tooltip_ability_item_rop_4"									"守护指环 +4"
+		"DOTA_Tooltip_ability_item_rop_4_Description"						"装备后增加英雄4点护甲"
+		
+		"DOTA_Tooltip_ability_item_mana_gem"								"胡来的洞察宝石"
+		"DOTA_Tooltip_ability_item_mana_gem_Description"					"装备后增加英雄300点魔法值"
+		
+		"DOTA_Tooltip_ability_item_gloves_15"								"加速手套"
+		"DOTA_Tooltip_ability_item_gloves_15_Description"					"装备后增加英雄15%%攻击速度" 	
+		
+		//New Items
+		"DOTA_Tooltip_ability_item_lightning_shield"						"闪电权杖"
+		"DOTA_Tooltip_ability_item_lightning_shield_Description"			"使英雄能在目标单位上施放一个闪电护盾,持续对其周围单位造成伤害." 	
+			//自身buff
+		"DOTA_Tooltip_lightning_shield_buff"								"闪电盾"
+		"DOTA_Tooltip_lightning_shield_buff_Description"					"对周围单位造成伤害"
+		
+	}
+}
+

@@ -1,7 +1,7 @@
 -- dota_launch_custom_game warchasers warchasers
 
 
-WARCHASERS_VERSION = "1.3.0" -- Reborn
+WARCHASERS_VERSION = "1.3.1" -- Reborn
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1

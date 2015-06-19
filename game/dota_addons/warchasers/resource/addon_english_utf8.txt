@@ -1,0 +1,1258 @@
+﻿"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+		"addon_game_name"			"Warchasers"
+
+		"popup_title"                   "Welcome to Warchasers"
+	
+    	"popup_body"                    "<i><font size='10' face='Verdana'><b>These are the Heroes from The Age of Legends</b><br><br>Choose one and fight to redeem their eternal soul.</font></i>"
+
+		"DOTA_Chat_NoBattlePoints_WrongLobby"	""//"Battle Points will not be awarded for this match because it is a practice lobby."
+		"Dota_shared_content_available"			""//"Players are sharing items in the Shared Content tab."
+		
+    	"camera_lock_on"                    "Camera Lock ON"
+    	"camera_lock_off"                    "Camera Lock OFF"
+
+		"warchasers_play_again"			"Resurrect at latest check point?"
+		
+		"select_difficulty"				 "SELECT DIFFICULTY"
+		"difficulty0"                    "Normal"
+		"difficulty1"                    "Ascendant"
+		"difficulty2"                    "Elder"
+		"difficulty3"                    "Mythical"
+		"difficulty4"                    "Legendary"
+		
+		"difficulty_text"				"Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities\n"
+		"difficulty0_text"				"This is the Classic difficulty baseline\n"
+		"difficulty1_text"				"An Advanced Challenge\nWatch your step!"
+		"difficulty2_text"				"An Heroic Challenge\nDon't try this alone or without experience"
+		"difficulty3_text"				"A Brutal Quest\nYou asked for it"
+		"difficulty4_text"				"The Ultimate Difficulty\nOnly recommended for players with previous experience"
+		
+		"vote_difficulty"				"VOTE DIFFICULTY"
+		
+		"HeavenQuestTimer"					"Rest your weary vessels"
+		"HellQuestTimer"					"Survive for %quest_current_value% seconds"
+		
+		"npc_dota_hero_juggernaut"			"Blade Berserker"
+		"npc_dota_hero_chaos_knight"			"Beast Knight"
+		"npc_dota_hero_shredder"			"Optimus Primo"
+		"npc_dota_hero_sven"				"Megotron X"
+		"npc_dota_hero_razor"				"Skeletorus"
+		"npc_dota_hero_shadow_demon"			"Mumm'Rah"
+		"npc_dota_hero_templar_assassin"		"Assassin"
+		"npc_dota_hero_drow_ranger"			"Snake Ayes"
+		"npc_dota_hero_medusa"				"Lady Darkscale" //Naga Sea Witch
+		"npc_dota_hero_phantom_assassin"	"Iron Raven" //Warden
+
+		"npc_dota_hero_wisp"			"Wisp"
+
+		"npc_jugg"			"Blade Berserker"
+		"npc_ck"			"Beast Knight"
+		"npc_timber"			"Optimus Primo"
+		"npc_sven"				"Megotron X"
+		"npc_razor"				"Skeletorus"
+		"npc_sd"			"Mumm'Rah"
+		"npc_templar"		"Assassin"
+		"npc_drow"			"Snake Ayes"
+
+		"game_mode_15_desc" 	""
+		
+		// Stat Tooltip
+
+		"DOTA_StatTooltip_StrengthBonus"	"- Each point increases hit points by 25\n- Each point increases hit point regen by 0.03\n"
+		"DOTA_StatTooltip_AgilityBonus"		"- Every 3 points increase armor by 1\n- Each point increases attack speed by 2\n"
+		"DOTA_StatTooltip_IntelligenceBonus"	"- Each point increases mana by 15\n- Each point increases mana regen by 0.04\n"
+		"DOTA_StatTooltip_TotalAttributesSkilled"	"Attributes Level: "
+		"DOTA_StatTooltip_GainPerLevel"		"- Points gained per Hero level: %s1\n"
+		"DOTA_StatTooltip_PrimaryBonus"	"- Each point increases damage by 1\n"
+		
+		// Chat
+		"DOTA_Chat_PlayerKilledGeneric" "<font color='#386BE8'>%s1</font> is dead!"
+		"DOTA_Chat_PickedUpAegis"		""
+
+		"DOTA_MiniKillcam_KilledByNeutral"	"KILLED BY\n THE SOULLESS"
+		
+		//Team strings
+		"DOTA_GoodGuys"			"HEROES"
+		"DOTA_BadGuys"			"SOULLESS"
+		"DOTA_GoodGuysCaps"			"HEROES"
+		"DOTA_BadGuysCaps"			"SOULLESS"
+
+		//Winner strings
+		"DOTA_Winner_GoodGuys"			"Heroes Victory"
+		"DOTA_Winner_BadGuys"			"Soulless Victory"
+		"DOTA_Winner_Teamname"			"%s1 Victory"
+		
+		"DOTA_Shop_Category_10"		"PAGE 1"
+		"DOTA_Shop_Category_11"		"PAGE 2"
+		"DOTA_Shop_Category_12"		"SECRET SHOP"
+		
+		"DOTA_SHOP_NAME_SECRET"				"Amy's Magical Shoppe"
+		"DOTA_SHOP_NAME_SIDE"				"Big Al's Shop"
+		
+		"DOTA_SUBSHOP_SECRET"				"Secret Shop"
+		"DOTA_SUBSHOP_SIDE_PAGE_1"			""
+		"DOTA_SUBSHOP_SIDE_PAGE_2"			""
+		
+		"DOTA_No_Courier"		""	// A courier does not exist
+		"dota_hud_error_tutorial_shop_not_in_range"		"No Shop In Range"
+		
+		"DOTA_Shop_Item_Error_Need_SecretShop"	"Requires Secret Shop"
+		"DOTA_Shop_Item_Error_Need_SideShop"	"Requires Side Shop"
+		"DOTA_Shop_Item_Error_Out_of_Stock"		"Item is out of Stock"
+		"DOTA_Shop_Item_Error_Disallowed"		"Disallowed for this Hero"
+		"DOTA_Shop_Item_Error_Cant_Afford"		"Not Enough Gold"
+		"DOTA_Shop_Item_Already_Owned"			"Already Owned"
+		"DOTA_Shop_Item_Error_Disallowed_Hero"	"Disallowed for this Hero"
+
+		
+		"dota_hud_error_secret_shop_not_in_range"		"Shop Not In Range"
+		"dota_hud_error_side_shop_not_in_range"			"Shop Not In Range"
+		
+		"DOTA_Inventory_KDA"					"K / D / A"     // kills / deaths / assists
+		"DOTA_Inventory_LHD"					"LH / D"        // last hits / denies
+		
+		"Inventory_Default_Courier"				"Default Courier"
+		"DOTA_Inventory_Courier_Purchaser"		"Owned By: %s1"		
+		"DOTA_Inventory_Courier_Delivery"		"Courier Deliver Items"		
+		
+		// Scoreboard
+		"DOTA_Scoreboard_GoodGuys"				"THE RADIANT"
+		"DOTA_Scoreboard_BadGuys"				"THE DIRE"
+		"DOTA_Scoreboard_Header_PLAYER"			"PLAYER"
+		"DOTA_Scoreboard_Header_KDA"			"K / D / A"
+		"DOTA_Scoreboard_Header_Level"			"LEVEL"
+		"DOTA_Scoreboard_Header_Gold"			"GOLD"
+		"DOTA_Scoreboard_Header_Battle_Level"	"LEVEL"
+	
+		
+		// Overriden Units		
+		"npc_dota_warlock_golem_1"						"Infernal"
+		"npc_dota_warlock_golem_2"						"Infernal"
+		"npc_dota_warlock_golem_3"						"Infernal"
+		
+		"npc_dota_lycan_wolf1"							"Spirit Wolf"
+		"npc_dota_lycan_wolf2"							"Dire Wolf"
+		"npc_dota_lycan_wolf3"							"Shadow Wolf"
+		
+		"warchasers_beast_knight_water_elemental_1"		"Water Elemental"
+		"warchasers_beast_knight_water_elemental_2"		"Water Elemental"
+		"warchasers_beast_knight_water_elemental_3"		"Great Water Elemental"
+		
+		
+		//==============================================================
+		//	Overriden Spells
+		//==============================================================
+		
+		"DOTA_Tooltip_ability_juggernaut_blade_fury"									"Bladestorm"
+		"DOTA_Tooltip_ability_juggernaut_blade_fury_Description"						"Causes a bladestorm of destructive force around the Blademaster, rendering him immune to magic and dealing 110 damage per second to nearby enemy land units. Last 7 seconds."
+
+		"DOTA_Tooltip_ability_mirana_starfall"											"Starstorm"
+		"DOTA_Tooltip_ability_mirana_starfall_Description"								"Calls down waves of falling stars that damage nearby enemy units. Each wave deals 50 damage. The time between waves is 1.5 seconds."
+
+		"DOTA_Tooltip_ability_magnataur_shockwave"								"Shock Wave"
+		"DOTA_Tooltip_ability_magnataur_shockwave_Description"					"A wave of force that ripples out from the Hero, causing damage to land units in a line."
+
+		"DOTA_Tooltip_ability_lycan_summon_wolves"									"Feral Spirit"
+		"DOTA_Tooltip_ability_lycan_summon_wolves_Description"						"Summons Spirit Wolves to fight enemies for a limited time."
+		
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap"								"Thunder Clap"
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap_Description"					"Slams the ground, dealing damage and slowing the movement speed and attack rate of nearby enemy land units."
+		"DOTA_Tooltip_ability_brewmaster_thunder_clap_Lore"							""
+		
+		"DOTA_Tooltip_ability_clinkz_searing_arrows"									"Searing Arrows"
+		"DOTA_Tooltip_ability_clinkz_searing_arrows_Description"						"Imbues this unit's arrows with fire for extra damage.\n\nDoes not stack with other Orb Effects."
+		"DOTA_Tooltip_ability_clinkz_searing_arrows_Lore"								""
+
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos"									"Inferno"
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"Calls an Infernal down from the sky, dealing 50 damage and stunning enemy land units for 4 seconds in an area. The Infernal lasts 180 seconds."
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos_Lore"								""
+		
+		"DOTA_Tooltip_ability_lich_frost_nova"											"Frost Nova"
+		"DOTA_Tooltip_ability_lich_frost_nova_Description"								"Blasts the target enemy unit with damaging frost, dealing area damage and slowing movement and attack rates for 4 seconds.  The primary target takes the most damage."
+		"DOTA_Tooltip_ability_lich_frost_nova_Lore"										"Frost-mage Ethreain has not forgotten even the simplest of ice manipulation."
+		
+		"DOTA_Tooltip_Ability_roshan_bash"					"Bash"
+		"DOTA_Tooltip_Ability_roshan_bash_Description"		"Gives a chance that Hero's attack will do 25 bonus damage and stun his opponent for 2 seconds"
+		
+		"DOTA_Tooltip_ability_sven_storm_bolt"											"Storm Hammer"
+		"DOTA_Tooltip_ability_sven_storm_bolt_Description"								"A magical hammer that is thrown at an enemy unit, causing damage and stunning the target."
+		"DOTA_Tooltip_ability_sven_storm_bolt_Lore"										""
+		
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk"							"Wind Walk"
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk_Lore"						""
+		"DOTA_Tooltip_ability_brewmaster_storm_wind_walk_Description"				"Provides temporary invisibility.  Bonus movement speed and attack damage when invisible."
+
+		"DOTA_Tooltip_ability_necronomicon_archer_mana_burn"							"Mana Burn"
+		"DOTA_Tooltip_ability_necronomicon_archer_mana_burn_Description"				"Sends a bolt of negative energy that burns a target enemy unit's mana. Burned mana combusts, dealing damage to the target equal the mana burned."
+		
+		"DOTA_Tooltip_ability_harpy_storm_chain_lightning"									"Chain Lightning"
+		"DOTA_Tooltip_ability_harpy_storm_chain_lightning_Description"						"Calls forth a ball of lightning that bounces to nearby targets, dealing damage. The bolt jumps to other nearby enemies, losing power with each jump."
+		
+		"DOTA_Tooltip_ability_enigma_midnight_pulse"									"Death and Decay"
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_Description"						"Damages everything in its area of effect by a %% of its base hit points per second.\mAlso destroys trees."
+		"DOTA_Tooltip_ability_enigma_midnight_pulse_Lore"								"A section of the world slowly descends into the void."
+		
+		//Creep skills override
+		"DOTA_Tooltip_ability_neutral_spell_immunity"										"Spell Immunity"
+		"DOTA_Tooltip_ability_neutral_spell_immunity_Description"							"This creature does not feel the effects of most magical spells."
+
+		"DOTA_Tooltip_ability_slardar_bash"												"Bash"
+		"DOTA_Tooltip_ability_slardar_bash_Description"									"Grants a chance that an attack will do bonus damage and stun an enemy.  The duration is doubled against creeps."
+		"DOTA_Tooltip_ability_slardar_bash_Lore"										""
+						
+		"DOTA_Tooltip_ability_creep_bloodlust"				"Bloodlust"
+		"DOTA_Tooltip_ability_creep_bloodlust_Description"	"Increases a friendly unit's attack rate by 40%% and movement speed by 25%%."
+					
+						
+		//==============================================================
+		//	Data Driven Skills
+		//==============================================================
+		
+		// ******************** ABILITIES ********************
+		
+		"DOTA_Tooltip_modifier_shadow_strike"                                             "Shadow Strike"
+		"DOTA_Tooltip_modifier_shadow_strike_Description"                                 "Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+
+		"DOTA_Tooltip_modifier_warden_crit"                                               "Critical Strike"
+		"DOTA_Tooltip_modifier_warden_crit_Description"                                   "Granted a Crit on the next attack"
+
+		"DOTA_Tooltip_ability_warden_fan_of_knives"                                       "Fan of Knives"
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Description"                           "The Warden flings a flurry of knives at multiple enemy targets around her."
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_fan_of_knives_radius"                                "RADIUS:"
+
+		"DOTA_Tooltip_ability_warden_shadow_strike"                                       "Shadow Strike"
+		"DOTA_Tooltip_ability_warden_shadow_strike_Description"                           "Hurls a poisoned dagger which deals large initial damage, and then deals damage over time. The poisoned unit has its movement rate slowed for the duration."
+		"DOTA_Tooltip_ability_warden_shadow_strike_Note0"                                 ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_Lore"                                  ""
+		"DOTA_Tooltip_ability_warden_shadow_strike_duration"							  "DURATION:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_initial_damage"                        "STRIKE DAMAGE:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_damage_every_3sec"                     "DAMAGE OVER TIME:"
+		"DOTA_Tooltip_ability_warden_shadow_strike_move_speed_slow"                       "%SLOW:"
+
+		"DOTA_Tooltip_ability_warden_evasion"                                             "Counter Strike"
+		"DOTA_Tooltip_ability_warden_evasion_Description"                                 "Gives the hero a chance to evade an attack. After evading, the hero will be granted a critical strike on its next attack."
+		"DOTA_Tooltip_ability_warden_evasion_Note0"                                       ""
+		"DOTA_Tooltip_ability_warden_evasion_Lore"                                        ""
+		"DOTA_Tooltip_ability_warden_evasion_dodge_chance"                                "%EVASION:"
+		"DOTA_Tooltip_ability_warden_evasion_crit_bonus"                                  "%CRITICAL DAMAGE:"
+
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance"                                  "Avatar of Vengeance"
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Description"                      "Creates a powerful avatar that summons invulnerable spirits from friendly corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish."
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Note0"                            ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_Lore"                             ""
+		"DOTA_Tooltip_ability_warden_avatar_of_vengance_duration"                         "DURATION:"
+
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn"                           "Spirit of Vengeance"
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Description"               "Raises an invulnerable feral spirit from the corpses of fallen units. Lasts 50 seconds or until the avatar dies."
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Note0"                     ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_Lore"                      ""
+		"DOTA_Tooltip_ability_avatar_of_vengeance_spirit_spawn_spirit_limit"              "SPIRIT LIMIT:"
+		
+		"DOTA_Tooltip_ability_naga_healing_wave"                                          "Healing Wave"
+		"DOTA_Tooltip_ability_naga_healing_wave_Description"                              "Calls forth a wave of energy that heals a target and bounces to nearby friendlies. Each bounce heals less damage."
+		"DOTA_Tooltip_ability_naga_healing_wave_Note0"                                    ""
+		"DOTA_Tooltip_ability_naga_healing_wave_Lore"                                     ""
+		"DOTA_Tooltip_ability_naga_healing_wave_healing"                                  "HEAL:"
+		"DOTA_Tooltip_ability_naga_healing_wave_max_bounces"                              "MAX BOUNCES:"
+		"DOTA_Tooltip_ability_naga_healing_wave_bounce_range"                             "BOUNCE RANGE:"
+		"DOTA_Tooltip_ability_naga_healing_wave_wave_decay_percent"                       "HEAL DECAY:"
+
+		"DOTA_Tooltip_ability_naga_forked_lightning"                                      "Forked Lightning"
+		"DOTA_Tooltip_ability_naga_forked_lightning_Description"                          "Calls forth a cone of lightning to damage enemies."
+		"DOTA_Tooltip_ability_naga_forked_lightning_Note0"                                ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_Lore"                                 ""
+		"DOTA_Tooltip_ability_naga_forked_lightning_max_units"                            "MAX UNITS:"
+
+		"DOTA_Tooltip_ability_naga_black_arrow"                                           "Black Arrow"
+		"DOTA_Tooltip_ability_naga_black_arrow_Description"                               "Adds extra damage to attacks. Units killed while under the effect of Black Arrow will turn into Dark Minions. Minions are magic immune"
+		"DOTA_Tooltip_ability_naga_black_arrow_Note0"                                     ""
+		"DOTA_Tooltip_ability_naga_black_arrow_Lore"                                      ""
+		"DOTA_Tooltip_ability_naga_black_arrow_bonus_damage"                              "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_health"                        "MINION HEALTH:"
+		"DOTA_Tooltip_ability_naga_black_arrow_dark_minion_damage"                        "MINION DAMAGE:"
+		"DOTA_Tooltip_ability_naga_black_arrow_duration"                        		  "MINION DURATION:"
+
+		"DOTA_Tooltip_ability_naga_tornado"                                               "Windfury"
+		"DOTA_Tooltip_ability_naga_tornado_Description"                                   "Summons a fierce controllable Tornado that slows enemy units' movement and attack speed, randomly tosses enemy ground units into the air and damages enemy buildings. While in the air, units can't attack or move but can still be damaged."
+		"DOTA_Tooltip_ability_naga_tornado_Note0"                                         ""
+		"DOTA_Tooltip_ability_naga_tornado_Lore"                                          ""
+		"DOTA_Tooltip_ability_naga_tornado_duration"                                      "DURATION:"
+		"DOTA_Tooltip_ability_naga_tornado_radius"                                        "RADIUS:"
+		"DOTA_Tooltip_ability_naga_tornado_dps_to_buildings"                              "DPS TO BUILDINGS:"
+		"DOTA_Tooltip_ability_naga_tornado_air_duration"                                  "AIR DURATION:"
+		"DOTA_Tooltip_ability_naga_tornado_attack_speed_slow"                             "ATTACK SPEED SLOW:"
+		"DOTA_Tooltip_ability_naga_tornado_move_speed_slow"                               "MOVE SPEED SLOW:"
+
+		"DOTA_Tooltip_ability_tornado_passive"                                            "Tempest"
+		"DOTA_Tooltip_ability_tornado_passive_Description"                                "The Eye of the Tornado"
+		"DOTA_Tooltip_ability_tornado_passive_Note0"                                      ""
+		"DOTA_Tooltip_ability_tornado_passive_Lore"                                       ""
+		"DOTA_Tooltip_ability_tornado_passive_attack_speed_slow"                          "ATTACK SPEED SLOW:"
+		"DOTA_Tooltip_ability_tornado_passive_move_speed_slow"                            "MOVE SPEED SLOW %%:"
+		"DOTA_Tooltip_ability_tornado_passive_radius"                                     "RADIUS:"
+		"DOTA_Tooltip_ability_tornado_passive_air_duration"                               "AIR DURATION:"
+		"DOTA_Tooltip_ability_tornado_passive_dps_to_buildings"                           "DPS TO BUILDINGS:"
+		
+		"DOTA_Tooltip_ability_creep_kaboom"                                               "Kaboom"
+		"DOTA_Tooltip_ability_creep_kaboom_Description"                                   ""
+		"DOTA_Tooltip_ability_creep_kaboom_Note0"                                         ""
+		"DOTA_Tooltip_ability_creep_kaboom_Lore"                                          ""
+		"DOTA_Tooltip_ability_creep_kaboom_small_radius"                                  "SMALL RADIUS:"
+		"DOTA_Tooltip_ability_creep_kaboom_big_radius"                                    "BIG RADIUS:"
+		"DOTA_Tooltip_ability_creep_kaboom_damage"                                        "DAMAGE:"
+		"DOTA_Tooltip_ability_creep_kaboom_partial_damage"                                "PARTIAL DAMAGE:"		
+		
+		// AFFIXES	
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_affix_avenger"                                              "Avenger"
+		"DOTA_Tooltip_ability_affix_avenger_Description"                                  "When this unit dies, those of the same type that remain alive will grow and get increased movement and attack speed."
+		"DOTA_Tooltip_ability_affix_avenger_Note0"                                        ""
+		"DOTA_Tooltip_ability_affix_avenger_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_avenger_attack_speed_bonus"                           "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_affix_avenger_move_speed_bonus"                             "MOVE SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_affix_extra_health"                                         "Extra Health"
+		"DOTA_Tooltip_ability_affix_extra_health_Description"                             "Increased Hit Points"
+		"DOTA_Tooltip_ability_affix_extra_health_Note0"                                   ""
+		"DOTA_Tooltip_ability_affix_extra_health_Lore"                                    ""
+		"DOTA_Tooltip_ability_affix_extra_health_health_bonus_percentage"                 "HEALTH BONUS PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_affix_fast"                                                 "Fast"
+		"DOTA_Tooltip_ability_affix_fast_Description"                                     "Increased movement and attack speed"
+		"DOTA_Tooltip_ability_affix_fast_Note0"                                           ""
+		"DOTA_Tooltip_ability_affix_fast_Lore"                                            ""
+		"DOTA_Tooltip_ability_affix_fast_attack_speed_bonus"                              "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_affix_fast_move_speed_bonus"                                "MOVE SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_affix_electrified"                                          "Electrified"
+		"DOTA_Tooltip_ability_affix_electrified_Description"                              "This creature will sent out sparks in all directions when hit by ranged or melee attacks"
+		"DOTA_Tooltip_ability_affix_electrified_Note0"                                    ""
+		"DOTA_Tooltip_ability_affix_electrified_Lore"                                     ""
+		"DOTA_Tooltip_ability_affix_electrified_min_bolts_per_attack"                     "MIN BOLTS PER ATTACK:"
+		"DOTA_Tooltip_ability_affix_electrified_max_bolts_per_attack"                     "MAX BOLTS PER ATTACK:"
+		"DOTA_Tooltip_ability_affix_electrified_bonus_damage_per_level"					  "BONUS DMG PER LEVEL:"
+		
+		"DOTA_Tooltip_ability_affix_knockback"                                            "Knockback"
+		"DOTA_Tooltip_ability_affix_knockback_Description"                                "Has a chance to knockback on each attack and slow afterwards."
+		"DOTA_Tooltip_ability_affix_knockback_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_knockback_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_knockback_chance"                                     "CHANCE:"
+		"DOTA_Tooltip_ability_affix_knockback_slow_duration"                              "SLOW DURATION:"
+		"DOTA_Tooltip_ability_affix_knockback_slow_percentage"                            "SLOW PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_affix_nightmarish"                                          "Nightmarish"
+		"DOTA_Tooltip_ability_affix_nightmarish_Description"                              "Has a chance to chance to inflict Fear on attack, which will disorient the hero for a duration"
+		"DOTA_Tooltip_ability_affix_nightmarish_Note0"                                    ""
+		"DOTA_Tooltip_ability_affix_nightmarish_Lore"                                     ""
+		"DOTA_Tooltip_ability_affix_nightmarish_chance"                                   "CHANCE:"
+		"DOTA_Tooltip_ability_affix_nightmarish_fear_duration"                            "FEAR DURATION:"
+
+		"DOTA_Tooltip_ability_affix_reflect_damage"                                       "Reflect Damage"
+		"DOTA_Tooltip_ability_affix_reflect_damage_Description"                           "Return a percentage of all damage taken back to the attackers, including magic damage"
+		"DOTA_Tooltip_ability_affix_reflect_damage_Note0"                                 ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_Lore"                                  ""
+		"DOTA_Tooltip_ability_affix_reflect_damage_damage_percent"                        "DAMAGE PERCENT:"
+
+		"DOTA_Tooltip_ability_affix_vampiric"                                             "Vampiric"
+		"DOTA_Tooltip_ability_affix_vampiric_Description"                                 "Heals a percentage of the damage done on each attack"
+		"DOTA_Tooltip_ability_affix_vampiric_Note0"                                       ""
+		"DOTA_Tooltip_ability_affix_vampiric_Lore"                                        ""
+		"DOTA_Tooltip_ability_affix_vampiric_lifesteal"                                   "LIFESTEAL:"
+
+		"DOTA_Tooltip_ability_affix_desecrator"                                           "Desecrator"
+		"DOTA_Tooltip_ability_affix_desecrator_Description"                               "Creates a hellish ground beneath the feet of a hero, which deals damage over time while standing in it. The void zones take a second or so to come into effect. Desecrator pools disappear after a duration."
+		"DOTA_Tooltip_ability_affix_desecrator_Note0"                                     ""
+		"DOTA_Tooltip_ability_affix_desecrator_Lore"                                      ""
+		"DOTA_Tooltip_ability_affix_desecrator_duration"                                  "DURATION:"
+		"DOTA_Tooltip_ability_affix_desecrator_radius"                                    "RADIUS:"
+		"DOTA_Tooltip_ability_affix_desecrator_delay"                                     "DELAY:"
+		"DOTA_Tooltip_ability_affix_desecrator_bonus_damage_per_level"					  "BONUS DMG PER LEVEL:"
+		
+		"DOTA_Tooltip_ability_affix_frozen"                                               "Frozen"
+		"DOTA_Tooltip_ability_affix_frozen_Description"                                   "Create a frozen casket on the ground, which slows and will explode after a delay, dealing damage and freezing the targets in place for a duration"
+		"DOTA_Tooltip_ability_affix_frozen_Note0"                                         ""
+		"DOTA_Tooltip_ability_affix_frozen_Lore"                                          ""
+		"DOTA_Tooltip_ability_affix_frozen_explosion_delay"                               "EXPLOSION DELAY:"
+		"DOTA_Tooltip_ability_affix_frozen_explosion_radius"                              "EXPLOSION RADIUS:"
+		"DOTA_Tooltip_ability_affix_frozen_stun_duration"                                 "STUN DURATION:"
+		"DOTA_Tooltip_ability_affix_frozen_bonus_damage_per_level"						  "BONUS DMG PER LEVEL:"
+		
+		"DOTA_Tooltip_ability_affix_molten"                                               "Molten"
+		"DOTA_Tooltip_ability_affix_molten_Description"                                   "Leaves a trail of flame behind the feet of the creature, which damages whoever standing on it until the unit is killed.<br>When this unit dies, a glowing fiery core is left behind. It expands for a few seconds before exploding, dealing damage to all enemies in the explosion radius."
+		"DOTA_Tooltip_ability_affix_molten_Note0"                                         ""
+		"DOTA_Tooltip_ability_affix_molten_Lore"                                          ""
+		"DOTA_Tooltip_ability_affix_molten_explosion_damage"                              "EXPLOSION DAMAGE:"
+		"DOTA_Tooltip_ability_affix_molten_overtime_damage"                               "OVERTIME DAMAGE:"
+		"DOTA_Tooltip_ability_affix_molten_trail_aoe"                                     "TRAIL AOE:"
+		"DOTA_Tooltip_ability_affix_molten_explosion_radius"                              "EXPLOSION RADIUS:"
+		"DOTA_Tooltip_ability_affix_molten_explosion_bonus_per_level"			 		  "EXPLOSION BONUS DMG PER LEVEL:"
+		"DOTA_Tooltip_ability_affix_molten_overtime_bonus_per_level"					  "OVERTIME BONUS DMG PER LEVEL:"
+		
+		"DOTA_Tooltip_ability_affix_assaulter"                                            "Assaulter"
+		"DOTA_Tooltip_ability_affix_assaulter_Description"                                "Instantly blinks to target in range, stunning for a short duration"
+		"DOTA_Tooltip_ability_affix_assaulter_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_assaulter_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_assaulter_range"                                      "RANGE:"
+		"DOTA_Tooltip_ability_affix_assaulter_stun_duration"                              "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_affix_blood_freezer"                                        "Blood Freezer"
+		"DOTA_Tooltip_ability_affix_blood_freezer_Description"                            "Prevents healing effects near this unit"
+		"DOTA_Tooltip_ability_affix_blood_freezer_Note0"                                  ""
+		"DOTA_Tooltip_ability_affix_blood_freezer_Lore"                                   ""
+		"DOTA_Tooltip_ability_affix_blood_freezer_radius"                                 "RADIUS:"
+		
+		"DOTA_Tooltip_ability_affix_berserker"                                        "Berserker"
+		"DOTA_Tooltip_ability_affix_berserker_Description"                            "Gets extra attack and damage percentage for each fraction of health missing"
+		"DOTA_Tooltip_ability_affix_berserker_Note0"                                  "Kill this fast, don't leave it half HP"
+		"DOTA_Tooltip_ability_affix_berserker_Lore"                                   ""
+		"DOTA_Tooltip_ability_affix_berserker_damage_percent_per_health_missing"	  "DAMAGE% PER HEALTH% MISSING"
+		"DOTA_Tooltip_ability_affix_berserker_attack_speed_per_health_missing"		  "ATTACK SPEED PER HEALTH% MISSING"
+		
+		"DOTA_Tooltip_ability_affix_provoker"                                             "Provoker"
+		"DOTA_Tooltip_ability_affix_provoker_Description"                                 "You can only attack the unit with this affix. Until it's killed you cant attack other units around him"
+		"DOTA_Tooltip_ability_affix_provoker_Note0"                                       ""
+		"DOTA_Tooltip_ability_affix_provoker_Lore"                                        ""
+		"DOTA_Tooltip_ability_affix_provoker_radius"                                      "RADIUS:"
+		
+		"DOTA_Tooltip_ability_affix_jailer"                                            	 "Jailer"
+		"DOTA_Tooltip_ability_affix_jailer_Description"                                  "Traps all enemies in a radius for a duration"
+		"DOTA_Tooltip_ability_affix_jailer_Note0"                                      	 ""
+		"DOTA_Tooltip_ability_affix_jailer_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_jailer_radius"                                       "RADIUS:"
+		"DOTA_Tooltip_ability_affix_jailer_duration"                                     "DURATION:"
+
+		"DOTA_Tooltip_ability_affix_plagued"                                              "Plagued"
+		"DOTA_Tooltip_ability_affix_plagued_Description"                                  "Creates green pool of damage on the ground, which deals damage per second.<br>All plagued pools created during a battle remain until the creature that created them is killed."
+		"DOTA_Tooltip_ability_affix_plagued_Note0"                                        ""
+		"DOTA_Tooltip_ability_affix_plagued_Lore"                                         ""
+		"DOTA_Tooltip_ability_affix_plagued_damage_per_second"                            "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_affix_plagued_radius"                                       "RADIUS:"
+		"DOTA_Tooltip_ability_affix_plagued_damage_per_level"							  "BONUS DMG PER LEVEL:"
+		
+		"DOTA_Tooltip_ability_affix_shielding"                                            "Shielding"
+		"DOTA_Tooltip_ability_affix_shielding_Description"                                "Absorbs all damage for the duration of the shield"
+		"DOTA_Tooltip_ability_affix_shielding_Note0"                                      ""
+		"DOTA_Tooltip_ability_affix_shielding_Lore"                                       ""
+		"DOTA_Tooltip_ability_affix_shielding_absorb"                                     "ABSORB:"
+		"DOTA_Tooltip_ability_affix_shielding_duration"                                   "DURATION:"
+
+		"DOTA_Tooltip_ability_affix_thunderstorm"                                         "Thunderstorm"
+		"DOTA_Tooltip_ability_affix_thunderstorm_Description"                             "Calls down a lightning storm, dealing repeated strikes in the radius. Thunderstorm pulses five times in the same location"
+		"DOTA_Tooltip_ability_affix_thunderstorm_Note0"                                   ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_Lore"                                    ""
+		"DOTA_Tooltip_ability_affix_thunderstorm_radius"                                  "RADIUS:"
+		"DOTA_Tooltip_ability_affix_thunderstorm_damage_per_level"						  "BONUS DMG PER LEVEL:"
+		
+		
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_avenge_me"                                                 "Avenge Me"
+		"DOTA_Tooltip_modifier_avenge_me_Description"                                     "Empowered by the deaths of nearby allies"
+
+		"DOTA_Tooltip_modifier_fast"                                                      "Fast"
+		"DOTA_Tooltip_modifier_fast_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_knockback_slow"                                            "Knockback Slow"
+		"DOTA_Tooltip_modifier_knockback_slow_Description"                                ""
+
+		"DOTA_Tooltip_modifier_disoriented"                                               "Disoriented"
+		"DOTA_Tooltip_modifier_disoriented_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_reflect_damage"                                            "Reflects Damage"
+		"DOTA_Tooltip_modifier_reflect_damage_Description"                                ""
+
+		"DOTA_Tooltip_modifier_assaulted"                                  					"Assaulted"
+		"DOTA_Tooltip_modifier_assaulted_Description"                      				 "Stunned"
+
+		"DOTA_Tooltip_modifier_blood_freezer"                               		  	"Blood Freezed"
+		"DOTA_Tooltip_modifier_blood_freezer_Description"                             	"Can't regenerate"
+
+		"DOTA_Tooltip_affix_berserker_modifier"                                 	 "Berserker"
+		"DOTA_Tooltip_affix_berserker_modifier_Description"                      	"Extra attack speed and damage for life missing"
+
+		"DOTA_Tooltip_affix_provoker_buff"                                       "Provoker"
+		"DOTA_Tooltip_affix_provoker_buff_Description"                           "Must attack the units with this affix"
+		
+		"DOTA_Tooltip_affix_provoker_aura"                                       "Provoker"
+		"DOTA_Tooltip_affix_provoker_aura_Description"                           "Must attack the units with this affix"
+
+		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier"                              "Shield Bearer"
+		"DOTA_Tooltip_modifier_affix_shield_bearer_modifier_Description"                  ""
+
+		"DOTA_Tooltip_modifier_affix_shield_bearer_damage_reduction"                      "Shield Bearer Damage Reduction"
+		"DOTA_Tooltip_modifier_affix_shield_bearer_damage_reduction_Description"          ""
+
+		"DOTA_Tooltip_modifier_affix_illusionist_modifier"                                "Illusionist Modifier"
+		"DOTA_Tooltip_modifier_affix_illusionist_modifier_Description"                    ""
+
+		"DOTA_Tooltip_modifier_affix_illusionist_illusion"                                "Illusionist Illusion"
+		"DOTA_Tooltip_modifier_affix_illusionist_illusion_Description"                    ""
+
+		"DOTA_Tooltip_affix_jailer_debuff"                                       "Jailed"
+		"DOTA_Tooltip_affix_jailer_debuff_Description"                           "Can't move"
+
+		"DOTA_Tooltip_modifier_affix_hurricaner_aura"                                     "Hurricaner Aura"
+		"DOTA_Tooltip_modifier_affix_hurricaner_aura_Description"                         ""
+
+		"DOTA_Tooltip_modifier_affix_hurricaner_debuff"                                   "Hurricaner Debuff"
+		"DOTA_Tooltip_modifier_affix_hurricaner_debuff_Description"                       ""
+
+		"DOTA_Tooltip_frozen_aura_debuff"                                        "Freezing"
+		"DOTA_Tooltip_frozen_aura_debuff_Description"                            "Slowed while standing on the frozen casket"
+
+		"DOTA_Tooltip_plagued_pool"                                              "Plagued Pool"
+		"DOTA_Tooltip_plagued_pool_Description"                                  "Taking damage while standing on a plagued pool"
+		
+		"DOTA_Tooltip_modifier_stunned"                                                   "Stunned"
+		"DOTA_Tooltip_modifier_stunned_Description"                                       ""
+		
+		"DOTA_Tooltip_modifier_shielding"                                                 "Shielding"
+		"DOTA_Tooltip_modifier_shielding_Description"                                     "Absorbing all damage"
+
+		"DOTA_Tooltip_modifier_affix_molten_modifier"                                     "Molten"
+		"DOTA_Tooltip_modifier_affix_molten_modifier_Description"                         "Taking damage while standing on a molten trail"
+
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		"DOTA_Tooltip_tornado_debuff"                                            "Tornado"
+		"DOTA_Tooltip_tornado_debuff_Description"                                "Decreased attack and movement speed"
+		
+		//To Do: Normalize item names - creep_ and warchasers_hero
+		
+		//Creep skills	
+		"DOTA_Tooltip_ability_creep_cold_arrow"				"Cold Arrows"
+		"DOTA_Tooltip_ability_creep_cold_arrow_Description"  ""
+		"DOTA_Tooltip_modifier_creep_cold_arrow_slow"			"Cold Arrow Slow"
+		"DOTA_Tooltip_modifier_creep_cold_arrow_slow_Description" "Slowed"
+		
+		"DOTA_Tooltip_ability_creep_searing_arrow"			"Searing Arrows"
+		"DOTA_Tooltip_ability_creep_searing_arrow_Description" "Increases the damage of the unit's attack by adding fire."
+		
+		"DOTA_Tooltip_ability_creep_inner_fire"					"Inner Fire"
+		"DOTA_Tooltip_ability_creep_inner_fire_Description"		"Increases a target friendly unit's damage by 10%% and armor by 5."
+		"DOTA_Tooltip_creep_inner_fire_buff"						"Inner Fire"
+		"DOTA_Tooltip_creep_inner_fire_buff_Description"			"Damage +10%%, Armor +5"
+		
+		"DOTA_Tooltip_ability_creep_curse"					"Curse"
+		"DOTA_Tooltip_ability_creep_curse_Description"		"Curses a target enemy unit, causing it to have a 33%% chance to miss on an attack"			
+		"DOTA_Tooltip_modifier_creep_curse"						"Cursed"
+		"DOTA_Tooltip_modifier_creep_curse_Description"			"33%% miss chance"
+	
+		"DOTA_Tooltip_ability_creep_unholy_aura"				"Unholy Aura"
+		"DOTA_Tooltip_ability_creep_unholy_aura_Description"	"Increases the movement speed and life regeneration rate of nearby friendly units."
+		"DOTA_Tooltip_creep_unholy_aura_bonus"			"Unholy Aura"
+		"DOTA_Tooltip_creep_unholy_aura_bonus_Description" "This unit is under the effects of Unholy Aura; it has increased movement and health regeneration."
+		
+		"DOTA_Tooltip_ability_creep_command_aura"										"Command Aura"
+		"DOTA_Tooltip_ability_creep_command_aura_Description"							"Increase nearby units damage by 10%%."
+		"DOTA_Tooltip_creep_command_aura_bonus"					"Command Aura"
+		"DOTA_Tooltip_creep_command_aura_bonus_Description" "This unit is under the effects of Command Aura; it has increased damage."
+					
+		"DOTA_Tooltip_modifier_ward_health_regen"			"Ward Regen"
+		"DOTA_Tooltip_modifier_ward_health_regen_Description"	"This unit has increased health regeneration"
+		
+		//"health_fountain_aura"
+		"DOTA_Tooltip_modifier_fountain_health_regen"			"Fountain of Health Regen"
+		"DOTA_Tooltip_modifier_fountain_health_regen_Description" "This unit has increased health regeneration"
+		
+		//"mana_fountain_aura"
+		"DOTA_Tooltip_modifier_fountain_mana_regen"			"Fountain of Mana Regen"
+		"DOTA_Tooltip_modifier_fountain_mana_regen_Description" "This unit has increased mana regeneration"
+		
+		
+		"DOTA_Tooltip_ability_creep_heal"		"Heal"
+		"DOTA_Tooltip_ability_creep_heal_Description"		"Heals a target friendly non-mechanical wounded unit for 25 hit points."		
+				
+		"DOTA_Tooltip_ability_creep_poison_attack"		"Poison Attack"
+		"DOTA_Tooltip_ability_creep_poison_attack_Description"	"A poison attack that deals 4 damage per second, and slows the target enemies movement by 50%% and attack by 25%% for 5 seconds (1 second Heroes)."
+		"DOTA_Tooltip_modifier_poison_attack_slow"		"Slowed"
+		"DOTA_Tooltip_modifier_poison_attack_slow_Description"		"50%% less movement rate, 25% slower attack rate%"
+		
+		"DOTA_Tooltip_ability_creep_frost_breath"											"Frost Attack"
+		"DOTA_Tooltip_ability_creep_frost_breath_Description"								"The Dragon launches an eerie attack that chills her enemies to their bones and it's felt by all nearby enemies."
+		"DOTA_Tooltip_ability_creep_frost_breath_move_speed"							"%MOVE SLOW:"
+		"DOTA_Tooltip_ability_creep_frost_breath_attack_speed"							"ATTACK SLOW:"
+		"DOTA_Tooltip_ability_creep_frost_breath_duration"									"DURATION:"
+		"DOTA_Tooltip_ability_creep_frost_breath_cleave_radius"									"CLEAVE RADIUS:"
+
+		"DOTA_Tooltip_modifier_creep_frost_breath_slow"										"Frost Attack"
+		"DOTA_Tooltip_modifier_creep_frost_breath_slow_Description"							"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+
+		"DOTA_Tooltip_ability_warchasers_titan_reincarnation" "Reincarnation"
+		"DOTA_Tooltip_ability_warchasers_titan_reincarnation_Description"	"When killed, the Titan will come back to life."
+		
+		"DOTA_Tooltip_ability_creep_slow"				"Slow"	
+		"DOTA_Tooltip_ability_creep_slow_Description"		"Slows a target enemy unit's attack rate by 25%% and movement speed by 60%%"
+		"DOTA_Tooltip_modifier_creep_slow"			"Slowed"
+		"DOTA_Tooltip_modifier_creep_slow_Description"	"Attack Rate reduced 25%%, Movement Speed reduced 60%%"
+		
+		"DOTA_Tooltip_ability_warchasers_wizard_purge"										"Purge"
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_Description"							"Remove debuffs, slows the enemy's movement. If the enemy is a summoned unit or an illusion, it takes damage as well."
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_duration"								"DURATION:"
+		"DOTA_Tooltip_ability_warchasers_wizard_purge_summon_damage"							"SUMMON DAMAGE:"
+		
+		"DOTA_Tooltip_modifier_satyr_trickster_purge"										"Purge"
+		"DOTA_Tooltip_modifier_satyr_trickster_purge_Description"							"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+		"DOTA_Tooltip_modifier_hell_burn"										"BurNIng"
+		"DOTA_Tooltip_modifier_hell_burn_Description"							"Taking 25 damage per second."
+
+
+		"DOTA_Tooltip_ability_warchasers_mana_burn"										"Mana Burn"
+		"DOTA_Tooltip_ability_warchasers_mana_burn_Description"							"Sends a bolt of negative energy that burns a target enemy unit's mana. Burned mana combusts, dealing damage to the target equal the mana burned."
+		"DOTA_Tooltip_ability_warchasers_mana_burn_burn_amount"							"MANA BURNED:"
+	
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation"		"Immolation"
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_Description"	"Engulfs the Hero in flames, causing damage to nearby enemy units. Drains mana until deactivated."
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_damage_per_second"	"DPS:"
+		"DOTA_Tooltip_ability_warchasers_steamtank_immolation_mana_cost_per_second" "MANA/SEC:"
+		"DOTA_Tooltip_warchasers_steamtank_immolation_buff"	"BurNIng"
+		"DOTA_Tooltip_warchasers_steamtank_immolation_buff_Description"	"Taking damage per second"		
+
+		"DOTA_Tooltip_ability_final_boss_void_new"					"Great Void"
+		"DOTA_Tooltip_ability_final_boss_void_new_Description"		"Creates a damaging void that slows an enemy unit and deals damage. Void also mini-stuns, interrupting channeling abilities."
+		"DOTA_Tooltip_ability_final_boss_void_new_movespeed_slow"						"%MOVE SLOW:"
+		"DOTA_Tooltip_ability_final_boss_void_new_attackspeed_slow"						"ATTACK SLOW:"
+		"DOTA_Tooltip_modifier_void"				"Voided"
+		"DOTA_Tooltip_modifier_void_Description"	"Get Rekt"
+		
+		
+		"DOTA_Tooltip_ability_final_boss_buff"			"Final Redeeming"
+		"DOTA_Tooltip_ability_final_boss_buff_Description" "Boss Enraged"
+		"DOTA_Tooltip_final_boss_powerup"			"Final Redeeming"
+		"DOTA_Tooltip_final_boss_powerup_Description" "Finish it!"
+		
+		//Hero Skills
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil"				"Death Coil"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_Description"	"A coil of death that can damage an enemy living unit or heal a friendly undead unit."
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_target_damage"  "DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_death_coil_heal_amount"	"HEAL:"
+		
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation"				"Immolation"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_Description"	"Engulfs the Hero in flames, causing damage to nearby enemy units. Drains mana until deactivated."
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_damage_per_second"	"DPS:"
+		"DOTA_Tooltip_ability_warchasers_blade_berserker_immolation_mana_cost_per_second" "MANA/SEC:"
+		"DOTA_Tooltip_warchasers_blade_berserker_immolation_buff"	"BurNIng"
+		"DOTA_Tooltip_warchasers_blade_berserker_immolation_buff_Description" "Taking damage per second"		
+		
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead"					"Animate Dead"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_Description"		"Raises dead units in an area to fight for the Hero. Animated units are invulnerable"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_Radius"	"RADIUS:"
+		"DOTA_Tooltip_ability_warchasers_muhrah_animate_dead_resurrections_limit"	"AMOUNT:"
+		
+		"DOTA_Tooltip_ability_tb_miniboss_animate_dead"				"Animate Dead"
+		"DOTA_Tooltip_Ability_tb_miniboss_animate_dead_Description"	"Raises dead units in a giant area to fight for the Soulless once more."
+		
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb"		"Meteor Launcher"		
+		"DOTA_Tooltip_ability_miniboss_flak"				"Multi Boulder"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons"	"Launch Skeletons"
+		"DOTA_Tooltip_ability_miniboss_barrage"				"Rocket Barrage"
+		"DOTA_Tooltip_ability_miniboss_call_down"			"Apocalypse"
+
+		"DOTA_Tooltip_ability_miniboss_aoe_bomb_Description"			"Dodge the meatball"		
+		"DOTA_Tooltip_ability_miniboss_flak_Description"				"Eat the rocks"
+		"DOTA_Tooltip_ability_miniboss_launch_skeletons_Description"	"Spooky Scary Skeletons"
+		"DOTA_Tooltip_ability_miniboss_barrage_Description"				"Boring filler skill because I was too lazy to code a custom one"
+		"DOTA_Tooltip_ability_miniboss_call_down_Description"			"Loud and Loaded!"
+
+		"DOTA_Tooltip_ability_warchasers_sleep"				"Sleep"
+		"DOTA_Tooltip_ability_warchasers_sleep_Description"	"Puts a target enemy unit to sleep. A sleeping unit can be awoken by attacking it."
+		"DOTA_Tooltip_ability_warchasers_sleep_duration"	"DURATION:"
+		"DOTA_Tooltip_modifier_warchasers_sleep_debuff"		"Slept"
+		"DOTA_Tooltip_modifier_warchasers_sleep_debuff"		"Sleeping"		
+		
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura"				"Vampiric Aura"
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura_Description"	"Nearby friendly units gain hit points based on their damage dealt when attacking enemy units."
+		"DOTA_Tooltip_ability_warchasers_vampiric_aura_lifesteal"		"LIFESTEAL:"
+		"DOTA_Tooltip_modifier_warchasers_vampiric_aura_bonus"				"Vampiric Aura"
+		"DOTA_Tooltip_modifier_warchasers_vampiric_aura_bonus_Description"	"This unit is under the effects of Vampiric Aura; it regains health when attacking"
+		
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura"					"Thorns Aura"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_Description"		"An aura that gives friendly nearby units a damage shield, which returns a portion of an enemy unit's melee damage attack back to it."
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_percentage" "%DAMAGE RETURN:"
+		"DOTA_Tooltip_ability_warchasers_megatron_thorns_aura_damage_return_base" "BASE DAMAGE RETURN:"
+		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator"				"Thorns Aura"
+		"DOTA_Tooltip_warchasers_optimusprimo_thorns_aura_indicator_Description"	"This unit is under the effects of Thorns Aura; melee units that attack it will take damage."
+
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility"					"Tranquility"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_Description"		"Causes rains of healing energy to pour down in a large area, healing friendly allied units for a percent of max health per second."
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_warchasers_megatron_tranquility_heal_percent"	"HEALING PERCENT:"
+		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier"      "Tranquility"
+		"DOTA_Tooltip_warchasers_megatron_tranquility_modifier_Description" "Healing"		
+		
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield"					"Divine Shield"
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield_Description"		"An impenetrable shield surrounds this unit, protecting it from all damage and spells for %duration seconds."
+		"DOTA_Tooltip_ability_warchasers_megatron_divine_shield_shield_duration"		"DURATION:"
+		"DOTA_Tooltip_warchasers_megatron_divine_shield_modifier"		"Divine Shield"
+		"DOTA_Tooltip_warchasers_megatron_divine_shield_modifier_Description" "Invulnerable"
+				
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental"	"Summon Water Elemental"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_Description" "Summons a Water Elemental to attack your enemies."
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_duration"	"DURATION:"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_damage" "DAMAGE:" 
+		"DOTA_Tooltip_ability_warchasers_beast_knight_summon_water_elemental_hit_points" "HP:"
+					
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_avatar"					"Avatar"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_avatar_Description"		"Activate Avatar to temporarily give the Hero 5 bonus armor, 500 bonus hit points, 20 bonus damage and spell immunity."
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura"			"Devotion Aura"
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura_Description"	"Gives additional armor to nearby friendly units."
+		"DOTA_Tooltip_ability_warchasers_optimusprimo_devotion_aura_armor_bonus"	"ARMOR:"
+		"DOTA_Tooltip_warchasers_optimusprimo_avatar_modifier"		"Avatar Form"
+		"DOTA_Tooltip_warchasers_optimusprimo_avatar_modifier_Description"	"Improved combat stats"
+		"DOTA_Tooltip_warchasers_optimusprimo_devotion_aura_armor_bonus"	"Devotion Aura"
+		"DOTA_Tooltip_warchasers_optimusprimo_devotion_aura_armor_bonus_Description" "This unit is under the effects of Devotion Aura; it has increased physical resistance."
+		
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle"						"Entangling Roots"
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_Description"			"Causes roots to burst from the ground, immobilizing and damaging a target enemy."
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_damage_per_second"	"DPS:"
+		"DOTA_Tooltip_ability_warchasers_assassin_entangle_creep_duration"		"DURATION:"
+		"DOTA_Tooltip_warchasers_assassin_entangle_hero_debuff"		"Entangled"
+		"DOTA_Tooltip_warchasers_assassin_entangle_hero_debuff_Description" "Disabled movement, taking damage per second"
+		"DOTA_Tooltip_warchasers_assassin_entangle_creep_debuff"		"Entangled"
+		"DOTA_Tooltip_warchasers_assassin_entangle_creep_debuff_Description" "Disabled movement, taking damage per second"
+		
+		"DOTA_Tooltip_ability_warchasers_starfall"								"Starstorm"
+		"DOTA_Tooltip_ability_warchasers_starfall_Description"					"Calls down waves of falling stars that damage nearby enemy units. Each wave deals 50 damage. The time between waves is 1.5 seconds."
+		"DOTA_Tooltip_fx_starfall"	"Starstorm"
+		"DOTA_Tooltip_fx_starfall_Description" "Channeling Starstorm"
+		
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm"					"Firestorm"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Description"		"Calls down waves of fire that damage enemy units in the target area, and continues to burn them for additional damage over time."
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_Lore"				""
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_radius"			"RADIUS:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_count"		"WAVE COUNT:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_wave_damage"		"WAVE DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_damage"		"BURN DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_firestorm_burn_duration"	"BURN DURATION:"
+
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows" 						"A Song of Ice and Fire Arrows"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Description"			"Adds an alternating effect which burns or freezes enemies on each attack, dealing extra damage or slowing a target enemy unit's attacks and movement.\n\nDoes not stack with other Orb Effects."
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_RangeDamage"			"<font color='#B70000'>FIRE</font> BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_slow_percentage" "<font color='#1FBCF0'>COLD</font> ATTACK&MOVE SLOW:"		
+		"DOTA_Tooltip_ability_warchasers_snake_multi_arrows_Lore"		"The morning had dawned clear and cold, with a crispness that hinted at the end of summer..."
+		"DOTA_Tooltip_modifier_snake_cold_arrow_slow"			"Cold Arrow Slow"
+		"DOTA_Tooltip_modifier_snake_cold_arrow_slow_Description" "Slowed"
+
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura"					"Holy Fire/Freeze Aura"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_Description"		"Toggle to swap between a damage per second offensive aura and a slow on attacked defensive stance for all your party."
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_radius"			"RADIUS:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_fire_damage"		"<font color='#B70000'>FIRE</font> DPS:"
+		"DOTA_Tooltip_ability_warchasers_snake_multi_aura_cold_slow"		"<font color='#1FBCF0'>COLD</font> SLOW:"
+		"DOTA_Tooltip_holy_fire_aura"					"Holy Fire Aura"
+		"DOTA_Tooltip_holy_fire_aura_Description"		"Periodically does Fire damage to nearby enemies"
+		"DOTA_Tooltip_holy_fire_debuff"					"Burning in Holy Fire"
+		"DOTA_Tooltip_holy_fire_debuff_Description"		"Taking damage per second"
+		"DOTA_Tooltip_holy_freeze_aura"					"Holy Freeze Aura"
+		"DOTA_Tooltip_holy_freeze_aura_Description"	"Periodically slows enemies nearby"
+		"DOTA_Tooltip_holy_freeze_debuff"				"Freezed"
+		"DOTA_Tooltip_holy_freeze_debuff_Description"	"Slowed"
+			
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light"						"Holy Light"
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_Description"			"A holy light that can heal a friendly living unit or damage an enemy undead unit.\n Can't target self."
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_target_damage"  "DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_snake_holy_light_heal_amount"	"HEAL:"
+
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light"						"Holy Light"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_Description"			"A holy light that can heal a friendly living unit or damage an enemy undead unit.\n Can't target self."
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_target_damage"  "DAMAGE:"
+		"DOTA_Tooltip_ability_warchasers_beast_knight_holy_light_heal_amount"	"HEAL:"
+
+		"DOTA_Tooltip_ability_warchasers_endurance_aura"				"Endurance Aura"
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_Description"				"Increases the movement speed and attack rate of nearby friendly units."
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_move_speed_bonus"	"MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_warchasers_endurance_aura_attack_speed_bonus" "ATTACK SPEED:"
+		"DOTA_Tooltip_warchasers_endurance_aura_bonus"			"Endurance Aura"
+		"DOTA_Tooltip_warchasers_endurance_aura_bonus_Description" "This unit is under the effects of Endurance Aura; it has increased movement and attack speed."
+	
+		"DOTA_Tooltip_ability_ward_aura_health_regen"					"Healing Ward"
+		"DOTA_Tooltip_ability_ward_aura_health_regen_Description"		"Heals nearby friendly units for 20 hp per second"
+		
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura"					"Brilliance Aura"
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura_Description"		"Gives additional mana regeneration to nearby friendly units."
+		"DOTA_Tooltip_ability_warchasers_skeletorus_brilliance_aura_mana_regen"			"MANA REGEN BONUS:"
+		"DOTA_Tooltip_warchasers_skeletorus_brilliance_aura_mana_regen"					"Brilliance Aura"
+		"DOTA_Tooltip_warchasers_skeletorus_brilliance_aura_mana_regen_Description"		"This unit is under the effects of Brilliance Aura; it has increased mana regeneration."
+		
+		"DOTA_Tooltip_ability_warchasers_skull_of_guldan"								"Skull of Guldan"
+		"DOTA_Tooltip_ability_warchasers_skull_of_guldan_Description"					"Destroying this artifact will grant demonic powers to its killer."
+		
+		"DOTA_Tooltip_ability_drop_frostmourne"											"Imprisoned Frostmourne"
+		"DOTA_Tooltip_ability_drop_frostmourne_Description"								"Whomsoever takes up this blade shall wield power eternal. Just as the blade rends flesh, so must power scar the spirit."
+		
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers"					"Metamorphosis"
+		"DOTA_Tooltip_modifier_warchasers_guldan_powers_Description"		"Consumed the powers of the skull of Guldan. Granted 100%% bonus damage, 10%% lifesteal but taking 10 damage per second."
+
+		//Modifier Buffs _Description
+		"DOTA_Tooltip_modifier_warchasers_stat_rules"			"Legacy Stat Rules"
+		"DOTA_Tooltip_modifier_warchasers_stat_rules_Description" "25 HP per STR, 15  MP per INT, 2 AS and a 1/3 Armor per AGI"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff"				"Solo Buff"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_Description"	"Extra regeneration out of combat."
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_combat"				"In combat"
+		"DOTA_Tooltip_modifier_warchasers_solo_buff_combat_Description"	"In combat, disabled extra regeneration."
+		
+		// substitution for modifier tooltips
+		// %MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS% - 'd' prints the value returned by the function as an integer
+		// 'd' for integer
+		// 'f' for float
+		// optional '-' to not abs() the values
+		// optional number to specify the number of decimals to print after a float
+		// eg: %-2fMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE% 
+		// use %% to draw a percentage sign
+	
+		
+		//Spawners
+		"DOTA_Tooltip_ability_spawn_murloc_a"			"Spawn Murloc Tiderunner"	
+		"DOTA_Tooltip_ability_spawn_murloc_b"			"Spawn Murloc Tiderunner"	
+		"DOTA_Tooltip_ability_spawn_gnoll"			"Spawn Gnoll Poacher"
+		"DOTA_Tooltip_ability_spawn_ghoul"			"Spawn Ghoul"
+		"DOTA_Tooltip_ability_spawn_medium_satyr" 	"Spawn Satyr"
+		"DOTA_Tooltip_ability_spawn_golem"			"Spawn Mud Golem"
+		"DOTA_Tooltip_ability_spawn_medium_murloc"	"Spawn Murloc Huntsman"
+		"DOTA_Tooltip_ability_spawn_water_elemental"	"Spawn Water Elemental"
+		"DOTA_Tooltip_ability_spawn_ranged_troll"	"Spawn Dark Troll Archer"
+		"DOTA_Tooltip_ability_spawn_small_sludge"	"Spawn Sludge Minion"
+		"DOTA_Tooltip_ability_spawn_treant"			"Spawn Corrupted Treant"
+		"DOTA_Tooltip_ability_spawn_burning_archer"	"Spawn Burning Archer"
+		"DOTA_Tooltip_ability_spawn_kobold_tunneler"	"Spawn Kobold Tunneler"
+		"DOTA_Tooltip_ability_spawn_medium_sludge"	"Spawn Sludge Flinger"
+		"DOTA_Tooltip_ability_spawn_frost_archer"	"Spawn Skeletal Marksman" 
+		"DOTA_Tooltip_ability_spawn_ice_priest"		"Spawn Ice Troll Priest"
+		"DOTA_Tooltip_ability_spawn_wizard"			"Spawn Wizard"
+		"DOTA_Tooltip_ability_spawn_fellhound"		"Spawn Fellhound"
+		"DOTA_Tooltip_ability_spawn_big_sludge"		"Spawn Sludge Monstrosity"
+		"DOTA_Tooltip_ability_spawn_imp"				"Spawn Imp"
+		
+		
+		
+		//==============================================================	
+		// Unit Names
+		//==============================================================
+
+		"npc_murloc_hut_a"						"Gnoll Hut"
+		"npc_murloc_hut_b"						"Gnoll Hut"
+		"npc_murloc_hut_ghouls"					"Gnoll Hut"
+		"npc_farm"								"High Elven Farm"
+		"npc_farm_smallsludges"					"High Elven Farm"
+		"npc_farm_treants"						"High Elven Farm"
+		"npc_farm_kobolds"						"High Elven Farm"
+		"npc_satyr_hut"							"Forest Troll Hut"
+		"npc_satyr_hut_golems"					"Forest Troll Hut"		
+		"npc_ziggurat"							"Nerubian Ziggurat"
+		"npc_darktrollarcher_hut"				"Dark Troll Hut"
+		"npc_ziggurat_sludges"					"Nerubian Ziggurat"
+		"npc_pedestal"							"Book of Summoning Pedestal"
+		"npc_pedestal2"							"Book of Summoning Pedestal"
+		"npc_barricade"							"Barricade"
+		"npc_murloc_elemental_hut"				"Murloc Hut"
+		"npc_murloc_elemental_hut_elem"			"Murloc Hut"
+		"npc_ice_troll_hut"						"Ice Troll Hut"
+		"npc_ice_troll_hut_priests"				"Ice Troll Hut"
+		"npc_ice_troll_hut_wizards"				"Ice Troll Hut"
+		"npc_dragon_roost"						"Blue Dragon Roost"
+		"npc_magic_box"							"Magic Vault"
+		"npc_centaur_tent"						"Centaur Tent"
+		"npc_centaur_tent_sludges"				"Centaur Tent"
+		"npc_harpy_nest"						"Harpy Nest"
+		"npc_juggernaut_tower"					"Destroyer"
+		"npc_elven_tower"						"High Elven Guard Tower"
+		"npc_skull"								"Skull of Guldan"
+		"npc_casket"							"Frostmourne Casket"
+		
+		"npc_black_arrow_minion_1"               "Lesser Dark Minion"
+		"npc_black_arrow_minion_2"               "Dark Minion"
+		"npc_black_arrow_minion_3"               "Greater Dark Minion"
+		"npc_naga_tornado"                       "Tornado"
+		"npc_avatar_of_vengeance"                "Avatar of Vengeance"
+		"npc_spirit_of_vengeance"                "Spirit of Vengeance"
+
+		
+		"npc_small_murloc"						"Murloc Tiderunner"
+		"npc_small_murloc_a"						"Murloc Tiderunner"
+		"npc_small_murloc_b"						"Murloc Tiderunner"
+		"npc_medium_murloc"						"Murloc Huntsman"
+		"npc_big_murloc"						"Murloc Nightcrawler"
+		"npc_archer_gnoll"						"Gnoll Poacher"
+		"npc_big_gnoll" 						"Gnoll Overseer"
+		"npc_ogre"								"Ogre Warrior"
+		"npc_wizard"							"Rogue Wizard"
+		"npc_wizard_nonspawned"					"Rogue Wizard"
+		"npc_small_spider"						"Forest Spider"
+		"npc_medium_spider"						"Black Spider"
+		"npc_troll_priest"						"Forest High Troll Priest"
+		"npc_water_elemental"					"Enraged Elemental"
+		"npc_water_elemental_nonspawned"		"Enraged Elemental"
+		"npc_gnoll"								"Gnoll"
+		"npc_ghoul"								"Ghoul"
+		"npc_doom_miniboss"						"KATHUULON"
+
+		"npc_shadow_priest"						"Dark Troll Shadow Priest"
+		"npc_medium_satyr"						"Satyr"
+		"npc_priest"							"Priest"
+		"npc_mud_golem"  						"Mud Golem"
+		"npc_big_wizard"						"Renegade Wizard"
+		"npc_dark_troll_archer"					"Dark Troll"
+		"npc_forest_troll"						"Forest Troll"
+		"npc_nerubian_melee"					"Nerubian Warrior"
+		"npc_nerubian_webspinner"				"Nerubian Webspinner"
+
+		"npc_red_drake"							"Red Drake"
+		"npc_doom_guard_spawn"					"Doom Guard"	
+		"npc_rock_golem_spawn"					"Rock Golem"
+		"npc_furbolg_spawn"						"Furbolg Elder Shaman"
+
+		"npc_pig"								"Spirit Pig"
+		"npc_ghost"								"Banshee"
+		"npc_small_dragon"						"Blue Dragon Whelp"
+		"npc_soul_keeper"						"Soul Keeper"
+		"npc_cherub"							"Cherub"
+		"npc_doom_guard"						"Doom Guard"
+		"npc_imp"								"Hell Imp"					
+		"npc_tb_miniboss"						"RaAdoom"
+
+		"npc_small_sludge"						"Sludge Minion"
+		"npc_kobold_tunneler"					"Kobold Tunneler"
+		"npc_red_lizard"						"Salamander"
+		"npc_blue_lizard"						"Salamander Vizier"
+		"npc_big_wildkin"						"Enraged Wildkin"
+		"npc_treant"							"Corrupted Treant"
+		"npc_hell_spider"						"HellSpider"
+		"npc_skeleton_warrior"					"Giant Skeleton Warrior"
+		"npc_burning_skeleton_archer"			"Burning Archer"
+		"npc_skeleton_archer"					"Skeleton Archer"
+		"npc_frost_skeleton_archer"				"Skeletal Marksman"
+		"npc_sheep"								"Sheep"
+
+		"npc_wendigo"							"Elder Wendigo"
+		"npc_blue_drake"						"Blue Drake"
+
+		"npc_brood"								"Brood Mother"
+		"npc_ice_troll_priest"					"Ice Troll High Priest"
+		"npc_rock_golem"   						"Rock Golem"
+		"npc_small_wildkin"						"Small Wildkin"
+		"npc_wildkin"							"Wildkin"
+		"npc_medium_sludge"						"Sludge Flinger"
+		"npc_green_lizard"						"Thunder Lizard"
+		
+		"npc_sapper"							"Sapper"
+		"npc_roadkill_skeleton"					"RoadKill Skeleton"
+		"npc_rocknroll_steamtank"				"Rock n' Roll Steam Tank"
+		"npc_kitt_steamtank"					"Steam Tank"
+		"npc_health_fountain"					"Health Fountain"
+		"npc_mana_fountain"						"Mana Fountain"
+
+		"npc_necromancer"						"Necromancer"
+		"npc_big_necromancer"					"Necromancer"
+		"npc_big_sludge"						"Sludge Monstrosity"
+		"npc_fellhound"							"Fellhound"
+		"npc_titan"								"Titan Skeleton"
+		"npc_titan_reincarnate"								"Titan Skeleton"
+		"npc_medium_satyr_range"				"Satyr Shadowdancer"
+		"npc_furbolg"							"Furbolg Elder Shaman"
+		"npc_big_satyr"							"Satyr Hellcaller"
+		"npc_soul_smasher"						"Soul Smasher"
+		"npc_infernal"							"Infernal"
+		"npc_boss"								"Xaxion Drakeem"
+
+
+		// Creature Ability Names
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					"Healing Aura"
+
+		// Hero Abilities
+		
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)"					""			
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Description"		""
+		//"DOTA_Tooltip_Ability_(name in npc_abilities_custom)_Note0"			  	"Level 1 -.\nLevel 2 - .\nLevel 3 - ."
+		
+		//==============================================================
+		//	Items
+		//==============================================================
+		
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)"                 	  	""
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Description"         	""
+		
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Lore"                	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_Note0"               	"."
+		//"DOTA_Tooltip_ability_(name in npc_items_custom)_(AbilitySpecial field_name)"        ":"
+		
+		//Tomes
+		"DOTA_Tooltip_ability_item_tome_of_health"                 	  			"Tome of Health"
+		"DOTA_Tooltip_ability_item_tome_of_health_Description"         			"Permanently increases the hit points of the Hero by 50 when used."
+		"DOTA_Tooltip_tome_health_modifier"	"Bonus health"
+		"DOTA_Tooltip_tome_health_modifier_Description"	"Bonus %dMODIFIER_PROPERTY_HEALTH_BONUS% health from used tomes."
+
+		
+		"DOTA_Tooltip_ability_item_tome_of_strength"                 			"Tome of Strength"
+		"DOTA_Tooltip_ability_item_tome_of_strength_Description"        		"Permanently increases the Strength of the Hero by 1 when used."
+		"DOTA_Tooltip_tome_strenght_modifier"	"Bonus strength"
+		"DOTA_Tooltip_tome_strenght_modifier_Description"	"Bonus %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% strength from used tomes."
+
+		"DOTA_Tooltip_ability_item_tome_of_agility"                 			"Tome of Agility"
+		"DOTA_Tooltip_ability_item_tome_of_agility_Description"         		"Permanently increases the Agility of the Hero by 1 when used."
+		"DOTA_Tooltip_tome_agility_modifier"	"Bonus agility"
+		"DOTA_Tooltip_tome_agility_modifier_Description"	"Bonus %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% agility from used tomes."
+
+
+		"DOTA_Tooltip_ability_item_tome_of_intellect"                 	  		"Tome of Intellect"
+		"DOTA_Tooltip_ability_item_tome_of_intellect_Description"         		"Permanently increases the Intellect of the Hero by 1 when used."
+		"DOTA_Tooltip_tome_intelect_modifier"	"Bonus intelligence"
+		"DOTA_Tooltip_tome_intelect_modifier_Description"	"Bonus %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% intelligence from used tomes."
+
+		"DOTA_Tooltip_ability_item_tome_of_knowledge"                 	  			"Tome of Knowledge"
+		"DOTA_Tooltip_ability_item_tome_of_knowledge_Description"         			"Permanently increases the Strength, Agility and Intelligence of the Hero by 1 when used."
+		
+		"DOTA_Tooltip_ability_item_tome_of_strength_2"                 			"Tome of Strength+2"
+		"DOTA_Tooltip_ability_item_tome_of_strength_2_Description"        		"Permanently increases the Strength of the Hero by 2 when used."
+	
+		"DOTA_Tooltip_ability_item_tome_of_agility_2"                 			"Tome of Agility+2"
+		"DOTA_Tooltip_ability_item_tome_of_agility_2_Description"         		"Permanently increases the Agility of the Hero by 2 when used."
+		
+		"DOTA_Tooltip_ability_item_tome_of_intellect_2"                 	  		"Tome of Intellect+2"
+		"DOTA_Tooltip_ability_item_tome_of_intellect_2_Description"         		"Permanently increases the Intellect of the Hero by 2 when used."
+
+		
+		//HP-Mana Boost & Potions
+        "DOTA_Tooltip_ability_item_health_stone_potion"								"Health Stone"
+		"DOTA_Tooltip_ability_item_health_stone_potion_Description"					"Increases the life regeneration rate of the Hero when worn. Can be consumed for 500 health."
+		
+        "DOTA_Tooltip_ability_item_mana_stone_potion"									"Mana Stone"
+		"DOTA_Tooltip_ability_item_mana_stone_potion_Description"						"Increases the mana regeneration rate of the Hero by 25%% when worn. Can be consumed for 300 mana."
+		
+        "DOTA_Tooltip_ability_item_mana_pendant"								"Mana Pendant"
+		"DOTA_Tooltip_ability_item_mana_pendant_Description"					"Increases the mana capacity of the Hero by 150 when worn."
+		
+        "DOTA_Tooltip_ability_item_vitality_pendant"							"Vitality Pendant"
+		"DOTA_Tooltip_ability_item_vitality_pendant_Description"				"Increases the hit points of the Hero by 150 when worn."
+		
+        "DOTA_Tooltip_ability_item_potion_of_healing"							"Potion of Healing"
+		"DOTA_Tooltip_ability_item_potion_of_healing_Description"				"Heals 250 hit points when used."
+		
+		"DOTA_Tooltip_ability_item_potion_of_great_healing"						"Potion of Greater Healing"
+		"DOTA_Tooltip_ability_item_potion_of_great_healing_Description"			"Heals 500 hit points when used."
+        
+		"DOTA_Tooltip_ability_item_potion_of_mana"							"Potion of Mana"
+		"DOTA_Tooltip_ability_item_potion_of_mana_Description"				"Replenishes 150 mana points when used."
+		
+		"DOTA_Tooltip_ability_item_potion_of_great_mana"						"Potion of Great Mana"
+		"DOTA_Tooltip_ability_item_potion_of_great_mana_Description"			"Replenishes 300 mana points when used."
+		
+		"DOTA_Tooltip_ability_item_potion_of_restoration"						"Potion of Restoration"
+		"DOTA_Tooltip_ability_item_potion_of_restoration_Description"			"Restores 500 hit points and 200 mana of the Hero when used."
+		
+		"DOTA_Tooltip_ability_item_potion_of_invulnerability"					"Invulnerability Potion"
+		"DOTA_Tooltip_ability_item_potion_of_invulnerability_Description"			"Makes the Hero invulnerable to damage for 7 seconds when used."
+				//Self buff
+		"DOTA_Tooltip_item_divine_shield_modifier"					"Divine Shield"
+		"DOTA_Tooltip_item_divine_shield_modifier_Description"		"Invulnerable"
+		
+		//Common Drops
+        "DOTA_Tooltip_ability_item_cloak_of_shadows"							"Cloak of Shadows"
+		"DOTA_Tooltip_ability_item_cloak_of_shadows_Description"				"Provides the Hero with invisibility when activated. An invisible Hero will deal bonus 100 damage with -4 armor debuff on first attack from invisibility. If the Hero moves, attacks, uses an ability, or casts a spell, the invisibility effect is lost."
+        "DOTA_Tooltip_ability_item_mantle_3"									"Mantle of Intellect +3"
+        "DOTA_Tooltip_ability_item_mantle_3_Description"						"Increases the Intelligence of the Hero by 3 when worn."
+        "DOTA_Tooltip_ability_item_slippers_3"									"Slippers of Agility +3"	
+        "DOTA_Tooltip_ability_item_slippers_3_Description"						"Increases the Agility of the Hero by 3 when worn."	
+        "DOTA_Tooltip_ability_item_botas"										"Boots of Speed"
+		"DOTA_Tooltip_ability_item_botas_Description"							"Increases the movement speed of the Hero when worn."
+        "DOTA_Tooltip_ability_item_rop_2"										"Ring of Protection +2"
+        "DOTA_Tooltip_ability_item_rop_2_Description"							"Increases the armor of the Hero by 2 when worn."
+        "DOTA_Tooltip_ability_item_sobi"										"Sobi Mask"
+		"DOTA_Tooltip_ability_item_sobi_Description"							"Increases the Hero's rate of mana regeneration when worn."
+		"DOTA_Tooltip_ability_item_circlet_2"									"Circlet of Nobility"	
+        "DOTA_Tooltip_ability_item_circlet_2_Description"						"Increases the Strength, Agility, and Intelligence of the Hero by 2 when worn."	
+				
+		//Keys
+        "DOTA_Tooltip_ability_item_key1"										"Moon Key"
+		"DOTA_Tooltip_ability_item_key1_Description"							"This key glows faintly."
+        "DOTA_Tooltip_ability_item_key2"										"Moon Key"
+		"DOTA_Tooltip_ability_item_key2_Description"							"This key glows faintly."
+		"DOTA_Tooltip_ability_item_key3"										"Sun Key"
+		"DOTA_Tooltip_ability_item_key3_Description"							"This key glows brightly."
+				
+		//Summonings
+        "DOTA_Tooltip_ability_item_book_of_the_dead" 							"Book of the Dead"
+		"DOTA_Tooltip_ability_item_book_of_the_dead_Description"				"Summons four Skeleton Warriors and four Skeleton Archers to fight for you. Lasts 120 seconds."
+		
+        "DOTA_Tooltip_ability_item_demonic_figurine" 							"Demonic Figurine"
+		"DOTA_Tooltip_ability_item_demonic_figurine_Description"				"Summons a Doom Guard to fight for you. Lasts 180 seconds."
+        
+		"DOTA_Tooltip_ability_item_wand_of_illusion"							"Wand of Illusion"
+		"DOTA_Tooltip_ability_item_wand_of_illusion_Description" 				"Create an illusory double of the targeted unit when used. The illusory double deals no damage to enemy units, takes 2 times the damage from enemy attacks, and will disappear after 60 seconds or when its hit points reach zero. You cannot cast Illusion on hostile units."
+        
+		"DOTA_Tooltip_ability_item_red_drake"       							"Red Drake"
+		"DOTA_Tooltip_ability_item_red_drake_Description"  						"Summons a Red Drake to fight for you. Lasts 180 seconds"
+        
+		"DOTA_Tooltip_ability_item_spiked_collar" 								"Spiked Collar"
+		"DOTA_Tooltip_ability_item_spiked_collar_Description"					"Summons a Fel Stalker to fight for you. Lasts 180 seconds."
+        
+		"DOTA_Tooltip_ability_item_stone_token"  								"Stone Token"
+		"DOTA_Tooltip_ability_item_stone_token_Description"						"Summons a Rock Golem to fight for you. Lasts 180 seconds."
+        
+		"DOTA_Tooltip_ability_item_talisman_of_the_wild" 						"Talisman of the Wild"
+		"DOTA_Tooltip_ability_item_talisman_of_the_wild_Description"			"This mystic stone summons 1 Furbolg to fight for you. Lasts 180 seconds."
+		
+		//secret
+
+		"DOTA_Tooltip_ability_item_khadgars_gem"								"Gem of Health"
+		"DOTA_Tooltip_ability_item_khadgars_gem_Description"					"Increases the hit points of the Hero by 300 when worn."		
+		
+		"DOTA_Tooltip_ability_item_bone_chimes"								"Scourge Bone Chimes"
+		"DOTA_Tooltip_ability_item_bone_chimes_Description"					"Grants the Hero and friendly nearby units a vampiric aura which steals 15%% of the damage they deal and converts it into life.\nDoes not stack with Vampiric Aura."
+			//Aura
+		"DOTA_Tooltip_warchasers_vampiric_aura_bonus"						"Vampiric Aura"
+		"DOTA_Tooltip_warchasers_vampiric_aura_bonus_Description"			"This unit is under the effects of Vampiric Aura; it regains health when attacking"
+		
+		"DOTA_Tooltip_ability_item_allerias_flute"								"Flute of Accuracy"
+		"DOTA_Tooltip_ability_item_allerias_flute_Description"					"Increases nearby units damage by 10%%."
+			//Aura
+		"DOTA_Tooltip_flute_aura"										"Accuracy Aura"
+		"DOTA_Tooltip_flute_aura_Description"							"This unit is under the effects of Trueshot Aura; it has increased damage"
+					
+		"DOTA_Tooltip_ability_item_stormwind_horn"								"Horn of Stormwind"
+		"DOTA_Tooltip_ability_item_stormwind_horn_Description"					"Grants the Hero and friendly nearby units 1 bonus armor."
+			//Aura
+		"DOTA_Tooltip_horn_aura_armor"											"Devotion Aura"
+		"DOTA_Tooltip_horn_aura_armor_Description"								"This unit is under the effects of Devotion Aura; it has increased physical resistance."
+		
+		
+		"DOTA_Tooltip_ability_item_evasion"										"Talisman of Evasion"
+		"DOTA_Tooltip_ability_item_evasion_Description" 						"Causes attacks against the wearer to miss 15%% of the time."
+		
+		//orbs
+        "DOTA_Tooltip_ability_item_orb_of_frost"								"Orb of Frost"
+		"DOTA_Tooltip_ability_item_orb_of_frost_Description"					"Adds 6 bonus cold damage to the attack of a Hero when carried. The Hero's attacks also slow the movement speed and attack rate of the enemy for 3 seconds."
+        
+		"DOTA_Tooltip_ability_item_orb_of_fire"									"Orb of Fire"
+		"DOTA_Tooltip_ability_item_orb_of_fire_Description"						"Adds 5 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also do splash damage to nearby enemy units."
+		
+		"DOTA_Tooltip_ability_item_ublink"									"Uber Blink of Many Tests"
+		"DOTA_Tooltip_ability_item_ublink_Description"						"Blink and you're gone."
+
+		"DOTA_Tooltip_ability_item_frostmourne"									"Frostmourne"
+		"DOTA_Tooltip_ability_item_frostmourne_Description"						"Active: Frostmourne Hungers - Drains the target, dealing 15%% of its maximum health and healing you for the damage dealt. Additionally you steal 30%% of their movement speed for 3 seconds. \nPassive: Deals 5%% of the attacked enemy's current HP per attack."
+		"DOTA_Tooltip_ability_item_frostmourne_Lore"							"Hail to the king, baby!"
+		"DOTA_Tooltip_ability_item_frostmourne_Note0"								"The wielder of Frostmourne will become the new Lich King."
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_lifesteal"							"%LIFESTEAL:"	
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_damage"						"+$damage"
+		"DOTA_Tooltip_ability_item_frostmourne_bonus_attack_speed"					"+$attack"		
+		"DOTA_Tooltip_modifier_frostmourne"										"Holding Frostmourne"
+		"DOTA_Tooltip_modifier_frostmourne_Description"										"The new Lich King"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff"						"Frostmourne Hungers"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_buff_Description"					"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff"						"Frostmourne Hungers"
+		"DOTA_Tooltip_modifier_frostmourne_hungers_debuff_Description"					"Slowed by 30%%"
+		
+		// To create a new key ( like $health ) just add the entry here
+		"dota_ability_variable_health"			"Health"					// $health
+		"dota_ability_variable_mana"			"Mana"						// $mana
+		"dota_ability_variable_armor"			"Armor"						// $armor
+		"dota_ability_variable_damage"			"Damage"					// $damage
+		"dota_ability_variable_str"				"Strength"					// $str
+		"dota_ability_variable_int"				"Intelligence"					// $int
+		"dota_ability_variable_agi"				"Agility"					// $agi
+		"dota_ability_variable_all"				"All Attributes"			// $all
+		"dota_ability_variable_attack"			"Attack Speed"				// $attack
+		"dota_ability_variable_hp_regen"		"HP Regeneration"			// $hp_regen
+		"dota_ability_variable_mana_regen"		"Mana Regeneration"			// $mana_regen
+		"dota_ability_variable_move_speed"		"Movement Speed"			// $move_speed	
+		"dota_ability_variable_evasion"			"Evasion"					// $evasion
+		"dota_ability_variable_spell_resist"	"Spell Resistance"			// $spell_resist
+		"dota_ability_variable_selected_attrib"	"Selected Attribute"		// $selected_attribute
+		
+		//Shop 1
+        "DOTA_Tooltip_ability_item_ankh"										"Ankh of Reincarnation"
+		"DOTA_Tooltip_ability_item_ankh_Description"							"Automatically brings the Hero back to life with 500 hit points when the Hero wearing the Ankh dies."
+        
+		"DOTA_Tooltip_ability_item_healing_wards"								"Healing Wards"
+		"DOTA_Tooltip_ability_item_healing_wards_Description"					"Drops a ward that heals nearby friendly units for 20 seconds."
+        
+		"DOTA_Tooltip_ability_item_cloak_of_flames"								"Cloak of Flames"
+		"DOTA_Tooltip_ability_item_cloak_of_flames_Description"					"Engulfs the Hero in fire which deals 10 damage per second to nearby enemy units."
+			//Self buff, check if it's working else rewrite datadriven
+		
+		"DOTA_Tooltip_ability_item_scepter_of_mastery"							"Scepter of Mastery"
+		"DOTA_Tooltip_ability_item_scepter_of_mastery_Description"				"Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. Cannot be used on Heroes or on creeps higher than level 5."
+		"DOTA_Tooltip_item_scepter_of_mastery_dominate_modifier"				"Dominated"
+        
+		"DOTA_Tooltip_ability_item_mask_of_death"								"Mask of Death"
+		"DOTA_Tooltip_ability_item_mask_of_death_Description"					"While wearing this mask, a Hero will recover hit points equal to 30%% of the attack damage dealt to an enemy unit."
+												
+		"DOTA_Tooltip_ability_item_gauntlets_3"									"Gauntlets of Strength +3"
+		"DOTA_Tooltip_ability_item_gauntlets_3_Description"						"Increases the Strength of the Hero by 3 when worn."
+        
+		"DOTA_Tooltip_ability_item_claws_3"										"Claws of Attack +3"
+		"DOTA_Tooltip_ability_item_claws_3_Description"							"Increases the attack damage of the Hero by 3 when worn."
+		
+		//Shop 2
+        
+		"DOTA_Tooltip_ability_item_inferno_stone"								"Inferno Stone"
+        "DOTA_Tooltip_ability_item_inferno_stone_Description"					"Calls an Infernal down from the sky, dealing 50 damage and stunning enemy land units for 4 seconds in an area. The Infernal lasts 180 seconds."
+			
+		"DOTA_Tooltip_ability_item_spell_immunity"								"Necklace of Spell Immunity"
+        "DOTA_Tooltip_ability_item_spell_immunity_Description"					"Renders the Hero invulnerable to magic."
+			//Self buff is hidden
+		
+		"DOTA_Tooltip_ability_item_battle_drums"								"Warsong Battle Drums"
+        "DOTA_Tooltip_ability_item_battle_drums_Description"					"Increases the attack damage of nearby friendly units by 10%% when worn."
+			//Aura from drums, rewrite this later
+		"DOTA_Tooltip_modifier_battle_drums_aura"						"Command Aura"
+		"DOTA_Tooltip_modifier_battle_drums_aura"					"Command  Aura"
+		"DOTA_Tooltip_modifier_battle_drums_aura"	"This unit is under the effects of Command Aura; it has increased damage."
+		
+		"DOTA_Tooltip_ability_item_restoration_scroll"							"Scroll of Restoration"
+        "DOTA_Tooltip_ability_item_restoration_scroll_Description"				"Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero."
+        
+		"DOTA_Tooltip_ability_item_claws_9"										"Claws of Attack +9"
+        "DOTA_Tooltip_ability_item_claws_9_Description"							"Increases the attack damage of the Hero by 9 when worn."
+        
+		"DOTA_Tooltip_ability_item_robe_6"										"Robe of the Magi +6"
+        "DOTA_Tooltip_ability_item_robe_6_Description"							"Increases the Intelligence of the Hero by 6 when worn."
+        
+		"DOTA_Tooltip_ability_item_ror_2"										"Ring of Regen +2"
+		"DOTA_Tooltip_ability_item_ror_2_Description"							"Increases the Hero's rate of hit point regeneration when worn."
+
+		"DOTA_Tooltip_ability_item_shield_amulet"							"Amulet of Spell Shield"
+		"DOTA_Tooltip_ability_item_shield_amulet_Description"				"Blocks a negative spell that an enemy casts on the Hero once every 40 seconds."
+		
+		"DOTA_Tooltip_ability_item_runed_bracers"							"Runed Bracers"	
+		"DOTA_Tooltip_ability_item_runed_bracers_Description"				"Reduces magical damage dealt to the Hero by 33%%."
+			
+		"DOTA_Tooltip_ability_item_belt_6"									"Belt of Giant Strength +6"
+		"DOTA_Tooltip_ability_item_belt_6_Description"						"Increases the Strength of the Hero by 6 when worn."
+	
+		"DOTA_Tooltip_ability_item_claws_6"									"Claws of Attack +6"					
+		"DOTA_Tooltip_ability_item_claws_6_Description"						"Increases the attack damage of the Hero by 6 when worn."
+		
+		"DOTA_Tooltip_ability_item_claws_12"								"Claws of Attack +12"
+		"DOTA_Tooltip_ability_item_claws_12_Description"					"Increases the attack damage of the Hero by 12 when worn."
+		
+		"DOTA_Tooltip_ability_item_boots_6"									"Boots of Quel'Thalas +6"
+		"DOTA_Tooltip_ability_item_boots_6_Description"						"Increases the Agility of the Hero by 6 when worn."
+		
+		"DOTA_Tooltip_ability_item_rop_4"									"Ring of Protection +4"
+		"DOTA_Tooltip_ability_item_rop_4_Description"						"Increases the armor of the Hero by 4 when worn."
+		
+		"DOTA_Tooltip_ability_item_mana_gem"								"Kappa's Gem of Insight"
+		"DOTA_Tooltip_ability_item_mana_gem_Description"					"Increases the mana points of the Hero by 300 when worn."
+		
+		"DOTA_Tooltip_ability_item_gloves_15"								"Gloves of Haste"
+		"DOTA_Tooltip_ability_item_gloves_15_Description"					"Increases the attack speed of the Hero by 15%% when worn." 	
+		
+		//New Items
+		"DOTA_Tooltip_ability_item_lightning_shield"						"Wand of Lightning"
+		"DOTA_Tooltip_ability_item_lightning_shield_Description"			"Allows the Hero to cast Lightning Shield on a target unit. Lightning Shield surrounds a unit with electricity, damaging nearby units." 	
+			//self buff
+		"DOTA_Tooltip_lightning_shield_buff"								"Lightning Shield"
+		"DOTA_Tooltip_lightning_shield_buff_Description"					"Dealing damage to nearby targets."
+		
+	}
+}

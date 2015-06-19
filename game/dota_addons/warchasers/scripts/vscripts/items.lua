@@ -284,6 +284,8 @@ end
 function SummonRedDrake(event)
     local reddrake = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
     ParticleManager:SetParticleControl(reddrake, 0, event.target:GetAbsOrigin())
+
+    --event.target:SetModel(DKMODEL) & setRenderColor or try to change the skin
 end
 
 function SummonFellhound(event)
