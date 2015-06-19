@@ -1,0 +1,119 @@
+"npc_sapper"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"	
+	"Model"						"models/heroes/techies/techies.vmdl"
+	"ModelScale"				"0.5"
+	"SoundSet"                  "Hero_Techies"				
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_axe.vsndevts"
+	"Level"						"6"
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"soundfile" "soundevents/voscripts/game_sounds_vo_axe.vsndevts"
+		"particle" "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+		"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+		"particle"	"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+		"particle"	"particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
+	}
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					"creep_kaboom"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			
+	"MagicalResistance"			"0"		
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"1"								
+	"AttackDamageMax"			"1"								
+	"AttackRate"				"1.6"								
+	"AttackAnimationPoint"		"0.3"								
+	"AttackAcquisitionRange"	"1000"								
+	"AttackRange"				"128"								
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"40"		// Experience earn.
+	"BountyGoldMin"				"32"		// Gold earned min.
+	"BountyGoldMax"				"36"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			
+	"MovementSpeed"				"250"									
+	"MovementTurnRate"			"0.4"									
+
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_techies.vsndevts"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"50"			// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"200"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.						
+
+	"Creature"
+	{
+
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "487" } //	 "Spoon Costume"
+			"Wearable2"	{ "ItemDef"	"489" } // "Slingshot"
+			"Wearable3"	{ "ItemDef"	"490" } // "Cart"
+			"Wearable4"	{ "ItemDef"	"491" } // "Squee Costume"
+			"Wearable5"	{ "ItemDef"	"492" } // "Slingshot"
+
+		}
+
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"0.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creep_kaboom"
+				"Damage"			"1"
+			}
+		}
+	}
+}	

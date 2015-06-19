@@ -1,0 +1,95 @@
+//=================================================================================
+// Creature: Infernal
+//=================================================================================
+"npc_infernal"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/items/warlock/golem/obsidian_golem/obsidian_golem.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_WarlockGolem"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"IdleSoundLoop"				"Hero_WarlockGolem.Spawn_Loop"
+	"Level"						"10"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.5"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"warlock_golem_permanent_immolation"			// Ability 1.
+	"Ability2"					"neutral_spell_immunity"			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_level8"			// Ability 5.
+	"Ability6"					"drop_potion_of_healing"			// Ability 6 - Extra.
+	"Ability7"					"drop_level3"			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"6"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"48"		// Damage range min.
+	"AttackDamageMax"			"56"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"450"		// Range within a target can be acquired.
+	"AttackRange"				"150"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"300"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"500"		// Experience earn.
+	"BountyGoldMin"				"70"		// Gold earned min.
+	"BountyGoldMax"				"100"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"180"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1500"		// Base health.
+	"StatusHealthRegen"			"1"		// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	//"Creature"
+	//{
+	//	"Aggression"				"50.0"
+	//	"Avoidance"					"0.0"
+	//	"Support"					"30.0"
+		//"CanRespawn"				"0"
+		
+		//Level Up
+		
+	//}
+}

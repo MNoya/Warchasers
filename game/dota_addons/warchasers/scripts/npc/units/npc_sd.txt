@@ -1,0 +1,87 @@
+//=================================================================================
+// SD
+//=================================================================================
+"npc_sd"
+{
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/shadow_demon/shadow_demon.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+
+	"AbilityLayout"				"4"
+	"Ability1"					"lich_frost_nova"
+	"Ability2"					"warchasers_sleep" //"warchasers_sleep"
+	"Ability3"					"warchasers_vampiric_aura"
+	"Ability4"					""
+	"Ability5"				""
+	"Ability6"				"warchasers_muhrah_animate_dead"
+    	"Ability7"				"not_on_minimap"
+    	"Ability8"				"cant_act"
+
+    	"HealthBarOffset" "3000"
+
+    	"precache"
+	{
+		"model"	"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"model_folder"	"models/heroes/shadow_demon"
+	}
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"3"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"23" //"2"										// Damage range min.
+	"AttackDamageMax"			"31" //"10"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"2.0"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.55"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
+	"AttackRange"				"350"									// Range within a target can be attacked.
+	//"ProjectileModel"			""							// Particle system model for projectile.
+	//"ProjectileSpeed"			"900"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLIGENCE"
+	"AttributeBaseStrength"		"18"										// Base strength
+	"AttributeStrengthGain"		"2.5"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"21"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.5"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"16"										// Base agility
+	"AttributeAgilityGain"		"1"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"350"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"550"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"315"											// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"0"										// Range of vision at night time.
+	
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"396"		} //Cape
+			"Wearable2"		{	"ItemDef"		"397"		} //Armor
+			"Wearable3" 	{	"ItemDef"		"398" 		} //Belt
+			"Wearable4"		{	"ItemDef"		"399"		} //tail
+			"Wearable5"		{	"ItemDef"		"545"		} //Ambient Effects
+
+		}
+	}
+
+}

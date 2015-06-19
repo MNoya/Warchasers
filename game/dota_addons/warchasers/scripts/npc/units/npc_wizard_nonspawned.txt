@@ -1,0 +1,139 @@
+//=================================================================================
+// Creature: Wizard
+//=================================================================================
+"npc_wizard_nonspawned"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	// Model.
+	"ModelScale"				"1"
+	"SoundSet"                  "Hero_KeeperOfTheLight"					
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
+	"Level"						"3"
+
+	"precache"
+	{
+		"model"	"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+		"particle"	"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	}
+
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"6"
+	"Ability1"					""			// Ability 1.
+	"Ability2"					"warchasers_wizard_purge"		// Ability 2.
+	"Ability3"					"lich_frost_armor"			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_tome"			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"23"								// Damage range min.
+	"AttackDamageMax"			"27"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"400"								// Range within a target can be acquired.
+	"AttackRange"				"500"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_lina/lina_base_attack.vpcf"					// Particle system model for projectile.
+	"ProjectileSpeed"			"800"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"18"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"265"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"300"			// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"2.0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"warchasers_wizard_purge"
+				"Debuff"			"1"
+				//"AOE"				"1" //if the skill should look for aoe
+				//"Radius"			"275" //search range
+				//"MinimumTargets"	"2" //cast trigger
+				//"Damage"			"1" //damage skill
+				//"Stun"				"1" //stun skill
+			}
+		}
+		"DefensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"lich_frost_armor"
+				"Buff"				"1" //dont buff twice
+				//"Heal"				"1"
+				
+			}
+		}
+		
+		"AttachWearables" //Northlight
+		{
+			"Wearable1"	{ "ItemDef" "43" }
+			"Wearable2"	{ "ItemDef"	"5769" }
+			"Wearable3" { "ItemDef"	"5770" }
+			"Wearable4" { "ItemDef"	"5771" }
+			"Wearable4" { "ItemDef"	"5772" }
+			"Wearable5" { "ItemDef"	"5773" }
+		}
+	}
+}

@@ -1,0 +1,96 @@
+//=================================================================================    
+    // Creature: Big Gnoll "Gnoll Overseer" (Command Aura)
+    //=================================================================================
+"npc_big_gnoll"    
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"                                         "models/heroes/bristleback/bristleback.vmdl"   // Model.
+	"BaseClass"                                     "npc_dota_creature"
+	"SoundSet"                  "Hero_Bristleback"				
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+	"Level"                                         "5"
+	"ModelScale"                            "1.4"
+			
+	"UseNeutralCreepBehavior" 	"0" //Keep following
+
+	"precache"
+	{
+		"model"	"models/heroes/bristleback/bristleback.vmdl"
+		"particle"	"particles/units/heroes/hero_zuus/zuus_base_attack.vpcf"
+	}
+
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"                                      "creep_command_aura"       // Ability 1
+	"Ability2"                                      "drop_tome"                      // Ability 2
+	"Ability3"                                      "drop_extra_tome"                      // Ability 3
+	"Ability4"                                      "drop_potion_of_healing"                      // Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"                         "3"                     // Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"            "DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"                       "24"            // Damage range min.
+	"AttackDamageMax"                       "27"            // Damage range max.
+	"AttackRate"                            "1.6"           // Speed of attack.
+	"AttackAnimationPoint"          "0.4"           // Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"        "400"           // Range within a target can be acquired.
+	"AttackRange"                           "300"           // Range within a target can be attacked.
+	"ProjectileModel"                       "particles/units/heroes/hero_zuus/zuus_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"                       "1000"          // Speed of projectile.              
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"                            "80"
+	"HealthBarOffset"                       "170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"                              "26"            // Experience earn.
+	"BountyGoldMin"                         "23"            // Gold earned min.
+	"BountyGoldMax"                         "25"            // Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"          "DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"                         "300"           // Speed.                      
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"                          "300"           // Base health.
+	"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
+	"StatusMana"                            "0"                     // Base mana.
+	"StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+   
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"            "400"           // Range of vision during day light.
+	"VisionNighttimeRange"          "400"           // Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"                                      "DOTA_TEAM_NEUTRALS"                                            // Team name.
+	"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"	
+	{
+		"AttachWearables" //Nighwatch
+		{
+			"Wearable1"	{ "ItemDef" "6489" }
+			//"Wearable2"	{ "ItemDef"	"6491" } //hat
+			"Wearable2" { "ItemDef"	"6492" }
+			"Wearable3" { "ItemDef"	"6493" } //lantern
+			"Wearable4" { "ItemDef"	"6490" } //keys
+		}
+	}
+	
+}

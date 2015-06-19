@@ -1,0 +1,119 @@
+//=================================================================================
+//Level 6
+//=================================================================================
+
+//=================================================================================
+// Creature: Brood Mother 
+//=================================================================================
+"npc_brood"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/broodmother/broodmother.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_Broodmother"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+	"Level"						"9"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.4"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"dark_troll_warlord_ensnare"			// Ability 1
+	"Ability2"					"creep_poison_attack"			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+	"Ability5"					"drop_level4"			// Ability 5.
+	"Ability6"					"drop_extra_level4"			// Ability 6 - Extra.
+	"Ability7"					"drop_level2"			// Ability 7 - Extra.
+	"Ability8"					"drop_extra_level2"			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"2"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"39"		// Damage range min.
+	"AttackDamageMax"			"44"		// Damage range max.	
+	"AttackRate"				"1.1"		// Speed of attack.
+	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"60"		// Experience earn.
+	"BountyGoldMin"				"60"		// Gold earned min.
+	"BountyGoldMax"				"70"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1500"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"800"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"95.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"dark_troll_warlord_ensnare"
+			}
+		}
+		
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"	"4750"		} //legs
+			"Wearable2"		{	"ItemDef"	"4751"		} 
+			"Wearable3"		{	"ItemDef"	"4752"		}
+
+			
+		}
+	}
+
+}

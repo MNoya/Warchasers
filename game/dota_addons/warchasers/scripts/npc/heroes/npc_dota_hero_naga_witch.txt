@@ -1,0 +1,58 @@
+"npc_dota_hero_naga_witch"
+{
+	"override_hero"				"npc_dota_hero_medusa"
+
+	"AbilityLayout"				"4"
+	"Ability1"					"naga_forked_lightning"
+	"Ability2"					"naga_black_arrow"
+	"Ability3"					"naga_healing_wave"
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					"naga_tornado"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"-2"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"3"										// Damage range min.
+	"AttackDamageMax"			"5"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.5"									// Speed of attack.
+	//"AttackAnimationPoint"	"0.7"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+	"AttackRange"				"600"									// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"800"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"20"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.4"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"15"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"350"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"100"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"0"											// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}

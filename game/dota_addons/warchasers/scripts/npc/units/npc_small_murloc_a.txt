@@ -1,0 +1,104 @@
+"npc_small_murloc_a"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/slark/slark.vmdl"	// Model.	
+	"ModelScale"				"0.7"
+	"SoundSet"                  "Hero_Slark"				
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+	"Level"						"1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+
+	"precache"
+	{
+		"model"	"models/heroes/slark/slark.vmdl"
+	}
+			
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	"MagicalResistance"			"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"9"		// Damage range min.
+	"AttackDamageMax"			"10"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1"			// Speed of attack.
+	"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"8"		// Experience earn.
+	"BountyGoldMin"				"4"		// Gold earned min.
+	"BountyGoldMax"				"6"		// Gold earned max.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"80"		// Base health.
+	"StatusHealthRegen"			"0.1"		// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"375"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+	
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"			"140"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"			"5795" // Tidal Blade //Weapon		
+			}
+			"Wearable2"
+			{
+				"ItemDef"			"353"		
+			}
+			"Wearable3"
+			{
+				"ItemDef"			"354"		
+			}
+			"Wearable4"
+			{
+				"ItemDef"			"355"		
+			}
+			"Wearable5"
+			{
+				"ItemDef"			"356"		
+			}
+		}
+	}
+}

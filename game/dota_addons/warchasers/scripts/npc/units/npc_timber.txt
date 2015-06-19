@@ -1,0 +1,92 @@
+//Hero Hall NPCs
+
+//=================================================================================
+// Timbersaw
+//=================================================================================
+"npc_timber"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/shredder/shredder.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+	"AbilityLayout"				"4"
+	"Ability1"					"magnataur_shockwave"
+	"Ability2"					"brewmaster_thunder_clap"
+	"Ability3"					"warchasers_optimusprimo_devotion_aura"  //Needs improving and attach particles
+	"Ability4"					"" 
+	"Ability5"				""
+	"Ability6"				"warchasers_optimusprimo_avatar" //Needs to attach modelscale/particles
+    	"Ability7"				 "not_on_minimap"
+    	"Ability8"				"cant_act"
+
+    	"HealthBarOffset" "3000"
+
+    	"precache"
+	{
+		"model"	"models/heroes/shredder/shredder.vmdl"
+		"model_folder"	"models/heroes/shredder"
+	}
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"31" //"7"										// Damage range min.
+	"AttackDamageMax"			"41" //"17"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.6"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.65"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
+	"AttackRange"				"128"									// Range within a target can be attacked.
+	//"ProjectileModel"			""							// Particle system model for projectile.
+	//"ProjectileSpeed"			"900"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"24"										// Base strength
+	"AttributeStrengthGain"		"3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"360"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	// Status 
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"750"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"225"											// Base mana.
+	"StatusManaRegen"			"1.0"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"0"										// Range of vision at night time.
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"386"		} //Hat 
+			"Wearable2"		{	"ItemDef"		"388"		} //Left Arm
+			"Wearable3" 	{	"ItemDef"		"389" 		} //Shoulders
+			"Wearable4"		{	"ItemDef"		"390"		} //Torso
+			"Wearable5"		{	"ItemDef"		"400" 		} //Waist Saw
+			"Wearable6"		{	"ItemDef"		"401" 		} //Armor
+			"Wearable7"		{	"ItemDef"		"402" 		} //Right Arm
+			"Wearable8"		{	"ItemDef"		"537" 		} //Ambient
+		}
+	}
+
+}

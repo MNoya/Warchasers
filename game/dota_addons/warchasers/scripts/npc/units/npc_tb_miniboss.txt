@@ -1,0 +1,119 @@
+//=================================================================================    
+    // Creature: 2nd Miniboss (RaAdoom)
+    //=================================================================================
+"npc_tb_miniboss"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/items/terrorblade/marauders_demon/marauders_demon.vmdl"	// Model.	
+	"ModelScale"				"1.5"
+	"SoundSet"                  "Hero_Terrorblade"				
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
+	"Level"						"6"
+	"IsAncient"					"1"
+
+	"precache"
+	{
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+	}
+	
+	"DisableResistance"			"75.0"
+	
+	
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"brewmaster_thunder_clap"	// Ability 1.
+	"Ability2"					"tb_miniboss_animate_dead"		// Ability 2.
+	"Ability3"					"tb_miniboss_death"			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"			"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"40"		// Damage range min.
+	"AttackDamageMax"			"45"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"2"			// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"500"			// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"120"		// Experience earn.
+	"BountyGoldMin"				"45"		// Gold earned min.
+	"BountyGoldMax"				"60"		// Gold earned max.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1925"		// Base health.
+	"StatusHealthRegen"			"0.1"		// Health regeneration rate.
+	"StatusMana"				"450"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"250"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+	
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"			"300"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------	
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"brewmaster_thunder_clap"
+				"AOE"				"1" //if the skill should look for aoe
+				"Radius"			"400" //search range
+				"MinimumTargets"	"2" //cast trigger
+				"Damage"			"1" //damage skill
+				"Stun"				"1" //stun skill
+			}
+		}
+	}
+}

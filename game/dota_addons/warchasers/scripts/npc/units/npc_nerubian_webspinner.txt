@@ -1,0 +1,118 @@
+//=================================================================================
+// Creature: Nerubian Webspinner  (Ranged, Summons Skeletons)
+//=================================================================================
+"npc_nerubian_webspinner"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/weaver/weaver.vmdl"	// Model.
+	"ModelScale"				"1.1"
+	"SoundSet"                  "Hero_Weaver"					
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+	"Level"						"3"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"5"
+	"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_tome"			// Ability 5.
+	"Ability6"					"drop_extra_tome"			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"21"								// Damage range min.
+	"AttackDamageMax"			"25"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"								// Range within a target can be acquired.
+	"AttackRange"				"600"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"800"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"18"		// Experience earn.
+	"BountyGoldMin"				"9"		// Gold earned min.
+	"BountyGoldMax"				"12"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"265"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+	
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_weaver.vsndevts"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"200"			// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"2"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"dark_troll_warlord_raise_dead"
+			}
+		}
+		
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "277" } 
+			"Wearable2"	{ "ItemDef"	"278" } 
+			"Wearable3" { "ItemDef"	"279" }
+			"Wearable4" { "ItemDef"	"280" }
+		}
+	}
+}

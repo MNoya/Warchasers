@@ -1,0 +1,89 @@
+//=================================================================================
+// Juggernaut
+//=================================================================================
+"npc_jugg"
+{
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/juggernaut/juggernaut.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+	"SoundSet"				"Hero_Juggernaut"
+
+	"precache"
+	{
+		"model"	"models/heroes/juggernaut/juggernaut.vmdl"
+		"model_folder"	"models/heroes/juggernaut"
+	}
+
+	"AbilityLayout"				"4"
+	"Ability1"					"warchasers_blade_berserker_death_coil"
+	"Ability2"					"warchasers_blade_berserker_immolation" 
+	"Ability3"					"warchasers_endurance_aura"
+	"Ability4"					""
+	"Ability5"				""
+	"Ability6"				"juggernaut_blade_fury"
+    	"Ability7"				"not_on_minimap"
+    	"Ability8"				"cant_act"
+
+    	"HealthBarOffset" "3000"
+    	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"5"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"25" //"2"										// Damage range min.
+	"AttackDamageMax"			"47" //"24"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.77"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.84"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
+	"AttackRange"				"100"									// Range within a target can be attacked.
+	//"ProjectileModel"			""							// Particle system model for projectile.
+	//"ProjectileSpeed"			"900"									// Speed of projectile.
+
+	// Attributes 
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"19"										// Base strength
+	"AttributeStrengthGain"		"2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"16"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.25"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"23"										// Base agility
+	"AttributeAgilityGain"		"1.75"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"320"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"585"									// Base health.
+	"StatusHealthRegen"			"0.4"									// Health regeneration rate.
+	"StatusMana"				"240"											// Base mana.
+	"StatusManaRegen"			"0.75"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"0"										// Range of vision at night time.
+	
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"6"			} //Mask
+			"Wearable2"		{	"ItemDef"		"7"			} //Weapon
+			"Wearable3" 	{	"ItemDef"		"8" 		} //Cape
+			"Wearable4"		{	"ItemDef"		"9"			} //Bracers
+			"Wearable5"		{	"ItemDef"		"62" 		} //Legs
+
+		}
+	}
+
+}

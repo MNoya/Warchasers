@@ -1,0 +1,77 @@
+//=================================================================================	
+// Creature: Forest Troll
+//=================================================================================
+"npc_forest_troll"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				".9"
+	
+	"UseNeutralCreepBehavior" 	"0"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"17"		// Damage range min.
+	"AttackDamageMax"			"20"		// Damage range max.
+	"AttackRate"				"1.6"		// Speed of attack.
+	"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_troll_warlord/troll_warlord_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"12"		// Experience earn.
+	"BountyGoldMin"				"6"		// Gold earned min.
+	"BountyGoldMax"				"8"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"160"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+}

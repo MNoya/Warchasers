@@ -1,0 +1,94 @@
+//=================================================================================
+// Creature: Final Boss
+//=================================================================================
+"npc_boss"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/nightstalker/nightstalker_night.vmdl"	// placeholder
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_NightStalker"			
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_night_stalker.vsndevts"
+	"Level"						"10"
+	"ModelScale" 				"1.7"
+	"ConsideredHero"			"1"
+	"CanBeDominated"			"0"
+
+	"DisableResistance"			"100.0"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"final_boss_void_new"			// Ability 1
+	"Ability2"					"neutral_spell_immunity"			// Ability 2
+	"Ability3"					"final_boss_thinker"			// Ability 3
+	"Ability4"					"night_stalker_hunter_in_the_night"			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"100"		// Damage range min. 63
+	"AttackDamageMax"			"120"		// Damage range max. 70
+	"AttackRate"				"1.6"		// Speed of attack.
+	"AttackAnimationPoint"		"0.55"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
+	"AttackRange"				"180"		// Range within a target can be attacked.  
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"160"
+	"HealthBarOffset"			"400"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"300"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"12000"		// Base health.
+	"StatusHealthRegen"			"3"		// Health regeneration rate.
+	"StatusMana"				"1480"			// Base mana.
+	"StatusManaRegen"			"1"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DisableResistance"			"50.0"
+		
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "337" }
+			"Wearable2"	{ "ItemDef"	"338" }
+			"Wearable3" { "ItemDef"	"339" }
+		}
+
+	}
+	
+	//"vscripts"
+}
+

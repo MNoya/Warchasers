@@ -1,0 +1,74 @@
+//=================================================================================
+// Building: High Elven Farm (200HP 5 Fortified Armor) 
+//=================================================================================
+"npc_farm_kobolds"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_building"	// Class of entity of link to.
+	"Model"						"models/elven_farm.vmdl"	// Model.
+	"ModelScale"				"1"
+	
+	"precache"
+	{
+		"model"	"models/elven_farm.vmdl"
+	}
+
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					"spawn_kobold_tunneler"			// Ability 1.
+	"Ability2"					""	// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""	// Ability 4.
+	"Ability5"					""						// Ability 5.
+	"Ability6"					"drop_tome"			// Ability 6 - Extra.
+	"Ability7"					"drop_level2"			// Ability 7 - Extra.
+	"Ability8"					"drop_extra_tome"			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"		// 
+	"MagicalResistance"			"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"			// Experience earn.
+	"BountyGoldMin"				"100"			// Gold earned min.
+	"BountyGoldMax"				"100"			// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+	"RingRadius"				"150"
+	"HealthBarOffset"			"300"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+	"MovementSpeed"				"0"			// Speed
+	"MovementTurnRate"			"0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"200"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+}

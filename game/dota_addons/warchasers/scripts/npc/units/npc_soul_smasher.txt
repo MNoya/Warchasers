@@ -1,0 +1,119 @@
+//=================================================================================
+//Creature: Soul Smasher (Doom Guard with Rot)
+//=================================================================================
+"npc_soul_smasher"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/doom/doom.vmdl"	// Model.	
+	"ModelScale"				"1.3"
+	"SoundSet"					"Hero_DoomBringer"			
+	"IdleSoundLoop"				"Hero_DoomBringer.IdleLoop"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+	"Level"						"8"
+	"IsAncient"					"1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1.
+	"Ability2"					""						// Ability 2.
+	"Ability3"					"creep_unholy_aura"					// Ability 3.
+	"Ability4"					""				// Ability 4.
+	"Ability5"					"drop_level3"		// Ability 5.
+	"Ability6"					"drop_level6"						// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"3"			// Physical protection.
+	"MagicalResistance"			"25"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"60"		// Damage range min.
+	"AttackDamageMax"			"68"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.8"			// Speed of attack.
+	"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"450"		// Range within a target can be acquired.
+	"AttackRange"				"200"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"100"		// Experience earn.
+	"BountyGoldMin"				"40"		// Gold earned min.
+	"BountyGoldMax"				"48"		// Gold earned max.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1200"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1.25"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO" //CHAOS
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+	
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"270"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+	
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"HealthBarOffset"			"300"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"99.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"30.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"	"satyr_hellcaller_shockwave"
+				"Damage"	"1"
+			}
+		}	
+		
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"	"6096"		} //f2p wings
+			"Wearable2"		{	"ItemDef"	"6098"		} //crown of gore
+			"Wearable3"		{	"ItemDef"	"5833"		} //Weapon: "Infernal Pactblade"="5833".   Eye of Omoz= "4905"  . Fallen Sword="5447"  
+			"Wearable4"		{	"ItemDef"	"5122"		} 
+			"Wearable5"		{	"ItemDef"	"6273"		} //tail incantation
+			"Wearable6"		{	"ItemDef"	"6100"		} //f2p pauldrons
+			"Wearable7"		{	"ItemDef"	"5126"		}
+			
+		}
+	}
+}

@@ -1,0 +1,85 @@
+//=================================================================================
+// Creature: Frost Archer (Frost Arrows)
+//=================================================================================
+"npc_frost_skeleton_archer"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/creeps/item_creeps/i_creep_necro_archer/necro_archer.vmdl"	// Model.
+	"SoundSet"					"Creep_Good_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"ModelScale"				"0.8"
+	"Level"						"3"
+	
+	//"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"5"
+	"Ability1"					"creep_cold_arrow"			// Ability 1. 
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"21"								// Damage range min.
+	"AttackDamageMax"			"30"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
+	"AttackRange"				"600"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/items2_fx/necronomicon_archer_projectile.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"800"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"20"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"160"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"275"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"250"			// Base health.
+	"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"0.75"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+}

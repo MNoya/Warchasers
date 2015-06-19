@@ -1,0 +1,76 @@
+//=================================================================================
+// Building: Harpy Nest
+//=================================================================================
+"npc_harpy_nest"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_building"	
+	"Model"						"models/props_winter/nest_03.vmdl"	// Model.
+	"ModelScale"				"1.8"
+	"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+
+	"precache"
+	{
+		"model"	"models/props_winter/nest_03.vmdl"
+	}
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					"spawn_medium_satyr_shadowdancer"			// Ability 1.
+	"Ability2"					""		// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_level4"			// Ability 5.
+	"Ability6"					"drop_extra_level4"			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"10"		// Physical protection.
+	"MagicalResistance"			"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"			// Experience earn.
+	"BountyGoldMin"				"0"			// Gold earned min.
+	"BountyGoldMax"				"0"			// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_BUILDING"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"150"
+	"HealthBarOffset"			"300"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+	"MovementSpeed"				"0"			// Speed
+	"MovementTurnRate"			"0"			// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"250"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1900"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+}

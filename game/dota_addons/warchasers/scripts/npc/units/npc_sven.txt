@@ -1,0 +1,87 @@
+//=================================================================================
+// Sven
+//=================================================================================
+"npc_sven"
+{
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/sven/sven.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+
+	"precache"
+	{
+		"model"	"models/heroes/sven/sven.vmdl"
+		"model_folder"	"models/heroes/sven"
+	}
+
+	"AbilityLayout"				"4"
+	"Ability1"				"brewmaster_storm_wind_walk"	
+	"Ability2"				"warchasers_megatron_divine_shield"	//Needs attach particles
+	"Ability3"				"warchasers_megatron_thorns_aura"	//Needs attach particles
+	"Ability4"				"cant_act" 
+	"Ability5"				""
+	"Ability6"				"warchasers_megatron_tranquility" //Needs attach particles
+    	"Ability7"				"not_on_minimap"
+    	"Ability8"				""
+
+    	"HealthBarOffset" "3000"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"2"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"27" //"2"										// Damage range min.
+	"AttackDamageMax"			"39" //"14"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.7"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.97"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
+	"AttackRange"				"160"									// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"250"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"25"										// Base strength
+	"AttributeStrengthGain"		"3.2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"14"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.3"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"10"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"350"									// Speed.
+	"MovementTurnRate"			"0.4"									// Turning rate.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"775"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"210"											// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"0"										// Range of vision at night time.
+	
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"16"		} //head
+			"Wearable2"		{	"ItemDef"		"17"		} //sword
+			"Wearable3" 	{	"ItemDef"		"18" 		} //belt
+			"Wearable4"		{	"ItemDef"		"19"		} //gauntlet
+			"Wearable5"		{	"ItemDef"		"20"		} //shoulder
+
+		}
+	}		
+}

@@ -1,0 +1,84 @@
+//=================================================================================
+// Creature: Sheep
+//=================================================================================
+"npc_sheep"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/items/hex/sheep_hex/sheep_hex_gold.vmdl"	// Model.
+	"ModelScale"				"1"
+	"Level"						"1"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					""			// Ability 1.
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"3"			// Physical protection.
+	"MagicalResistance"			"100"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"40"								// Damage range min.
+	"AttackDamageMax"			"55"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"800"								// Range within a target can be acquired.
+	"AttackRange"				"600"								// Range within a target can be attacked.
+	"ProjectileModel"			""					// Particle system model for projectile.
+	"ProjectileSpeed"			""								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"20"		// Experience earn.
+	"BountyGoldMin"				"20"		// Gold earned min.
+	"BountyGoldMax"				"20"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"1"									// Speed.
+	"MovementTurnRate"			"0.4"									// Turning rate.
+
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_dazzle.vsndevts"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"1"			// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"322"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+}

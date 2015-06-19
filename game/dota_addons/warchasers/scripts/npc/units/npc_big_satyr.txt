@@ -1,0 +1,104 @@
+//=================================================================================
+// Creature: Big Satyr
+//=================================================================================
+"npc_big_satyr"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Melee"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"9"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.4"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creep_bloodlust"			// Ability 1
+	"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
+	"Ability3"					"kobold_taskmaster_speed_aura"			// Ability 3
+	"Ability4"					""			// Ability 4
+	"Ability5"					"drop_level3"
+	"Ability6"					"drop_level2"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"48"		// Damage range min.
+	"AttackDamageMax"			"55"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.35"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"250"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"90"		// Experience earn.
+	"BountyGoldMin"				"100"		// Gold earned min.
+	"BountyGoldMax"				"110"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"350"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"800"		// Base health.
+	"StatusHealthRegen"			"1"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1.25"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"DefensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creep_bloodlust"
+				"Buff"				"1"
+			}
+		}			
+	}
+}

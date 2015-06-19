@@ -1,0 +1,98 @@
+//=================================================================================
+// Creature: Dark Troll Archer
+//=================================================================================
+"npc_dark_troll_archer"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/troll_warlord/troll_warlord.vmdl"	// Model.
+	"SoundSet"                  "Hero_TrollWarlord"				
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+	"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_troll_warlord.vsndevts"
+	"ModelScale"				"0.8"
+	"Level"						"2"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	
+	"Ability1"					""			// Ability 1. 
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"7"								// Damage range min.
+	"AttackDamageMax"			"10"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1000"								// Range within a target can be acquired.
+	"AttackRange"				"600"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_troll_warlord/troll_warlord_base_attack.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"800"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"12"		// Experience earn.
+	"BountyGoldMin"				"6"		// Gold earned min.
+	"BountyGoldMax"				"8"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"265"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"150"			// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+			
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "373" } 
+			"Wearable2"	{ "ItemDef"	"374" } 
+			"Wearable3" { "ItemDef"	"410" }
+			"Wearable4" { "ItemDef"	"411" }
+			"Wearable5" { "ItemDef"	"412" }
+		}
+	}
+}

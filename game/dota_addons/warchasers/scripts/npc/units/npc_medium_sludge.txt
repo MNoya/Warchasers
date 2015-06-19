@@ -1,0 +1,79 @@
+//=================================================================================
+// Creature: Medium Sludges 
+//=================================================================================
+"npc_medium_sludge"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/enigma/eidelon.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Melee"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"3"
+	"ModelScale" 				"1.2"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creep_poison_attack"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"23"		// Damage range min.
+	"AttackDamageMax"			"27"		// Damage range max.	
+	"AttackRate"				"1.5"		// Speed of attack.
+	"AttackAnimatio3nPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"14"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"250"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"250"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+
+}

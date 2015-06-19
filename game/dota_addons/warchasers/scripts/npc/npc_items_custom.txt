@@ -1,94 +1,86 @@
-//Generated using Dota Custom File Generator by cris9696
 "DOTAAbilities"
 {
+    "item_allerias_flute"
+{
+	"ID"							"1070"
+	"BaseClass" 					"item_datadriven"
+	"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+	"AbilityTextureName" 			"item_allerias_flute"
 
+	"Model"							"models/props_items/monkey_king_bar01.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
-	//Start of file item_allerias_flute.txt
-	    "item_allerias_flute"
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
+	
+	"AbilityCastPoint"    			"0.0"
+	"AbilityCastRange"    			"900"
+	//"AbilityCooldown"    			"0"
+	//"AbilityManaCost"    			"0"
+
+	"ItemCost"                      "1200"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemShopTags"					"artifact"
+	"ItemQuality"					"artifact"
+	"ItemPermanent"					"1"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	"SecretShop" "1"
+	
+	"AbilitySpecial"
 	{
-		"ID"							"1070"
-		"BaseClass" 					"item_datadriven"
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" 			"item_allerias_flute"
-	
-		"Model"							"models/props_items/monkey_king_bar01.vmdl"
-		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
-	
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		
-		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"900"
-		//"AbilityCooldown"    			"0"
-		//"AbilityManaCost"    			"0"
-	
-		"ItemCost"                      "1200"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemShopTags"					"artifact"
-		"ItemQuality"					"artifact"
-		"ItemPermanent"					"1"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-	
-		"SecretShop" "1"
-		
-		"AbilitySpecial"
-		{
-		   	"01"
-		   	{
-			    "var_type" "FIELD_INTEGER"
-			    "Range" "900"
-		   	}
-	  	}
-	 
-	  	"Modifiers"
-	  	{
-	   		"flute_aura_Modifier"
-	   		{
-	    		"Passive" "1"
-	    		"IsHidden" "1"
-	    		"Aura" "flute_aura"
-	    		"Aura_Radius" "%Range"
-	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
-	    		//"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY" doesnt work
-	
-	                "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
-	                "EffectAttachType" "follow_origin" // "attach_hitloc"
-	                "EffectLifeDurationScale" "1"
-	                "EffectColorA" "255 255 0"
-	   		}
-	 
-	   		"flute_aura"
-	   		{
-	    	
-		    	"IsBuff" "1"
-		    	"IsPurgable" "0"
-		    	
-		    	"Properties"
-		    	{
-		     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "10"
-		    	}
-		    }
+	   	"01"
+	   	{
+		    "var_type" "FIELD_INTEGER"
+		    "Range" "900"
 	   	}
-		"OnOwnerDied"
+  	}
+ 
+  	"Modifiers"
+  	{
+   		"flute_aura_Modifier"
+   		{
+    		"Passive" "1"
+    		"IsHidden" "1"
+    		"Aura" "flute_aura"
+    		"Aura_Radius" "%Range"
+    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+    		//"Aura_Flags" "DOTA_UNIT_TARGET_FLAG_RANGED_ONLY" doesnt work
+
+                "EffectName" "particles/items_fx/cyclone.vpcf" //add precache
+                "EffectAttachType" "follow_origin" // "attach_hitloc"
+                "EffectLifeDurationScale" "1"
+                "EffectColorA" "255 255 0"
+   		}
+ 
+   		"flute_aura"
+   		{
+    	
+	    	"IsBuff" "1"
+	    	"IsPurgable" "0"
+	    	
+	    	"Properties"
+	    	{
+	     		"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "10"
+	    	}
+	    }
+   	}
+	"OnOwnerDied"
+	{
+		"RunScript"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
-			}
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
 		}
 	}
-	
-	//End of file item_allerias_flute.txt
+}
 
-
-	//Start of file item_ankh.txt
 	"item_ankh"  //rewrite datadriven
 	{
 		"ID"							"1000"
@@ -125,10 +117,6 @@
 	}
 	
 	
-	//End of file item_ankh.txt
-
-
-	//Start of file item_apply_buff.txt
 	"item_apply_buff"
 	{
 		// General
@@ -226,10 +214,6 @@
 	
 	
 	//-------------------------------------------------------------------------------------------------------------
-	//End of file item_apply_buff.txt
-
-
-	//Start of file item_apply_modifiers.txt
 	"item_apply_modifiers"
 	{
 		// General
@@ -397,10 +381,6 @@
 	
 	
 	
-	//End of file item_apply_modifiers.txt
-
-
-	//Start of file item_armor_modifier.txt
 	"item_armor_modifier"
 	{
 		"ID"							"2105"
@@ -541,10 +521,6 @@
 		}
 	}
 	
-	//End of file item_armor_modifier.txt
-
-
-	//Start of file item_attackspeed_modifier.txt
 	"item_attackspeed_modifier"
 	{
 		"ID"							"2104"
@@ -646,74 +622,66 @@
 		}
 	}
 	
-	//End of file item_attackspeed_modifier.txt
-
-
-	//Start of file item_battle_drums.txt
-	    "item_battle_drums"
-	    {
-	    	"ID" 							"1031"
-		"ItemCost"						"1800"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	    	"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"artifact"
-		
-		"Model"	"models/items/witchdoctor/tale_tellers_drum.vmdl" //"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"AbilityTextureName" "item_battle_drums"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    	"BaseClass" "item_datadriven"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_battle_drums"
+    {
+    	"ID" 							"1031"
+	"ItemCost"						"1800"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+    	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"artifact"
 	
-		"AbilitySpecial"
+	"Model"	"models/items/witchdoctor/tale_tellers_drum.vmdl" //"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"AbilityTextureName" "item_battle_drums"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"BaseClass" "item_datadriven"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_aura_damage_pct" "10"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius" "900"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_aura_damage_pct" "10"
 		}
-	
-		"Modifiers"
+		"02"
 		{
-			"modifier_drums"
-			{
-				"Passive"	  "1"
-				"IsHidden"	  "1"
-	
-				"EffectName"		"particles/items_fx/aura_assault_ring.vpcf"
-				"EffectAttachType"   "follow_origin"
-	
-				"Aura"       "battle_drums_aura"
-	        		"Aura_Radius" "%radius"
-		        "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		        "Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-	
-			"battle_drums_aura"
-			{
-				"Properties" 
-		        {
-		            "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_aura_damage_pct"
-		        }
-			}
+			"var_type" "FIELD_INTEGER"
+			"radius" "900"
 		}
-	    }
-	
-	//End of file item_battle_drums.txt
+	}
 
+	"Modifiers"
+	{
+		"modifier_drums"
+		{
+			"Passive"	  "1"
+			"IsHidden"	  "1"
 
-	//Start of file item_belt_6.txt
+			"EffectName"		"particles/items_fx/aura_assault_ring.vpcf"
+			"EffectAttachType"   "follow_origin"
+
+			"Aura"       "battle_drums_aura"
+        		"Aura_Radius" "%radius"
+	        "Aura_Teams"  "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	        "Aura_Types"  "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		}
+
+		"battle_drums_aura"
+		{
+			"Properties" 
+	        {
+	            "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_aura_damage_pct"
+	        }
+		}
+	}
+    }
+
 	"item_belt_6"
 	{
 		"ID"							"1014"
@@ -742,176 +710,164 @@
 		}
 	}
 	
-	//End of file item_belt_6.txt
+    "item_bone_chimes"
+{
+	"ID"							"1071"
+	"BaseClass" 					"item_datadriven"
+	"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+	"AbilityTextureName" 			"item_bone_chimes"
 
+	"Model"		"models/props_items/blinkdagger.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
-	//Start of file item_bone_chimes.txt
-	    "item_bone_chimes"
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
+	
+	"AbilityCastPoint"    			"0.0"
+	"AbilityCastRange"    			"900"
+	//"AbilityCooldown"    			"0"
+	//"AbilityManaCost"    			"0"
+
+	"ItemCost"                      "450"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemShopTags"					"artifact"
+	"ItemQuality"					"artifact"
+	"ItemPermanent"					"1"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	"SecretShop" "1"
+
+	"Modifiers"
 	{
-		"ID"							"1071"
-		"BaseClass" 					"item_datadriven"
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" 			"item_bone_chimes"
-	
-		"Model"		"models/props_items/blinkdagger.vmdl"
-		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
-	
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-		
-		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"900"
-		//"AbilityCooldown"    			"0"
-		//"AbilityManaCost"    			"0"
-	
-		"ItemCost"                      "450"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemShopTags"					"artifact"
-		"ItemQuality"					"artifact"
-		"ItemPermanent"					"1"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-	
-		"SecretShop" "1"
-	
-		"Modifiers"
+		"Vampiric_Aura_Modifier"
 		{
-			"Vampiric_Aura_Modifier"
+			"OnCreated"
 			{
-				"OnCreated"
+				"AttachEffect"
 				{
-					"AttachEffect"
-					{
-						"Target" "CASTER"
-						"EffectName"		"particles/items_fx/aura_vlads.vpcf"
-						"EffectAttachType" "follow_origin"
-						"EffectLifeDurationScale" "1"
-					}
+					"Target" "CASTER"
+					"EffectName"		"particles/items_fx/aura_vlads.vpcf"
+					"EffectAttachType" "follow_origin"
+					"EffectLifeDurationScale" "1"
 				}
-				"Passive" 			"1"
-				"IsHidden" 			"1"
-				"IsBuff"			"1"
-				"Aura" 				"warchasers_vampiric_aura_bonus"
-				"Aura_Radius" 		"900"
-				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
 			}
-			
-			"warchasers_vampiric_aura_bonus"
-			{
-				"IsHidden"				"1" //Waiting for a bigger buff bar
-				"IsBuff"				"1"
-				"OnAttackLanded"
-				{
-					"Lifesteal"
-					{
-						"Target"
-						{
-							"Center"	"ATTACKER"
-						}
-						"LifestealPercent" "15"
-					}
-				}
-				//need to check exclude buildings
-			}
+			"Passive" 			"1"
+			"IsHidden" 			"1"
+			"IsBuff"			"1"
+			"Aura" 				"warchasers_vampiric_aura_bonus"
+			"Aura_Radius" 		"900"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_ALL"
 		}
-		"OnOwnerDied"
+		
+		"warchasers_vampiric_aura_bonus"
 		{
-			"RunScript"
+			"IsHidden"				"1" //Waiting for a bigger buff bar
+			"IsBuff"				"1"
+			"OnAttackLanded"
 			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
+				"Lifesteal"
+				{
+					"Target"
+					{
+						"Center"	"ATTACKER"
+					}
+					"LifestealPercent" "15"
+				}
 			}
+			//need to check exclude buildings
 		}
 	}
-	
-	      
-	//End of file item_bone_chimes.txt
-
-
-	//Start of file item_book_of_the_dead.txt
-	    "item_book_of_the_dead"
+	"OnOwnerDied"
 	{
-		"ID"                            "1062"
-		"BaseClass"                     "item_datadriven"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"            "item_book_of_the_dead"
-	
-		"Model"							"models/props_items/necronomicon.vmdl"
-		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
-		
-		"ItemCost"                      "450" 
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemShopTags"					"epic"
-		"ItemQuality"					"epic"
-		"ItemPermanent"					"0"
-		"AbilityCastRange"              "400"
-		"AbilityCooldown"               "20"
-		"AbilityManaCost"               "0"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemInitialCharges"            "1"
-		"SideShop"		"0"
-		"SecretShop" 	"1"
-	
-		"OnSpellStart"
+		"RunScript"
 		{
-			"SpendCharge"
-			{}
-			"SpawnUnit"
-			{
-				"Target"            "CASTER"
-				"UnitName"              "npc_dota_dark_troll_warlord_skeleton_warrior"
-				"UnitCount"             "1"
-				"Duration"				"120"
-				"SpawnRadius"			"100"
-			}
-			"SpawnUnit"
-			{
-				"Target"            "CASTER"
-				"UnitName"              "npc_skeleton_archer"
-				"UnitCount"             "1"
-				"Duration"				"120"
-				"SpawnRadius"			"150"
-			}
-			"SpawnUnit"
-			{
-				"Target"            "CASTER"
-				"UnitName"              "npc_skeleton_archer"
-				"UnitCount"             "1"
-				"Duration"				"120"
-				"SpawnRadius"			"150"
-			}
-			"SpawnUnit"
-			{
-				"Target"            "CASTER"
-				"UnitName"              "npc_dota_dark_troll_warlord_skeleton_warrior"
-				"UnitCount"             "1"
-				"Duration"				"120"
-				"SpawnRadius"			"100"
-			}
-			
-		}
-		
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
-			}
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
 		}
 	}
+}
+
+      
+    "item_book_of_the_dead"
+{
+	"ID"                            "1062"
+	"BaseClass"                     "item_datadriven"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"            "item_book_of_the_dead"
+
+	"Model"							"models/props_items/necronomicon.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 	
-	//End of file item_book_of_the_dead.txt
+	"ItemCost"                      "450" 
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemShopTags"					"epic"
+	"ItemQuality"					"epic"
+	"ItemPermanent"					"0"
+	"AbilityCastRange"              "400"
+	"AbilityCooldown"               "20"
+	"AbilityManaCost"               "0"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemInitialCharges"            "1"
+	"SideShop"		"0"
+	"SecretShop" 	"1"
 
+	"OnSpellStart"
+	{
+		"SpendCharge"
+		{}
+		"SpawnUnit"
+		{
+			"Target"            "CASTER"
+			"UnitName"              "npc_dota_dark_troll_warlord_skeleton_warrior"
+			"UnitCount"             "1"
+			"Duration"				"120"
+			"SpawnRadius"			"100"
+		}
+		"SpawnUnit"
+		{
+			"Target"            "CASTER"
+			"UnitName"              "npc_skeleton_archer"
+			"UnitCount"             "1"
+			"Duration"				"120"
+			"SpawnRadius"			"150"
+		}
+		"SpawnUnit"
+		{
+			"Target"            "CASTER"
+			"UnitName"              "npc_skeleton_archer"
+			"UnitCount"             "1"
+			"Duration"				"120"
+			"SpawnRadius"			"150"
+		}
+		"SpawnUnit"
+		{
+			"Target"            "CASTER"
+			"UnitName"              "npc_dota_dark_troll_warlord_skeleton_warrior"
+			"UnitCount"             "1"
+			"Duration"				"120"
+			"SpawnRadius"			"100"
+		}
+		
+	}
+	
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
 
-	//Start of file item_boots_6.txt
 	"item_boots_6"
 	    {
 	    	"ID"							"1023"
@@ -941,51 +897,43 @@
 		}
 	}
 	
-	//End of file item_boots_6.txt
-
-
-	//Start of file item_botas.txt
-	    "item_botas"
-	    {
-	    	"ID"							"1024"
-		"ItemCost"						"150"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"			"models/props_gameplay/boots_of_speed.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+    "item_botas"
+    {
+    	"ID"							"1024"
+	"ItemCost"						"150"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
 	
-	    	"BaseClass" "item_boots"
-	    	"AbilityTextureName" "item_botas"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		"AbilitySpecial"
+	"Model"			"models/props_gameplay/boots_of_speed.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+
+    	"BaseClass" "item_boots"
+    	"AbilityTextureName" "item_botas"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_movement_speed" "50"
-			}
-		}
-		"OnOwnerDied"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_movement_speed" "50"
 		}
 	}
-	
-	//End of file item_botas.txt
+	"OnOwnerDied"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
+		}
+	}
+}
 
-
-	//Start of file item_circlet_2.txt
 	"item_circlet_2"
 	{
 		"ID"							"1037"
@@ -1016,10 +964,6 @@
 	// Data Driven Items
 	//====================================================================
 	
-	//End of file item_circlet_2.txt
-
-
-	//Start of file item_claws_12.txt
 	"item_claws_12"
 	{
 		"ID"							"1018"
@@ -1050,10 +994,6 @@
 		}
 	}
 	
-	//End of file item_claws_12.txt
-
-
-	//Start of file item_claws_3.txt
 	"item_claws_3"
 	{
 		"ID"							"1015"
@@ -1084,10 +1024,6 @@
 		}
 	}
 	
-	//End of file item_claws_3.txt
-
-
-	//Start of file item_claws_6.txt
 	"item_claws_6"
 	{
 		"ID"							"1016"
@@ -1118,10 +1054,6 @@
 	}
 	
 	
-	//End of file item_claws_6.txt
-
-
-	//Start of file item_claws_9.txt
 	"item_claws_9"
 	{
 		"ID"							"1017"
@@ -1151,102 +1083,90 @@
 		}
 	}
 	
-	//End of file item_claws_9.txt
-
-
-	//Start of file item_cloak_of_flames.txt
-	    "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
-	    {
-	    	"ID"							"1033"
-		"ItemCost"						"2000"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"epic"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"AbilityTextureName"			"item_cloak_of_flames"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SideShop" "1"
-		"SecretShop" "1"
+    "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
+    {
+    	"ID"							"1033"
+	"ItemCost"						"2000"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"epic"
 	
-	    	"BaseClass" "item_radiance"
-			"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "0"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"aura_radius" "200"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"aura_damage" "10"
-			}
-		}
-	    }
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 	
-	//End of file item_cloak_of_flames.txt
+	"AbilityTextureName"			"item_cloak_of_flames"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SideShop" "1"
+	"SecretShop" "1"
 
-
-	//Start of file item_cloak_of_shadows.txt
-	    "item_cloak_of_shadows"
-	{
-		"ID"							"1032"
-		"ItemCost"						"100"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"BaseClass" 				"item_datadriven"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityTextureName"			"item_cloak_of_shadows"
-		"SideShop" "0"
-		"SecretShop" "1"
-	
-		"AbilityCooldown"               "24"
-		"AbilityManaCost"               "50"
-	
+    	"BaseClass" "item_radiance"
 		"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
+			"var_type" "FIELD_INTEGER"
+			"bonus_damage" "0"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"aura_radius" "200"
+		}
+		"03"
+		{
+			"var_type" "FIELD_INTEGER"
+			"aura_damage" "10"
+		}
+	}
+    }
+
+    "item_cloak_of_shadows"
+{
+	"ID"							"1032"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" 				"item_datadriven"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"item_cloak_of_shadows"
+	"SideShop" "0"
+	"SecretShop" "1"
+
+	"AbilityCooldown"               "24"
+	"AbilityManaCost"               "50"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_FLOAT"
+			"fade_time" "1"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_attack_speed" "0"
+		}
+	}
+	"OnSpellStart"
+		{
+		"RunScript"
 			{
-				"var_type" "FIELD_FLOAT"
-				"fade_time" "1"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_attack_speed" "0"
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"cloak_of_shadows_cast"
 			}
 		}
-		"OnSpellStart"
-			{
-			"RunScript"
-				{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"cloak_of_shadows_cast"
-				}
-			}
-	}
-	
-	//End of file item_cloak_of_shadows.txt
+}
 
-
-	//Start of file item_cosmetic_scythe.txt
 	"item_cosmetic_scythe"
 	{
 	    "ID"                    "1666"
@@ -1297,10 +1217,6 @@
 	
 	
 	
-	//End of file item_cosmetic_scythe.txt
-
-
-	//Start of file item_demonic_figurine.txt
 	"item_demonic_figurine" //doom guard
 	{
 		"ID"                            "1064"
@@ -1366,44 +1282,36 @@
 	
 	//"item_wand_of_illusion" //ilu hero
 	
-	//End of file item_demonic_figurine.txt
-
-
-	//Start of file item_evasion.txt
-	    "item_evasion"
-	    {
-	    	"ID"							"1030"
-		"ItemCost"						"800"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"epic"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"BaseClass" "item_vitality_booster"
-	    	"AbilityTextureName" "item_evasion"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_evasion"
+    {
+    	"ID"							"1030"
+	"ItemCost"						"800"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"epic"
 	
-		"AbilitySpecial"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_vitality_booster"
+    	"AbilityTextureName" "item_evasion"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+    		"01"
 		{
-	    		"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_evasion" "15"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_evasion" "15"
 		}
-	
 	}
-	
-	//End of file item_evasion.txt
 
+}
 
-	//Start of file item_frostmourne.txt
 	"item_frostmourne" //totally not Blade of the Ruined King
 	{	
 		"ID"		"1134"
@@ -1575,42 +1483,34 @@
 		}		
 	}
 	
-	//End of file item_frostmourne.txt
-
-
-	//Start of file item_gauntlets_3.txt
-	    "item_gauntlets_3"
+    "item_gauntlets_3"
+{
+	"ID"							"1013"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"AbilityTextureName"			"item_gauntlets_3"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass" "item_gauntlets"
+	"SideShop" "1"
+	"SecretShop" "1"
+	"AbilitySpecial"
 	{
-		"ID"							"1013"
-		"ItemCost"						"100"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"AbilityTextureName"			"item_gauntlets_3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass" "item_gauntlets"
-		"SideShop" "1"
-		"SecretShop" "1"
-		"AbilitySpecial"
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_strength" "3"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_strength" "3"
 		}
 	}
-	
-	//End of file item_gauntlets_3.txt
+}
 
-
-	//Start of file item_gloves_15.txt
 	"item_gloves_15"
 	{	
 		"ID"							"1036"
@@ -1635,10 +1535,6 @@
 		}
 	}
 	
-	//End of file item_gloves_15.txt
-
-
-	//Start of file item_hammer_of_might.txt
 	"item_hammer_of_might"
 	{
 		"ID"							"1135"
@@ -1680,10 +1576,6 @@
 		}
 	}
 	
-	//End of file item_hammer_of_might.txt
-
-
-	//Start of file item_healing_wards.txt
 	"item_healing_wards"
 	{
 		"ID"                            "1060"
@@ -1743,10 +1635,6 @@
 	
 	}    
 	   
-	//End of file item_healing_wards.txt
-
-
-	//Start of file item_health_modifier.txt
 	"item_health_modifier"
 	{
 		"ID"							"2102"
@@ -1847,10 +1735,6 @@
 		}
 	}
 	
-	//End of file item_health_modifier.txt
-
-
-	//Start of file item_health_stone_potion.txt
 	"item_health_stone_potion"
 	{
 		"ID"							"1057"
@@ -1957,10 +1841,6 @@
 		}
 	}
 	
-	//End of file item_health_stone_potion.txt
-
-
-	//Start of file item_inferno_stone.txt
 	"item_inferno_stone"
 	{
 		"ID"                            "1050"
@@ -2053,10 +1933,6 @@
 		}
 	}
 	
-	//End of file item_inferno_stone.txt
-
-
-	//Start of file item_key1.txt
 	"item_key1" 
 	{
 		"ID"							"1041"
@@ -2092,10 +1968,6 @@
 	
 	}
 	
-	//End of file item_key1.txt
-
-
-	//Start of file item_key2.txt
 	 "item_key2" 
 	{
 		"ID"							"1042"
@@ -2130,10 +2002,6 @@
 		"WorldDropSound"				"Item.DropGemWorld"
 	}
 	
-	//End of file item_key2.txt
-
-
-	//Start of file item_key3.txt
 	 "item_key3" 
 	{
 		"ID"							"1043"
@@ -2169,43 +2037,35 @@
 	
 	//Free IDs 1044-1049
 	
-	//End of file item_key3.txt
-
-
-	//Start of file item_khadgars_gem.txt
-	    "item_khadgars_gem"
-	    {
-		"ID"							"1028"
-		"ItemCost"						"1500"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"rare"
-		
-		"Model"	"models/props_gameplay/gem01.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_gem.vpcf"
+    "item_khadgars_gem"
+    {
+	"ID"							"1028"
+	"ItemCost"						"1500"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"rare"
 	
-	    	"BaseClass" "item_vitality_booster"
-	    	"AbilityTextureName" "item_khadgars_gem"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		"AbilitySpecial"
+	"Model"	"models/props_gameplay/gem01.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_gem.vpcf"
+
+    	"BaseClass" "item_vitality_booster"
+    	"AbilityTextureName" "item_khadgars_gem"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_health" "300"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_health" "300"
 		}
 	}
-	
-	//End of file item_khadgars_gem.txt
+}
 
-
-	//Start of file item_lightning_shield.txt
 	"item_lightning_shield"
 	{
 		// General
@@ -2320,10 +2180,6 @@
 		}
 	}
 	
-	//End of file item_lightning_shield.txt
-
-
-	//Start of file item_machinegun.txt
 	"item_machinegun" //find a name
 	{
 		"ID"							"1136"
@@ -2347,10 +2203,6 @@
 		}
 	}
 	
-	//End of file item_machinegun.txt
-
-
-	//Start of file item_mana_gem.txt
 	"item_mana_gem" //pendant of mana
 	    {
 		"ID"							"1029"
@@ -2380,10 +2232,6 @@
 		}
 	}
 	
-	//End of file item_mana_gem.txt
-
-
-	//Start of file item_mana_modifier.txt
 	"item_mana_modifier"
 	{
 		"ID"							"2103"
@@ -2486,10 +2334,6 @@
 	}
 		
 	
-	//End of file item_mana_modifier.txt
-
-
-	//Start of file item_mana_pendant.txt
 	"item_mana_pendant" //pendant of energy
 	{
 		"ID"							"1010"
@@ -2517,10 +2361,6 @@
 		}
 	}
 	
-	//End of file item_mana_pendant.txt
-
-
-	//Start of file item_mana_stone_potion.txt
 	"item_mana_stone_potion"
 	{
 		"ID"							"1058"
@@ -2628,10 +2468,6 @@
 		}
 	}
 	
-	//End of file item_mana_stone_potion.txt
-
-
-	//Start of file item_mantle_3.txt
 	"item_mantle_3"
 	{
 		"ID"							"1021"
@@ -2659,10 +2495,6 @@
 		}
 	    }
 	
-	//End of file item_mantle_3.txt
-
-
-	//Start of file item_mask_of_death.txt
 	"item_mask_of_death"
 	{
 		"ID"							"1012"
@@ -2692,10 +2524,6 @@
 		}
 	}
 	    
-	//End of file item_mask_of_death.txt
-
-
-	//Start of file item_orb_of_fire.txt
 	"item_orb_of_fire"
 	    {
 	    	"ID" "1126"
@@ -2764,10 +2592,6 @@
 	    }
 	
 		
-	//End of file item_orb_of_fire.txt
-
-
-	//Start of file item_orb_of_frost.txt
 	"item_orb_of_frost"
 	    {
 	    	"ID" "1125"
@@ -2845,10 +2669,6 @@
 	}
 	
 	
-	//End of file item_orb_of_frost.txt
-
-
-	//Start of file item_potion_of_great_healing.txt
 	"item_potion_of_great_healing"
 	{
 		"ID"							"1056"
@@ -2935,10 +2755,6 @@
 		}
 	}
 	
-	//End of file item_potion_of_great_healing.txt
-
-
-	//Start of file item_potion_of_great_mana.txt
 	"item_potion_of_great_mana"
 	{
 		"ID"							"1156"
@@ -3026,10 +2842,6 @@
 	}
 	
 	//new potions
-	//End of file item_potion_of_great_mana.txt
-
-
-	//Start of file item_potion_of_healing.txt
 	"item_potion_of_healing"
 	{
 		"ID"							"1055"
@@ -3117,10 +2929,6 @@
 		}
 	}
 	
-	//End of file item_potion_of_healing.txt
-
-
-	//Start of file item_potion_of_invulnerability.txt
 	"item_potion_of_invulnerability"
 	{
 		"ID"							"1158"
@@ -3228,10 +3036,6 @@
 		}
 	}
 	
-	//End of file item_potion_of_invulnerability.txt
-
-
-	//Start of file item_potion_of_mana.txt
 	"item_potion_of_mana"
 	{
 		"ID"							"1155"
@@ -3319,10 +3123,6 @@
 	}
 	
 	
-	//End of file item_potion_of_mana.txt
-
-
-	//Start of file item_potion_of_restoration.txt
 	"item_potion_of_restoration"
 	//Restores 500 hit points and 200 mana of the Hero when used. Level 5
 	{
@@ -3423,10 +3223,6 @@
 		}
 	}
 	
-	//End of file item_potion_of_restoration.txt
-
-
-	//Start of file item_red_drake.txt
 	"item_red_drake"        //dragon
 	{
 		"ID"                            "1066"
@@ -3492,10 +3288,6 @@
 	
 	
 	
-	//End of file item_red_drake.txt
-
-
-	//Start of file item_restoration_scroll.txt
 	"item_restoration_scroll"
 	//Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.
 	{
@@ -3569,10 +3361,6 @@
 		}
 	}
 	
-	//End of file item_restoration_scroll.txt
-
-
-	//Start of file item_robe_6.txt
 	"item_robe_6"
 	{
 		"ID"							"1019"
@@ -3602,147 +3390,127 @@
 		}
 	}
 	
-	//End of file item_robe_6.txt
-
-
-	//Start of file item_rop_2.txt
-	    "item_rop_2"
-	    {
-	    	"ID"							"1025"
-		"ItemCost"						"150"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"BaseClass" "item_ring_of_protection"
-	    	"AbilityTextureName" "item_rop_2"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_rop_2"
+    {
+    	"ID"							"1025"
+	"ItemCost"						"150"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
 	
-		"AbilitySpecial"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_ring_of_protection"
+    	"AbilityTextureName" "item_rop_2"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_armor" "2"
-			}
-		}
-	    }
-	
-	//End of file item_rop_2.txt
-
-
-	//Start of file item_rop_4.txt
-	    "item_rop_4"
-	    {
-	    	"ID"							"1026"
-		"ItemCost"						"500"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"common"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"BaseClass" "item_ring_of_protection"
-	    	"AbilityTextureName" "item_rop_2"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_armor" "4"
-			}
-		}
-	    }
-	
-	//End of file item_rop_4.txt
-
-
-	//Start of file item_ror_2.txt
-	    "item_ror_2"
-	    {
-	    	"ID"							"1020"
-		"ItemCost"						"1000"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"common"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"BaseClass" "item_ring_of_regen"
-	    	"AbilityTextureName"			"ror_2"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_health_regen" "2"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_armor" "2"
 		}
 	}
-	
-	//End of file item_ror_2.txt
+    }
 
-
-	//Start of file item_runed_bracers.txt
-	    "item_runed_bracers" //Cloak 33%
-	    {
-		"ID"							"1034"
-		"ItemCost"						"400"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"rare"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"AbilityTextureName"			"item_runed_bracers"
-		"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_rop_4"
+    {
+    	"ID"							"1026"
+	"ItemCost"						"500"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"common"
 	
-	 	"BaseClass" "item_cloak"
-		"AbilitySpecial"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_ring_of_protection"
+    	"AbilityTextureName" "item_rop_2"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_magical_armor" "33"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_resist" "33"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_armor" "4"
 		}
 	}
+    }
+
+    "item_ror_2"
+    {
+    	"ID"							"1020"
+	"ItemCost"						"1000"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"common"
 	
-	//End of file item_runed_bracers.txt
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_ring_of_regen"
+    	"AbilityTextureName"			"ror_2"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"SideShop" "0"
+	"SecretShop" "1"
 
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_health_regen" "2"
+		}
+	}
+}
 
-	//Start of file item_scepter_of_mastery.txt
+    "item_runed_bracers" //Cloak 33%
+    {
+	"ID"							"1034"
+	"ItemCost"						"400"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"rare"
+	
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"AbilityTextureName"			"item_runed_bracers"
+	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+ 	"BaseClass" "item_cloak"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type" "FIELD_INTEGER"
+			"bonus_magical_armor" "33"
+		}
+		"02"
+		{
+			"var_type" "FIELD_INTEGER"
+			"tooltip_resist" "33"
+		}
+	}
+}
+
 	"item_scepter_of_mastery"
 	//Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. Charges
 	{
@@ -3823,10 +3591,6 @@
 			}
 	}
 	
-	//End of file item_scepter_of_mastery.txt
-
-
-	//Start of file item_scythe.txt
 	"item_scythe"
 	{
 		"ID"							"1137"
@@ -3850,10 +3614,6 @@
 		}
 	}
 	
-	//End of file item_scythe.txt
-
-
-	//Start of file item_shield_amulet.txt
 	"item_shield_amulet" //Linken 40sec
 	{
 		"ID"							"1035"
@@ -3904,77 +3664,65 @@
 		}
 	}
 	
-	//End of file item_shield_amulet.txt
-
-
-	//Start of file item_slippers_3.txt
-	    "item_slippers_3"
-	    {
-	    	"ID"							"1022"
-		"ItemCost"						"100"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"BaseClass" "item_slippers"
-		"AbilityTextureName" "item_slippers_3"
-		"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_slippers_3"
+    {
+    	"ID"							"1022"
+	"ItemCost"						"100"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
 	
-		"ItemQuality"					"attributes"
-		"AbilitySpecial"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_slippers"
+	"AbilityTextureName" "item_slippers_3"
+	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"ItemQuality"					"attributes"
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_agility" "3"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_agility" "3"
 		}
 	}
-	
-	//End of file item_slippers_3.txt
+}
 
-
-	//Start of file item_sobi.txt
-	    "item_sobi"
-	    {
-	    	"ID"							"1027"
-		"ItemCost"						"1300"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"component"
-		
-		"Model"	"models/chest_worlddrop.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-	    	"BaseClass" "item_sobi_mask"
-	    	"AbilityTextureName" "item_sobi"
-	    	"SideShop" "0"
-		"SecretShop" "1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "item_sobi"
+    {
+    	"ID"							"1027"
+	"ItemCost"						"1300"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"component"
 	
-		"AbilitySpecial"
+	"Model"	"models/chest_worlddrop.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+    	"BaseClass" "item_sobi_mask"
+    	"AbilityTextureName" "item_sobi"
+    	"SideShop" "0"
+	"SecretShop" "1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_mana_regen" "50"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_mana_regen" "50"
 		}
-	    }
-	
-	//End of file item_sobi.txt
+	}
+    }
 
-
-	//Start of file item_spell_immunity.txt
 	"item_spell_immunity"
 	{
 		"ID"							"1059"
@@ -4045,10 +3793,6 @@
 		}
 	}
 	
-	//End of file item_spell_immunity.txt
-
-
-	//Start of file item_spiked_collar.txt
 	"item_spiked_collar" //fellhound
 	{
 		"ID"                            "1067"
@@ -4114,10 +3858,6 @@
 	
 	
 	
-	//End of file item_spiked_collar.txt
-
-
-	//Start of file item_stone_token.txt
 	"item_stone_token"  //rock golem
 	{
 		"ID"                            "1068"
@@ -4180,102 +3920,94 @@
 		}
 	}
 	
-	//End of file item_stone_token.txt
+    "item_stormwind_horn"
+{
+	"ID"							"1080"
+	"BaseClass" 					"item_datadriven"
+	"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
+	"AbilityTextureName" 			"item_stormwind_horn"
+	
+	"Model"	"models/props_items/assault_cuirass.vmdl"
+	"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
 
+	"UIPickupSound"					"Item.PickUpGemShop"
+	"UIDropSound"					"Item.DropGemShop"
+	"WorldDropSound"				"Item.DropGemWorld"
 
-	//Start of file item_stormwind_horn.txt
-	    "item_stormwind_horn"
+	"AbilityCastPoint"    			"0.0"
+	"AbilityCastRange"    			"900"
+	//"AbilityCooldown"    			"0"
+	//"AbilityManaCost"    			"0"
+
+	"ItemCost"                      "1500"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+	"ItemShopTags"					"artifact"
+	"ItemQuality"					"artifact"
+	"ItemPermanent"					"1"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+
+	"SecretShop" "1"
+	
+	"AbilitySpecial"
 	{
-		"ID"							"1080"
-		"BaseClass" 					"item_datadriven"
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName" 			"item_stormwind_horn"
-		
-		"Model"	"models/props_items/assault_cuirass.vmdl"
-		"Effect" 						"particles/generic_gameplay/dropped_item.vpcf"
-	
-		"UIPickupSound"					"Item.PickUpGemShop"
-		"UIDropSound"					"Item.DropGemShop"
-		"WorldDropSound"				"Item.DropGemWorld"
-	
-		"AbilityCastPoint"    			"0.0"
-		"AbilityCastRange"    			"900"
-		//"AbilityCooldown"    			"0"
-		//"AbilityManaCost"    			"0"
-	
-		"ItemCost"                      "1500"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemShopTags"					"artifact"
-		"ItemQuality"					"artifact"
-		"ItemPermanent"					"1"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-	
-		"SecretShop" "1"
-		
-		"AbilitySpecial"
-		{
-		   	"01"
-		   	{
-			    "var_type" "FIELD_INTEGER"
-			    "Range" "900"
-		   	}
-	  	}
-	 
-	  	"Modifiers"
-	  	{
-	   		"horn_aura_Modifier"
-	   		{
-	    		"Passive" "1"
-	    		"IsHidden" "1"
-	    		"Aura" "horn_aura_armor"
-	    		"Aura_Radius" "%Range"
-	    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
-	
-	    		//Test Effect
-	                "EffectName" "particles/items_fx/aura_assault.vpcf" //add precache
-	                "EffectAttachType" "follow_origin"
-	                "EffectLifeDurationScale" "1"
-	                "EffectColorA" "255 255 0"
-	   		}
-	 
-	   		"horn_aura_armor"
-	   		{
-	    	
-		    	"IsBuff" "1"
-		    	"IsPurgable" "0"
-		    	
-		    	"Properties"
-		    	{
-		     		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
-		    	}
-		    }
+	   	"01"
+	   	{
+		    "var_type" "FIELD_INTEGER"
+		    "Range" "900"
 	   	}
-		"OnOwnerDied"
+  	}
+ 
+  	"Modifiers"
+  	{
+   		"horn_aura_Modifier"
+   		{
+    		"Passive" "1"
+    		"IsHidden" "1"
+    		"Aura" "horn_aura_armor"
+    		"Aura_Radius" "%Range"
+    		"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    		"Aura_Types" "DOTA_UNIT_TARGET_ALL"
+
+    		//Test Effect
+                "EffectName" "particles/items_fx/aura_assault.vpcf" //add precache
+                "EffectAttachType" "follow_origin"
+                "EffectLifeDurationScale" "1"
+                "EffectColorA" "255 255 0"
+   		}
+ 
+   		"horn_aura_armor"
+   		{
+    	
+	    	"IsBuff" "1"
+	    	"IsPurgable" "0"
+	    	
+	    	"Properties"
+	    	{
+	     		"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "1"
+	    	}
+	    }
+   	}
+	"OnOwnerDied"
+	{
+		"RunScript"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/items.lua"
-				"Function"			"DropItemOnDeath"
-			}
+			"ScriptFile"			"scripts/vscripts/items.lua"
+			"Function"			"DropItemOnDeath"
 		}
 	}
-	
-	
-	//wands
-	//Illusion (replicate)
-	//Mana Stealing 
-	//Of the Wind (eul)
-	
-	//Lightning Shield
-	//End of file item_stormwind_horn.txt
+}
 
 
-	//Start of file item_talisman_of_the_wild.txt
+//wands
+//Illusion (replicate)
+//Mana Stealing 
+//Of the Wind (eul)
+
+//Lightning Shield
 	"item_talisman_of_the_wild"  //fulborg
 	{
 		"ID"                            "1069"
@@ -4338,10 +4070,6 @@
 		}
 	}
 	
-	//End of file item_talisman_of_the_wild.txt
-
-
-	//Start of file item_tome_of_agility.txt
 	"item_tome_of_agility"
 	{
 		// General
@@ -4421,10 +4149,6 @@
 			}
 	}
 	
-	//End of file item_tome_of_agility.txt
-
-
-	//Start of file item_tome_of_agility_2.txt
 	"item_tome_of_agility_2"
 	{
 		// General
@@ -4506,10 +4230,6 @@
 	
 	}
 	
-	//End of file item_tome_of_agility_2.txt
-
-
-	//Start of file item_tome_of_health.txt
 	"item_tome_of_health"
 	{
 		// General
@@ -4582,10 +4302,6 @@
 	}
 	
 	
-	//End of file item_tome_of_health.txt
-
-
-	//Start of file item_tome_of_intellect.txt
 	"item_tome_of_intellect"
 	{
 		// General
@@ -4665,10 +4381,6 @@
 			}
 	}
 	
-	//End of file item_tome_of_intellect.txt
-
-
-	//Start of file item_tome_of_intellect_2.txt
 	"item_tome_of_intellect_2"
 	{
 		// General
@@ -4753,10 +4465,6 @@
 	
 	// POTIONS
 	//-------------------------------------------------------------------------------------------------------------
-	//End of file item_tome_of_intellect_2.txt
-
-
-	//Start of file item_tome_of_knowledge.txt
 	"item_tome_of_knowledge"
 	//Permanently increases the Strength, Agility and Intelligence of the Hero by 1 when used.
 	{
@@ -4885,10 +4593,6 @@
 	}
 	
 	
-	//End of file item_tome_of_knowledge.txt
-
-
-	//Start of file item_tome_of_strength.txt
 	"item_tome_of_strength"
 	{
 		// General
@@ -4969,10 +4673,6 @@
 			}
 	}
 	
-	//End of file item_tome_of_strength.txt
-
-
-	//Start of file item_tome_of_strength_2.txt
 	"item_tome_of_strength_2"
 	{
 		// General
@@ -5053,10 +4753,6 @@
 	
 	}
 	
-	//End of file item_tome_of_strength_2.txt
-
-
-	//Start of file item_ublink.txt
 	"item_ublink"
 	{
 	
@@ -5107,39 +4803,34 @@
 		}		
 	}
 	
-	//End of file item_ublink.txt
+    "item_vitality_pendant"
+    {
+    	"ID"							"1011"
+	"ItemCost"						"350"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemKillable"                  "1"
+	"ItemSellable"                  "1"
+	"ItemDroppable"                 "1"
+	"ItemQuality"					"common"
 
+	"Model"	"models/props_items/ring_health.vmdl"
+	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
+	
+	"BaseClass" "item_vitality_booster"
+	"AbilityTextureName" "item_vitality_pendant"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemQuality"					"consumables"
+	"SideShop" "0"
+	"SecretShop" "1"
 
-	//Start of file item_vitality_pendant.txt
-	    "item_vitality_pendant"
-	    {
-	    	"ID"							"1011"
-		"ItemCost"						"350"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"                  "1"
-		"ItemSellable"                  "1"
-		"ItemDroppable"                 "1"
-		"ItemQuality"					"common"
-	
-		"Model"	"models/props_items/ring_health.vmdl"
-		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
-		
-		"BaseClass" "item_vitality_booster"
-		"AbilityTextureName" "item_vitality_pendant"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemQuality"					"consumables"
-		"SideShop" "0"
-		"SecretShop" "1"
-	
-		"AbilitySpecial"
+	"AbilitySpecial"
+	{
+		"01"
 		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_health" "150"
-			}
+			"var_type" "FIELD_INTEGER"
+			"bonus_health" "150"
 		}
 	}
-	
-	//End of file item_vitality_pendant.txt
+}
+
 }

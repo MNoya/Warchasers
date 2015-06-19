@@ -1,0 +1,81 @@
+//=================================================================================    
+    // Creature: Hell Spider
+    //=================================================================================
+"npc_hell_spider"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/broodmother/spiderling.vmdl"	// Model.	
+	"ModelScale"				"0.4"
+	"Level"						"1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+	"HealthBarOffset"			"80"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1.
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_tome_lowchance"			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	"MagicalResistance"			"50"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"15"		// Damage range min.
+	"AttackDamageMax"			"16"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.35"			// Speed of attack.
+	"AttackAnimationPoint"		"0.467"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"10"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"101"		// Base health.
+	"StatusHealthRegen"			"0.1"		// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1000"									// Range of vision during day light.
+	"VisionNighttimeRange"		"1000"									// Range of vision at night time.
+	
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"522"									// Speed.
+	"MovementTurnRate"			"0.2"									// Turning rate.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	
+}

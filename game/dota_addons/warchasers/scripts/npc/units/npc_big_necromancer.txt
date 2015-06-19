@@ -1,0 +1,119 @@
+//=================================================================================
+// Creature: Necromancer Leader (Raise Dead) -Drops Demonic Figurine
+//=================================================================================
+"npc_big_necromancer"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/warlock/warlock.vmdl"	// Model.
+	"ModelScale"				"1.1"
+	"Level"						"2"
+	"SoundSet"					"Hero_Warlock"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+	"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_warlock.vsndevts"
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"5"
+	"Ability1"					"dark_troll_warlord_raise_dead"			// Ability 1. 
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_demonic_figurine"			// Ability 5.
+	"Ability6"					"drop_level5"			// Ability 6 - Extra.
+	"Ability7"					"drop_extra_level5"			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"7"								// Damage range min.
+	"AttackDamageMax"			"10"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"								// Range within a target can be acquired.
+	"AttackRange"				"600"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"800"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"25"		// Experience earn.
+	"BountyGoldMin"				"10"		// Gold earned min.
+	"BountyGoldMax"				"20"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"270"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"305"			// Base health.
+	"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+	"StatusMana"				"200"			// Base mana.
+	"StatusManaRegen"			"1"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"90.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"dark_troll_warlord_raise_dead"
+			}
+		}
+		
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "5594" } 
+			"Wearable2"	{ "ItemDef"	"5725" } 
+			"Wearable3" { "ItemDef"	"5730" }
+			"Wearable4" { "ItemDef"	"5726" } //demonomicon
+			"Wearable5" { "ItemDef"	"5727" }
+			"Wearable6" { "ItemDef"	"5729" }
+			
+		}
+	}
+}

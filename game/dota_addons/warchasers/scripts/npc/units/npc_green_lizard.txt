@@ -1,0 +1,105 @@
+//=================================================================================	
+// Creature: Green Lizard (Slam)
+//=================================================================================
+"npc_green_lizard"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_Razor"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+	"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_razor.vsndevts"
+	"Level"						"9"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"big_thunder_lizard_slam"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					"drop_level7"			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"26"		// Damage range min.
+	"AttackDamageMax"			"34"		// Damage range max.
+	"AttackRate"				"1.6"		// Speed of attack.
+	"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_razor/razor_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"100"		// Experience earn.
+	"BountyGoldMin"				"100"		// Gold earned min.
+	"BountyGoldMax"				"110"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"450"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"400"			// Base mana.
+	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"big_thunder_lizard_slam"
+				"Buff"				"1"
+			}
+		}
+
+		
+	}
+}

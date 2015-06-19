@@ -1,0 +1,101 @@
+//=================================================================================	
+// Creature: Ranged Medium Satyr "Satyr Shadowdancer"
+//=================================================================================
+"npc_medium_satyr_range"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_satyr_b/n_creep_satyr_b.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"5"
+	"ModelScale" 				"1.5"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creep_curse"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					"drop_tome_lowchance"			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"23"		// Damage range min.
+	"AttackDamageMax"			"29"		// Damage range max.
+	"AttackRate"				"1.2"		// Speed of attack.
+	"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+	"AttackRange"				"600"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/neutral_fx/satyr_trickster_projectile.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"200"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"70"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"350"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"500"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"DefensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creep_curse"
+				"Debuff"				"1"					
+			}
+		}
+		
+	}
+}

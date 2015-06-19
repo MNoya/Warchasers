@@ -1,0 +1,88 @@
+//=================================================================================
+// Creature: Blue Drake 
+//=================================================================================
+"npc_blue_drake"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"	// Model.
+	"ModelScale"				"1"
+	"Level"						"7"
+	"IsAncient"					"1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"6"
+	"Ability1"					"creep_frost_breath"			// Ability 1. 
+	"Ability2"					"neutral_spell_immunity"			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_level3"			// Ability 5.
+	"Ability6"					"drop_level2"			// Ability 6 - Extra.
+	"Ability7"					"drop_tome"			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"35"								// Damage range min.
+	"AttackDamageMax"			"45"								// Damage range max.
+	"AttackRate"				"1.8"								// Speed of attack.
+	"AttackAnimationPoint"		"0.5"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
+	"AttackRange"				"500"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/neutral_fx/black_dragon_attack.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"1000"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"60"		// Experience earn.
+	"BountyGoldMin"				"44"		// Gold earned min.
+	"BountyGoldMax"				"56"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
+	"MovementSpeed"				"250"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"400"			// Base health.
+	"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+			
+	}
+}

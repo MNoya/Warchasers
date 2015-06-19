@@ -1,0 +1,86 @@
+// tank_miniboss
+"npc_kitt_steamtank"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/npc_minions/draft_siege_good.vmdl"
+	"SoundSet"					"Creep_Good_Engine"		
+	"MinimapIcon"					"minimap_siege"
+	"MinimapIconSize"				"350"
+	"ModelScale" 					"5"
+	"Level"						"5"
+	"ConsideredHero"			"1"
+
+	"DisableResistance"			"100.0"
+	
+	// Abilities
+	//----------------------------------------------------------------	
+	"AbilityLayout"				"6"
+	"Ability1"					"miniboss_aoe_bomb"		// Ability 1.
+	"Ability2"					"miniboss_flak"
+	"Ability3"					"miniboss_launch_skeletons"
+	"Ability4"					"miniboss_barrage"
+	"Ability5"					"warchasers_steamtank_immolation"
+	"Ability6"					"miniboss_call_down"
+	"Ability7"					"tank_miniboss_passives"
+	"Ability8"					"tank_miniboss_death"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5"			// Physical protection.
+	"MagicalResistance"				"25"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"50"		// Damage range min.
+	"AttackDamageMax"			"50"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"3.5"		// Speed of attack.
+	"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+	"AttackRange"				"1000"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"600"		// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"80"
+	"HealthBarOffset"			"160"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"400"		// Speed
+	"MovementTurnRate"			"1"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"8000"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"1000"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_SIEGE"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	
+	"vscripts"		"ai_tank_miniboss.lua"
+
+}

@@ -1,0 +1,96 @@
+//=================================================================================
+// Creature: Titan Skeleton Standard (Ank, Bash) 
+//=================================================================================
+"npc_titan"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/wraith_king/wraith_frost.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                  "Hero_SkeletonKing"					
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_skeleton_king.vsndevts"
+	"Level"						"6"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.4"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"slardar_bash"			// Ability 1
+	"Ability2"					"drop_level6"			// Ability 2
+	"Ability3"					"drop_potion_of_healing"			// Ability 3
+	"Ability4"					""						// Ability 4
+	"Ability5"					""
+	"Ability6"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"50"		// Damage range min.
+	"AttackDamageMax"			"55"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"350"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"100"		// Experience earn.
+	"BountyGoldMin"				"100"		// Gold earned min.
+	"BountyGoldMax"				"100"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"600"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"201"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"	"5052"		}
+			"Wearable2"		{	"ItemDef"	"5099"		} //relic sword="6568", blood shard="4445", spine splitter="5099"
+			"Wearable3"		{	"ItemDef"	"5054"		}
+			"Wearable4"		{	"ItemDef"	"5055"		}
+			"Wearable5"		{	"ItemDef"	"5056"		}
+
+			
+		}
+	}
+
+}

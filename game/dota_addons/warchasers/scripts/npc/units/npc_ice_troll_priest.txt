@@ -1,0 +1,94 @@
+//=================================================================================
+// Ice Troll Priest 
+//=================================================================================
+"npc_ice_troll_priest"
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"2"
+	"ModelScale" 				".8"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1
+	"Ability2"					""	//add a frozen debuff		// Ability 2 
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"20"		// Magical protection (percentage).
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"17"		// Damage range min.
+	"AttackDamageMax"			"25"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_lich/lich_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1200"			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"50"
+	"HealthBarOffset"			"180"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"12"		// Experience earn.
+	"BountyGoldMin"				"6"			// Gold earned min.
+	"BountyGoldMax"				"8"			// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"240"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"200"		// Base mana.
+	"StatusManaRegen"			"0.5"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+	}
+	
+	
+}

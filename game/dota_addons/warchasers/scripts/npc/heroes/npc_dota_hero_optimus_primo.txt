@@ -1,0 +1,66 @@
+//	HP = Base health + 25 * Hero's STR
+//	MP =  15 * Hero's INT. 	
+//	1 point of Agility = 0.3 increase in armor
+//	Total Armor = -2 (Base Armor) + 0.3 * Hero's AGI (roughly 3agi=1armor)
+//	Attack Rate: 1 point of Agility = 2% increase in Attack Rate
+"npc_dota_hero_optimus_primo"
+{
+	"override_hero"				"npc_dota_hero_shredder"
+
+	"AbilityLayout"				"4"
+	"Ability1"					"magnataur_shockwave"
+	"Ability2"					"brewmaster_thunder_clap"
+	"Ability3"					"warchasers_optimusprimo_devotion_aura"
+	"Ability4"					"" 
+	"Ability5"				""
+	"Ability6"				"warchasers_optimusprimo_avatar"
+    	"Ability7"				""
+    	"Ability8"				""
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"-2"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"7"										// Damage range min.
+	"AttackDamageMax"			"17"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.6"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.65"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+	"AttackRange"				"128"									// Range within a target can be attacked.
+	"ProjectileModel"			""							// Particle system model for projectile.
+	"ProjectileSpeed"			"900"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"24"										// Base strength
+	"AttributeStrengthGain"		"3"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"1.5"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"11"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"340"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	// Status 
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"150"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"0"											// Base mana.
+	"StatusManaRegen"			"1.0"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+		
+
+}	

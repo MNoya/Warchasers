@@ -1,0 +1,62 @@
+"npc_dota_hero_warden"
+{
+	"override_hero"				"npc_dota_hero_phantom_assassin"
+
+	"AbilityLayout"				"4"
+	"Ability1"					"warden_fan_of_knives"
+	"Ability2"					"warden_shadow_strike"
+	"Ability3"					"warden_evasion"
+	"Ability4"					""
+	"Ability5"					""
+	"Ability6"					"warden_avatar_of_vengance"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"-2"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"6"										// Damage range min.
+	"AttackDamageMax"			"12"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.6"									// Speed of attack.
+	"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+	"AttackRange"				"100"									// Range within a target can be attacked.
+	"ProjectileModel"			""							// Particle system model for projectile.
+	"ProjectileSpeed"			"900"								// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"17"										// Base strength
+	"AttributeStrengthGain"		"2"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"2"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"18"										// Base agility
+	"AttributeAgilityGain"		"1.75"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"320"									// Speed.
+	"MovementTurnRate"			"0.6"									// Turning rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"100"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"0"											// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+}
+

@@ -1,0 +1,25 @@
+"vision_dummy_point"
+{
+	// General
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/development/invisiblebox.mdl"	// Model.
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"unselectable"			// Ability 1.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"			// Type of attack - melee, ranged, etc.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"100"		// Range of vision during day light.
+	"VisionNighttimeRange"		"100"		// Range of vision at night time.
+}

@@ -1,0 +1,81 @@
+"npc_rocknroll_steamtank"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/npc_minions/draft_siege_good.vmdl"
+	"SoundSet"					"Creep_Good_Engine"		
+	"MinimapIcon"					"minimap_siege"
+	"MinimapIconSize"				"350"
+	"ModelScale" 					"2"
+	"Level"						"10"
+	"ConsideredHero"			"1"
+	
+	"precache"
+	{
+		"model"		"models/npc_minions/draft_siege_good.vmdl"
+	}
+
+	// Abilities
+	//----------------------------------------------------------------	
+	"Ability1"					"warchasers_steamtank_immolation" // Ability 1. IMMOLATION 10DPS, 35 activation cost, 7 cost to mantain
+	"Ability2"					""
+	"Ability3"					""
+	"Ability4"					""
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	"MagicalResistance"				"0"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"52"		// Damage range min.
+	"AttackDamageMax"			"64"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"3.5"		// Speed of attack.
+	"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1150"		// Range within a target can be acquired.
+	"AttackRange"				"400"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"600"		// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_BUILDING"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"120"
+	"HealthBarOffset"			"160"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"500"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"2500"		// Base health.
+	"StatusHealthRegen"			"1"			// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1200"		// Range of vision at night time.
+	
+}

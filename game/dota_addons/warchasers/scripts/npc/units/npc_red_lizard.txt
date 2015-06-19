@@ -1,0 +1,106 @@
+//=================================================================================	
+// Creature: Red Lizard Salamander (Stuns) 
+//=================================================================================
+"npc_red_lizard"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"5"
+	"ModelScale" 				"0.9"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"5"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creep_bloodlust"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_tome"			// Ability 5.
+	"Ability6"					"drop_extra_tome"			// Ability 6 - Extra.
+	"Ability7"					"drop_level3"			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"30"		// Damage range min.
+	"AttackDamageMax"			"36"		// Damage range max.
+	"AttackRate"				"1.8"		// Speed of attack.
+	"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/neutral_fx/thunderlizard_base_attack.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1500"		// Speed of projectile.		     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"24"		// Experience earn.
+	"BountyGoldMin"				"21"		// Gold earned min.
+	"BountyGoldMax"				"29"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"500"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"400"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"400"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"90.0" //start buffing
+			}
+		}
+		
+		"DefensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creep_bloodlust"
+				"Buff"				"1"
+			}
+		}			
+	}
+}

@@ -1,0 +1,85 @@
+//=================================================================================
+// Templar - Hall of Legends
+//=================================================================================
+"npc_templar"
+{
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/heroes/lanaya/lanaya.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+
+	"precache"
+	{
+		"model"	"models/heroes/lanaya/lanaya.vmdl"
+		"model_folder"	"models/heroes/lanaya"
+	}
+
+	"AbilityLayout"				"4"
+	"Ability1"				"warchasers_assassin_entangle"  //Needs custom -- DONE
+	"Ability2"				"roshan_bash"	
+	"Ability3"				"sven_storm_bolt"	
+	"Ability4"				"" 
+	"Ability5"				""
+	"Ability6"				"warchasers_starfall"
+    	"Ability7"				"not_on_minimap"
+    	"Ability8"				"cant_act"	
+
+    	"HealthBarOffset" "3000"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"3"									// Physical protection.
+	"MagicalResistance"			"25"									// Magical protection (percentage).
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackDamageMin"			"20" //"2"										// Damage range min.
+	"AttackDamageMax"			"28" //"10"										// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"				// Type of damage dealt. 
+	"AttackRate"				"1.5"									// Speed of attack.
+	//"AttackAnimationPoint"		"0.7"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"100"									// Range within a target can be acquired.
+	"AttackRange"				"600"									// Range within a target can be attacked.
+	"ProjectileModel"			"particles/econ/items/luna/luna_lucent_rider/luna_attack_lucent_rider.vpcf"			// Particle system model for projectile.
+	"ProjectileSpeed"			"1050"									// Speed of projectile.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"16"										// Base strength
+	"AttributeStrengthGain"		"1.8"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"15"										// Base intelligence
+	"AttributeIntelligenceGain"	"2.7"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"18"										// Base agility
+	"AttributeAgilityGain"		"1.5"										// Agility bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"420"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"500"									// Base health.
+	"StatusHealthRegen"			"0.5"									// Health regeneration rate.
+	"StatusMana"				"225"											// Base mana.
+	"StatusManaRegen"			"1"									// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1800"									// Range of vision during day light.
+	"VisionNighttimeRange"		"0"										// Range of vision at night time.
+	
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"173"		} //Hair
+			"Wearable2"		{	"ItemDef"		"174"		} //Shoulders
+			"Wearable3" 	{	"ItemDef"		"175"		} //Skirt
+			"Wearable4"		{	"ItemDef"	"514" 	} //Ambient
+		}
+	}
+
+}

@@ -1,0 +1,101 @@
+//=================================================================================    
+    // Creature: Water Elemental "Enraged Elemental" (Magic Immune)
+    //=================================================================================
+"npc_water_elemental_nonspawned"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"Model"						"models/heroes/morphling/morphling.vmdl"		// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_morphling"													// Name of sound set.
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+	"IdleSoundLoop"				"Hero_Morphling.IdleLoop"
+	"Level"						"4"
+	"ModelScale" 				".84"
+	"CanBeDominated"			"0"
+
+	"precache"
+	{
+		"model"	"models/heroes/morphling/morphling.vmdl"
+	}
+	
+	"UseNeutralCreepBehavior" 	"0"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"2"								// Physical protection.
+
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"5"
+	"Ability1"					"neutral_spell_immunity"			// Ability 1.
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					"drop_tome"			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"17"									// Damage range min.
+	"AttackDamageMax"			"25"									// Damage range max.
+	"AttackRate"				"1.7"									// Speed of attack.
+	"AttackAnimationPoint"		"0.45"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"400"									// Range within a target can be acquired.
+	"AttackRange"				"300"									// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"		// Particle system model for projectile.
+	"ProjectileSpeed"			"1250"									// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"26"		// Experience earn.
+	"BountyGoldMin"				"12"		// Gold earned min.
+	"BountyGoldMax"				"13"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"190"
+
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"
+	"MovementTurnRate"			"0.6"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"300"		// Base health.
+	"StatusHealthRegen"			"0.1"			// Health regeneration rate.
+	"StatusMana"				"0"		// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.
+
+	// Vision
+	//-------------------------------------------------------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"									// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"507"		} //morphling ambient 
+			"Wearable2"		{	"ItemDef"		"4260" } //TEST
+		}
+	}
+
+}

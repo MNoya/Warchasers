@@ -1,0 +1,105 @@
+//=================================================================================    
+    // Creature: Mud Golem (Magic Immune)
+    //=================================================================================
+"npc_mud_golem"   
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"                                         "models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"   // Model.
+	"BaseClass"                                     "npc_dota_creature"
+	"SoundSet"                                      "n_creep_Melee"
+	"GameSoundsFile"                        "soundevents/game_sounds_creeps.vsndevts"
+	"Level"                                         "2"
+	"ModelScale"                            "0.7"
+	
+	//"UseNeutralCreepBehavior" 	"0"
+	
+	"precache"
+	{
+		"model"					"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"
+	}
+
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"	"6"
+	"Ability1"                                      "neutral_spell_immunity"                      // Ability 1
+	"Ability2"                                      "creep_slow"                      // Ability 2
+	"Ability3"                                      ""                      // Ability 3
+	"Ability4"                                      ""                      // Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"                         "0"                     // Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"            "DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"                       "12"            // Damage range min.
+	"AttackDamageMax"                       "13"            // Damage range max.
+	"AttackRate"                            "0.8"           // Speed of attack.
+	"AttackAnimationPoint"          "0.3"           // Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"        "400"           // Range within a target can be acquired.
+	"AttackRange"                           "100"           // Range within a target can be attacked.
+	"ProjectileModel"                       "" // Particle system model for projectile.
+	"ProjectileSpeed"                       ""          // Speed of projectile.              
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"                            "40"
+	"HealthBarOffset"                       "170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"                              "12"            // Experience earn.
+	"BountyGoldMin"                         "8"            // Gold earned min.
+	"BountyGoldMax"                         "10"            // Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"          "DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"                         "300"           // Speed.                      
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"                          "270"           // Base health.
+	"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
+	"StatusMana"                            "300"                     // Base mana.
+	"StatusManaRegen"                       "0.0"           // Mana regeneration rate.               
+   
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"            "400"           // Range of vision during day light.
+	"VisionNighttimeRange"          "400"           // Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"                                      "DOTA_TEAM_NEUTRALS"                                            // Team name.
+	"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+	
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"creep_slow"
+				"Debuff"			"1"
+				"Slow"				"1"
+			}
+		}
+	}
+}

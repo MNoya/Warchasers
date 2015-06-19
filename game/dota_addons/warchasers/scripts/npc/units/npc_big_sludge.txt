@@ -1,0 +1,104 @@
+//=================================================================================
+// Creature: Big Black Sludges 
+//=================================================================================
+"npc_big_sludge"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/enigma/enigma.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Hero_Enigma"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+	"Level"						"5"
+	"ModelScale" 				"1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"creep_poison_attack"			// Ability 1
+	"Ability2"					"big_thunder_lizard_frenzy"			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"1"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"24"		// Damage range min.
+	"AttackDamageMax"			"30"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"200"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"40"		// Experience earn.
+	"BountyGoldMin"				"17"		// Gold earned min.
+	"BountyGoldMax"				"28"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"450"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"400"			// Base mana.
+	"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"big_thunder_lizard_frenzy"
+				"Buff"				"1"
+			}
+		}
+		
+		
+	}
+	
+}

@@ -1,0 +1,102 @@
+//=================================================================================
+// Creature: Burning Archer (Fire Arrows)
+//=================================================================================
+"npc_burning_skeleton_archer"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/heroes/clinkz/clinkz.vmdl"	// Model.
+	"ModelScale"				"0.8"
+	"SoundSet"                  "Hero_Lina"			
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
+	"Level"						"3"
+	
+	"UseNeutralCreepBehavior" 	"0"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"		"5"
+	"Ability1"					"creep_searing_arrow"			// Ability 1. 
+	"Ability2"					""			// Ability 2.
+	"Ability3"					""			// Ability 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+	//"MagicalResistance"			"35"		// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"21"								// Damage range min.
+	"AttackDamageMax"			"30"								// Damage range max.
+	"AttackRate"				"1.6"								// Speed of attack.
+	"AttackAnimationPoint"		"0.3"								// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
+	"AttackRange"				"500"								// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"				// Particle system model for projectile.
+	"ProjectileSpeed"			"900"								// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"30"		// Experience earn.
+	"BountyGoldMin"				"8"		// Gold earned min.
+	"BountyGoldMax"				"10"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"200"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"270"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+	
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"200"			// Base health.
+	"StatusHealthRegen"			"0.5"			// Health regeneration rate.
+	"StatusMana"				"300"			// Base mana.
+	"StatusManaRegen"			"0.75"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+			
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "5178" } //heat bow
+			"Wearable2"	{ "ItemDef"	"56" } //skull
+			"Wearable3" { "ItemDef"	"4972" } //gauntlets
+			"Wearable4" { "ItemDef"	"5151" } //lost hill shield
+			"Wearable5" { "ItemDef"	"4742" } //pauldrons
+			"Wearable6" { "ItemDef"	"4971" } //horns crypt guardian
+		}
+	}
+}

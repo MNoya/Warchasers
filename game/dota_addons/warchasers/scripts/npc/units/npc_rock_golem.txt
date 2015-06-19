@@ -1,0 +1,119 @@
+//=================================================================================    
+    // Creature: Rock Golem (Ranged Boulder Toss, Magic Immune)
+    //=================================================================================
+"npc_rock_golem"   
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"                                         "models/heroes/tiny_01/tiny_01.vmdl"   // Model.
+	"BaseClass"                                     "npc_dota_creature"
+	"SoundSet"					"Hero_Tiny"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+	"VoiceFile" 				"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
+	"Level"                                         "6"
+	"ModelScale"                            "2.5"
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_tiny/tiny_death_rocks.vpcf"
+		"particle"	"particles/units/heroes/hero_tiny/tiny_transform.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+	}
+	
+	"UseNeutralCreepBehavior" 	"0"
+	"AbilityLayout"		"6"
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"                                      "brewmaster_earth_hurl_boulder"   // Ability 1
+	"Ability2"                                      "neutral_spell_immunity"                      // Ability 2
+	"Ability3"                                      ""                      // Ability 3
+	"Ability4"                                      ""                      // Ability 4
+	"Ability5"					"drop_tome"			// Ability 5.
+	"Ability6"					"drop_level4"			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"                         "4"                     // Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"            "DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"                       "39"            // Damage range min.
+	"AttackDamageMax"                       "43"            // Damage range max.
+	"AttackRate"                            "1.35"           // Speed of attack.
+	"AttackAnimationPoint"          "0.3"           // Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"        "500"           // Range within a target can be acquired.
+	"AttackRange"                           "120"           // Range within a target can be attacked.
+	"ProjectileModel"                       "" // Particle system model for projectile.
+	"ProjectileSpeed"                       ""          // Speed of projectile.              
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"                            "40"
+	"HealthBarOffset"                       "170"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"                               "60"            // Experience earn.
+	"BountyGoldMin"                         "43"            // Gold earned min.
+	"BountyGoldMax"                         "55"            // Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"          "DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"                         "200"           // Speed.                      
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"                          "400"           // Base health.
+	"StatusHealthRegen"                     "0.5"           // Health regeneration rate.
+	"StatusMana"                            "400"                     // Base mana.
+	"StatusManaRegen"                       "1"           // Mana regeneration rate.               
+   
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"            "400"           // Range of vision during day light.
+	"VisionNighttimeRange"          "400"           // Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"                                      "DOTA_TEAM_NEUTRALS"                                            // Team name.
+	"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "493" } //Head
+			"Wearable2"	{ "ItemDef"	"494" } //Body
+			"Wearable3" { "ItemDef"	"495" } //Left Arm
+			"Wearable4" { "ItemDef"	"496" } //Right Arm				
+		}
+
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"50.0" //start buffing
+			}
+		}
+					
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"brewmaster_earth_hurl_boulder"
+				"Stun"				"1" //stun skill
+			}
+		}
+		
+	}
+}

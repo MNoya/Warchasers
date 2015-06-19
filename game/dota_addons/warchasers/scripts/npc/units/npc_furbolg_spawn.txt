@@ -1,0 +1,114 @@
+//=================================================================================
+// Furbolg Elder Shaman Spawn
+//=================================================================================
+"npc_furbolg_spawn"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/heroes/lone_druid/true_form.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"                  "LoneDruid_SpiritBear"					
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_lone_druid.vsndevts"
+	"Level"						"7"
+	"IsAncient"					"1"
+	"ModelScale" 				"1.1"
+	
+	"UseNeutralCreepBehavior" 	"0"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"warlock_shadow_word"			// Ability 1
+	"Ability2"					"zuus_arc_lightning"			// Ability 2
+	"Ability3"					"drop_tome"			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"3"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"14"		// Damage range min.
+	"AttackDamageMax"			"15"		// Damage range max.	
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"350"		// Range within a target can be acquired.
+	"AttackRange"				"150"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"40"
+	"HealthBarOffset"			"250"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"70"		// Experience earn.
+	"BountyGoldMin"				"53"		// Gold earned min.
+	"BountyGoldMax"				"65"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"320"		// Speed.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"600"		// Base health.
+	"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1.25"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"		// Range of vision during day light.
+	"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DefaultState"			"Invade"
+		"States"	
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0" //cast offensive spells whenever
+				"Avoidance"			"0.0" //dont flee
+				"Support"			"80.0" //start buffing
+			}
+		}
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"zuus_arc_lightning"
+			}
+		}	
+		
+		"DefensiveAbilities"
+		{
+			"Ability1"
+			{
+				"Name"				"warlock_shadow_word"
+				"Buff"				"1"
+			}
+		}
+			
+		
+	}
+	
+}
