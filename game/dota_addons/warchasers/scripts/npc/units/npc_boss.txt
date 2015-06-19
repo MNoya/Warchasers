@@ -5,7 +5,7 @@
 {										
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/heroes/abyssal_underlord/abyssal_underlord.vmdl"
+	"Model"						"models/heroes/nightstalker/nightstalker_night.vmdl"	// placeholder
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_NightStalker"			
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
@@ -79,6 +79,14 @@
 	"Creature"
 	{
 		"DisableResistance"			"50.0"
+		
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "337" }
+			"Wearable2"	{ "ItemDef"	"338" }
+			"Wearable3" { "ItemDef"	"339" }
+		}
+
 	}
 	
 	//"vscripts"

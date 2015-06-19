@@ -6443,13 +6443,31 @@
 	
 			}
 	
-			"RunScript"
+				"SpawnUnit"
 			{
-				"ScriptFile"	"spawn.lua"
-				"Function"		"LaunchSkeletons"
-				"Count"			"10"
-				"Radius"		"250"
-				"Target"		"PROJECTILE"
+				"UnitName"	"npc_roadkill_skeleton"
+				"UnitCount"	"10"
+				"SpawnRadius"	"250"
+				"Target"	"TARGET"
+				"GrantsGold"	"0"
+				"GrantsXP"	"0"
+						"OnSpawn"
+				{
+								"AttachEffect"
+					{
+						"EffectName"	"particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"	"TARGET"
+										"ControlPointEntities"
+						{
+							"TARGET"	"attach_origin"
+							"TARGET"	"attach_origin"
+						}
+	
+					}
+	
+				}
+	
 			}
 		}
 	

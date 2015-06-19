@@ -1,7 +1,7 @@
 -- dota_launch_custom_game warchasers warchasers
 
 
-WARCHASERS_VERSION = "1.3.2" -- Reborn
+WARCHASERS_VERSION = "1.3.1" -- Reborn
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
@@ -512,7 +512,7 @@ function Warchasers:OnNPCSpawned(keys)
 
 			-- Developer Tools
 			if Convars:GetBool("developer") then
-				local item = CreateItem("item_ublink", npc, npc) --testing items
+				local item = CreateItem("item_cosmetic_scythe", npc, npc) --testing items
 				npc:AddItem(item)
 
 				-- Test Unit
