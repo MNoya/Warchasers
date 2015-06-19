@@ -10,7 +10,7 @@ function Teleporter(trigger)
         EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
         GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "teleport_spot_1" )
-        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+        local messageinfo = { message = "CHECKPOINT REACHED",duration = 3}
         FireGameEvent("show_center_message",messageinfo)
 end
 
@@ -417,7 +417,7 @@ function TeleporterTanksStart(trigger)
         TANK:SetRenderColor(150, 150, 150)
          
          GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
-        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+        local messageinfo = { message = "CHECKPOINT REACHED",duration = 3}
          FireGameEvent("show_center_message",messageinfo)
 
         --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
@@ -467,7 +467,7 @@ function TeleporterFinal(trigger)
     EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
     GameRules.CURRENT_SAVEPOINT = point
-    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    local messageinfo = { message = "CHECKPOINT REACHED",duration = 3}
      FireGameEvent("show_center_message",messageinfo)
 
     FindClearSpaceForUnit(trigger.activator, point:GetAbsOrigin(), false)

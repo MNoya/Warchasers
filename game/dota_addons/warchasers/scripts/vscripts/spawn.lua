@@ -743,3 +743,12 @@ function SpawnSappers(event)
         end
 
 end
+
+function LaunchSkeletons( event )
+    local target = event.target
+    local count = event.Count
+    local radius = event.Radius
+    for i=1,count do
+        local unit = CreateUnitByName("npc_roadkill_skeleton", target:GetAbsOrigin() + RandomVector(radius), true, nil, nil, DOTA_TEAM_NEUTRALS)
+    end
+end
