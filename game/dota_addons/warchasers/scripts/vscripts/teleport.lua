@@ -10,7 +10,7 @@ function Teleporter(trigger)
         EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
         GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "teleport_spot_1" )
-        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+        local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
         FireGameEvent("show_center_message",messageinfo)
 end
 
@@ -413,11 +413,11 @@ function TeleporterTanksStart(trigger)
     local tank_spawn_point = Vector(4466,1100,128)
     if not GameRules.TankStarted then
         GameRules.TankStarted = true
-        TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_BADGUYS)
+        TANK = CreateUnitByName("npc_kitt_steamtank", tank_spawn_point, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
         TANK:SetRenderColor(150, 150, 150)
          
          GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "tank_savepoint" )
-        local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+        local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
          FireGameEvent("show_center_message",messageinfo)
 
         --ensure a navigable slot (first player to touch the trigger will activate the game for everyone)
@@ -467,7 +467,7 @@ function TeleporterFinal(trigger)
     EmitGlobalSound("Hero_KeeperOfTheLight.Recall.End")
 
     GameRules.CURRENT_SAVEPOINT = point
-    local messageinfo = { message = "SAVEPOINT REACHED",duration = 3}
+    local messageinfo = { message = "CHECK POINT REACHED",duration = 3}
      FireGameEvent("show_center_message",messageinfo)
 
     FindClearSpaceForUnit(trigger.activator, point:GetAbsOrigin(), false)
