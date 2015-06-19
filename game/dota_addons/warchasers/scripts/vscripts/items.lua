@@ -176,6 +176,7 @@ function StrengthTomeUsed( event )
 end
 
 function AgilityTomeUsed( event )
+    
     local picker = event.caster
     local tome = event.ability
     local statBonus = event.bonus_stat

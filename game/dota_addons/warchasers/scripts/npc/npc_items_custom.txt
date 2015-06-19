@@ -4107,6 +4107,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4130,24 +4132,12 @@
 				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
 				"EffectAttachType" 	"follow_overhead"
 			}
-			"SpendCharge"
-			{}
+			
 		}
 	
 		"Modifiers"
 		{
-			"tome_modifier"
-			{
-				"Passive"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items.lua"
-						"Function"		"CastOnPickup"
-					}
-				}
-			}
+			
 	
 			"tome_agility_modifier"
 			{
@@ -4200,6 +4190,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4223,8 +4215,7 @@
 				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
 				"EffectAttachType" 	"follow_overhead"
 			}
-			"SpendCharge"
-			{}
+			
 			"RunScript"
 			{
 				"ScriptFile"	"items.lua"
@@ -4277,6 +4268,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4293,8 +4286,7 @@
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_b.vpcf" //"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			"SpendCharge"
-			{}
+			
 			//"FireEffect"
 			//{
 			//	"Target" "CASTER"
@@ -4358,6 +4350,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4381,8 +4375,7 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			"SpendCharge"
-			{}
+			
 		}
 		"Modifiers"
 			{
@@ -4437,6 +4430,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4460,8 +4455,7 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			"SpendCharge"
-			{}
+			
 		}
 	
 	"Modifiers"
@@ -4522,6 +4516,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}	
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4569,8 +4565,7 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			"SpendCharge"
-			{}			
+					
 		}
 	
 	
@@ -4649,6 +4644,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
+			"SpendCharge"
+			{}	
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4672,8 +4669,7 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			"SpendCharge"
-			{}			
+					
 		}
 	
 		"Modifiers"
