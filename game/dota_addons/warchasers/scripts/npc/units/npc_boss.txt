@@ -86,9 +86,7 @@
 			"Wearable2"	{ "ItemDef"	"338" }
 			"Wearable3" { "ItemDef"	"339" }
 		}
-
-	}
-	
+	}	
 	//"vscripts"
 }
 

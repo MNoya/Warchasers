@@ -13,14 +13,16 @@ end
 function StartSpawnForBuilding( building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
     local building = Entities:FindByName(nil, building_name)
     if building ~= nil then
-        local ability = building:FindAbilityByName(ability_name)
-        ability:SetContextThink("SpawnLoop", function() 
-            if ability:IsFullyCastable() then
+        local ability = building:FindAbilityByName(ability_name)     
+        Timers:CreateTimer(function()
+            if building and IsValidEntity(building) and building:IsAlive() then
                 ability:StartCooldown(spawn_interval)
                 SpawnUnit(unit_name, building, spawn_limit, sound)
-            end 
-            return spawn_interval 
-        end, 1)
+                return spawn_interval
+            else
+                return
+            end            
+        end)
     end
 end
 
