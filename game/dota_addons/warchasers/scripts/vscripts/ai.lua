@@ -1,10 +1,12 @@
 print("AI is loading")
 
-affix_table = {}
-affix_keyvalues = LoadKeyValues("scripts/affix_list.txt")
-affix_names = {}
-pre_dificulty_creeps = {}
-affix_creeps_keyvalue = LoadKeyValues("scripts/creep_list.txt")
+if affix_table == nil then
+	affix_table = {}
+	affix_keyvalues = LoadKeyValues("scripts/affix_list.txt")
+	affix_names = {}
+	pre_dificulty_creeps = {}
+	affix_creeps_keyvalue = LoadKeyValues("scripts/creep_list.txt")
+end
 
 
 function add_affixes_to_pre_dificulty_creeps()
