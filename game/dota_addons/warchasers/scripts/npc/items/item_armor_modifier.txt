@@ -1,6 +1,6 @@
 "item_armor_modifier"
 {
-	"ID"							"2105"
+	"ID"							"2205"
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"

@@ -1,6 +1,6 @@
 "item_spiked_collar" //fellhound
 {
-	"ID"                            "1067"
+	"ID"                            "2067"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_spiked_collar"

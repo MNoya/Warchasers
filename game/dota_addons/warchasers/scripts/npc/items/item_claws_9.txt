@@ -1,6 +1,6 @@
 "item_claws_9"
 {
-	"ID"							"1017"
+	"ID"							"2017"
 	"ItemCost"						"400"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

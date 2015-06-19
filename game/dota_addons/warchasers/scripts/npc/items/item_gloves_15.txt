@@ -1,6 +1,6 @@
 "item_gloves_15"
 {	
-	"ID"							"1036"
+	"ID"							"2036"
 	"ItemCost"						"100"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

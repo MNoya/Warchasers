@@ -1,6 +1,6 @@
     "item_bone_chimes"
 {
-	"ID"							"1071"
+	"ID"							"2071"
 	"BaseClass" 					"item_datadriven"
 	"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

@@ -1,6 +1,6 @@
 "item_inferno_stone"
 {
-	"ID"                            "1050"
+	"ID"                            "2050"
 	"ItemCost"						"1500"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 	

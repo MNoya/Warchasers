@@ -1,6 +1,6 @@
 "item_boots_6"
     {
-    	"ID"							"1023"
+    	"ID"							"2023"
 	"ItemCost"						"500"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

@@ -1,6 +1,6 @@
 "item_belt_6"
 {
-	"ID"							"1014"
+	"ID"							"2014"
 	"ItemCost"						"500"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

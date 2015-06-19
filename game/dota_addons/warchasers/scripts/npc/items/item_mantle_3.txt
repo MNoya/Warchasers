@@ -1,6 +1,6 @@
 "item_mantle_3"
 {
-	"ID"							"1021"
+	"ID"							"2021"
 	"ItemCost"						"100"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

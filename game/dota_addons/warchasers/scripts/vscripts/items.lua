@@ -149,7 +149,6 @@ function HealthTomeUsed( event )
     end
     --print(event.caster:GetModifierStackCount("tome_health_modifier", nil))
 
-    local TomePopUp = require("popups")
     PopupHealthTome(picker, 30)
 end
 
@@ -173,7 +172,6 @@ function StrengthTomeUsed( event )
     --SetModifierStackCount(string modifierName, handle b, int modifierCount) 
     --GetModifierStackCount(string modifierName, handle b) 
     
-    local TomePopUp = require("popups")
     PopupStrTome(picker, statBonus)
 end
 
@@ -193,7 +191,6 @@ function AgilityTomeUsed( event )
         picker:SetModifierStackCount("tome_agility_modifier", picker, (picker:GetModifierStackCount("tome_agility_modifier", picker) + statBonus))
     end
 
-    local TomePopUp = require("popups")
     PopupAgiTome(picker, statBonus)
 end
 
@@ -213,19 +210,16 @@ function IntellectTomeUsed( event )
         picker:SetModifierStackCount("tome_intelect_modifier", picker, (picker:GetModifierStackCount("tome_intelect_modifier", picker) + statBonus))
     end
 
-    local TomePopUp = require("popups")
     PopupIntTome(picker, statBonus)
 end
 
 function Heal(event)
     event.caster:GetPlayerOwner():GetAssignedHero():Heal(event.heal_amount, event.caster)
-    local HealingPopUp = require("popups")
     PopupHealing(event.caster, event.heal_amount)
 end
 
 function ReplenishMana(event)
     event.caster:GetPlayerOwner():GetAssignedHero():GiveMana(event.mana_amount)
-    local ManaPopUp = require("popups")
     PopupMana(event.caster, event.mana_amount)
 end
 
@@ -284,6 +278,7 @@ end
 function SummonRedDrake(event)
     local reddrake = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
     ParticleManager:SetParticleControl(reddrake, 0, event.target:GetAbsOrigin())
+    reddrake:SetRenderColor(255, 0, 0)
 
     --event.target:SetModel(DKMODEL) & setRenderColor or try to change the skin
 end

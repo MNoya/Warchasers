@@ -1,6 +1,6 @@
 "item_robe_6"
 {
-	"ID"							"1019"
+	"ID"							"2019"
 	"ItemCost"						"1000"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

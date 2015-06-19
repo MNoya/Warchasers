@@ -1,6 +1,6 @@
     "item_botas"
     {
-    	"ID"							"1024"
+    	"ID"							"2024"
 	"ItemCost"						"150"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

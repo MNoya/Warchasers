@@ -1,6 +1,6 @@
 "item_frostmourne" //totally not Blade of the Ruined King
 {	
-	"ID"		"1134"
+	"ID"		"2134"
 	"ItemCost"						"644"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "0"

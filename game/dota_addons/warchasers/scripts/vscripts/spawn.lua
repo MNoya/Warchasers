@@ -56,7 +56,7 @@ function SpawnMurlocs1(trigger)
     local ability_name = "spawn_murloc_a"
     local unit_name = "npc_small_murloc_a"
     local spawn_limit = 8
-    local spawn_interval = 2
+    local spawn_interval = 3
     local sound = "Hero_Abaddon.DeathCoil.Target"
 
     StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
@@ -67,7 +67,7 @@ function SpawnMurlocs2(trigger)
     local ability_name = "spawn_murloc_b"
     local unit_name = "npc_small_murloc_b"
     local spawn_limit = 8
-    local spawn_interval = 2
+    local spawn_interval = 3
     local sound = "Hero_Abaddon.DeathCoil.Target"
 
     StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
@@ -78,7 +78,7 @@ function SpawnGnolls1(trigger)
     local ability_name = "spawn_gnoll"
     local unit_name = "npc_archer_gnoll"
     local spawn_limit = 10
-    local spawn_interval = 2
+    local spawn_interval = 3
     local sound = "Hero_Abaddon.DeathCoil.Target"
 
     StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
@@ -89,7 +89,7 @@ function SpawnGnolls2(trigger)
     local ability_name = "spawn_gnoll"
     local unit_name = "npc_archer_gnoll"
     local spawn_limit = 10
-    local spawn_interval = 2
+    local spawn_interval = 3
     local sound = "Hero_Abaddon.DeathCoil.Target"
 
     StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
@@ -144,7 +144,7 @@ function SpawnGhoulsZiggurat3	(trigger)
     local ability_name = "spawn_ghoul"
     local unit_name = "npc_ghoul"
     local spawn_limit = 10
-    local spawn_interval = 2
+    local spawn_interval = 3
     local sound = "Hero_LifeStealer.Consume"
 end
 

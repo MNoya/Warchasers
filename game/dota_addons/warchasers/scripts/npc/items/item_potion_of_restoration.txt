@@ -1,7 +1,7 @@
 "item_potion_of_restoration"
 //Restores 500 hit points and 200 mana of the Hero when used. Level 5
 {
-	"ID"							"1157"
+	"ID"							"2157"
 
 	// General
 	//-------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 "item_key1" 
 {
-	"ID"							"1041"
+	"ID"							"2041"
 	//"ItemCost"						"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	

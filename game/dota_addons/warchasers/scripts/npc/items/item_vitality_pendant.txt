@@ -1,6 +1,6 @@
     "item_vitality_pendant"
     {
-    	"ID"							"1011"
+    	"ID"							"2011"
 	"ItemCost"						"350"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

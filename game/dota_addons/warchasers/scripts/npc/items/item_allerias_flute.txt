@@ -1,6 +1,6 @@
     "item_allerias_flute"
 {
-	"ID"							"1070"
+	"ID"							"2070"
 	"BaseClass" 					"item_datadriven"
 	"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

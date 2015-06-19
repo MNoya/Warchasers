@@ -1,6 +1,6 @@
     "item_cloak_of_flames" //rewrite datadriven for EffectAttachType
     {
-    	"ID"							"1033"
+    	"ID"							"2033"
 	"ItemCost"						"2000"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

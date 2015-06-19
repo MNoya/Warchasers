@@ -1,6 +1,6 @@
 "item_red_drake"        //dragon
 {
-	"ID"                            "1066"
+	"ID"                            "2066"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_red_drake"

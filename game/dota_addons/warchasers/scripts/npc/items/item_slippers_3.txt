@@ -1,6 +1,6 @@
     "item_slippers_3"
     {
-    	"ID"							"1022"
+    	"ID"							"2022"
 	"ItemCost"						"100"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

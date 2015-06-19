@@ -1,6 +1,6 @@
     "item_runed_bracers" //Cloak 33%
     {
-	"ID"							"1034"
+	"ID"							"2034"
 	"ItemCost"						"400"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

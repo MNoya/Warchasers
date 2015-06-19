@@ -1,6 +1,6 @@
 "item_cosmetic_scythe"
 {
-    "ID"                    "1666"
+    "ID"                    "2666"
     "BaseClass"             "item_datadriven"
     "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"    "item_scythe"

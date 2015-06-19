@@ -1,6 +1,6 @@
 "item_orb_of_frost"
     {
-    	"ID" "1125"
+    	"ID" "2125"
 
     	"BaseClass" 					"item_datadriven"
     	"AbilityTextureName" 			"item_orb_of_frost"

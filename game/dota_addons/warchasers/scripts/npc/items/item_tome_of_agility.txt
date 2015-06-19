@@ -2,7 +2,7 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"1053"
+	"ID"							"2053"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"BaseClass"						"item_datadriven"
 	"AbilityTextureName"			"item_tome_of_agility"
@@ -36,8 +36,6 @@
 	"ItemCastOnPickup"				"1"
 	"OnSpellStart"
 	{
-		"SpendCharge"
-		{}
 		"RunScript"
 		{
 			"ScriptFile"			"scripts/vscripts/items.lua"
@@ -61,19 +59,35 @@
 			"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
 			"EffectAttachType" 	"follow_overhead"
 		}
+		"SpendCharge"
+		{}
 	}
+
 	"Modifiers"
+	{
+		"tome_modifier"
 		{
-		"tome_agility_modifier"
+			"Passive"	"1"
+			"OnCreated"
 			{
-			"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
-			"IsBuff"	"1"
-			"TextureName"	"item_tome_of_agility"
-			"Properties"
+				"RunScript"
 				{
-				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
+					"ScriptFile"	"items.lua"
+					"Function"		"CastOnPickup"
 				}
 			}
 		}
+
+		"tome_agility_modifier"
+		{
+			"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT"
+			"IsBuff"		"1"
+			"TextureName"	"item_tome_of_agility"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"1"
+			}
+		}
+	}
 }
 

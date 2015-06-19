@@ -1,6 +1,6 @@
 "item_demonic_figurine" //doom guard
 {
-	"ID"                            "1064"
+	"ID"                            "2064"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_demonic_figurine"

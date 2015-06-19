@@ -1,6 +1,6 @@
 "item_circlet_2"
 {
-	"ID"							"1037"
+	"ID"							"2037"
 	"ItemCost"						"100"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

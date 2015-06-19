@@ -2,7 +2,7 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"1051"
+	"ID"							"2051"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"BaseClass"						"item_datadriven"
 	"AbilityTextureName"			"item_tome_of_health"
@@ -27,8 +27,6 @@
 	"ItemCastOnPickup"				"1"
 	"OnSpellStart"
 	{
-		"SpendCharge"
-		{}
 		"RunScript"
 		{
 			"ScriptFile"			"scripts/vscripts/items.lua"
@@ -44,7 +42,9 @@
 			"Target" "CASTER"
 			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_b.vpcf" //"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
 			"EffectAttachType" 	"follow_origin"
-		}	
+		}
+		"SpendCharge"
+		{}
 		//"FireEffect"
 		//{
 		//	"Target" "CASTER"

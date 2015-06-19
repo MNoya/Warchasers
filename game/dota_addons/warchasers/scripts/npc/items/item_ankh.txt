@@ -1,6 +1,6 @@
 "item_ankh"  //rewrite datadriven
 {
-	"ID"							"1000"
+	"ID"							"2000"
 	"ItemCost"						"3000"
 	//"AbilityTextureName"			"item_ankh"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"

@@ -1,6 +1,6 @@
 "item_attackspeed_modifier"
 {
-	"ID"							"2104"
+	"ID"							"2504"
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"

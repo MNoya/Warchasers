@@ -1,7 +1,7 @@
 "item_restoration_scroll"
 //Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.
 {
-	"ID"                            "1061"
+	"ID"                            "2061"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

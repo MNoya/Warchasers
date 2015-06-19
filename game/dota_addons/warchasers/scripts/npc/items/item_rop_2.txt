@@ -1,6 +1,6 @@
     "item_rop_2"
     {
-    	"ID"							"1025"
+    	"ID"							"2025"
 	"ItemCost"						"150"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

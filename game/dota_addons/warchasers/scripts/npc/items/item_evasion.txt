@@ -1,6 +1,6 @@
     "item_evasion"
     {
-    	"ID"							"1030"
+    	"ID"							"2030"
 	"ItemCost"						"800"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

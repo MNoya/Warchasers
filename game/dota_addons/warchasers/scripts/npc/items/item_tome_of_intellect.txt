@@ -2,7 +2,7 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"1054"	
+	"ID"							"2054"	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"BaseClass"						"item_datadriven"
 	"AbilityTextureName"			"item_tome_of_intellect"
@@ -36,8 +36,6 @@
 	"ItemCastOnPickup"				"1"
 	"OnSpellStart"
 	{
-		"SpendCharge"
-		{}
 		"RunScript"
 		{
 			"ScriptFile"			"scripts/vscripts/items.lua"
@@ -60,7 +58,9 @@
 			"Target" "CASTER"
 			"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 			"EffectAttachType" 	"follow_origin"
-		}	
+		}
+		"SpendCharge"
+		{}
 	}
 	"Modifiers"
 		{

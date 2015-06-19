@@ -1,7 +1,7 @@
 "item_scepter_of_mastery"
 //Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. Charges
 {
-	"ID"                            "1061"
+	"ID"                            "2061"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"

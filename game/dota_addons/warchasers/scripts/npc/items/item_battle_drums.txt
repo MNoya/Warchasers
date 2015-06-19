@@ -1,6 +1,6 @@
     "item_battle_drums"
     {
-    	"ID" 							"1031"
+    	"ID" 							"2031"
 	"ItemCost"						"1800"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
     	"ItemKillable"                  "1"

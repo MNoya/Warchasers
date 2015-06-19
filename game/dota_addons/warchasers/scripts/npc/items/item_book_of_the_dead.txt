@@ -1,6 +1,6 @@
     "item_book_of_the_dead"
 {
-	"ID"                            "1062"
+	"ID"                            "2062"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"            "item_book_of_the_dead"

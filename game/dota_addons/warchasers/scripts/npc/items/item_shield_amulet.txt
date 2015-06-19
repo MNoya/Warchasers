@@ -1,6 +1,6 @@
 "item_shield_amulet" //Linken 40sec
 {
-	"ID"							"1035"
+	"ID"							"2035"
 	"ItemCost"						"400"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

@@ -1,7 +1,7 @@
 "item_ublink"
 {
 
-	"ID"		"1127"
+	"ID"		"2127"
 	"ItemCost"						"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

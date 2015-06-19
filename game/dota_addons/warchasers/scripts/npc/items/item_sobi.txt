@@ -1,6 +1,6 @@
     "item_sobi"
     {
-    	"ID"							"1027"
+    	"ID"							"2027"
 	"ItemCost"						"1300"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

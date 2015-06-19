@@ -1,6 +1,6 @@
     "item_ror_2"
     {
-    	"ID"							"1020"
+    	"ID"							"2020"
 	"ItemCost"						"1000"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

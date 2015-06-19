@@ -1,6 +1,6 @@
     "item_cloak_of_shadows"
 {
-	"ID"							"1032"
+	"ID"							"2032"
 	"ItemCost"						"100"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

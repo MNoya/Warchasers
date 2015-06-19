@@ -1,6 +1,6 @@
 "item_stone_token"  //rock golem
 {
-	"ID"                            "1068"
+	"ID"                            "2068"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_stone_token"

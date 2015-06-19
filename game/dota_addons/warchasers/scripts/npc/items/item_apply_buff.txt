@@ -2,7 +2,7 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"ID"                            "1189"  // unique ID number for this item.  Do not change this once 
+	"ID"                            "2189"  // unique ID number for this item.  Do not change this once 
 	"BaseClass"                     "item_datadriven"
 	"ItemBaseLevel"                 "1"
 	"AbilityTextureName"			"warchasers_buff"

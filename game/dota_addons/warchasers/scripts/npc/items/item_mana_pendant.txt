@@ -1,6 +1,6 @@
 "item_mana_pendant" //pendant of energy
 {
-	"ID"							"1010"
+	"ID"							"2010"
 	"ItemCost"						"400"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

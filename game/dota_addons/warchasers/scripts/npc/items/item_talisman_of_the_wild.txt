@@ -1,6 +1,6 @@
 "item_talisman_of_the_wild"  //fulborg
 {
-	"ID"                            "1069"
+	"ID"                            "2069"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_talisman_of_the_wild"

@@ -1,6 +1,6 @@
 "item_healing_wards"
 {
-	"ID"                            "1060"
+	"ID"                            "2060"
 	"BaseClass"                     "item_datadriven"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"            "item_healing_wards"

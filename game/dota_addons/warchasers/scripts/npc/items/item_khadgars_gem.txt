@@ -1,6 +1,6 @@
     "item_khadgars_gem"
     {
-	"ID"							"1028"
+	"ID"							"2028"
 	"ItemCost"						"1500"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

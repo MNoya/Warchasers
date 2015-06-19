@@ -1,6 +1,6 @@
 "item_orb_of_fire"
     {
-    	"ID" "1126"
+    	"ID" "2126"
 	"ItemCost"						"800"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

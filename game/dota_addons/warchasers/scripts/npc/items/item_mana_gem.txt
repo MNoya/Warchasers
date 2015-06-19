@@ -1,6 +1,6 @@
 "item_mana_gem" //pendant of mana
     {
-	"ID"							"1029"
+	"ID"							"2029"
 	"ItemCost"						"1200"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"

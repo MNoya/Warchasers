@@ -1,6 +1,6 @@
 "item_mask_of_death"
 {
-	"ID"							"1012"
+	"ID"							"2012"
 	"ItemCost"						"2000"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"                  "1"
