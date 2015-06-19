@@ -158,188 +158,160 @@ function SpawnSatyrs1(trigger)
 end
 
 function SpawnGolems(trigger)
-        local building = Entities:FindByName(nil, "forest_troll_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_golem")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "forest_troll_hut2"
+    local ability_name = "spawn_golem"
+    local unit_name = "npc_mud_golem"
+    local spawn_limit = 20
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMediumMurlocs1(trigger)
-        local building = Entities:FindByName(nil, "murloc_mid_hut1") --3
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_murloc")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "murloc_mid_hut1"
+    local ability_name = "spawn_medium_murloc"
+    local unit_name = "npc_medium_murloc"
+    local spawn_limit = 8
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMediumMurlocs2(trigger)
-        local building = Entities:FindByName(nil, "murloc_mid_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_murloc")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "murloc_mid_hut2"
+    local ability_name = "spawn_medium_murloc"
+    local unit_name = "npc_medium_murloc"
+    local spawn_limit = 8
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMediumMurlocs3(trigger)
-        local building = Entities:FindByName(nil, "murloc_mid_hut3")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_murloc")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "murloc_mid_hut3"
+    local ability_name = "spawn_medium_murloc"
+    local unit_name = "npc_medium_murloc"
+    local spawn_limit = 8
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnWaterElementals1(trigger)
-        local building = Entities:FindByName(nil, "water_hut1") --2
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_water_elemental")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 6 
-                end, 1) 
-        end
+    local building_name = "water_hut1"
+    local ability_name = "spawn_water_elemental"
+    local unit_name = "npc_water_elemental"
+    local spawn_limit = 10
+    local spawn_interval = 6
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 
 function SpawnWaterElementals2(trigger)
-        local building = Entities:FindByName(nil, "water_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_water_elemental")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 6 
-                end, 1) 
-        end
+    local building_name = "water_hut2"
+    local ability_name = "spawn_water_elemental"
+    local unit_name = "npc_water_elemental"
+    local spawn_limit = 10
+    local spawn_interval = 6
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnDarkTrolls1(trigger)
-        local building = Entities:FindByName(nil, "dark_troll_hut1") --2
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ranged_troll")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 3 
-                end, 1) 
-        end
+    local building_name = "dark_troll_hut1"
+    local ability_name = "spawn_ranged_troll"
+    local unit_name = "npc_dark_troll_archer"
+    local spawn_limit = 8
+    local spawn_interval = 3
+    local sound = "Hero_TrollWarlord.WhirlingAxes.Ranged"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnDarkTrolls2(trigger)
-        local building = Entities:FindByName(nil, "dark_troll_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ranged_troll")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 3 
-                end, 1) 
-        end
+    local building_name = "dark_troll_hut2"
+    local ability_name = "spawn_ranged_troll"
+    local unit_name = "npc_dark_troll_archer"
+    local spawn_limit = 8
+    local spawn_interval = 3
+    local sound = "Hero_TrollWarlord.WhirlingAxes.Ranged"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 --
 
 function SpawnSmallSludges(trigger)
-        local building = Entities:FindByName(nil, "sludge_farm")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_small_sludge")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "sludge_farm"
+    local ability_name = "spawn_small_sludge"
+    local unit_name = "npc_small_sludge"
+    local spawn_limit = 10
+    local spawn_interval = 4
+    local sound = "Hero_Enigma.Demonic_Conversion"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnTreants1(trigger)
-        local building = Entities:FindByName(nil, "treant_farm1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_burning_archer")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "treant_farm1"
+    local ability_name = "spawn_burning_archer"
+    local unit_name = "npc_burning_skeleton_archer"
+    local spawn_limit = 20
+    local spawn_interval = 3
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnTreants2(trigger)
-        local building = Entities:FindByName(nil, "treant_farm2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_treant")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "treant_farm2"
+    local ability_name = "spawn_treant"
+    local unit_name = "npc_treant"
+    local spawn_limit = 20
+    local spawn_interval = 3
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
         
 function SpawnKobolds(trigger)
-        local building = Entities:FindByName(nil, "kobold_farm1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_kobold_tunneler")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 3 
-                end, 1)
-        end
+    local building_name = "kobold_farm1"
+    local ability_name = "spawn_kobold_tunneler"
+    local unit_name = "npc_kobold_tunneler"
+    local spawn_limit = 6
+    local spawn_interval = 3
+    local sound = "Hero_Meepo.Poof.End"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnArchers1(trigger)
-        local building = Entities:FindByName(nil, "archer_hut1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_frost_archer")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "archer_hut1"
+    local ability_name = "spawn_frost_archer"
+    local unit_name = "npc_frost_skeleton_archer"
+    local spawn_limit = 6
+    local spawn_interval = 3
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnArchers2(trigger)
-        local building = Entities:FindByName(nil, "archer_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_frost_archer")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "archer_hut2"
+    local ability_name = "spawn_frost_archer"
+    local unit_name = "npc_frost_skeleton_archer"
+    local spawn_limit = 20
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 		
 	--add vision dummy to properly show the particle effect of the key (weird but works)
 	local point = Vector(118, 2185,136)
@@ -358,107 +330,91 @@ function SpawnArchers2(trigger)
 end
         
 function SpawnIceTrolls(trigger)
-        local building = Entities:FindByName(nil, "ice_hut")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ice_priest")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "ice_hut"
+    local ability_name = "spawn_ice_priest"
+    local unit_name = "npc_ice_troll_priest"
+    local spawn_limit = 20
+    local spawn_interval = 4
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMediumSludges(trigger)
-        local building = Entities:FindByName(nil, "sludge_ziggurat")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_sludge")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 4 
-                end, 1)
-        end
+    local building_name = "sludge_ziggurat"
+    local ability_name = "spawn_medium_sludge"
+    local unit_name = "npc_ice_troll_priest"
+    local spawn_limit = 20
+    local spawn_interval = 4
+    local sound = "Hero_Enigma.Demonic_Conversion"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnWizards(trigger)
-        local building = Entities:FindByName(nil, "wizard_hut")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_wizard")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 7 
-                end, 1)
-        end
+    local building_name = "wizard_hut"
+    local ability_name = "spawn_wizard"
+    local unit_name = "npc_wizard"
+    local spawn_limit = 20
+    local spawn_interval = 4
+    local sound = "Hero_KeeperOfTheLight.Spawn"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnHellhounds1(trigger)
-        local building = Entities:FindByName(nil, "hell_hut1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_fellhound")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 6 
-                end, 1)
-        end
+    local building_name = "hell_hut1"
+    local ability_name = "spawn_fellhound"
+    local unit_name = "npc_fellhound"
+    local spawn_limit = 10
+    local spawn_interval = 6
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnHellhounds2(trigger)
-        local building = Entities:FindByName(nil, "hell_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_fellhound")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 6 
-                end, 1)
-        end
+    local building_name = "hell_hut2"
+    local ability_name = "spawn_fellhound"
+    local unit_name = "npc_fellhound"
+    local spawn_limit = 10
+    local spawn_interval = 6
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnBigSludges1(trigger)
-        local building = Entities:FindByName(nil, "sludge_tent1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_big_sludge")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 6 
-                end, 1)
-        end
+    local building_name = "sludge_tent1"
+    local ability_name = "spawn_big_sludge"
+    local unit_name = "npc_big_sludge"
+    local spawn_limit = 15
+    local spawn_interval = 6
+    local sound = "Hero_Enigma.Black_Hole.Stop"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnBigSludges2(trigger)
-        local building = Entities:FindByName(nil, "sludge_tent2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_big_sludge")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 6 
-                end, 1)
-        end
+    local building_name = "sludge_tent2"
+    local ability_name = "spawn_big_sludge"
+    local unit_name = "npc_big_sludge"
+    local spawn_limit = 15
+    local spawn_interval = 6
+    local sound = "Hero_Enigma.Black_Hole.Stop"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMediumSatyrs(trigger)
-        local building = Entities:FindByName(nil, "harpy_nest")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_satyr_shadowdancer")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1) 
-                                end 
-                        return 2 
-                end, 1)
-        end
+    local building_name = "harpy_nest"
+    local ability_name = "spawn_medium_satyr_shadowdancer"
+    local unit_name = "npc_medium_satyr_range"
+    local spawn_limit = 30
+    local spawn_interval = 2
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 --initial_neutral_position

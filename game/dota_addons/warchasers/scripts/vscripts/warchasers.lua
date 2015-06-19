@@ -573,19 +573,18 @@ function Warchasers:OnEveryonePicked()
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
     GameRules:SendCustomMessage("Please report bugs and leave feedback in our workshop page", 0, 0)
 
-    Warchasers:OnEveryoneVoted()
+    --[[Warchasers:OnEveryoneVoted()
 
     Timers:CreateTimer(5, function()	
 	    GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Reborn</font>", 0, 0)
 	    GameRules:SendCustomMessage("Higher difficulty levels will be added as soon as we fix some bugs.<br>Thank you for playing, enjoy your run!", 0, 0)
-    end)
+    end)]]
 
-    -- Reborn Fix: Removing the difficulty settings for now until we find which affix is crashing the game
-    --GameRules:SendCustomMessage("<br>2 minutes to select a difficulty",0,0)
-    --Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("60 seconds remaining",0,0) end end)
-    --Timers:CreateTimer(90,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
-    --Timers:CreateTimer(110,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
-    --Timers:CreateTimer(120,function() if not GameRules.difficulty_selected then Warchasers:OnEveryoneVoted() end end)
+    GameRules:SendCustomMessage("<br>2 minutes to select a difficulty",0,0)
+    Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("60 seconds remaining",0,0) end end)
+    Timers:CreateTimer(90,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
+    Timers:CreateTimer(110,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("10 seconds remaining!",0,0) end end)
+    Timers:CreateTimer(120,function() if not GameRules.difficulty_selected then Warchasers:OnEveryoneVoted() end end)
 end
 
 --Item checking
@@ -1101,14 +1100,14 @@ function Warchasers:OnEveryoneVoted()
 	--Fire Game Event to our UI
 	FireGameEvent('warchasers_finished_voting', {})
 
-    --GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
+    GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 
     -- Set the difficulty here.
     GameRules.difficulty_selected = true
-    --add_affixes_to_pre_dificulty_creeps()
+    add_affixes_to_pre_dificulty_creeps()
 
     -- Change this to the proper strings later
-    --[[if GameRules.DIFFICULTY == 0 then
+    if GameRules.DIFFICULTY == 0 then
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Classic</font>", 0, 0)
     	GameRules:SendCustomMessage("Hey, Not Too Rough", 0, 0)
     elseif GameRules.DIFFICULTY == 1 then

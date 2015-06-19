@@ -31,7 +31,7 @@ package  {
 			this.globals = globals;
 			
 			//Event Listeners
-			//this.gameAPI.SubscribeToGameEvent("hero_picker_hidden", this.OnHeroPicked);
+			this.gameAPI.SubscribeToGameEvent("hero_picker_hidden", this.OnHeroPicked);
 			this.gameAPI.SubscribeToGameEvent("warchasers_finished_voting", this.FinishVoting);
 	
 			//Button Listeners
