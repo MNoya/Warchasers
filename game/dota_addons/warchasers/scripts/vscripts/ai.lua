@@ -77,36 +77,35 @@ function log_npc( event )
 		print("Index: "..index.." Name: "..unit:GetUnitName().." Created time: "..GameRules:GetGameTime().." at x= "..unit:GetOrigin().x.." y= "..unit:GetOrigin().y)
 	end
 
-	if unit:GetTeam() == DOTA_TEAM_NEUTRALS and unit.AddAbility ~= nil and unit.GetInvulnCount == nil then
-		if unit.initial_neutral_position == nil then
-			unit.initial_neutral_position = unit:GetAbsOrigin()
-		end
-		unit:SetContextThink("chase_distance_function", 
-			function ()
-				if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
-					if (unit.initial_neutral_position - unit:GetAbsOrigin()):Length2D() > 900 then
-						unit:MoveToPosition(unit.initial_neutral_position) 
+	-- Wait 1 frame else they'll want to move to 0 0 0 if spawned through lua.
+	Timers:CreateTimer(function() 
+		if unit:GetTeam() == DOTA_TEAM_NEUTRALS and unit.AddAbility ~= nil and unit.GetInvulnCount == nil then
+			if unit.initial_neutral_position == nil then
+				unit.initial_neutral_position = unit:GetAbsOrigin()
+			end
+			unit:SetContextThink("chase_distance_function", 
+				function ()
+					if unit:GetTeam() == DOTA_TEAM_NEUTRALS then
+						if (unit.initial_neutral_position - unit:GetAbsOrigin()):Length2D() > 900 then
+							unit:MoveToPosition(unit.initial_neutral_position) 
+						end
 
+						return math.random(2,6)
+					else
+						return nil
 					end
+				end
+				, 5) 
 
-					return math.random(2,6)
+			if affix_creeps_keyvalue[unit:GetUnitName()] == 1 then
+				if GameRules.difficulty_selected == true then
+					affix(unit)
 				else
-					return nil
+					table.insert(pre_dificulty_creeps, unit:GetEntityIndex() )
 				end
 			end
-			, 5) 
-
-		if affix_creeps_keyvalue[unit:GetUnitName()] == 1 then
-			if GameRules.difficulty_selected == true then
-				affix(unit)
-			else
-				table.insert(pre_dificulty_creeps, unit:GetEntityIndex() )
-			end
 		end
-	else
-
-
-	end
+	end)
 end
 
 if log_npc_loaded == nil then

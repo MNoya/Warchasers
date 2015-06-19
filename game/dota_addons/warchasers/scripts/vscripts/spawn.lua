@@ -9,134 +9,152 @@ function attack_agro_func( event )
         end
 end
 
-function SpawnMurlocs1(trigger)
-        local building = Entities:FindByName(nil, "murloc_hut1") --2
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_murloc_a")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1)
-                        end 
-                        return 2 
-                end, 1)
+
+function StartSpawnForBuilding( building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
+    local building = Entities:FindByName(nil, building_name)
+    if building ~= nil then
+        local ability = building:FindAbilityByName(ability_name)
+        ability:SetContextThink("SpawnLoop", function() 
+            if ability:IsFullyCastable() then
+                ability:StartCooldown(spawn_interval)
+                SpawnUnit(unit_name, building, spawn_limit, sound)
+            end 
+            return spawn_interval 
+        end, 1)
+    end
+end
+
+
+function SpawnUnit(unit_name, building, limit, sound)
+    if not building.unit_table then
+        building.unit_table = {}
+    end
+
+    if #building.unit_table < limit then
+        local unit = CreateUnitByName(unit_name, building:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+        local particle = ParticleManager:CreateParticle("particles/warchasers/spawn/abaddon_death_coil_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+        ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
+        ParticleManager:SetParticleControl(particle, 1, unit:GetAbsOrigin())
+        unit:EmitSound(sound)
+        table.insert(building.unit_table, unit)
+    end
+
+    -- Cleanup the table
+    local aux_build_table = {}
+    for _,unit in pairs(building.unit_table) do
+        if unit and IsValidEntity(unit) then
+            table.insert(aux_build_table, unit)
         end
+    end
+    building.unit_table = aux_build_table
+end
+
+function SpawnMurlocs1(trigger)
+    local building_name = "murloc_hut1"
+    local ability_name = "spawn_murloc_a"
+    local unit_name = "npc_small_murloc_a"
+    local spawn_limit = 8
+    local spawn_interval = 2
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnMurlocs2(trigger)
-        local building = Entities:FindByName(nil, "murloc_hut2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_murloc_b")
-                ability:SetContextThink("SpawnLoop", function() 
-                        if ability:IsFullyCastable() then 
-                                building:CastAbilityNoTarget(ability, -1)
-                        end 
-                        return 2 
-                end, 1)
-        end
+    local building_name = "murloc_hut2"
+    local ability_name = "spawn_murloc_b"
+    local unit_name = "npc_small_murloc_b"
+    local spawn_limit = 8
+    local spawn_interval = 2
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGnolls1(trigger)
-        local building = Entities:FindByName(nil, "elf_farm1") --2
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_gnoll")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1)
-                        end
-                        return 2
-                end, 1)
-        end
+    local building_name = "elf_farm1"
+    local ability_name = "spawn_gnoll"
+    local unit_name = "npc_archer_gnoll"
+    local spawn_limit = 10
+    local spawn_interval = 2
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGnolls2(trigger)
-        local building = Entities:FindByName(nil, "elf_farm2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_gnoll")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 2 
-                end, 1) 
-        end
+    local building_name = "elf_farm2"
+    local ability_name = "spawn_gnoll"
+    local unit_name = "npc_archer_gnoll"
+    local spawn_limit = 10
+    local spawn_interval = 2
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGhouls1(trigger)
-        local building = Entities:FindByName(nil, "ghoul_hut1")  --2, 1 later with ziggurat model
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ghoul")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "ghoul_hut1"
+    local ability_name = "spawn_ghoul"
+    local unit_name = "npc_ghoul"
+    local spawn_limit = 10
+    local spawn_interval = 4
+    local sound = "Hero_LifeStealer.Consume"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGhouls2(trigger)
-        local building = Entities:FindByName(nil, "ghoul_hut2") 
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ghoul")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "ghoul_hut2"
+    local ability_name = "spawn_ghoul"
+    local unit_name = "npc_ghoul"
+    local spawn_limit = 10
+    local spawn_interval = 4
+    local sound = "Hero_LifeStealer.Consume"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGhoulsZiggurat(trigger)
-        local building = Entities:FindByName(nil, "ghoul_ziggurat1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ghoul")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "ghoul_ziggurat1"
+    local ability_name = "spawn_ghoul"
+    local unit_name = "npc_ghoul"
+    local spawn_limit = 10
+    local spawn_interval = 3
+    local sound = "Hero_LifeStealer.Consume"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGhoulsZiggurat2	(trigger)
-        local building = Entities:FindByName(nil, "ghoul_ziggurat2")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ghoul")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 3 
-                end, 1) 
-        end
+    local building_name = "ghoul_ziggurat2"
+    local ability_name = "spawn_ghoul"
+    local unit_name = "npc_ghoul"
+    local spawn_limit = 10
+    local spawn_interval = 3
+    local sound = "Hero_LifeStealer.Consume"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGhoulsZiggurat3	(trigger)
-        local building = Entities:FindByName(nil, "ghoul_ziggurat3")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_ghoul")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 2 
-                end, 1) 
-        end
+    local building_name = "ghoul_ziggurat3"
+    local ability_name = "spawn_ghoul"
+    local unit_name = "npc_ghoul"
+    local spawn_limit = 10
+    local spawn_interval = 2
+    local sound = "Hero_LifeStealer.Consume"
 end
 
 function SpawnSatyrs1(trigger)
-        local building = Entities:FindByName(nil, "forest_troll_hut1")
-        if building ~= nil then
-                local ability = building:FindAbilityByName("spawn_medium_satyr")
-                ability:SetContextThink("SpawnLoop", function()
-                        if ability:IsFullyCastable() then
-                                building:CastAbilityNoTarget(ability, -1) 
-                        end
-                        return 4 
-                end, 1) 
-        end
+    local building_name = "forest_troll_hut1"
+    local ability_name = "spawn_medium_satyr"
+    local unit_name = "npc_medium_satyr"
+    local spawn_limit = 20
+    local spawn_interval = 3
+    local sound = "Hero_Abaddon.DeathCoil.Target"
+
+    StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
 end
 
 function SpawnGolems(trigger)
