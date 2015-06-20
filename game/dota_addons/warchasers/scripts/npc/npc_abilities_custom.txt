@@ -1533,7 +1533,7 @@
 		"AbilityCastRange"	"800"
 		"AbilityCastPoint"	"0.5"
 		"AbilityCooldown"	"20"
-		"AbilityDamage"	"60"
+		"AbilityDamage"	"25"
 		"precache"
 		{
 			"particle"	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
