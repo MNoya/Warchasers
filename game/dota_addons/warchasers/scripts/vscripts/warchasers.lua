@@ -134,11 +134,10 @@ function Warchasers:InitGameMode()
 
 	-- Auto launch is enabled by default, disable it
 	GameRules:EnableCustomGameSetupAutoLaunch( false )
-	PlayerResource:SetCustomTeamAssignment( 0, DOTA_TEAM_GOODGUYS )
-	PlayerResource:SetCustomTeamAssignment( 1, DOTA_TEAM_GOODGUYS )
-	PlayerResource:SetCustomTeamAssignment( 2, DOTA_TEAM_GOODGUYS )
-	PlayerResource:SetCustomTeamAssignment( 3, DOTA_TEAM_GOODGUYS )
-	PlayerResource:SetCustomTeamAssignment( 4, DOTA_TEAM_GOODGUYS )
+	for i = 0, 9 do
+		PlayerResource:SetCustomTeamAssignment( i, DOTA_TEAM_GOODGUYS )
+	end
+	
 
 	---------------------------
 
