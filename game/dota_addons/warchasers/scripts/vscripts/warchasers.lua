@@ -26,7 +26,7 @@ function Warchasers:InitGameMode()
 	GameMode:SetAnnouncerDisabled(true)
 	GameMode:SetBuybackEnabled(false)
 	GameMode:SetRecommendedItemsDisabled(true) --broken
-	GameMode:SetFixedRespawnTime(999)
+	GameMode:SetFixedRespawnTime(60)
 	GameMode:SetTopBarTeamValuesVisible( true ) --customized top bar values
 	GameMode:SetTopBarTeamValuesOverride( true ) --display the top bar score/count
 
@@ -527,7 +527,7 @@ function Warchasers:OnNPCSpawned(keys)
 		elseif npc.bFirstSpawned == true then --respawn through Ankh
 			--Warchasers:ModifyStatBonuses(spawnedUnitIndex)
 			Warchasers:OnHeroInGame(npc)
-			npc:SetHealth(500) --it's a little more based on the STR
+			--npc:SetHealth(500) --it's a little more based on the STR
 			print(npc:GetHealth())
 		end
 	end
@@ -915,6 +915,11 @@ function Warchasers:OnEntityKilled( event )
 	
 	if killedUnit:IsRealHero() then 
 		
+		-- Always respawn on the latest savepoint
+		if GameRules.CURRENT_SAVEPOINT then
+			killedUnit:SetRespawnPosition(GameRules.CURRENT_SAVEPOINT:GetAbsOrigin())
+		end
+
 		local KilledPlayerID = killedUnit:GetPlayerID()
     	local respawning = false
 
