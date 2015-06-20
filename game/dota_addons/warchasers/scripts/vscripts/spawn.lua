@@ -346,7 +346,7 @@ function SpawnMediumSludges(trigger)
     local building_name = "sludge_ziggurat"
     local ability_name = "spawn_medium_sludge"
     local unit_name = "npc_ice_troll_priest"
-    local spawn_limit = 20
+    local spawn_limit = 10
     local spawn_interval = 4
     local sound = "Hero_Enigma.Demonic_Conversion"
 
@@ -357,7 +357,7 @@ function SpawnWizards(trigger)
     local building_name = "wizard_hut"
     local ability_name = "spawn_wizard"
     local unit_name = "npc_wizard"
-    local spawn_limit = 20
+    local spawn_limit = 10
     local spawn_interval = 4
     local sound = "Hero_KeeperOfTheLight.Spawn"
 
@@ -390,7 +390,7 @@ function SpawnBigSludges1(trigger)
     local building_name = "sludge_tent1"
     local ability_name = "spawn_big_sludge"
     local unit_name = "npc_big_sludge"
-    local spawn_limit = 15
+    local spawn_limit = 8
     local spawn_interval = 6
     local sound = "Hero_Enigma.Black_Hole.Stop"
 
@@ -401,7 +401,7 @@ function SpawnBigSludges2(trigger)
     local building_name = "sludge_tent2"
     local ability_name = "spawn_big_sludge"
     local unit_name = "npc_big_sludge"
-    local spawn_limit = 15
+    local spawn_limit = 8
     local spawn_interval = 6
     local sound = "Hero_Enigma.Black_Hole.Stop"
 
@@ -412,8 +412,8 @@ function SpawnMediumSatyrs(trigger)
     local building_name = "harpy_nest"
     local ability_name = "spawn_medium_satyr_shadowdancer"
     local unit_name = "npc_medium_satyr_range"
-    local spawn_limit = 30
-    local spawn_interval = 2
+    local spawn_limit = 10
+    local spawn_interval = 4
     local sound = "Hero_Abaddon.DeathCoil.Target"
 
     StartSpawnForBuilding(building_name, ability_name, unit_name, spawn_limit, spawn_interval, sound)
