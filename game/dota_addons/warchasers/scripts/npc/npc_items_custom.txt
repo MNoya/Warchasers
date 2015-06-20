@@ -3637,28 +3637,28 @@
 		{
 			"01"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_all_stats" "0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"0"
 			}
 			"02"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_health_regen" "0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"0"
 			}
 			"03"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_mana_regen" "0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"0"
 			}
 			"04"
 			{
-				"var_type" "FIELD_FLOAT"
-				"block_cooldown" "40.0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"		"0"
 			}
 			"05"
 			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_damage" "0"
+				"var_type"				"FIELD_FLOAT"
+				"block_cooldown"		"20.0"
 			}
 		}
 	}

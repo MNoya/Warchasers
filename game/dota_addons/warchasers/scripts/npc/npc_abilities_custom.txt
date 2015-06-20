@@ -4375,6 +4375,29 @@
 		"AbilityTextureName"	"item_hand_of_midas"
 		"OnOwnerDied"
 		{
+			"Random"
+			{
+				"Chance"	"20"
+				"OnSuccess"
+				{
+					"CreateItem"
+					{
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"ItemName"	"item_shield_amulet"
+						"ItemCount"	"1"
+						"ItemChargeCount"	"1"
+						"SpawnRadius"	"50"
+						"LaunchHeight"	"100"
+						"LaunchDistance"	"?50 100"
+						"LaunchDuration"	"0.5"
+					}
+				}
+			}
+			
 				"Random"
 			{
 				"Chance"	"20"
