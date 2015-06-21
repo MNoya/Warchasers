@@ -15,6 +15,7 @@ function StartSpawnForBuilding( building_name, ability_name, unit_name, spawn_li
     if building ~= nil then
         local ability = building:FindAbilityByName(ability_name)
         if not building.unit_table then
+            building.unit_table = {}
             Timers:CreateTimer(function()
                 if building and IsValidEntity(building) and building:IsAlive() then
                     ability:StartCooldown(spawn_interval)
@@ -30,7 +31,6 @@ end
 
 
 function SpawnUnit(unit_name, building, limit, sound)
-    building.unit_table = {}
 
     if #building.unit_table < limit then
         local unit = CreateUnitByName(unit_name, building:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS)
