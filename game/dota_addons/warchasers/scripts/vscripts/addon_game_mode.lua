@@ -22,6 +22,9 @@ require( 'spawn' )
 require( 'hints' )
 require( 'sounds' )
 require( 'popups' )
+if Convars:GetBool("FCVAR_DEVELOPMENTONLY") and ConVars:GetBool("FCVAR_CHEAT") then
+	require( 'developer' )
+end
 --require( 'lib.statcollection')
 
 function Precache( context )

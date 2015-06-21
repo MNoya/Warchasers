@@ -1,3 +1,28 @@
+function clear_items()
+    local items_shells = Entities:FindAllByClassname("dota_item_drop")
+
+    for key, value in pairs(items_shells) do
+        local item_entity = value:GetContainedItem()
+
+        if (item_entity:GetPurchaser()) ~= nil then
+
+            local heroes = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, value:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+
+
+
+            if heroes[1] == nil then
+                value:RemoveSelf()
+                item_entity:RemoveSelf()
+            end
+
+        end
+    end
+
+end
+
+
+
+
 function Teleporter(trigger)
         -- Get the position of the "point_teleport_spot"-entity we put in our map
         local point =  Entities:FindByName( nil, "teleport_spot_1" ):GetAbsOrigin()
@@ -12,6 +37,7 @@ function Teleporter(trigger)
         GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "teleport_spot_1" )
         local messageinfo = { message = "CHECKPOINT REACHED",duration = 3}
         FireGameEvent("show_center_message",messageinfo)
+        clear_items()
 end
 
 function TeleporterHeavenHell(trigger)

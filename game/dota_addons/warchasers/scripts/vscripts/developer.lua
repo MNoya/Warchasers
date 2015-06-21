@@ -39,11 +39,14 @@ function affix_print_func()
 end
 
 
+
 Convars:RegisterCommand( "test_fly", function( not_needed) local cmdPlayer = Convars:GetCommandClient() test_fly_func(cmdPlayer) end, "Send hero flying for testing", FCVAR_DEVELOPMENTONLY )
 Convars:RegisterCommand( "test_ability", function( not_needed, ability_name) local cmdPlayer = Convars:GetCommandClient() test_ability_func(cmdPlayer, ability_name) end, "Adds ability to your hero for testing", FCVAR_DEVELOPMENTONLY )
 Convars:RegisterCommand( "test_maxms", function( not_needed) local cmdPlayer = Convars:GetCommandClient() test_maxms_func(cmdPlayer) end, "Set hero max ms for testing", FCVAR_DEVELOPMENTONLY )
 Convars:RegisterCommand( "affix_override", function( not_needed, affix_name) override_affix_func(affix_name) end, "Overrides affix table for testing", FCVAR_DEVELOPMENTONLY )
 Convars:RegisterCommand( "affix_print", affix_print_func, "Prints current affix table", FCVAR_DEVELOPMENTONLY )
+
+
 
 
 
