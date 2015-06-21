@@ -43,7 +43,7 @@ function Warchasers:InitGameMode()
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
 
-	Convars:RegisterCommand( "tank", function(name, parameter)
+	--[[Convars:RegisterCommand( "tank", function(name, parameter)
 	    --Get the player that triggered the command
 	    local cmdPlayer = Convars:GetCommandClient()
 		
@@ -51,7 +51,7 @@ function Warchasers:InitGameMode()
 	    if cmdPlayer then 
 	        return Warchasers:TestTank()
 	    end
-	 end, "Test Tank", FCVAR_CHEAT )
+	 end, "Test Tank", FCVAR_CHEAT )]]
 
 
 	 -- Change random seed
@@ -150,6 +150,13 @@ function Warchasers:InitGameMode()
 
   	-- Full units file to get the model scales (Valve please add GetModelScale function back)
   	GameRules.UnitsCustomKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+
+
+  	Convars:SetBool("sv_cheats", true)
+  	Timers:CreateTimer(30, function()
+      clear_items()
+      return 20
+    end)
 
 	print( "Done loading gamemode" )
 
