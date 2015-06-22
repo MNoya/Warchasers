@@ -1000,10 +1000,8 @@ function desecration_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.desecration_delay == nil then
-					value.desecration_delay = 0
-				end
-				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
+				
+				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
 					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
@@ -1021,10 +1019,8 @@ function frozen_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.desecration_delay == nil then
-					value.desecration_delay = 0
-				end
-				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
+				
+				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
 					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
@@ -1042,10 +1038,8 @@ function plagued_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.desecration_delay == nil then
-					value.desecration_delay = 0
-				end
-				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
+				
+				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
 					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
@@ -1063,10 +1057,8 @@ function thunderstorm_ai( event )
 		if heroes_around[1] ~= nil then
 			local target = nil
 			for key,value in pairs(heroes_around) do 
-				if value.desecration_delay == nil then
-					value.desecration_delay = 0
-				end
-				if target == nil and value.desecration_delay < GameRules:GetGameTime() then
+				
+				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
 					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
@@ -1096,4 +1088,10 @@ end
 function frozen_damage( event )
 	local damage = event.ability:GetAbilityDamage() + event.caster:GetLevel() * event.ability:GetSpecialValueFor("bonus_damage_per_level") 
 	ApplyDamage({ victim = event.target, attacker = event.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+end
+
+
+--global cooldowns for affixes
+if desecration_delay == nil then
+	desecration_delay = 0
 end
