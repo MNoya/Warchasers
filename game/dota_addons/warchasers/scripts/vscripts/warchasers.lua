@@ -1236,10 +1236,21 @@ end
 function bug_test()
 	for i=0,9 do
 		if PlayerResource:IsValidPlayerID(i) then
+			print(PlayerResource:GetPlayerName(i))
 			print(PlayerResource:GetSelectedHeroName(i))
+			print(PlayerResource:GetTeam(i))
 
 		end
 	end
 end
 
+function fix_attempt()
+	for i=0,9 do
+		if PlayerResource:IsValidPlayerID(i) then
+			PlayerResource:SetCustomTeamAssignment( i, DOTA_TEAM_GOODGUYS )
+		end
+	end
+end
+
 Convars:RegisterCommand("bug_test", bug_test, "test", 0)
+Convars:RegisterCommand("fix_attempt", fix_attempt, "fix_attempt", 0)
