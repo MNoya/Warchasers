@@ -1231,3 +1231,15 @@ function Warchasers:PrintEndgameMessage()
 	Timers:CreateTimer(13, function() GameRules:SendCustomMessage("<font color='#DBA901'>2</font>",0,0) end)
 	Timers:CreateTimer(14, function() GameRules:SendCustomMessage("<font color='#DBA901'>1...</font>",0,0) end)
 end
+
+
+function bug_test()
+	for i=0,9 do
+		if PlayerResource:IsValidPlayerID(i) then
+			print(PlayerResource:GetSelectedHeroName(i))
+
+		end
+	end
+end
+
+Convars:RegisterCommand("bug_test", bug_test, "test", 0)
