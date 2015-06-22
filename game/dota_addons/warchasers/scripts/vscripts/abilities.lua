@@ -1003,7 +1003,7 @@ function desecration_ai( event )
 				
 				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
+					desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1022,7 +1022,7 @@ function frozen_ai( event )
 				
 				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
+					desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1041,7 +1041,7 @@ function plagued_ai( event )
 				
 				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
+					desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
@@ -1060,7 +1060,7 @@ function thunderstorm_ai( event )
 				
 				if target == nil and desecration_delay < GameRules:GetGameTime() then
 					target = value
-					target.desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
+					desecration_delay = GameRules:GetGameTime() + 7 - GameRules.DIFFICULTY
 				end
 			end
 			if target ~= nil then
