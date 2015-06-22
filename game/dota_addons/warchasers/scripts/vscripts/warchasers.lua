@@ -549,7 +549,7 @@ function Warchasers:OnHeroInGame(hero)
 	print("Players with a hero picked: " .. GameRules.PLAYERS_PICKED_HERO)
 
 	Warchasers:ModifyStatBonuses(hero)
-    giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
+    --giveUnitDataDrivenModifier(hero, hero, "modifier_make_deniable",-1) --friendly fire
 	giveUnitDataDrivenBuff(hero, hero, "modifier_warchasers_stat_rules",-1)
 
     if GameRules.PLAYER_COUNT==1 then --apply solo buff
