@@ -71,7 +71,7 @@
 	"npc_green_lizard"		"1"						
 
 	//"npc_sapper"							
-	"npc_roadkill_skeleton"		"1"	//Probably overkill
+	
 	//"npc_rocknroll_steamtank"				
 	//"npc_kitt_steamtank"					
 	//"npc_health_fountain"					
