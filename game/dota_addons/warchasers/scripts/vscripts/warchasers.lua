@@ -923,7 +923,7 @@ function Warchasers:OnEntityKilled( event )
 	if killedUnit:IsRealHero() then 
 		
 		-- Always respawn on the latest savepoint
-		if GameRules.CURRENT_SAVEPOINT then
+		if GameRules.CURRENT_SAVEPOINT and killedUnit:IsReincarnating() == false then
 			killedUnit:SetRespawnPosition(GameRules.CURRENT_SAVEPOINT:GetAbsOrigin())
 		end
 
