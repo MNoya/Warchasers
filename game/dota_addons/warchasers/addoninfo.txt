@@ -1,7 +1,7 @@
 "AddonInfo"
 {
 	"TeamCount" "1"
-	maps			"warchasers"
+	"maps"			"warchasers"
 	"IsPlayable"	"1"
 	"warchasers"
 	{
