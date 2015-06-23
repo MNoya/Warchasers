@@ -153,9 +153,9 @@ function Warchasers:InitGameMode()
 
 
   	Convars:SetBool("sv_cheats", true)
-  	Timers:CreateTimer(30, function()
+  	Timers:CreateTimer(60, function()
       clear_items()
-      return 20
+      return 60
     end)
 
 	print( "Done loading gamemode" )
