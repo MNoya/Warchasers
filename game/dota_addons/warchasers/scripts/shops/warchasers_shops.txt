@@ -123,6 +123,8 @@
         //"item" "item_spell_immunity"  //REMOVED
         //"item" "item_hammer_of_might"   //NEW - Later
         //"item" "item_machinegun"        //NEW - Later
+        "item" "item_potion_of_great_healing"
+        "item" "item_potion_of_great_mana"
         "item" "item_battle_drums"
         "item" "item_restoration_scroll"
         "item" "item_claws_9"
