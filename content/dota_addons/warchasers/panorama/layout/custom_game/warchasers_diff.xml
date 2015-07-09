@@ -6,27 +6,37 @@
 		<include src="file://{resources}/scripts/custom_game/warchasers_diff.js" />
 	</scripts>
 	<Panel class='TestPanelPro'>
-		<Panel class="TitleHolder">
-			<Label class="DifficultyTitle" text="SELECT DIFFICULTY"/>
+		<Panel id="DiffIcon">
+			<Label id="Diff_Title" text="#difficulty0" html="true" class="DiffTitle" />
+			<Label id="Diff_Title0" text="#difficulty0" class="DiffTitle Hidden" />
+			<Label id="Diff_Title1" text="#difficulty1" class="DiffTitle Hidden" />
+			<Label id="Diff_Title2" text="#difficulty2" class="DiffTitle Hidden" />
+			<Label id="Diff_Title3" text="#difficulty3" class="DiffTitle Hidden" />
+			<Label id="Diff_Title4" text="#difficulty4" class="DiffTitle Hidden" />
 		</Panel>
-		<Panel class="DifficultyTextHolder">
-			<Label id="Diff_Text" class="DifficultyText" text="Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities" />
-			<Label id="Diff_Text0" class="DifficultyText Hidden" text="This is the Classic difficulty baseline"/>
-			<Label id="Diff_Text1" class="DifficultyText Hidden" text="An Advanced Challenge&lt;br&gt;Watch your step!" html="true" />
-			<Label id="Diff_Text2" class="DifficultyText Hidden" text="A Heroic Challenge&lt;br&gt;Don't try this alone or without experience" html="true" />
-			<Label id="Diff_Text3" class="DifficultyText Hidden" text="A Brutal Quest&lt;br&gt;You asked for it" html="true" />
-			<Label id="Diff_Text4" class="DifficultyText Hidden" text="The Ultimate Difficulty&lt;br&gt;Only recommended for players with previous experience" html="true" />
-		</Panel>
-		<Panel class="DifficultyHolder">
-			<Button id="Diff0" class='Difficulty' onactivate="OnDifficultyPick(0)" />
-			<Button id="Diff1" class='Difficulty' onactivate="OnDifficultyPick(1)" />
-			<Button id="Diff2" class='Difficulty' onactivate="OnDifficultyPick(2)" />
-			<Button id="Diff3" class='Difficulty' onactivate="OnDifficultyPick(3)" />
-			<Button id="Diff4" class='Difficulty' onactivate="OnDifficultyPick(4)" />
-		</Panel>
+		<Panel class='TestParent'>
+			<Panel class="TitleHolder">
+				<Label class="DifficultyTitle" text="#select_difficulty"/>
+			</Panel>
+			<Panel class="DifficultyTextHolder">
+				<Label id="Diff_Text" class="DifficultyText" text="#difficulty_text" />
+				<Label id="Diff_Text0" class="DifficultyText Hidden" text="#difficulty0_text"/>
+				<Label id="Diff_Text1" class="DifficultyText Hidden" text="#difficulty1_text" html="true" />
+				<Label id="Diff_Text2" class="DifficultyText Hidden" text="#difficulty2_text" html="true" />
+				<Label id="Diff_Text3" class="DifficultyText Hidden" text="#difficulty3_text" html="true" />
+				<Label id="Diff_Text4" class="DifficultyText Hidden" text="#difficulty4_text" html="true" />
+			</Panel>
+			<Panel class="DifficultyHolder">
+				<RadioButton group="Diff" id="Diff0" class='Difficulty' onactivate="OnDifficultyPick(0)" />
+				<RadioButton group="Diff" id="Diff1" class='Difficulty' onactivate="OnDifficultyPick(1)" />
+				<RadioButton group="Diff" id="Diff2" class='Difficulty' onactivate="OnDifficultyPick(2)" />
+				<RadioButton group="Diff" id="Diff3" class='Difficulty' onactivate="OnDifficultyPick(3)" />
+				<RadioButton group="Diff" id="Diff4" class='Difficulty' onactivate="OnDifficultyPick(4)" />
+			</Panel>
 
-		<Button id="VoteButton" onactivate="OnDifficultyChosen()" >
-			<Label text="Vote Difficulty" />
-		</Button>
+			<Button id="VoteButton" onactivate="OnDifficultyChosen()" >
+				<Label text="#vote_difficulty" />
+			</Button>
+		</Panel>
 	</Panel>
 </root>

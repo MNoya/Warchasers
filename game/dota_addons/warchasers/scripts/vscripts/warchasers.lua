@@ -983,13 +983,9 @@ function Warchasers:ToggleCameraLock( event )
 end
 
 
-function Warchasers:UpdateVotes( player, difficulty )
-    
-    --get the player's ID
-    local pID = player:GetPlayerID()
-
-    --get the hero handle
-    local hero = player:GetAssignedHero()
+function Warchasers:UpdateVotes( event )
+    local pID = event.pID
+    local difficulty = event.difficulty
 
     if not GameRules.difficulty_selected then
 		table.insert(GameRules.PLAYER_VOTES,difficulty)
@@ -1017,7 +1013,7 @@ end
 function Warchasers:OnEveryoneVoted()
 	
 	--Fire Game Event to our UI
-	FireGameEvent('warchasers_finished_voting', {})
+	CustomGameEventManager:Send_ServerToAllClients("finished_voting", {})
 
     GameRules:SendCustomMessage("<font color='#2EFE2E'>Finished voting!</font>", 0, 0)
 
