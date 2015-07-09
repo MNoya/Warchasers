@@ -1,0 +1,23 @@
+.LockButton
+{
+    width: 240px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    font-family: Goudy Trajan Medium;
+    background-color: #333333;
+    margin-left: 220px;
+    margin-top: 7px;
+}
+
+#Button
+{
+	width: 100%;
+	height: 100%;
+}
+
+#Label
+{
+	font-size: 25;
+	horizontal-align: center;
+}

@@ -41,7 +41,7 @@ function Teleporter(trigger)
         GameRules.CURRENT_SAVEPOINT = Entities:FindByName( nil, "teleport_spot_1" )
         local messageinfo = { message = "CHECKPOINT REACHED",duration = 3}
         FireGameEvent("show_center_message",messageinfo)
-        
+    
 end
 
 function TeleporterHeavenHell(trigger)
@@ -64,22 +64,6 @@ function TeleporterHeaven(trigger)
     print("Entered Heaven")
     EmitGlobalSound("Warchasers.Heaven") --"DOTAMusic_Stinger.003"
 
-    heaven1 = Vector(-6762, 5583, 40)
-    local newItem = CreateItem("item_orb_of_fire", nil, nil)
-    CreateItemOnPositionSync(heaven1, newItem)
-
-    heaven2 = Vector(-6762, 5475, 40)
-    local newItem = CreateItem("item_restoration_scroll", nil, nil)
-    CreateItemOnPositionSync(heaven2, newItem)
-
-    heaven3 = Vector(-6652, 5475, 40)
-    local newItem = CreateItem("item_restoration_scroll", nil, nil)
-    CreateItemOnPositionSync(heaven3, newItem)
-
-    heaven4 = Vector(-6652, 5583, 40)
-    local newItem = CreateItem("item_evasion", nil, nil)
-    CreateItemOnPositionSync(heaven4, newItem)
-
     --mass teleport
     for nPlayerID = 0, DOTA_MAX_PLAYERS-1 do 
         if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS then
@@ -89,6 +73,24 @@ function TeleporterHeaven(trigger)
             GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1400 )
         end
     end
+
+    Timers:CreateTimer(function()
+        heaven1 = Vector(-6762, 5583, 40)
+        local newItem = CreateItem("item_orb_of_fire", nil, nil)
+        CreateItemOnPositionSync(heaven1, newItem)
+
+        heaven2 = Vector(-6762, 5475, 40)
+        local newItem = CreateItem("item_restoration_scroll", nil, nil)
+        CreateItemOnPositionSync(heaven2, newItem)
+
+        heaven3 = Vector(-6652, 5475, 40)
+        local newItem = CreateItem("item_restoration_scroll", nil, nil)
+        CreateItemOnPositionSync(heaven3, newItem)
+
+        heaven4 = Vector(-6652, 5583, 40)
+        local newItem = CreateItem("item_evasion", nil, nil)
+        CreateItemOnPositionSync(heaven4, newItem)
+    end)
 
     -- Show Quest
     heavenQuest = SpawnEntityFromTableSynchronous( "quest", { name = "HeavenQuest", title = "#HeavenQuestTimer" } )
@@ -238,6 +240,31 @@ function TeleporterHell(trigger)
     end
     )
 
+    -- Potion Drops
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell1 = Vector(-7585.9, 3618.39, 40)
+    CreateItemOnPositionSync(hell1, newItem)
+
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell2 = Vector(-7634.45, 2930.77, 40)
+    CreateItemOnPositionSync(hell2, newItem)
+
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell3 = Vector(-7550.46, 2382.61, 40)
+    CreateItemOnPositionSync(hell3, newItem)
+
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell4 = Vector(-5834.61, 3493.86, 40)
+    CreateItemOnPositionSync(hell4, newItem)
+
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell5 = Vector(-5658.03, 2879.14, 40)
+    CreateItemOnPositionSync(hell5, newItem)
+
+    local newItem = CreateItem("item_potion_of_healing", nil, nil)
+    hell6 = Vector(-5719.82, 2403.32, 40)
+    CreateItemOnPositionSync(hell6, newItem)
+
     Timers:CreateTimer({
         endTime = 45,
         callback = function()
@@ -367,6 +394,31 @@ function TeleporterSecret(trigger) --Sheeps
         EmitGlobalSound("DOTAMusic_Stinger.007")
         GameRules:SendCustomMessage("<font color='#2EFE2E'>HINT</font> You have found a secret area!", 0, 0)
         GameRules.SENDSPIDERHALL = true
+
+        --Secret Shop Item Drops
+        position = Vector(-2940,2996,128)
+        local dummy1 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        Timers:CreateTimer(function()
+            local newItem = CreateItem("item_allerias_flute", nil, nil)
+            CreateItemOnPositionSync(position, newItem)
+
+            position = Vector(-3136,2996,128)
+            local newItem = CreateItem("item_khadgars_gem", nil, nil)
+            CreateItemOnPositionSync(position, newItem)
+
+            position = Vector(-2940,3200,128)
+            local newItem = CreateItem("item_stormwind_horn", nil, nil)
+            CreateItemOnPositionSync(position, newItem)
+
+            position = Vector(-3136,3200,128)
+            local newItem = CreateItem("item_bone_chimes", nil, nil)
+            CreateItemOnPositionSync(position, newItem)
+        end)
+
+        Timers:CreateTimer(1, function()
+            dummy1:RemoveSelf()
+        end)
+
     end
 
     local point =  Entities:FindByName( nil, "teleport_spot_secret" ):GetAbsOrigin()

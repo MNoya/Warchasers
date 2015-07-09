@@ -115,6 +115,14 @@ function spiderhall_kill(trigger)
 end
 
 function save_frost( event )
+	
+	position = Vector(124,2175,128)
+    local newItem = CreateItem("item_key3", nil, nil)
+    local dummy1 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    CreateItemOnPositionSync(position, newItem)
+
+    Timers:CreateTimer(1, function() dummy1:RemoveSelf() end)
+
 	local point = Entities:FindByName(nil,"savepoint_frost")
     GameRules.CURRENT_SAVEPOINT = point
     local messageinfo = { message = "CHECK POINT REACHED",duration = 3}

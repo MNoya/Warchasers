@@ -1,0 +1,13 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/camera_lock_button.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/camera_lock_button.js" />
+	</scripts>
+	<Panel class='LockButton'>
+		<Button id="Button" onactivate="OnButtonPressed()">
+			<Label id="Label" text="Camera Lock ON" />
+		</Button>
+	</Panel>
+</root>

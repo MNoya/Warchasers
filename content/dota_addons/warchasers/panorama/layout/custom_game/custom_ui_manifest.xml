@@ -1,0 +1,9 @@
+<root>
+	<script>
+		$.Msg("Compiled Panorama")
+	</script>
+ 
+	<Panel>
+		<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/camera_lock_button.xml" />
+	</Panel>
+</root>

@@ -1,7 +1,7 @@
 -- dota_launch_custom_game warchasers warchasers
 
 
-WARCHASERS_VERSION = "1.3.2" -- Reborn
+WARCHASERS_VERSION = "1.3.3"
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
@@ -35,7 +35,7 @@ function Warchasers:InitGameMode()
 	GameMode:SetUseCustomHeroLevels ( true )
 
 	GameMode:SetUnseenFogOfWarEnabled( true )
-	
+
 	--GameRules:SetCustomGameEndDelay(1)
 	--GameRules:SetCustomVictoryMessageDuration(0.1)
 
@@ -45,16 +45,9 @@ function Warchasers:InitGameMode()
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
 
-	--[[Convars:RegisterCommand( "tank", function(name, parameter)
-	    --Get the player that triggered the command
-	    local cmdPlayer = Convars:GetCommandClient()
-		
-	    --If the player is valid: call our handler
-	    if cmdPlayer then 
-	        return Warchasers:TestTank()
-	    end
-	 end, "Test Tank", FCVAR_CHEAT )]]
-
+	-- Register Panorama Listeners
+	CustomGameEventManager:RegisterListener("player_toggle_camera_lock", Dynamic_Wrap(Warchasers, 'ToggleCameraLock'))
+    CustomGameEventManager:RegisterListener("player_voted_difficulty", Dynamic_Wrap(Warchasers, 'UpdateVotes'))
 
 	 -- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
@@ -367,117 +360,35 @@ function Warchasers:OnAllPlayersLoaded()
 	print("All Players Have Loaded")
 	AnnouncerChoose()
 
-		if GameRules.SHOWPOPUP then
-			--ShowGenericPopup( "#popup_title", "#popup_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-			GameRules.SHOWPOPUP = false
-		end
+	-- World Drops
+	local newItem = CreateItem("item_book_of_the_dead", nil, nil)
+    CreateItemOnPositionSync(Vector(-1540,7713,256), newItem)
 
-		--Create Dummy so we can see the particle glow
-	    position = Vector(-6719,5541,40)
-        local dummy1 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+    local newItem = CreateItem("item_book_of_the_dead", nil, nil)
+    CreateItemOnPositionSync(Vector(-1316,7713,256), newItem)
 
-        --Create Dummy so we can see the particle glow
-	    position = Vector(-3062,2976,192) --secret
-        local dummy2 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	--Spawning Bosses
+	local owner_location = Vector(-7970,-7767,512)
+	GameRules.soul_keeper = CreateUnitByName("npc_soul_keeper", owner_location, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	
+	local boss_location = Vector(-5512,-5497,-112)
+	local boss_rotation = Vector(-7872,-5504,265)
+	local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
+	boss1:SetForwardVector(boss_rotation)
+	boss1.initial_neutral_position = boss_location
 
-        --Create Dummy so we can see the particle glow
-	    position = Vector(123,2174,129) --sunkey
-        local dummy3 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS)
-
-        position = Vector(-1404,7732,256) --books
-        local dummy4 = CreateUnitByName("vision_dummy_tiny", position, true, nil, nil, DOTA_TEAM_GOODGUYS) 
-
-
-        --WORLD ITEMDROPS
-		print("Creating itemdrops")
-
-		position = Vector(124,2175,128)
-		local newItem = CreateItem("item_key3", nil, nil)
-		CreateItemOnPositionSync(position, newItem)
-
-		position = Vector(-2940,2996,128)
-		local newItem = CreateItem("item_allerias_flute", nil, nil)
-	    CreateItemOnPositionSync(position, newItem)
-
-	    position = Vector(-3136,2996,128)
-		local newItem = CreateItem("item_khadgars_gem", nil, nil)
-	    CreateItemOnPositionSync(position, newItem)
-
-	    position = Vector(-2940,3200,128)
-		local newItem = CreateItem("item_stormwind_horn", nil, nil)
-	    CreateItemOnPositionSync(position, newItem)
-
-	    position = Vector(-3136,3200,128)
-		local newItem = CreateItem("item_bone_chimes", nil, nil)
-	    CreateItemOnPositionSync(position, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell1 = Vector(-7585.9, 3618.39, 40)
-        CreateItemOnPositionSync(hell1, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell2 = Vector(-7634.45, 2930.77, 40)
-        CreateItemOnPositionSync(hell2, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell3 = Vector(-7550.46, 2382.61, 40)
-        CreateItemOnPositionSync(hell3, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell4 = Vector(-5834.61, 3493.86, 40)
-        CreateItemOnPositionSync(hell4, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell5 = Vector(-5658.03, 2879.14, 40)
-        CreateItemOnPositionSync(hell5, newItem)
-
-        local newItem = CreateItem("item_potion_of_healing", nil, nil)
-        hell6 = Vector(-5719.82, 2403.32, 40)
-        CreateItemOnPositionSync(hell6, newItem)
+	local boss_location = Vector(-1408,-7560,137)
+	local boss_rotation = Vector(-1408,6540,256)
+	local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
+	boss2:SetForwardVector(boss_rotation)
+	boss2.initial_neutral_position = boss_location
 
 
-        local newItem = CreateItem("item_book_of_the_dead", nil, nil)
-        book1 = Vector(-1540,7713,256)
-        CreateItemOnPositionSync(book1, newItem)
-
-        local newItem = CreateItem("item_book_of_the_dead", nil, nil)
-        book2 = Vector(-1316,7713,256)
-        CreateItemOnPositionSync(book2, newItem)
-
-		Timers:CreateTimer({
-            endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-            callback = function()
-				dummy1:ForceKill(true)
-				dummy2:ForceKill(true)
-				dummy3:ForceKill(true)
-				dummy4:ForceKill(true)
-			end
-		})
-
-		--Spawning Bosses
-
-		local owner_location = Vector(-7970,-7767,512)
-		GameRules.soul_keeper = CreateUnitByName("npc_soul_keeper", owner_location, true, nil, nil, DOTA_TEAM_NEUTRALS)
-		
-		local boss_location = Vector(-5512,-5497,-112)
-		local boss_rotation = Vector(-7872,-5504,265)
-		local boss1 = CreateUnitByName("npc_doom_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
-		boss1:SetForwardVector(boss_rotation)
-		boss1.initial_neutral_position = boss_location
-
-		local boss_location = Vector(-1408,-7560,137)
-		local boss_rotation = Vector(-1408,6540,256)
-		local boss2 = CreateUnitByName("npc_tb_miniboss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
-		boss2:SetForwardVector(boss_rotation)
-		boss2.initial_neutral_position = boss_location
-
-
-		local boss_location = Vector(2038, -7212, 257)
-		local boss_rotation = Vector(7662, -7152, 113)
-		local final_boss = CreateUnitByName("npc_boss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
-		final_boss:SetForwardVector(boss_rotation)
-		final_boss.initial_neutral_position = boss_location
-
+	local boss_location = Vector(2038, -7212, 257)
+	local boss_rotation = Vector(7662, -7152, 113)
+	local final_boss = CreateUnitByName("npc_boss", boss_location, true, GameRules.soul_keeper, GameRules.soul_keeper, DOTA_TEAM_NEUTRALS)
+	final_boss:SetForwardVector(boss_rotation)
+	final_boss.initial_neutral_position = boss_location
 
 end
 
@@ -523,14 +434,6 @@ function Warchasers:OnNPCSpawned(keys)
 			if Convars:GetBool("developer") then
 				local item = CreateItem("item_ublink", npc, npc) --testing items
 				npc:AddItem(item)
-
-				-- Test Unit
-				local dummy1 = CreateUnitByName("npc_small_murloc", npc:GetAbsOrigin()+Vector(200, 200, 0), true, nil, nil, DOTA_TEAM_GOODGUYS)			
-				Timers:CreateTimer(0.1, function() 
-					FindClearSpaceForUnit(dummy1, npc:GetAbsOrigin(), true) 
-					dummy1:SetControllableByPlayer(0, true)
-					dummy1:Stop() 
-				end)
 			end
 			
 		elseif npc.bFirstSpawned == true then --respawn through Ankh
@@ -544,6 +447,10 @@ end
 
 function Warchasers:OnHeroInGame(hero)
 	print("Hero Spawned")
+
+	-- Initial Camera Lock
+	local pID = hero:GetPlayerID()
+	PlayerResource:SetCameraTarget( pID, hero )
 
 	GameRules.PLAYERS_PICKED_HERO=GameRules.PLAYERS_PICKED_HERO+1
 
@@ -1064,19 +971,17 @@ function Warchasers:TestTank()
 end
 
 
+function Warchasers:ToggleCameraLock( event )
+	local pID = event.pID
+	local locked = event.locked
+	local hero = PlayerResource:GetSelectedHeroEntity( pID )
+	if locked == 0 then
+		PlayerResource:SetCameraTarget( pID, nil )
+	elseif locked == 1 then
+		PlayerResource:SetCameraTarget( pID, hero )
+	end
+end
 
-
-
-
--- register the 'PlayerVotedDifficulty' command in our console
-Convars:RegisterCommand( "PlayerVotedDifficulty", function(name, p)
-    --get the player that sent the command
-    local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer then 
-        --if the player is valid, register the vote
-        return Warchasers:UpdateVotes( cmdPlayer , p)
-    end
-end, "A player voted a difficulty", 0 )
 
 function Warchasers:UpdateVotes( player, difficulty )
     
