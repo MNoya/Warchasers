@@ -34,6 +34,8 @@ function Warchasers:InitGameMode()
 	GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	GameMode:SetUseCustomHeroLevels ( true )
 
+	GameMode:SetUnseenFogOfWarEnabled( true )
+	
 	--GameRules:SetCustomGameEndDelay(1)
 	--GameRules:SetCustomVictoryMessageDuration(0.1)
 
