@@ -1,0 +1,95 @@
+.TestPanelPro
+{
+	flow-children: down;
+	width: 900px;
+	height: 600px;
+	background-image: url("s2r://panorama/images/custom_game/backg_png.vtex");
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+.TitleHolder
+{
+	width: 630px;
+	height: 165px;
+}
+
+.DifficultyTitle
+{
+	margin-left: 50px;
+	font-size: 40px;
+	font-family: Goudy Trajan Medium;
+	color: #ffffff;
+	text-shadow: 0 0 2px #00ff00;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.DifficultyTextHolder
+{
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 560px;
+	height: 130px;
+}
+
+.DifficultyText
+{
+	font-family: Goudy Trajan Medium;
+	color: #008800;
+	font-size: 24px;
+}
+
+.DifficultyHolder
+{
+	flow-children: right;
+	padding-left: 40px;
+}
+
+.Difficulty
+{
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-right: 20px;
+    vertical-align: bottom;
+}
+
+/* This button should probably be darker. anyways bring it in line with the other one that you have if you want, for better looks */
+#VoteButton {
+	box-shadow:inset 0px 1px 3px 0px #8c8c8c;
+	background-color:#8a8a8a;
+	border-radius:5px;
+	border:1px solid #8c8f8e;
+	color:#ffffff;
+	font-family: Goudy Trajan Medium;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-shadow:0px -1px 0px #414242;
+	horizontal-align: right;
+	margin-right: 35px;
+}
+
+#VoteButton:hover {
+	background-color:#616161;
+}
+
+#VoteButton:active {
+	transform: translateY(1px);
+}
+
+#Diff0 {	width:95px; height:75px; background-image: url("s2r://panorama/images/custom_game/ButtonLevel0_png.vtex"); }
+#Diff1 {	width:95px; height:86px; background-image: url("s2r://panorama/images/custom_game/ButtonLevel1_png.vtex"); }
+#Diff2 {	width:110px; height:101px; background-image: url("s2r://panorama/images/custom_game/ButtonLevel2_png.vtex"); }
+#Diff3 {	width:99px; height:122px; background-image: url("s2r://panorama/images/custom_game/ButtonLevel3_png.vtex"); }
+#Diff4 {	width:100px; height:146px; background-image: url("s2r://panorama/images/custom_game/ButtonLevel4_png.vtex"); }
+
+#Diff0:hover {	background-image: url("s2r://panorama/images/custom_game/ButtonLevel0_glow_png.vtex"); }
+#Diff1:hover {	background-image: url("s2r://panorama/images/custom_game/ButtonLevel1_glow_png.vtex"); }
+#Diff2:hover {	background-image: url("s2r://panorama/images/custom_game/ButtonLevel2_glow_png.vtex"); }
+#Diff3:hover {	background-image: url("s2r://panorama/images/custom_game/ButtonLevel3_glow_png.vtex"); }
+#Diff4:hover {	background-image: url("s2r://panorama/images/custom_game/ButtonLevel4_glow_png.vtex"); }
+
+.Hidden {	visibility: collapse; }

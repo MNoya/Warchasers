@@ -1,0 +1,32 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/warchasers_diff.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/warchasers_diff.js" />
+	</scripts>
+	<Panel class='TestPanelPro'>
+		<Panel class="TitleHolder">
+			<Label class="DifficultyTitle" text="SELECT DIFFICULTY"/>
+		</Panel>
+		<Panel class="DifficultyTextHolder">
+			<Label id="Diff_Text" class="DifficultyText" text="Each additional level of difficulty will add one affix to each different creature, from a big pool of custom abilities" />
+			<Label id="Diff_Text0" class="DifficultyText Hidden" text="This is the Classic difficulty baseline"/>
+			<Label id="Diff_Text1" class="DifficultyText Hidden" text="An Advanced Challenge&lt;br&gt;Watch your step!" html="true" />
+			<Label id="Diff_Text2" class="DifficultyText Hidden" text="A Heroic Challenge&lt;br&gt;Don't try this alone or without experience" html="true" />
+			<Label id="Diff_Text3" class="DifficultyText Hidden" text="A Brutal Quest&lt;br&gt;You asked for it" html="true" />
+			<Label id="Diff_Text4" class="DifficultyText Hidden" text="The Ultimate Difficulty&lt;br&gt;Only recommended for players with previous experience" html="true" />
+		</Panel>
+		<Panel class="DifficultyHolder">
+			<Button id="Diff0" class='Difficulty' onactivate="OnDifficultyPick(0)" />
+			<Button id="Diff1" class='Difficulty' onactivate="OnDifficultyPick(1)" />
+			<Button id="Diff2" class='Difficulty' onactivate="OnDifficultyPick(2)" />
+			<Button id="Diff3" class='Difficulty' onactivate="OnDifficultyPick(3)" />
+			<Button id="Diff4" class='Difficulty' onactivate="OnDifficultyPick(4)" />
+		</Panel>
+
+		<Button id="VoteButton" onactivate="OnDifficultyChosen()" >
+			<Label text="Vote Difficulty" />
+		</Button>
+	</Panel>
+</root>

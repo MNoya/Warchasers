@@ -4,6 +4,7 @@
 	</script>
  
 	<Panel>
+		<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/warchasers_diff.xml" />
 		<CustomUIElement type="Hud" 				layoutfile="file://{resources}/layout/custom_game/camera_lock_button.xml" />
 	</Panel>
 </root>
