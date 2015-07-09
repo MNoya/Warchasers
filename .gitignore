@@ -13,5 +13,8 @@ game/dota_addons/warchasers/resource/overviews/*
 *.vmat_c
 *.vsndevts_c
 
+# Include panorama vtext_c
+!game/dota_addons/warchasers/panorama/images/custom_game/*
+
 # Map Files
 *.vpk
