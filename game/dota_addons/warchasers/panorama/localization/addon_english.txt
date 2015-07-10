@@ -21,4 +21,8 @@
 	"difficulty4_text"	"The Ultimate Difficulty<br>Only recommended for players with previous experience"
 
 	"vote_difficulty"	"VOTE DIFFICULTY"
+
+	"play_again"		"Resurrect at latest check point?"
+	"yes_option"		"Yes"
+	"no_option"			"GG"
 }

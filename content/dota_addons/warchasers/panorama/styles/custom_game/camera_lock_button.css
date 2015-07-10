@@ -8,6 +8,7 @@
     background-color: #333333;
     margin-left: 220px;
     margin-top: 7px;
+    border-radius:5px;
 }
 
 #Button
@@ -16,8 +17,13 @@
 	height: 100%;
 }
 
+#Button:hover {
+    background-color:#616161;
+}
+
 #Label
 {
 	font-size: 25;
 	horizontal-align: center;
+    margin-top: -2px;
 }

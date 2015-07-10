@@ -1,0 +1,21 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/player_died.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/player_died.js" />
+	</scripts>
+	<Panel class='PlayerDeadPanel Hidden'>
+		<Panel class="TitleHolder">
+			<Label class="PlayAgainTitle" text="#play_again"/>
+		</Panel>
+		<Panel class="ButtonHolder">
+			<Button id="YesButton" onactivate="OnYesButton()" >
+			<Label text="#yes_option" />
+			</Button>
+			<Button id="NoButton" onactivate="OnNoButton()" >
+				<Label text="#no_option" />
+			</Button>
+		</Panel>	
+	</Panel>
+</root>

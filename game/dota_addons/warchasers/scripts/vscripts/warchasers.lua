@@ -48,6 +48,8 @@ function Warchasers:InitGameMode()
 	-- Register Panorama Listeners
 	CustomGameEventManager:RegisterListener("player_toggle_camera_lock", Dynamic_Wrap(Warchasers, 'ToggleCameraLock'))
     CustomGameEventManager:RegisterListener("player_voted_difficulty", Dynamic_Wrap(Warchasers, 'UpdateVotes'))
+    CustomGameEventManager:RegisterListener("player_respawn", Dynamic_Wrap(Warchasers, 'PlayerRespawn'))
+    CustomGameEventManager:RegisterListener("player_give_up", Dynamic_Wrap(Warchasers, 'PlayerGiveUp'))
 
 	 -- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
@@ -875,36 +877,23 @@ function Warchasers:OnEntityKilled( event )
     		respawning=false
     		GameRules.Player0DEAD = true]]
 
-    		--Fire the event. The second parameter is an object with all the event's parameters as properties
-   			FireGameEvent('warchasers_player_died', { player_ID = 0 })
+   			CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(0), "player_died", {})
     	end
 
     	if KilledPlayerID==1 and GameRules.P1_ANKH_COUNT <= 0 then  
-    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
-    		respawning=false
-    		GameRules.Player1DEAD = true]]
-    		FireGameEvent('warchasers_player_died', { player_ID = 1 })
+     		CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(1), "player_died", {})
     	end
 	      
 	    if KilledPlayerID==2 and GameRules.P2_ANKH_COUNT <= 0 then  
-    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
-    		respawning=false
-    		GameRules.Player2DEAD = true]]
-    		FireGameEvent('warchasers_player_died', { player_ID = 2 })
+    		CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(2), "player_died", {})
     	end
 
     	if KilledPlayerID==3 and GameRules.P3_ANKH_COUNT <= 0 then  
-    		--[[GameRules.DEAD_PLAYER_COUNT=GameRules.DEAD_PLAYER_COUNT+1
-    		respawning=false
-    		GameRules.Player3DEAD = true]]
-    		FireGameEvent('warchasers_player_died', { player_ID = 3 })
+    		CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(3), "player_died", {})
     	end
 
     	if KilledPlayerID==4 and GameRules.P4_ANKH_COUNT <= 0 then  
-    		--[[GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
-    		respawning=false
-    		GameRules.Player4DEAD = true]]
-    		FireGameEvent('warchasers_player_died', { player_ID = 4 })
+    		CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(4), "player_died", {})
     	end 
  	
 	end
@@ -1058,22 +1047,9 @@ function Warchasers:OnEveryoneVoted()
 	
 end
 
--- register the 'RespawnAsGhost' command in our console
-Convars:RegisterCommand( "RespawnAsGhost", function(name, p)
-    --get the player that sent the command
-    local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer then 
-        --if the player is valid, register the vote
-        return Warchasers:RespawnAsGhost( cmdPlayer )
-    end
-end, "A player wants to keep playing", 0 )
-
-function Warchasers:RespawnAsGhost( player )
-	--get the player's ID
-    local pID = player:GetPlayerID()
-
-    --get the hero handle
-    local hero = player:GetAssignedHero()
+function Warchasers:PlayerRespawn( event )
+	local pID = event.pID
+    local hero = PlayerResource:GetSelectedHeroEntity(pID)
 
     if hero:UnitCanRespawn() then
     	hero:SetRespawnPosition(GameRules.CURRENT_SAVEPOINT:GetAbsOrigin())
@@ -1081,19 +1057,8 @@ function Warchasers:RespawnAsGhost( player )
 	end
 end
 
--- register the 'GG' command in our console
-Convars:RegisterCommand( "GG", function(name, p)
-    --get the player that sent the command
-    local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer then 
-        --if the player is valid, register the vote
-        return Warchasers:GG( cmdPlayer )
-    end
-end, "A player gives up", 0 )
-
-function Warchasers:GG( player )
-	 --get the player's ID
-    local pID = player:GetPlayerID()
+function Warchasers:PlayerGiveUp( event )
+    local pID = event.pID
 
     GameRules:SendCustomMessage(PlayerResource:GetPlayerName(pID).." has lost its soul forever...", 0, 0)
     GameRules.DEAD_PLAYER_COUNT = GameRules.DEAD_PLAYER_COUNT+1
@@ -1122,6 +1087,7 @@ function Warchasers:GG( player )
 		Timers:CreateTimer(15, function() GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS) end)		
 	end
 end
+
 
 function Warchasers:PrintEndgameMessage()
 
