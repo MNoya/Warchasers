@@ -882,7 +882,7 @@
 		"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 		
 		"BaseClass" "item_slippers"
-		"AbilityTextureName" "item_slippers_6"
+		"AbilityTextureName" "item_boots_6"
 		"SideShop" "0"
 		"SecretShop" "1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3290,7 +3290,7 @@
 	"item_restoration_scroll"
 	//Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.
 	{
-		"ID"                            "2061"
+		"ID"                            "2095"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -3653,12 +3653,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		"0"
+				"bonus_damage"			"0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"block_cooldown"		"20.0"
+				"block_cooldown"		"40.0"
 			}
 		}
 	}
@@ -4107,7 +4107,7 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
-			"SpendCharge"
+			"SpendCharge" 
 			{}
 			"RunScript"
 			{
@@ -4132,12 +4132,22 @@
 				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
 				"EffectAttachType" 	"follow_overhead"
 			}
-			
 		}
 	
 		"Modifiers"
 		{
-			
+			"tome_modifier"
+			{
+				"Passive"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"CastOnPickup"
+					}
+				}
+			}
 	
 			"tome_agility_modifier"
 			{
@@ -4215,12 +4225,6 @@
 				"EffectName"		"particles/sweep_generic/sweep_1.vpcf"
 				"EffectAttachType" 	"follow_overhead"
 			}
-			
-			"RunScript"
-			{
-				"ScriptFile"	"items.lua"
-				"Function"		"CleanupTomes"
-			}
 		}
 	
 	"Modifiers"
@@ -4268,7 +4272,7 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
-			"SpendCharge"
+			"SpendCharge" 
 			{}
 			"RunScript"
 			{
@@ -4286,7 +4290,6 @@
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_b.vpcf" //"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_chakra_magic.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			
 			//"FireEffect"
 			//{
 			//	"Target" "CASTER"
@@ -4350,7 +4353,7 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
-			"SpendCharge"
+			"SpendCharge" 
 			{}
 			"RunScript"
 			{
@@ -4375,7 +4378,6 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			
 		}
 		"Modifiers"
 			{
@@ -4455,7 +4457,6 @@
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 				"EffectAttachType" 	"follow_origin"
 			}
-			
 		}
 	
 	"Modifiers"
@@ -4517,7 +4518,7 @@
 		"OnSpellStart"
 		{
 			"SpendCharge"
-			{}	
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4564,8 +4565,7 @@
 				"Target" "CASTER"
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
 				"EffectAttachType" 	"follow_origin"
-			}
-					
+			}		
 		}
 	
 	
@@ -4644,8 +4644,8 @@
 		"ItemCastOnPickup"				"1"
 		"OnSpellStart"
 		{
-			"SpendCharge"
-			{}	
+			"SpendCharge" 
+			{}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/items.lua"
@@ -4668,8 +4668,7 @@
 				"Target" "CASTER"
 				"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
 				"EffectAttachType" 	"follow_origin"
-			}
-					
+			}			
 		}
 	
 		"Modifiers"

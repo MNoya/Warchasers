@@ -12,7 +12,7 @@
 	"Effect" "particles/generic_gameplay/dropped_item.vpcf"
 	
 	"BaseClass" "item_slippers"
-	"AbilityTextureName" "item_slippers_6"
+	"AbilityTextureName" "item_boots_6"
 	"SideShop" "0"
 	"SecretShop" "1"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"

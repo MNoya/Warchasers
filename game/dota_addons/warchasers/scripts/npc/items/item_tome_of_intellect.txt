@@ -36,6 +36,8 @@
 	"ItemCastOnPickup"				"1"
 	"OnSpellStart"
 	{
+		"SpendCharge" 
+		{}
 		"RunScript"
 		{
 			"ScriptFile"			"scripts/vscripts/items.lua"
@@ -59,8 +61,6 @@
 			"EffectName"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
 			"EffectAttachType" 	"follow_origin"
 		}
-		"SpendCharge"
-		{}
 	}
 	"Modifiers"
 		{
