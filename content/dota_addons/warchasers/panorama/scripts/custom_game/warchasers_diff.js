@@ -50,7 +50,7 @@ function OnDifficultyChosen() {
 }
 
 function OnFinishedVoting (args) {
-	$.GetContextPanel().visible = false;
+	$.GetContextPanel().DeleteAsync( 0 )
 }
 
 (function () {

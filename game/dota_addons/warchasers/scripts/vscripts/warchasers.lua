@@ -483,13 +483,6 @@ function Warchasers:OnEveryonePicked()
     GameRules:SendCustomMessage("Version: " .. WARCHASERS_VERSION, 0, 0)
     GameRules:SendCustomMessage("Please report bugs and leave feedback in our workshop page", 0, 0)
 
-    --[[Warchasers:OnEveryoneVoted()
-
-    Timers:CreateTimer(5, function()	
-	    GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Reborn</font>", 0, 0)
-	    GameRules:SendCustomMessage("Higher difficulty levels will be added as soon as we fix some bugs.<br>Thank you for playing, enjoy your run!", 0, 0)
-    end)]]
-
     GameRules:SendCustomMessage("<br>2 minutes to select a difficulty",0,0)
     Timers:CreateTimer(60,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("60 seconds remaining",0,0) end end)
     Timers:CreateTimer(90,function() if not GameRules.difficulty_selected then GameRules:SendCustomMessage("30 seconds remaining",0,0) end end)
@@ -992,6 +985,8 @@ function Warchasers:UpdateVotes( event )
 end
 
 function Warchasers:OnEveryoneVoted()
+
+    print("On Everyone Voted")
 	
 	--Fire Game Event to our UI
 	CustomGameEventManager:Send_ServerToAllClients("finished_voting", {})
