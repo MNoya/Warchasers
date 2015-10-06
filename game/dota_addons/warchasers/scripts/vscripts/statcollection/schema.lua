@@ -2,8 +2,6 @@ customSchema = class({})
 
 function customSchema:init()
 
-    print('customSchema:init()')
-
     -- Listen for changes in the current state
     ListenToGameEvent('game_rules_state_change', function(keys)
         -- Grab the current state
@@ -48,6 +46,7 @@ function BuildPlayersArray()
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
+                    hero = GetHeroName(hero),
                     i1 = GetItemName(hero, 1),
                     i2 = GetItemName(hero, 2),
                     i3 = GetItemName(hero, 3),
@@ -62,10 +61,18 @@ function BuildPlayersArray()
     return players
 end
 
+function GetHeroName( hero )
+    local heroName = hero:GetUnitName()
+    heroName = string.gsub(heroName,"npc_dota_hero_","")
+    return heroName
+end
+
 function GetItemName(hero, slot)
     local item = hero:GetItemInSlot(slot)
     if item then
-        return item:GetAbilityName()
+        local itemName = item:GetAbilityName()
+        itemName = string.gsub(itemName,"item_","")
+        return itemName
     else
         return ""
     end
