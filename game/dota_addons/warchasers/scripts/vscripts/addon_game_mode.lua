@@ -13,6 +13,7 @@ end
 -- Required .lua files
 ---------------------------------------------------------------------------
 
+require( 'statcollection/init' )
 require( 'warchasers' )
 require( 'camera' )
 require( 'abilities' )
@@ -23,8 +24,6 @@ require( 'spawn' )
 require( 'hints' )
 require( 'sounds' )
 require( 'popups' )
-
---require( 'lib.statcollection')
 
 function Precache( context )
 
