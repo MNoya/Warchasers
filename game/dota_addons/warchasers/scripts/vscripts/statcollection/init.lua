@@ -13,6 +13,7 @@ if COLLECT_STATS or TESTING then
 
             -- Init stat collection
             statCollection:init()
+            customSchema:init()
         end
     end, nil)
 end

@@ -3,7 +3,6 @@
 ---------------------------------------------------------------------------
 if Warchasers == nil then
 	_G.Warchasers = class({})
-	print("Warchasers 1.3 beta")
 	--Convar:SendToConsole("sv_cheats 1")
 end
 

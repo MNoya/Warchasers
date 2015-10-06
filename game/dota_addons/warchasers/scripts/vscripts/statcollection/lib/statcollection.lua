@@ -18,7 +18,8 @@ Come bug us in our IRC channel or get in contact via the site chatbox. http://ge
 ]]
 
 -- Require libs
-local md5 = require('statcollection/lib/md5')
+require('statcollection/lib/md5')
+require('statcollection/schema')
 
 -- Settings
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
@@ -45,7 +46,7 @@ local errorMissingModID = 'Missing Mod ID'
 local errorMissingSchemaID = 'Missing Schema ID'
 
 local messageStarting = 'GetDotaStats module is trying to init...'
-local messagePhase1Starting = 'Attempting to reqisted the match with GetDotaStats...'
+local messagePhase1Starting = 'Attempting to register the match with GetDotaStats...'
 local messagePhase2Starting = 'Attempting to send pregame stats...'
 local messagePhase3Starting = 'Attempting to send final stats...'
 local messageCustomStarting = 'Attempting to send custom stats...'
