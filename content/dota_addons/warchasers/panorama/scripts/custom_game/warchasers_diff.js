@@ -34,7 +34,7 @@ function OnDifficultyChosen() {
 	$.Msg("DEBUG - Voted");
 
 	// Default difficulty in case they dont bother selecting
-	var diff = 0;
+	var diff = 1;
 
 	//check which diff is chosen
 	if( $('#Diff0').checked ) diff = 0;

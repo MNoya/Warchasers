@@ -1,7 +1,7 @@
 -- dota_launch_custom_game warchasers warchasers
 
 
-WARCHASERS_VERSION = "1.3.4"
+WARCHASERS_VERSION = "1.4"
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
@@ -39,8 +39,8 @@ function Warchasers:InitGameMode()
 	--GameRules:SetCustomGameEndDelay(1)
 	--GameRules:SetCustomVictoryMessageDuration(0.1)
 
-	--GameRules:SetPreGameTime(0)
-	GameRules:SetPostGameTime(60)
+	GameRules:SetPreGameTime(30)
+	GameRules:SetPostGameTime(30)
 	--GameRules:SetHeroSelectionTime(0)
 	--GameRules:SetGoldPerTick(0)
 	--GameRules:SetHeroRespawnEnabled(false)
@@ -169,11 +169,6 @@ if Convars:GetBool("developer") == true then
 	require( "developer" )
 end
 
---[[statcollection.addStats({
-	modID = '07dac9699d6c9b7442f8ee7c18c18126' --GET THIS FROM http://getdotastats.com/#d2mods__my_mods
-})]]
-
-
 function set_items_ownership()
 	for player_id = 0, 4 do
 		local hero = PlayerResource:GetSelectedHeroEntity(player_id) 
@@ -194,8 +189,8 @@ end
 
 -- Evaluate the state of the game
 function Warchasers:OnThink()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		GameRules:SetTimeOfDay( 0.8 )
+    GameRules:SetTimeOfDay( 0.8 )
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then	
 		set_items_ownership()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		    		
@@ -312,17 +307,14 @@ function Warchasers:CheckForDefeat()
 	end	]]
 end
 
-function Warchasers:OnGameRulesStateChange(keys)
-  	print("GameRules State Changed")
-
-
-  	
+function Warchasers:OnGameRulesStateChange(keys)  	
   	if nNewState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameRules:LockCustomGameSetupTeamAssignment( true )
 		GameRules:FinishCustomGameSetup()
 	end
 
   	local newState = GameRules:State_Get()
+    print("GameRules State Changed", newState)
   	if newState == DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD then
     	self.bSeenWaitForPlayers = true
   	elseif newState == DOTA_GAMERULES_STATE_INIT then
@@ -739,7 +731,7 @@ function Warchasers:OnEntityKilled( event )
 		local messageinfo = { message = "YOU DEFEATED", duration = 5}
 		FireGameEvent("show_center_message",messageinfo)
 		Warchasers:PrintEndgameMessage()
-		Timers:CreateTimer(15, function() GameRules:MakeTeamLose( DOTA_TEAM_BADGUYS) end)
+		Timers:CreateTimer(15, function() GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS) end)
 	end
 
 	if killedUnit:GetUnitName() == "npc_doom_miniboss" then
@@ -984,7 +976,7 @@ function Warchasers:UpdateVotes( event )
 
 	  	local difficulty_level = 0
 	    for k,v in pairs(GameRules.PLAYER_VOTES) do
-	    	difficulty_level = difficulty_level + v
+	    	difficulty_level = v
 	    end
 
 	    difficulty_level = difficulty_level / #GameRules.PLAYER_VOTES
@@ -1027,13 +1019,6 @@ function Warchasers:OnEveryoneVoted()
     	GameRules:SendCustomMessage("Difficulty Level: <font color='#2EFE2E'>Legendary (4)</font>", 0, 0)
     	GameRules:SendCustomMessage("Nightmare!" , 0, 0)
     end
-
-    -- Add settings to our stat collector
-    --[[statcollection.addStats({
-        modes = {
-            difficulty = GameRules.DIFFICULTY
-        }
-    })]]
 
     -- Find the barrier_voting and obstructions_voting entities in the map and disable them
     local barrier = Entities:FindByName(nil,"barrier_voting")
@@ -1084,7 +1069,7 @@ function Warchasers:PlayerGiveUp( event )
 		local messageinfo = { message = "RIP IN PIECES", duration = 5}
 		FireGameEvent("show_center_message",messageinfo)
 		Warchasers:PrintEndgameMessage()
-		Timers:CreateTimer(15, function() GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS) end)		
+		Timers:CreateTimer(15, function() GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS) end)		
 	end
 end
 
@@ -1095,7 +1080,6 @@ function Warchasers:PrintEndgameMessage()
 	Timers:CreateTimer(10, function() GameRules:SendCustomMessage("<font color='#DBA901'>Please leave your feedback at our workshop page</font>",0,0) end)
 
 	--Send stats
-	--Timers:CreateTimer(10, function() statcollection.sendStats() end)
 	Timers:CreateTimer(12, function() GameRules:SendCustomMessage("<font color='#DBA901'>3</font>",0,0) end)
 	Timers:CreateTimer(13, function() GameRules:SendCustomMessage("<font color='#DBA901'>2</font>",0,0) end)
 	Timers:CreateTimer(14, function() GameRules:SendCustomMessage("<font color='#DBA901'>1...</font>",0,0) end)

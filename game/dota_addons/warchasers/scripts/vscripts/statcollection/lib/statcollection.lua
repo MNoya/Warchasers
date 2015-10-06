@@ -108,14 +108,6 @@ function statCollection:init()
     self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
     self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
 
-    if not status then
-        -- Tell the user about it
-        print(printPrefix .. errorBadSchema)
-        print(err)
-        self.doneInit = false --Make sure this wont work
-        return 
-    end
-
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
 

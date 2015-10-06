@@ -1,9 +1,9 @@
 require("statcollection/schema")
 require('statcollection/lib/statcollection')
 
-statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
-COLLECT_STATS = not Convars:GetBool('developer')
-TESTING = tobool(statInfo.TESTING)
+local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
+local COLLECT_STATS = not Convars:GetBool('developer')
+local TESTING = tobool(statInfo.TESTING)
 
 if COLLECT_STATS or TESTING then
     ListenToGameEvent('game_rules_state_change', function(keys)
