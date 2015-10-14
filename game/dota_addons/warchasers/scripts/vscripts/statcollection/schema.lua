@@ -15,11 +15,15 @@ function customSchema:init()
             -- Build players array
             local players = BuildPlayersArray()
 
-            DeepPrintTable(game)
-            DeepPrintTable(players)
+            -- Print the schema data to the console
+            if statCollection.TESTING then
+                PrintSchema(game,players)
+            end
 
             -- Send custom stats
-            statCollection:sendCustom({game=game, players=players})
+            if statCollection.HAS_SCHEMA then
+                statCollection:sendCustom({game=game, players=players})
+            end
         end
     end, nil)
 end
@@ -30,6 +34,16 @@ function customSchema:submitRound(args)
 end
 
 -------------------------------------
+--          Stat Functions         --
+-------------------------------------
+
+function PrintSchema( gameArray, playerArray )
+    print("-------- GAME DATA --------")
+    DeepPrintTable(gameArray)
+    print("\n-------- PLAYER DATA --------")
+    DeepPrintTable(playerArray)
+    print("-------------------------------------")
+end
 
 function BuildGameArray()
     local game = {}
@@ -46,13 +60,14 @@ function BuildPlayersArray()
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                    hero = GetHeroName(hero),
-                    i1 = GetItemName(hero, 1),
-                    i2 = GetItemName(hero, 2),
-                    i3 = GetItemName(hero, 3),
-                    i4 = GetItemName(hero, 4),
-                    i5 = GetItemName(hero, 5),
-                    i6 = GetItemName(hero, 6),
+                    hn = GetHeroName(hero),
+                    il = GetItemList(hero),
+
+                    -- Tomes Consumed
+                    st = GetTomesConsumed(hero, "tome_strenght_modifier"), --STR Tomes
+                    at = GetTomesConsumed(hero, "tome_agility_modifier"), --AGI Tomes
+                    it = GetTomesConsumed(hero, "tome_intelect_modifier"), --INT Tomes
+                    ht = GetTomesConsumed(hero, "tome_health_modifier") / 30, --Health Tomes (Each one gives 30)
                 })
             end
         end
@@ -67,13 +82,34 @@ function GetHeroName( hero )
     return heroName
 end
 
-function GetItemName(hero, slot)
-    local item = hero:GetItemInSlot(slot)
-    if item then
-        local itemName = item:GetAbilityName()
-        itemName = string.gsub(itemName,"item_","")
-        return itemName
-    else
-        return ""
+function GetItemList(hero)
+    local itemTable = {}
+
+    for i=0,5 do
+        local item = hero:GetItemInSlot(i)
+        if item then
+            local itemName = string.gsub(item:GetAbilityName(),"item_","")
+            table.insert(itemTable,itemName)
+        end
     end
+
+    table.sort(itemTable)
+    local itemList = table.concat(itemTable, "_")
+
+    return itemList
+end
+
+function GetTomesConsumed( hero, modifierName )
+    local modifier = hero:FindModifierByName(modifierName)
+    if modifier then
+        return modifier:GetStackCount()
+    else 
+        return 0
+    end
+end
+
+-------------------------------------
+
+if Convars:GetBool('developer') then
+    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(),BuildPlayersArray()) end, "Test the custom schema arrays", 0)
 end

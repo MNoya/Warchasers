@@ -18,3 +18,5 @@ game/dota_addons/warchasers/resource/overviews/*
 
 # Map Files
 *.vpk
+
+settings.kv

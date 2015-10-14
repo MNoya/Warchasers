@@ -4,6 +4,7 @@ require('statcollection/lib/statcollection')
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 local COLLECT_STATS = not Convars:GetBool('developer')
 local TESTING = tobool(statInfo.TESTING)
+local MIN_PLAYERS = tonumber(statInfo.MIN_PLAYERS)
 
 if COLLECT_STATS or TESTING then
     ListenToGameEvent('game_rules_state_change', function(keys)
@@ -11,9 +12,12 @@ if COLLECT_STATS or TESTING then
         
         if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 
-            -- Init stat collection
-            statCollection:init()
-            customSchema:init()
+            if PlayerResource:GetPlayerCount() >= MIN_PLAYERS or TESTING then
+
+                -- Init stat collection
+                statCollection:init()
+                customSchema:init()
+            end
         end
     end, nil)
 end
