@@ -47,7 +47,7 @@ end
 
 function BuildGameArray()
     local game = {}
-    game.difficulty = GameRules.DIFFICULTY
+    game.dif = GameRules.DIFFICULTY
     return game
 end
 
