@@ -61,6 +61,7 @@ function BuildPlayersArray()
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
                     hn = GetHeroName(hero),
+                    hk = hero:GetKills(),
                     il = GetItemList(hero),
 
                     -- Tomes Consumed
