@@ -1,7 +1,7 @@
 -- dota_launch_custom_game warchasers warchasers
 
 
-WARCHASERS_VERSION = "1.4"
+WARCHASERS_VERSION = "1.5"
 
 XP_PER_LEVEL_TABLE = {
 	     0, -- 1
