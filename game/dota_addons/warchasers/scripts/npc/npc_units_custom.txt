@@ -5133,7 +5133,7 @@
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_rattletrap_cog"	//fix this
+		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/props_debris/merchant_debris_chest001.vmdl"	// Model.
 		"ModelScale"				"2"
 		"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
